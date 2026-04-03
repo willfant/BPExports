@@ -1,0 +1,64 @@
+{
+	"problems": [
+		{
+			"graph": "AdjustNavMeshBounds",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CallFunction_21",
+			"node_title": "On Navigation Bounds Updated",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
+		},
+		{
+			"graph": "ApplyTextureToWallsInRoom",
+			"problem_type": "NodeWarning",
+			"details": "Node has explicit warning state.",
+			"node_name": "K2Node_VariableGet_10",
+			"node_title": "Get CeilingAnchor",
+			"severity": "low",
+			"confidence": 0.90000000000000002,
+			"why_it_matters": "The editor is warning that something may be misconfigured or suboptimal.",
+			"likely_impact": "Usually not fatal, but may hide a setup issue or weak pattern.",
+			"suggested_fix": "Inspect the warning in the Blueprint editor and decide whether to fix or intentionally keep it."
+		},
+		{
+			"graph": "ApplyTextureToWallsInRoom",
+			"problem_type": "NodeWarning",
+			"details": "Node has explicit warning state.",
+			"node_name": "K2Node_VariableGet_9",
+			"node_title": "Get FloorAnchor",
+			"severity": "low",
+			"confidence": 0.90000000000000002,
+			"why_it_matters": "The editor is warning that something may be misconfigured or suboptimal.",
+			"likely_impact": "Usually not fatal, but may hide a setup issue or weak pattern.",
+			"suggested_fix": "Inspect the warning in the Blueprint editor and decide whether to fix or intentionally keep it."
+		},
+		{
+			"graph": "ApplyTextureToWallsInRoom",
+			"problem_type": "HardcodedDomainIdentifier",
+			"details": "Hardcoded identifier detected: INVISIBLE_WALL_FACE",
+			"node_name": "K2Node_CallFunction_0",
+			"node_title": "Has Label",
+			"severity": "high",
+			"confidence": 0.90000000000000002,
+			"why_it_matters": "Domain-specific content identifiers appear embedded directly in graph logic.",
+			"likely_impact": "Scaling content may require graph edits instead of data-only changes.",
+			"suggested_fix": "Move identifiers into data assets, DataTables, config assets, or authored metadata."
+		},
+		{
+			"graph": "ApplyTextureToWallsInRoom",
+			"problem_type": "HardcodedIdentifierUsage",
+			"details": "Graph contains 1 hardcoded identifier references.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.69999999999999996,
+			"why_it_matters": "This pattern may reduce readability, scalability or runtime safety.",
+			"likely_impact": "May increase maintenance cost or hide runtime bugs.",
+			"suggested_fix": "Review this graph and refactor if the pattern is confirmed."
+		}
+	]
+}

@@ -1,0 +1,501 @@
+{
+	"calls": [
+		{
+			"from_graph": "EventGraph",
+			"from_node_title": "Get Game Instance",
+			"to_graph": "GetGameInstance",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "EventGraph",
+			"from_node_title": "Start Scare Cooldown",
+			"to_graph": "StartScareCooldown",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "EventGraph",
+			"from_node_title": "Restart Scare Loop for Current State",
+			"to_graph": "RestartScareLoopForCurrentState",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "EventGraph",
+			"from_node_title": "Initialize World Mode Binding",
+			"to_graph": "InitializeWorldModeBinding",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "InitializeScaresForGhost",
+			"from_node_title": "Debug Message",
+			"to_graph": "DebugMessage",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeScaresForGhost",
+			"from_node_title": "Start Scare Loop",
+			"to_graph": "StartScareLoop",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "InitializeScaresForGhost",
+			"from_node_title": "To String (Text)",
+			"to_graph": "Conv_TextToString",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetTextLibrary"
+		},
+		{
+			"from_graph": "StartScareLoop",
+			"from_node_title": "Set Timer by Function Name",
+			"to_graph": "K2_SetTimer",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "StartScareLoop",
+			"from_node_title": "Get Scare Interval for Current Ghost State",
+			"to_graph": "GetScareIntervalForCurrentGhostState",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "StartScareLoop",
+			"from_node_title": "Get Scare Interval for Current Context",
+			"to_graph": "GetScareIntervalForCurrentContext",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "TryTriggerNextScare",
+			"from_node_title": "Execute Scare by Id",
+			"to_graph": "ExecuteScareById",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "TryTriggerNextScare",
+			"from_node_title": "Is Scare Blocked",
+			"to_graph": "IsScareBlocked",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "TryTriggerNextScare",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "TryTriggerNextScare",
+			"from_node_title": "Is Scare Allowed in Current World Mode",
+			"to_graph": "IsScareAllowedInCurrentWorldMode",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "TryTriggerNextScare",
+			"from_node_title": "Register Triggered Scare",
+			"to_graph": "RegisterTriggeredScare",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "TryTriggerNextScare",
+			"from_node_title": "Is Scare Valid Advanced",
+			"to_graph": "IsScareValidAdvanced",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "TryTriggerNextScare",
+			"from_node_title": "Select Weighted Random Scare",
+			"to_graph": "SelectWeightedRandomScare",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "ExecuteScareById",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "ExecuteScareById",
+			"from_node_title": "Is Valid Class",
+			"to_graph": "IsValidClass",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "ExecuteScareById",
+			"from_node_title": "Initialize Scare",
+			"to_graph": "InitializeScare",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_ScareBase_C"
+		},
+		{
+			"from_graph": "ExecuteScareById",
+			"from_node_title": "Apply Scare Entry Data",
+			"to_graph": "ApplyScareEntryData",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_ScareBase_C"
+		},
+		{
+			"from_graph": "ExecuteScareById",
+			"from_node_title": "Execute Scare",
+			"to_graph": "ExecuteScare",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_ScareBase_C"
+		},
+		{
+			"from_graph": "ExecuteScareById",
+			"from_node_title": "Is Scare Allowed in Current World Mode",
+			"to_graph": "IsScareAllowedInCurrentWorldMode",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "ExecuteScareById",
+			"from_node_title": "Is Scare Blocked",
+			"to_graph": "IsScareBlocked",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "ExecuteScareById",
+			"from_node_title": "Is Scare Allowed for Current Ghost State",
+			"to_graph": "IsScareAllowedForCurrentGhostState",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "IsScareAllowedInCurrentWorldMode",
+			"from_node_title": "Get Game Instance",
+			"to_graph": "GetGameInstance",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "IsScareAllowedInCurrentWorldMode",
+			"from_node_title": "Get Current World Mode",
+			"to_graph": "GetCurrentWorldMode",
+			"call_type": "ExternalFunction",
+			"target_class": "GI_Echoes_C"
+		},
+		{
+			"from_graph": "IsScareRunning",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "IsScareBlocked",
+			"from_node_title": "Is Scare Running",
+			"to_graph": "IsScareRunning",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "StartScareCooldown",
+			"from_node_title": "Set Timer by Function Name",
+			"to_graph": "K2_SetTimer",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "StartScareCooldown",
+			"from_node_title": "Debug Message",
+			"to_graph": "DebugMessage",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "StartScareCooldown",
+			"from_node_title": "To String (Text)",
+			"to_graph": "Conv_TextToString",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetTextLibrary"
+		},
+		{
+			"from_graph": "ResetScareCooldown",
+			"from_node_title": "Debug Message",
+			"to_graph": "DebugMessage",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "UpdateGhostState",
+			"from_node_title": "Restart Scare Loop for Current State",
+			"to_graph": "RestartScareLoopForCurrentState",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "UpdateGhostState",
+			"from_node_title": "Debug Message",
+			"to_graph": "DebugMessage",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "UpdateGhostState",
+			"from_node_title": "To String (Text)",
+			"to_graph": "Conv_TextToString",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetTextLibrary"
+		},
+		{
+			"from_graph": "RestartScareLoopForCurrentState",
+			"from_node_title": "Clear and Invalidate Timer by Handle",
+			"to_graph": "K2_ClearAndInvalidateTimerHandle",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "RestartScareLoopForCurrentState",
+			"from_node_title": "Start Scare Loop",
+			"to_graph": "StartScareLoop",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "InitializeWorldModeBinding",
+			"from_node_title": "Get Actor Of Class",
+			"to_graph": "GetActorOfClass",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "InitializeWorldModeBinding",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "InitializeWorldModeBinding",
+			"from_node_title": "Get World Mode",
+			"to_graph": "GetWorldMode",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_WorldModeSystem_C"
+		},
+		{
+			"from_graph": "IsScareValidBasic",
+			"from_node_title": "Is Scare Allowed in Current World Mode",
+			"to_graph": "IsScareAllowedInCurrentWorldMode",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "IsScareValidBasic",
+			"from_node_title": "Is Scare Allowed for Current Ghost State",
+			"to_graph": "IsScareAllowedForCurrentGhostState",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "IsScareValidBasic",
+			"from_node_title": "Is Scare Distance Valid",
+			"to_graph": "IsScareDistanceValid",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "IsScareOffCooldown",
+			"from_node_title": "Get Game Time in Seconds",
+			"to_graph": "GetGameTimeInSeconds",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "IsScareOffCooldown",
+			"from_node_title": "Contains",
+			"to_graph": "Map_Contains",
+			"call_type": "ExternalFunction",
+			"target_class": "BlueprintMapLibrary"
+		},
+		{
+			"from_graph": "IsScareOffCooldown",
+			"from_node_title": "Find",
+			"to_graph": "Map_Find",
+			"call_type": "ExternalFunction",
+			"target_class": "BlueprintMapLibrary"
+		},
+		{
+			"from_graph": "IsScareOffCooldown",
+			"from_node_title": "Get Game Time in Seconds",
+			"to_graph": "GetGameTimeInSeconds",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "RegisterTriggeredScare",
+			"from_node_title": "Get Game Time in Seconds",
+			"to_graph": "GetGameTimeInSeconds",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "RegisterTriggeredScare",
+			"from_node_title": "Add",
+			"to_graph": "Map_Add",
+			"call_type": "ExternalFunction",
+			"target_class": "BlueprintMapLibrary"
+		},
+		{
+			"from_graph": "IsScareValidAdvanced",
+			"from_node_title": "Is Scare Off Cooldown",
+			"to_graph": "IsScareOffCooldown",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "IsScareValidAdvanced",
+			"from_node_title": "Is Scare Valid Basic",
+			"to_graph": "IsScareValidBasic",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "IsScareValidAdvanced",
+			"from_node_title": "Is Scare Line Of Sight Valid",
+			"to_graph": "IsScareLineOfSightValid",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "IsScareValidAdvanced",
+			"from_node_title": "Is Scare Spawn Condition Valid",
+			"to_graph": "IsScareSpawnConditionValid",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "IsScareLineOfSightValid",
+			"from_node_title": "Get Player Controller",
+			"to_graph": "GetPlayerController",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "IsScareLineOfSightValid",
+			"from_node_title": "Get Player View Point",
+			"to_graph": "GetPlayerViewPoint",
+			"call_type": "ExternalFunction",
+			"target_class": "Controller"
+		},
+		{
+			"from_graph": "IsScareLineOfSightValid",
+			"from_node_title": "Get Actor Location",
+			"to_graph": "K2_GetActorLocation",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "IsScareLineOfSightValid",
+			"from_node_title": "Line Trace By Channel",
+			"to_graph": "LineTraceSingle",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "IsScareSpawnConditionValid",
+			"from_node_title": "Is Scare Off Cooldown",
+			"to_graph": "IsScareOffCooldown",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "IsScareSpawnConditionValid",
+			"from_node_title": "Is Scare Line Of Sight Valid",
+			"to_graph": "IsScareLineOfSightValid",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "IsScareSpawnConditionValid",
+			"from_node_title": "Get Player Looking Away",
+			"to_graph": "GetPlayerLookingAway",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "GetPlayerLookingAway",
+			"from_node_title": "Get Player Controller",
+			"to_graph": "GetPlayerController",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "GetPlayerLookingAway",
+			"from_node_title": "Get Player View Point",
+			"to_graph": "GetPlayerViewPoint",
+			"call_type": "ExternalFunction",
+			"target_class": "Controller"
+		},
+		{
+			"from_graph": "GetPlayerLookingAway",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "GetPlayerLookingAway",
+			"from_node_title": "Get Actor Location",
+			"to_graph": "K2_GetActorLocation",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "GetPlayerLookingAway",
+			"from_node_title": "Normalize",
+			"to_graph": "Normal",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetMathLibrary"
+		},
+		{
+			"from_graph": "GetPlayerLookingAway",
+			"from_node_title": "Get Forward Vector",
+			"to_graph": "GetForwardVector",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetMathLibrary"
+		},
+		{
+			"from_graph": "GetPlayerLookingAway",
+			"from_node_title": "Dot Product",
+			"to_graph": "Dot_VectorVector",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetMathLibrary"
+		},
+		{
+			"from_graph": "SelectWeightedRandomScare",
+			"from_node_title": "Random Float in Range",
+			"to_graph": "RandomFloatInRange",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetMathLibrary"
+		},
+		{
+			"from_graph": "SelectWeightedRandomScare",
+			"from_node_title": "Debug Message",
+			"to_graph": "DebugMessage",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "SelectWeightedRandomScare",
+			"from_node_title": "To String (Text)",
+			"to_graph": "Conv_TextToString",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetTextLibrary"
+		}
+	]
+}

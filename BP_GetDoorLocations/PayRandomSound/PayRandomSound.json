@@ -1,0 +1,609 @@
+{
+	"graph_name": "PayRandomSound",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [],
+		"writes_variables": [],
+		"calls": [
+			"Spawn Sound at Location",
+			"Get Current Room",
+			"Get Anchors by Label",
+			"Get Actor Location",
+			"Print String",
+			"To String (Vector)"
+		],
+		"called_by": [],
+		"branch_points": []
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "PayRandomSound",
+			"title_single_line": "PayRandomSound",
+			"comment": "",
+			"guid": "ccc5302e-4b94-ef42-97d9-7e8051a2e729",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PayRandomSound"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Spawn Sound at Location",
+			"title_single_line": "Spawn Sound at Location",
+			"comment": "",
+			"guid": "27374f12-4bb4-be60-98da-5eb917446b9f",
+			"x": 1120,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Sound",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundBase",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Location",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Rotation",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Rotator",
+					"default_value": "0, 0, 0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "VolumeMultiplier",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "1.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PitchMultiplier",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "1.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "StartTime",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "AttenuationSettings",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundAttenuation",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ConcurrencySettings",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundConcurrency",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bAutoDestroy",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "AudioComponent",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "PayRandomSound"
+		},
+		{
+			"node_id": "K2Node_GetSubsystem_4",
+			"node_name": "K2Node_GetSubsystem_4",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_GetSubsystem",
+			"title": "MRUKSubsystem",
+			"title_single_line": "MRUKSubsystem",
+			"comment": "",
+			"guid": "c77a3a3f-4517-2456-3f81-22bfade3f26a",
+			"x": -528,
+			"y": 320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "MRUKSubsystem",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PayRandomSound"
+		},
+		{
+			"node_id": "K2Node_CallFunction_35",
+			"node_name": "K2Node_CallFunction_35",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Current Room\nTarget is MRUKSubsystem",
+			"title_single_line": "Get Current Room",
+			"comment": "",
+			"guid": "29fb9699-49be-3d29-5bcd-dc9bb1041eeb",
+			"x": -480,
+			"y": 368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "MRUKSubsystem",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "MRUKRoom",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PayRandomSound"
+		},
+		{
+			"node_id": "K2Node_CallFunction_27",
+			"node_name": "K2Node_CallFunction_27",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Anchors by Label\nTarget is MR Utility Kit Room Actor",
+			"title_single_line": "Get Anchors by Label",
+			"comment": "",
+			"guid": "d1c7ee07-4f87-489e-4500-7f8d6696833c",
+			"x": -160,
+			"y": 368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "MRUKRoom",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Label",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "DOOR_FRAME",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "MRUKAnchor",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PayRandomSound"
+		},
+		{
+			"node_id": "K2Node_GetArrayItem_1",
+			"node_name": "K2Node_GetArrayItem_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_GetArrayItem",
+			"title": "GET",
+			"title_single_line": "GET",
+			"comment": "",
+			"guid": "763e5a4e-409d-5e23-278d-d98c0b5707f1",
+			"x": 256,
+			"y": 528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Array",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "MRUKAnchor",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Dimension 1",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "MRUKAnchor",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PayRandomSound"
+		},
+		{
+			"node_id": "K2Node_CallFunction_28",
+			"node_name": "K2Node_CallFunction_28",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Actor Location\nTarget is Actor",
+			"title_single_line": "Get Actor Location",
+			"comment": "",
+			"guid": "2090f330-489d-1d98-8484-c7b6d6a480b2",
+			"x": 672,
+			"y": 464,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Actor",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 2
+				}
+			],
+			"target_class": "PayRandomSound"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Print String",
+			"title_single_line": "Print String",
+			"comment": "",
+			"guid": "a3ff0780-4a6e-c943-53ec-888ee97bbd39",
+			"x": 2032,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InString",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "Hello",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToLog",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TextColor",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "LinearColor",
+					"default_value": "(R=0.000000,G=0.660000,B=1.000000,A=1.000000)",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "2.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Key",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				}
+			],
+			"target_class": "PayRandomSound"
+		},
+		{
+			"node_id": "K2Node_CallFunction_65",
+			"node_name": "K2Node_CallFunction_65",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Vector)",
+			"title_single_line": "To String (Vector)",
+			"comment": "",
+			"guid": "66a7f20d-4cad-2ca3-81c2-d5bb968a4c5e",
+			"x": 1536,
+			"y": 512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetStringLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InVec",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PayRandomSound"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "PayRandomSound",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Spawn Sound at Location",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Spawn Sound at Location",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Print String",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_GetSubsystem_4",
+			"from_node_title": "MRUKSubsystem",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_35",
+			"to_node_title": "Get Current Room\nTarget is MRUKSubsystem",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_35",
+			"from_node_title": "Get Current Room\nTarget is MRUKSubsystem",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_27",
+			"to_node_title": "Get Anchors by Label\nTarget is MR Utility Kit Room Actor",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_27",
+			"from_node_title": "Get Anchors by Label\nTarget is MR Utility Kit Room Actor",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_GetArrayItem_1",
+			"to_node_title": "GET",
+			"to_pin": "Array"
+		},
+		{
+			"from_node_id": "K2Node_GetArrayItem_1",
+			"from_node_title": "GET",
+			"from_pin": "Output",
+			"to_node_id": "K2Node_CallFunction_28",
+			"to_node_title": "Get Actor Location\nTarget is Actor",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_28",
+			"from_node_title": "Get Actor Location\nTarget is Actor",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Spawn Sound at Location",
+			"to_pin": "Location"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_28",
+			"from_node_title": "Get Actor Location\nTarget is Actor",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_65",
+			"to_node_title": "To String (Vector)",
+			"to_pin": "InVec"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_65",
+			"from_node_title": "To String (Vector)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Print String",
+			"to_pin": "InString"
+		}
+	],
+	"problems": []
+}
