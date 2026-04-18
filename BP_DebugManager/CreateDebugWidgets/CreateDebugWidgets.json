@@ -1,0 +1,2990 @@
+{
+	"graph_name": "CreateDebugWidgets",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Provides debug or developer-facing behavior.",
+		"reads_variables": [
+			"bCreateMainFeed",
+			"DebugFeedWidgetClass",
+			"MainFeedWidget",
+			"bStartVisible",
+			"bCreateScareFeed",
+			"ScareFeedWidget",
+			"bCreateVoiceFeed"
+		],
+		"writes_variables": [
+			"MainFeedWidget",
+			"ScareFeedWidget",
+			"VoiceFeedWidget"
+		],
+		"calls": [
+			"Get Player Controller",
+			"Init Feed Panel",
+			"Add to Viewport",
+			"Set Visibility"
+		],
+		"called_by": [
+			"EventGraph"
+		],
+		"branch_points": [
+			"Branch"
+		]
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "CreateDebugWidgets",
+			"title_single_line": "CreateDebugWidgets",
+			"comment": "",
+			"guid": "204df523-4b22-ad8c-f283-4586d37862cc",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Player Controller",
+			"title_single_line": "Get Player Controller",
+			"comment": "",
+			"guid": "81ccfb78-4bad-acd8-efcd-a289b495f083",
+			"x": 144,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PlayerIndex",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "PlayerController",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "50a3e229-4aeb-bbe9-48f9-fc945759db97",
+			"x": 496,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableGet_1",
+			"node_name": "K2Node_VariableGet_1",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bCreateMainFeed",
+			"title_single_line": "Get bCreateMainFeed",
+			"comment": "",
+			"guid": "752b3b7e-4efa-8d76-677a-b2998b1416d1",
+			"x": 304,
+			"y": 64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bCreateMainFeed",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CreateWidget_0",
+			"node_name": "K2Node_CreateWidget_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CreateWidget",
+			"title": "Create WBP Debug Feed Panel Widget",
+			"title_single_line": "Create WBP Debug Feed Panel Widget",
+			"comment": "",
+			"guid": "9f53f7c2-40c2-18c1-938c-9aa20f49ec7a",
+			"x": 800,
+			"y": -240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Class",
+					"direction": "Input",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "UserWidget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OwningPlayer",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "PlayerController",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Title",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugFeedWidgetClass",
+			"title_single_line": "Get DebugFeedWidgetClass",
+			"comment": "",
+			"guid": "a31ee96a-4905-8a4c-6899-38bc164c098e",
+			"x": 560,
+			"y": -208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugFeedWidgetClass",
+					"direction": "Output",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set MainFeedWidget",
+			"title_single_line": "Set MainFeedWidget",
+			"comment": "",
+			"guid": "12d6b0ec-4adb-6a14-bfef-3c96586c3598",
+			"x": 1184,
+			"y": -224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "MainFeedWidget",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_MakeArray_0",
+			"node_name": "K2Node_MakeArray_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MakeArray",
+			"title": "Make Array",
+			"title_single_line": "Make Array",
+			"comment": "",
+			"guid": "8959c0f9-4a69-8f39-c198-4eb6389c7b72",
+			"x": 1488,
+			"y": -64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Array",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[0]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_2",
+			"node_name": "K2Node_EnumLiteral_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "cff8dcc0-4dc7-79b8-e188-ae9e1fa1645d",
+			"x": 1088,
+			"y": -64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"title_single_line": "Init Feed Panel",
+			"comment": "",
+			"guid": "4262572b-4ead-4c06-0a50-f299fd98c26a",
+			"x": 1776,
+			"y": -256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InTitle",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InAllowedCategories",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Add to Viewport\nTarget is User Widget",
+			"title_single_line": "Add to Viewport",
+			"comment": "",
+			"guid": "76b18299-48dd-e90e-af1c-f4b655005e9c",
+			"x": 2240,
+			"y": -256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "UserWidget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ZOrder",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableGet_3",
+			"node_name": "K2Node_VariableGet_3",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get MainFeedWidget",
+			"title_single_line": "Get MainFeedWidget",
+			"comment": "",
+			"guid": "b473bb85-4c25-ced9-fefa-c8958e61cc64",
+			"x": 2240,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "MainFeedWidget",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "874d4bd8-4e6c-bebe-2cfe-0d88ee575644",
+			"x": 2672,
+			"y": -240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableGet_4",
+			"node_name": "K2Node_VariableGet_4",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bStartVisible",
+			"title_single_line": "Get bStartVisible",
+			"comment": "",
+			"guid": "e89b5cbb-4152-185d-c648-91b3071307a6",
+			"x": 2640,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bStartVisible",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get MainFeedWidget",
+			"title_single_line": "Get MainFeedWidget",
+			"comment": "",
+			"guid": "0df8f064-4a2c-8671-fd79-ba96ec8e93ae",
+			"x": 3040,
+			"y": 64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "MainFeedWidget",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Set Visibility\nTarget is Widget",
+			"title_single_line": "Set Visibility",
+			"comment": "",
+			"guid": "11e8372d-46e1-b062-0743-61adcb309104",
+			"x": 2976,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Widget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InVisibility",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "Collapsed",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_2",
+			"node_name": "K2Node_IfThenElse_2",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "89094a9f-4c84-261b-cdeb-0386322843c6",
+			"x": 3520,
+			"y": -240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 3
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "fab63066-4ed9-ca61-230d-4787c26be031",
+			"x": 3328,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "adbce924-4c0c-9d7d-60fe-d8836786d0cc",
+			"x": 864,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableGet_5",
+			"node_name": "K2Node_VariableGet_5",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bCreateScareFeed",
+			"title_single_line": "Get bCreateScareFeed",
+			"comment": "",
+			"guid": "f183a890-43a4-7b64-c555-9ab83935684d",
+			"x": 3488,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bCreateScareFeed",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CreateWidget_2",
+			"node_name": "K2Node_CreateWidget_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CreateWidget",
+			"title": "Create WBP Debug Feed Panel Widget",
+			"title_single_line": "Create WBP Debug Feed Panel Widget",
+			"comment": "",
+			"guid": "07274718-4a15-6dae-afe3-878744299c9b",
+			"x": 3840,
+			"y": -448,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Class",
+					"direction": "Input",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "UserWidget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OwningPlayer",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "PlayerController",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Title",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Player Controller",
+			"title_single_line": "Get Player Controller",
+			"comment": "",
+			"guid": "3e92ec68-427f-fb84-9fbf-f5bd6339d18d",
+			"x": 3376,
+			"y": -368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PlayerIndex",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "PlayerController",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableGet_10",
+			"node_name": "K2Node_VariableGet_10",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugFeedWidgetClass",
+			"title_single_line": "Get DebugFeedWidgetClass",
+			"comment": "",
+			"guid": "e9faa41c-4c86-bfa0-a308-77b319cdc704",
+			"x": 3424,
+			"y": -448,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugFeedWidgetClass",
+					"direction": "Output",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set ScareFeedWidget",
+			"title_single_line": "Set ScareFeedWidget",
+			"comment": "",
+			"guid": "b15035f2-4307-9817-93ed-9d9da44f2ac0",
+			"x": 4240,
+			"y": -432,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ScareFeedWidget",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_MakeArray_2",
+			"node_name": "K2Node_MakeArray_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MakeArray",
+			"title": "Make Array",
+			"title_single_line": "Make Array",
+			"comment": "",
+			"guid": "dd5d1543-4042-07c8-c034-05a8a266566b",
+			"x": 4448,
+			"y": -256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Array",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[0]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[1]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[2]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[3]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[4]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_7",
+			"node_name": "K2Node_EnumLiteral_7",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "07e8b6b2-4346-1af9-7a2a-deb1687be8db",
+			"x": 3968,
+			"y": -240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator1",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_8",
+			"node_name": "K2Node_EnumLiteral_8",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "e4d47e19-470e-dfdf-d790-3bb0efc47f12",
+			"x": 3968,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator4",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_9",
+			"node_name": "K2Node_EnumLiteral_9",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "7747cb1b-43d6-819a-0185-35bffb4e4923",
+			"x": 3984,
+			"y": -48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator8",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_10",
+			"node_name": "K2Node_EnumLiteral_10",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "d93d0419-40cf-2dca-4bd8-0683b1e1ed2e",
+			"x": 3968,
+			"y": 48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator13",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_11",
+			"node_name": "K2Node_EnumLiteral_11",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "1f1a7c0a-43a2-2c1a-6889-fc8ea45af823",
+			"x": 3984,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator14",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"title_single_line": "Init Feed Panel",
+			"comment": "",
+			"guid": "19bf7cad-439d-8373-5f6e-6aab90517719",
+			"x": 4752,
+			"y": -464,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InTitle",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InAllowedCategories",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableGet_7",
+			"node_name": "K2Node_VariableGet_7",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ScareFeedWidget",
+			"title_single_line": "Get ScareFeedWidget",
+			"comment": "",
+			"guid": "76c83f64-4f2d-5b46-52ca-dcbd80ae12bb",
+			"x": 4912,
+			"y": -560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ScareFeedWidget",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Add to Viewport\nTarget is User Widget",
+			"title_single_line": "Add to Viewport",
+			"comment": "",
+			"guid": "928898ef-4ee3-f682-c42a-10bf26113fc8",
+			"x": 5136,
+			"y": -464,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "UserWidget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ZOrder",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_3",
+			"node_name": "K2Node_IfThenElse_3",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "7912a494-42da-6ee3-398f-da9a4d296d3b",
+			"x": 5456,
+			"y": -448,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableGet_8",
+			"node_name": "K2Node_VariableGet_8",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bStartVisible",
+			"title_single_line": "Get bStartVisible",
+			"comment": "",
+			"guid": "9e63063e-47b0-b98b-443e-d392a84ef490",
+			"x": 5440,
+			"y": -352,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bStartVisible",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Set Visibility\nTarget is Widget",
+			"title_single_line": "Set Visibility",
+			"comment": "",
+			"guid": "c39be5a4-49da-c547-b35d-98ae4c0bfdf2",
+			"x": 5712,
+			"y": -320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Widget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InVisibility",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "Collapsed",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_Knot_2",
+			"node_name": "K2Node_Knot_2",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "915ba4c1-4c81-0004-2b4d-049b586b1628",
+			"x": 5568,
+			"y": -544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_4",
+			"node_name": "K2Node_IfThenElse_4",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "40e869c7-406c-cca0-43db-95a42374ed7e",
+			"x": 6236,
+			"y": -308,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableGet_9",
+			"node_name": "K2Node_VariableGet_9",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bCreateVoiceFeed",
+			"title_single_line": "Get bCreateVoiceFeed",
+			"comment": "",
+			"guid": "1fd1df63-448b-82c1-0d2b-5eb07dd1a06c",
+			"x": 6128,
+			"y": -224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bCreateVoiceFeed",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_Knot_3",
+			"node_name": "K2Node_Knot_3",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "b383b29e-4023-42dc-ee85-cd8b24c175ca",
+			"x": 6016,
+			"y": -416,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CreateWidget_1",
+			"node_name": "K2Node_CreateWidget_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CreateWidget",
+			"title": "Create WBP Debug Feed Panel Widget",
+			"title_single_line": "Create WBP Debug Feed Panel Widget",
+			"comment": "",
+			"guid": "0b11a039-4fa5-9b97-c36e-f08103097dee",
+			"x": 6816,
+			"y": -544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Class",
+					"direction": "Input",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "UserWidget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OwningPlayer",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "PlayerController",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Title",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Player Controller",
+			"title_single_line": "Get Player Controller",
+			"comment": "",
+			"guid": "07fa4369-47eb-e178-49e3-89b4564287f1",
+			"x": 6416,
+			"y": -480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PlayerIndex",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "PlayerController",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableGet_6",
+			"node_name": "K2Node_VariableGet_6",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugFeedWidgetClass",
+			"title_single_line": "Get DebugFeedWidgetClass",
+			"comment": "",
+			"guid": "f237d338-4956-1d84-1955-d6b08029faab",
+			"x": 6464,
+			"y": -560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugFeedWidgetClass",
+					"direction": "Output",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableSet_2",
+			"node_name": "K2Node_VariableSet_2",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set VoiceFeedWidget",
+			"title_single_line": "Set VoiceFeedWidget",
+			"comment": "",
+			"guid": "06a0b039-4586-6c5a-f0dc-0299cb0b413b",
+			"x": 7152,
+			"y": -528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "VoiceFeedWidget",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 3
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_MakeArray_1",
+			"node_name": "K2Node_MakeArray_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MakeArray",
+			"title": "Make Array",
+			"title_single_line": "Make Array",
+			"comment": "",
+			"guid": "f943721a-49e3-4e85-0356-958baf69be82",
+			"x": 7200,
+			"y": -320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Array",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[0]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[1]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_3",
+			"node_name": "K2Node_EnumLiteral_3",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "9b37de03-4993-1aca-222b-9abf960e9496",
+			"x": 6720,
+			"y": -304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator7",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_4",
+			"node_name": "K2Node_EnumLiteral_4",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "ca932455-4b2e-c456-dc96-589d8b29b04f",
+			"x": 6720,
+			"y": -208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator9",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CallFunction_6",
+			"node_name": "K2Node_CallFunction_6",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"title_single_line": "Init Feed Panel",
+			"comment": "",
+			"guid": "39c47f64-4bcd-72d5-5e97-9681e2a2e104",
+			"x": 7504,
+			"y": -560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InTitle",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InAllowedCategories",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CallFunction_7",
+			"node_name": "K2Node_CallFunction_7",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Add to Viewport\nTarget is User Widget",
+			"title_single_line": "Add to Viewport",
+			"comment": "",
+			"guid": "711b1e67-4b99-95fb-af71-468819af9305",
+			"x": 7888,
+			"y": -560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "UserWidget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ZOrder",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_5",
+			"node_name": "K2Node_IfThenElse_5",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "0492f7b6-41de-bb30-b229-60bf45a879ee",
+			"x": 8288,
+			"y": -544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_VariableGet_11",
+			"node_name": "K2Node_VariableGet_11",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bStartVisible",
+			"title_single_line": "Get bStartVisible",
+			"comment": "",
+			"guid": "4327febc-499e-fe48-b37a-34b90af20aa8",
+			"x": 8112,
+			"y": -400,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bStartVisible",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_CallFunction_12",
+			"node_name": "K2Node_CallFunction_12",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Set Visibility\nTarget is Widget",
+			"title_single_line": "Set Visibility",
+			"comment": "",
+			"guid": "34bc84b5-4bd0-5815-7610-abb89ecac9c7",
+			"x": 8560,
+			"y": -336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Widget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InVisibility",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "Collapsed",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		},
+		{
+			"node_id": "K2Node_Knot_4",
+			"node_name": "K2Node_Knot_4",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "ca556f28-465a-c611-9391-81a8ee7d199b",
+			"x": 7424,
+			"y": -256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateDebugWidgets"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "CreateDebugWidgets",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CreateWidget_0",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_CreateWidget_0",
+			"from_node_title": "Create WBP Debug Feed Panel Widget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set MainFeedWidget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set MainFeedWidget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Add to Viewport\nTarget is User Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Add to Viewport\nTarget is User Widget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Set Visibility\nTarget is Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Set Visibility\nTarget is Widget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CreateWidget_2",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_CreateWidget_2",
+			"from_node_title": "Create WBP Debug Feed Panel Widget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set ScareFeedWidget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set ScareFeedWidget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Add to Viewport\nTarget is User Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Add to Viewport\nTarget is User Widget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_Knot_3",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Set Visibility\nTarget is Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Set Visibility\nTarget is Widget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CreateWidget_1",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Knot_3",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CreateWidget_1",
+			"from_node_title": "Create WBP Debug Feed Panel Widget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set VoiceFeedWidget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set VoiceFeedWidget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_6",
+			"from_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Add to Viewport\nTarget is User Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_7",
+			"from_node_title": "Add to Viewport\nTarget is User Widget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_5",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Set Visibility\nTarget is Widget",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Get Player Controller",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CreateWidget_0",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "OwningPlayer"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get bCreateMainFeed",
+			"from_pin": "bCreateMainFeed",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CreateWidget_0",
+			"from_node_title": "Create WBP Debug Feed Panel Widget",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set MainFeedWidget",
+			"to_pin": "MainFeedWidget"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get DebugFeedWidgetClass",
+			"from_pin": "DebugFeedWidgetClass",
+			"to_node_id": "K2Node_CreateWidget_0",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "Class"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set MainFeedWidget",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_MakeArray_0",
+			"from_node_title": "Make Array",
+			"from_pin": "Array",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "InAllowedCategories"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_2",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_0",
+			"to_node_title": "Make Array",
+			"to_pin": "[0]"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_3",
+			"from_node_title": "Get MainFeedWidget",
+			"from_pin": "MainFeedWidget",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Add to Viewport\nTarget is User Widget",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get bStartVisible",
+			"from_pin": "bStartVisible",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get MainFeedWidget",
+			"from_pin": "MainFeedWidget",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Set Visibility\nTarget is Widget",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_5",
+			"from_node_title": "Get bCreateScareFeed",
+			"from_pin": "bCreateScareFeed",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CreateWidget_2",
+			"from_node_title": "Create WBP Debug Feed Panel Widget",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set ScareFeedWidget",
+			"to_pin": "ScareFeedWidget"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_9",
+			"from_node_title": "Get Player Controller",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CreateWidget_2",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "OwningPlayer"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_10",
+			"from_node_title": "Get DebugFeedWidgetClass",
+			"from_pin": "DebugFeedWidgetClass",
+			"to_node_id": "K2Node_CreateWidget_2",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "Class"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set ScareFeedWidget",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_MakeArray_2",
+			"from_node_title": "Make Array",
+			"from_pin": "Array",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "InAllowedCategories"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_7",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_2",
+			"to_node_title": "Make Array",
+			"to_pin": "[0]"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_8",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_2",
+			"to_node_title": "Make Array",
+			"to_pin": "[1]"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_9",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_2",
+			"to_node_title": "Make Array",
+			"to_pin": "[2]"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_10",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_2",
+			"to_node_title": "Make Array",
+			"to_pin": "[3]"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_11",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_2",
+			"to_node_title": "Make Array",
+			"to_pin": "[4]"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_7",
+			"from_node_title": "Get ScareFeedWidget",
+			"from_pin": "ScareFeedWidget",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Add to Viewport\nTarget is User Widget",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_7",
+			"from_node_title": "Get ScareFeedWidget",
+			"from_pin": "ScareFeedWidget",
+			"to_node_id": "K2Node_Knot_2",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_8",
+			"from_node_title": "Get bStartVisible",
+			"from_pin": "bStartVisible",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_2",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Set Visibility\nTarget is Widget",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_9",
+			"from_node_title": "Get bCreateVoiceFeed",
+			"from_pin": "bCreateVoiceFeed",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CreateWidget_1",
+			"from_node_title": "Create WBP Debug Feed Panel Widget",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set VoiceFeedWidget",
+			"to_pin": "VoiceFeedWidget"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Get Player Controller",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CreateWidget_1",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "OwningPlayer"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_6",
+			"from_node_title": "Get DebugFeedWidgetClass",
+			"from_pin": "DebugFeedWidgetClass",
+			"to_node_id": "K2Node_CreateWidget_1",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "Class"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set VoiceFeedWidget",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set VoiceFeedWidget",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Add to Viewport\nTarget is User Widget",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set VoiceFeedWidget",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_Knot_4",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_MakeArray_1",
+			"from_node_title": "Make Array",
+			"from_pin": "Array",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "InAllowedCategories"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_3",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_1",
+			"to_node_title": "Make Array",
+			"to_pin": "[0]"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_4",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_1",
+			"to_node_title": "Make Array",
+			"to_pin": "[1]"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_11",
+			"from_node_title": "Get bStartVisible",
+			"from_pin": "bStartVisible",
+			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_4",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Set Visibility\nTarget is Widget",
+			"to_pin": "self"
+		}
+	],
+	"problems": []
+}
