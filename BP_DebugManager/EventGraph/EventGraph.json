@@ -119,8 +119,8 @@
 			"title_single_line": "Forward Message to Widgets",
 			"comment": "",
 			"guid": "374ec8e5-4c45-a450-b487-a6b8fdb2c908",
-			"x": 1984,
-			"y": 64,
+			"x": 1952,
+			"y": 48,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -172,7 +172,7 @@
 			"title_single_line": "HandleDebugSettingsChanged",
 			"comment": "",
 			"guid": "b2dcfb50-4554-e537-3f28-8c99594aa161",
-			"x": 2480,
+			"x": 2256,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -648,7 +648,7 @@
 			"title_single_line": "Bind Event to On Debug Settings Changed",
 			"comment": "",
 			"guid": "fd73b748-460d-0bd6-ae2c-5693eed00af3",
-			"x": 2704,
+			"x": 2480,
 			"y": -224,
 			"has_error": false,
 			"has_warning": false,
@@ -669,7 +669,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -701,7 +701,7 @@
 			"title_single_line": "Create Debug Widgets",
 			"comment": "",
 			"guid": "55984287-483c-71d3-7156-79b8d909f8f6",
-			"x": 2896,
+			"x": 2624,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -745,7 +745,7 @@
 			"title_single_line": "Refresh Widgets from History",
 			"comment": "",
 			"guid": "577bf99f-4190-6aed-26a7-67a41b4635ef",
-			"x": 3232,
+			"x": 2880,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -1034,6 +1034,94 @@
 				}
 			],
 			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Create Debug Widgets\nTarget is BP Debug Manager",
+			"title_single_line": "Create Debug Widgets",
+			"comment": "",
+			"guid": "486f6bd0-42ba-96b0-e6a2-a6a15f61c448",
+			"x": 2896,
+			"y": -240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Refresh Widgets from History\nTarget is BP Debug Manager",
+			"title_single_line": "Refresh Widgets from History",
+			"comment": "",
+			"guid": "3a36fc7c-49cb-c315-153a-1ca0da7e9298",
+			"x": 3168,
+			"y": -192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
 		}
 	],
 	"exec_flow": [
@@ -1102,6 +1190,14 @@
 			"to_pin": "execute"
 		},
 		{
+			"from_node_id": "K2Node_AddDelegate_1",
+			"from_node_title": "Bind Event to On Debug Settings Changed",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Create Debug Widgets\nTarget is BP Debug Manager",
+			"to_pin": "execute"
+		},
+		{
 			"from_node_id": "K2Node_CallFunction_4",
 			"from_node_title": "Create Debug Widgets\nTarget is BP Debug Manager",
 			"from_pin": "then",
@@ -1123,6 +1219,14 @@
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_7",
 			"to_node_title": "Unregister Debug Manager\nTarget is GI Echoes",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Create Debug Widgets\nTarget is BP Debug Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "Refresh Widgets from History\nTarget is BP Debug Manager",
 			"to_pin": "execute"
 		}
 	],
