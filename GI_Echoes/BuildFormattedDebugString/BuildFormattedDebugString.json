@@ -1,0 +1,696 @@
+{
+	"graph_name": "BuildFormattedDebugString",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [
+		"OutString (String)"
+	],
+	"summary":
+	{
+		"purpose": "Provides debug or developer-facing behavior.",
+		"reads_variables": [],
+		"writes_variables": [],
+		"calls": [
+			"To String (Name)",
+			"To String (Text)"
+		],
+		"called_by": [
+			"RouteDebugMessage"
+		],
+		"branch_points": []
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "BuildFormattedDebugString",
+			"title_single_line": "BuildFormattedDebugString",
+			"comment": "",
+			"guid": "1f5411aa-4bff-ad93-e7a0-5882fc26987b",
+			"x": -368,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InMessage",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "BuildFormattedDebugString"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "f2e7770f-477c-0bd0-0502-cfba5167f9f0",
+			"x": 1360,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutString",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "BuildFormattedDebugString"
+		},
+		{
+			"node_id": "K2Node_BreakStruct_0",
+			"node_name": "K2Node_BreakStruct_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_BreakStruct",
+			"title": "Break S Debug Message",
+			"title_single_line": "Break S Debug Message",
+			"comment": "",
+			"guid": "77d506cc-4f03-78e1-7de5-558200b7509b",
+			"x": -80,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "S_DebugMessage",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category_2_A340302247DDA519709B3DBFE15E9CCA",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Severity_5_C410C7504866A4690A7A179EB622AC84",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "SenderName_8_409C77FC434B0DF93DA802B82913AD28",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message_12_1757C6CC4C18E39C4E901E9001C80695",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "TimeSeconds_15_C4686A914696C1B5AC040D99FB27FA9D",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Duration_17_CEA1219444450DB3A9A9C5BB3F5155CF",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToScreen_20_B1C7589D47DCF7C60324DE82C441D256",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToLog_22_68A821C8422FC28282D7F9965FA0622B",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bUseLocation_24_DAFFB9BF460B900236E4688D67920C23",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldLocation_27_6C1D485349BB5BA3BB2CF599F661C410",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Verbosity_30_C74D04E2483037F610798E85E90E6C7E",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bShowInOverlay_33_7F3F03C4421F334400E3F18CCD55B9D5",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "MessageKey_36_A76E058D4A4EF1507BD7E4B04D11163F",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bOnceOnly_39_FFD5C08546C02BDD2A0D5784C0CE6230",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ThrottleSeconds_42_5D03B0814D5911EC3241AF9804139C19",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "RepeatCount_45_27AD43114322C7397AAE71994FC8A0CD",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "LevelName_48_F3D921154F5E5FF6F6C44489E7D8B78F",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextName_50_3D263B4845AB1E08031694BD44312402",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ContextGhostId_52_538AE9EC439CC596FDA56A8F58AD34AE",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ContextPuzzleId_54_F68E07D54497514E7E2C29B9E55D59C7",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ContextStepId_56_2996C41242769B754E5E2AAEB58D3F87",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "DisplayColor_59_4C9C54CD4E8E89F23F3B2A87FE549BE5",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "LinearColor",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ContextTag_62_13F037D7434196D5157B0690BEB860B7",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "BuildFormattedDebugString"
+		},
+		{
+			"node_id": "K2Node_GetEnumeratorNameAsString_0",
+			"node_name": "K2Node_GetEnumeratorNameAsString_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_GetEnumeratorNameAsString",
+			"title": "Enum to String",
+			"title_single_line": "Enum to String",
+			"comment": "",
+			"guid": "21ec37b6-4351-02f8-f591-c88e894862ab",
+			"x": 224,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enumerator",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "BuildFormattedDebugString"
+		},
+		{
+			"node_id": "K2Node_GetEnumeratorNameAsString_1",
+			"node_name": "K2Node_GetEnumeratorNameAsString_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_GetEnumeratorNameAsString",
+			"title": "Enum to String",
+			"title_single_line": "Enum to String",
+			"comment": "",
+			"guid": "62ebf315-4409-f966-02bb-938ec1c196a4",
+			"x": 224,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enumerator",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "(INVALID)",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "BuildFormattedDebugString"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Name)",
+			"title_single_line": "To String (Name)",
+			"comment": "",
+			"guid": "9f5e62a8-47e4-9125-9386-8fb33f9c2a8f",
+			"x": 320,
+			"y": 336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetStringLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "BuildFormattedDebugString"
+		},
+		{
+			"node_id": "K2Node_FormatText_0",
+			"node_name": "K2Node_FormatText_0",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "5a7ca390-42ea-c414-d9eb-27805636c6fd",
+			"x": 640,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Sender",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "BuildFormattedDebugString"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "926e1636-46c5-e06f-8df5-61b7af163e94",
+			"x": 256,
+			"y": 384,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "BuildFormattedDebugString"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Text)",
+			"title_single_line": "To String (Text)",
+			"comment": "",
+			"guid": "26524bf3-4fca-72f2-809f-adadf97799e5",
+			"x": 1152,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetTextLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InText",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "BuildFormattedDebugString"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "BuildFormattedDebugString",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "BuildFormattedDebugString",
+			"from_pin": "InMessage",
+			"to_node_id": "K2Node_BreakStruct_0",
+			"to_node_title": "Break S Debug Message",
+			"to_pin": "S_DebugMessage"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Debug Message",
+			"from_pin": "Category_2_A340302247DDA519709B3DBFE15E9CCA",
+			"to_node_id": "K2Node_GetEnumeratorNameAsString_1",
+			"to_node_title": "Enum to String",
+			"to_pin": "Enumerator"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Debug Message",
+			"from_pin": "Severity_5_C410C7504866A4690A7A179EB622AC84",
+			"to_node_id": "K2Node_GetEnumeratorNameAsString_0",
+			"to_node_title": "Enum to String",
+			"to_pin": "Enumerator"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Debug Message",
+			"from_pin": "SenderName_8_409C77FC434B0DF93DA802B82913AD28",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "To String (Name)",
+			"to_pin": "InName"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Debug Message",
+			"from_pin": "Message_12_1757C6CC4C18E39C4E901E9001C80695",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_GetEnumeratorNameAsString_0",
+			"from_node_title": "Enum to String",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "Severity"
+		},
+		{
+			"from_node_id": "K2Node_GetEnumeratorNameAsString_1",
+			"from_node_title": "Enum to String",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "Category"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "To String (Name)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "Sender"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_0",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "To String (Text)",
+			"to_pin": "InText"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "To String (Text)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "OutString"
+		}
+	],
+	"problems": []
+}
