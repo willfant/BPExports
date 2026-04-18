@@ -21,6 +21,7 @@ Auto-generated function summary.
 ## Reads
 - LocOutMessage
 - DebugOnceKeys
+- EffectiveMessageKey
 - DebugThrottleMap
 - NowSeconds
 - FoundThrottleState
@@ -28,10 +29,14 @@ Auto-generated function summary.
 ## Writes
 - LocOutMessage
 - NowSeconds
+- EffectiveMessageKey
 - FoundThrottleState
 
 ## Calls
 - Get Game Time in Seconds
+- To String (Name)
+- To String (Text)
+- String To Name
 - Contains Item
 - Add
 - Find
@@ -44,5 +49,5 @@ Auto-generated function summary.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

@@ -3,7 +3,7 @@
 	"graph_type": "Function",
 	"entry_node_id": "K2Node_FunctionEntry_0",
 	"has_latent_nodes": false,
-	"has_error_nodes": true,
+	"has_error_nodes": false,
 	"has_warning_nodes": false,
 	"locals": [],
 	"returns": [
@@ -24,6 +24,7 @@
 		"reads_variables": [
 			"LocOutMessage",
 			"DebugOnceKeys",
+			"EffectiveMessageKey",
 			"DebugThrottleMap",
 			"NowSeconds",
 			"FoundThrottleState"
@@ -31,10 +32,14 @@
 		"writes_variables": [
 			"LocOutMessage",
 			"NowSeconds",
+			"EffectiveMessageKey",
 			"FoundThrottleState"
 		],
 		"calls": [
 			"Get Game Time in Seconds",
+			"To String (Name)",
+			"To String (Text)",
+			"String To Name",
 			"Contains Item",
 			"Add",
 			"Find"
@@ -92,16 +97,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_FunctionResult_3",
-			"node_name": "K2Node_FunctionResult_3",
+			"node_id": "K2Node_FunctionResult_5",
+			"node_name": "K2Node_FunctionResult_5",
 			"node_kind": "Return",
 			"ue_class": "K2Node_FunctionResult",
 			"title": "Return Node",
 			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "bf3dae4b-4e2a-0ed8-b88e-6e8a992988f3",
-			"x": 2208,
-			"y": -368,
+			"guid": "fe6223c7-4664-0a6e-94bb-53a3405ef055",
+			"x": 3408,
+			"y": -576,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -136,15 +141,15 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableSet_4",
-			"node_name": "K2Node_VariableSet_4",
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
 			"node_kind": "VariableSet",
 			"ue_class": "K2Node_VariableSet",
 			"title": "Set LocOutMessage",
 			"title_single_line": "Set LocOutMessage",
 			"comment": "",
-			"guid": "95ba044c-4ab4-a0e1-1345-3cb4be2e2aa7",
-			"x": 320,
+			"guid": "abf60fbe-4f20-9dfe-ae47-57a1fd9e2ba2",
+			"x": 304,
 			"y": 16,
 			"has_error": false,
 			"has_warning": false,
@@ -189,15 +194,15 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
+			"node_id": "K2Node_CallFunction_7",
+			"node_name": "K2Node_CallFunction_7",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Get Game Time in Seconds",
 			"title_single_line": "Get Game Time in Seconds",
 			"comment": "",
-			"guid": "7d580a3d-40b6-9e51-63c6-ccb4ca618c6d",
-			"x": 416,
+			"guid": "ab4abf2d-4b58-6e81-170f-85b3c1ad7172",
+			"x": 384,
 			"y": 128,
 			"has_error": false,
 			"has_warning": false,
@@ -233,15 +238,15 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableSet_5",
-			"node_name": "K2Node_VariableSet_5",
+			"node_id": "K2Node_VariableSet_2",
+			"node_name": "K2Node_VariableSet_2",
 			"node_kind": "VariableSet",
 			"ue_class": "K2Node_VariableSet",
 			"title": "Set NowSeconds",
 			"title_single_line": "Set NowSeconds",
 			"comment": "",
-			"guid": "9c39de88-413e-88f5-47c7-72af17a75866",
-			"x": 704,
+			"guid": "46e5d960-4f88-261f-b80b-fe8c09b11cf3",
+			"x": 672,
 			"y": 16,
 			"has_error": false,
 			"has_warning": false,
@@ -286,16 +291,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_9",
-			"node_name": "K2Node_VariableGet_9",
+			"node_id": "K2Node_VariableGet_21",
+			"node_name": "K2Node_VariableGet_21",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get LocOutMessage",
 			"title_single_line": "Get LocOutMessage",
 			"comment": "",
-			"guid": "25d6f9aa-4e2d-987d-158e-b8a245e61226",
-			"x": 768,
-			"y": 208,
+			"guid": "b5b76a9e-4fa5-5483-fdd7-1893d153dd24",
+			"x": -224,
+			"y": -272,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -312,16 +317,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_BreakStruct_3",
-			"node_name": "K2Node_BreakStruct_3",
+			"node_id": "K2Node_BreakStruct_15",
+			"node_name": "K2Node_BreakStruct_15",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_BreakStruct",
 			"title": "Break S Debug Message",
 			"title_single_line": "Break S Debug Message",
 			"comment": "",
-			"guid": "65cc2737-42d7-9fdb-ba0c-03b89b87ce9d",
-			"x": 976,
-			"y": 128,
+			"guid": "bc77cc05-4e91-0d7a-8f94-ad87d450c4b1",
+			"x": 16,
+			"y": -448,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -341,7 +346,7 @@
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "Severity_5_C410C7504866A4690A7A179EB622AC84",
@@ -359,7 +364,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "Message_12_1757C6CC4C18E39C4E901E9001C80695",
@@ -368,7 +373,7 @@
 					"subcategory": "None",
 					"resolved_type": "String",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "TimeSeconds_15_C4686A914696C1B5AC040D99FB27FA9D",
@@ -545,15 +550,68 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_2",
-			"node_name": "K2Node_IfThenElse_2",
+			"node_id": "K2Node_PromotableOperator_5",
+			"node_name": "K2Node_PromotableOperator_5",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "Not Equal (Name)",
+			"title_single_line": "Not Equal (Name)",
+			"comment": "",
+			"guid": "10778e35-46eb-5e31-60c2-9090286a6825",
+			"x": 352,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "5dd7a365-4a0a-7bc4-f660-fca94d49b8d1",
-			"x": 1344,
+			"guid": "f15acc1f-4abc-7362-3110-8386c48dc604",
+			"x": 1408,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -598,16 +656,439 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_8",
-			"node_name": "K2Node_VariableGet_8",
+			"node_id": "K2Node_VariableSet_3",
+			"node_name": "K2Node_VariableSet_3",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set EffectiveMessageKey",
+			"title_single_line": "Set EffectiveMessageKey",
+			"comment": "",
+			"guid": "e372dac1-4e89-425c-c53d-51bf15a96c9d",
+			"x": 1680,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "EffectiveMessageKey",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_Knot_13",
+			"node_name": "K2Node_Knot_13",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "65c89448-4191-6d32-31c6-a9955f8ee0e0",
+			"x": 1024,
+			"y": -96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_GetEnumeratorNameAsString_0",
+			"node_name": "K2Node_GetEnumeratorNameAsString_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_GetEnumeratorNameAsString",
+			"title": "Enum to String",
+			"title_single_line": "Enum to String",
+			"comment": "",
+			"guid": "33e44251-459a-4e3a-07f5-9e80f355a310",
+			"x": 672,
+			"y": -256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enumerator",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Name)",
+			"title_single_line": "To String (Name)",
+			"comment": "",
+			"guid": "b297811b-4d72-e8b7-f0c7-7cb3fc76e959",
+			"x": 688,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetStringLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_FormatText_0",
+			"node_name": "K2Node_FormatText_0",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "5b147011-4db8-cd4c-44e0-d0a43a9f9d45",
+			"x": 1104,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Sender",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_VariableSet_7",
+			"node_name": "K2Node_VariableSet_7",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set EffectiveMessageKey",
+			"title_single_line": "Set EffectiveMessageKey",
+			"comment": "",
+			"guid": "82fda98b-48ca-254c-2727-fe88b8debc5f",
+			"x": 1712,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "EffectiveMessageKey",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Text)",
+			"title_single_line": "To String (Text)",
+			"comment": "",
+			"guid": "31238f9f-425d-1053-bb90-fb86c80d43eb",
+			"x": 1520,
+			"y": 256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetTextLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InText",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "String To Name",
+			"title_single_line": "String To Name",
+			"comment": "",
+			"guid": "e7e874fe-40e3-63bc-83d3-d38926b3e28a",
+			"x": 1520,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetStringLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InString",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "fa3c0ab6-42ab-7706-af4f-bcba462bd196",
+			"x": 2144,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_VariableGet_23",
+			"node_name": "K2Node_VariableGet_23",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get DebugOnceKeys",
 			"title_single_line": "Get DebugOnceKeys",
 			"comment": "",
-			"guid": "346cde6d-481f-f5ea-536a-ee9d1e36cdc8",
-			"x": 1216,
-			"y": -160,
+			"guid": "2a3f88af-4355-998f-1350-3f9d5042430f",
+			"x": 2144,
+			"y": -272,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -633,16 +1114,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_CallFunction_2",
-			"node_name": "K2Node_CallFunction_2",
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Contains Item",
 			"title_single_line": "Contains Item",
 			"comment": "",
-			"guid": "6bb6f4d0-4128-1d59-e929-27a8758289e4",
-			"x": 1472,
-			"y": -160,
+			"guid": "be356ed0-4609-fa96-2b95-5e8ff57da13d",
+			"x": 2448,
+			"y": -224,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -686,51 +1167,42 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_Knot_0",
-			"node_name": "K2Node_Knot_0",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
+			"node_id": "K2Node_VariableGet_27",
+			"node_name": "K2Node_VariableGet_27",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get EffectiveMessageKey",
+			"title_single_line": "Get EffectiveMessageKey",
 			"comment": "",
-			"guid": "28da812b-40a8-9543-1eac-afa97cb170e9",
-			"x": 1296,
-			"y": -112,
+			"guid": "93f4d984-47d6-7511-08aa-f2ae61ed0365",
+			"x": 2256,
+			"y": -160,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
+					"pin_name": "EffectiveMessageKey",
 					"direction": "Output",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
-					"default_value": "",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_3",
-			"node_name": "K2Node_IfThenElse_3",
+			"node_id": "K2Node_IfThenElse_7",
+			"node_name": "K2Node_IfThenElse_7",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "9cf79c51-42c3-88a6-26af-49ba5ea16eb2",
-			"x": 1875,
-			"y": -172,
+			"guid": "971c2610-4808-e8ce-9cd1-3e8c40687950",
+			"x": 2752,
+			"y": -208,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -774,16 +1246,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_18",
-			"node_name": "K2Node_VariableGet_18",
+			"node_id": "K2Node_VariableGet_32",
+			"node_name": "K2Node_VariableGet_32",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get LocOutMessage",
 			"title_single_line": "Get LocOutMessage",
 			"comment": "",
-			"guid": "bca58b60-45a0-3faa-2cee-b49db85571d7",
-			"x": 2208,
-			"y": -240,
+			"guid": "8fe6da6e-468f-414f-1ff9-58a7d644067e",
+			"x": 3424,
+			"y": -432,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -800,16 +1272,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_6",
-			"node_name": "K2Node_VariableGet_6",
+			"node_id": "K2Node_VariableGet_29",
+			"node_name": "K2Node_VariableGet_29",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get DebugOnceKeys",
 			"title_single_line": "Get DebugOnceKeys",
 			"comment": "",
-			"guid": "fa84fe18-4980-4b25-c8c0-c49c90487749",
-			"x": 2000,
-			"y": 112,
+			"guid": "296d7cdf-4ea4-a73c-0ec7-46a551d9cc31",
+			"x": 3072,
+			"y": 176,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -835,16 +1307,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
+			"node_id": "K2Node_CallFunction_12",
+			"node_name": "K2Node_CallFunction_12",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Add",
 			"title_single_line": "Add",
 			"comment": "",
-			"guid": "9806b881-4e78-1fc6-6fc8-99b5a25dcaaf",
-			"x": 2288,
-			"y": 96,
+			"guid": "fbd05149-4bdc-5ed3-402f-7aa58c026621",
+			"x": 3072,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -897,51 +1369,42 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_Knot_1",
-			"node_name": "K2Node_Knot_1",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
+			"node_id": "K2Node_VariableGet_30",
+			"node_name": "K2Node_VariableGet_30",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get EffectiveMessageKey",
+			"title_single_line": "Get EffectiveMessageKey",
 			"comment": "",
-			"guid": "c214721a-419f-e887-b829-b18256274039",
-			"x": 1392,
-			"y": 176,
+			"guid": "6a487a63-4dc6-fc0c-9552-b5a95dcd6892",
+			"x": 3040,
+			"y": 128,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
+					"pin_name": "EffectiveMessageKey",
 					"direction": "Output",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
-					"default_value": "",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_12",
-			"node_name": "K2Node_VariableGet_12",
+			"node_id": "K2Node_VariableGet_31",
+			"node_name": "K2Node_VariableGet_31",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get LocOutMessage",
 			"title_single_line": "Get LocOutMessage",
 			"comment": "",
-			"guid": "c29c43dd-45f8-2330-a453-46833cdf7051",
-			"x": 1360,
-			"y": 544,
+			"guid": "0e35433a-4b7e-07b7-33db-3e9b808d33d1",
+			"x": 2720,
+			"y": 480,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -958,16 +1421,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_BreakStruct_2",
-			"node_name": "K2Node_BreakStruct_2",
+			"node_id": "K2Node_BreakStruct_16",
+			"node_name": "K2Node_BreakStruct_16",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_BreakStruct",
 			"title": "Break S Debug Message",
 			"title_single_line": "Break S Debug Message",
 			"comment": "",
-			"guid": "15acf218-4b86-7516-aab7-3b9622356feb",
-			"x": 1568,
-			"y": 464,
+			"guid": "71829ffd-470b-d780-b10a-34a2d9f65dfb",
+			"x": 2928,
+			"y": 480,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1191,16 +1654,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_PromotableOperator_0",
-			"node_name": "K2Node_PromotableOperator_0",
+			"node_id": "K2Node_PromotableOperator_6",
+			"node_name": "K2Node_PromotableOperator_6",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_PromotableOperator",
 			"title": "float > float",
 			"title_single_line": "float > float",
 			"comment": "",
-			"guid": "cf75e752-462c-95da-408b-6d83b1f7d255",
-			"x": 2000,
-			"y": 528,
+			"guid": "8333a639-4aa5-b806-1aa9-d3868e4cfb31",
+			"x": 3296,
+			"y": 448,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1244,15 +1707,15 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_4",
-			"node_name": "K2Node_IfThenElse_4",
+			"node_id": "K2Node_IfThenElse_8",
+			"node_name": "K2Node_IfThenElse_8",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "6f54d550-42d7-c894-3f48-808e316278ef",
-			"x": 2656,
+			"guid": "07971b10-4b0c-c733-0c55-db94df6f17e7",
+			"x": 3536,
 			"y": 320,
 			"has_error": false,
 			"has_warning": false,
@@ -1297,51 +1760,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_Knot_2",
-			"node_name": "K2Node_Knot_2",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "13049b1e-4fbb-620f-36f7-00b9917e0278",
-			"x": 1728,
-			"y": 352,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_FunctionResult_2",
-			"node_name": "K2Node_FunctionResult_2",
+			"node_id": "K2Node_FunctionResult_6",
+			"node_name": "K2Node_FunctionResult_6",
 			"node_kind": "Return",
 			"ue_class": "K2Node_FunctionResult",
 			"title": "Return Node",
 			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "a60d043c-4bbb-f30b-b365-e883def9b3d1",
-			"x": 2992,
-			"y": 480,
+			"guid": "8f443d57-4b05-0e6c-24d6-0f99d4054014",
+			"x": 3856,
+			"y": 496,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1376,16 +1804,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_15",
-			"node_name": "K2Node_VariableGet_15",
+			"node_id": "K2Node_VariableGet_38",
+			"node_name": "K2Node_VariableGet_38",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get LocOutMessage",
 			"title_single_line": "Get LocOutMessage",
 			"comment": "",
-			"guid": "b9c67825-44cf-4fbe-dbe9-4fa5954083d6",
-			"x": 2992,
-			"y": 608,
+			"guid": "18c6a537-474e-7564-8ff1-19b94d804f1a",
+			"x": 3872,
+			"y": 640,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1402,16 +1830,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_14",
-			"node_name": "K2Node_VariableGet_14",
+			"node_id": "K2Node_VariableGet_33",
+			"node_name": "K2Node_VariableGet_33",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get DebugThrottleMap",
 			"title_single_line": "Get DebugThrottleMap",
 			"comment": "",
-			"guid": "0e878499-4190-7e99-bd7d-e5bebeffe496",
-			"x": 2768,
-			"y": -144,
+			"guid": "591fba63-4b93-945f-2838-43bd3ea3c8bf",
+			"x": 3456,
+			"y": 80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1437,16 +1865,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_CallFunction_4",
-			"node_name": "K2Node_CallFunction_4",
+			"node_id": "K2Node_CallFunction_13",
+			"node_name": "K2Node_CallFunction_13",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Find",
 			"title_single_line": "Find",
 			"comment": "",
-			"guid": "a184d212-4832-87dd-c6d6-75bd68988960",
-			"x": 3184,
-			"y": -144,
+			"guid": "3ea3c17f-4476-4d8e-3351-46a7385bd77a",
+			"x": 3872,
+			"y": 80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1499,275 +1927,42 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_BreakStruct_4",
-			"node_name": "K2Node_BreakStruct_4",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_BreakStruct",
-			"title": "Break S Debug Message",
-			"title_single_line": "Break S Debug Message",
-			"comment": "",
-			"guid": "843e4de2-464b-3275-c87a-399df091aa7c",
-			"x": 2800,
-			"y": 32,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "S_DebugMessage",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugMessage",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category_2_A340302247DDA519709B3DBFE15E9CCA",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity_5_C410C7504866A4690A7A179EB622AC84",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName_8_409C77FC434B0DF93DA802B82913AD28",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message_12_1757C6CC4C18E39C4E901E9001C80695",
-					"direction": "Output",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "TimeSeconds_15_C4686A914696C1B5AC040D99FB27FA9D",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Duration_17_CEA1219444450DB3A9A9C5BB3F5155CF",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen_20_B1C7589D47DCF7C60324DE82C441D256",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToLog_22_68A821C8422FC28282D7F9965FA0622B",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bUseLocation_24_DAFFB9BF460B900236E4688D67920C23",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldLocation_27_6C1D485349BB5BA3BB2CF599F661C410",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "Vector",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Verbosity_30_C74D04E2483037F610798E85E90E6C7E",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bShowInOverlay_33_7F3F03C4421F334400E3F18CCD55B9D5",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "MessageKey_36_A76E058D4A4EF1507BD7E4B04D11163F",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "bOnceOnly_39_FFD5C08546C02BDD2A0D5784C0CE6230",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ThrottleSeconds_42_5D03B0814D5911EC3241AF9804139C19",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "RepeatCount_45_27AD43114322C7397AAE71994FC8A0CD",
-					"direction": "Output",
-					"category": "int",
-					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "LevelName_48_F3D921154F5E5FF6F6C44489E7D8B78F",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextName_50_3D263B4845AB1E08031694BD44312402",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ContextGhostId_52_538AE9EC439CC596FDA56A8F58AD34AE",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ContextPuzzleId_54_F68E07D54497514E7E2C29B9E55D59C7",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ContextStepId_56_2996C41242769B754E5E2AAEB58D3F87",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "DisplayColor_59_4C9C54CD4E8E89F23F3B2A87FE549BE5",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "LinearColor",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ContextTag_62_13F037D7434196D5157B0690BEB860B7",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_VariableGet_5",
-			"node_name": "K2Node_VariableGet_5",
+			"node_id": "K2Node_VariableGet_34",
+			"node_name": "K2Node_VariableGet_34",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
-			"title": "Get LocOutMessage",
-			"title_single_line": "Get LocOutMessage",
+			"title": "Get EffectiveMessageKey",
+			"title_single_line": "Get EffectiveMessageKey",
 			"comment": "",
-			"guid": "e16967f0-41f8-01c0-5c4e-85981df01867",
-			"x": 2544,
-			"y": 80,
+			"guid": "ec08b08c-4e7e-201a-a048-be8027dd3316",
+			"x": 3680,
+			"y": 144,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "LocOutMessage",
+					"pin_name": "EffectiveMessageKey",
 					"direction": "Output",
-					"category": "struct",
+					"category": "name",
 					"subcategory": "None",
-					"resolved_type": "S_DebugMessage",
-					"default_value": "",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_5",
-			"node_name": "K2Node_IfThenElse_5",
+			"node_id": "K2Node_IfThenElse_9",
+			"node_name": "K2Node_IfThenElse_9",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "9613d1d1-46d4-8b4b-be6e-42afc64e29a8",
-			"x": 3552,
-			"y": 64,
+			"guid": "e8275166-4732-9795-e625-41b428d5e441",
+			"x": 4322,
+			"y": 206,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1811,16 +2006,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_MakeStruct_0",
-			"node_name": "K2Node_MakeStruct_0",
+			"node_id": "K2Node_MakeStruct_2",
+			"node_name": "K2Node_MakeStruct_2",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_MakeStruct",
 			"title": "Make S Debug Throttle State",
 			"title_single_line": "Make S Debug Throttle State",
 			"comment": "",
-			"guid": "8ae8b57c-4dd7-9dbb-0af6-86ac38386330",
-			"x": 3824,
-			"y": 528,
+			"guid": "18e92701-4940-64c5-614c-298dd4ba25f3",
+			"x": 4528,
+			"y": 512,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1864,15 +2059,41 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_13",
-			"node_name": "K2Node_VariableGet_13",
+			"node_id": "K2Node_VariableGet_35",
+			"node_name": "K2Node_VariableGet_35",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get EffectiveMessageKey",
+			"title_single_line": "Get EffectiveMessageKey",
+			"comment": "",
+			"guid": "ab0a936b-4dac-ce7b-43b2-4584a6a5d2e6",
+			"x": 4336,
+			"y": 512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "EffectiveMessageKey",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_VariableGet_36",
+			"node_name": "K2Node_VariableGet_36",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get NowSeconds",
 			"title_single_line": "Get NowSeconds",
 			"comment": "",
-			"guid": "baffd5a0-4664-c6dc-69ae-639940645bf4",
-			"x": 3600,
+			"guid": "bd413bd4-4540-e726-c19c-8dadd2d3be0e",
+			"x": 4336,
 			"y": 560,
 			"has_error": false,
 			"has_warning": false,
@@ -1890,192 +2111,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_Knot_3",
-			"node_name": "K2Node_Knot_3",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "0e38b4a7-4151-721d-32a6-9ca79620b909",
-			"x": 3456,
-			"y": 448,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 2
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_VariableGet_11",
-			"node_name": "K2Node_VariableGet_11",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get DebugThrottleMap",
-			"title_single_line": "Get DebugThrottleMap",
-			"comment": "",
-			"guid": "afa5668c-473f-5063-13ee-f18447a3d8e8",
-			"x": 4016,
-			"y": 272,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "DebugThrottleMap",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "GI_Echoes_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_CallFunction_5",
-			"node_name": "K2Node_CallFunction_5",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Add",
-			"title_single_line": "Add",
-			"comment": "",
-			"guid": "68e16c3d-4bd6-374b-69be-d6ab17499441",
-			"x": 4352,
-			"y": 240,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BlueprintMapLibrary",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "TargetMap",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Key",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Value",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugThrottleState",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_Knot_4",
-			"node_name": "K2Node_Knot_4",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "1dfb9c07-4835-b16d-f997-4db4b657492c",
-			"x": 3696,
-			"y": 320,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_FunctionResult_0",
-			"node_name": "K2Node_FunctionResult_0",
+			"node_id": "K2Node_FunctionResult_7",
+			"node_name": "K2Node_FunctionResult_7",
 			"node_kind": "Return",
 			"ue_class": "K2Node_FunctionResult",
 			"title": "Return Node",
 			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "316affb9-4711-8dab-fb7b-ffa106473ec3",
-			"x": 4736,
-			"y": 208,
+			"guid": "d9d3bfe3-44fa-f946-80c1-4b8586201ef3",
+			"x": 5312,
+			"y": 480,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2110,16 +2155,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_7",
-			"node_name": "K2Node_VariableGet_7",
+			"node_id": "K2Node_VariableGet_45",
+			"node_name": "K2Node_VariableGet_45",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get LocOutMessage",
 			"title_single_line": "Get LocOutMessage",
 			"comment": "",
-			"guid": "71b40a39-4066-18e3-d8ca-13859ae49305",
-			"x": 4736,
-			"y": 336,
+			"guid": "867c3f17-45eb-8a1a-0c25-b0aa7032cb25",
+			"x": 5328,
+			"y": 624,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2136,16 +2181,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableSet_6",
-			"node_name": "K2Node_VariableSet_6",
+			"node_id": "K2Node_VariableSet_8",
+			"node_name": "K2Node_VariableSet_8",
 			"node_kind": "VariableSet",
 			"ue_class": "K2Node_VariableSet",
 			"title": "Set FoundThrottleState",
 			"title_single_line": "Set FoundThrottleState",
 			"comment": "",
-			"guid": "f40558bc-4ee3-4f10-5e91-3483f1ff9dbb",
-			"x": 3872,
-			"y": -176,
+			"guid": "1dc9fa5c-4424-f457-682c-cfa04db993e6",
+			"x": 4688,
+			"y": 48,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2189,16 +2234,95 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_16",
-			"node_name": "K2Node_VariableGet_16",
+			"node_id": "K2Node_VariableGet_39",
+			"node_name": "K2Node_VariableGet_39",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get FoundThrottleState",
+			"title_single_line": "Get FoundThrottleState",
+			"comment": "",
+			"guid": "ccb90cf2-4a04-28fd-825b-28b55ee42b69",
+			"x": 4768,
+			"y": -80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "FoundThrottleState",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugThrottleState",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_BreakStruct_17",
+			"node_name": "K2Node_BreakStruct_17",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_BreakStruct",
+			"title": "Break S Debug Throttle State",
+			"title_single_line": "Break S Debug Throttle State",
+			"comment": "",
+			"guid": "3f7f5e51-42ed-2e18-245f-efa1bc528fd2",
+			"x": 5152,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "S_DebugThrottleState",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugThrottleState",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "MessageKey_2_33B734E64F11D9481C57B991C4A10F72",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "SuppressedCount_8_08D0C9AE4B226DE09307D385225E7087",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_VariableGet_40",
+			"node_name": "K2Node_VariableGet_40",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get NowSeconds",
 			"title_single_line": "Get NowSeconds",
 			"comment": "",
-			"guid": "a83554ca-4665-9ef5-855f-83aea2ded238",
-			"x": 4624,
-			"y": -160,
+			"guid": "a762c3c4-4afe-a81c-4cbd-3f8b02ef6c8b",
+			"x": 5344,
+			"y": -192,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2215,15 +2339,15 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_PromotableOperator_1",
-			"node_name": "K2Node_PromotableOperator_1",
+			"node_id": "K2Node_PromotableOperator_7",
+			"node_name": "K2Node_PromotableOperator_7",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_PromotableOperator",
 			"title": "float - float",
 			"title_single_line": "float - float",
 			"comment": "",
-			"guid": "8fc190a3-4a75-b234-fd4f-8a8ced360a8e",
-			"x": 4784,
+			"guid": "7803fb94-435d-83ca-fa60-6fa78c64c44b",
+			"x": 5648,
 			"y": -96,
 			"has_error": false,
 			"has_warning": false,
@@ -2259,16 +2383,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_PromotableOperator_2",
-			"node_name": "K2Node_PromotableOperator_2",
+			"node_id": "K2Node_PromotableOperator_8",
+			"node_name": "K2Node_PromotableOperator_8",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_PromotableOperator",
 			"title": "float < float",
 			"title_single_line": "float < float",
 			"comment": "",
-			"guid": "632e4746-4c1c-3b03-d235-e0be76838fd7",
-			"x": 5104,
-			"y": -32,
+			"guid": "90c02f23-4e21-fe22-5269-b3a56ebcda88",
+			"x": 5936,
+			"y": -16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2312,17 +2436,43 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_BreakStruct_6",
-			"node_name": "K2Node_BreakStruct_6",
+			"node_id": "K2Node_VariableGet_41",
+			"node_name": "K2Node_VariableGet_41",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LocOutMessage",
+			"title_single_line": "Get LocOutMessage",
+			"comment": "",
+			"guid": "dd1ced9f-4ef9-de35-2a9d-e7b73c9d6507",
+			"x": 5232,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LocOutMessage",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_BreakStruct_18",
+			"node_name": "K2Node_BreakStruct_18",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_BreakStruct",
 			"title": "Break S Debug Message",
 			"title_single_line": "Break S Debug Message",
 			"comment": "",
-			"guid": "5353d57b-434e-92de-670e-91bf595063e1",
-			"x": 4672,
-			"y": 16,
-			"has_error": true,
+			"guid": "3023bae9-4771-9536-97b1-53abdb573cfe",
+			"x": 5504,
+			"y": 112,
+			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
@@ -2377,7 +2527,7 @@
 					"subcategory": "double",
 					"resolved_type": "Double",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "Duration_17_CEA1219444450DB3A9A9C5BB3F5155CF",
@@ -2467,7 +2617,7 @@
 					"subcategory": "double",
 					"resolved_type": "Double",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "RepeatCount_45_27AD43114322C7397AAE71994FC8A0CD",
@@ -2545,16 +2695,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_6",
-			"node_name": "K2Node_IfThenElse_6",
+			"node_id": "K2Node_IfThenElse_10",
+			"node_name": "K2Node_IfThenElse_10",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "78d7990a-40ac-a258-6f08-9fbb38445335",
-			"x": 5376,
-			"y": -272,
+			"guid": "d1edb3b0-4e61-b742-05af-a8abb2c4634a",
+			"x": 6288,
+			"y": 32,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2598,34 +2748,43 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_Knot_5",
-			"node_name": "K2Node_Knot_5",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
+			"node_id": "K2Node_PromotableOperator_9",
+			"node_name": "K2Node_PromotableOperator_9",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "int + int",
+			"title_single_line": "int + int",
 			"comment": "",
-			"guid": "2d394eff-4ff0-9cec-ad26-679118cb3751",
-			"x": 4144,
-			"y": -240,
+			"guid": "63b910a5-41ba-4adf-2019-c2b6f0fdc73b",
+			"x": 6448,
+			"y": -160,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "InputPin",
+					"pin_name": "A",
 					"direction": "Input",
-					"category": "exec",
+					"category": "int",
 					"subcategory": "None",
-					"resolved_type": "exec",
+					"resolved_type": "Integer",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "exec",
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "int",
 					"subcategory": "None",
-					"resolved_type": "exec",
+					"resolved_type": "Integer",
+					"default_value": "1",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -2633,16 +2792,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_MakeStruct_1",
-			"node_name": "K2Node_MakeStruct_1",
+			"node_id": "K2Node_MakeStruct_4",
+			"node_name": "K2Node_MakeStruct_4",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_MakeStruct",
 			"title": "Make S Debug Throttle State",
 			"title_single_line": "Make S Debug Throttle State",
 			"comment": "",
-			"guid": "2e1ad33f-4e19-3f6f-c572-aa8fb9f27b5d",
-			"x": 5536,
-			"y": -432,
+			"guid": "b7d6104a-4a41-1e27-6536-ffa00abeaf90",
+			"x": 6688,
+			"y": -304,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2686,95 +2845,42 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_Knot_6",
-			"node_name": "K2Node_Knot_6",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
+			"node_id": "K2Node_VariableGet_42",
+			"node_name": "K2Node_VariableGet_42",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get EffectiveMessageKey",
+			"title_single_line": "Get EffectiveMessageKey",
 			"comment": "",
-			"guid": "b787a450-4e6d-e7dd-7ef0-fba158646553",
-			"x": 4576,
-			"y": -64,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_PromotableOperator_3",
-			"node_name": "K2Node_PromotableOperator_3",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_PromotableOperator",
-			"title": "int + int",
-			"title_single_line": "int + int",
-			"comment": "",
-			"guid": "ac538576-4745-1071-a202-e58fb1eb1cc0",
-			"x": 5104,
+			"guid": "d9359c85-47c1-eb75-cc28-02b840c7aa29",
+			"x": 6688,
 			"y": -352,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "A",
-					"direction": "Input",
-					"category": "int",
-					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "B",
-					"direction": "Input",
-					"category": "int",
-					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "1",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ReturnValue",
+					"pin_name": "EffectiveMessageKey",
 					"direction": "Output",
-					"category": "int",
+					"category": "name",
 					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_1",
-			"node_name": "K2Node_VariableGet_1",
+			"node_id": "K2Node_VariableGet_43",
+			"node_name": "K2Node_VariableGet_43",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get DebugThrottleMap",
 			"title_single_line": "Get DebugThrottleMap",
 			"comment": "",
-			"guid": "c3d59f7d-4ca6-cd7c-51c2-20919d2290d5",
-			"x": 5888,
-			"y": -544,
+			"guid": "8e1e8ad3-4a4d-fd8b-9a06-f08386aff85b",
+			"x": 6912,
+			"y": -112,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2800,16 +2906,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_CallFunction_0",
-			"node_name": "K2Node_CallFunction_0",
+			"node_id": "K2Node_CallFunction_15",
+			"node_name": "K2Node_CallFunction_15",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Add",
 			"title_single_line": "Add",
 			"comment": "",
-			"guid": "e0b6bc8a-41c7-062e-7a89-29b6a641d090",
-			"x": 6160,
-			"y": -528,
+			"guid": "a32a86b8-46ea-2f10-4e7b-219ec2ad547d",
+			"x": 7232,
+			"y": -112,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2871,284 +2977,42 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_Knot_7",
-			"node_name": "K2Node_Knot_7",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
+			"node_id": "K2Node_VariableGet_44",
+			"node_name": "K2Node_VariableGet_44",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get EffectiveMessageKey",
+			"title_single_line": "Get EffectiveMessageKey",
 			"comment": "",
-			"guid": "30a42b36-4d11-e3ab-a999-eb8b059188d1",
-			"x": 5616,
-			"y": -528,
+			"guid": "f6ac5b78-4446-e391-7449-60a6bacae7a4",
+			"x": 7200,
+			"y": -176,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
+					"pin_name": "EffectiveMessageKey",
 					"direction": "Output",
-					"category": "exec",
+					"category": "name",
 					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_BreakStruct_0",
-			"node_name": "K2Node_BreakStruct_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_BreakStruct",
-			"title": "Break S Debug Message",
-			"title_single_line": "Break S Debug Message",
-			"comment": "",
-			"guid": "b6eae502-4159-cbde-5317-bbb7a69de27c",
-			"x": 5808,
-			"y": -704,
-			"has_error": true,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "S_DebugMessage",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugMessage",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category_2_A340302247DDA519709B3DBFE15E9CCA",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity_5_C410C7504866A4690A7A179EB622AC84",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName_8_409C77FC434B0DF93DA802B82913AD28",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message_12_1757C6CC4C18E39C4E901E9001C80695",
-					"direction": "Output",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "TimeSeconds_15_C4686A914696C1B5AC040D99FB27FA9D",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Duration_17_CEA1219444450DB3A9A9C5BB3F5155CF",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen_20_B1C7589D47DCF7C60324DE82C441D256",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToLog_22_68A821C8422FC28282D7F9965FA0622B",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bUseLocation_24_DAFFB9BF460B900236E4688D67920C23",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldLocation_27_6C1D485349BB5BA3BB2CF599F661C410",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "Vector",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Verbosity_30_C74D04E2483037F610798E85E90E6C7E",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bShowInOverlay_33_7F3F03C4421F334400E3F18CCD55B9D5",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "MessageKey_36_A76E058D4A4EF1507BD7E4B04D11163F",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bOnceOnly_39_FFD5C08546C02BDD2A0D5784C0CE6230",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ThrottleSeconds_42_5D03B0814D5911EC3241AF9804139C19",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "RepeatCount_45_27AD43114322C7397AAE71994FC8A0CD",
-					"direction": "Output",
-					"category": "int",
-					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "LevelName_48_F3D921154F5E5FF6F6C44489E7D8B78F",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextName_50_3D263B4845AB1E08031694BD44312402",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ContextGhostId_52_538AE9EC439CC596FDA56A8F58AD34AE",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ContextPuzzleId_54_F68E07D54497514E7E2C29B9E55D59C7",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ContextStepId_56_2996C41242769B754E5E2AAEB58D3F87",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "DisplayColor_59_4C9C54CD4E8E89F23F3B2A87FE549BE5",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "LinearColor",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ContextTag_62_13F037D7434196D5157B0690BEB860B7",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_FunctionResult_4",
-			"node_name": "K2Node_FunctionResult_4",
+			"node_id": "K2Node_FunctionResult_8",
+			"node_name": "K2Node_FunctionResult_8",
 			"node_kind": "Return",
 			"ue_class": "K2Node_FunctionResult",
 			"title": "Return Node",
 			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "83c980ff-4f05-41f8-832f-08b6fc892b69",
-			"x": 6480,
-			"y": -752,
+			"guid": "46ac746a-430f-18c5-4dec-3589cb754513",
+			"x": 7568,
+			"y": -352,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -3183,16 +3047,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_22",
-			"node_name": "K2Node_VariableGet_22",
+			"node_id": "K2Node_VariableGet_53",
+			"node_name": "K2Node_VariableGet_53",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get LocOutMessage",
 			"title_single_line": "Get LocOutMessage",
 			"comment": "",
-			"guid": "dc6a65f5-4a86-418b-0b41-62af3cc2b8b4",
-			"x": 6480,
-			"y": -624,
+			"guid": "d41af3e5-452d-9efc-c333-ff8e25c787f3",
+			"x": 7584,
+			"y": -208,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -3209,17 +3073,43 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_BreakStruct_8",
-			"node_name": "K2Node_BreakStruct_8",
+			"node_id": "K2Node_VariableGet_47",
+			"node_name": "K2Node_VariableGet_47",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get FoundThrottleState",
+			"title_single_line": "Get FoundThrottleState",
+			"comment": "",
+			"guid": "3ba2a290-4128-8cf5-1cbd-1c9a4a4a5096",
+			"x": 5936,
+			"y": 368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "FoundThrottleState",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugThrottleState",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_BreakStruct_20",
+			"node_name": "K2Node_BreakStruct_20",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_BreakStruct",
 			"title": "Break S Debug Throttle State",
 			"title_single_line": "Break S Debug Throttle State",
 			"comment": "",
-			"guid": "79c744c4-45d5-9482-d3b1-4d8d9d14eff3",
-			"x": 5424,
-			"y": 112,
-			"has_error": true,
+			"guid": "94585039-458d-1452-c700-03abf115be86",
+			"x": 5872,
+			"y": 432,
+			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
@@ -3238,7 +3128,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D",
@@ -3247,7 +3137,7 @@
 					"subcategory": "double",
 					"resolved_type": "Double",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "SuppressedCount_8_08D0C9AE4B226DE09307D385225E7087",
@@ -3262,16 +3152,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_PromotableOperator_4",
-			"node_name": "K2Node_PromotableOperator_4",
+			"node_id": "K2Node_PromotableOperator_10",
+			"node_name": "K2Node_PromotableOperator_10",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_PromotableOperator",
 			"title": "int + int",
 			"title_single_line": "int + int",
 			"comment": "",
-			"guid": "208107fa-4753-500a-915a-a5924fdf6d59",
-			"x": 5808,
-			"y": 192,
+			"guid": "817c61df-45f7-bf54-da0a-49b4641bf63c",
+			"x": 6304,
+			"y": 512,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -3306,60 +3196,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_FunctionResult_1",
-			"node_name": "K2Node_FunctionResult_1",
-			"node_kind": "Return",
-			"ue_class": "K2Node_FunctionResult",
-			"title": "Return Node",
-			"title_single_line": "Return Node",
-			"comment": "",
-			"guid": "fe6223c7-4664-0a6e-94bb-53a3405ef055",
-			"x": 7664,
-			"y": -112,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bAllowed",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "OutMessage",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugMessage",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_VariableGet_19",
-			"node_name": "K2Node_VariableGet_19",
+			"node_id": "K2Node_VariableGet_48",
+			"node_name": "K2Node_VariableGet_48",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get LocOutMessage",
 			"title_single_line": "Get LocOutMessage",
 			"comment": "",
-			"guid": "8f51af6f-4b69-e2ca-ebe4-6b8c1fef7edd",
-			"x": 7664,
-			"y": 16,
+			"guid": "426c16f0-4e8b-9b6f-bd5c-04baedda9cf8",
+			"x": 6128,
+			"y": 256,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -3376,173 +3222,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_0",
-			"node_name": "K2Node_VariableGet_0",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get LocOutMessage",
-			"title_single_line": "Get LocOutMessage",
-			"comment": "",
-			"guid": "fd8576cc-49c3-3052-7533-b9917e7e80d5",
-			"x": 5616,
-			"y": -688,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "LocOutMessage",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugMessage",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_VariableGet_25",
-			"node_name": "K2Node_VariableGet_25",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get LocOutMessage",
-			"title_single_line": "Get LocOutMessage",
-			"comment": "",
-			"guid": "2fa9688f-44cd-326c-6101-9b834c6706e9",
-			"x": 4480,
-			"y": 32,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "LocOutMessage",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugMessage",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_VariableGet_26",
-			"node_name": "K2Node_VariableGet_26",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get FoundThrottleState",
-			"title_single_line": "Get FoundThrottleState",
-			"comment": "",
-			"guid": "ee3a3226-430d-a44f-ee50-4c837a20012e",
-			"x": 5232,
-			"y": 128,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "FoundThrottleState",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugThrottleState",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_MakeStruct_3",
-			"node_name": "K2Node_MakeStruct_3",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_MakeStruct",
-			"title": "Make S Debug Throttle State",
-			"title_single_line": "Make S Debug Throttle State",
-			"comment": "",
-			"guid": "176f50c8-47ef-f667-c047-03bc9f8953aa",
-			"x": 6336,
-			"y": 112,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "S_DebugThrottleState",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugThrottleState",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "MessageKey_2_33B734E64F11D9481C57B991C4A10F72",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "0.000000",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "SuppressedCount_8_08D0C9AE4B226DE09307D385225E7087",
-					"direction": "Input",
-					"category": "int",
-					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "0",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_VariableGet_24",
-			"node_name": "K2Node_VariableGet_24",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get LocOutMessage",
-			"title_single_line": "Get LocOutMessage",
-			"comment": "",
-			"guid": "be97ee0d-4eb3-01dc-d510-bca7dc6d7463",
-			"x": 5808,
-			"y": -64,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "LocOutMessage",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugMessage",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_SetFieldsInStruct_1",
-			"node_name": "K2Node_SetFieldsInStruct_1",
+			"node_id": "K2Node_SetFieldsInStruct_0",
+			"node_name": "K2Node_SetFieldsInStruct_0",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_SetFieldsInStruct",
 			"title": "Set members in S Debug Message",
 			"title_single_line": "Set members in S Debug Message",
 			"comment": "",
-			"guid": "f2a6fafa-4d47-1137-3ecf-76abaadca20a",
-			"x": 6368,
-			"y": -112,
+			"guid": "25799fcd-4578-f25b-d1d4-2db7e3b69889",
+			"x": 6528,
+			"y": 272,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -3595,16 +3284,16 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableSet_0",
-			"node_name": "K2Node_VariableSet_0",
+			"node_id": "K2Node_VariableSet_9",
+			"node_name": "K2Node_VariableSet_9",
 			"node_kind": "VariableSet",
 			"ue_class": "K2Node_VariableSet",
 			"title": "Set LocOutMessage",
 			"title_single_line": "Set LocOutMessage",
 			"comment": "",
-			"guid": "396f65c5-4c3a-6e12-4550-069ed1010acb",
-			"x": 6736,
-			"y": -96,
+			"guid": "8b1af320-4a77-1f56-5014-a59b3a50a30e",
+			"x": 6928,
+			"y": 288,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -3642,22 +3331,162 @@
 					"subcategory": "None",
 					"resolved_type": "S_DebugMessage",
 					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_MakeStruct_5",
+			"node_name": "K2Node_MakeStruct_5",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MakeStruct",
+			"title": "Make S Debug Throttle State",
+			"title_single_line": "Make S Debug Throttle State",
+			"comment": "",
+			"guid": "c18dadda-4850-1e6b-844b-e99abdd39aae",
+			"x": 7104,
+			"y": 624,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "S_DebugThrottleState",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugThrottleState",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "MessageKey_2_33B734E64F11D9481C57B991C4A10F72",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.000000",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "SuppressedCount_8_08D0C9AE4B226DE09307D385225E7087",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_VariableGet_49",
+			"node_name": "K2Node_VariableGet_49",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get EffectiveMessageKey",
+			"title_single_line": "Get EffectiveMessageKey",
+			"comment": "",
+			"guid": "015cb577-4ad2-6a5f-535b-21aecae0f9f7",
+			"x": 6912,
+			"y": 656,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "EffectiveMessageKey",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_CallFunction_6",
-			"node_name": "K2Node_CallFunction_6",
+			"node_id": "K2Node_VariableGet_50",
+			"node_name": "K2Node_VariableGet_50",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get NowSeconds",
+			"title_single_line": "Get NowSeconds",
+			"comment": "",
+			"guid": "d786cda9-45d5-1a85-7805-249700b814aa",
+			"x": 6912,
+			"y": 704,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "NowSeconds",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_VariableGet_51",
+			"node_name": "K2Node_VariableGet_51",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugThrottleMap",
+			"title_single_line": "Get DebugThrottleMap",
+			"comment": "",
+			"guid": "9ee323bf-4488-92d5-2cf6-8fafcdd922ea",
+			"x": 7040,
+			"y": 464,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugThrottleMap",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_CallFunction_16",
+			"node_name": "K2Node_CallFunction_16",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Add",
 			"title_single_line": "Add",
 			"comment": "",
-			"guid": "5e613747-44c8-879a-7640-85985b27a0f3",
-			"x": 7328,
-			"y": -96,
+			"guid": "9b924f65-463b-9e8e-a03a-8081a016b484",
+			"x": 7616,
+			"y": 496,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -3719,16 +3548,112 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_17",
-			"node_name": "K2Node_VariableGet_17",
+			"node_id": "K2Node_VariableGet_52",
+			"node_name": "K2Node_VariableGet_52",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get EffectiveMessageKey",
+			"title_single_line": "Get EffectiveMessageKey",
+			"comment": "",
+			"guid": "86efa4c9-402d-07c7-5e7e-80af5ce19e8c",
+			"x": 7328,
+			"y": 560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "EffectiveMessageKey",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "f58f02ad-4721-1699-775f-5eaedbad3f90",
+			"x": 7872,
+			"y": 496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bAllowed",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "OutMessage",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_VariableGet_46",
+			"node_name": "K2Node_VariableGet_46",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LocOutMessage",
+			"title_single_line": "Get LocOutMessage",
+			"comment": "",
+			"guid": "97c04f7d-46c7-66f6-b7de-b2bd3da305c6",
+			"x": 7888,
+			"y": 640,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LocOutMessage",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ProcessOnceAndThrottle"
+		},
+		{
+			"node_id": "K2Node_VariableGet_54",
+			"node_name": "K2Node_VariableGet_54",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get DebugThrottleMap",
 			"title_single_line": "Get DebugThrottleMap",
 			"comment": "",
-			"guid": "ebec998b-4847-6754-e56e-c68ebf03dbb1",
-			"x": 7264,
-			"y": -160,
+			"guid": "1f723232-4f41-82eb-54f5-e0a677db3c7c",
+			"x": 4544,
+			"y": 368,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -3754,264 +3679,67 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_BreakStruct_1",
-			"node_name": "K2Node_BreakStruct_1",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_BreakStruct",
-			"title": "Break S Debug Message",
-			"title_single_line": "Break S Debug Message",
+			"node_id": "K2Node_CallFunction_17",
+			"node_name": "K2Node_CallFunction_17",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Add",
+			"title_single_line": "Add",
 			"comment": "",
-			"guid": "53755c0b-4c8f-ae6f-bb75-17ac5ff05505",
-			"x": 6960,
-			"y": -16,
+			"guid": "dedff111-4bc7-dc9b-e2c2-68a2ccb34d93",
+			"x": 4992,
+			"y": 448,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "S_DebugMessage",
+					"pin_name": "execute",
 					"direction": "Input",
-					"category": "struct",
+					"category": "exec",
 					"subcategory": "None",
-					"resolved_type": "S_DebugMessage",
+					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Category_2_A340302247DDA519709B3DBFE15E9CCA",
+					"pin_name": "then",
 					"direction": "Output",
-					"category": "byte",
+					"category": "exec",
 					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity_5_C410C7504866A4690A7A179EB622AC84",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName_8_409C77FC434B0DF93DA802B82913AD28",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message_12_1757C6CC4C18E39C4E901E9001C80695",
-					"direction": "Output",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "TimeSeconds_15_C4686A914696C1B5AC040D99FB27FA9D",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Duration_17_CEA1219444450DB3A9A9C5BB3F5155CF",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen_20_B1C7589D47DCF7C60324DE82C441D256",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToLog_22_68A821C8422FC28282D7F9965FA0622B",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bUseLocation_24_DAFFB9BF460B900236E4688D67920C23",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldLocation_27_6C1D485349BB5BA3BB2CF599F661C410",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "Vector",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Verbosity_30_C74D04E2483037F610798E85E90E6C7E",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bShowInOverlay_33_7F3F03C4421F334400E3F18CCD55B9D5",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "MessageKey_36_A76E058D4A4EF1507BD7E4B04D11163F",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
+					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "bOnceOnly_39_FFD5C08546C02BDD2A0D5784C0CE6230",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ThrottleSeconds_42_5D03B0814D5911EC3241AF9804139C19",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "RepeatCount_45_27AD43114322C7397AAE71994FC8A0CD",
-					"direction": "Output",
-					"category": "int",
-					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "LevelName_48_F3D921154F5E5FF6F6C44489E7D8B78F",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextName_50_3D263B4845AB1E08031694BD44312402",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ContextGhostId_52_538AE9EC439CC596FDA56A8F58AD34AE",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ContextPuzzleId_54_F68E07D54497514E7E2C29B9E55D59C7",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ContextStepId_56_2996C41242769B754E5E2AAEB58D3F87",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "DisplayColor_59_4C9C54CD4E8E89F23F3B2A87FE549BE5",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "LinearColor",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ContextTag_62_13F037D7434196D5157B0690BEB860B7",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_Knot_9",
-			"node_name": "K2Node_Knot_9",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "bd9a050e-4c1f-78d3-ea81-3aa548b5cd07",
-			"x": 7184,
-			"y": 144,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
+					"pin_name": "self",
 					"direction": "Input",
-					"category": "struct",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "S_DebugThrottleState",
+					"resolved_type": "BlueprintMapLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetMap",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
+					"pin_name": "Key",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Value",
+					"direction": "Input",
 					"category": "struct",
 					"subcategory": "None",
 					"resolved_type": "S_DebugThrottleState",
@@ -4022,79 +3750,26 @@
 			"target_class": "ProcessOnceAndThrottle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_2",
-			"node_name": "K2Node_VariableGet_2",
+			"node_id": "K2Node_VariableGet_55",
+			"node_name": "K2Node_VariableGet_55",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
-			"title": "Get FoundThrottleState",
-			"title_single_line": "Get FoundThrottleState",
+			"title": "Get EffectiveMessageKey",
+			"title_single_line": "Get EffectiveMessageKey",
 			"comment": "",
-			"guid": "e1ab3006-4523-9e45-4cac-85b55af80259",
-			"x": 4032,
-			"y": -448,
+			"guid": "e42d3402-4b89-5a8b-3903-d7ac501a54a5",
+			"x": 4800,
+			"y": 528,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "FoundThrottleState",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugThrottleState",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ProcessOnceAndThrottle"
-		},
-		{
-			"node_id": "K2Node_BreakStruct_7",
-			"node_name": "K2Node_BreakStruct_7",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_BreakStruct",
-			"title": "Break S Debug Throttle State",
-			"title_single_line": "Break S Debug Throttle State",
-			"comment": "",
-			"guid": "d3e96993-4c65-40f6-6483-279cbdcb36b4",
-			"x": 4240,
-			"y": -464,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "S_DebugThrottleState",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugThrottleState",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "MessageKey_2_33B734E64F11D9481C57B991C4A10F72",
+					"pin_name": "EffectiveMessageKey",
 					"direction": "Output",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "SuppressedCount_8_08D0C9AE4B226DE09307D385225E7087",
-					"direction": "Output",
-					"category": "int",
-					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
@@ -4106,183 +3781,191 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "ProcessOnceAndThrottle",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_4",
+			"to_node_id": "K2Node_VariableSet_1",
 			"to_node_title": "Set LocOutMessage",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_4",
+			"from_node_id": "K2Node_VariableSet_1",
 			"from_node_title": "Set LocOutMessage",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_5",
+			"to_node_id": "K2Node_VariableSet_2",
 			"to_node_title": "Set NowSeconds",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_5",
+			"from_node_id": "K2Node_VariableSet_2",
 			"from_node_title": "Set NowSeconds",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_id": "K2Node_IfThenElse_0",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_3",
-			"to_node_title": "Branch",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set EffectiveMessageKey",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_Knot_2",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
+			"to_node_id": "K2Node_VariableSet_7",
+			"to_node_title": "Set EffectiveMessageKey",
+			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_id": "K2Node_VariableSet_3",
+			"from_node_title": "Set EffectiveMessageKey",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_7",
+			"from_node_title": "Set EffectiveMessageKey",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_3",
+			"to_node_id": "K2Node_IfThenElse_7",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_IfThenElse_8",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_7",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_5",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_id": "K2Node_IfThenElse_7",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_id": "K2Node_CallFunction_12",
 			"to_node_title": "Add",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_id": "K2Node_CallFunction_12",
 			"from_node_title": "Add",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_id": "K2Node_IfThenElse_8",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_id": "K2Node_IfThenElse_8",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_id": "K2Node_IfThenElse_9",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_id": "K2Node_IfThenElse_8",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_id": "K2Node_FunctionResult_6",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_Knot_2",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_IfThenElse_4",
-			"to_node_title": "Branch",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_IfThenElse_5",
+			"from_node_id": "K2Node_IfThenElse_9",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_6",
+			"to_node_id": "K2Node_VariableSet_8",
 			"to_node_title": "Set FoundThrottleState",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_5",
+			"from_node_id": "K2Node_IfThenElse_9",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_id": "K2Node_CallFunction_17",
 			"to_node_title": "Add",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_5",
-			"from_node_title": "Add",
-			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_0",
-			"to_node_title": "Return Node",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_6",
+			"from_node_id": "K2Node_VariableSet_8",
 			"from_node_title": "Set FoundThrottleState",
 			"from_pin": "then",
-			"to_node_id": "K2Node_Knot_5",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_IfThenElse_6",
-			"from_node_title": "Branch",
-			"from_pin": "then",
-			"to_node_id": "K2Node_Knot_7",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_IfThenElse_6",
-			"from_node_title": "Branch",
-			"from_pin": "else",
-			"to_node_id": "K2Node_SetFieldsInStruct_1",
-			"to_node_title": "Set members in S Debug Message",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_Knot_5",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_IfThenElse_6",
+			"to_node_id": "K2Node_IfThenElse_10",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_id": "K2Node_IfThenElse_10",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Add",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_10",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_SetFieldsInStruct_0",
+			"to_node_title": "Set members in S Debug Message",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_15",
 			"from_node_title": "Add",
 			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_4",
+			"to_node_id": "K2Node_FunctionResult_8",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_Knot_7",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Add",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_SetFieldsInStruct_1",
+			"from_node_id": "K2Node_SetFieldsInStruct_0",
 			"from_node_title": "Set members in S Debug Message",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_id": "K2Node_VariableSet_9",
 			"to_node_title": "Set LocOutMessage",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_id": "K2Node_VariableSet_9",
 			"from_node_title": "Set LocOutMessage",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_id": "K2Node_CallFunction_16",
 			"to_node_title": "Add",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_6",
+			"from_node_id": "K2Node_CallFunction_16",
 			"from_node_title": "Add",
 			"from_pin": "then",
 			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_17",
+			"from_node_title": "Add",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_7",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
@@ -4292,348 +3975,476 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "ProcessOnceAndThrottle",
 			"from_pin": "InMessage",
-			"to_node_id": "K2Node_VariableSet_4",
+			"to_node_id": "K2Node_VariableSet_1",
 			"to_node_title": "Set LocOutMessage",
 			"to_pin": "LocOutMessage"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_id": "K2Node_CallFunction_7",
 			"from_node_title": "Get Game Time in Seconds",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_VariableSet_5",
+			"to_node_id": "K2Node_VariableSet_2",
 			"to_node_title": "Set NowSeconds",
 			"to_pin": "NowSeconds"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_9",
+			"from_node_id": "K2Node_VariableGet_21",
 			"from_node_title": "Get LocOutMessage",
 			"from_pin": "LocOutMessage",
-			"to_node_id": "K2Node_BreakStruct_3",
+			"to_node_id": "K2Node_BreakStruct_15",
 			"to_node_title": "Break S Debug Message",
 			"to_pin": "S_DebugMessage"
 		},
 		{
-			"from_node_id": "K2Node_BreakStruct_3",
+			"from_node_id": "K2Node_BreakStruct_15",
+			"from_node_title": "Break S Debug Message",
+			"from_pin": "Category_2_A340302247DDA519709B3DBFE15E9CCA",
+			"to_node_id": "K2Node_GetEnumeratorNameAsString_0",
+			"to_node_title": "Enum to String",
+			"to_pin": "Enumerator"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_15",
+			"from_node_title": "Break S Debug Message",
+			"from_pin": "SenderName_8_409C77FC434B0DF93DA802B82913AD28",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "To String (Name)",
+			"to_pin": "InName"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_15",
+			"from_node_title": "Break S Debug Message",
+			"from_pin": "Message_12_1757C6CC4C18E39C4E901E9001C80695",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_15",
 			"from_node_title": "Break S Debug Message",
 			"from_pin": "MessageKey_36_A76E058D4A4EF1507BD7E4B04D11163F",
-			"to_node_id": "K2Node_Knot_0",
+			"to_node_id": "K2Node_PromotableOperator_5",
+			"to_node_title": "Not Equal (Name)",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_15",
+			"from_node_title": "Break S Debug Message",
+			"from_pin": "MessageKey_36_A76E058D4A4EF1507BD7E4B04D11163F",
+			"to_node_id": "K2Node_Knot_13",
 			"to_node_title": "Reroute Node",
 			"to_pin": "InputPin"
 		},
 		{
-			"from_node_id": "K2Node_BreakStruct_3",
-			"from_node_title": "Break S Debug Message",
-			"from_pin": "MessageKey_36_A76E058D4A4EF1507BD7E4B04D11163F",
-			"to_node_id": "K2Node_Knot_1",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_3",
+			"from_node_id": "K2Node_BreakStruct_15",
 			"from_node_title": "Break S Debug Message",
 			"from_pin": "bOnceOnly_39_FFD5C08546C02BDD2A0D5784C0CE6230",
-			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_id": "K2Node_IfThenElse_1",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_8",
+			"from_node_id": "K2Node_PromotableOperator_5",
+			"from_node_title": "Not Equal (Name)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_13",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set EffectiveMessageKey",
+			"to_pin": "EffectiveMessageKey"
+		},
+		{
+			"from_node_id": "K2Node_GetEnumeratorNameAsString_0",
+			"from_node_title": "Enum to String",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "Category"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "To String (Name)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "Sender"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_0",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "To String (Text)",
+			"to_pin": "InText"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_9",
+			"from_node_title": "To String (Text)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "String To Name",
+			"to_pin": "InString"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "String To Name",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_VariableSet_7",
+			"to_node_title": "Set EffectiveMessageKey",
+			"to_pin": "EffectiveMessageKey"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_23",
 			"from_node_title": "Get DebugOnceKeys",
 			"from_pin": "DebugOnceKeys",
-			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_id": "K2Node_CallFunction_11",
 			"to_node_title": "Contains Item",
 			"to_pin": "TargetSet"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_id": "K2Node_CallFunction_11",
 			"from_node_title": "Contains Item",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_id": "K2Node_IfThenElse_7",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_2",
+			"from_node_id": "K2Node_VariableGet_27",
+			"from_node_title": "Get EffectiveMessageKey",
+			"from_pin": "EffectiveMessageKey",
+			"to_node_id": "K2Node_CallFunction_11",
 			"to_node_title": "Contains Item",
 			"to_pin": "ItemToFind"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_18",
+			"from_node_id": "K2Node_VariableGet_32",
 			"from_node_title": "Get LocOutMessage",
 			"from_pin": "LocOutMessage",
-			"to_node_id": "K2Node_FunctionResult_3",
+			"to_node_id": "K2Node_FunctionResult_5",
 			"to_node_title": "Return Node",
 			"to_pin": "OutMessage"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_6",
+			"from_node_id": "K2Node_VariableGet_29",
 			"from_node_title": "Get DebugOnceKeys",
 			"from_pin": "DebugOnceKeys",
-			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_id": "K2Node_CallFunction_12",
 			"to_node_title": "Add",
 			"to_pin": "TargetSet"
 		},
 		{
-			"from_node_id": "K2Node_Knot_1",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_3",
+			"from_node_id": "K2Node_VariableGet_30",
+			"from_node_title": "Get EffectiveMessageKey",
+			"from_pin": "EffectiveMessageKey",
+			"to_node_id": "K2Node_CallFunction_12",
 			"to_node_title": "Add",
 			"to_pin": "NewItem"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_12",
+			"from_node_id": "K2Node_VariableGet_31",
 			"from_node_title": "Get LocOutMessage",
 			"from_pin": "LocOutMessage",
-			"to_node_id": "K2Node_BreakStruct_2",
+			"to_node_id": "K2Node_BreakStruct_16",
 			"to_node_title": "Break S Debug Message",
 			"to_pin": "S_DebugMessage"
 		},
 		{
-			"from_node_id": "K2Node_BreakStruct_2",
+			"from_node_id": "K2Node_BreakStruct_16",
 			"from_node_title": "Break S Debug Message",
 			"from_pin": "ThrottleSeconds_42_5D03B0814D5911EC3241AF9804139C19",
-			"to_node_id": "K2Node_PromotableOperator_0",
+			"to_node_id": "K2Node_PromotableOperator_6",
 			"to_node_title": "float > float",
 			"to_pin": "A"
 		},
 		{
-			"from_node_id": "K2Node_PromotableOperator_0",
+			"from_node_id": "K2Node_PromotableOperator_6",
 			"from_node_title": "float > float",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_id": "K2Node_IfThenElse_8",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_15",
+			"from_node_id": "K2Node_VariableGet_38",
 			"from_node_title": "Get LocOutMessage",
 			"from_pin": "LocOutMessage",
-			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_id": "K2Node_FunctionResult_6",
 			"to_node_title": "Return Node",
 			"to_pin": "OutMessage"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_14",
+			"from_node_id": "K2Node_VariableGet_33",
 			"from_node_title": "Get DebugThrottleMap",
 			"from_pin": "DebugThrottleMap",
-			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_id": "K2Node_CallFunction_13",
 			"to_node_title": "Find",
 			"to_pin": "TargetMap"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_id": "K2Node_CallFunction_13",
 			"from_node_title": "Find",
 			"from_pin": "Value",
-			"to_node_id": "K2Node_VariableSet_6",
+			"to_node_id": "K2Node_VariableSet_8",
 			"to_node_title": "Set FoundThrottleState",
 			"to_pin": "FoundThrottleState"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_id": "K2Node_CallFunction_13",
 			"from_node_title": "Find",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_id": "K2Node_IfThenElse_9",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_BreakStruct_4",
-			"from_node_title": "Break S Debug Message",
-			"from_pin": "MessageKey_36_A76E058D4A4EF1507BD7E4B04D11163F",
-			"to_node_id": "K2Node_CallFunction_4",
+			"from_node_id": "K2Node_VariableGet_34",
+			"from_node_title": "Get EffectiveMessageKey",
+			"from_pin": "EffectiveMessageKey",
+			"to_node_id": "K2Node_CallFunction_13",
 			"to_node_title": "Find",
 			"to_pin": "Key"
 		},
 		{
-			"from_node_id": "K2Node_BreakStruct_4",
-			"from_node_title": "Break S Debug Message",
-			"from_pin": "MessageKey_36_A76E058D4A4EF1507BD7E4B04D11163F",
-			"to_node_id": "K2Node_Knot_3",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_5",
-			"from_node_title": "Get LocOutMessage",
-			"from_pin": "LocOutMessage",
-			"to_node_id": "K2Node_BreakStruct_4",
-			"to_node_title": "Break S Debug Message",
-			"to_pin": "S_DebugMessage"
-		},
-		{
-			"from_node_id": "K2Node_MakeStruct_0",
+			"from_node_id": "K2Node_MakeStruct_2",
 			"from_node_title": "Make S Debug Throttle State",
 			"from_pin": "S_DebugThrottleState",
-			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_id": "K2Node_CallFunction_17",
 			"to_node_title": "Add",
 			"to_pin": "Value"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_13",
+			"from_node_id": "K2Node_VariableGet_35",
+			"from_node_title": "Get EffectiveMessageKey",
+			"from_pin": "EffectiveMessageKey",
+			"to_node_id": "K2Node_MakeStruct_2",
+			"to_node_title": "Make S Debug Throttle State",
+			"to_pin": "MessageKey_2_33B734E64F11D9481C57B991C4A10F72"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_36",
 			"from_node_title": "Get NowSeconds",
 			"from_pin": "NowSeconds",
-			"to_node_id": "K2Node_MakeStruct_0",
+			"to_node_id": "K2Node_MakeStruct_2",
 			"to_node_title": "Make S Debug Throttle State",
 			"to_pin": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D"
 		},
 		{
-			"from_node_id": "K2Node_Knot_3",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_MakeStruct_0",
-			"to_node_title": "Make S Debug Throttle State",
-			"to_pin": "MessageKey_2_33B734E64F11D9481C57B991C4A10F72"
-		},
-		{
-			"from_node_id": "K2Node_Knot_3",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_Knot_4",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_11",
-			"from_node_title": "Get DebugThrottleMap",
-			"from_pin": "DebugThrottleMap",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Add",
-			"to_pin": "TargetMap"
-		},
-		{
-			"from_node_id": "K2Node_Knot_4",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Add",
-			"to_pin": "Key"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_7",
+			"from_node_id": "K2Node_VariableGet_45",
 			"from_node_title": "Get LocOutMessage",
 			"from_pin": "LocOutMessage",
-			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_id": "K2Node_FunctionResult_7",
 			"to_node_title": "Return Node",
 			"to_pin": "OutMessage"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_16",
-			"from_node_title": "Get NowSeconds",
-			"from_pin": "NowSeconds",
-			"to_node_id": "K2Node_PromotableOperator_1",
-			"to_node_title": "float - float",
-			"to_pin": "A"
+			"from_node_id": "K2Node_VariableGet_39",
+			"from_node_title": "Get FoundThrottleState",
+			"from_pin": "FoundThrottleState",
+			"to_node_id": "K2Node_BreakStruct_17",
+			"to_node_title": "Break S Debug Throttle State",
+			"to_pin": "S_DebugThrottleState"
 		},
 		{
-			"from_node_id": "K2Node_PromotableOperator_1",
-			"from_node_title": "float - float",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_PromotableOperator_2",
-			"to_node_title": "float < float",
-			"to_pin": "A"
-		},
-		{
-			"from_node_id": "K2Node_PromotableOperator_2",
-			"from_node_title": "float < float",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_6",
-			"to_node_title": "Branch",
-			"to_pin": "Condition"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_6",
-			"from_node_title": "Break S Debug Message",
-			"from_pin": "TimeSeconds_15_C4686A914696C1B5AC040D99FB27FA9D",
-			"to_node_id": "K2Node_PromotableOperator_2",
-			"to_node_title": "float < float",
-			"to_pin": "B"
-		},
-		{
-			"from_node_id": "K2Node_MakeStruct_1",
-			"from_node_title": "Make S Debug Throttle State",
-			"from_pin": "S_DebugThrottleState",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Add",
-			"to_pin": "Value"
-		},
-		{
-			"from_node_id": "K2Node_Knot_6",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_PromotableOperator_1",
-			"to_node_title": "float - float",
-			"to_pin": "B"
-		},
-		{
-			"from_node_id": "K2Node_PromotableOperator_3",
-			"from_node_title": "int + int",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_MakeStruct_1",
-			"to_node_title": "Make S Debug Throttle State",
-			"to_pin": "SuppressedCount_8_08D0C9AE4B226DE09307D385225E7087"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_1",
-			"from_node_title": "Get DebugThrottleMap",
-			"from_pin": "DebugThrottleMap",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Add",
-			"to_pin": "TargetMap"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_0",
-			"from_node_title": "Break S Debug Message",
-			"from_pin": "MessageKey_36_A76E058D4A4EF1507BD7E4B04D11163F",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Add",
-			"to_pin": "Key"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_22",
-			"from_node_title": "Get LocOutMessage",
-			"from_pin": "LocOutMessage",
-			"to_node_id": "K2Node_FunctionResult_4",
-			"to_node_title": "Return Node",
-			"to_pin": "OutMessage"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_8",
-			"from_node_title": "Break S Debug Throttle State",
-			"from_pin": "MessageKey_2_33B734E64F11D9481C57B991C4A10F72",
-			"to_node_id": "K2Node_MakeStruct_3",
-			"to_node_title": "Make S Debug Throttle State",
-			"to_pin": "MessageKey_2_33B734E64F11D9481C57B991C4A10F72"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_8",
+			"from_node_id": "K2Node_BreakStruct_17",
 			"from_node_title": "Break S Debug Throttle State",
 			"from_pin": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D",
-			"to_node_id": "K2Node_MakeStruct_3",
+			"to_node_id": "K2Node_PromotableOperator_7",
+			"to_node_title": "float - float",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_17",
+			"from_node_title": "Break S Debug Throttle State",
+			"from_pin": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D",
+			"to_node_id": "K2Node_MakeStruct_4",
 			"to_node_title": "Make S Debug Throttle State",
 			"to_pin": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D"
 		},
 		{
-			"from_node_id": "K2Node_BreakStruct_8",
+			"from_node_id": "K2Node_BreakStruct_17",
 			"from_node_title": "Break S Debug Throttle State",
 			"from_pin": "SuppressedCount_8_08D0C9AE4B226DE09307D385225E7087",
-			"to_node_id": "K2Node_PromotableOperator_4",
+			"to_node_id": "K2Node_PromotableOperator_9",
 			"to_node_title": "int + int",
 			"to_pin": "A"
 		},
 		{
-			"from_node_id": "K2Node_PromotableOperator_4",
+			"from_node_id": "K2Node_VariableGet_40",
+			"from_node_title": "Get NowSeconds",
+			"from_pin": "NowSeconds",
+			"to_node_id": "K2Node_PromotableOperator_7",
+			"to_node_title": "float - float",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_7",
+			"from_node_title": "float - float",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_8",
+			"to_node_title": "float < float",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_8",
+			"from_node_title": "float < float",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_10",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_41",
+			"from_node_title": "Get LocOutMessage",
+			"from_pin": "LocOutMessage",
+			"to_node_id": "K2Node_BreakStruct_18",
+			"to_node_title": "Break S Debug Message",
+			"to_pin": "S_DebugMessage"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_18",
+			"from_node_title": "Break S Debug Message",
+			"from_pin": "ThrottleSeconds_42_5D03B0814D5911EC3241AF9804139C19",
+			"to_node_id": "K2Node_PromotableOperator_8",
+			"to_node_title": "float < float",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_9",
 			"from_node_title": "int + int",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_SetFieldsInStruct_1",
+			"to_node_id": "K2Node_MakeStruct_4",
+			"to_node_title": "Make S Debug Throttle State",
+			"to_pin": "SuppressedCount_8_08D0C9AE4B226DE09307D385225E7087"
+		},
+		{
+			"from_node_id": "K2Node_MakeStruct_4",
+			"from_node_title": "Make S Debug Throttle State",
+			"from_pin": "S_DebugThrottleState",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Add",
+			"to_pin": "Value"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_42",
+			"from_node_title": "Get EffectiveMessageKey",
+			"from_pin": "EffectiveMessageKey",
+			"to_node_id": "K2Node_MakeStruct_4",
+			"to_node_title": "Make S Debug Throttle State",
+			"to_pin": "MessageKey_2_33B734E64F11D9481C57B991C4A10F72"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_43",
+			"from_node_title": "Get DebugThrottleMap",
+			"from_pin": "DebugThrottleMap",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Add",
+			"to_pin": "TargetMap"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_44",
+			"from_node_title": "Get EffectiveMessageKey",
+			"from_pin": "EffectiveMessageKey",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Add",
+			"to_pin": "Key"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_53",
+			"from_node_title": "Get LocOutMessage",
+			"from_pin": "LocOutMessage",
+			"to_node_id": "K2Node_FunctionResult_8",
+			"to_node_title": "Return Node",
+			"to_pin": "OutMessage"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_47",
+			"from_node_title": "Get FoundThrottleState",
+			"from_pin": "FoundThrottleState",
+			"to_node_id": "K2Node_BreakStruct_20",
+			"to_node_title": "Break S Debug Throttle State",
+			"to_pin": "S_DebugThrottleState"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_20",
+			"from_node_title": "Break S Debug Throttle State",
+			"from_pin": "SuppressedCount_8_08D0C9AE4B226DE09307D385225E7087",
+			"to_node_id": "K2Node_PromotableOperator_10",
+			"to_node_title": "int + int",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_10",
+			"from_node_title": "int + int",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_SetFieldsInStruct_0",
 			"to_node_title": "Set members in S Debug Message",
 			"to_pin": "RepeatCount_45_27AD43114322C7397AAE71994FC8A0CD"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_19",
+			"from_node_id": "K2Node_VariableGet_48",
+			"from_node_title": "Get LocOutMessage",
+			"from_pin": "LocOutMessage",
+			"to_node_id": "K2Node_SetFieldsInStruct_0",
+			"to_node_title": "Set members in S Debug Message",
+			"to_pin": "StructRef"
+		},
+		{
+			"from_node_id": "K2Node_SetFieldsInStruct_0",
+			"from_node_title": "Set members in S Debug Message",
+			"from_pin": "StructOut",
+			"to_node_id": "K2Node_VariableSet_9",
+			"to_node_title": "Set LocOutMessage",
+			"to_pin": "LocOutMessage"
+		},
+		{
+			"from_node_id": "K2Node_MakeStruct_5",
+			"from_node_title": "Make S Debug Throttle State",
+			"from_pin": "S_DebugThrottleState",
+			"to_node_id": "K2Node_CallFunction_16",
+			"to_node_title": "Add",
+			"to_pin": "Value"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_49",
+			"from_node_title": "Get EffectiveMessageKey",
+			"from_pin": "EffectiveMessageKey",
+			"to_node_id": "K2Node_MakeStruct_5",
+			"to_node_title": "Make S Debug Throttle State",
+			"to_pin": "MessageKey_2_33B734E64F11D9481C57B991C4A10F72"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_50",
+			"from_node_title": "Get NowSeconds",
+			"from_pin": "NowSeconds",
+			"to_node_id": "K2Node_MakeStruct_5",
+			"to_node_title": "Make S Debug Throttle State",
+			"to_pin": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_51",
+			"from_node_title": "Get DebugThrottleMap",
+			"from_pin": "DebugThrottleMap",
+			"to_node_id": "K2Node_CallFunction_16",
+			"to_node_title": "Add",
+			"to_pin": "TargetMap"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_52",
+			"from_node_title": "Get EffectiveMessageKey",
+			"from_pin": "EffectiveMessageKey",
+			"to_node_id": "K2Node_CallFunction_16",
+			"to_node_title": "Add",
+			"to_pin": "Key"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_46",
 			"from_node_title": "Get LocOutMessage",
 			"from_pin": "LocOutMessage",
 			"to_node_id": "K2Node_FunctionResult_1",
@@ -4641,124 +4452,20 @@
 			"to_pin": "OutMessage"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_0",
-			"from_node_title": "Get LocOutMessage",
-			"from_pin": "LocOutMessage",
-			"to_node_id": "K2Node_BreakStruct_0",
-			"to_node_title": "Break S Debug Message",
-			"to_pin": "S_DebugMessage"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_25",
-			"from_node_title": "Get LocOutMessage",
-			"from_pin": "LocOutMessage",
-			"to_node_id": "K2Node_BreakStruct_6",
-			"to_node_title": "Break S Debug Message",
-			"to_pin": "S_DebugMessage"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_26",
-			"from_node_title": "Get FoundThrottleState",
-			"from_pin": "FoundThrottleState",
-			"to_node_id": "K2Node_BreakStruct_8",
-			"to_node_title": "Break S Debug Throttle State",
-			"to_pin": "S_DebugThrottleState"
-		},
-		{
-			"from_node_id": "K2Node_MakeStruct_3",
-			"from_node_title": "Make S Debug Throttle State",
-			"from_pin": "S_DebugThrottleState",
-			"to_node_id": "K2Node_Knot_9",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_24",
-			"from_node_title": "Get LocOutMessage",
-			"from_pin": "LocOutMessage",
-			"to_node_id": "K2Node_SetFieldsInStruct_1",
-			"to_node_title": "Set members in S Debug Message",
-			"to_pin": "StructRef"
-		},
-		{
-			"from_node_id": "K2Node_SetFieldsInStruct_1",
-			"from_node_title": "Set members in S Debug Message",
-			"from_pin": "StructOut",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set LocOutMessage",
-			"to_pin": "LocOutMessage"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_0",
-			"from_node_title": "Set LocOutMessage",
-			"from_pin": "Output_Get",
-			"to_node_id": "K2Node_BreakStruct_1",
-			"to_node_title": "Break S Debug Message",
-			"to_pin": "S_DebugMessage"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_17",
+			"from_node_id": "K2Node_VariableGet_54",
 			"from_node_title": "Get DebugThrottleMap",
 			"from_pin": "DebugThrottleMap",
-			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_id": "K2Node_CallFunction_17",
 			"to_node_title": "Add",
 			"to_pin": "TargetMap"
 		},
 		{
-			"from_node_id": "K2Node_BreakStruct_1",
-			"from_node_title": "Break S Debug Message",
-			"from_pin": "MessageKey_36_A76E058D4A4EF1507BD7E4B04D11163F",
-			"to_node_id": "K2Node_CallFunction_6",
+			"from_node_id": "K2Node_VariableGet_55",
+			"from_node_title": "Get EffectiveMessageKey",
+			"from_pin": "EffectiveMessageKey",
+			"to_node_id": "K2Node_CallFunction_17",
 			"to_node_title": "Add",
 			"to_pin": "Key"
-		},
-		{
-			"from_node_id": "K2Node_Knot_9",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Add",
-			"to_pin": "Value"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_2",
-			"from_node_title": "Get FoundThrottleState",
-			"from_pin": "FoundThrottleState",
-			"to_node_id": "K2Node_BreakStruct_7",
-			"to_node_title": "Break S Debug Throttle State",
-			"to_pin": "S_DebugThrottleState"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_7",
-			"from_node_title": "Break S Debug Throttle State",
-			"from_pin": "MessageKey_2_33B734E64F11D9481C57B991C4A10F72",
-			"to_node_id": "K2Node_MakeStruct_1",
-			"to_node_title": "Make S Debug Throttle State",
-			"to_pin": "MessageKey_2_33B734E64F11D9481C57B991C4A10F72"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_7",
-			"from_node_title": "Break S Debug Throttle State",
-			"from_pin": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D",
-			"to_node_id": "K2Node_Knot_6",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_7",
-			"from_node_title": "Break S Debug Throttle State",
-			"from_pin": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D",
-			"to_node_id": "K2Node_MakeStruct_1",
-			"to_node_title": "Make S Debug Throttle State",
-			"to_pin": "LastEmitTime_5_43A409954CB67F47E21D01A41B41CE2D"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_7",
-			"from_node_title": "Break S Debug Throttle State",
-			"from_pin": "SuppressedCount_8_08D0C9AE4B226DE09307D385225E7087",
-			"to_node_id": "K2Node_PromotableOperator_3",
-			"to_node_title": "int + int",
-			"to_pin": "A"
 		}
 	],
 	"problems": []
