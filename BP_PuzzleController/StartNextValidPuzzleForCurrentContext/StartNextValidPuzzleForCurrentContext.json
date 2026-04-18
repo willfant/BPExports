@@ -1,0 +1,655 @@
+{
+	"graph_name": "StartNextValidPuzzleForCurrentContext",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [
+		"bStartedPuzzle (Boolean)",
+		"bStartedPuzzle (Boolean)"
+	],
+	"summary":
+	{
+		"purpose": "Starts a flow, state transition, or activation sequence.",
+		"reads_variables": [],
+		"writes_variables": [],
+		"calls": [
+			"Debug Puzzle Message",
+			"Get Next Valid Puzzle Row Name for Current Context",
+			"Start Puzzle by Row Name"
+		],
+		"called_by": [
+			"EventGraph",
+			"HandlePuzzleCompletionConsequences"
+		],
+		"branch_points": [
+			"Branch"
+		]
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "StartNextValidPuzzleForCurrentContext",
+			"title_single_line": "StartNextValidPuzzleForCurrentContext",
+			"comment": "",
+			"guid": "d8da09ca-49d7-5c14-1978-50899e311ef0",
+			"x": -976,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartNextValidPuzzleForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "0b40352e-4b90-9bcc-7545-49a92c4a754b",
+			"x": 1296,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bStartedPuzzle",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartNextValidPuzzleForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"title_single_line": "Debug Puzzle Message",
+			"comment": "",
+			"guid": "1ec0a077-4110-b791-9cb1-dfa4f118c8e0",
+			"x": -576,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "10.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartNextValidPuzzleForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Next Valid Puzzle Row Name for Current Context\nTarget is BP Puzzle Controller",
+			"title_single_line": "Get Next Valid Puzzle Row Name for Current Context",
+			"comment": "",
+			"guid": "fdbdca79-4756-6877-1b45-33a7f790378c",
+			"x": -64,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bFoundPuzzle",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutPuzzleRowName",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 2
+				}
+			],
+			"target_class": "StartNextValidPuzzleForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "4c3b0b36-4561-d79b-d56c-2b932b667dce",
+			"x": 432,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartNextValidPuzzleForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"title_single_line": "Debug Puzzle Message",
+			"comment": "",
+			"guid": "347a2810-488b-2c9e-524d-b88edf33ba38",
+			"x": 720,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "10.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator1",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartNextValidPuzzleForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"title_single_line": "Debug Puzzle Message",
+			"comment": "",
+			"guid": "5d207d3b-4b51-7ca1-a309-6287cc7235c8",
+			"x": 768,
+			"y": -320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "10.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartNextValidPuzzleForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_FormatText_0",
+			"node_name": "K2Node_FormatText_0",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "85fed985-4aad-6390-49a5-3b8ceeb91a77",
+			"x": 192,
+			"y": -224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "PuzzleRowName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartNextValidPuzzleForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Start Puzzle by Row Name\nTarget is BP Puzzle Controller",
+			"title_single_line": "Start Puzzle by Row Name",
+			"comment": "",
+			"guid": "c87564df-4a72-d425-f84c-6293de5fc172",
+			"x": 1232,
+			"y": -320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PuzzleRowName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartNextValidPuzzleForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "e37ba2bc-4e42-ab5e-7b45-fbb903136533",
+			"x": 1600,
+			"y": -304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bStartedPuzzle",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartNextValidPuzzleForCurrentContext"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "StartNextValidPuzzleForCurrentContext",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Get Next Valid Puzzle Row Name for Current Context\nTarget is BP Puzzle Controller",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Next Valid Puzzle Row Name for Current Context\nTarget is BP Puzzle Controller",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Start Puzzle by Row Name\nTarget is BP Puzzle Controller",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Start Puzzle by Row Name\nTarget is BP Puzzle Controller",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Next Valid Puzzle Row Name for Current Context\nTarget is BP Puzzle Controller",
+			"from_pin": "bFoundPuzzle",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Next Valid Puzzle Row Name for Current Context\nTarget is BP Puzzle Controller",
+			"from_pin": "OutPuzzleRowName",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "PuzzleRowName"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Next Valid Puzzle Row Name for Current Context\nTarget is BP Puzzle Controller",
+			"from_pin": "OutPuzzleRowName",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Start Puzzle by Row Name\nTarget is BP Puzzle Controller",
+			"to_pin": "PuzzleRowName"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_0",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"to_pin": "Message"
+		}
+	],
+	"problems": []
+}

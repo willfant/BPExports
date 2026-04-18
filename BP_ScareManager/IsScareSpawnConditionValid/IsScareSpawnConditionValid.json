@@ -1,0 +1,2033 @@
+{
+	"graph_name": "IsScareSpawnConditionValid",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [
+		"bIsValid (Boolean)",
+		"bIsValid (Boolean)",
+		"bIsValid (Boolean)",
+		"bIsValid (Boolean)",
+		"bIsValid (Boolean)",
+		"bIsValid (Boolean)",
+		"bIsValid (Boolean)",
+		"bIsValid (Boolean)",
+		"bIsValid (Boolean)",
+		"bIsValid (Boolean)",
+		"bIsValid (Boolean)",
+		"bIsValid (Boolean)"
+	],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [],
+		"writes_variables": [],
+		"calls": [
+			"Is Scare Off Cooldown",
+			"Is Scare Line Of Sight Valid",
+			"Get Player Looking Away"
+		],
+		"called_by": [
+			"IsScareValidAdvanced"
+		],
+		"branch_points": [
+			"Switch on E_SpawnCondition",
+			"Branch"
+		]
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "IsScareSpawnConditionValid",
+			"title_single_line": "IsScareSpawnConditionValid",
+			"comment": "",
+			"guid": "9a7248ad-4ac3-8a50-be91-7dab3edef94b",
+			"x": -1184,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ScareData",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 3
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "7d584383-43a4-d56d-47af-cb8314d440be",
+			"x": 576,
+			"y": -1408,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_BreakStruct_0",
+			"node_name": "K2Node_BreakStruct_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_BreakStruct",
+			"title": "Break S Scare Entry",
+			"title_single_line": "Break S Scare Entry",
+			"comment": "",
+			"guid": "9ad78dd4-40c0-02ff-b2b3-94babb1b88b9",
+			"x": -816,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "S_ScareEntry",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostId_70_3CEF841E466AFF15E0D02A890EB731A7",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareId_2_021A42D94D2AE9278A9E9491C5F03B5F",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareType_5_ABA6A05148893F3080946FAE973893FF",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "IntensityTier_8_713FCD5046ADB77AB69817858F6C2787",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Anchor_11_5D2B2F7748858A127A97FE9D0DAD4CC4",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_AnchorBinding",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SpawnCondition_14_6154B48E4DD4E63BAE9DC3A572F68673",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "MinPlayerDist_17_E7E93BF843D37BF2CA967782486073CB",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "MaxPlayerDist_19_E32CF7BE45EE54356B67E7B23BEF4EDC",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "RequiresLineOfSight_22_896AA34D4E6D0832B181AA85B1B6496D",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ProbabilityWeight_25_7C94BA17422076A53B33F0A8B1CC62F8",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "GlobalCooldownSec_27_9884016143292EC0C3048C9B67E4210B",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Audio_32_F24E3A24436D2D4141554884928C85F6",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_AudioCue",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "VFX_35_DAB98585485E09F379809FAE54911C67",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_VFXCue",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "World_54_6058EC774B0F609CCA95B6B0D700B771",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Haptics_38_7F112F714ACD375CDDB3A2AAC8B75257",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_HapticCue",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SpawnActorClass_41_1B48CD634475DD607A597A86DC6EEC59",
+					"direction": "Output",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "Actor",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PerScareCooldownSec_29_C53B1B48489DC4E14DC94FB997C73E97",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ParamFloatA_58_B5742BAA44B31AC6885EB3B47A32D26B",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ParamFloatB_71_14B893F7402E3943B1A66FB4BFC286F3",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ParamFloatC_72_920F622847EE481B8B841295FD5AB1F1",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ParamNameA_68_622E4704472EAD85D0C99C95FF1485E1",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ParamNameB_67_8C2204974210EB1F7BC3628A3FE6C07E",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "NotesDev_51_C60405CF49669060756DBCAB0B3154FD",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "AllowedWorldModes_76_26CE3A0149C8069BEA84D2B14E9FFF73",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "AllowedGhostStates_79_4C4412284966CDF10BC12C8FC8541D77",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_SwitchEnum_0",
+			"node_name": "K2Node_SwitchEnum_0",
+			"node_kind": "SwitchEnum",
+			"ue_class": "K2Node_SwitchEnum",
+			"title": "Switch on E_SpawnCondition",
+			"title_single_line": "Switch on E_SpawnCondition",
+			"comment": "",
+			"guid": "39e40279-47fa-5f1c-a9be-bc8ab1e76292",
+			"x": -336,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Selection",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "NotEqual_ByteByte",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "NewEnumerator0",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "NewEnumerator1",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "NewEnumerator2",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "NewEnumerator3",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "NewEnumerator4",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "NewEnumerator5",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "NewEnumerator6",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "NewEnumerator7",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "902b312e-4b94-1423-1fbf-ff979096713b",
+			"x": -32,
+			"y": 320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Scare Off Cooldown\nTarget is BP Scare Manager",
+			"title_single_line": "Is Scare Off Cooldown",
+			"comment": "",
+			"guid": "175f2bf6-4480-8ba6-4718-c4a0c7988c3b",
+			"x": 896,
+			"y": 352,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsOffCooldown",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "50535cc3-4b88-d4b1-c5eb-998e63b41cd4",
+			"x": -880,
+			"y": 288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_4",
+			"node_name": "K2Node_FunctionResult_4",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "1fb98740-4c6e-9300-0e07-16b280fb352d",
+			"x": 1216,
+			"y": 400,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Scare Line Of Sight Valid\nTarget is BP Scare Manager",
+			"title_single_line": "Is Scare Line Of Sight Valid",
+			"comment": "",
+			"guid": "9f9d83c0-4434-a543-d796-67b066b946d5",
+			"x": 624,
+			"y": -1232,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "7ed61ea5-4354-904b-c45e-d79515894fb6",
+			"x": 1024,
+			"y": -1216,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "b86fb037-4490-1f1f-2ff6-62b00949a8ee",
+			"x": 208,
+			"y": 272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_BreakStruct_1",
+			"node_name": "K2Node_BreakStruct_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_BreakStruct",
+			"title": "Break S Scare Entry",
+			"title_single_line": "Break S Scare Entry",
+			"comment": "",
+			"guid": "064a4883-405a-6519-b4bb-2bb6cdc1cbc6",
+			"x": -336,
+			"y": 416,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "S_ScareEntry",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostId_70_3CEF841E466AFF15E0D02A890EB731A7",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareId_2_021A42D94D2AE9278A9E9491C5F03B5F",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareType_5_ABA6A05148893F3080946FAE973893FF",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "IntensityTier_8_713FCD5046ADB77AB69817858F6C2787",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Anchor_11_5D2B2F7748858A127A97FE9D0DAD4CC4",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_AnchorBinding",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SpawnCondition_14_6154B48E4DD4E63BAE9DC3A572F68673",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "MinPlayerDist_17_E7E93BF843D37BF2CA967782486073CB",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "MaxPlayerDist_19_E32CF7BE45EE54356B67E7B23BEF4EDC",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "RequiresLineOfSight_22_896AA34D4E6D0832B181AA85B1B6496D",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ProbabilityWeight_25_7C94BA17422076A53B33F0A8B1CC62F8",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "GlobalCooldownSec_27_9884016143292EC0C3048C9B67E4210B",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Audio_32_F24E3A24436D2D4141554884928C85F6",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_AudioCue",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "VFX_35_DAB98585485E09F379809FAE54911C67",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_VFXCue",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "World_54_6058EC774B0F609CCA95B6B0D700B771",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Haptics_38_7F112F714ACD375CDDB3A2AAC8B75257",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_HapticCue",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SpawnActorClass_41_1B48CD634475DD607A597A86DC6EEC59",
+					"direction": "Output",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "Actor",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PerScareCooldownSec_29_C53B1B48489DC4E14DC94FB997C73E97",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ParamFloatA_58_B5742BAA44B31AC6885EB3B47A32D26B",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ParamFloatB_71_14B893F7402E3943B1A66FB4BFC286F3",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ParamFloatC_72_920F622847EE481B8B841295FD5AB1F1",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ParamNameA_68_622E4704472EAD85D0C99C95FF1485E1",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ParamNameB_67_8C2204974210EB1F7BC3628A3FE6C07E",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "NotesDev_51_C60405CF49669060756DBCAB0B3154FD",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "AllowedWorldModes_76_26CE3A0149C8069BEA84D2B14E9FFF73",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "AllowedGhostStates_79_4C4412284966CDF10BC12C8FC8541D77",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_2",
+			"node_name": "K2Node_IfThenElse_2",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "30046475-4429-d1c5-f10b-bdaeac3ca8a2",
+			"x": 704,
+			"y": -848,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_7",
+			"node_name": "K2Node_FunctionResult_7",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "48ac27a4-4a33-a8fd-aa2f-c2b1887af6de",
+			"x": 992,
+			"y": -1024,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_3",
+			"node_name": "K2Node_IfThenElse_3",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "c9b2a58f-44ec-b0a7-d9bc-b2b85eb69b94",
+			"x": 1100,
+			"y": -813,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_8",
+			"node_name": "K2Node_FunctionResult_8",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "f692368d-4a55-b112-6db0-1b8d218ae177",
+			"x": 1392,
+			"y": -960,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_10",
+			"node_name": "K2Node_FunctionResult_10",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "8d95fda2-4426-5ffb-f048-ab9bd9f82195",
+			"x": 1424,
+			"y": -752,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "fd02d4dd-4346-fb91-58c5-f4b480c84472",
+			"x": 576,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_5",
+			"node_name": "K2Node_FunctionResult_5",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "2d88641a-4f7c-aff9-25a5-0c8a3fd63057",
+			"x": 864,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "d391beaa-4332-54ab-3eec-ba9f417e3d99",
+			"x": 976,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_6",
+			"node_name": "K2Node_FunctionResult_6",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "3c4a68a1-4dee-a5e3-3785-e0be0def87dc",
+			"x": 1264,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_3",
+			"node_name": "K2Node_FunctionResult_3",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "f9b9af67-4ce4-4f7f-f273-dc904804a095",
+			"x": 1296,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_Composite_0",
+			"node_name": "K2Node_Composite_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_Composite",
+			"title": "CloseToPlayer\nCollapsed Graph",
+			"title_single_line": "CloseToPlayer",
+			"comment": "",
+			"guid": "d8694b9b-4a7a-396c-87be-80bc562d746d",
+			"x": 144,
+			"y": 608,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue2",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_Composite_1",
+			"node_name": "K2Node_Composite_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_Composite",
+			"title": "FarFromPlayer\nCollapsed Graph",
+			"title_single_line": "FarFromPlayer",
+			"comment": "",
+			"guid": "f7bae9d1-4dbc-d254-cda3-8e897e34dd0d",
+			"x": 144,
+			"y": 464,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue2",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Player Looking Away\nTarget is BP Scare Manager",
+			"title_single_line": "Get Player Looking Away",
+			"comment": "",
+			"guid": "e42d12a3-46e0-2313-7678-ba93d0573ca9",
+			"x": 832,
+			"y": -496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "isValid",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_11",
+			"node_name": "K2Node_FunctionResult_11",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "913fc42d-4504-32db-0abe-178a1edbb10c",
+			"x": 1200,
+			"y": -480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_9",
+			"node_name": "K2Node_FunctionResult_9",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "4973478b-47a9-aae4-af49-dd96e35a9b2c",
+			"x": 96,
+			"y": 176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		},
+		{
+			"node_id": "K2Node_Knot_2",
+			"node_name": "K2Node_Knot_2",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "3ed0121f-496b-f120-0577-ac8b4b44263c",
+			"x": 64,
+			"y": 528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareSpawnConditionValid"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "IsScareSpawnConditionValid",
+			"from_pin": "then",
+			"to_node_id": "K2Node_SwitchEnum_0",
+			"to_node_title": "Switch on E_SpawnCondition",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_SwitchEnum_0",
+			"from_node_title": "Switch on E_SpawnCondition",
+			"from_pin": "NewEnumerator0",
+			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_SwitchEnum_0",
+			"from_node_title": "Switch on E_SpawnCondition",
+			"from_pin": "NewEnumerator1",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Get Player Looking Away\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_SwitchEnum_0",
+			"from_node_title": "Switch on E_SpawnCondition",
+			"from_pin": "NewEnumerator2",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Is Scare Line Of Sight Valid\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_SwitchEnum_0",
+			"from_node_title": "Switch on E_SpawnCondition",
+			"from_pin": "NewEnumerator3",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_SwitchEnum_0",
+			"from_node_title": "Switch on E_SpawnCondition",
+			"from_pin": "NewEnumerator4",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_SwitchEnum_0",
+			"from_node_title": "Switch on E_SpawnCondition",
+			"from_pin": "NewEnumerator5",
+			"to_node_id": "K2Node_FunctionResult_9",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_SwitchEnum_0",
+			"from_node_title": "Switch on E_SpawnCondition",
+			"from_pin": "NewEnumerator6",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Is Scare Off Cooldown\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_SwitchEnum_0",
+			"from_node_title": "Switch on E_SpawnCondition",
+			"from_pin": "NewEnumerator7",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Is Scare Off Cooldown\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_4",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Is Scare Line Of Sight Valid\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_7",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_8",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_FunctionResult_10",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_5",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_6",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_FunctionResult_3",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Get Player Looking Away\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_11",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "IsScareSpawnConditionValid",
+			"from_pin": "ScareData",
+			"to_node_id": "K2Node_BreakStruct_0",
+			"to_node_title": "Break S Scare Entry",
+			"to_pin": "S_ScareEntry"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "IsScareSpawnConditionValid",
+			"from_pin": "ScareData",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "IsScareSpawnConditionValid",
+			"from_pin": "ScareData",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Is Scare Line Of Sight Valid\nTarget is BP Scare Manager",
+			"to_pin": "ScareData"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Scare Entry",
+			"from_pin": "SpawnCondition_14_6154B48E4DD4E63BAE9DC3A572F68673",
+			"to_node_id": "K2Node_SwitchEnum_0",
+			"to_node_title": "Switch on E_SpawnCondition",
+			"to_pin": "Selection"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Is Scare Off Cooldown\nTarget is BP Scare Manager",
+			"from_pin": "bIsOffCooldown",
+			"to_node_id": "K2Node_FunctionResult_4",
+			"to_node_title": "Return Node",
+			"to_pin": "bIsValid"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_BreakStruct_1",
+			"to_node_title": "Break S Scare Entry",
+			"to_pin": "S_ScareEntry"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Is Scare Line Of Sight Valid\nTarget is BP Scare Manager",
+			"from_pin": "bIsValid",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "bIsValid"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Is Scare Off Cooldown\nTarget is BP Scare Manager",
+			"to_pin": "ScareData"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_1",
+			"from_node_title": "Break S Scare Entry",
+			"from_pin": "MinPlayerDist_17_E7E93BF843D37BF2CA967782486073CB",
+			"to_node_id": "K2Node_Composite_1",
+			"to_node_title": "FarFromPlayer\nCollapsed Graph",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_1",
+			"from_node_title": "Break S Scare Entry",
+			"from_pin": "MinPlayerDist_17_E7E93BF843D37BF2CA967782486073CB",
+			"to_node_id": "K2Node_Knot_2",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_1",
+			"from_node_title": "Break S Scare Entry",
+			"from_pin": "MaxPlayerDist_19_E32CF7BE45EE54356B67E7B23BEF4EDC",
+			"to_node_id": "K2Node_Composite_0",
+			"to_node_title": "CloseToPlayer\nCollapsed Graph",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_1",
+			"from_node_title": "Break S Scare Entry",
+			"from_pin": "MaxPlayerDist_19_E32CF7BE45EE54356B67E7B23BEF4EDC",
+			"to_node_id": "K2Node_Composite_0",
+			"to_node_title": "CloseToPlayer\nCollapsed Graph",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_Composite_0",
+			"from_node_title": "CloseToPlayer\nCollapsed Graph",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Composite_0",
+			"from_node_title": "CloseToPlayer\nCollapsed Graph",
+			"from_pin": "ReturnValue2",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Composite_1",
+			"from_node_title": "FarFromPlayer\nCollapsed Graph",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Composite_1",
+			"from_node_title": "FarFromPlayer\nCollapsed Graph",
+			"from_pin": "ReturnValue2",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Get Player Looking Away\nTarget is BP Scare Manager",
+			"from_pin": "isValid",
+			"to_node_id": "K2Node_FunctionResult_11",
+			"to_node_title": "Return Node",
+			"to_pin": "bIsValid"
+		},
+		{
+			"from_node_id": "K2Node_Knot_2",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Composite_1",
+			"to_node_title": "FarFromPlayer\nCollapsed Graph",
+			"to_pin": "B"
+		}
+	],
+	"problems": []
+}

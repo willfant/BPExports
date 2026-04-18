@@ -1,0 +1,225 @@
+{
+	"graph_name": "ExecuteScareLogic",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [
+			"AutoFinishDelay"
+		],
+		"writes_variables": [],
+		"calls": [
+			"Set Timer by Function Name"
+		],
+		"called_by": [
+			"EventGraph"
+		],
+		"branch_points": []
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "ExecuteScareLogic",
+			"title_single_line": "ExecuteScareLogic",
+			"comment": "",
+			"guid": "8d87b78d-41e1-a675-4335-68a001a326b4",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteScareLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Set Timer by Function Name",
+			"title_single_line": "Set Timer by Function Name",
+			"comment": "",
+			"guid": "f52ced07-4d8f-086b-ced0-42b17c6b6aa1",
+			"x": 352,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "FunctionName",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "FinishScare",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Time",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bLooping",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bMaxOncePerFrame",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InitialStartDelay",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InitialStartDelayVariance",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteScareLogic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_3",
+			"node_name": "K2Node_VariableGet_3",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get AutoFinishDelay",
+			"title_single_line": "Get AutoFinishDelay",
+			"comment": "",
+			"guid": "ece7af78-4faf-9b0e-c51e-a5b63e3ed0ab",
+			"x": 160,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "AutoFinishDelay",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareBase_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteScareLogic"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "ExecuteScareLogic",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Set Timer by Function Name",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_VariableGet_3",
+			"from_node_title": "Get AutoFinishDelay",
+			"from_pin": "AutoFinishDelay",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Set Timer by Function Name",
+			"to_pin": "Time"
+		}
+	],
+	"problems": []
+}

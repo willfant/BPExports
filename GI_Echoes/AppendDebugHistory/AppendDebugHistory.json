@@ -1,0 +1,536 @@
+{
+	"graph_name": "AppendDebugHistory",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Provides debug or developer-facing behavior.",
+		"reads_variables": [
+			"DebugHistory",
+			"MaxDebugHistoryEntries"
+		],
+		"writes_variables": [],
+		"calls": [],
+		"called_by": [
+			"SubmitDebugMessage"
+		],
+		"branch_points": [
+			"Branch"
+		]
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "AppendDebugHistory",
+			"title_single_line": "AppendDebugHistory",
+			"comment": "",
+			"guid": "c62f170d-4d5c-3fab-93ff-51bd00b73816",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InMessage",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "AppendDebugHistory"
+		},
+		{
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugHistory",
+			"title_single_line": "Get DebugHistory",
+			"comment": "",
+			"guid": "821b94ae-482c-bbb0-d87b-7ea590d5deb1",
+			"x": 208,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugHistory",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "AppendDebugHistory"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_0",
+			"node_name": "K2Node_CallArrayFunction_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Add",
+			"title_single_line": "Add",
+			"comment": "",
+			"guid": "4f34d831-44b0-27de-5fdc-07a285861f99",
+			"x": 336,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "NewItem",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "AppendDebugHistory"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_1",
+			"node_name": "K2Node_CallArrayFunction_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Length",
+			"title_single_line": "Length",
+			"comment": "",
+			"guid": "ac88467f-4878-6b68-8047-75bf6eef5fae",
+			"x": 512,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "AppendDebugHistory"
+		},
+		{
+			"node_id": "K2Node_VariableGet_1",
+			"node_name": "K2Node_VariableGet_1",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get MaxDebugHistoryEntries",
+			"title_single_line": "Get MaxDebugHistoryEntries",
+			"comment": "",
+			"guid": "6ef8b0e9-4fae-799a-1429-c4996af834ef",
+			"x": 544,
+			"y": -64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "MaxDebugHistoryEntries",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "AppendDebugHistory"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_0",
+			"node_name": "K2Node_PromotableOperator_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "integer > integer",
+			"title_single_line": "integer > integer",
+			"comment": "",
+			"guid": "5ec08fb3-403d-c3ec-7dc6-b5b68d33be72",
+			"x": 848,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "AppendDebugHistory"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "a87ac167-4d36-d51a-2a2f-e7813608a0a9",
+			"x": 1152,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "AppendDebugHistory"
+		},
+		{
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugHistory",
+			"title_single_line": "Get DebugHistory",
+			"comment": "",
+			"guid": "3474ef2b-4222-51dc-036a-c18cd1525894",
+			"x": 1168,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugHistory",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "AppendDebugHistory"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_2",
+			"node_name": "K2Node_CallArrayFunction_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Remove Index",
+			"title_single_line": "Remove Index",
+			"comment": "",
+			"guid": "d3893a37-488d-2e3f-cb4f-1aadda4a13b9",
+			"x": 1456,
+			"y": -192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "IndexToRemove",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "AppendDebugHistory"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "AppendDebugHistory",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallArrayFunction_0",
+			"to_node_title": "Add",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallArrayFunction_0",
+			"from_node_title": "Add",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallArrayFunction_2",
+			"to_node_title": "Remove Index",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "AppendDebugHistory",
+			"from_pin": "InMessage",
+			"to_node_id": "K2Node_CallArrayFunction_0",
+			"to_node_title": "Add",
+			"to_pin": "NewItem"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get DebugHistory",
+			"from_pin": "DebugHistory",
+			"to_node_id": "K2Node_CallArrayFunction_0",
+			"to_node_title": "Add",
+			"to_pin": "TargetArray"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get DebugHistory",
+			"from_pin": "DebugHistory",
+			"to_node_id": "K2Node_CallArrayFunction_1",
+			"to_node_title": "Length",
+			"to_pin": "TargetArray"
+		},
+		{
+			"from_node_id": "K2Node_CallArrayFunction_1",
+			"from_node_title": "Length",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_0",
+			"to_node_title": "integer > integer",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get MaxDebugHistoryEntries",
+			"from_pin": "MaxDebugHistoryEntries",
+			"to_node_id": "K2Node_PromotableOperator_0",
+			"to_node_title": "integer > integer",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_0",
+			"from_node_title": "integer > integer",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get DebugHistory",
+			"from_pin": "DebugHistory",
+			"to_node_id": "K2Node_CallArrayFunction_2",
+			"to_node_title": "Remove Index",
+			"to_pin": "TargetArray"
+		}
+	],
+	"problems": []
+}

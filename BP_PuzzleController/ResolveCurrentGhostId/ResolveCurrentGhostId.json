@@ -1,0 +1,707 @@
+{
+	"graph_name": "ResolveCurrentGhostId",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Resolves contextual state or external information.",
+		"reads_variables": [
+			"GhostManagerRef"
+		],
+		"writes_variables": [
+			"CurrentGhostId"
+		],
+		"calls": [
+			"Is Valid",
+			"Get Current Ghost Id",
+			"Debug Puzzle Message"
+		],
+		"called_by": [
+			"EventGraph"
+		],
+		"branch_points": [
+			"Branch"
+		]
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "ResolveCurrentGhostId",
+			"title_single_line": "ResolveCurrentGhostId",
+			"comment": "",
+			"guid": "c395e3f3-42e7-48e2-b37c-22bcec824bea",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ResolveCurrentGhostId"
+		},
+		{
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get GhostManagerRef",
+			"title_single_line": "Get GhostManagerRef",
+			"comment": "",
+			"guid": "5f4035fb-440b-74c1-ffd5-f2b0c1deb824",
+			"x": 64,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "GhostManagerRef",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ResolveCurrentGhostId"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "f0d8c118-4ae1-1a0f-e521-57ab9fe31db8",
+			"x": 256,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ResolveCurrentGhostId"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "8b050733-4841-a1c8-c4fa-5e9473e6f9e7",
+			"x": 544,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ResolveCurrentGhostId"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Current Ghost Id\nTarget is BP Ghost Manager",
+			"title_single_line": "Get Current Ghost Id",
+			"comment": "",
+			"guid": "ba56100d-41d9-1d38-6f4e-32876db004db",
+			"x": 768,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostId",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OldGhost",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ResolveCurrentGhostId"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentGhostId",
+			"title_single_line": "Set CurrentGhostId",
+			"comment": "",
+			"guid": "1e98d8ae-45dc-2fae-12e9-4598be01eebf",
+			"x": 1040,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentGhostId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ResolveCurrentGhostId"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"title_single_line": "Debug Puzzle Message",
+			"comment": "",
+			"guid": "114148d9-410e-ae68-8bcf-7586010fde15",
+			"x": 1520,
+			"y": -32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "10.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ResolveCurrentGhostId"
+		},
+		{
+			"node_id": "K2Node_FormatText_1",
+			"node_name": "K2Node_FormatText_1",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "68e7936d-4870-00eb-bcbf-f6819ea37207",
+			"x": 1152,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ResolveCurrentGhostId"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentGhostId",
+			"title_single_line": "Set CurrentGhostId",
+			"comment": "",
+			"guid": "086da772-46f7-6226-75cb-2bbf997920c1",
+			"x": 720,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentGhostId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ResolveCurrentGhostId"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"title_single_line": "Debug Puzzle Message",
+			"comment": "",
+			"guid": "60d79a75-40b2-bcc7-b9c4-f1937d031e7a",
+			"x": 1360,
+			"y": 368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "10.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator1",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ResolveCurrentGhostId"
+		},
+		{
+			"node_id": "K2Node_FormatText_0",
+			"node_name": "K2Node_FormatText_0",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "d3e53d9b-447b-3dd7-0a44-65a3c33d14ee",
+			"x": 976,
+			"y": 624,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ResolveCurrentGhostId"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "ResolveCurrentGhostId",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Get Current Ghost Id\nTarget is BP Ghost Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set CurrentGhostId",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Current Ghost Id\nTarget is BP Ghost Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set CurrentGhostId",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set CurrentGhostId",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set CurrentGhostId",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get GhostManagerRef",
+			"from_pin": "GhostManagerRef",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get GhostManagerRef",
+			"from_pin": "GhostManagerRef",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Get Current Ghost Id\nTarget is BP Ghost Manager",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Current Ghost Id\nTarget is BP Ghost Manager",
+			"from_pin": "GhostId",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set CurrentGhostId",
+			"to_pin": "CurrentGhostId"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set CurrentGhostId",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_FormatText_1",
+			"to_node_title": "Format Text",
+			"to_pin": "GhostId"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_1",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_0",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"to_pin": "Message"
+		}
+	],
+	"problems": []
+}

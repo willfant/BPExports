@@ -1,0 +1,158 @@
+{
+	"graph_name": "ClearDebugHistory",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Provides debug or developer-facing behavior.",
+		"reads_variables": [
+			"DebugHistory"
+		],
+		"writes_variables": [],
+		"calls": [],
+		"called_by": [],
+		"branch_points": []
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "ClearDebugHistory",
+			"title_single_line": "ClearDebugHistory",
+			"comment": "",
+			"guid": "f3c4e413-4e2e-6d5e-7ea0-b79728a0770a",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ClearDebugHistory"
+		},
+		{
+			"node_id": "K2Node_VariableGet_1",
+			"node_name": "K2Node_VariableGet_1",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugHistory",
+			"title_single_line": "Get DebugHistory",
+			"comment": "",
+			"guid": "dbcd7b1b-43eb-7a9c-c73b-3da1dbc072b0",
+			"x": 112,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugHistory",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ClearDebugHistory"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_0",
+			"node_name": "K2Node_CallArrayFunction_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Clear",
+			"title_single_line": "Clear",
+			"comment": "",
+			"guid": "da3d79ff-4f73-eaef-f6fb-fd9b0c6ce2b5",
+			"x": 304,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ClearDebugHistory"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "ClearDebugHistory",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallArrayFunction_0",
+			"to_node_title": "Clear",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get DebugHistory",
+			"from_pin": "DebugHistory",
+			"to_node_id": "K2Node_CallArrayFunction_0",
+			"to_node_title": "Clear",
+			"to_pin": "TargetArray"
+		}
+	],
+	"problems": []
+}

@@ -1,0 +1,157 @@
+{
+	"graph_name": "GetDistanceToPlayer",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": true,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [
+		"Distance (Double)"
+	],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [],
+		"writes_variables": [],
+		"calls": [],
+		"called_by": [],
+		"branch_points": []
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "GetDistanceToPlayer",
+			"title_single_line": "GetDistanceToPlayer",
+			"comment": "",
+			"guid": "676c6f2e-42f6-cf6f-2ad5-f3be12a1f6bf",
+			"x": -1040,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "GetDistanceToPlayer"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "69517fc0-4d5c-b483-3a9d-9c99247cfff9",
+			"x": 496,
+			"y": 48,
+			"has_error": true,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Distance",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "GetDistanceToPlayer"
+		},
+		{
+			"node_id": "K2Node_Composite_0",
+			"node_name": "K2Node_Composite_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_Composite",
+			"title": "GetDistance\nCollapsed Graph",
+			"title_single_line": "GetDistance",
+			"comment": "",
+			"guid": "d3b6e4c2-46d1-24d4-747b-b8963806f72d",
+			"x": -160,
+			"y": 0,
+			"has_error": true,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Distance",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "GetDistanceToPlayer"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "GetDistanceToPlayer",
+			"from_pin": "then",
+			"to_node_id": "K2Node_Composite_0",
+			"to_node_title": "GetDistance\nCollapsed Graph",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Composite_0",
+			"from_node_title": "GetDistance\nCollapsed Graph",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_Composite_0",
+			"from_node_title": "GetDistance\nCollapsed Graph",
+			"from_pin": "Distance",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "Distance"
+		}
+	],
+	"problems": []
+}

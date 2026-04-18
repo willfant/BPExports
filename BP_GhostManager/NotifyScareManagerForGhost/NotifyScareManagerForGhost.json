@@ -1,0 +1,2043 @@
+{
+	"graph_name": "NotifyScareManagerForGhost",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [
+			"bHasActiveGhost",
+			"DebugEnabled",
+			"CurrentGhostProfile",
+			"ScareManagerRef",
+			"CurrentGhostId",
+			"CurrentGhostState"
+		],
+		"writes_variables": [],
+		"calls": [
+			"Debug Message",
+			"Get Game Instance",
+			"Is Valid",
+			"Initialize Scares for Ghost",
+			"To String (Text)"
+		],
+		"called_by": [
+			"EventGraph"
+		],
+		"branch_points": [
+			"Branch"
+		]
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "NotifyScareManagerForGhost",
+			"title_single_line": "NotifyScareManagerForGhost",
+			"comment": "",
+			"guid": "2fed9ea8-4db5-4dc8-3a4c-438bd00ec506",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "d083ae35-4f51-7224-4b1a-65b4ed06dbfe",
+			"x": 368,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_5",
+			"node_name": "K2Node_VariableGet_5",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bHasActiveGhost",
+			"title_single_line": "Get bHasActiveGhost",
+			"comment": "",
+			"guid": "59953b8f-40ed-7887-1a0c-7399722f6198",
+			"x": 176,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bHasActiveGhost",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugEnabled",
+			"title_single_line": "Get DebugEnabled",
+			"comment": "",
+			"guid": "ac8893b4-42d4-6ecb-bdf8-7982b924e03e",
+			"x": 432,
+			"y": 496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugEnabled",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Message",
+			"title_single_line": "Debug Message",
+			"comment": "",
+			"guid": "7e0ede67-412e-aad8-8030-f782a7d4725c",
+			"x": 752,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator4",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator1",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "GhostManager",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "NotifyScareManagerForGhost aborted -> no active ghost",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "2.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bPrintToLog",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_Self_1",
+			"node_name": "K2Node_Self_1",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "1998b5c0-45d3-7ad8-a1b7-a197be833af9",
+			"x": 544,
+			"y": 272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_BreakStruct_0",
+			"node_name": "K2Node_BreakStruct_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_BreakStruct",
+			"title": "Break S Ghost Profile",
+			"title_single_line": "Break S Ghost Profile",
+			"comment": "",
+			"guid": "f09fca74-48fb-45a7-1bf4-6f8b93b5e5fc",
+			"x": 1424,
+			"y": -560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "S_GhostProfile",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_GhostProfile",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostId_2_D743CBFC4B7A4C4527A2A6AC3EED67B9",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "DisplayName_5_DF3823A24904489FE44A86A39CAA06CE",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PrimaryColor_8_39F7B18C41490E70CA0DAB9531AB7C60",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "LinearColor",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "State_11_0572529C4E0E733203F3BDAD49CFF0F4",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "AggressionCurve_14_4774861548EF1A9980737B83924D5384",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "FloatCurve",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareIds_18_73D106AF40DF116B15C5BC87D8ADC0C7",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "PuzzleId_21_C1B175064D798D07A50F5B8C4446F0CF",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TransitionToMemory_24_46B1CF2A45FA628F1593A0A079CE9438",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "BanishingVoiceIntent_27_33903F2E4599CB2AB2861EBA443B106D",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Aliases_31_B91216244E78484D9DB0ADAC76175CB3",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "StartingObjectiveId_34_8250EA5C42B3C21A0559B79F2697D5DF",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_6",
+			"node_name": "K2Node_VariableGet_6",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostProfile",
+			"title_single_line": "Get CurrentGhostProfile",
+			"comment": "",
+			"guid": "d1aa21bf-44c0-7276-7e48-d5b9eac16d41",
+			"x": 1216,
+			"y": -384,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostProfile",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_GhostProfile",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Game Instance",
+			"title_single_line": "Get Game Instance",
+			"comment": "",
+			"guid": "04b02cf9-43c7-cbaa-bfb9-a3b30650e96d",
+			"x": 800,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameInstance",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_DynamicCast_0",
+			"node_name": "K2Node_DynamicCast_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_DynamicCast",
+			"title": "Cast To GI_Echoes",
+			"title_single_line": "Cast To GI_Echoes",
+			"comment": "",
+			"guid": "5f296f81-465f-17f5-355d-03a779fea838",
+			"x": 1008,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CastFailed",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "AsGI Echoes",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugEnabled",
+			"title_single_line": "Get DebugEnabled",
+			"comment": "",
+			"guid": "94c6afe5-4034-1d42-887e-c9ad72c1e89c",
+			"x": 1328,
+			"y": 528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugEnabled",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Message",
+			"title_single_line": "Debug Message",
+			"comment": "",
+			"guid": "44d270f0-4999-e086-9a33-8d8a39a3c178",
+			"x": 1648,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator4",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator2",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "GhostManager",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "NotifyScareManagerForGhost failed -> could not cast to GI_Echoes",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "5.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bPrintToLog",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "41942c19-490f-15a4-de8f-a8a3c0ce9caf",
+			"x": 1440,
+			"y": 304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_1",
+			"node_name": "K2Node_VariableGet_1",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ScareManagerRef",
+			"title_single_line": "Get ScareManagerRef",
+			"comment": "",
+			"guid": "346f18d3-43df-ecbc-a64f-ae9aae28ad11",
+			"x": 1440,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ScareManagerRef",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "1cd8ea71-4264-bee6-0cf4-be8af62be193",
+			"x": 1744,
+			"y": 64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "433f52b4-463a-f6e7-be04-45b5f4dd67e8",
+			"x": 2128,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_3",
+			"node_name": "K2Node_VariableGet_3",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugEnabled",
+			"title_single_line": "Get DebugEnabled",
+			"comment": "",
+			"guid": "005a6cd0-45d2-272e-d28b-0cbe05f6cbf9",
+			"x": 2192,
+			"y": 384,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugEnabled",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_6",
+			"node_name": "K2Node_CallFunction_6",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Message",
+			"title_single_line": "Debug Message",
+			"comment": "",
+			"guid": "7c5de235-4c9e-fec3-de63-7c82677b00a7",
+			"x": 2512,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator4",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator2",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "GhostManager",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "NotifyScareManagerForGhost failed -> ScareManagerRef invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "5.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bPrintToLog",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_Self_3",
+			"node_name": "K2Node_Self_3",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "91549308-4d54-4a38-e9f0-b7a9726323b3",
+			"x": 2304,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Initialize Scares for Ghost\nTarget is BP Scare Manager",
+			"title_single_line": "Initialize Scares for Ghost",
+			"comment": "",
+			"guid": "4daf385a-4087-148d-fb43-2dbc740e6eff",
+			"x": 2416,
+			"y": -224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ScareIds",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostState",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "ab659ded-4aa4-9313-cfbd-8dacc4b57f29",
+			"x": 1888,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_7",
+			"node_name": "K2Node_VariableGet_7",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostId",
+			"title_single_line": "Get CurrentGhostId",
+			"comment": "",
+			"guid": "ffa2a827-444f-7732-a8eb-34b90bcaa199",
+			"x": 2112,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostId",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_8",
+			"node_name": "K2Node_VariableGet_8",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostState",
+			"title_single_line": "Get CurrentGhostState",
+			"comment": "",
+			"guid": "600201de-4b44-b5bf-e1d5-d4abe28e96b8",
+			"x": 2112,
+			"y": -48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostState",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Message",
+			"title_single_line": "Debug Message",
+			"comment": "",
+			"guid": "39bcf003-4258-05b8-5335-61b53a22f26d",
+			"x": 3104,
+			"y": -480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator4",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "GhostManager",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "20.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bPrintToLog",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "dbf6dfc3-418f-5e02-084c-26b25b4aaf61",
+			"x": 2896,
+			"y": -416,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_14",
+			"node_name": "K2Node_VariableGet_14",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugEnabled",
+			"title_single_line": "Get DebugEnabled",
+			"comment": "",
+			"guid": "54e7f5e1-4da7-bcf2-9c13-c29760a89842",
+			"x": 2784,
+			"y": -192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugEnabled",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_FormatText_0",
+			"node_name": "K2Node_FormatText_0",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "134014af-4454-a04b-f057-cd9df142a00c",
+			"x": 2192,
+			"y": -656,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostState",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Count",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_50",
+			"node_name": "K2Node_CallFunction_50",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Text)",
+			"title_single_line": "To String (Text)",
+			"comment": "",
+			"guid": "318ee41d-486f-5004-881a-0b918acf8560",
+			"x": 2816,
+			"y": -624,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetTextLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InText",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_0",
+			"node_name": "K2Node_CallArrayFunction_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Length",
+			"title_single_line": "Length",
+			"comment": "",
+			"guid": "9b805d61-40c8-bed5-84ce-9286724414dd",
+			"x": 1872,
+			"y": -400,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_9",
+			"node_name": "K2Node_VariableGet_9",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostId",
+			"title_single_line": "Get CurrentGhostId",
+			"comment": "",
+			"guid": "73212822-47e2-4738-013e-e98b0d61eade",
+			"x": 2000,
+			"y": -576,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostId",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_10",
+			"node_name": "K2Node_VariableGet_10",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostState",
+			"title_single_line": "Get CurrentGhostState",
+			"comment": "",
+			"guid": "d9f692c0-4713-964c-8d92-9cac72265864",
+			"x": 1728,
+			"y": -512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostState",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_GetEnumeratorNameAsString_0",
+			"node_name": "K2Node_GetEnumeratorNameAsString_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_GetEnumeratorNameAsString",
+			"title": "Enum to String",
+			"title_single_line": "Enum to String",
+			"comment": "",
+			"guid": "ac6e15a7-4b5a-4f6c-9daa-ee8e864075e7",
+			"x": 1920,
+			"y": -528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enumerator",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyScareManagerForGhost"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "NotifyScareManagerForGhost",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Message",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "CastFailed",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Debug Message",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Initialize Scares for Ghost\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Message",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Initialize Scares for Ghost\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_VariableGet_5",
+			"from_node_title": "Get bHasActiveGhost",
+			"from_pin": "bHasActiveGhost",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToScreen"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToLog"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Message",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Ghost Profile",
+			"from_pin": "ScareIds_18_73D106AF40DF116B15C5BC87D8ADC0C7",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Initialize Scares for Ghost\nTarget is BP Scare Manager",
+			"to_pin": "ScareIds"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Ghost Profile",
+			"from_pin": "ScareIds_18_73D106AF40DF116B15C5BC87D8ADC0C7",
+			"to_node_id": "K2Node_CallArrayFunction_0",
+			"to_node_title": "Length",
+			"to_pin": "TargetArray"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_6",
+			"from_node_title": "Get CurrentGhostProfile",
+			"from_pin": "CurrentGhostProfile",
+			"to_node_id": "K2Node_BreakStruct_0",
+			"to_node_title": "Break S Ghost Profile",
+			"to_pin": "S_GhostProfile"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Get Game Instance",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "AsGI Echoes",
+			"to_node_id": "K2Node_VariableGet_1",
+			"to_node_title": "Get ScareManagerRef",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToScreen"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToLog"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Debug Message",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get ScareManagerRef",
+			"from_pin": "ScareManagerRef",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get ScareManagerRef",
+			"from_pin": "ScareManagerRef",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_3",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToScreen"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_3",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToLog"
+		},
+		{
+			"from_node_id": "K2Node_Self_3",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Message",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Initialize Scares for Ghost\nTarget is BP Scare Manager",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_7",
+			"from_node_title": "Get CurrentGhostId",
+			"from_pin": "CurrentGhostId",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Initialize Scares for Ghost\nTarget is BP Scare Manager",
+			"to_pin": "GhostId"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_8",
+			"from_node_title": "Get CurrentGhostState",
+			"from_pin": "CurrentGhostState",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Initialize Scares for Ghost\nTarget is BP Scare Manager",
+			"to_pin": "GhostState"
+		},
+		{
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_14",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToScreen"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_14",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToLog"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_0",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_50",
+			"to_node_title": "To String (Text)",
+			"to_pin": "InText"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_50",
+			"from_node_title": "To String (Text)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_CallArrayFunction_0",
+			"from_node_title": "Length",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "Count"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_9",
+			"from_node_title": "Get CurrentGhostId",
+			"from_pin": "CurrentGhostId",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "GhostId"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_10",
+			"from_node_title": "Get CurrentGhostState",
+			"from_pin": "CurrentGhostState",
+			"to_node_id": "K2Node_GetEnumeratorNameAsString_0",
+			"to_node_title": "Enum to String",
+			"to_pin": "Enumerator"
+		},
+		{
+			"from_node_id": "K2Node_GetEnumeratorNameAsString_0",
+			"from_node_title": "Enum to String",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "GhostState"
+		}
+	],
+	"problems": []
+}

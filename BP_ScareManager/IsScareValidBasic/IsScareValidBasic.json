@@ -1,0 +1,974 @@
+{
+	"graph_name": "IsScareValidBasic",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": true,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [
+		"bValid (Boolean)"
+	],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [
+			"WorldOk",
+			"GhostOk",
+			"DistOk"
+		],
+		"writes_variables": [
+			"WorldOk",
+			"GhostOk",
+			"DistOk"
+		],
+		"calls": [
+			"Is Scare Allowed in Current World Mode",
+			"Is Scare Allowed for Current Ghost State",
+			"Is Scare Distance Valid"
+		],
+		"called_by": [
+			"IsScareValidAdvanced"
+		],
+		"branch_points": []
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "IsScareValidBasic",
+			"title_single_line": "IsScareValidBasic",
+			"comment": "",
+			"guid": "7ee652c9-4d92-c623-9ee5-5a87e4e926ab",
+			"x": -400,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ScareData ",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "bd77f442-47b0-8183-d558-e78559fb8970",
+			"x": 3152,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Scare Allowed in Current World Mode\nTarget is BP Scare Manager",
+			"title_single_line": "Is Scare Allowed in Current World Mode",
+			"comment": "",
+			"guid": "a1d5f81a-431a-c9d6-e48c-d8af34269b6b",
+			"x": -96,
+			"y": -32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Return",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set WorldOk",
+			"title_single_line": "Set WorldOk",
+			"comment": "",
+			"guid": "a8b24fd6-44f4-5937-f1e7-b28be16ebb6b",
+			"x": 240,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "WorldOk",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Scare Allowed for Current Ghost State\nTarget is BP Scare Manager",
+			"title_single_line": "Is Scare Allowed for Current Ghost State",
+			"comment": "",
+			"guid": "bc4a3105-48cf-e772-7a31-609916241727",
+			"x": 464,
+			"y": -32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareDData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "332d80ad-4281-aa99-dc6e-3c86f8459c20",
+			"x": -208,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "a78f3aec-4d6a-efb0-92f4-d19fab46958b",
+			"x": 352,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_VariableSet_2",
+			"node_name": "K2Node_VariableSet_2",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set GhostOk",
+			"title_single_line": "Set GhostOk",
+			"comment": "",
+			"guid": "9897b61a-4458-46aa-983f-ea9d42240148",
+			"x": 832,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostOk",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Scare Distance Valid\nTarget is BP Scare Manager",
+			"title_single_line": "Is Scare Distance Valid",
+			"comment": "",
+			"guid": "6c39bec3-40f7-d2d8-24aa-9fae898d0b3e",
+			"x": 1120,
+			"y": -32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_Knot_2",
+			"node_name": "K2Node_Knot_2",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "a120c968-431d-862f-ecb4-13b157d5041d",
+			"x": 976,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_VariableSet_4",
+			"node_name": "K2Node_VariableSet_4",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set DistOk",
+			"title_single_line": "Set DistOk",
+			"comment": "",
+			"guid": "2a966d25-4f9c-3a3e-3c4b-70ad5c96785a",
+			"x": 1408,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "DistOk",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"node_name": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CommutativeAssociativeBinaryOperator",
+			"title": "AND Boolean",
+			"title_single_line": "AND Boolean",
+			"comment": "",
+			"guid": "4fec6d26-4754-7b8a-dd76-13b427c7ff97",
+			"x": 1552,
+			"y": 256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_26",
+			"node_name": "K2Node_VariableGet_26",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get WorldOk",
+			"title_single_line": "Get WorldOk",
+			"comment": "",
+			"guid": "4d6e22be-4fab-f10b-b85c-2ca12c52e14f",
+			"x": 1360,
+			"y": 272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "WorldOk",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_27",
+			"node_name": "K2Node_VariableGet_27",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get GhostOk",
+			"title_single_line": "Get GhostOk",
+			"comment": "",
+			"guid": "de02ff0c-49f3-b754-a6f8-53b113a5c4cc",
+			"x": 1360,
+			"y": 336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "GhostOk",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
+			"node_name": "K2Node_CommutativeAssociativeBinaryOperator_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CommutativeAssociativeBinaryOperator",
+			"title": "AND Boolean",
+			"title_single_line": "AND Boolean",
+			"comment": "",
+			"guid": "0d20a1e8-4643-7d61-6193-6aae19da04a1",
+			"x": 1792,
+			"y": 256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 2
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_28",
+			"node_name": "K2Node_VariableGet_28",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DistOk",
+			"title_single_line": "Get DistOk",
+			"comment": "",
+			"guid": "ce71d5c5-41c4-cd4b-62df-0392a6c24ee2",
+			"x": 1616,
+			"y": 336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DistOk",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_Composite_0",
+			"node_name": "K2Node_Composite_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_Composite",
+			"title": "debug20\nCollapsed Graph",
+			"title_single_line": "debug20",
+			"comment": "",
+			"guid": "38b359e9-4dd4-0739-2b6b-9a85f4bff57f",
+			"x": 2608,
+			"y": -32,
+			"has_error": true,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "R",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "IsScareValidBasic",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Is Scare Allowed in Current World Mode\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Is Scare Allowed in Current World Mode\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set WorldOk",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set WorldOk",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Is Scare Allowed for Current Ghost State\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Is Scare Allowed for Current Ghost State\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set GhostOk",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set GhostOk",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Is Scare Distance Valid\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Is Scare Distance Valid\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_4",
+			"to_node_title": "Set DistOk",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_4",
+			"from_node_title": "Set DistOk",
+			"from_pin": "then",
+			"to_node_id": "K2Node_Composite_0",
+			"to_node_title": "debug20\nCollapsed Graph",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Composite_0",
+			"from_node_title": "debug20\nCollapsed Graph",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "IsScareValidBasic",
+			"from_pin": "ScareData ",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Is Scare Allowed in Current World Mode\nTarget is BP Scare Manager",
+			"to_pin": "ScareData"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "IsScareValidBasic",
+			"from_pin": "ScareData ",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Is Scare Allowed in Current World Mode\nTarget is BP Scare Manager",
+			"from_pin": "Return",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set WorldOk",
+			"to_pin": "WorldOk"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Is Scare Allowed for Current Ghost State\nTarget is BP Scare Manager",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set GhostOk",
+			"to_pin": "GhostOk"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Is Scare Allowed for Current Ghost State\nTarget is BP Scare Manager",
+			"to_pin": "ScareDData"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_2",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Is Scare Distance Valid\nTarget is BP Scare Manager",
+			"from_pin": "bIsValid",
+			"to_node_id": "K2Node_VariableSet_4",
+			"to_node_title": "Set DistOk",
+			"to_pin": "DistOk"
+		},
+		{
+			"from_node_id": "K2Node_Knot_2",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Is Scare Distance Valid\nTarget is BP Scare Manager",
+			"to_pin": "ScareData"
+		},
+		{
+			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"from_node_title": "AND Boolean",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
+			"to_node_title": "AND Boolean",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_26",
+			"from_node_title": "Get WorldOk",
+			"from_pin": "WorldOk",
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"to_node_title": "AND Boolean",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_27",
+			"from_node_title": "Get GhostOk",
+			"from_pin": "GhostOk",
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"to_node_title": "AND Boolean",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
+			"from_node_title": "AND Boolean",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_Composite_0",
+			"to_node_title": "debug20\nCollapsed Graph",
+			"to_pin": "R"
+		},
+		{
+			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
+			"from_node_title": "AND Boolean",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "bValid"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_28",
+			"from_node_title": "Get DistOk",
+			"from_pin": "DistOk",
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
+			"to_node_title": "AND Boolean",
+			"to_pin": "B"
+		}
+	],
+	"problems": []
+}

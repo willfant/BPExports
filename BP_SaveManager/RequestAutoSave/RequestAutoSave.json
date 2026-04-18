@@ -1,0 +1,1205 @@
+{
+	"graph_name": "RequestAutoSave",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Synchronizes or persists runtime state.",
+		"reads_variables": [
+			"bEnableAutoSave",
+			"bEnableSaveDebug",
+			"bAutoSavePending",
+			"AutoSaveReasonLast",
+			"AutoSaveDelay"
+		],
+		"writes_variables": [
+			"AutoSaveReasonLast",
+			"bAutoSavePending"
+		],
+		"calls": [
+			"Debug Log",
+			"Set Timer by Function Name"
+		],
+		"called_by": [
+			"SetCurrentGhostId",
+			"SetCurrentGhostState",
+			"SetCurrentWorldMode",
+			"SetCurrentPuzzleId",
+			"SetCurrentPuzzleStepIndex",
+			"MarkPuzzleCompleted",
+			"SetCurrentLevelName",
+			"SetCurrentLevel"
+		],
+		"branch_points": [
+			"Branch"
+		]
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "RequestAutoSave",
+			"title_single_line": "RequestAutoSave",
+			"comment": "",
+			"guid": "5aff4436-4aa4-1284-29e7-9ab6e545e734",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Reason",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "2d51cc90-467f-287d-eb48-5587d4e7b27e",
+			"x": 336,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bEnableAutoSave",
+			"title_single_line": "Get bEnableAutoSave",
+			"comment": "",
+			"guid": "b995ba47-4261-bddb-ccd8-4e8913daebcf",
+			"x": 336,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bEnableAutoSave",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Log\nTarget is BP Save Manager",
+			"title_single_line": "Debug Log",
+			"comment": "",
+			"guid": "ea8ef3d1-49d6-11d6-41a1-689d93d1af26",
+			"x": 608,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "AutoSave request ignored because auto save is disabled",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bEnableSaveDebug",
+			"title_single_line": "Get bEnableSaveDebug",
+			"comment": "",
+			"guid": "0b79a277-4fde-9901-5304-f5a6f379dda6",
+			"x": 624,
+			"y": 496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bEnableSaveDebug",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set AutoSaveReasonLast",
+			"title_single_line": "Set AutoSaveReasonLast",
+			"comment": "",
+			"guid": "d0a32733-4814-f970-35d4-0f91556bfba5",
+			"x": 688,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "AutoSaveReasonLast",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "f5f5cf4c-4377-a858-29b2-97a79803e960",
+			"x": 224,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "72d8ff09-4762-72e1-66da-f685553db9d6",
+			"x": 1120,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_VariableGet_1",
+			"node_name": "K2Node_VariableGet_1",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bAutoSavePending",
+			"title_single_line": "Get bAutoSavePending",
+			"comment": "",
+			"guid": "2bfa7f58-42c0-9283-3dbc-7d96a3352ea2",
+			"x": 1104,
+			"y": -64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bAutoSavePending",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Log\nTarget is BP Save Manager",
+			"title_single_line": "Debug Log",
+			"comment": "",
+			"guid": "b80417cc-47bb-5f0b-9efe-9fa0429e1bca",
+			"x": 1552,
+			"y": -528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_VariableGet_4",
+			"node_name": "K2Node_VariableGet_4",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bEnableSaveDebug",
+			"title_single_line": "Get bEnableSaveDebug",
+			"comment": "",
+			"guid": "539269a6-4b26-1525-f860-9ea591c0bbf6",
+			"x": 1568,
+			"y": -272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bEnableSaveDebug",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_CommutativeAssociativeBinaryOperator_1",
+			"node_name": "K2Node_CommutativeAssociativeBinaryOperator_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CommutativeAssociativeBinaryOperator",
+			"title": "Append",
+			"title_single_line": "Append",
+			"comment": "",
+			"guid": "f1c6924c-48ee-634e-3ef7-64b9fb0710bc",
+			"x": 1056,
+			"y": -416,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetStringLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "AutoSave already pending. Updated reason: ",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_VariableGet_5",
+			"node_name": "K2Node_VariableGet_5",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get AutoSaveReasonLast",
+			"title_single_line": "Get AutoSaveReasonLast",
+			"comment": "",
+			"guid": "53f027f4-49fa-06ef-bf57-ea93220e7060",
+			"x": 1056,
+			"y": -288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "AutoSaveReasonLast",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bAutoSavePending",
+			"title_single_line": "Set bAutoSavePending",
+			"comment": "",
+			"guid": "04e056a8-48dc-fdcd-b8c4-dab198da9a01",
+			"x": 1424,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bAutoSavePending",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Log\nTarget is BP Save Manager",
+			"title_single_line": "Debug Log",
+			"comment": "",
+			"guid": "e97a27ed-491c-ba60-9958-cab433e84e91",
+			"x": 1968,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_VariableGet_8",
+			"node_name": "K2Node_VariableGet_8",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bEnableSaveDebug",
+			"title_single_line": "Get bEnableSaveDebug",
+			"comment": "",
+			"guid": "43dfb378-4425-6384-bb07-e6a0700de728",
+			"x": 2000,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bEnableSaveDebug",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"node_name": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CommutativeAssociativeBinaryOperator",
+			"title": "Append",
+			"title_single_line": "Append",
+			"comment": "",
+			"guid": "7462bb13-432c-a518-8b74-8fab7b1cd1d2",
+			"x": 1408,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetStringLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "AutoSave requested. Reason:",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "5523cbbf-446b-9254-a167-a7930420007e",
+			"x": 240,
+			"y": 176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Set Timer by Function Name",
+			"title_single_line": "Set Timer by Function Name",
+			"comment": "",
+			"guid": "2392d07c-4529-1152-6e49-93bcbf951692",
+			"x": 2432,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "FunctionName",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "ExecuteAutoSave",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Time",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bLooping",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bMaxOncePerFrame",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InitialStartDelay",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InitialStartDelayVariance",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_VariableGet_6",
+			"node_name": "K2Node_VariableGet_6",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get AutoSaveDelay",
+			"title_single_line": "Get AutoSaveDelay",
+			"comment": "",
+			"guid": "7a8f05fc-4e30-59d4-d4b5-c69dfa58b790",
+			"x": 2240,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "AutoSaveDelay",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "RequestAutoSave",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set AutoSaveReasonLast",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set AutoSaveReasonLast",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set bAutoSavePending",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set bAutoSavePending",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Debug Log\nTarget is BP Save Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Set Timer by Function Name",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "RequestAutoSave",
+			"from_pin": "Reason",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "RequestAutoSave",
+			"from_pin": "Reason",
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get bEnableAutoSave",
+			"from_pin": "bEnableAutoSave",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get bEnableSaveDebug",
+			"from_pin": "bEnableSaveDebug",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_pin": "bPrintToScreen"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set AutoSaveReasonLast",
+			"to_pin": "AutoSaveReasonLast"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get bAutoSavePending",
+			"from_pin": "bAutoSavePending",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get bEnableSaveDebug",
+			"from_pin": "bEnableSaveDebug",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_pin": "bPrintToScreen"
+		},
+		{
+			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_1",
+			"from_node_title": "Append",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_5",
+			"from_node_title": "Get AutoSaveReasonLast",
+			"from_pin": "AutoSaveReasonLast",
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_1",
+			"to_node_title": "Append",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_8",
+			"from_node_title": "Get bEnableSaveDebug",
+			"from_pin": "bEnableSaveDebug",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_pin": "bPrintToScreen"
+		},
+		{
+			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"from_node_title": "Append",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"to_node_title": "Append",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_6",
+			"from_node_title": "Get AutoSaveDelay",
+			"from_pin": "AutoSaveDelay",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Set Timer by Function Name",
+			"to_pin": "Time"
+		}
+	],
+	"problems": []
+}

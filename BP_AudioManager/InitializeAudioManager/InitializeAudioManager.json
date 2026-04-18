@@ -1,0 +1,864 @@
+{
+	"graph_name": "InitializeAudioManager",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Initializes references, state, or startup flow.",
+		"reads_variables": [
+			"DebugEnabled"
+		],
+		"writes_variables": [
+			"CachedGameInstance",
+			"CurrentWorldMode",
+			"bInitialized"
+		],
+		"calls": [
+			"Get Game Instance",
+			"Get Current World Mode",
+			"Debug Message",
+			"To String (Text)"
+		],
+		"called_by": [
+			"EventGraph"
+		],
+		"branch_points": []
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "InitializeAudioManager",
+			"title_single_line": "InitializeAudioManager",
+			"comment": "",
+			"guid": "b316c93c-42e7-b816-ebdb-68892ad033f9",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Game Instance",
+			"title_single_line": "Get Game Instance",
+			"comment": "",
+			"guid": "9b3ba30b-46d3-1246-8c07-ae99a53a1eb9",
+			"x": -48,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameInstance",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		},
+		{
+			"node_id": "K2Node_DynamicCast_0",
+			"node_name": "K2Node_DynamicCast_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_DynamicCast",
+			"title": "Cast To GI_Echoes",
+			"title_single_line": "Cast To GI_Echoes",
+			"comment": "",
+			"guid": "6d6ad055-4fe6-38f9-b4f3-d9bc536ae79b",
+			"x": 272,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CastFailed",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "AsGI Echoes",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CachedGameInstance",
+			"title_single_line": "Set CachedGameInstance",
+			"comment": "",
+			"guid": "9a07f3e3-46f4-ccdd-ebd9-efaf741c4c55",
+			"x": 592,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CachedGameInstance",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_AudioManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Current World Mode\nTarget is GI Echoes",
+			"title_single_line": "Get Current World Mode",
+			"comment": "",
+			"guid": "c47f746e-4d91-3f45-89f2-6ebb7b64cee1",
+			"x": 912,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "WorldMode",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentWorldMode",
+			"title_single_line": "Set CurrentWorldMode",
+			"comment": "",
+			"guid": "69de5c1f-402d-1a44-4fed-c4ac01622302",
+			"x": 1200,
+			"y": 48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentWorldMode",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_AudioManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		},
+		{
+			"node_id": "K2Node_VariableSet_2",
+			"node_name": "K2Node_VariableSet_2",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bInitialized",
+			"title_single_line": "Set bInitialized",
+			"comment": "",
+			"guid": "d2023bb8-4edc-c25e-6837-09a89971d8dd",
+			"x": 1504,
+			"y": 48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bInitialized",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_AudioManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Message",
+			"title_single_line": "Debug Message",
+			"comment": "",
+			"guid": "e6d02e8c-48ec-9bf4-8aea-6dbecca5b2b4",
+			"x": 2176,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator9",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "BP_AudioManager",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "5.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bPrintToLog",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		},
+		{
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "c45e408b-4bd2-e7a9-b93c-b09d071227c0",
+			"x": 2016,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		},
+		{
+			"node_id": "K2Node_VariableGet_53",
+			"node_name": "K2Node_VariableGet_53",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugEnabled",
+			"title_single_line": "Get DebugEnabled",
+			"comment": "",
+			"guid": "a465a154-4041-4c26-4f9d-1eb665f86c92",
+			"x": 1984,
+			"y": 368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugEnabled",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_AudioManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		},
+		{
+			"node_id": "K2Node_FormatText_0",
+			"node_name": "K2Node_FormatText_0",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "3256e357-448a-7e3e-53cb-7eb6a8e6afe3",
+			"x": 1680,
+			"y": 256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Mode",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_61",
+			"node_name": "K2Node_CallFunction_61",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Text)",
+			"title_single_line": "To String (Text)",
+			"comment": "",
+			"guid": "1e3579a4-4004-fd9a-c21a-ce9a1d9b4c65",
+			"x": 2032,
+			"y": 272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetTextLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InText",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		},
+		{
+			"node_id": "K2Node_GetEnumeratorNameAsString_0",
+			"node_name": "K2Node_GetEnumeratorNameAsString_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_GetEnumeratorNameAsString",
+			"title": "Enum to String",
+			"title_single_line": "Enum to String",
+			"comment": "",
+			"guid": "e9d61a3a-45a2-b038-d65d-b9a941e13894",
+			"x": 1376,
+			"y": 256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enumerator",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeAudioManager"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "InitializeAudioManager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set CachedGameInstance",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set CachedGameInstance",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Get Current World Mode\nTarget is GI Echoes",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Current World Mode\nTarget is GI Echoes",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set CurrentWorldMode",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set CurrentWorldMode",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set bInitialized",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set bInitialized",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Get Game Instance",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "AsGI Echoes",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set CachedGameInstance",
+			"to_pin": "CachedGameInstance"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set CachedGameInstance",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Get Current World Mode\nTarget is GI Echoes",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Current World Mode\nTarget is GI Echoes",
+			"from_pin": "WorldMode",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set CurrentWorldMode",
+			"to_pin": "CurrentWorldMode"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set CurrentWorldMode",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_GetEnumeratorNameAsString_0",
+			"to_node_title": "Enum to String",
+			"to_pin": "Enumerator"
+		},
+		{
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_53",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToScreen"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_53",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToLog"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_0",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_61",
+			"to_node_title": "To String (Text)",
+			"to_pin": "InText"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_61",
+			"from_node_title": "To String (Text)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_GetEnumeratorNameAsString_0",
+			"from_node_title": "Enum to String",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "Mode"
+		}
+	],
+	"problems": []
+}

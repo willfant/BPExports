@@ -1,0 +1,2698 @@
+{
+	"graph_name": "ExecuteWhisperLogic",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [
+			"bRandomizeSide",
+			"WhisperDistance",
+			"bSpawnBehindPlayer",
+			"WhisperHeightOffset",
+			"offsetBehind",
+			"WhisperSound",
+			"DebugEnabled_0",
+			"ScareId",
+			"WhisperDuration"
+		],
+		"writes_variables": [
+			"offsetBehind"
+		],
+		"calls": [
+			"Get Player Pawn",
+			"Is Valid",
+			"Debug Message",
+			"Finish Scare",
+			"Get Actor Location",
+			"Get Actor Right Vector",
+			"Get Actor Forward Vector",
+			"Random Bool",
+			"Select Float",
+			"Make Vector",
+			"Spawn Sound at Location",
+			"To String (Text)",
+			"Set Timer by Function Name"
+		],
+		"called_by": [],
+		"branch_points": [
+			"Branch"
+		]
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "ExecuteWhisperLogic",
+			"title_single_line": "ExecuteWhisperLogic",
+			"comment": "",
+			"guid": "49bbb273-42d7-b8d0-0e5f-bea44fa55b74",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Player Pawn",
+			"title_single_line": "Get Player Pawn",
+			"comment": "",
+			"guid": "60756691-4804-2e7c-7726-3a8971436ac1",
+			"x": 32,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PlayerIndex",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Pawn",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "03e8b69f-4c46-a9ac-a76b-cb923c42c492",
+			"x": 336,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "36bd6ab4-495c-ee10-bb51-62a43e36e215",
+			"x": 624,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Message",
+			"title_single_line": "Debug Message",
+			"comment": "",
+			"guid": "19733524-4d93-19bd-6203-5a82f34cae08",
+			"x": 912,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator1",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "BP_Scare_Whisper",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "ExecuteWhisperLogic aborted -> PlayerPawn invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToLog",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "8f1bd25d-448a-3a9a-60d0-5c8c69b514a8",
+			"x": 768,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Finish Scare\nTarget is BP Scare Base",
+			"title_single_line": "Finish Scare",
+			"comment": "",
+			"guid": "775c5b2c-4a26-dfae-4171-68aee7a98012",
+			"x": 1472,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareBase_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Actor Location\nTarget is Actor",
+			"title_single_line": "Get Actor Location",
+			"comment": "",
+			"guid": "0ce18cdb-43fd-7a50-1d7c-bcbc396d55d0",
+			"x": 688,
+			"y": -336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Actor",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Player Pawn",
+			"title_single_line": "Get Player Pawn",
+			"comment": "",
+			"guid": "a88444f7-4799-1035-b54e-49baf5849d2a",
+			"x": 400,
+			"y": -224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PlayerIndex",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Pawn",
+					"default_value": "",
+					"linked_count": 3
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_6",
+			"node_name": "K2Node_CallFunction_6",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Actor Right Vector\nTarget is Actor",
+			"title_single_line": "Get Actor Right Vector",
+			"comment": "",
+			"guid": "ce533098-4706-ff57-a9b6-cb8cb74eee62",
+			"x": 688,
+			"y": -224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Actor",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_7",
+			"node_name": "K2Node_CallFunction_7",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Actor Forward Vector\nTarget is Actor",
+			"title_single_line": "Get Actor Forward Vector",
+			"comment": "",
+			"guid": "e5e3c80d-4612-3717-65df-fc9a9d99486c",
+			"x": 688,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Actor",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Random Bool",
+			"title_single_line": "Random Bool",
+			"comment": "",
+			"guid": "91203d67-4795-4925-0d34-099f8d14d1d2",
+			"x": 336,
+			"y": -800,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Select Float",
+			"title_single_line": "Select Float",
+			"comment": "",
+			"guid": "5fcc4eb4-4107-7d33-2a83-7ba0c7d354ff",
+			"x": 672,
+			"y": -720,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "1.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "-1.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPickA",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Select Float",
+			"title_single_line": "Select Float",
+			"comment": "",
+			"guid": "03db90bb-4c56-e41a-5c82-439deb4408e3",
+			"x": 976,
+			"y": -608,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "1.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPickA",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_19",
+			"node_name": "K2Node_VariableGet_19",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bRandomizeSide",
+			"title_single_line": "Get bRandomizeSide",
+			"comment": "",
+			"guid": "933ba854-4d64-d727-2ee5-02bd2ed346ab",
+			"x": 720,
+			"y": -512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bRandomizeSide",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_Scare_Whisper_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_0",
+			"node_name": "K2Node_PromotableOperator_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "vector * vector",
+			"title_single_line": "vector * vector",
+			"comment": "Lateral Offset",
+			"guid": "0f9862ac-440b-b498-d1bd-5c95854fc493",
+			"x": 1408,
+			"y": -208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get WhisperDistance",
+			"title_single_line": "Get WhisperDistance",
+			"comment": "",
+			"guid": "4e9d2234-4e2c-1515-cdb8-27ab3baa7c48",
+			"x": 1024,
+			"y": -416,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "WhisperDistance",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_Scare_Whisper_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_1",
+			"node_name": "K2Node_PromotableOperator_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "float * float",
+			"title_single_line": "float * float",
+			"comment": "",
+			"guid": "d21fa61f-47bd-7d4a-b395-ae947b81ae64",
+			"x": 1232,
+			"y": -496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_2",
+			"node_name": "K2Node_IfThenElse_2",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "82ca9ed2-41fc-9daa-d126-5ba9c1bd6ac3",
+			"x": 1824,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_20",
+			"node_name": "K2Node_VariableGet_20",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bSpawnBehindPlayer",
+			"title_single_line": "Get bSpawnBehindPlayer",
+			"comment": "",
+			"guid": "917a6ef9-41f4-fc01-90c7-ee88867b958b",
+			"x": 1600,
+			"y": 48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bSpawnBehindPlayer",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_Scare_Whisper_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_2",
+			"node_name": "K2Node_PromotableOperator_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "vector * vector",
+			"title_single_line": "vector * vector",
+			"comment": "BackOffset",
+			"guid": "b3ebb5c6-435e-a1ac-cb61-6badcd6febfb",
+			"x": 1408,
+			"y": -80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "-40.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Make Vector",
+			"title_single_line": "Make Vector",
+			"comment": "",
+			"guid": "5b0119bb-4723-3aed-ee5b-16906401007d",
+			"x": 2704,
+			"y": -544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "X",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Y",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Z",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_21",
+			"node_name": "K2Node_VariableGet_21",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get WhisperHeightOffset",
+			"title_single_line": "Get WhisperHeightOffset",
+			"comment": "",
+			"guid": "b84b5553-4019-0938-6af5-ac88e1b46798",
+			"x": 2688,
+			"y": -400,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "WhisperHeightOffset",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_Scare_Whisper_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_4",
+			"node_name": "K2Node_PromotableOperator_4",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "vector + vector",
+			"title_single_line": "vector + vector",
+			"comment": "",
+			"guid": "33f62b15-4f4f-f8b9-a3ba-4ba6c3ec90ad",
+			"x": 1648,
+			"y": -608,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_5",
+			"node_name": "K2Node_PromotableOperator_5",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "vector + vector",
+			"title_single_line": "vector + vector",
+			"comment": "",
+			"guid": "995d716d-45fd-705b-6b4d-5abe499513e9",
+			"x": 2448,
+			"y": -608,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_3",
+			"node_name": "K2Node_PromotableOperator_3",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "vector + vector",
+			"title_single_line": "vector + vector",
+			"comment": "",
+			"guid": "15cc115c-4390-90dc-7963-f88435324a3d",
+			"x": 2960,
+			"y": -608,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set offsetBehind",
+			"title_single_line": "Set offsetBehind",
+			"comment": "",
+			"guid": "b7081995-4285-7c21-69a8-c3aee32ef691",
+			"x": 2192,
+			"y": -448,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "offsetBehind",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set offsetBehind",
+			"title_single_line": "Set offsetBehind",
+			"comment": "",
+			"guid": "6bd708f3-47af-2b83-5e03-c8ac78986259",
+			"x": 2144,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "offsetBehind",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_1",
+			"node_name": "K2Node_VariableGet_1",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get offsetBehind",
+			"title_single_line": "Get offsetBehind",
+			"comment": "",
+			"guid": "97cb1445-4798-4328-a3e8-7d95735b24c4",
+			"x": 2160,
+			"y": -560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "offsetBehind",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get WhisperSound",
+			"title_single_line": "Get WhisperSound",
+			"comment": "",
+			"guid": "4fcdb71f-4257-8bf7-c751-71ba7ee74f61",
+			"x": 2992,
+			"y": -64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "WhisperSound",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundBase",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_Scare_Whisper_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_12",
+			"node_name": "K2Node_CallFunction_12",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "dd59e83e-46c8-2fbf-f17b-d381735ed885",
+			"x": 3168,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_3",
+			"node_name": "K2Node_IfThenElse_3",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "1857f298-4ca7-8629-0578-41af99b2a36f",
+			"x": 3424,
+			"y": -200,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_15",
+			"node_name": "K2Node_CallFunction_15",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Message",
+			"title_single_line": "Debug Message",
+			"comment": "",
+			"guid": "25f327fa-43d6-1125-2a03-70960b51b958",
+			"x": 3680,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator1",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator2",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "BP_Scare_Whisper",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "ExecuteWhisperLogic -> WhisperSound invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "2.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bPrintToLog",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "f2a3534c-4acc-25e1-9c6f-5e85896ac92f",
+			"x": 3536,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_3",
+			"node_name": "K2Node_VariableGet_3",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugEnabled_0",
+			"title_single_line": "Get DebugEnabled_0",
+			"comment": "",
+			"guid": "65c977a2-45bc-e6b8-eed7-fb9281bdfe66",
+			"x": 3488,
+			"y": 432,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugEnabled_0",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_Scare_Whisper_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_14",
+			"node_name": "K2Node_CallFunction_14",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Spawn Sound at Location",
+			"title_single_line": "Spawn Sound at Location",
+			"comment": "",
+			"guid": "e303fe87-491f-1f6a-9857-bcb0011f792c",
+			"x": 3744,
+			"y": -384,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Sound",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundBase",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Location",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Rotation",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Rotator",
+					"default_value": "0, 0, 0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "VolumeMultiplier",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "1.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PitchMultiplier",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "1.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "StartTime",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "AttenuationSettings",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundAttenuation",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ConcurrencySettings",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundConcurrency",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bAutoDestroy",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "AudioComponent",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_13",
+			"node_name": "K2Node_CallFunction_13",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Message",
+			"title_single_line": "Debug Message",
+			"comment": "",
+			"guid": "ec5df032-4242-7113-1301-db97a5eee98d",
+			"x": 4512,
+			"y": -784,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator1",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator2",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "BP_Scare_Whisper",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "2.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bPrintToLog",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_Self_1",
+			"node_name": "K2Node_Self_1",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "cb6b398b-4ec9-aca4-9d40-75a47201cccc",
+			"x": 4304,
+			"y": -768,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_22",
+			"node_name": "K2Node_VariableGet_22",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugEnabled_0",
+			"title_single_line": "Get DebugEnabled_0",
+			"comment": "",
+			"guid": "18e6d9c8-4f02-71c1-0bda-4fabe1b811b7",
+			"x": 4256,
+			"y": -528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugEnabled_0",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_Scare_Whisper_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_FormatText_0",
+			"node_name": "K2Node_FormatText_0",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "7615a1df-4e60-e703-b264-ce80d00f7b01",
+			"x": 3904,
+			"y": -624,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ScareId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_53",
+			"node_name": "K2Node_CallFunction_53",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Text)",
+			"title_single_line": "To String (Text)",
+			"comment": "",
+			"guid": "fb7ed8d2-412c-0d51-3038-aead3d27eb40",
+			"x": 4176,
+			"y": -736,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetTextLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InText",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_4",
+			"node_name": "K2Node_VariableGet_4",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ScareId",
+			"title_single_line": "Get ScareId",
+			"comment": "",
+			"guid": "6d774883-4403-a609-b994-ef8e0d3395b5",
+			"x": 3584,
+			"y": -544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ScareId",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareBase_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_16",
+			"node_name": "K2Node_CallFunction_16",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Set Timer by Function Name",
+			"title_single_line": "Set Timer by Function Name",
+			"comment": "",
+			"guid": "d63d5d72-4be4-2790-47ad-b8b6e0994d3c",
+			"x": 5056,
+			"y": -784,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "FunctionName",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "FinishScare",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Time",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bLooping",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bMaxOncePerFrame",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InitialStartDelay",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InitialStartDelayVariance",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_23",
+			"node_name": "K2Node_VariableGet_23",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get WhisperDuration",
+			"title_single_line": "Get WhisperDuration",
+			"comment": "",
+			"guid": "cf713ddf-455d-3f6c-aaf0-4f8ae82bc39f",
+			"x": 4832,
+			"y": -656,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "WhisperDuration",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_Scare_Whisper_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ExecuteWhisperLogic"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "ExecuteWhisperLogic",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Debug Message",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Finish Scare\nTarget is BP Scare Base",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set offsetBehind",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set offsetBehind",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set offsetBehind",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set offsetBehind",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_14",
+			"to_node_title": "Spawn Sound at Location",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Message",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_14",
+			"from_node_title": "Spawn Sound at Location",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Debug Message",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_13",
+			"from_node_title": "Debug Message",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_16",
+			"to_node_title": "Set Timer by Function Name",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Get Player Pawn",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Get Actor Location\nTarget is Actor",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_4",
+			"to_node_title": "vector + vector",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Get Player Pawn",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Get Actor Location\nTarget is Actor",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Get Player Pawn",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Get Actor Right Vector\nTarget is Actor",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Get Player Pawn",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Get Actor Forward Vector\nTarget is Actor",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_6",
+			"from_node_title": "Get Actor Right Vector\nTarget is Actor",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_0",
+			"to_node_title": "vector * vector",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_7",
+			"from_node_title": "Get Actor Forward Vector\nTarget is Actor",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_2",
+			"to_node_title": "vector * vector",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Random Bool",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Select Float",
+			"to_pin": "bPickA"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "Select Float",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "Select Float",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_9",
+			"from_node_title": "Select Float",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_1",
+			"to_node_title": "float * float",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_19",
+			"from_node_title": "Get bRandomizeSide",
+			"from_pin": "bRandomizeSide",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "Select Float",
+			"to_pin": "bPickA"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_0",
+			"from_node_title": "vector * vector",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_4",
+			"to_node_title": "vector + vector",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get WhisperDistance",
+			"from_pin": "WhisperDistance",
+			"to_node_id": "K2Node_PromotableOperator_1",
+			"to_node_title": "float * float",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_1",
+			"from_node_title": "float * float",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_0",
+			"to_node_title": "vector * vector",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_20",
+			"from_node_title": "Get bSpawnBehindPlayer",
+			"from_pin": "bSpawnBehindPlayer",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_2",
+			"from_node_title": "vector * vector",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set offsetBehind",
+			"to_pin": "offsetBehind"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Make Vector",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_3",
+			"to_node_title": "vector + vector",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_21",
+			"from_node_title": "Get WhisperHeightOffset",
+			"from_pin": "WhisperHeightOffset",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Make Vector",
+			"to_pin": "Z"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_4",
+			"from_node_title": "vector + vector",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_5",
+			"to_node_title": "vector + vector",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_5",
+			"from_node_title": "vector + vector",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_3",
+			"to_node_title": "vector + vector",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_3",
+			"from_node_title": "vector + vector",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_14",
+			"to_node_title": "Spawn Sound at Location",
+			"to_pin": "Location"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get offsetBehind",
+			"from_pin": "offsetBehind",
+			"to_node_id": "K2Node_PromotableOperator_5",
+			"to_node_title": "vector + vector",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get WhisperSound",
+			"from_pin": "WhisperSound",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_12",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Message",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_3",
+			"from_node_title": "Get DebugEnabled_0",
+			"from_pin": "DebugEnabled_0",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToScreen"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_3",
+			"from_node_title": "Get DebugEnabled_0",
+			"from_pin": "DebugEnabled_0",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToLog"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Debug Message",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_22",
+			"from_node_title": "Get DebugEnabled_0",
+			"from_pin": "DebugEnabled_0",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToScreen"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_22",
+			"from_node_title": "Get DebugEnabled_0",
+			"from_pin": "DebugEnabled_0",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToLog"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_0",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_53",
+			"to_node_title": "To String (Text)",
+			"to_pin": "InText"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_53",
+			"from_node_title": "To String (Text)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Debug Message",
+			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get ScareId",
+			"from_pin": "ScareId",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "ScareId"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_23",
+			"from_node_title": "Get WhisperDuration",
+			"from_pin": "WhisperDuration",
+			"to_node_id": "K2Node_CallFunction_16",
+			"to_node_title": "Set Timer by Function Name",
+			"to_pin": "Time"
+		}
+	],
+	"problems": []
+}

@@ -1,0 +1,1144 @@
+{
+	"graph_name": "NotifyObjectiveManagerForGhost",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [
+			"bHasActiveGhost",
+			"DebugEnabled",
+			"CurrentGhostProfile",
+			"ObjectiveManagerRef",
+			"CurrentGhostId"
+		],
+		"writes_variables": [],
+		"calls": [
+			"Debug",
+			"Get Game Instance",
+			"Initialize Objectives for Ghost",
+			"To String (Text)"
+		],
+		"called_by": [
+			"SetActiveGhost"
+		],
+		"branch_points": [
+			"Branch"
+		]
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "NotifyObjectiveManagerForGhost",
+			"title_single_line": "NotifyObjectiveManagerForGhost",
+			"comment": "",
+			"guid": "ec26ce95-4527-33df-a4ec-cfbd612b54ed",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "6928bbf0-48e2-bd74-52f0-7ba59cdfac5e",
+			"x": 400,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_18",
+			"node_name": "K2Node_VariableGet_18",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bHasActiveGhost",
+			"title_single_line": "Get bHasActiveGhost",
+			"comment": "",
+			"guid": "2d2d5865-47e5-a4bb-6adb-6795f9f7f60b",
+			"x": 192,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bHasActiveGhost",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug\nTarget is BP Ghost Manager",
+			"title_single_line": "Debug",
+			"comment": "",
+			"guid": "f9365e07-4310-6fc2-fe1d-4c9fcc1b8fcf",
+			"x": 800,
+			"y": -240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bIsDebug",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "NotifyObjectiveManagerForGhost aborted -> no active ghost",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_19",
+			"node_name": "K2Node_VariableGet_19",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugEnabled",
+			"title_single_line": "Get DebugEnabled",
+			"comment": "",
+			"guid": "83427bd5-4e8c-d459-1632-629413d6debb",
+			"x": 544,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugEnabled",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_BreakStruct_0",
+			"node_name": "K2Node_BreakStruct_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_BreakStruct",
+			"title": "Break S Ghost Profile",
+			"title_single_line": "Break S Ghost Profile",
+			"comment": "",
+			"guid": "dc7fc679-422c-6ad0-6288-5ca88d54814f",
+			"x": 608,
+			"y": 176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "S_GhostProfile",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_GhostProfile",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostId_2_D743CBFC4B7A4C4527A2A6AC3EED67B9",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "DisplayName_5_DF3823A24904489FE44A86A39CAA06CE",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PrimaryColor_8_39F7B18C41490E70CA0DAB9531AB7C60",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "LinearColor",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "State_11_0572529C4E0E733203F3BDAD49CFF0F4",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "AggressionCurve_14_4774861548EF1A9980737B83924D5384",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "FloatCurve",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareIds_18_73D106AF40DF116B15C5BC87D8ADC0C7",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PuzzleId_21_C1B175064D798D07A50F5B8C4446F0CF",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TransitionToMemory_24_46B1CF2A45FA628F1593A0A079CE9438",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "BanishingVoiceIntent_27_33903F2E4599CB2AB2861EBA443B106D",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Aliases_31_B91216244E78484D9DB0ADAC76175CB3",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "StartingObjectiveId_34_8250EA5C42B3C21A0559B79F2697D5DF",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_20",
+			"node_name": "K2Node_VariableGet_20",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostProfile",
+			"title_single_line": "Get CurrentGhostProfile",
+			"comment": "",
+			"guid": "d854700c-49b8-2fd8-c5d9-b9994535d585",
+			"x": 416,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostProfile",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_GhostProfile",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Game Instance",
+			"title_single_line": "Get Game Instance",
+			"comment": "",
+			"guid": "d930bbf1-4347-14b6-9221-49a892caf80d",
+			"x": 1040,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameInstance",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_DynamicCast_0",
+			"node_name": "K2Node_DynamicCast_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_DynamicCast",
+			"title": "Cast To GI_Echoes",
+			"title_single_line": "Cast To GI_Echoes",
+			"comment": "",
+			"guid": "b2f45ed9-44da-010d-a2f2-558f12d5e687",
+			"x": 1392,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CastFailed",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "AsGI Echoes",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ObjectiveManagerRef",
+			"title_single_line": "Get ObjectiveManagerRef",
+			"comment": "",
+			"guid": "6164b877-4b6f-e143-2242-9fb377c28708",
+			"x": 1728,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ObjectiveManagerRef",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_0",
+			"node_name": "K2Node_MacroInstance_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "386c484e-4e6d-24e7-6cf3-969e7c27af21",
+			"x": 2016,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "exec",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InputObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Is Valid",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Is Not Valid",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Initialize Objectives for Ghost\nTarget is BP Objective Manager",
+			"title_single_line": "Initialize Objectives for Ghost",
+			"comment": "",
+			"guid": "04ef4c30-4282-2250-c2df-818159d1a328",
+			"x": 2448,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "StartingObjectiveId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "b397042a-4354-8a4b-ab98-99a8e5191b44",
+			"x": 2256,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_21",
+			"node_name": "K2Node_VariableGet_21",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostId",
+			"title_single_line": "Get CurrentGhostId",
+			"comment": "",
+			"guid": "9564aadf-43f0-fd25-2dd8-c4a6291ee0d0",
+			"x": 2256,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostId",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_FormatText_0",
+			"node_name": "K2Node_FormatText_0",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "84ac70b8-477a-0380-68ec-51aac8a4cb2b",
+			"x": 2544,
+			"y": 304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ObjectiveId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug\nTarget is BP Ghost Manager",
+			"title_single_line": "Debug",
+			"comment": "",
+			"guid": "8944223e-4578-f90d-3e38-5e8b963c2c31",
+			"x": 3264,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bIsDebug",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_22",
+			"node_name": "K2Node_VariableGet_22",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugEnabled",
+			"title_single_line": "Get DebugEnabled",
+			"comment": "",
+			"guid": "5436d2f8-4624-4a87-4d5d-bd85fc733201",
+			"x": 3072,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugEnabled",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_72",
+			"node_name": "K2Node_CallFunction_72",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Text)",
+			"title_single_line": "To String (Text)",
+			"comment": "",
+			"guid": "76ac2b56-4b7e-367b-a556-bea6ef86ddd6",
+			"x": 3104,
+			"y": 384,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetTextLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InText",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_23",
+			"node_name": "K2Node_VariableGet_23",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostId",
+			"title_single_line": "Get CurrentGhostId",
+			"comment": "",
+			"guid": "fa103bd7-4d87-1557-0335-2498d73cad30",
+			"x": 2352,
+			"y": 384,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostId",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "NotifyObjectiveManagerForGhost"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "NotifyObjectiveManagerForGhost",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug\nTarget is BP Ghost Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "then",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "Is Valid",
+			"to_pin": "exec"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_0",
+			"from_node_title": "Is Valid",
+			"from_pin": "Is Valid",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Initialize Objectives for Ghost\nTarget is BP Objective Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Initialize Objectives for Ghost\nTarget is BP Objective Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Debug\nTarget is BP Ghost Manager",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_VariableGet_18",
+			"from_node_title": "Get bHasActiveGhost",
+			"from_pin": "bHasActiveGhost",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_19",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug\nTarget is BP Ghost Manager",
+			"to_pin": "bIsDebug"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Ghost Profile",
+			"from_pin": "StartingObjectiveId_34_8250EA5C42B3C21A0559B79F2697D5DF",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Initialize Objectives for Ghost\nTarget is BP Objective Manager",
+			"to_pin": "StartingObjectiveId"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Ghost Profile",
+			"from_pin": "StartingObjectiveId_34_8250EA5C42B3C21A0559B79F2697D5DF",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "ObjectiveId"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_20",
+			"from_node_title": "Get CurrentGhostProfile",
+			"from_pin": "CurrentGhostProfile",
+			"to_node_id": "K2Node_BreakStruct_0",
+			"to_node_title": "Break S Ghost Profile",
+			"to_pin": "S_GhostProfile"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Game Instance",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "AsGI Echoes",
+			"to_node_id": "K2Node_VariableGet_0",
+			"to_node_title": "Get ObjectiveManagerRef",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get ObjectiveManagerRef",
+			"from_pin": "ObjectiveManagerRef",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "Is Valid",
+			"to_pin": "InputObject"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get ObjectiveManagerRef",
+			"from_pin": "ObjectiveManagerRef",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Initialize Objectives for Ghost\nTarget is BP Objective Manager",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_21",
+			"from_node_title": "Get CurrentGhostId",
+			"from_pin": "CurrentGhostId",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Initialize Objectives for Ghost\nTarget is BP Objective Manager",
+			"to_pin": "GhostId"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_0",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_72",
+			"to_node_title": "To String (Text)",
+			"to_pin": "InText"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_22",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Debug\nTarget is BP Ghost Manager",
+			"to_pin": "bIsDebug"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_72",
+			"from_node_title": "To String (Text)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Debug\nTarget is BP Ghost Manager",
+			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_23",
+			"from_node_title": "Get CurrentGhostId",
+			"from_pin": "CurrentGhostId",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "GhostId"
+		}
+	],
+	"problems": []
+}

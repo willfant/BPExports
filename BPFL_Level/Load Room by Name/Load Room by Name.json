@@ -1,0 +1,587 @@
+{
+	"graph_name": "Load Room by Name",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [],
+		"writes_variables": [
+			"bUseRandomRoom",
+			"SpecificRoomName"
+		],
+		"calls": [
+			"Load Scene from Json String",
+			"To String (Name)",
+			"Get Room"
+		],
+		"called_by": [],
+		"branch_points": []
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "Load Room by Name",
+			"title_single_line": "Load Room by Name",
+			"comment": "",
+			"guid": "704377f6-47c3-e31a-5ee4-f499f82f4f53",
+			"x": -576,
+			"y": -480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "RoomName",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "SceneDataProvider",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SceneDataProvider_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "Load Room by Name"
+		},
+		{
+			"node_id": "K2Node_CallFunction_12",
+			"node_name": "K2Node_CallFunction_12",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Load Scene from Json String\nTarget is MRUKSubsystem",
+			"title_single_line": "Load Scene from Json String",
+			"comment": "",
+			"guid": "4c3947c4-445d-bba4-fd8e-20a2b1f7ebe4",
+			"x": 688,
+			"y": -496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "MRUKSubsystem",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "String",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "SceneModel",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "V1",
+					"linked_count": 0
+				}
+			],
+			"target_class": "Load Room by Name"
+		},
+		{
+			"node_id": "K2Node_GetSubsystem_2",
+			"node_name": "K2Node_GetSubsystem_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_GetSubsystem",
+			"title": "MRUKSubsystem",
+			"title_single_line": "MRUKSubsystem",
+			"comment": "",
+			"guid": "f30f0d1d-4c2f-6dab-87dc-b19184437e3a",
+			"x": 304,
+			"y": -544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "MRUKSubsystem",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "Load Room by Name"
+		},
+		{
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Name)",
+			"title_single_line": "To String (Name)",
+			"comment": "",
+			"guid": "a71a059d-4044-fccc-e6eb-3ba556c62fb0",
+			"x": -288,
+			"y": -352,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetStringLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "Load Room by Name"
+		},
+		{
+			"node_id": "K2Node_Knot_3",
+			"node_name": "K2Node_Knot_3",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "7d6f1748-4013-5679-2ad5-7db47df9217e",
+			"x": -384,
+			"y": -272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SceneDataProvider_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SceneDataProvider_C",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "Load Room by Name"
+		},
+		{
+			"node_id": "K2Node_VariableSet_2",
+			"node_name": "K2Node_VariableSet_2",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bUseRandomRoom",
+			"title_single_line": "Set bUseRandomRoom",
+			"comment": "",
+			"guid": "9d49f5d5-49c1-b5b9-ec1f-89b896a16511",
+			"x": -288,
+			"y": -464,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bUseRandomRoom",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "MRUKSceneDataProvider",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "Load Room by Name"
+		},
+		{
+			"node_id": "K2Node_VariableSet_3",
+			"node_name": "K2Node_VariableSet_3",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set SpecificRoomName",
+			"title_single_line": "Set SpecificRoomName",
+			"comment": "",
+			"guid": "07fe9ac2-4da6-d9f3-1227-c7acfb796438",
+			"x": 0,
+			"y": -462,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "SpecificRoomName",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "MRUKSceneDataProvider",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "Load Room by Name"
+		},
+		{
+			"node_id": "K2Node_Knot_4",
+			"node_name": "K2Node_Knot_4",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "35525ba0-44f3-557d-489c-2eb3e0757b0f",
+			"x": -64,
+			"y": -272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SceneDataProvider_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SceneDataProvider_C",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "Load Room by Name"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Room\nTarget is MR Utility Kit Scene Data Provider",
+			"title_single_line": "Get Room",
+			"comment": "",
+			"guid": "12539073-4e97-f289-a3d5-59b788d1ea59",
+			"x": 288,
+			"y": -496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "MRUKSceneDataProvider",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "RoomJSON",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "RoomName",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "Load Room by Name"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "Load Room by Name",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set bUseRandomRoom",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set bUseRandomRoom",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set SpecificRoomName",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_3",
+			"from_node_title": "Set SpecificRoomName",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Get Room\nTarget is MR Utility Kit Scene Data Provider",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Room\nTarget is MR Utility Kit Scene Data Provider",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Load Scene from Json String\nTarget is MRUKSubsystem",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "Load Room by Name",
+			"from_pin": "RoomName",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "To String (Name)",
+			"to_pin": "InName"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "Load Room by Name",
+			"from_pin": "SceneDataProvider",
+			"to_node_id": "K2Node_Knot_3",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_GetSubsystem_2",
+			"from_node_title": "MRUKSubsystem",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Load Scene from Json String\nTarget is MRUKSubsystem",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "To String (Name)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set SpecificRoomName",
+			"to_pin": "SpecificRoomName"
+		},
+		{
+			"from_node_id": "K2Node_Knot_3",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set bUseRandomRoom",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_Knot_3",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_4",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Knot_4",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set SpecificRoomName",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_Knot_4",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Get Room\nTarget is MR Utility Kit Scene Data Provider",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Room\nTarget is MR Utility Kit Scene Data Provider",
+			"from_pin": "RoomJSON",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Load Scene from Json String\nTarget is MRUKSubsystem",
+			"to_pin": "String"
+		}
+	],
+	"problems": []
+}

@@ -1,0 +1,957 @@
+{
+	"graph_name": "ClearActiveGhost",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [
+			"bHasActiveGhost",
+			"CurrentGhostId",
+			"DebugEnabled"
+		],
+		"writes_variables": [
+			"bHasActiveGhost",
+			"CurrentGhostId",
+			"CurrentGhostState",
+			"CurrentGhostProfile"
+		],
+		"calls": [
+			"Destroy Ghost Actor",
+			"Debug Message"
+		],
+		"called_by": [],
+		"branch_points": [
+			"Branch"
+		]
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "ClearActiveGhost",
+			"title_single_line": "ClearActiveGhost",
+			"comment": "",
+			"guid": "5f02230a-4e1d-37a8-70f6-81a8aadda884",
+			"x": -352,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "299137f3-4ff8-79f1-9a08-b48965648e66",
+			"x": 64,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_12",
+			"node_name": "K2Node_VariableGet_12",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bHasActiveGhost",
+			"title_single_line": "Get bHasActiveGhost",
+			"comment": "",
+			"guid": "59585e2e-4250-e03a-e772-b580aa377f3b",
+			"x": -176,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bHasActiveGhost",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_CallDelegate_0",
+			"node_name": "K2Node_CallDelegate_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallDelegate",
+			"title": "Call On Ghost Cleared",
+			"title_single_line": "Call On Ghost Cleared",
+			"comment": "",
+			"guid": "80e5fbb7-4f56-cd44-6603-36a13de7b064",
+			"x": 688,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "GhostId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_13",
+			"node_name": "K2Node_VariableGet_13",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostId",
+			"title_single_line": "Get CurrentGhostId",
+			"comment": "",
+			"guid": "581d735a-471c-a9cf-dac3-61963fdeb870",
+			"x": 464,
+			"y": -64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostId",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bHasActiveGhost",
+			"title_single_line": "Set bHasActiveGhost",
+			"comment": "",
+			"guid": "bc8d8097-4780-af91-7f98-b98cf020dffb",
+			"x": 1008,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bHasActiveGhost",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentGhostId",
+			"title_single_line": "Set CurrentGhostId",
+			"comment": "",
+			"guid": "9826d5ae-4f63-5757-9428-c0bf85e44d1d",
+			"x": 1296,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentGhostId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_VariableSet_2",
+			"node_name": "K2Node_VariableSet_2",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentGhostState",
+			"title_single_line": "Set CurrentGhostState",
+			"comment": "",
+			"guid": "8d297963-4ae3-e569-a7ba-79a63c496a05",
+			"x": 1648,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentGhostState",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_VariableSet_3",
+			"node_name": "K2Node_VariableSet_3",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentGhostProfile",
+			"title_single_line": "Set CurrentGhostProfile",
+			"comment": "",
+			"guid": "60b74ec8-4aff-9b2e-0f0c-0ab10ea16da0",
+			"x": 2144,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentGhostProfile",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_GhostProfile",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_GhostProfile",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_MakeStruct_0",
+			"node_name": "K2Node_MakeStruct_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MakeStruct",
+			"title": "Make S Ghost Profile",
+			"title_single_line": "Make S Ghost Profile",
+			"comment": "",
+			"guid": "ff273b77-4efd-1e6a-3c2a-a299349b2d5a",
+			"x": 1808,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "S_GhostProfile",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_GhostProfile",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostId_2_D743CBFC4B7A4C4527A2A6AC3EED67B9",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "DisplayName_5_DF3823A24904489FE44A86A39CAA06CE",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PrimaryColor_8_39F7B18C41490E70CA0DAB9531AB7C60",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "LinearColor",
+					"default_value": "(R=0.000000,G=0.000000,B=0.000000,A=0.000000)",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "State_11_0572529C4E0E733203F3BDAD49CFF0F4",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "AggressionCurve_14_4774861548EF1A9980737B83924D5384",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "FloatCurve",
+					"default_value": "(FloatCurve=(Keys=,DefaultValue=340282346638528859811704183484516925440.000000,PreInfinityExtrap=RCCE_Constant,PostInfinityExtrap=RCCE_Constant),Color=(R=0.625546,G=0.768628,B=0.177839,A=1.000000),Comment=\"\",CurveName=\"\",CurveTypeFlags=0)",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareIds_18_73D106AF40DF116B15C5BC87D8ADC0C7",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PuzzleId_21_C1B175064D798D07A50F5B8C4446F0CF",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TransitionToMemory_24_46B1CF2A45FA628F1593A0A079CE9438",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "(FadeOutSec_2_7B4B68B84221002501F396813307E5B6=0.000000,FadeInSec_4_C4EB60714F4A9DAAC42732965BC003F4=0.000000,SFX_7_966C33A14C191A16054A02842F757317=(Sound_2_C8D023944B2C6B670E7D5C8725EF08BD=None,VolumeMultiplier_5_BC1EF39748F6DDFA86E52293C0A84763=1.000000,PitchMultiplier_7_8F883678474B1A26E399CAAD45B6CB8E=1.000000,Attenuation_10_96B90A89479F85A6E7AC709121B290A3=None,Subtitle_13_079F33DD4F134AC673EF2B9126F7CDA6=\"\",CooldownSec_16_C4098AA84F7312D94C2D668DDEB36F6F=0.000000),PPV_Profile_10_1AA2329B44362AEE0BF9A3A53BA666A0=(bOverride_TemperatureType=False,bOverride_WhiteTemp=False,bOverride_WhiteTint=False,bOverride_ColorSaturation=False,bOverride_ColorContrast=False,bOverride_ColorGamma=False,bOverride_ColorGain=False,bOverride_ColorOffset=False,bOverride_ColorSaturationShadows=False,bOverride_ColorContrastShadows=False,bOverride_ColorGammaShadows=False,bOverride_ColorGainShadows=False,bOverride_ColorOffsetShadows=False,bOverride_ColorSaturationMidtones=False,bOverride_ColorContrastMidtones=False,bOverride_ColorGammaMidtones=False,bOverride_ColorGainMidtones=False,bOverride_ColorOffsetMidtones=False,bOverride_ColorSaturationHighlights=False,bOverride_ColorContrastHighlights=False,bOverride_ColorGammaHighlights=False,bOverride_ColorGainHighlights=False,bOverride_ColorOffsetHighlights=False,bOverride_ColorCorrectionShadowsMax=False,bOverride_ColorCorrectionHighlightsMin=False,bOverride_ColorCorrectionHighlightsMax=False,bOverride_BlueCorrection=False,bOverride_ExpandGamut=False,bOverride_ToneCurveAmount=False,bOverride_FilmSlope=False,bOverride_FilmToe=False,bOverride_FilmShoulder=False,bOverride_FilmBlackClip=False,bOverride_FilmWhiteClip=False,bOverride_SceneColorTint=False,bOverride_SceneFringeIntensity=False,bOverride_ChromaticAberrationStartOffset=False,bOverride_bMegaLights=False,bOverride_AmbientCubemapTint=False,bOverride_AmbientCubemapIntensity=False,bOverride_BloomMethod=False,bOverride_BloomIntensity=False,bOverride_BloomGaussianIntensity=False,bOverride_BloomThreshold=False,bOverride_Bloom1Tint=False,bOverride_Bloom1Size=False,bOverride_Bloom2Size=False,bOverride_Bloom2Tint=False,bOverride_Bloom3Tint=False,bOverride_Bloom3Size=False,bOverride_Bloom4Tint=False,bOverride_Bloom4Size=False,bOverride_Bloom5Tint=False,bOverride_Bloom5Size=False,bOverride_Bloom6Tint=False,bOverride_Bloom6Size=False,bOverride_BloomSizeScale=False,bOverride_BloomConvolutionIntensity=False,bOverride_BloomConvolutionTexture=False,bOverride_BloomConvolutionScatterDispersion=False,bOverride_BloomConvolutionSize=False,bOverride_BloomConvolutionCenterUV=False,bOverride_BloomConvolutionPreFilterMin=False,bOverride_BloomConvolutionPreFilterMax=False,bOverride_BloomConvolutionPreFilterMult=False,bOverride_BloomConvolutionBufferScale=False,bOverride_BloomDirtMaskIntensity=False,bOverride_BloomDirtMaskTint=False,bOverride_BloomDirtMask=False,bOverride_CameraShutterSpeed=False,bOverride_CameraISO=False,bOverride_AutoExposureMethod=False,bOverride_AutoExposureLowPercent=False,bOverride_AutoExposureHighPercent=False,bOverride_AutoExposureMinBrightness=False,bOverride_AutoExposureMaxBrightness=False,bOverride_AutoExposureSpeedUp=False,bOverride_AutoExposureSpeedDown=False,bOverride_AutoExposureBias=False,bOverride_AutoExposureBiasCurve=False,bOverride_AutoExposureMeterMask=False,bOverride_AutoExposureApplyPhysicalCameraExposure=False,bOverride_HistogramLogMin=False,bOverride_HistogramLogMax=False,bOverride_LocalExposureMethod=False,bOverride_LocalExposureHighlightContrastScale=False,bOverride_LocalExposureShadowContrastScale=False,bOverride_LocalExposureHighlightContrastCurve=False,bOverride_LocalExposureShadowContrastCurve=False,bOverride_LocalExposureHighlightThreshold=False,bOverride_LocalExposureShadowThreshold=False,bOverride_LocalExposureDetailStrength=False,bOverride_LocalExposureBlurredLuminanceBlend=False,bOverride_LocalExposureBlurredLuminanceKernelSizePercent=False,bOverride_LocalExposureHighlightThresholdStrength=False,bOverride_LocalExposureShadowThresholdStrength=False,bOverride_LocalExposureMiddleGreyBias=False,bOverride_LensFlareIntensity=False,bOverride_LensFlareTint=False,bOverride_LensFlareTints=False,bOverride_LensFlareBokehSize=False,bOverride_LensFlareBokehShape=False,bOverride_LensFlareThreshold=False,bOverride_VignetteIntensity=False,bOverride_Sharpen=False,bOverride_FilmGrainIntensity=False,bOverride_FilmGrainIntensityShadows=False,bOverride_FilmGrainIntensityMidtones=False,bOverride_FilmGrainIntensityHighlights=False,bOverride_FilmGrainShadowsMax=False,bOverride_FilmGrainHighlightsMin=False,bOverride_FilmGrainHighlightsMax=False,bOverride_FilmGrainTexelSize=False,bOverride_FilmGrainTexture=False,bOverride_AmbientOcclusionIntensity=False,bOverride_AmbientOcclusionStaticFraction=False,bOverride_AmbientOcclusionRadius=False,bOverride_AmbientOcclusionFadeDistance=False,bOverride_AmbientOcclusionFadeRadius=False,bOverride_AmbientOcclusionRadiusInWS=False,bOverride_AmbientOcclusionPower=False,bOverride_AmbientOcclusionBias=False,bOverride_AmbientOcclusionQuality=False,bOverride_AmbientOcclusionMipBlend=False,bOverride_AmbientOcclusionMipScale=False,bOverride_AmbientOcclusionMipThreshold=False,bOverride_AmbientOcclusionTemporalBlendWeight=False,bOverride_RayTracingAO=False,bOverride_RayTracingAOSamplesPerPixel=False,bOverride_RayTracingAOIntensity=False,bOverride_RayTracingAORadius=False,bOverride_IndirectLightingColor=False,bOverride_IndirectLightingIntensity=False,bOverride_ColorGradingIntensity=False,bOverride_ColorGradingLUT=False,bOverride_DepthOfFieldFocalDistance=False,bOverride_DepthOfFieldFstop=False,bOverride_DepthOfFieldMinFstop=False,bOverride_DepthOfFieldBladeCount=False,bOverride_DepthOfFieldSensorWidth=False,bOverride_DepthOfFieldSqueezeFactor=False,bOverride_DepthOfFieldDepthBlurRadius=False,bOverride_DepthOfFieldUseHairDepth=False,bOverride_DepthOfFieldPetzvalBokeh=False,bOverride_DepthOfFieldPetzvalBokehFalloff=False,bOverride_DepthOfFieldPetzvalExclusionBoxExtents=False,bOverride_DepthOfFieldPetzvalExclusionBoxRadius=False,bOverride_DepthOfFieldAspectRatioScalar=False,bOverride_DepthOfFieldMatteBoxFlags=False,bOverride_DepthOfFieldBarrelRadius=False,bOverride_DepthOfFieldBarrelLength=False,bOverride_DepthOfFieldDepthBlurAmount=False,bOverride_DepthOfFieldFocalRegion=False,bOverride_DepthOfFieldNearTransitionRegion=False,bOverride_DepthOfFieldFarTransitionRegion=False,bOverride_DepthOfFieldScale=False,bOverride_DepthOfFieldNearBlurSize=False,bOverride_DepthOfFieldFarBlurSize=False,bOverride_MobileHQGaussian=False,bOverride_DepthOfFieldOcclusion=False,bOverride_DepthOfFieldSkyFocusDistance=False,bOverride_DepthOfFieldVignetteSize=False,bOverride_MotionBlurAmount=False,bOverride_MotionBlurMax=False,bOverride_MotionBlurTargetFPS=False,bOverride_MotionBlurPerObjectSize=False,bOverride_ReflectionMethod=False,bOverride_LumenReflectionQuality=False,bOverride_ScreenSpaceReflectionIntensity=False,bOverride_ScreenSpaceReflectionQuality=False,bOverride_ScreenSpaceReflectionMaxRoughness=False,bOverride_ScreenSpaceReflectionRoughnessScale=False,bOverride_UserFlags=False,bOverride_RayTracingReflectionsMaxRoughness=False,bOverride_RayTracingReflectionsMaxBounces=False,bOverride_RayTracingReflectionsSamplesPerPixel=False,bOverride_RayTracingReflectionsShadows=False,bOverride_RayTracingReflectionsTranslucency=False,bOverride_TranslucencyType=False,bOverride_RayTracingTranslucencyMaxRoughness=False,bOverride_RayTracingTranslucencyRefractionRays=False,bOverride_RayTracingTranslucencySamplesPerPixel=False,bOverride_RayTracingTranslucencyShadows=False,bOverride_RayTracingTranslucencyRefraction=False,bOverride_RayTracingTranslucencyMaxPrimaryHitEvents=False,bOverride_RayTracingTranslucencyMaxSecondaryHitEvents=False,bOverride_RayTracingTranslucencyUseRayTracedRefraction=False,bOverride_DynamicGlobalIlluminationMethod=False,bOverride_LumenSceneLightingQuality=False,bOverride_LumenSceneDetail=False,bOverride_LumenSceneViewDistance=False,bOverride_LumenSceneLightingUpdateSpeed=False,bOverride_LumenFinalGatherQuality=False,bOverride_LumenFinalGatherLightingUpdateSpeed=False,bOverride_LumenFinalGatherScreenTraces=False,bOverride_LumenMaxTraceDistance=False,bOverride_LumenDiffuseColorBoost=False,bOverride_LumenSkylightLeaking=False,bOverride_LumenSkylightLeakingTint=False,bOverride_LumenFullSkylightLeakingDistance=False,bOverride_LumenRayLightingMode=False,bOverride_LumenReflectionsScreenTraces=False,bOverride_LumenFrontLayerTranslucencyReflections=False,bOverride_LumenMaxRoughnessToTraceReflections=False,bOverride_LumenMaxReflectionBounces=False,bOverride_LumenMaxRefractionBounces=False,bOverride_LumenSurfaceCacheResolution=False,bOverride_RayTracingGI=False,bOverride_RayTracingGIMaxBounces=False,bOverride_RayTracingGISamplesPerPixel=False,bOverride_PathTracingMaxBounces=False,bOverride_PathTracingSamplesPerPixel=False,bOverride_PathTracingMaxPathIntensity=False,bOverride_PathTracingEnableEmissiveMaterials=False,bOverride_PathTracingEnableReferenceDOF=False,bOverride_PathTracingEnableReferenceAtmosphere=False,bOverride_PathTracingEnableDenoiser=False,bOverride_PathTracingIncludeEmissive=False,bOverride_PathTracingIncludeDiffuse=False,bOverride_PathTracingIncludeIndirectDiffuse=False,bOverride_PathTracingIncludeSpecular=False,bOverride_PathTracingIncludeIndirectSpecular=False,bOverride_PathTracingIncludeVolume=False,bOverride_PathTracingIncludeIndirectVolume=False,bMobileHQGaussian=False,BloomMethod=BM_SOG,AutoExposureMethod=AEM_Histogram,TemperatureType=TEMP_WhiteBalance,WhiteTemp=6500.000000,WhiteTint=0.000000,ColorSaturation=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorContrast=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorGamma=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorGain=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorOffset=(X=0.000000,Y=0.000000,Z=0.000000,W=0.000000),ColorSaturationShadows=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorContrastShadows=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorGammaShadows=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorGainShadows=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorOffsetShadows=(X=0.000000,Y=0.000000,Z=0.000000,W=0.000000),ColorSaturationMidtones=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorContrastMidtones=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorGammaMidtones=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorGainMidtones=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorOffsetMidtones=(X=0.000000,Y=0.000000,Z=0.000000,W=0.000000),ColorSaturationHighlights=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorContrastHighlights=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorGammaHighlights=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorGainHighlights=(X=1.000000,Y=1.000000,Z=1.000000,W=1.000000),ColorOffsetHighlights=(X=0.000000,Y=0.000000,Z=0.000000,W=0.000000),ColorCorrectionHighlightsMin=0.500000,ColorCorrectionHighlightsMax=1.000000,ColorCorrectionShadowsMax=0.090000,BlueCorrection=0.600000,ExpandGamut=1.000000,ToneCurveAmount=1.000000,FilmSlope=0.880000,FilmToe=0.550000,FilmShoulder=0.260000,FilmBlackClip=0.000000,FilmWhiteClip=0.040000,SceneColorTint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),SceneFringeIntensity=0.000000,ChromaticAberrationStartOffset=0.000000,BloomIntensity=0.675000,BloomGaussianIntensity=1.000000,BloomThreshold=-1.000000,BloomSizeScale=4.000000,Bloom1Size=0.300000,Bloom2Size=1.000000,Bloom3Size=2.000000,Bloom4Size=10.000000,Bloom5Size=30.000000,Bloom6Size=64.000000,Bloom1Tint=(R=0.346500,G=0.346500,B=0.346500,A=1.000000),Bloom2Tint=(R=0.138000,G=0.138000,B=0.138000,A=1.000000),Bloom3Tint=(R=0.117600,G=0.117600,B=0.117600,A=1.000000),Bloom4Tint=(R=0.066000,G=0.066000,B=0.066000,A=1.000000),Bloom5Tint=(R=0.066000,G=0.066000,B=0.066000,A=1.000000),Bloom6Tint=(R=0.061000,G=0.061000,B=0.061000,A=1.000000),BloomConvolutionIntensity=1.000000,BloomConvolutionScatterDispersion=1.000000,BloomConvolutionSize=1.000000,BloomConvolutionTexture=None,BloomConvolutionCenterUV=(X=0.500000,Y=0.500000),BloomConvolutionPreFilterMin=7.000000,BloomConvolutionPreFilterMax=15000.000000,BloomConvolutionPreFilterMult=15.000000,BloomConvolutionBufferScale=0.133000,BloomDirtMask=None,BloomDirtMaskIntensity=0.000000,BloomDirtMaskTint=(R=0.500000,G=0.500000,B=0.500000,A=1.000000),DynamicGlobalIlluminationMethod=Lumen,IndirectLightingColor=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),IndirectLightingIntensity=1.000000,LumenRayLightingMode=Default,LumenSceneLightingQuality=1.000000,LumenSceneDetail=1.000000,LumenSceneViewDistance=20000.000000,LumenSceneLightingUpdateSpeed=1.000000,LumenFinalGatherQuality=1.000000,LumenFinalGatherLightingUpdateSpeed=1.000000,LumenFinalGatherScreenTraces=True,LumenMaxTraceDistance=20000.000000,LumenDiffuseColorBoost=1.000000,LumenSkylightLeaking=0.000000,LumenSkylightLeakingTint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),LumenFullSkylightLeakingDistance=1000.000000,LumenSurfaceCacheResolution=1.000000,ReflectionMethod=Lumen,LumenReflectionQuality=1.000000,LumenReflectionsScreenTraces=True,LumenFrontLayerTranslucencyReflections=False,LumenMaxRoughnessToTraceReflections=0.400000,LumenMaxReflectionBounces=1,LumenMaxRefractionBounces=0,ScreenSpaceReflectionIntensity=100.000000,ScreenSpaceReflectionQuality=50.000000,ScreenSpaceReflectionMaxRoughness=0.600000,bMegaLights=True,AmbientCubemapTint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),AmbientCubemapIntensity=1.000000,AmbientCubemap=None,CameraShutterSpeed=60.000000,CameraISO=100.000000,DepthOfFieldFstop=4.000000,DepthOfFieldMinFstop=1.200000,DepthOfFieldBladeCount=5,AutoExposureBias=1.000000,AutoExposureBiasBackup=0.000000,bOverride_AutoExposureBiasBackup=False,AutoExposureApplyPhysicalCameraExposure=True,AutoExposureBiasCurve=None,AutoExposureMeterMask=None,AutoExposureLowPercent=10.000000,AutoExposureHighPercent=90.000000,AutoExposureMinBrightness=-10.000000,AutoExposureMaxBrightness=20.000000,AutoExposureSpeedUp=3.000000,AutoExposureSpeedDown=1.000000,HistogramLogMin=-10.000000,HistogramLogMax=20.000000,LocalExposureMethod=Bilateral,LocalExposureHighlightContrastScale=1.000000,LocalExposureShadowContrastScale=1.000000,LocalExposureHighlightContrastCurve=None,LocalExposureShadowContrastCurve=None,LocalExposureHighlightThreshold=0.000000,LocalExposureShadowThreshold=0.000000,LocalExposureDetailStrength=1.000000,LocalExposureBlurredLuminanceBlend=0.600000,LocalExposureBlurredLuminanceKernelSizePercent=50.000000,LocalExposureHighlightThresholdStrength=1.000000,LocalExposureShadowThresholdStrength=1.000000,LocalExposureMiddleGreyBias=0.000000,LensFlareIntensity=1.000000,LensFlareTint=(R=1.000000,G=1.000000,B=1.000000,A=1.000000),LensFlareBokehSize=3.000000,LensFlareThreshold=8.000000,LensFlareBokehShape=None,LensFlareTints[0]=(R=1.000000,G=0.800000,B=0.400000,A=0.600000),LensFlareTints[1]=(R=1.000000,G=1.000000,B=0.600000,A=0.530000),LensFlareTints[2]=(R=0.800000,G=0.800000,B=1.000000,A=0.460000),LensFlareTints[3]=(R=0.500000,G=1.000000,B=0.400000,A=0.390000),LensFlareTints[4]=(R=0.500000,G=0.800000,B=1.000000,A=0.310000),LensFlareTints[5]=(R=0.900000,G=1.000000,B=0.800000,A=0.270000),LensFlareTints[6]=(R=1.000000,G=0.800000,B=0.400000,A=0.220000),LensFlareTints[7]=(R=0.900000,G=0.700000,B=0.700000,A=0.150000),VignetteIntensity=0.400000,Sharpen=0.000000,FilmGrainIntensity=0.000000,FilmGrainIntensityShadows=1.000000,FilmGrainIntensityMidtones=1.000000,FilmGrainIntensityHighlights=1.000000,FilmGrainShadowsMax=0.090000,FilmGrainHighlightsMin=0.500000,FilmGrainHighlightsMax=1.000000,FilmGrainTexelSize=1.000000,FilmGrainTexture=None,AmbientOcclusionIntensity=0.500000,AmbientOcclusionStaticFraction=1.000000,AmbientOcclusionRadius=200.000000,AmbientOcclusionRadiusInWS=False,AmbientOcclusionFadeDistance=8000.000000,AmbientOcclusionFadeRadius=5000.000000,AmbientOcclusionPower=2.000000,AmbientOcclusionBias=3.000000,AmbientOcclusionQuality=50.000000,AmbientOcclusionMipBlend=0.600000,AmbientOcclusionMipScale=1.700000,AmbientOcclusionMipThreshold=0.010000,AmbientOcclusionTemporalBlendWeight=0.100000,RayTracingAO=False,RayTracingAOSamplesPerPixel=1,RayTracingAOIntensity=1.000000,RayTracingAORadius=200.000000,ColorGradingIntensity=1.000000,ColorGradingLUT=None,DepthOfFieldSensorWidth=24.576000,DepthOfFieldSqueezeFactor=1.000000,DepthOfFieldFocalDistance=0.000000,DepthOfFieldDepthBlurAmount=1.000000,DepthOfFieldDepthBlurRadius=0.000000,DepthOfFieldUseHairDepth=False,DepthOfFieldPetzvalBokeh=0.000000,DepthOfFieldPetzvalBokehFalloff=1.000000,DepthOfFieldPetzvalExclusionBoxExtents=(X=0.000000,Y=0.000000),DepthOfFieldPetzvalExclusionBoxRadius=0.000000,DepthOfFieldAspectRatioScalar=1.000000,DepthOfFieldBarrelRadius=5.000000,DepthOfFieldBarrelLength=0.000000,DepthOfFieldMatteBoxFlags[0]=(Pitch=0.000000,Roll=0.000000,Length=0.000000),DepthOfFieldMatteBoxFlags[1]=(Pitch=0.000000,Roll=0.000000,Length=0.000000),DepthOfFieldMatteBoxFlags[2]=(Pitch=0.000000,Roll=0.000000,Length=0.000000),DepthOfFieldFocalRegion=0.000000,DepthOfFieldNearTransitionRegion=300.000000,DepthOfFieldFarTransitionRegion=500.000000,DepthOfFieldScale=0.000000,DepthOfFieldNearBlurSize=15.000000,DepthOfFieldFarBlurSize=15.000000,DepthOfFieldOcclusion=0.400000,DepthOfFieldSkyFocusDistance=0.000000,DepthOfFieldVignetteSize=200.000000,MotionBlurAmount=0.500000,MotionBlurMax=5.000000,MotionBlurTargetFPS=30,MotionBlurPerObjectSize=0.000000,TranslucencyType=Raster,RayTracingTranslucencyMaxRoughness=0.600000,RayTracingTranslucencyRefractionRays=3,RayTracingTranslucencySamplesPerPixel=1,RayTracingTranslucencyMaxPrimaryHitEvents=4,RayTracingTranslucencyMaxSecondaryHitEvents=2,RayTracingTranslucencyShadows=Hard_shadows,RayTracingTranslucencyRefraction=True,RayTracingTranslucencyUseRayTracedRefraction=False,PathTracingMaxBounces=32,PathTracingSamplesPerPixel=2048,PathTracingMaxPathIntensity=24.000000,PathTracingEnableEmissiveMaterials=True,PathTracingEnableReferenceDOF=False,PathTracingEnableReferenceAtmosphere=False,PathTracingEnableDenoiser=True,PathTracingIncludeEmissive=True,PathTracingIncludeDiffuse=True,PathTracingIncludeIndirectDiffuse=True,PathTracingIncludeSpecular=True,PathTracingIncludeIndirectSpecular=True,PathTracingIncludeVolume=True,PathTracingIncludeIndirectVolume=True,UserFlags=0,WeightedBlendables=(Array=)),TargetWorldMode_13_B3DDE03A410E5B5872C9B5970BB01009=NewEnumerator0,TargetLevelSoftRef_21_5E22859646F8DEC90A88E19AAFB84954=(WorldAsset=None),Notes_19_4875843C47CA2B9B06B721AFB2C0AFAA=\"\",TargetLevelName_24_A08DCEA94C73D3DCAE5BC280F9B38AB7=\"False\")",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "BanishingVoiceIntent_27_33903F2E4599CB2AB2861EBA443B106D",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Aliases_31_B91216244E78484D9DB0ADAC76175CB3",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "StartingObjectiveId_34_8250EA5C42B3C21A0559B79F2697D5DF",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_VariableGet_14",
+			"node_name": "K2Node_VariableGet_14",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugEnabled",
+			"title_single_line": "Get DebugEnabled",
+			"comment": "",
+			"guid": "a852221b-486c-5e65-cf9e-9ba2def6a85a",
+			"x": 2320,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugEnabled",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Destroy Ghost Actor\nTarget is BP Ghost Manager",
+			"title_single_line": "Destroy Ghost Actor",
+			"comment": "",
+			"guid": "64e2344e-49ae-40c3-c85f-019111180084",
+			"x": 288,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Message",
+			"title_single_line": "Debug Message",
+			"comment": "",
+			"guid": "130f3e73-43c9-1ed3-84db-d6953ad12467",
+			"x": 2640,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator4",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "GhostManager",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "Ghost cleared from GhostManager",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Duration",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "2.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToScreen",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bPrintToLog",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		},
+		{
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "e841fe45-4776-0c98-39e7-f6aac66af191",
+			"x": 2432,
+			"y": -80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ClearActiveGhost"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "ClearActiveGhost",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Destroy Ghost Actor\nTarget is BP Ghost Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallDelegate_0",
+			"from_node_title": "Call On Ghost Cleared",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set bHasActiveGhost",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set bHasActiveGhost",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set CurrentGhostId",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set CurrentGhostId",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set CurrentGhostState",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set CurrentGhostState",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set CurrentGhostProfile",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_3",
+			"from_node_title": "Set CurrentGhostProfile",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Destroy Ghost Actor\nTarget is BP Ghost Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallDelegate_0",
+			"to_node_title": "Call On Ghost Cleared",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_VariableGet_12",
+			"from_node_title": "Get bHasActiveGhost",
+			"from_pin": "bHasActiveGhost",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_13",
+			"from_node_title": "Get CurrentGhostId",
+			"from_pin": "CurrentGhostId",
+			"to_node_id": "K2Node_CallDelegate_0",
+			"to_node_title": "Call On Ghost Cleared",
+			"to_pin": "GhostId"
+		},
+		{
+			"from_node_id": "K2Node_MakeStruct_0",
+			"from_node_title": "Make S Ghost Profile",
+			"from_pin": "S_GhostProfile",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set CurrentGhostProfile",
+			"to_pin": "CurrentGhostProfile"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_14",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToScreen"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_14",
+			"from_node_title": "Get DebugEnabled",
+			"from_pin": "DebugEnabled",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "bPrintToLog"
+		},
+		{
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Message",
+			"to_pin": "WorldContextObject"
+		}
+	],
+	"problems": []
+}

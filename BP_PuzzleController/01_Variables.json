@@ -1,0 +1,480 @@
+{
+	"variables": [
+		{
+			"name": "CurrentStepData",
+			"friendly_name": "Current Step Data",
+			"category": "Puzzles",
+			"editable": true,
+			"kind": "State",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "struct",
+				"pin_subcategory": "None",
+				"resolved_type": "S_PuzzleStep"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "DT_Puzzles",
+			"friendly_name": "DT Puzzles",
+			"category": "Puzzles",
+			"editable": true,
+			"kind": "Unknown",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "object",
+				"pin_subcategory": "None",
+				"resolved_type": "DataTable"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "GhostManagerRef",
+			"friendly_name": "Ghost Manager Ref",
+			"category": "Puzzle|Refs",
+			"editable": true,
+			"kind": "Reference",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "object",
+				"pin_subcategory": "None",
+				"resolved_type": "BP_GhostManager_C"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "TransitionManagerRef",
+			"friendly_name": "Transition Manager Ref",
+			"category": "Puzzle|Refs",
+			"editable": true,
+			"kind": "Reference",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "object",
+				"pin_subcategory": "None",
+				"resolved_type": "BP_TransitionManager_C"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "VoiceListenerRef",
+			"friendly_name": "Voice Listener Ref",
+			"category": "Puzzle|Refs",
+			"editable": true,
+			"kind": "Reference",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "object",
+				"pin_subcategory": "None",
+				"resolved_type": "BP_VoiceListener_C"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "CurrentPuzzleId",
+			"friendly_name": "Current Puzzle Id",
+			"category": "Puzzles",
+			"editable": true,
+			"kind": "State",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "name",
+				"pin_subcategory": "None",
+				"resolved_type": "Name"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "CurrentPuzzleData",
+			"friendly_name": "Current Puzzle Data",
+			"category": "Puzzles",
+			"editable": true,
+			"kind": "State",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "struct",
+				"pin_subcategory": "None",
+				"resolved_type": "S_PuzzleDefinition"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "bHasActivePuzzle",
+			"friendly_name": "Has Active Puzzle",
+			"category": "Puzzles",
+			"editable": true,
+			"kind": "DerivedState",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "bool",
+				"pin_subcategory": "None",
+				"resolved_type": "Boolean"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "CurrentStepIndex",
+			"friendly_name": "Current Step Index",
+			"category": "Puzzles",
+			"editable": true,
+			"kind": "State",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "int",
+				"pin_subcategory": "None",
+				"resolved_type": "Integer"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "bStepActive",
+			"friendly_name": "Step Active",
+			"category": "Puzzles",
+			"editable": true,
+			"kind": "Unknown",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "bool",
+				"pin_subcategory": "None",
+				"resolved_type": "Boolean"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "CurrentGhostId",
+			"friendly_name": "Current Ghost Id",
+			"category": "Ghost",
+			"editable": true,
+			"kind": "State",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "name",
+				"pin_subcategory": "None",
+				"resolved_type": "Name"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "CompletedStepIds",
+			"friendly_name": "Completed Step Ids",
+			"category": "Progress",
+			"editable": true,
+			"kind": "Progress",
+			"is_array": true,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "name",
+				"pin_subcategory": "None",
+				"resolved_type": "Name"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "StartedPuzzleIds",
+			"friendly_name": "Started Puzzle Ids",
+			"category": "Progress",
+			"editable": true,
+			"kind": "Progress",
+			"is_array": true,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "name",
+				"pin_subcategory": "None",
+				"resolved_type": "Name"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "bDebugPuzzle",
+			"friendly_name": "Debug Puzzle",
+			"category": "Debug",
+			"editable": true,
+			"kind": "Debug",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "bool",
+				"pin_subcategory": "None",
+				"resolved_type": "Boolean"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "DebugSenderName",
+			"friendly_name": "Debug Sender Name",
+			"category": "Debug",
+			"editable": true,
+			"kind": "Debug",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "name",
+				"pin_subcategory": "None",
+				"resolved_type": "Name"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "OnPuzzleStarted",
+			"friendly_name": "On Puzzle Started",
+			"category": "Default",
+			"editable": true,
+			"kind": "Dispatcher",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "mcdelegate",
+				"pin_subcategory": "None",
+				"resolved_type": "mcdelegate"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "OnStepStarted",
+			"friendly_name": "On Step Started",
+			"category": "Default",
+			"editable": true,
+			"kind": "Dispatcher",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "mcdelegate",
+				"pin_subcategory": "None",
+				"resolved_type": "mcdelegate"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "OnStepCompleted",
+			"friendly_name": "On Step Completed",
+			"category": "Default",
+			"editable": true,
+			"kind": "Dispatcher",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "mcdelegate",
+				"pin_subcategory": "None",
+				"resolved_type": "mcdelegate"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "OnStepFailed",
+			"friendly_name": "On Step Failed",
+			"category": "Default",
+			"editable": true,
+			"kind": "Dispatcher",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "mcdelegate",
+				"pin_subcategory": "None",
+				"resolved_type": "mcdelegate"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "OnPuzzleCompleted",
+			"friendly_name": "On Puzzle Completed",
+			"category": "Default",
+			"editable": true,
+			"kind": "Dispatcher",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "mcdelegate",
+				"pin_subcategory": "None",
+				"resolved_type": "mcdelegate"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "OnPuzzleReset",
+			"friendly_name": "On Puzzle Reset",
+			"category": "Default",
+			"editable": true,
+			"kind": "Dispatcher",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "mcdelegate",
+				"pin_subcategory": "None",
+				"resolved_type": "mcdelegate"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "ObjectiveManagerRef",
+			"friendly_name": "Objective Manager Ref",
+			"category": "Puzzle|Refs",
+			"editable": true,
+			"kind": "Reference",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "object",
+				"pin_subcategory": "None",
+				"resolved_type": "BP_ObjectiveManager_C"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "bAutoStartFirstPuzzleForCurrentGhost",
+			"friendly_name": "Auto Start First Puzzle for Current Ghost",
+			"category": "Ghost",
+			"editable": true,
+			"kind": "Unknown",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "bool",
+				"pin_subcategory": "None",
+				"resolved_type": "Boolean"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "FailedStepsIds",
+			"friendly_name": "Failed Steps Ids",
+			"category": "Default",
+			"editable": true,
+			"kind": "Progress",
+			"is_array": true,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "name",
+				"pin_subcategory": "None",
+				"resolved_type": "Name"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "Step Id",
+			"friendly_name": "Step Id",
+			"category": "Default",
+			"editable": true,
+			"kind": "Unknown",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "name",
+				"pin_subcategory": "None",
+				"resolved_type": "Name"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "ScareManagerRef",
+			"friendly_name": "Scare Manager Ref",
+			"category": "Puzzle|Refs",
+			"editable": true,
+			"kind": "Reference",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "object",
+				"pin_subcategory": "None",
+				"resolved_type": "BP_ScareManager_C"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "SaveManagerRef",
+			"friendly_name": "Save Manager Ref",
+			"category": "Puzzle|Refs",
+			"editable": true,
+			"kind": "Reference",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "object",
+				"pin_subcategory": "None",
+				"resolved_type": "BP_SaveManager_C"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "CompletedPuzzleIds",
+			"friendly_name": "Completed Puzzle Ids",
+			"category": "Default",
+			"editable": true,
+			"kind": "Progress",
+			"is_array": true,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "name",
+				"pin_subcategory": "None",
+				"resolved_type": "Name"
+			},
+			"used_in_graphs": []
+		}
+	]
+}

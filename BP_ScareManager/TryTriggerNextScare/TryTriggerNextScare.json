@@ -1,0 +1,2588 @@
+{
+	"graph_name": "TryTriggerNextScare",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": true,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [
+			"CurrentGhostId",
+			"ActiveScareIds",
+			"ValidScareIds",
+			"ScaresDataTable",
+			"ValidScareCandidates"
+		],
+		"writes_variables": [],
+		"calls": [
+			"Execute Scare by Id",
+			"Is Scare Blocked",
+			"Is Valid",
+			"Is Scare Allowed in Current World Mode",
+			"Register Triggered Scare",
+			"Is Scare Valid Advanced",
+			"Select Weighted Random Scare"
+		],
+		"called_by": [],
+		"branch_points": [
+			"Branch"
+		]
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "TryTriggerNextScare",
+			"title_single_line": "TryTriggerNextScare",
+			"comment": "",
+			"guid": "cb495758-493f-44a7-9131-19b21c02191a",
+			"x": -528,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_VariableGet_3",
+			"node_name": "K2Node_VariableGet_3",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostId",
+			"title_single_line": "Get CurrentGhostId",
+			"comment": "",
+			"guid": "132b9100-4f38-87ea-2af0-6b999fe425b2",
+			"x": 160,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostId",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "2b321b0d-4b62-0df7-a730-769f21513d96",
+			"x": 544,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ActiveScareIds",
+			"title_single_line": "Get ActiveScareIds",
+			"comment": "",
+			"guid": "bd8efebb-48c5-114f-c686-319390b6d50a",
+			"x": 160,
+			"y": -384,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ActiveScareIds",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_0",
+			"node_name": "K2Node_CallArrayFunction_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Length",
+			"title_single_line": "Length",
+			"comment": "",
+			"guid": "729c3638-4c50-5711-4f8d-079a35304b85",
+			"x": 320,
+			"y": -288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_1",
+			"node_name": "K2Node_PromotableOperator_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "integer > integer",
+			"title_single_line": "integer > integer",
+			"comment": "",
+			"guid": "2d013193-4830-c7bc-8d3f-2cb753a1116a",
+			"x": 576,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "48d811e8-4f72-cb22-ab8b-58a02188057c",
+			"x": 896,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Execute Scare by Id\nTarget is BP Scare Manager",
+			"title_single_line": "Execute Scare by Id",
+			"comment": "",
+			"guid": "6c1d62be-41f8-454d-4c3b-1da1c21ca26d",
+			"x": 3600,
+			"y": 512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_3",
+			"node_name": "K2Node_PromotableOperator_3",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "Not Equal (Name)",
+			"title_single_line": "Not Equal (Name)",
+			"comment": "",
+			"guid": "5d1cdf58-40d4-8129-9fe7-ddb1503fe683",
+			"x": 368,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_Composite_1",
+			"node_name": "K2Node_Composite_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_Composite",
+			"title": "Debug11\nCollapsed Graph",
+			"title_single_line": "Debug11",
+			"comment": "",
+			"guid": "75553042-4dca-0b9d-9bbe-ed968c6e9f34",
+			"x": 1168,
+			"y": 320,
+			"has_error": true,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_Composite_2",
+			"node_name": "K2Node_Composite_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_Composite",
+			"title": "Debug12\nCollapsed Graph",
+			"title_single_line": "Debug12",
+			"comment": "",
+			"guid": "bc84f432-431b-723e-e8d2-0997a166a511",
+			"x": 752,
+			"y": 112,
+			"has_error": true,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Scare Blocked\nTarget is BP Scare Manager",
+			"title_single_line": "Is Scare Blocked",
+			"comment": "",
+			"guid": "4ff69d11-42fc-3c8a-e759-25bfb7e95c2d",
+			"x": -224,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_3",
+			"node_name": "K2Node_IfThenElse_3",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "e4907008-405f-1e23-0d89-998a86b423da",
+			"x": 96,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_1",
+			"node_name": "K2Node_CallArrayFunction_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Clear",
+			"title_single_line": "Clear",
+			"comment": "",
+			"guid": "7c303fb5-452b-7730-4b73-aabc285280e1",
+			"x": 1040,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_VariableGet_9",
+			"node_name": "K2Node_VariableGet_9",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ValidScareIds",
+			"title_single_line": "Get ValidScareIds",
+			"comment": "",
+			"guid": "c953a020-4887-a226-cc7d-cfb7eaa536f2",
+			"x": 848,
+			"y": -288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ValidScareIds",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_0",
+			"node_name": "K2Node_MacroInstance_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "For Each Loop",
+			"title_single_line": "For Each Loop",
+			"comment": "",
+			"guid": "1150aa41-49ec-54df-1b7d-0aa36c0262cc",
+			"x": 1424,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Exec",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Array",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "LoopBody",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Array Element",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Array Index",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Completed",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_VariableGet_1",
+			"node_name": "K2Node_VariableGet_1",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ScaresDataTable",
+			"title_single_line": "Get ScaresDataTable",
+			"comment": "",
+			"guid": "15725149-4e6d-b9ac-2758-77a727a19563",
+			"x": 1456,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ScaresDataTable",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "DataTable",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "027511d3-4003-eac5-f5b6-75811d25661c",
+			"x": 1680,
+			"y": 64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_4",
+			"node_name": "K2Node_IfThenElse_4",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "68c38841-4ceb-3abc-0582-8bba48f0018c",
+			"x": 2016,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_GetDataTableRow_0",
+			"node_name": "K2Node_GetDataTableRow_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_GetDataTableRow",
+			"title": "Get Data Table Row",
+			"title_single_line": "Get Data Table Row",
+			"comment": "",
+			"guid": "849a1f0b-4595-d921-5245-4c8417aa3582",
+			"x": 2352,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "RowNotFound",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "DataTable",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "DataTable",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "RowName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 4
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "5c7f3819-4588-bd0c-5790-c79c0b51eebe",
+			"x": 2112,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "DataTable",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "DataTable",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_Knot_3",
+			"node_name": "K2Node_Knot_3",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "351709c6-4f11-b769-238c-868b58be28b8",
+			"x": 1648,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Scare Allowed in Current World Mode\nTarget is BP Scare Manager",
+			"title_single_line": "Is Scare Allowed in Current World Mode",
+			"comment": "",
+			"guid": "acfe86a0-4df9-7a15-1aea-86a5e556f24c",
+			"x": 2688,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Return",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_5",
+			"node_name": "K2Node_IfThenElse_5",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "00b5c61e-4643-b27d-c725-62bb8fa32caf",
+			"x": 3056,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_Knot_4",
+			"node_name": "K2Node_Knot_4",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "e3a4d08a-4ae0-89c4-ee3c-3fbcecfe601f",
+			"x": 2608,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_6",
+			"node_name": "K2Node_IfThenElse_6",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "eaecd071-4d30-4ff6-efd9-c3a4785b109c",
+			"x": 3792,
+			"y": -272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_2",
+			"node_name": "K2Node_CallArrayFunction_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Add",
+			"title_single_line": "Add",
+			"comment": "",
+			"guid": "121c2a85-421b-c6d8-f675-11b79ead4421",
+			"x": 4464,
+			"y": -48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "NewItem",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_VariableGet_10",
+			"node_name": "K2Node_VariableGet_10",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ValidScareIds",
+			"title_single_line": "Get ValidScareIds",
+			"comment": "",
+			"guid": "c0b6609d-4224-3b5f-01b8-0e8c06dc7559",
+			"x": 4304,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ValidScareIds",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_Knot_5",
+			"node_name": "K2Node_Knot_5",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "4a3af095-420b-ecc2-bf75-0e9cc73f0fc6",
+			"x": 1680,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_3",
+			"node_name": "K2Node_CallArrayFunction_3",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Length",
+			"title_single_line": "Length",
+			"comment": "",
+			"guid": "b281de8f-45f5-62bc-bc21-46951ab04c69",
+			"x": 1600,
+			"y": 528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_0",
+			"node_name": "K2Node_PromotableOperator_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "integer > integer",
+			"title_single_line": "integer > integer",
+			"comment": "",
+			"guid": "4bcfa578-4bfa-83d0-7a64-a691672565a0",
+			"x": 1920,
+			"y": 560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_7",
+			"node_name": "K2Node_IfThenElse_7",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "9e5d0eb4-4e74-cba9-3afb-6e808f043426",
+			"x": 2256,
+			"y": 512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_Knot_6",
+			"node_name": "K2Node_Knot_6",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "2c5ad2f8-413d-a6c5-ff23-95b961ff65f2",
+			"x": 1616,
+			"y": 768,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "wildcard",
+					"subcategory": "None",
+					"resolved_type": "wildcard",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "wildcard",
+					"subcategory": "None",
+					"resolved_type": "wildcard",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_VariableGet_11",
+			"node_name": "K2Node_VariableGet_11",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ActiveScareIds",
+			"title_single_line": "Get ActiveScareIds",
+			"comment": "",
+			"guid": "68609448-4e2a-9346-5069-d78c3846ea02",
+			"x": 1232,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ActiveScareIds",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Register Triggered Scare\nTarget is BP Scare Manager",
+			"title_single_line": "Register Triggered Scare",
+			"comment": "",
+			"guid": "f5c4fbde-4e74-ecda-12e2-4a89db46cb65",
+			"x": 4016,
+			"y": 496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_Knot_8",
+			"node_name": "K2Node_Knot_8",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "718d6e23-4ee2-d540-b480-9db102157f1a",
+			"x": 2592,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Scare Valid Advanced\nTarget is BP Scare Manager",
+			"title_single_line": "Is Scare Valid Advanced",
+			"comment": "",
+			"guid": "a3ea8c79-4927-64a2-3944-c3b839f5b88e",
+			"x": 3392,
+			"y": -288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallFunction_12",
+			"node_name": "K2Node_CallFunction_12",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Select Weighted Random Scare\nTarget is BP Scare Manager",
+			"title_single_line": "Select Weighted Random Scare",
+			"comment": "",
+			"guid": "62ae4a10-4d57-ae6c-4029-42a2412cedea",
+			"x": 2496,
+			"y": 496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "CandidateScares",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bFound",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "SelectedScare",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ScareDate",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_VariableGet_4",
+			"node_name": "K2Node_VariableGet_4",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ValidScareCandidates",
+			"title_single_line": "Get ValidScareCandidates",
+			"comment": "",
+			"guid": "61cc5ddb-4dad-80ac-9ab3-f4a862af90d7",
+			"x": 832,
+			"y": -384,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ValidScareCandidates",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_4",
+			"node_name": "K2Node_CallArrayFunction_4",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Clear",
+			"title_single_line": "Clear",
+			"comment": "",
+			"guid": "54b9942c-4d99-e2b5-c192-449af7e6b953",
+			"x": 1216,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_VariableGet_5",
+			"node_name": "K2Node_VariableGet_5",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ValidScareCandidates",
+			"title_single_line": "Get ValidScareCandidates",
+			"comment": "",
+			"guid": "1b1b7962-443d-f6b8-d6c6-08987e58263a",
+			"x": 3888,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ValidScareCandidates",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_5",
+			"node_name": "K2Node_CallArrayFunction_5",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Add",
+			"title_single_line": "Add",
+			"comment": "",
+			"guid": "57a7cd6b-4b0b-c153-a28b-21812fe700c2",
+			"x": 4128,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "NewItem",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_VariableGet_6",
+			"node_name": "K2Node_VariableGet_6",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ValidScareCandidates",
+			"title_single_line": "Get ValidScareCandidates",
+			"comment": "",
+			"guid": "8937310c-48f5-5d8c-f40c-32a24d9a7b2b",
+			"x": 1296,
+			"y": 608,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ValidScareCandidates",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_8",
+			"node_name": "K2Node_IfThenElse_8",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "b5d83ba7-40ee-ecdd-1f51-24a009f2da7f",
+			"x": 2960,
+			"y": 512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_VariableGet_50",
+			"node_name": "K2Node_VariableGet_50",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ValidScareCandidates",
+			"title_single_line": "Get ValidScareCandidates",
+			"comment": "",
+			"guid": "9a35335f-45cf-1f08-a47d-55b0e3ff843a",
+			"x": 2192,
+			"y": 704,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ValidScareCandidates",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "TryTriggerNextScare",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Is Scare Blocked\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_Composite_2",
+			"to_node_title": "Debug12\nCollapsed Graph",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallArrayFunction_1",
+			"to_node_title": "Clear",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_Composite_1",
+			"to_node_title": "Debug11\nCollapsed Graph",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Execute Scare by Id\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Register Triggered Scare\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Is Scare Blocked\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallArrayFunction_1",
+			"from_node_title": "Clear",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallArrayFunction_4",
+			"to_node_title": "Clear",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_0",
+			"from_node_title": "For Each Loop",
+			"from_pin": "LoopBody",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_0",
+			"from_node_title": "For Each Loop",
+			"from_pin": "Completed",
+			"to_node_id": "K2Node_IfThenElse_7",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_GetDataTableRow_0",
+			"to_node_title": "Get Data Table Row",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_GetDataTableRow_0",
+			"from_node_title": "Get Data Table Row",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Is Scare Allowed in Current World Mode\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Is Scare Allowed in Current World Mode\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_5",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Is Scare Valid Advanced\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_6",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallArrayFunction_5",
+			"to_node_title": "Add",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_7",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Select Weighted Random Scare\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Is Scare Valid Advanced\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_6",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_12",
+			"from_node_title": "Select Weighted Random Scare\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_8",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallArrayFunction_4",
+			"from_node_title": "Clear",
+			"from_pin": "then",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "For Each Loop",
+			"to_pin": "Exec"
+		},
+		{
+			"from_node_id": "K2Node_CallArrayFunction_5",
+			"from_node_title": "Add",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallArrayFunction_2",
+			"to_node_title": "Add",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_8",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Execute Scare by Id\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_VariableGet_3",
+			"from_node_title": "Get CurrentGhostId",
+			"from_pin": "CurrentGhostId",
+			"to_node_id": "K2Node_PromotableOperator_3",
+			"to_node_title": "Not Equal (Name)",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get ActiveScareIds",
+			"from_pin": "ActiveScareIds",
+			"to_node_id": "K2Node_CallArrayFunction_0",
+			"to_node_title": "Length",
+			"to_pin": "TargetArray"
+		},
+		{
+			"from_node_id": "K2Node_CallArrayFunction_0",
+			"from_node_title": "Length",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_1",
+			"to_node_title": "integer > integer",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_1",
+			"from_node_title": "integer > integer",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_3",
+			"from_node_title": "Not Equal (Name)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Is Scare Blocked\nTarget is BP Scare Manager",
+			"from_pin": "Output",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_9",
+			"from_node_title": "Get ValidScareIds",
+			"from_pin": "ValidScareIds",
+			"to_node_id": "K2Node_CallArrayFunction_1",
+			"to_node_title": "Clear",
+			"to_pin": "TargetArray"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_0",
+			"from_node_title": "For Each Loop",
+			"from_pin": "Array Element",
+			"to_node_id": "K2Node_Knot_3",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get ScaresDataTable",
+			"from_pin": "ScaresDataTable",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get ScaresDataTable",
+			"from_pin": "ScaresDataTable",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_GetDataTableRow_0",
+			"from_node_title": "Get Data Table Row",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Is Scare Allowed in Current World Mode\nTarget is BP Scare Manager",
+			"to_pin": "ScareData"
+		},
+		{
+			"from_node_id": "K2Node_GetDataTableRow_0",
+			"from_node_title": "Get Data Table Row",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_Knot_4",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_GetDataTableRow_0",
+			"from_node_title": "Get Data Table Row",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_Knot_8",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_GetDataTableRow_0",
+			"from_node_title": "Get Data Table Row",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallArrayFunction_5",
+			"to_node_title": "Add",
+			"to_pin": "NewItem"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_GetDataTableRow_0",
+			"to_node_title": "Get Data Table Row",
+			"to_pin": "DataTable"
+		},
+		{
+			"from_node_id": "K2Node_Knot_3",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_GetDataTableRow_0",
+			"to_node_title": "Get Data Table Row",
+			"to_pin": "RowName"
+		},
+		{
+			"from_node_id": "K2Node_Knot_3",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_5",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Is Scare Allowed in Current World Mode\nTarget is BP Scare Manager",
+			"from_pin": "Return",
+			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_4",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Is Scare Valid Advanced\nTarget is BP Scare Manager",
+			"to_pin": "ScareData"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_10",
+			"from_node_title": "Get ValidScareIds",
+			"from_pin": "ValidScareIds",
+			"to_node_id": "K2Node_CallArrayFunction_2",
+			"to_node_title": "Add",
+			"to_pin": "TargetArray"
+		},
+		{
+			"from_node_id": "K2Node_Knot_5",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallArrayFunction_2",
+			"to_node_title": "Add",
+			"to_pin": "NewItem"
+		},
+		{
+			"from_node_id": "K2Node_CallArrayFunction_3",
+			"from_node_title": "Length",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_0",
+			"to_node_title": "integer > integer",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_0",
+			"from_node_title": "integer > integer",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_7",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_11",
+			"from_node_title": "Get ActiveScareIds",
+			"from_pin": "ActiveScareIds",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "For Each Loop",
+			"to_pin": "Array"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Is Scare Valid Advanced\nTarget is BP Scare Manager",
+			"from_pin": "bIsValid",
+			"to_node_id": "K2Node_IfThenElse_6",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_12",
+			"from_node_title": "Select Weighted Random Scare\nTarget is BP Scare Manager",
+			"from_pin": "bFound",
+			"to_node_id": "K2Node_IfThenElse_8",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_12",
+			"from_node_title": "Select Weighted Random Scare\nTarget is BP Scare Manager",
+			"from_pin": "SelectedScare",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Execute Scare by Id\nTarget is BP Scare Manager",
+			"to_pin": "ScareId"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_12",
+			"from_node_title": "Select Weighted Random Scare\nTarget is BP Scare Manager",
+			"from_pin": "ScareDate",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Register Triggered Scare\nTarget is BP Scare Manager",
+			"to_pin": "ScareData"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get ValidScareCandidates",
+			"from_pin": "ValidScareCandidates",
+			"to_node_id": "K2Node_CallArrayFunction_4",
+			"to_node_title": "Clear",
+			"to_pin": "TargetArray"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_5",
+			"from_node_title": "Get ValidScareCandidates",
+			"from_pin": "ValidScareCandidates",
+			"to_node_id": "K2Node_CallArrayFunction_5",
+			"to_node_title": "Add",
+			"to_pin": "TargetArray"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_6",
+			"from_node_title": "Get ValidScareCandidates",
+			"from_pin": "ValidScareCandidates",
+			"to_node_id": "K2Node_CallArrayFunction_3",
+			"to_node_title": "Length",
+			"to_pin": "TargetArray"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_50",
+			"from_node_title": "Get ValidScareCandidates",
+			"from_pin": "ValidScareCandidates",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Select Weighted Random Scare\nTarget is BP Scare Manager",
+			"to_pin": "CandidateScares"
+		}
+	],
+	"problems": []
+}

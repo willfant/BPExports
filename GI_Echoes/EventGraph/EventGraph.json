@@ -1,0 +1,167 @@
+{
+	"graph_name": "EventGraph",
+	"graph_type": "EventGraph",
+	"entry_node_id": "K2Node_Event_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Main runtime entry graph for this Blueprint.",
+		"reads_variables": [],
+		"writes_variables": [],
+		"calls": [
+			"Set Initial Vars Debug",
+			"Load Default Debug Profile"
+		],
+		"called_by": [],
+		"branch_points": []
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_Event_0",
+			"node_name": "K2Node_Event_0",
+			"node_kind": "Event",
+			"ue_class": "K2Node_Event",
+			"title": "Event Init",
+			"title_single_line": "Event Init",
+			"comment": "",
+			"guid": "08001334-4711-3022-a26e-5a8f405d12ea",
+			"x": -6720,
+			"y": -4160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "OutputDelegate",
+					"direction": "Output",
+					"category": "delegate",
+					"subcategory": "None",
+					"resolved_type": "delegate",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Set Initial Vars Debug\nTarget is GI Echoes",
+			"title_single_line": "Set Initial Vars Debug",
+			"comment": "",
+			"guid": "0665564b-4bb8-4b6b-af6a-958192da3a4a",
+			"x": -6480,
+			"y": -4176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Load Default Debug Profile\nTarget is GI Echoes",
+			"title_single_line": "Load Default Debug Profile",
+			"comment": "",
+			"guid": "c22a8cb7-47e8-410f-1069-dcb17ae25a77",
+			"x": -6208,
+			"y": -4176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_Event_0",
+			"from_node_title": "Event Init",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Set Initial Vars Debug\nTarget is GI Echoes",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Set Initial Vars Debug\nTarget is GI Echoes",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Load Default Debug Profile\nTarget is GI Echoes",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [],
+	"problems": []
+}
