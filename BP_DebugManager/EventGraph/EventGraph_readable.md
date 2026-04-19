@@ -13,13 +13,15 @@ Main runtime entry graph for this Blueprint.
 - CachedGI
 
 ## Calls
-- Forward Message to Widgets
 - Get Game Instance
 - Is Valid
-- Register Debug Manager
-- Create Debug Widgets
-- Refresh Widgets from History
 - Unregister Debug Manager
+- Register Debug Manager
+- Ensure Widgets Created
+- Refresh Widgets from History
+- Handle Debug Settings Changed
+- Forward Message to Widgets
+- Handle Debug Message Accepted
 
 ## Branch Points
 - Branch

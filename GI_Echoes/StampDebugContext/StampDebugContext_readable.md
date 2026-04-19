@@ -20,6 +20,7 @@ Provides debug or developer-facing behavior.
 - String To Name
 - Get Display Name
 - Get Debug Color for Severity
+- Get Game Time in Seconds
 
 ## Called By
 - SubmitDebugMessage

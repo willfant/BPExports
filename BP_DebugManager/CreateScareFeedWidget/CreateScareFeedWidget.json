@@ -1,0 +1,941 @@
+{
+	"graph_name": "CreateScareFeedWidget",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": true,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [
+			"DebugFeedWidgetClass",
+			"bStartVisible",
+			"ScareFeedWidget"
+		],
+		"writes_variables": [
+			"ScareFeedWidget"
+		],
+		"calls": [
+			"Get Player Controller",
+			"Init Feed Panel",
+			"Add to Viewport",
+			"Apply Feed Viewport Layout"
+		],
+		"called_by": [
+			"EnsureWidgetsCreated"
+		],
+		"branch_points": []
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "CreateScareFeedWidget",
+			"title_single_line": "CreateScareFeedWidget",
+			"comment": "",
+			"guid": "5675e97f-411f-fddb-ebf2-14a2c8e8f063",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Player Controller",
+			"title_single_line": "Get Player Controller",
+			"comment": "",
+			"guid": "cd15661c-4f3c-31b8-408c-bf9d09c14dbf",
+			"x": 0,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PlayerIndex",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "PlayerController",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_CreateWidget_0",
+			"node_name": "K2Node_CreateWidget_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CreateWidget",
+			"title": "Create WBP Debug Feed Panel Widget",
+			"title_single_line": "Create WBP Debug Feed Panel Widget",
+			"comment": "",
+			"guid": "f8ed4857-4919-dc71-554d-74bf0148556d",
+			"x": 464,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Class",
+					"direction": "Input",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "UserWidget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OwningPlayer",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "PlayerController",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "FeedTitle",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_VariableGet_13",
+			"node_name": "K2Node_VariableGet_13",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugFeedWidgetClass",
+			"title_single_line": "Get DebugFeedWidgetClass",
+			"comment": "",
+			"guid": "668c3599-4735-862e-ea27-60a4d18524aa",
+			"x": 32,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugFeedWidgetClass",
+					"direction": "Output",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"title_single_line": "Init Feed Panel",
+			"comment": "",
+			"guid": "468b0c29-4b9f-8707-3d06-1d8fa1c84533",
+			"x": 1216,
+			"y": -16,
+			"has_error": true,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InTitle",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InAllowedCategories",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Add to Viewport\nTarget is User Widget",
+			"title_single_line": "Add to Viewport",
+			"comment": "",
+			"guid": "497cad35-4a32-6c77-c623-62bbe2766a95",
+			"x": 1600,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "UserWidget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ZOrder",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Apply Feed Viewport Layout\nTarget is BP Debug Manager",
+			"title_single_line": "Apply Feed Viewport Layout",
+			"comment": "",
+			"guid": "1c2ba5f9-4c8f-e979-b063-a590f98f7fa8",
+			"x": 2000,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetWidget",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "DesiredSize",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector2D",
+					"default_value": "(X=560.000000,Y=320.000000)",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScreenPosition",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector2D",
+					"default_value": "(X=30.000000,Y=370.000000)",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bShouldBeVisible",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_VariableGet_14",
+			"node_name": "K2Node_VariableGet_14",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bStartVisible",
+			"title_single_line": "Get bStartVisible",
+			"comment": "",
+			"guid": "4876638e-4b29-7be9-72a8-5d95383060a6",
+			"x": 1776,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bStartVisible",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set ScareFeedWidget",
+			"title_single_line": "Set ScareFeedWidget",
+			"comment": "",
+			"guid": "8295f9ec-4b68-d8c3-602a-62b7e226f948",
+			"x": 864,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ScareFeedWidget",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_MakeArray_2",
+			"node_name": "K2Node_MakeArray_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MakeArray",
+			"title": "Make Array",
+			"title_single_line": "Make Array",
+			"comment": "",
+			"guid": "1a27897a-4ac1-edd4-a86f-76ae09391826",
+			"x": 1008,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Array",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[0]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[1]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[2]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[3]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "[4]",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_7",
+			"node_name": "K2Node_EnumLiteral_7",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "83282444-4a96-f228-8e2b-ceb0d981d097",
+			"x": 528,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator1",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_8",
+			"node_name": "K2Node_EnumLiteral_8",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "7589107f-44b2-d9f0-d86f-8b8153cde7ee",
+			"x": 528,
+			"y": 320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator4",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_9",
+			"node_name": "K2Node_EnumLiteral_9",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "3565321a-4413-19f8-a0db-df96818dcf48",
+			"x": 544,
+			"y": 416,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator8",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_10",
+			"node_name": "K2Node_EnumLiteral_10",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "b13462d9-4212-b0b2-ea81-94a2a370e46b",
+			"x": 528,
+			"y": 512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator13",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_EnumLiteral_11",
+			"node_name": "K2Node_EnumLiteral_11",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumLiteral",
+			"title": "Literal enum E_DebugCategory",
+			"title_single_line": "Literal enum E_DebugCategory",
+			"comment": "",
+			"guid": "5f15ec31-4b47-839a-51a1-c48ab19cec2a",
+			"x": 544,
+			"y": 608,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Enum",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator14",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		},
+		{
+			"node_id": "K2Node_VariableGet_1",
+			"node_name": "K2Node_VariableGet_1",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ScareFeedWidget",
+			"title_single_line": "Get ScareFeedWidget",
+			"comment": "",
+			"guid": "9e4f89ca-4d64-155f-b389-03824c16cf7d",
+			"x": 1520,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ScareFeedWidget",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateScareFeedWidget"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "CreateScareFeedWidget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CreateWidget_0",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CreateWidget_0",
+			"from_node_title": "Create WBP Debug Feed Panel Widget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set ScareFeedWidget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Add to Viewport\nTarget is User Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Add to Viewport\nTarget is User Widget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Apply Feed Viewport Layout\nTarget is BP Debug Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set ScareFeedWidget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Get Player Controller",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CreateWidget_0",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "OwningPlayer"
+		},
+		{
+			"from_node_id": "K2Node_CreateWidget_0",
+			"from_node_title": "Create WBP Debug Feed Panel Widget",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set ScareFeedWidget",
+			"to_pin": "ScareFeedWidget"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_13",
+			"from_node_title": "Get DebugFeedWidgetClass",
+			"from_pin": "DebugFeedWidgetClass",
+			"to_node_id": "K2Node_CreateWidget_0",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "Class"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_14",
+			"from_node_title": "Get bStartVisible",
+			"from_pin": "bStartVisible",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Apply Feed Viewport Layout\nTarget is BP Debug Manager",
+			"to_pin": "bShouldBeVisible"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set ScareFeedWidget",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_MakeArray_2",
+			"from_node_title": "Make Array",
+			"from_pin": "Array",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "InAllowedCategories"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_7",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_2",
+			"to_node_title": "Make Array",
+			"to_pin": "[0]"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_8",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_2",
+			"to_node_title": "Make Array",
+			"to_pin": "[1]"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_9",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_2",
+			"to_node_title": "Make Array",
+			"to_pin": "[2]"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_10",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_2",
+			"to_node_title": "Make Array",
+			"to_pin": "[3]"
+		},
+		{
+			"from_node_id": "K2Node_EnumLiteral_11",
+			"from_node_title": "Literal enum E_DebugCategory",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MakeArray_2",
+			"to_node_title": "Make Array",
+			"to_pin": "[4]"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get ScareFeedWidget",
+			"from_pin": "ScareFeedWidget",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Add to Viewport\nTarget is User Widget",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get ScareFeedWidget",
+			"from_pin": "ScareFeedWidget",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Apply Feed Viewport Layout\nTarget is BP Debug Manager",
+			"to_pin": "TargetWidget"
+		}
+	],
+	"problems": []
+}

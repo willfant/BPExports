@@ -17,13 +17,15 @@
 			"CachedGI"
 		],
 		"calls": [
-			"Forward Message to Widgets",
 			"Get Game Instance",
 			"Is Valid",
+			"Unregister Debug Manager",
 			"Register Debug Manager",
-			"Create Debug Widgets",
+			"Ensure Widgets Created",
 			"Refresh Widgets from History",
-			"Unregister Debug Manager"
+			"Handle Debug Settings Changed",
+			"Forward Message to Widgets",
+			"Handle Debug Message Accepted"
 		],
 		"called_by": [],
 		"branch_points": [
@@ -53,138 +55,6 @@
 					"resolved_type": "delegate",
 					"default_value": "",
 					"linked_count": 0
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_CustomEvent_0",
-			"node_name": "K2Node_CustomEvent_0",
-			"node_kind": "CustomEvent",
-			"ue_class": "K2Node_CustomEvent",
-			"title": "HandleDebugMessageAccepted\nCustom Event",
-			"title_single_line": "HandleDebugMessageAccepted",
-			"comment": "",
-			"guid": "5e39e855-48bd-a366-fcb9-9e83702888ee",
-			"x": 1584,
-			"y": 64,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "OutputDelegate",
-					"direction": "Output",
-					"category": "delegate",
-					"subcategory": "None",
-					"resolved_type": "delegate",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugMessage",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_CallFunction_0",
-			"node_name": "K2Node_CallFunction_0",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Forward Message to Widgets\nTarget is BP Debug Manager",
-			"title_single_line": "Forward Message to Widgets",
-			"comment": "",
-			"guid": "374ec8e5-4c45-a450-b487-a6b8fdb2c908",
-			"x": 1952,
-			"y": 48,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_DebugMessage",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_CustomEvent_1",
-			"node_name": "K2Node_CustomEvent_1",
-			"node_kind": "CustomEvent",
-			"ue_class": "K2Node_CustomEvent",
-			"title": "HandleDebugSettingsChanged\nCustom Event",
-			"title_single_line": "HandleDebugSettingsChanged",
-			"comment": "",
-			"guid": "b2dcfb50-4554-e537-3f28-8c99594aa161",
-			"x": 2256,
-			"y": 0,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "OutputDelegate",
-					"direction": "Output",
-					"category": "delegate",
-					"subcategory": "None",
-					"resolved_type": "delegate",
-					"default_value": "",
-					"linked_count": 1
 				},
 				{
 					"pin_name": "then",
@@ -384,8 +254,8 @@
 			"title_single_line": "Is Valid",
 			"comment": "",
 			"guid": "67f5dbb0-4b8f-de49-5b9e-48b4a2d6d8d1",
-			"x": 880,
-			"y": 144,
+			"x": 784,
+			"y": 160,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -428,7 +298,7 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "d7b0b888-4a50-8962-6014-d98962f0a11f",
-			"x": 1152,
+			"x": 1040,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -466,314 +336,6 @@
 					"category": "exec",
 					"subcategory": "None",
 					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_VariableGet_0",
-			"node_name": "K2Node_VariableGet_0",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CachedGI",
-			"title_single_line": "Get CachedGI",
-			"comment": "",
-			"guid": "3ecf1312-438a-127e-6cc0-f887a80450de",
-			"x": 1104,
-			"y": -160,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "CachedGI",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "GI_Echoes_C",
-					"default_value": "",
-					"linked_count": 3
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_DebugManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Register Debug Manager\nTarget is GI Echoes",
-			"title_single_line": "Register Debug Manager",
-			"comment": "",
-			"guid": "15fe4591-4d06-f49b-eb07-f78cb874e6d0",
-			"x": 1424,
-			"y": -240,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "GI_Echoes_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "InDebugManager",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_DebugManager_C",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_Self_0",
-			"node_name": "K2Node_Self_0",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "50c87fa5-40b2-df57-d312-cfa24ff5a901",
-			"x": 1232,
-			"y": -112,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_AddDelegate_0",
-			"node_name": "K2Node_AddDelegate_0",
-			"node_kind": "BindDelegate",
-			"ue_class": "K2Node_AddDelegate",
-			"title": "Bind Event to On Debug Message Accepted",
-			"title_single_line": "Bind Event to On Debug Message Accepted",
-			"comment": "",
-			"guid": "f47cf501-4c42-8f64-fa1d-a6bdd2d21039",
-			"x": 1888,
-			"y": -224,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "GI_Echoes_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Delegate",
-					"direction": "Input",
-					"category": "delegate",
-					"subcategory": "None",
-					"resolved_type": "delegate",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_AddDelegate_1",
-			"node_name": "K2Node_AddDelegate_1",
-			"node_kind": "BindDelegate",
-			"ue_class": "K2Node_AddDelegate",
-			"title": "Bind Event to On Debug Settings Changed",
-			"title_single_line": "Bind Event to On Debug Settings Changed",
-			"comment": "",
-			"guid": "fd73b748-460d-0bd6-ae2c-5693eed00af3",
-			"x": 2480,
-			"y": -224,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "GI_Echoes_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Delegate",
-					"direction": "Input",
-					"category": "delegate",
-					"subcategory": "None",
-					"resolved_type": "delegate",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_CallFunction_4",
-			"node_name": "K2Node_CallFunction_4",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Create Debug Widgets\nTarget is BP Debug Manager",
-			"title_single_line": "Create Debug Widgets",
-			"comment": "",
-			"guid": "55984287-483c-71d3-7156-79b8d909f8f6",
-			"x": 2624,
-			"y": 0,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_CallFunction_5",
-			"node_name": "K2Node_CallFunction_5",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Refresh Widgets from History\nTarget is BP Debug Manager",
-			"title_single_line": "Refresh Widgets from History",
-			"comment": "",
-			"guid": "577bf99f-4190-6aed-26a7-67a41b4635ef",
-			"x": 2880,
-			"y": 0,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
 					"default_value": "",
 					"linked_count": 0
 				}
@@ -1036,16 +598,341 @@
 			"target_class": "EventGraph"
 		},
 		{
-			"node_id": "K2Node_CallFunction_8",
-			"node_name": "K2Node_CallFunction_8",
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CachedGI",
+			"title_single_line": "Get CachedGI",
+			"comment": "",
+			"guid": "48fb187e-47e6-685b-12cc-9c874e551621",
+			"x": 1056,
+			"y": -320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CachedGI",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Create Debug Widgets\nTarget is BP Debug Manager",
-			"title_single_line": "Create Debug Widgets",
+			"title": "Register Debug Manager\nTarget is GI Echoes",
+			"title_single_line": "Register Debug Manager",
 			"comment": "",
-			"guid": "486f6bd0-42ba-96b0-e6a2-a6a15f61c448",
-			"x": 2896,
-			"y": -240,
+			"guid": "0d384e14-42cb-3702-95a4-d6b3960b0b39",
+			"x": 1344,
+			"y": -192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InDebugManager",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "5f6758fd-4f26-a8be-bdcb-ceaf6464b23e",
+			"x": 1056,
+			"y": -80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_AddDelegate_2",
+			"node_name": "K2Node_AddDelegate_2",
+			"node_kind": "BindDelegate",
+			"ue_class": "K2Node_AddDelegate",
+			"title": "Bind Event to On Debug Message Accepted",
+			"title_single_line": "Bind Event to On Debug Message Accepted",
+			"comment": "",
+			"guid": "a8b9a123-4fa5-8525-8791-b0bd8a788e33",
+			"x": 1664,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Delegate",
+					"direction": "Input",
+					"category": "delegate",
+					"subcategory": "None",
+					"resolved_type": "delegate",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "a8a43f6d-4d8e-d45b-9604-519e1ddcb318",
+			"x": 1552,
+			"y": -304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_AddDelegate_3",
+			"node_name": "K2Node_AddDelegate_3",
+			"node_kind": "BindDelegate",
+			"ue_class": "K2Node_AddDelegate",
+			"title": "Bind Event to On Debug Settings Changed",
+			"title_single_line": "Bind Event to On Debug Settings Changed",
+			"comment": "",
+			"guid": "e9217674-43dd-b839-ea42-1cad4f53ccd1",
+			"x": 2176,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Delegate",
+					"direction": "Input",
+					"category": "delegate",
+					"subcategory": "None",
+					"resolved_type": "delegate",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "34d794e5-4e66-3922-3b99-828d5bbc08fb",
+			"x": 2048,
+			"y": -304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CustomEvent_2",
+			"node_name": "K2Node_CustomEvent_2",
+			"node_kind": "CustomEvent",
+			"ue_class": "K2Node_CustomEvent",
+			"title": "HandleDebugSettingsChanged\nCustom Event",
+			"title_single_line": "HandleDebugSettingsChanged",
+			"comment": "",
+			"guid": "f014b9d4-475f-0860-44bc-c1b08016e20d",
+			"x": 0,
+			"y": 1152,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "OutputDelegate",
+					"direction": "Output",
+					"category": "delegate",
+					"subcategory": "None",
+					"resolved_type": "delegate",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_18",
+			"node_name": "K2Node_CallFunction_18",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Ensure Widgets Created\nTarget is BP Debug Manager",
+			"title_single_line": "Ensure Widgets Created",
+			"comment": "",
+			"guid": "0c07974b-4e0d-1716-39a7-91bb0d275d94",
+			"x": 352,
+			"y": 1152,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1080,15 +967,376 @@
 			"target_class": "EventGraph"
 		},
 		{
-			"node_id": "K2Node_CallFunction_9",
-			"node_name": "K2Node_CallFunction_9",
+			"node_id": "K2Node_CallFunction_12",
+			"node_name": "K2Node_CallFunction_12",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Refresh Widgets from History\nTarget is BP Debug Manager",
 			"title_single_line": "Refresh Widgets from History",
 			"comment": "",
-			"guid": "3a36fc7c-49cb-c315-153a-1ca0da7e9298",
-			"x": 3168,
+			"guid": "9e0b4a74-4cfc-6287-481a-8ab1e02275c2",
+			"x": 688,
+			"y": 1152,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CustomEvent_3",
+			"node_name": "K2Node_CustomEvent_3",
+			"node_kind": "CustomEvent",
+			"ue_class": "K2Node_CustomEvent",
+			"title": "MessageAccepted\nCustom Event",
+			"title_single_line": "MessageAccepted",
+			"comment": "",
+			"guid": "781500f5-4b15-6d81-1c84-a186484bf2d3",
+			"x": 1488,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "OutputDelegate",
+					"direction": "Output",
+					"category": "delegate",
+					"subcategory": "None",
+					"resolved_type": "delegate",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CustomEvent_4",
+			"node_name": "K2Node_CustomEvent_4",
+			"node_kind": "CustomEvent",
+			"ue_class": "K2Node_CustomEvent",
+			"title": "SettingsChanged\nCustom Event",
+			"title_single_line": "SettingsChanged",
+			"comment": "",
+			"guid": "9c15579e-4b07-ffae-1376-53985ce68a0c",
+			"x": 2112,
+			"y": 48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "OutputDelegate",
+					"direction": "Output",
+					"category": "delegate",
+					"subcategory": "None",
+					"resolved_type": "delegate",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_13",
+			"node_name": "K2Node_CallFunction_13",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Handle Debug Settings Changed\nTarget is BP Debug Manager",
+			"title_single_line": "Handle Debug Settings Changed",
+			"comment": "",
+			"guid": "da134ed3-4a15-4181-3b4f-249a83304b1b",
+			"x": 2416,
+			"y": 48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CustomEvent_5",
+			"node_name": "K2Node_CustomEvent_5",
+			"node_kind": "CustomEvent",
+			"ue_class": "K2Node_CustomEvent",
+			"title": "HandleDebugMessageAccepted\nCustom Event",
+			"title_single_line": "HandleDebugMessageAccepted",
+			"comment": "",
+			"guid": "bc4d2edf-4f0a-dc94-b7b9-a9a6373b7725",
+			"x": 0,
+			"y": 1488,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "OutputDelegate",
+					"direction": "Output",
+					"category": "delegate",
+					"subcategory": "None",
+					"resolved_type": "delegate",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InMessage",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_14",
+			"node_name": "K2Node_CallFunction_14",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Forward Message to Widgets\nTarget is BP Debug Manager",
+			"title_single_line": "Forward Message to Widgets",
+			"comment": "",
+			"guid": "da5ecf95-4c8d-8aef-de62-17b94d84ce15",
+			"x": 688,
+			"y": 1488,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_15",
+			"node_name": "K2Node_CallFunction_15",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Handle Debug Message Accepted\nTarget is BP Debug Manager",
+			"title_single_line": "Handle Debug Message Accepted",
+			"comment": "",
+			"guid": "6c3fe047-40b6-db01-a601-e6ba6bf9e440",
+			"x": 1728,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InMessage",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_16",
+			"node_name": "K2Node_CallFunction_16",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Ensure Widgets Created\nTarget is BP Debug Manager",
+			"title_single_line": "Ensure Widgets Created",
+			"comment": "",
+			"guid": "754bd1d9-404f-bb75-fc8f-a4865efdf291",
+			"x": 2768,
+			"y": -192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_17",
+			"node_name": "K2Node_CallFunction_17",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Refresh Widgets from History\nTarget is BP Debug Manager",
+			"title_single_line": "Refresh Widgets from History",
+			"comment": "",
+			"guid": "f2a35722-43ae-b9ab-13f4-a497330c03b6",
+			"x": 3104,
 			"y": -192,
 			"has_error": false,
 			"has_warning": false,
@@ -1122,6 +1370,85 @@
 				}
 			],
 			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Ensure Widgets Created\nTarget is BP Debug Manager",
+			"title_single_line": "Ensure Widgets Created",
+			"comment": "",
+			"guid": "854c4158-4780-f6b3-8960-6ea4ddeba05d",
+			"x": 336,
+			"y": 1488,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_Knot_2",
+			"node_name": "K2Node_Knot_2",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "5d8805b5-445e-3776-e63b-4f901da0350e",
+			"x": 288,
+			"y": 1600,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
 		}
 	],
 	"exec_flow": [
@@ -1131,22 +1458,6 @@
 			"from_pin": "then",
 			"to_node_id": "K2Node_DynamicCast_0",
 			"to_node_title": "Cast To GI_Echoes",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CustomEvent_0",
-			"from_node_title": "HandleDebugMessageAccepted\nCustom Event",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Forward Message to Widgets\nTarget is BP Debug Manager",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CustomEvent_1",
-			"from_node_title": "HandleDebugSettingsChanged\nCustom Event",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Create Debug Widgets\nTarget is BP Debug Manager",
 			"to_pin": "execute"
 		},
 		{
@@ -1169,40 +1480,8 @@
 			"from_node_id": "K2Node_IfThenElse_1",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_id": "K2Node_CallFunction_10",
 			"to_node_title": "Register Debug Manager\nTarget is GI Echoes",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Register Debug Manager\nTarget is GI Echoes",
-			"from_pin": "then",
-			"to_node_id": "K2Node_AddDelegate_0",
-			"to_node_title": "Bind Event to On Debug Message Accepted",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_AddDelegate_0",
-			"from_node_title": "Bind Event to On Debug Message Accepted",
-			"from_pin": "then",
-			"to_node_id": "K2Node_AddDelegate_1",
-			"to_node_title": "Bind Event to On Debug Settings Changed",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_AddDelegate_1",
-			"from_node_title": "Bind Event to On Debug Settings Changed",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_8",
-			"to_node_title": "Create Debug Widgets\nTarget is BP Debug Manager",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_4",
-			"from_node_title": "Create Debug Widgets\nTarget is BP Debug Manager",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Refresh Widgets from History\nTarget is BP Debug Manager",
 			"to_pin": "execute"
 		},
 		{
@@ -1222,39 +1501,87 @@
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_8",
-			"from_node_title": "Create Debug Widgets\nTarget is BP Debug Manager",
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "Register Debug Manager\nTarget is GI Echoes",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_id": "K2Node_AddDelegate_2",
+			"to_node_title": "Bind Event to On Debug Message Accepted",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_AddDelegate_2",
+			"from_node_title": "Bind Event to On Debug Message Accepted",
+			"from_pin": "then",
+			"to_node_id": "K2Node_AddDelegate_3",
+			"to_node_title": "Bind Event to On Debug Settings Changed",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_AddDelegate_3",
+			"from_node_title": "Bind Event to On Debug Settings Changed",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_16",
+			"to_node_title": "Ensure Widgets Created\nTarget is BP Debug Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CustomEvent_2",
+			"from_node_title": "HandleDebugSettingsChanged\nCustom Event",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_18",
+			"to_node_title": "Ensure Widgets Created\nTarget is BP Debug Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_18",
+			"from_node_title": "Ensure Widgets Created\nTarget is BP Debug Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_12",
 			"to_node_title": "Refresh Widgets from History\nTarget is BP Debug Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CustomEvent_3",
+			"from_node_title": "MessageAccepted\nCustom Event",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Handle Debug Message Accepted\nTarget is BP Debug Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CustomEvent_4",
+			"from_node_title": "SettingsChanged\nCustom Event",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Handle Debug Settings Changed\nTarget is BP Debug Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CustomEvent_5",
+			"from_node_title": "HandleDebugMessageAccepted\nCustom Event",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Ensure Widgets Created\nTarget is BP Debug Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_16",
+			"from_node_title": "Ensure Widgets Created\nTarget is BP Debug Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_17",
+			"to_node_title": "Refresh Widgets from History\nTarget is BP Debug Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Ensure Widgets Created\nTarget is BP Debug Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_14",
+			"to_node_title": "Forward Message to Widgets\nTarget is BP Debug Manager",
 			"to_pin": "execute"
 		}
 	],
 	"data_links": [
-		{
-			"from_node_id": "K2Node_CustomEvent_0",
-			"from_node_title": "HandleDebugMessageAccepted\nCustom Event",
-			"from_pin": "OutputDelegate",
-			"to_node_id": "K2Node_AddDelegate_0",
-			"to_node_title": "Bind Event to On Debug Message Accepted",
-			"to_pin": "Delegate"
-		},
-		{
-			"from_node_id": "K2Node_CustomEvent_0",
-			"from_node_title": "HandleDebugMessageAccepted\nCustom Event",
-			"from_pin": "Message",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Forward Message to Widgets\nTarget is BP Debug Manager",
-			"to_pin": "Message"
-		},
-		{
-			"from_node_id": "K2Node_CustomEvent_1",
-			"from_node_title": "HandleDebugSettingsChanged\nCustom Event",
-			"from_pin": "OutputDelegate",
-			"to_node_id": "K2Node_AddDelegate_1",
-			"to_node_title": "Bind Event to On Debug Settings Changed",
-			"to_pin": "Delegate"
-		},
 		{
 			"from_node_id": "K2Node_CallFunction_1",
 			"from_node_title": "Get Game Instance",
@@ -1288,38 +1615,6 @@
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_0",
-			"from_node_title": "Get CachedGI",
-			"from_pin": "CachedGI",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Register Debug Manager\nTarget is GI Echoes",
-			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_0",
-			"from_node_title": "Get CachedGI",
-			"from_pin": "CachedGI",
-			"to_node_id": "K2Node_AddDelegate_0",
-			"to_node_title": "Bind Event to On Debug Message Accepted",
-			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_0",
-			"from_node_title": "Get CachedGI",
-			"from_pin": "CachedGI",
-			"to_node_id": "K2Node_AddDelegate_1",
-			"to_node_title": "Bind Event to On Debug Settings Changed",
-			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_Self_0",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Register Debug Manager\nTarget is GI Echoes",
-			"to_pin": "InDebugManager"
-		},
-		{
 			"from_node_id": "K2Node_VariableGet_1",
 			"from_node_title": "Get CachedGI",
 			"from_pin": "CachedGI",
@@ -1350,6 +1645,94 @@
 			"to_node_id": "K2Node_CallFunction_7",
 			"to_node_title": "Unregister Debug Manager\nTarget is GI Echoes",
 			"to_pin": "InDebugManager"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get CachedGI",
+			"from_pin": "CachedGI",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Register Debug Manager\nTarget is GI Echoes",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get CachedGI",
+			"from_pin": "CachedGI",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Register Debug Manager\nTarget is GI Echoes",
+			"to_pin": "InDebugManager"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_AddDelegate_2",
+			"to_node_title": "Bind Event to On Debug Message Accepted",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_AddDelegate_3",
+			"to_node_title": "Bind Event to On Debug Settings Changed",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CustomEvent_3",
+			"from_node_title": "MessageAccepted\nCustom Event",
+			"from_pin": "OutputDelegate",
+			"to_node_id": "K2Node_AddDelegate_2",
+			"to_node_title": "Bind Event to On Debug Message Accepted",
+			"to_pin": "Delegate"
+		},
+		{
+			"from_node_id": "K2Node_CustomEvent_3",
+			"from_node_title": "MessageAccepted\nCustom Event",
+			"from_pin": "Message",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Handle Debug Message Accepted\nTarget is BP Debug Manager",
+			"to_pin": "InMessage"
+		},
+		{
+			"from_node_id": "K2Node_CustomEvent_4",
+			"from_node_title": "SettingsChanged\nCustom Event",
+			"from_pin": "OutputDelegate",
+			"to_node_id": "K2Node_AddDelegate_3",
+			"to_node_title": "Bind Event to On Debug Settings Changed",
+			"to_pin": "Delegate"
+		},
+		{
+			"from_node_id": "K2Node_CustomEvent_5",
+			"from_node_title": "HandleDebugMessageAccepted\nCustom Event",
+			"from_pin": "InMessage",
+			"to_node_id": "K2Node_Knot_2",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Knot_2",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_14",
+			"to_node_title": "Forward Message to Widgets\nTarget is BP Debug Manager",
+			"to_pin": "Message"
 		}
 	],
 	"problems": []

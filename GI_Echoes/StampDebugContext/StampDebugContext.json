@@ -22,7 +22,8 @@
 			"Get Current Level Name",
 			"String To Name",
 			"Get Display Name",
-			"Get Debug Color for Severity"
+			"Get Debug Color for Severity",
+			"Get Game Time in Seconds"
 		],
 		"called_by": [
 			"SubmitDebugMessage"
@@ -41,8 +42,8 @@
 			"title_single_line": "StampDebugContext",
 			"comment": "",
 			"guid": "7c60c508-409f-98fd-8c32-d29fa58bdd7a",
-			"x": -208,
-			"y": 0,
+			"x": -1760,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -120,8 +121,8 @@
 			"title_single_line": "Set LocOutMessage",
 			"comment": "",
 			"guid": "0780a70c-4d7f-c1d7-6951-4d9e75edb094",
-			"x": 96,
-			"y": 16,
+			"x": -1456,
+			"y": 32,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -159,7 +160,7 @@
 					"subcategory": "None",
 					"resolved_type": "S_DebugMessage",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				}
 			],
 			"target_class": "StampDebugContext"
@@ -497,7 +498,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				},
 				{
 					"pin_name": "Condition",
@@ -2521,6 +2522,530 @@
 				}
 			],
 			"target_class": "StampDebugContext"
+		},
+		{
+			"node_id": "K2Node_BreakStruct_0",
+			"node_name": "K2Node_BreakStruct_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_BreakStruct",
+			"title": "Break S Debug Message",
+			"title_single_line": "Break S Debug Message",
+			"comment": "",
+			"guid": "05cf7ea0-45af-07e4-5941-288bc1e46ee4",
+			"x": -1056,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "S_DebugMessage",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category_2_A340302247DDA519709B3DBFE15E9CCA",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Severity_5_C410C7504866A4690A7A179EB622AC84",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName_8_409C77FC434B0DF93DA802B82913AD28",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message_12_1757C6CC4C18E39C4E901E9001C80695",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TimeSeconds_15_C4686A914696C1B5AC040D99FB27FA9D",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Duration_17_CEA1219444450DB3A9A9C5BB3F5155CF",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToScreen_20_B1C7589D47DCF7C60324DE82C441D256",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bPrintToLog_22_68A821C8422FC28282D7F9965FA0622B",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bUseLocation_24_DAFFB9BF460B900236E4688D67920C23",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldLocation_27_6C1D485349BB5BA3BB2CF599F661C410",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Verbosity_30_C74D04E2483037F610798E85E90E6C7E",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bShowInOverlay_33_7F3F03C4421F334400E3F18CCD55B9D5",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "MessageKey_36_A76E058D4A4EF1507BD7E4B04D11163F",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bOnceOnly_39_FFD5C08546C02BDD2A0D5784C0CE6230",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ThrottleSeconds_42_5D03B0814D5911EC3241AF9804139C19",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "RepeatCount_45_27AD43114322C7397AAE71994FC8A0CD",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "LevelName_48_F3D921154F5E5FF6F6C44489E7D8B78F",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextName_50_3D263B4845AB1E08031694BD44312402",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ContextGhostId_52_538AE9EC439CC596FDA56A8F58AD34AE",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ContextPuzzleId_54_F68E07D54497514E7E2C29B9E55D59C7",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ContextStepId_56_2996C41242769B754E5E2AAEB58D3F87",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "DisplayColor_59_4C9C54CD4E8E89F23F3B2A87FE549BE5",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "LinearColor",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ContextTag_62_13F037D7434196D5157B0690BEB860B7",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StampDebugContext"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_0",
+			"node_name": "K2Node_PromotableOperator_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "float <= float",
+			"title_single_line": "float <= float",
+			"comment": "",
+			"guid": "5150fc5d-4790-bae2-3e2b-7ca84510ff82",
+			"x": -624,
+			"y": 320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StampDebugContext"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "b316ca63-4b92-7d97-de94-2ba3f07ed493",
+			"x": -496,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StampDebugContext"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Game Time in Seconds",
+			"title_single_line": "Get Game Time in Seconds",
+			"comment": "",
+			"guid": "c18e5695-44ef-29cd-9549-2694a09025ac",
+			"x": -656,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StampDebugContext"
+		},
+		{
+			"node_id": "K2Node_SetFieldsInStruct_0",
+			"node_name": "K2Node_SetFieldsInStruct_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_SetFieldsInStruct",
+			"title": "Set members in S Debug Message",
+			"title_single_line": "Set members in S Debug Message",
+			"comment": "",
+			"guid": "db28b579-4aeb-14d6-96da-8fa63228a9e4",
+			"x": -176,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "StructRef",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "StructOut",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "TimeSeconds_15_C4686A914696C1B5AC040D99FB27FA9D",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.000000",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StampDebugContext"
+		},
+		{
+			"node_id": "K2Node_VariableGet_21",
+			"node_name": "K2Node_VariableGet_21",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LocOutMessage",
+			"title_single_line": "Get LocOutMessage",
+			"comment": "",
+			"guid": "72e4b967-410d-4ec4-ea5e-f6ba388ef8d6",
+			"x": -416,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LocOutMessage",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StampDebugContext"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set LocOutMessage",
+			"title_single_line": "Set LocOutMessage",
+			"comment": "",
+			"guid": "b55fc082-4586-7863-d2d4-4d884cdb0d50",
+			"x": 160,
+			"y": -96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "LocOutMessage",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_DebugMessage",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StampDebugContext"
 		}
 	],
 	"exec_flow": [
@@ -2536,7 +3061,7 @@
 			"from_node_id": "K2Node_VariableSet_1",
 			"from_node_title": "Set LocOutMessage",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_id": "K2Node_IfThenElse_0",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
@@ -2691,6 +3216,38 @@
 			"to_node_id": "K2Node_FunctionResult_0",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_SetFieldsInStruct_0",
+			"to_node_title": "Set members in S Debug Message",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_SetFieldsInStruct_0",
+			"from_node_title": "Set members in S Debug Message",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set LocOutMessage",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set LocOutMessage",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
 		}
 	],
 	"data_links": [
@@ -2709,6 +3266,14 @@
 			"to_node_id": "K2Node_VariableSet_1",
 			"to_node_title": "Set LocOutMessage",
 			"to_pin": "LocOutMessage"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set LocOutMessage",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_BreakStruct_0",
+			"to_node_title": "Break S Debug Message",
+			"to_pin": "S_DebugMessage"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_3",
@@ -2925,6 +3490,46 @@
 			"to_node_id": "K2Node_Knot_4",
 			"to_node_title": "Reroute Node",
 			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Debug Message",
+			"from_pin": "TimeSeconds_15_C4686A914696C1B5AC040D99FB27FA9D",
+			"to_node_id": "K2Node_PromotableOperator_0",
+			"to_node_title": "float <= float",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_0",
+			"from_node_title": "float <= float",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Get Game Time in Seconds",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_SetFieldsInStruct_0",
+			"to_node_title": "Set members in S Debug Message",
+			"to_pin": "TimeSeconds_15_C4686A914696C1B5AC040D99FB27FA9D"
+		},
+		{
+			"from_node_id": "K2Node_SetFieldsInStruct_0",
+			"from_node_title": "Set members in S Debug Message",
+			"from_pin": "StructOut",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set LocOutMessage",
+			"to_pin": "LocOutMessage"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_21",
+			"from_node_title": "Get LocOutMessage",
+			"from_pin": "LocOutMessage",
+			"to_node_id": "K2Node_SetFieldsInStruct_0",
+			"to_node_title": "Set members in S Debug Message",
+			"to_pin": "StructRef"
 		}
 	],
 	"problems": []

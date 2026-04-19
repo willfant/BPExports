@@ -1,0 +1,647 @@
+{
+	"graph_name": "CreateMainFeedWidget",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Auto-generated function summary.",
+		"reads_variables": [
+			"DebugFeedWidgetClass",
+			"MainFeedWidget",
+			"bStartVisible"
+		],
+		"writes_variables": [
+			"MainFeedWidget"
+		],
+		"calls": [
+			"Get Player Controller",
+			"Init Feed Panel",
+			"Add to Viewport",
+			"Apply Feed Viewport Layout"
+		],
+		"called_by": [
+			"EnsureWidgetsCreated"
+		],
+		"branch_points": []
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "CreateMainFeedWidget",
+			"title_single_line": "CreateMainFeedWidget",
+			"comment": "",
+			"guid": "64cf963c-4cee-7be4-2a67-7989243085f3",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateMainFeedWidget"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Player Controller",
+			"title_single_line": "Get Player Controller",
+			"comment": "",
+			"guid": "8cab8f1c-4940-5cd4-3f61-25b9b86df617",
+			"x": 0,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PlayerIndex",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "PlayerController",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateMainFeedWidget"
+		},
+		{
+			"node_id": "K2Node_CreateWidget_0",
+			"node_name": "K2Node_CreateWidget_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CreateWidget",
+			"title": "Create WBP Debug Feed Panel Widget",
+			"title_single_line": "Create WBP Debug Feed Panel Widget",
+			"comment": "",
+			"guid": "d5270ade-4782-7e69-1553-deab3641bbc2",
+			"x": 464,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Class",
+					"direction": "Input",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "UserWidget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OwningPlayer",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "PlayerController",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "FeedTitle",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateMainFeedWidget"
+		},
+		{
+			"node_id": "K2Node_VariableGet_13",
+			"node_name": "K2Node_VariableGet_13",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DebugFeedWidgetClass",
+			"title_single_line": "Get DebugFeedWidgetClass",
+			"comment": "",
+			"guid": "66926c4a-4e6c-f65d-9688-8eaf445a54fa",
+			"x": 32,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DebugFeedWidgetClass",
+					"direction": "Output",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateMainFeedWidget"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set MainFeedWidget",
+			"title_single_line": "Set MainFeedWidget",
+			"comment": "",
+			"guid": "e99c1bf3-4e70-e8c6-0719-25b0c20cadb7",
+			"x": 864,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "MainFeedWidget",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateMainFeedWidget"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"title_single_line": "Init Feed Panel",
+			"comment": "",
+			"guid": "bcbe8916-47ce-7db9-9982-cabc4d84cd03",
+			"x": 1216,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InTitle",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InAllowedCategories",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateMainFeedWidget"
+		},
+		{
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get MainFeedWidget",
+			"title_single_line": "Get MainFeedWidget",
+			"comment": "",
+			"guid": "c35ee89c-4322-f745-5241-c2a10c5505b8",
+			"x": 1616,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "MainFeedWidget",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateMainFeedWidget"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Add to Viewport\nTarget is User Widget",
+			"title_single_line": "Add to Viewport",
+			"comment": "",
+			"guid": "3dde963e-4ff6-db53-8475-d39bc9d8a4e4",
+			"x": 1600,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "UserWidget",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ZOrder",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateMainFeedWidget"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Apply Feed Viewport Layout\nTarget is BP Debug Manager",
+			"title_single_line": "Apply Feed Viewport Layout",
+			"comment": "",
+			"guid": "13991d91-44df-4bee-5a32-40b0656ee462",
+			"x": 2000,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetWidget",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_DebugFeedPanel_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "DesiredSize",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector2D",
+					"default_value": "(X=560.000000,Y=320.000000)",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScreenPosition",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector2D",
+					"default_value": "(X=30.000000,Y=30.000000)",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bShouldBeVisible",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CreateMainFeedWidget"
+		},
+		{
+			"node_id": "K2Node_VariableGet_14",
+			"node_name": "K2Node_VariableGet_14",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bStartVisible",
+			"title_single_line": "Get bStartVisible",
+			"comment": "",
+			"guid": "aa2eda3d-462d-eeb3-3491-fd8bec1aeb16",
+			"x": 1776,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bStartVisible",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_DebugManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CreateMainFeedWidget"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "CreateMainFeedWidget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CreateWidget_0",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CreateWidget_0",
+			"from_node_title": "Create WBP Debug Feed Panel Widget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set MainFeedWidget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set MainFeedWidget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Add to Viewport\nTarget is User Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Add to Viewport\nTarget is User Widget",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Apply Feed Viewport Layout\nTarget is BP Debug Manager",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Get Player Controller",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CreateWidget_0",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "OwningPlayer"
+		},
+		{
+			"from_node_id": "K2Node_CreateWidget_0",
+			"from_node_title": "Create WBP Debug Feed Panel Widget",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set MainFeedWidget",
+			"to_pin": "MainFeedWidget"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_13",
+			"from_node_title": "Get DebugFeedWidgetClass",
+			"from_pin": "DebugFeedWidgetClass",
+			"to_node_id": "K2Node_CreateWidget_0",
+			"to_node_title": "Create WBP Debug Feed Panel Widget",
+			"to_pin": "Class"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set MainFeedWidget",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Init Feed Panel\nTarget is WBP Debug Feed Panel",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get MainFeedWidget",
+			"from_pin": "MainFeedWidget",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Add to Viewport\nTarget is User Widget",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get MainFeedWidget",
+			"from_pin": "MainFeedWidget",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Apply Feed Viewport Layout\nTarget is BP Debug Manager",
+			"to_pin": "TargetWidget"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_14",
+			"from_node_title": "Get bStartVisible",
+			"from_pin": "bStartVisible",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Apply Feed Viewport Layout\nTarget is BP Debug Manager",
+			"to_pin": "bShouldBeVisible"
+		}
+	],
+	"problems": []
+}

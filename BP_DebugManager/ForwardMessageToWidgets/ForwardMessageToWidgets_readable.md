@@ -8,8 +8,12 @@ Auto-generated function summary.
 
 ## Reads
 - MainFeedWidget
+- MessageLoc
 - ScareFeedWidget
 - VoiceFeedWidget
+
+## Writes
+- MessageLoc
 
 ## Calls
 - Is Valid
@@ -24,5 +28,5 @@ Auto-generated function summary.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No
