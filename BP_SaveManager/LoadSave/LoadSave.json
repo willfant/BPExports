@@ -7,6 +7,8 @@
 	"has_warning_nodes": false,
 	"locals": [],
 	"returns": [
+		"bSuccess (Boolean)",
+		"bSuccess (Boolean)",
 		"bSuccess (Boolean)"
 	],
 	"summary":
@@ -15,21 +17,26 @@
 		"reads_variables": [
 			"SaveSlotName",
 			"UserIndex",
-			"bEnableSaveDebug"
+			"SaveData"
 		],
 		"writes_variables": [
-			"CurrentSaveObject"
+			"CurrentSaveObject",
+			"CurrentSaveData"
 		],
 		"calls": [
 			"Load Game from Slot",
-			"Apply Snapshot to Managers",
-			"Debug Log"
+			"Debug Info",
+			"Get Sender Name",
+			"Is Valid",
+			"Debug Critical"
 		],
 		"called_by": [
 			"InitializeSaveSystem",
 			"RestoreFullGameState"
 		],
-		"branch_points": []
+		"branch_points": [
+			"Branch"
+		]
 	},
 	"nodes": [
 		{
@@ -41,8 +48,8 @@
 			"title_single_line": "LoadSave",
 			"comment": "",
 			"guid": "a0a7c514-4222-09f6-4402-878c904e7681",
-			"x": -480,
-			"y": 0,
+			"x": -1312,
+			"y": -16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -67,8 +74,8 @@
 			"title_single_line": "Load Game from Slot",
 			"comment": "",
 			"guid": "55a1d5ec-44ba-ccfe-8a55-b68f95489e4b",
-			"x": -128,
-			"y": 0,
+			"x": -256,
+			"y": -16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -124,7 +131,7 @@
 					"subcategory": "None",
 					"resolved_type": "SaveGame",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				}
 			],
 			"target_class": "LoadSave"
@@ -138,8 +145,8 @@
 			"title_single_line": "Get SaveSlotName",
 			"comment": "",
 			"guid": "49b93d11-4630-7600-1df5-9d8ac1faf217",
-			"x": -480,
-			"y": 80,
+			"x": -496,
+			"y": 64,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -173,8 +180,8 @@
 			"title_single_line": "Get UserIndex",
 			"comment": "",
 			"guid": "749ffcd4-4d2c-1eac-de4f-39b70487e3f9",
-			"x": -480,
-			"y": 128,
+			"x": -496,
+			"y": 112,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -208,8 +215,8 @@
 			"title_single_line": "Cast To SV_SaveGame",
 			"comment": "",
 			"guid": "ba50910a-4157-b4ff-e3f0-5bab93f84530",
-			"x": 192,
-			"y": 0,
+			"x": 528,
+			"y": -336,
 			"has_error": true,
 			"has_warning": false,
 			"pins": [
@@ -279,8 +286,8 @@
 			"title_single_line": "Set CurrentSaveObject",
 			"comment": "",
 			"guid": "628800d2-4903-0875-a5af-3c8bb8406013",
-			"x": 1120,
-			"y": 16,
+			"x": 912,
+			"y": -320,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -318,7 +325,7 @@
 					"subcategory": "None",
 					"resolved_type": "SV_SaveGame_C",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -333,15 +340,50 @@
 			"target_class": "LoadSave"
 		},
 		{
-			"node_id": "K2Node_CallFunction_2",
-			"node_name": "K2Node_CallFunction_2",
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "267efbe9-447a-51f2-a7c8-6da1b9de4eb9",
+			"x": 2608,
+			"y": -336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Apply Snapshot to Managers\nTarget is BP Save Manager",
-			"title_single_line": "Apply Snapshot to Managers",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
 			"comment": "",
-			"guid": "6746c5c3-4cb5-4e88-f09d-2a910922bd30",
-			"x": 1424,
+			"guid": "c5e02332-408e-766f-e90e-f494ad649a8f",
+			"x": -1008,
 			"y": -16,
 			"has_error": false,
 			"has_warning": false,
@@ -368,13 +410,154 @@
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[Save] LoadSave started",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_Self_3",
+			"node_name": "K2Node_Self_3",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "54c7b3c1-4207-fbdc-1711-35b48b58e502",
+			"x": -1248,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_12",
+			"node_name": "K2Node_CallFunction_12",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "8ed2fac1-4324-0159-2288-dabcaf4de730",
+			"x": -1264,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
 					"subcategory": "self",
 					"resolved_type": "object",
 					"default_value": "",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "bSuccess",
+					"pin_name": "SenderName",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "115dd48c-4b36-a31c-dc26-8d9220fee99a",
+			"x": 32,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
 					"direction": "Output",
 					"category": "bool",
 					"subcategory": "None",
@@ -386,16 +569,69 @@
 			"target_class": "LoadSave"
 		},
 		{
-			"node_id": "K2Node_CallFunction_7",
-			"node_name": "K2Node_CallFunction_7",
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "f6c8087b-4dc1-ca07-5da6-ff98244927c3",
+			"x": 288,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Log\nTarget is BP Save Manager",
-			"title_single_line": "Debug Log",
+			"title": "Debug Critical",
+			"title_single_line": "Debug Critical",
 			"comment": "",
-			"guid": "72976208-40fc-2b68-fe2d-c3b1c8e4cc16",
-			"x": 608,
-			"y": -48,
+			"guid": "db07a7ba-48b5-3caf-e6e3-3395abc92e01",
+			"x": 624,
+			"y": 256,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -421,10 +657,37 @@
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
 					"default_value": "",
 					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
 				},
 				{
 					"pin_name": "Message",
@@ -432,50 +695,15 @@
 					"category": "string",
 					"subcategory": "None",
 					"resolved_type": "String",
-					"default_value": "Save loaded and cast to SV_SaveGame successfully",
+					"default_value": "[Save] LoadSave failed: LoadGameFromSlot returned an invalid object",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 1
-				}
-			],
-			"target_class": "LoadSave"
-		},
-		{
-			"node_id": "K2Node_VariableGet_4",
-			"node_name": "K2Node_VariableGet_4",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bEnableSaveDebug",
-			"title_single_line": "Get bEnableSaveDebug",
-			"comment": "",
-			"guid": "27851779-483c-8787-8745-adaf4c8b4a8d",
-			"x": 416,
-			"y": 112,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "bEnableSaveDebug",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
+					"pin_name": "__WorldContext",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
+					"resolved_type": "Object",
 					"default_value": "",
 					"linked_count": 0
 				}
@@ -483,37 +711,19 @@
 			"target_class": "LoadSave"
 		},
 		{
-			"node_id": "K2Node_CallFunction_6",
-			"node_name": "K2Node_CallFunction_6",
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Log\nTarget is BP Save Manager",
-			"title_single_line": "Debug Log",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
 			"comment": "",
-			"guid": "a3ce5e7a-4afb-b89f-4a33-96827a521e64",
-			"x": 832,
-			"y": 288,
+			"guid": "df942025-4045-bd5d-334c-4ca842a1bb44",
+			"x": 368,
+			"y": 400,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
 				{
 					"pin_name": "self",
 					"direction": "Input",
@@ -524,72 +734,54 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
+					"pin_name": "SenderName",
+					"direction": "Output",
+					"category": "name",
 					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "LoadSave failed: cast to SV_SaveGame failed",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
 			"target_class": "LoadSave"
 		},
 		{
-			"node_id": "K2Node_VariableGet_5",
-			"node_name": "K2Node_VariableGet_5",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bEnableSaveDebug",
-			"title_single_line": "Get bEnableSaveDebug",
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
 			"comment": "",
-			"guid": "c74cbfb6-4169-93b8-05a7-a881d5450c12",
-			"x": 976,
-			"y": 544,
+			"guid": "e0be7460-4da6-e0d1-9fd9-dbb2cbaac8be",
+			"x": 368,
+			"y": 320,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "bEnableSaveDebug",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
 					"pin_name": "self",
-					"direction": "Input",
+					"direction": "Output",
 					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
+					"subcategory": "self",
+					"resolved_type": "object",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				}
 			],
 			"target_class": "LoadSave"
 		},
 		{
-			"node_id": "K2Node_FunctionResult_0",
-			"node_name": "K2Node_FunctionResult_0",
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
 			"node_kind": "Return",
 			"ue_class": "K2Node_FunctionResult",
 			"title": "Return Node",
 			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "267efbe9-447a-51f2-a7c8-6da1b9de4eb9",
-			"x": 1888,
-			"y": 0,
+			"guid": "e385f277-4bc0-4138-b0e0-fbb6cfbd19df",
+			"x": 1216,
+			"y": 256,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -609,6 +801,473 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "f09fafcb-4164-9a78-3dbb-969e2d7e0842",
+			"x": 112,
+			"y": -272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SaveGame",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SaveGame",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Critical",
+			"title_single_line": "Debug Critical",
+			"comment": "",
+			"guid": "64605f7e-4ee2-b601-c9fb-0da6d213e981",
+			"x": 944,
+			"y": -80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[Save] LoadSave failed: cast to SV_SaveGame failed",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "2e0ad2c3-40d0-8a7f-3dee-aab7472fe272",
+			"x": 704,
+			"y": 48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_Self_1",
+			"node_name": "K2Node_Self_1",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "32ffea4d-4024-a683-54c5-4e9956c58eaa",
+			"x": 704,
+			"y": -32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "29f7ed8b-471e-d5d9-6eb3-d8b618086d3a",
+			"x": 1472,
+			"y": -80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get SaveData",
+			"title_single_line": "Get SaveData",
+			"comment": "",
+			"guid": "a9346faa-4482-afbe-45d0-2ab09ec0f87b",
+			"x": 1232,
+			"y": -224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "SaveData",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_SaveGameState",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SV_SaveGame_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentSaveData",
+			"title_single_line": "Set CurrentSaveData",
+			"comment": "",
+			"guid": "33214bdc-4a9f-7b53-a2c0-71a5a019db3b",
+			"x": 1568,
+			"y": -320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentSaveData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_SaveGameState",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_SaveGameState",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "c4ce09f2-4eb1-54ff-6711-a7b793a07ecb",
+			"x": 1952,
+			"y": -336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[Save] LoadSave loaded SV_SaveGame and copied SaveData successfully",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "8673a2d6-4491-aa0e-1bc6-f494289fa06f",
+			"x": 1728,
+			"y": -192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "92b4a1ef-413a-ad71-83f9-0481d8299c16",
+			"x": 1712,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
@@ -620,56 +1279,96 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "LoadSave",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Load Game from Slot",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Debug Info",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_1",
 			"from_node_title": "Load Game from Slot",
 			"from_pin": "then",
-			"to_node_id": "K2Node_DynamicCast_0",
-			"to_node_title": "Cast To SV_SaveGame",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_DynamicCast_0",
 			"from_node_title": "Cast To SV_SaveGame",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_7",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set CurrentSaveObject",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_DynamicCast_0",
 			"from_node_title": "Cast To SV_SaveGame",
 			"from_pin": "CastFailed",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Debug Critical",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_VariableSet_0",
 			"from_node_title": "Set CurrentSaveObject",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Apply Snapshot to Managers\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set CurrentSaveData",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_2",
-			"from_node_title": "Apply Snapshot to Managers\nTarget is BP Save Manager",
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Debug Info",
 			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Load Game from Slot",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To SV_SaveGame",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "Debug Critical",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_9",
+			"from_node_title": "Debug Critical",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_2",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_7",
-			"from_node_title": "Debug Log\nTarget is BP Save Manager",
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Debug Critical",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set CurrentSaveObject",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set CurrentSaveData",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Debug Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
 	],
@@ -678,9 +1377,17 @@
 			"from_node_id": "K2Node_CallFunction_1",
 			"from_node_title": "Load Game from Slot",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_DynamicCast_0",
-			"to_node_title": "Cast To SV_SaveGame",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Is Valid",
 			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Load Game from Slot",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_0",
@@ -707,28 +1414,100 @@
 			"to_pin": "CurrentSaveObject"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_2",
-			"from_node_title": "Apply Snapshot to Managers\nTarget is BP Save Manager",
-			"from_pin": "bSuccess",
-			"to_node_id": "K2Node_FunctionResult_0",
-			"to_node_title": "Return Node",
-			"to_pin": "bSuccess"
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set CurrentSaveObject",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_VariableGet_2",
+			"to_node_title": "Get SaveData",
+			"to_pin": "self"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_4",
-			"from_node_title": "Get bEnableSaveDebug",
-			"from_pin": "bEnableSaveDebug",
-			"to_node_id": "K2Node_CallFunction_7",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
-			"to_pin": "bPrintToScreen"
+			"from_node_id": "K2Node_Self_3",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_5",
-			"from_node_title": "Get bEnableSaveDebug",
-			"from_pin": "bEnableSaveDebug",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
-			"to_pin": "bPrintToScreen"
+			"from_node_id": "K2Node_CallFunction_12",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "SenderName",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "SenderName",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "Debug Critical",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "Debug Critical",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To SV_SaveGame",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "SenderName",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Debug Critical",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Debug Critical",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get SaveData",
+			"from_pin": "SaveData",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set CurrentSaveData",
+			"to_pin": "CurrentSaveData"
+		},
+		{
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "SenderName",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

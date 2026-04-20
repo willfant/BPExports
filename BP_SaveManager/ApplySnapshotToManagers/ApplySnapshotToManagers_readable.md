@@ -44,7 +44,6 @@ Auto-generated function summary.
 - Debug Info
 
 ## Called By
-- LoadSave
 - RestoreFullGameState
 
 ## Branch Points

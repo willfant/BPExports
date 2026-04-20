@@ -109,6 +109,30 @@
 			"suggested_fix": "Confirm whether state is already current; otherwise write state before sync."
 		},
 		{
+			"graph": "RestoreFullGameState",
+			"problem_type": "FunctionTooLarge",
+			"details": "Graph contains 47 nodes and may be too large.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.93999999999999995,
+			"why_it_matters": "Large graphs are harder to debug, reason about, and safely refactor.",
+			"likely_impact": "Higher chance of regression, duplicated logic, and unreadable flow.",
+			"suggested_fix": "Split the graph into smaller functions by responsibility."
+		},
+		{
+			"graph": "RestoreFullGameState",
+			"problem_type": "HighInternalCallCount",
+			"details": "Graph performs 12 self-context function calls.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.84999999999999998,
+			"why_it_matters": "A graph calling many internal functions may be becoming an orchestration bottleneck.",
+			"likely_impact": "Harder to trace behavior and maintain clear ownership.",
+			"suggested_fix": "Consider extracting subflows or moving orchestration into smaller dedicated graphs."
+		},
+		{
 			"graph": "GetSaveSnapshot",
 			"problem_type": "PotentialSaveSyncWithoutStateWrite",
 			"details": "Save/sync-related graph does not appear to write any obvious runtime state before syncing.",

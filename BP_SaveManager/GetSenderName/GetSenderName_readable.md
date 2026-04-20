@@ -14,6 +14,7 @@ Auto-generated function summary.
 - String To Name
 
 ## Called By
+- LoadSave
 - BuildSnapshotFromManagers
 - ApplySnapshotToManagers
 - RestoreFullGameState

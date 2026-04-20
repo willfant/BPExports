@@ -12,6 +12,7 @@ Restores runtime state from previously saved or cached data.
 - bSuccess (Boolean)
 - bSuccess (Boolean)
 - bSuccess (Boolean)
+- bSuccess (Boolean)
 
 ## Reads
 - CurrentSaveObject
