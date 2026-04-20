@@ -19,7 +19,7 @@
 		],
 		"calls": [
 			"Create Save Game Object",
-			"Push Manager Data to Save Object",
+			"Build Snapshot from Managers",
 			"Debug Log"
 		],
 		"called_by": [
@@ -255,21 +255,21 @@
 					"linked_count": 1
 				},
 				{
+					"pin_name": "SavedCurrentQuestId_27_B663C25F4E94CE697CAFD6BCBA6568C5",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
 					"pin_name": "ClearedGhostIds_3_3B4291474030086E51F5E780993AF591",
 					"direction": "Input",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "CurrentQuestId_6_B663C25F4E94CE697CAFD6BCBA6568C5",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
 					"linked_count": 0
 				},
 				{
@@ -300,7 +300,7 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "CurrentGhostId_21_90C8400641E61341FA1489AC363C366E",
+					"pin_name": "SavedCurrentGhostId_28_90C8400641E61341FA1489AC363C366E",
 					"direction": "Input",
 					"category": "name",
 					"subcategory": "None",
@@ -309,7 +309,7 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "CurrentGhostState_23_0FF676CC41C3E8BEC79C52BCA7AD563A",
+					"pin_name": "SavedCurrentGhostState_29_0FF676CC41C3E8BEC79C52BCA7AD563A",
 					"direction": "Input",
 					"category": "byte",
 					"subcategory": "None",
@@ -318,12 +318,57 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "CurrentWorldMode_26_DB5F590249CF4CEF944E338FC9AEB49B",
+					"pin_name": "SavedCurrentWorldMode_30_DB5F590249CF4CEF944E338FC9AEB49B",
 					"direction": "Input",
 					"category": "byte",
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
 					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SavedCurrentObjectiveId_33_9E7372644A41717FDC4ADB8B2171B3C5",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SavedCurrentPuzzleId_35_8A8FB1D64F3FBEDDA5B32CB3C4169521",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SavedCurrentPuzzleStepIndex_38_CD9784954DE7ECFFD3715D928F288498",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SavedCompletedPuzzleIds_42_87DC27C5419E87D796BA00B0368511CB",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SavedCurrentLevel_45_D91D0786438607B1023B3DB0ED65B8AB",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 0
 				}
 			],
@@ -396,8 +441,8 @@
 			"node_name": "K2Node_CallFunction_3",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Push Manager Data to Save Object\nTarget is BP Save Manager",
-			"title_single_line": "Push Manager Data to Save Object",
+			"title": "Build Snapshot from Managers\nTarget is BP Save Manager",
+			"title_single_line": "Build Snapshot from Managers",
 			"comment": "",
 			"guid": "0470924f-473f-ac94-f3c9-10ae42c4eacb",
 			"x": 2160,
@@ -430,6 +475,15 @@
 					"subcategory": "self",
 					"resolved_type": "object",
 					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
 					"linked_count": 0
 				}
 			],
@@ -700,7 +754,7 @@
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Push Manager Data to Save Object\nTarget is BP Save Manager",
+			"from_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_5",
 			"to_node_title": "Debug Log\nTarget is BP Save Manager",
@@ -711,7 +765,7 @@
 			"from_node_title": "IsabelVars\nCollapsed Graph",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Push Manager Data to Save Object\nTarget is BP Save Manager",
+			"to_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"to_pin": "execute"
 		},
 		{

@@ -21,16 +21,6 @@ Synchronizes or persists runtime state.
 - Debug Log
 - Set Timer by Function Name
 
-## Called By
-- SetCurrentGhostId
-- SetCurrentGhostState
-- SetCurrentWorldMode
-- SetCurrentPuzzleId
-- SetCurrentPuzzleStepIndex
-- MarkPuzzleCompleted
-- SetCurrentLevelName
-- SetCurrentLevel
-
 ## Branch Points
 - Branch
 

@@ -18,7 +18,7 @@
 		],
 		"writes_variables": [],
 		"calls": [
-			"Push Manager Data to Save Object",
+			"Build Snapshot from Managers",
 			"Save Game to Slot",
 			"Print String",
 			"Debug Log"
@@ -63,8 +63,8 @@
 			"node_name": "K2Node_CallFunction_1",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Push Manager Data to Save Object\nTarget is BP Save Manager",
-			"title_single_line": "Push Manager Data to Save Object",
+			"title": "Build Snapshot from Managers\nTarget is BP Save Manager",
+			"title_single_line": "Build Snapshot from Managers",
 			"comment": "",
 			"guid": "050dd74e-4de1-be07-4da0-dca8e50b422a",
 			"x": 272,
@@ -97,6 +97,15 @@
 					"subcategory": "self",
 					"resolved_type": "object",
 					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
 					"linked_count": 0
 				}
 			],
@@ -833,12 +842,12 @@
 			"from_node_title": "WriteSaveToDisk",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Push Manager Data to Save Object\nTarget is BP Save Manager",
+			"to_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_1",
-			"from_node_title": "Push Manager Data to Save Object\nTarget is BP Save Manager",
+			"from_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"from_pin": "then",
 			"to_node_id": "K2Node_MacroInstance_0",
 			"to_node_title": "Is Valid",

@@ -11,15 +11,17 @@
 	{
 		"purpose": "Main runtime entry graph for this Blueprint.",
 		"reads_variables": [
-			"bAutoCreateSaveOnBeginPlay",
-			"bEnableSaveDebug"
+			"bAutoInitializeSaveOnBeginPlay",
+			"CachedGI"
 		],
-		"writes_variables": [],
+		"writes_variables": [
+			"CachedGI"
+		],
 		"calls": [
 			"Initialize Save System",
 			"Get Game Instance",
 			"Register Save Manager",
-			"Debug Log"
+			"Debug Warning"
 		],
 		"called_by": [],
 		"branch_points": [
@@ -36,7 +38,7 @@
 			"title_single_line": "Event BeginPlay",
 			"comment": "",
 			"guid": "cc1f5c82-4f4e-c408-6737-089514c85687",
-			"x": -240,
+			"x": -896,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -71,8 +73,8 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "c7f171c9-4ad3-5b49-d923-67b5af954263",
-			"x": 704,
-			"y": 0,
+			"x": 16,
+			"y": 208,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -120,17 +122,17 @@
 			"node_name": "K2Node_VariableGet_0",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
-			"title": "Get bAutoCreateSaveOnBeginPlay",
-			"title_single_line": "Get bAutoCreateSaveOnBeginPlay",
+			"title": "Get bAutoInitializeSaveOnBeginPlay",
+			"title_single_line": "Get bAutoInitializeSaveOnBeginPlay",
 			"comment": "",
 			"guid": "4f4f3628-4673-fbee-687b-cca9f82a2398",
-			"x": 688,
-			"y": 112,
+			"x": 0,
+			"y": 320,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "bAutoCreateSaveOnBeginPlay",
+					"pin_name": "bAutoInitializeSaveOnBeginPlay",
 					"direction": "Output",
 					"category": "bool",
 					"subcategory": "None",
@@ -159,8 +161,8 @@
 			"title_single_line": "Initialize Save System",
 			"comment": "",
 			"guid": "f19cd6ee-4351-1fb6-ddf1-1c98ba2579ce",
-			"x": 1072,
-			"y": -16,
+			"x": 384,
+			"y": 192,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -203,8 +205,8 @@
 			"title_single_line": "Get Game Instance",
 			"comment": "",
 			"guid": "900de60c-4208-e8d5-e54d-e38ee3642495",
-			"x": 16,
-			"y": 128,
+			"x": 0,
+			"y": -416,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -247,8 +249,8 @@
 			"title_single_line": "Cast To GI_Echoes",
 			"comment": "",
 			"guid": "700d2a0a-4998-6b25-5c3d-1b83f6ef0719",
-			"x": 16,
-			"y": 0,
+			"x": 0,
+			"y": -544,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -318,8 +320,8 @@
 			"title_single_line": "Register Save Manager",
 			"comment": "",
 			"guid": "d56064ea-4d56-369f-bd24-6ebf661c796a",
-			"x": 384,
-			"y": -16,
+			"x": 560,
+			"y": -560,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -339,7 +341,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "self",
@@ -371,8 +373,8 @@
 			"title_single_line": "Self-Reference",
 			"comment": "",
 			"guid": "900f3e37-4cb3-771c-99dd-a5af67490691",
-			"x": 352,
-			"y": 144,
+			"x": 560,
+			"y": -400,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -389,16 +391,60 @@
 			"target_class": "EventGraph"
 		},
 		{
-			"node_id": "K2Node_CallFunction_9",
-			"node_name": "K2Node_CallFunction_9",
+			"node_id": "K2Node_ExecutionSequence_0",
+			"node_name": "K2Node_ExecutionSequence_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_ExecutionSequence",
+			"title": "Sequence",
+			"title_single_line": "Sequence",
+			"comment": "",
+			"guid": "6ed27d85-42fa-9e7b-a410-fdbfa757e0d9",
+			"x": -544,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then_0",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then_1",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Log\nTarget is BP Save Manager",
-			"title_single_line": "Debug Log",
+			"title": "Debug Warning",
+			"title_single_line": "Debug Warning",
 			"comment": "",
-			"guid": "20c2bca3-479e-a8f1-acb7-71b6f456db44",
-			"x": 368,
-			"y": 256,
+			"guid": "8ff4f5c8-4300-e9f5-b12b-7da7cae67c06",
+			"x": 384,
+			"y": -224,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -424,9 +470,36 @@
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
 					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "BP_SaveManager",
 					"linked_count": 0
 				},
 				{
@@ -435,42 +508,130 @@
 					"category": "string",
 					"subcategory": "None",
 					"resolved_type": "String",
-					"default_value": "[SaveManager] Failed to cast GameInstance to GI_Echoes",
+					"default_value": "[Save] Failed to register in GI_Echoes",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "bPrintToScreen",
+					"pin_name": "__WorldContext",
 					"direction": "Input",
-					"category": "bool",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_Self_1",
+			"node_name": "K2Node_Self_1",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "dbbe9f24-439b-93a6-cbf2-6d89907ab7ae",
+			"x": 208,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
 					"linked_count": 1
 				}
 			],
 			"target_class": "EventGraph"
 		},
 		{
-			"node_id": "K2Node_VariableGet_10",
-			"node_name": "K2Node_VariableGet_10",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bEnableSaveDebug",
-			"title_single_line": "Get bEnableSaveDebug",
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CachedGI",
+			"title_single_line": "Set CachedGI",
 			"comment": "",
-			"guid": "05a7b7a9-40c2-ea39-1135-bb9d8a009aa7",
-			"x": 352,
-			"y": 448,
+			"guid": "a21cb6db-4f45-c27e-73a2-23b31b4fd0b2",
+			"x": 304,
+			"y": -528,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "bEnableSaveDebug",
-					"direction": "Output",
-					"category": "bool",
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
 					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CachedGI",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_VariableGet_1",
+			"node_name": "K2Node_VariableGet_1",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CachedGI",
+			"title_single_line": "Get CachedGI",
+			"comment": "",
+			"guid": "1ac18aa9-44e6-7b89-283b-e89995972aed",
+			"x": 576,
+			"y": -352,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CachedGI",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
 					"linked_count": 1
 				},
 				{
@@ -484,6 +645,38 @@
 				}
 			],
 			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "EdGraphNode_Comment_1",
+			"node_name": "EdGraphNode_Comment_1",
+			"node_kind": "Unknown",
+			"ue_class": "EdGraphNode_Comment",
+			"title": "Register GI Echoes",
+			"title_single_line": "Register GI Echoes",
+			"comment": "Register GI Echoes",
+			"guid": "4f507c6c-4011-af3b-85e7-a5a8f7893498",
+			"x": -64,
+			"y": -624,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "EdGraphNode_Comment_2",
+			"node_name": "EdGraphNode_Comment_2",
+			"node_kind": "Unknown",
+			"ue_class": "EdGraphNode_Comment",
+			"title": "Auto Init",
+			"title_single_line": "Auto Init",
+			"comment": "Auto Init",
+			"guid": "c71f38cf-4710-c558-95a9-318ff9049e84",
+			"x": -64,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [],
+			"target_class": "EventGraph"
 		}
 	],
 	"exec_flow": [
@@ -491,8 +684,8 @@
 			"from_node_id": "K2Node_Event_0",
 			"from_node_title": "Event BeginPlay",
 			"from_pin": "then",
-			"to_node_id": "K2Node_DynamicCast_0",
-			"to_node_title": "Cast To GI_Echoes",
+			"to_node_id": "K2Node_ExecutionSequence_0",
+			"to_node_title": "Sequence",
 			"to_pin": "execute"
 		},
 		{
@@ -507,32 +700,48 @@
 			"from_node_id": "K2Node_DynamicCast_0",
 			"from_node_title": "Cast To GI_Echoes",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_8",
-			"to_node_title": "Register Save Manager\nTarget is GI Echoes",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set CachedGI",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_DynamicCast_0",
 			"from_node_title": "Cast To GI_Echoes",
 			"from_pin": "CastFailed",
-			"to_node_id": "K2Node_CallFunction_9",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Warning",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_8",
-			"from_node_title": "Register Save Manager\nTarget is GI Echoes",
-			"from_pin": "then",
+			"from_node_id": "K2Node_ExecutionSequence_0",
+			"from_node_title": "Sequence",
+			"from_pin": "then_0",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_ExecutionSequence_0",
+			"from_node_title": "Sequence",
+			"from_pin": "then_1",
 			"to_node_id": "K2Node_IfThenElse_0",
 			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set CachedGI",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Register Save Manager\nTarget is GI Echoes",
 			"to_pin": "execute"
 		}
 	],
 	"data_links": [
 		{
 			"from_node_id": "K2Node_VariableGet_0",
-			"from_node_title": "Get bAutoCreateSaveOnBeginPlay",
-			"from_pin": "bAutoCreateSaveOnBeginPlay",
+			"from_node_title": "Get bAutoInitializeSaveOnBeginPlay",
+			"from_pin": "bAutoInitializeSaveOnBeginPlay",
 			"to_node_id": "K2Node_IfThenElse_0",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
@@ -549,9 +758,9 @@
 			"from_node_id": "K2Node_DynamicCast_0",
 			"from_node_title": "Cast To GI_Echoes",
 			"from_pin": "AsGI Echoes",
-			"to_node_id": "K2Node_CallFunction_8",
-			"to_node_title": "Register Save Manager\nTarget is GI Echoes",
-			"to_pin": "self"
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set CachedGI",
+			"to_pin": "CachedGI"
 		},
 		{
 			"from_node_id": "K2Node_Self_0",
@@ -562,12 +771,20 @@
 			"to_pin": "InSaveManager"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_10",
-			"from_node_title": "Get bEnableSaveDebug",
-			"from_pin": "bEnableSaveDebug",
-			"to_node_id": "K2Node_CallFunction_9",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
-			"to_pin": "bPrintToScreen"
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Warning",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get CachedGI",
+			"from_pin": "CachedGI",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Register Save Manager\nTarget is GI Echoes",
+			"to_pin": "self"
 		}
 	],
 	"problems": []

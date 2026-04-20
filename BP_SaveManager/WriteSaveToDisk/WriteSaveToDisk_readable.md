@@ -13,7 +13,7 @@ Synchronizes or persists runtime state.
 - bEnableSaveDebug
 
 ## Calls
-- Push Manager Data to Save Object
+- Build Snapshot from Managers
 - Save Game to Slot
 - Print String
 - Debug Log

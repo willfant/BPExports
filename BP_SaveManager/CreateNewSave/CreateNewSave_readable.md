@@ -15,7 +15,7 @@ Synchronizes or persists runtime state.
 
 ## Calls
 - Create Save Game Object
-- Push Manager Data to Save Object
+- Build Snapshot from Managers
 - Debug Log
 
 ## Called By

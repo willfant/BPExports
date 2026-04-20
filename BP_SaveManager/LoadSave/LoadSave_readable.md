@@ -6,6 +6,9 @@ Function
 ## Purpose
 Synchronizes or persists runtime state.
 
+## Returns
+- bSuccess (Boolean)
+
 ## Reads
 - SaveSlotName
 - UserIndex
@@ -16,11 +19,12 @@ Synchronizes or persists runtime state.
 
 ## Calls
 - Load Game from Slot
-- Apply Loaded Data to Manager
+- Apply Snapshot to Managers
 - Debug Log
 
 ## Called By
 - InitializeSaveSystem
+- RestoreFullGameState
 
 ## Notes
 - Has latent nodes: No

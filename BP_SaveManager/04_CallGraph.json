@@ -23,10 +23,10 @@
 		},
 		{
 			"from_graph": "EventGraph",
-			"from_node_title": "Debug Log",
-			"to_graph": "DebugLog",
-			"call_type": "SelfFunction",
-			"target_class": ""
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "InitializeSaveSystem",
@@ -86,8 +86,8 @@
 		},
 		{
 			"from_graph": "LoadSave",
-			"from_node_title": "Apply Loaded Data to Manager",
-			"to_graph": "ApplyLoadedDataToManager",
+			"from_node_title": "Apply Snapshot to Managers",
+			"to_graph": "ApplySnapshotToManagers",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
@@ -114,8 +114,8 @@
 		},
 		{
 			"from_graph": "CreateNewSave",
-			"from_node_title": "Push Manager Data to Save Object",
-			"to_graph": "PushManagerDataToSaveObject",
+			"from_node_title": "Build Snapshot from Managers",
+			"to_graph": "BuildSnapshotFromManagers",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
@@ -135,8 +135,8 @@
 		},
 		{
 			"from_graph": "WriteSaveToDisk",
-			"from_node_title": "Push Manager Data to Save Object",
-			"to_graph": "PushManagerDataToSaveObject",
+			"from_node_title": "Build Snapshot from Managers",
+			"to_graph": "BuildSnapshotFromManagers",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
@@ -176,46 +176,270 @@
 			"target_class": ""
 		},
 		{
-			"from_graph": "PushManagerDataToSaveObject",
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Resolve Owner Manager Refs",
+			"to_graph": "ResolveOwnerManagerRefs",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Initialize Default Save Data",
+			"to_graph": "InitializeDefaultSaveData",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get Current Ghost Id",
+			"to_graph": "GetCurrentGhostId",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_GhostManager_C"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get World Mode",
+			"to_graph": "GetWorldMode",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_WorldModeSystem_C"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get Current Quest Id",
+			"to_graph": "GetCurrentQuestId",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_ObjectiveManager_C"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get Current Step Index",
+			"to_graph": "GetCurrentStepIndex",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_PuzzleController_C"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get Current Puzzle Id",
+			"to_graph": "GetCurrentPuzzleId",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_PuzzleController_C"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get Completed Puzzle Ids",
+			"to_graph": "GetCompletedPuzzleIds",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_PuzzleController_C"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get Current Level Name",
+			"to_graph": "GetCurrentLevelName",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "String To Name",
+			"to_graph": "Conv_StringToName",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetStringLibrary"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get Current Objective Id",
+			"to_graph": "GetCurrentObjectiveId",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_ObjectiveManager_C"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get Current Objective States",
+			"to_graph": "GetCurrentObjectiveStates",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_ObjectiveManager_C"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get Current Ghost State",
+			"to_graph": "GetCurrentGhostState",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_GhostManager_C"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "BuildSnapshotFromManagers",
+			"from_node_title": "Get Cleared Ghost Ids",
+			"to_graph": "GetClearedGhostIds",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_GhostManager_C"
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
 			"from_node_title": "Debug Log",
 			"to_graph": "DebugLog",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
-			"from_graph": "PushManagerDataToSaveObject",
-			"from_node_title": "Debug Log",
-			"to_graph": "DebugLog",
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
-			"from_graph": "PushManagerDataToSaveObject",
-			"from_node_title": "Debug Log",
-			"to_graph": "DebugLog",
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Resolve Owner Manager Refs",
+			"to_graph": "ResolveOwnerManagerRefs",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
-			"from_graph": "ApplyLoadedDataToManager",
-			"from_node_title": "Debug Log",
-			"to_graph": "DebugLog",
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
-			"from_graph": "ApplyLoadedDataToManager",
-			"from_node_title": "Debug Log",
-			"to_graph": "DebugLog",
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Restore Ghost from Save",
+			"to_graph": "RestoreGhostFromSave",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_GhostManager_C"
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
-			"from_graph": "ApplyLoadedDataToManager",
-			"from_node_title": "Debug Log",
-			"to_graph": "DebugLog",
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Restore World Mode from Save",
+			"to_graph": "RestoreWorldModeFromSave",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_WorldModeSystem_C"
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "SelfFunction",
 			"target_class": ""
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Restore Objectives from Save",
+			"to_graph": "RestoreObjectivesFromSave",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_ObjectiveManager_C"
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Restore Puzzle from Save",
+			"to_graph": "RestorePuzzleFromSave",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_PuzzleController_C"
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "ApplySnapshotToManagers",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "DebugLog",
@@ -274,205 +498,394 @@
 			"target_class": ""
 		},
 		{
-			"from_graph": "SetCurrentQuestId",
-			"from_node_title": "Print String",
-			"to_graph": "PrintString",
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Is Save System Ready",
+			"to_graph": "IsSaveSystemReady",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetSystemLibrary"
 		},
 		{
-			"from_graph": "SetCurrentGhostId",
-			"from_node_title": "Request Auto Save",
-			"to_graph": "RequestAutoSave",
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Apply Snapshot to Managers",
+			"to_graph": "ApplySnapshotToManagers",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
-			"from_graph": "SetCurrentGhostId",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Load Save",
+			"to_graph": "LoadSave",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
 		},
 		{
-			"from_graph": "SetCurrentGhostId",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
 		},
 		{
-			"from_graph": "SetCurrentGhostId",
-			"from_node_title": "Print String",
-			"to_graph": "PrintString",
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Resolve Owner Manager Refs",
+			"to_graph": "ResolveOwnerManagerRefs",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Apply Resolved Audio State from Context",
+			"to_graph": "ApplyResolvedAudioStateFromContext",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_AudioManager_C"
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Restart Scare Loop for Current State",
+			"to_graph": "RestartScareLoopForCurrentState",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_ScareManager_C"
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Handle Pending Arrival Transition",
+			"to_graph": "HandlePendingArrivalTransition",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_TransitionManager_C"
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "RestoreFullGameState",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetSystemLibrary"
 		},
 		{
-			"from_graph": "SetCurrentGhostState",
-			"from_node_title": "Request Auto Save",
-			"to_graph": "RequestAutoSave",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
-			"from_graph": "SetCurrentGhostState",
-			"from_node_title": "Print String",
-			"to_graph": "PrintString",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Ghost Manager Ref",
+			"to_graph": "GetGhostManagerRef",
+			"call_type": "ExternalFunction",
+			"target_class": "GI_Echoes_C"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetSystemLibrary"
 		},
 		{
-			"from_graph": "SetCurrentGhostState",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
 		},
 		{
-			"from_graph": "SetCurrentGhostState",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
-		},
-		{
-			"from_graph": "SetCurrentWorldMode",
-			"from_node_title": "Request Auto Save",
-			"to_graph": "RequestAutoSave",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
-			"from_graph": "SetCurrentWorldMode",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get World Mode System",
+			"to_graph": "GetWorldModeSystem",
 			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
+			"target_class": "GI_Echoes_C"
 		},
 		{
-			"from_graph": "SetCurrentWorldMode",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
-		},
-		{
-			"from_graph": "GetCurrentGhostId",
-			"from_node_title": "Print String",
-			"to_graph": "PrintString",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetSystemLibrary"
 		},
 		{
-			"from_graph": "GetCurrentGhostId",
-			"from_node_title": "To String (Name)",
-			"to_graph": "Conv_NameToString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetStringLibrary"
-		},
-		{
-			"from_graph": "SetCurrentPuzzleId",
-			"from_node_title": "Request Auto Save",
-			"to_graph": "RequestAutoSave",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "SetCurrentPuzzleId",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
 		},
 		{
-			"from_graph": "SetCurrentPuzzleId",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
-		},
-		{
-			"from_graph": "SetCurrentPuzzleStepIndex",
-			"from_node_title": "Request Auto Save",
-			"to_graph": "RequestAutoSave",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
-			"from_graph": "SetCurrentPuzzleStepIndex",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Objective Manager Ref",
+			"to_graph": "GetObjectiveManagerRef",
 			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
+			"target_class": "GI_Echoes_C"
 		},
 		{
-			"from_graph": "SetCurrentPuzzleStepIndex",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
-		},
-		{
-			"from_graph": "MarkPuzzleCompleted",
-			"from_node_title": "Request Auto Save",
-			"to_graph": "RequestAutoSave",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "SetCurrentLevelName",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "SetCurrentLevelName",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
-		},
-		{
-			"from_graph": "SetCurrentLevelName",
-			"from_node_title": "To String (SoftObjectReference)",
-			"to_graph": "Conv_SoftObjectReferenceToString",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetSystemLibrary"
 		},
 		{
-			"from_graph": "SetCurrentLevelName",
-			"from_node_title": "Request Auto Save",
-			"to_graph": "RequestAutoSave",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "SetCurrentLevel",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
 		},
 		{
-			"from_graph": "SetCurrentLevel",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
-		},
-		{
-			"from_graph": "SetCurrentLevel",
-			"from_node_title": "Request Auto Save",
-			"to_graph": "RequestAutoSave",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
-			"from_graph": "SetCurrentLevel",
-			"from_node_title": "To String (Name)",
-			"to_graph": "Conv_NameToString",
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Puzzle Controller",
+			"to_graph": "GetPuzzleController",
+			"call_type": "ExternalFunction",
+			"target_class": "GI_Echoes_C"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Transition Manager Ref",
+			"to_graph": "GetTransitionManagerRef",
+			"call_type": "ExternalFunction",
+			"target_class": "GI_Echoes_C"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Audio Manager Ref",
+			"to_graph": "GetAudioManagerRef",
+			"call_type": "ExternalFunction",
+			"target_class": "GI_Echoes_C"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Scare Manager Ref",
+			"to_graph": "GetScareManagerRef",
+			"call_type": "ExternalFunction",
+			"target_class": "GI_Echoes_C"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "ResolveOwnerManagerRefs",
+			"from_node_title": "Get Game Instance",
+			"to_graph": "GetGameInstance",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "InitializeDefaultSaveData",
+			"from_node_title": "Make Literal Name",
+			"to_graph": "MakeLiteralName",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "InitializeDefaultSaveData",
+			"from_node_title": "Make Literal Name",
+			"to_graph": "MakeLiteralName",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "GetSenderName",
+			"from_node_title": "Get Display Name",
+			"to_graph": "GetDisplayName",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "GetSenderName",
+			"from_node_title": "String To Name",
+			"to_graph": "Conv_StringToName",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetStringLibrary"
 		}

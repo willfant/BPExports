@@ -12,6 +12,9 @@ Synchronizes or persists runtime state.
 ## Reads
 - bSaveSystemReady
 
+## Called By
+- RestoreFullGameState
+
 ## Notes
 - Has latent nodes: No
 - Has error nodes: No

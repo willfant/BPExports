@@ -6,7 +6,9 @@
 	"has_error_nodes": true,
 	"has_warning_nodes": false,
 	"locals": [],
-	"returns": [],
+	"returns": [
+		"bSuccess (Boolean)"
+	],
 	"summary":
 	{
 		"purpose": "Synchronizes or persists runtime state.",
@@ -20,11 +22,12 @@
 		],
 		"calls": [
 			"Load Game from Slot",
-			"Apply Loaded Data to Manager",
+			"Apply Snapshot to Managers",
 			"Debug Log"
 		],
 		"called_by": [
-			"InitializeSaveSystem"
+			"InitializeSaveSystem",
+			"RestoreFullGameState"
 		],
 		"branch_points": []
 	},
@@ -334,8 +337,8 @@
 			"node_name": "K2Node_CallFunction_2",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Apply Loaded Data to Manager\nTarget is BP Save Manager",
-			"title_single_line": "Apply Loaded Data to Manager",
+			"title": "Apply Snapshot to Managers\nTarget is BP Save Manager",
+			"title_single_line": "Apply Snapshot to Managers",
 			"comment": "",
 			"guid": "6746c5c3-4cb5-4e88-f09d-2a910922bd30",
 			"x": 1424,
@@ -359,7 +362,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -369,6 +372,15 @@
 					"resolved_type": "object",
 					"default_value": "",
 					"linked_count": 0
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
 				}
 			],
 			"target_class": "LoadSave"
@@ -566,6 +578,41 @@
 				}
 			],
 			"target_class": "LoadSave"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "267efbe9-447a-51f2-a7c8-6da1b9de4eb9",
+			"x": 1888,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "LoadSave"
 		}
 	],
 	"exec_flow": [
@@ -606,7 +653,15 @@
 			"from_node_title": "Set CurrentSaveObject",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Apply Loaded Data to Manager\nTarget is BP Save Manager",
+			"to_node_title": "Apply Snapshot to Managers\nTarget is BP Save Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Apply Snapshot to Managers\nTarget is BP Save Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
@@ -650,6 +705,14 @@
 			"to_node_id": "K2Node_VariableSet_0",
 			"to_node_title": "Set CurrentSaveObject",
 			"to_pin": "CurrentSaveObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Apply Snapshot to Managers\nTarget is BP Save Manager",
+			"from_pin": "bSuccess",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "bSuccess"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_4",

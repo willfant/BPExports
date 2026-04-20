@@ -7,14 +7,17 @@ EventGraph
 Main runtime entry graph for this Blueprint.
 
 ## Reads
-- bAutoCreateSaveOnBeginPlay
-- bEnableSaveDebug
+- bAutoInitializeSaveOnBeginPlay
+- CachedGI
+
+## Writes
+- CachedGI
 
 ## Calls
 - Initialize Save System
 - Get Game Instance
 - Register Save Manager
-- Debug Log
+- Debug Warning
 
 ## Branch Points
 - Branch

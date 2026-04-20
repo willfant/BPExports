@@ -15,13 +15,11 @@ Provides debug or developer-facing behavior.
 - Print String
 
 ## Called By
-- EventGraph
 - InitializeSaveSystem
 - LoadSave
 - CreateNewSave
 - WriteSaveToDisk
-- PushManagerDataToSaveObject
-- ApplyLoadedDataToManager
+- ApplySnapshotToManagers
 - RequestAutoSave
 - ExecuteAutoSave
 
