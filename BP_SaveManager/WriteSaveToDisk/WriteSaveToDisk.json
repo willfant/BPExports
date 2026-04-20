@@ -6,22 +6,31 @@
 	"has_error_nodes": false,
 	"has_warning_nodes": false,
 	"locals": [],
-	"returns": [],
+	"returns": [
+		"bSuccess (Boolean)",
+		"bSuccess (Boolean)",
+		"bSuccess (Boolean)",
+		"bSuccess (Boolean)"
+	],
 	"summary":
 	{
 		"purpose": "Synchronizes or persists runtime state.",
 		"reads_variables": [
 			"CurrentSaveObject",
+			"CurrentSaveData",
 			"SaveSlotName",
-			"UserIndex",
-			"bEnableSaveDebug"
+			"UserIndex"
 		],
-		"writes_variables": [],
+		"writes_variables": [
+			"SaveData"
+		],
 		"calls": [
+			"Debug Info",
+			"Get Sender Name",
 			"Build Snapshot from Managers",
-			"Save Game to Slot",
-			"Print String",
-			"Debug Log"
+			"Debug Critical",
+			"Is Valid",
+			"Save Game to Slot"
 		],
 		"called_by": [
 			"InitializeSaveSystem",
@@ -59,15 +68,200 @@
 			"target_class": "WriteSaveToDisk"
 		},
 		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "d56f87cb-4d5c-1c6a-a115-c79f55b9d715",
+			"x": 1648,
+			"y": 368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_CallFunction_15",
+			"node_name": "K2Node_CallFunction_15",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "b706d82e-4aab-42a5-9467-47a598ca674d",
+			"x": -32,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[Save] WriteSaveToDisk started",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_Self_3",
+			"node_name": "K2Node_Self_3",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "7e1fbdd7-484a-36b1-575b-1bb5c451f7ad",
+			"x": -288,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_CallFunction_16",
+			"node_name": "K2Node_CallFunction_16",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "054bbb82-4800-4deb-05f6-db864c4ab122",
+			"x": -256,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"title_single_line": "Build Snapshot from Managers",
 			"comment": "",
-			"guid": "050dd74e-4de1-be07-4da0-dca8e50b422a",
-			"x": 272,
+			"guid": "f57c5247-4870-3d6e-f58e-d68e4ae87282",
+			"x": 400,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -106,22 +300,225 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "189a351c-4d48-c28c-86d7-9fbf03ba0608",
+			"x": 784,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_CallFunction_12",
+			"node_name": "K2Node_CallFunction_12",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Critical",
+			"title_single_line": "Debug Critical",
+			"comment": "",
+			"guid": "4d06cb1b-44ed-a80b-98ed-62b7f05981d2",
+			"x": 1088,
+			"y": 368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[Save] WriteSaveToDisk failed: BuildSnapshotFromManagers returned false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
 					"linked_count": 0
 				}
 			],
 			"target_class": "WriteSaveToDisk"
 		},
 		{
-			"node_id": "K2Node_VariableGet_0",
-			"node_name": "K2Node_VariableGet_0",
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "3920d8fb-47b4-12a9-9fee-3c818ae9d77e",
+			"x": 816,
+			"y": 480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_CallFunction_13",
+			"node_name": "K2Node_CallFunction_13",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "085bc4f9-432e-d1b2-53b0-ac8e669f56dd",
+			"x": 848,
+			"y": 528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_VariableGet_4",
+			"node_name": "K2Node_VariableGet_4",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get CurrentSaveObject",
 			"title_single_line": "Get CurrentSaveObject",
 			"comment": "",
-			"guid": "ecda3788-463b-f885-6422-0c8bfd40fc09",
-			"x": 368,
-			"y": 160,
+			"guid": "63fe35cf-41b6-b255-8f3d-c383a5d19b57",
+			"x": 720,
+			"y": -224,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -132,7 +529,7 @@
 					"subcategory": "None",
 					"resolved_type": "SV_SaveGame_C",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 4
 				},
 				{
 					"pin_name": "self",
@@ -147,30 +544,30 @@
 			"target_class": "WriteSaveToDisk"
 		},
 		{
-			"node_id": "K2Node_MacroInstance_0",
-			"node_name": "K2Node_MacroInstance_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_MacroInstance",
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
 			"title": "Is Valid",
 			"title_single_line": "Is Valid",
 			"comment": "",
-			"guid": "2797db3a-4eae-fff8-5ac5-d0b35f96f716",
-			"x": 640,
-			"y": 16,
+			"guid": "3a2d9509-4936-e1c6-4a98-fcadfc5f1ef9",
+			"x": 928,
+			"y": -128,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "exec",
+					"pin_name": "self",
 					"direction": "Input",
-					"category": "exec",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "exec",
+					"resolved_type": "KismetSystemLibrary",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
-					"pin_name": "InputObject",
+					"pin_name": "Object",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
@@ -179,7 +576,51 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Is Valid",
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_2",
+			"node_name": "K2Node_IfThenElse_2",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "35c843b3-4749-994c-acc6-f5a7bd1d6b75",
+			"x": 1254,
+			"y": -152,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
 					"direction": "Output",
 					"category": "exec",
 					"subcategory": "None",
@@ -188,7 +629,7 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Is Not Valid",
+					"pin_name": "else",
 					"direction": "Output",
 					"category": "exec",
 					"subcategory": "None",
@@ -200,16 +641,438 @@
 			"target_class": "WriteSaveToDisk"
 		},
 		{
-			"node_id": "K2Node_CallFunction_2",
-			"node_name": "K2Node_CallFunction_2",
+			"node_id": "K2Node_FunctionResult_3",
+			"node_name": "K2Node_FunctionResult_3",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "8debf721-49ef-b6af-ecd0-27afd54b96f7",
+			"x": 2176,
+			"y": -48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_CallFunction_17",
+			"node_name": "K2Node_CallFunction_17",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Critical",
+			"title_single_line": "Debug Critical",
+			"comment": "",
+			"guid": "84d79ee6-49d9-afb3-3e9b-ec89144df604",
+			"x": 1616,
+			"y": -48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[Save] WriteSaveToDisk failed: CurrentSaveObject is invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_Self_4",
+			"node_name": "K2Node_Self_4",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "34a6ea63-44b2-b6f6-9054-e0a95c896c05",
+			"x": 1344,
+			"y": 64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_CallFunction_18",
+			"node_name": "K2Node_CallFunction_18",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "2db3713f-4ff0-a0f1-5a92-7a93392dd425",
+			"x": 1376,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set SaveData",
+			"title_single_line": "Set SaveData",
+			"comment": "",
+			"guid": "2ca9d49b-4bae-013b-f542-20bb54a8bf62",
+			"x": 1760,
+			"y": -288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "SaveData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_SaveGameState",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SV_SaveGame_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_SaveGameState",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_VariableGet_7",
+			"node_name": "K2Node_VariableGet_7",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentSaveData",
+			"title_single_line": "Get CurrentSaveData",
+			"comment": "",
+			"guid": "5cacd274-4e43-afa3-6364-2eb536090c1e",
+			"x": 1392,
+			"y": -320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentSaveData",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_SaveGameState",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_VariableGet_8",
+			"node_name": "K2Node_VariableGet_8",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get SaveSlotName",
+			"title_single_line": "Get SaveSlotName",
+			"comment": "",
+			"guid": "1bdf746d-4882-89a0-b944-519e93ed6d0d",
+			"x": 1712,
+			"y": -400,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "SaveSlotName",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SV_SaveGame_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "74a92f08-408d-e2da-0f22-318f941ca88b",
+			"x": 1008,
+			"y": -400,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SV_SaveGame_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SV_SaveGame_C",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_VariableGet_9",
+			"node_name": "K2Node_VariableGet_9",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get UserIndex",
+			"title_single_line": "Get UserIndex",
+			"comment": "",
+			"guid": "2c8b72b3-4cb1-a911-ef73-11b12f956f9b",
+			"x": 1728,
+			"y": -496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "UserIndex",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SV_SaveGame_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_Knot_2",
+			"node_name": "K2Node_Knot_2",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "58d1cf29-493b-ab13-6170-d499cc35721b",
+			"x": 1040,
+			"y": -480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SV_SaveGame_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SV_SaveGame_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_CallFunction_14",
+			"node_name": "K2Node_CallFunction_14",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Save Game to Slot",
 			"title_single_line": "Save Game to Slot",
 			"comment": "",
-			"guid": "40836ada-431d-82b2-147a-8097832d6c92",
-			"x": 1008,
-			"y": -304,
+			"guid": "dc97676b-4717-ccd8-c91f-2c876caea612",
+			"x": 2080,
+			"y": -400,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -280,86 +1143,51 @@
 			"target_class": "WriteSaveToDisk"
 		},
 		{
-			"node_id": "K2Node_VariableGet_1",
-			"node_name": "K2Node_VariableGet_1",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get SaveSlotName",
-			"title_single_line": "Get SaveSlotName",
+			"node_id": "K2Node_Knot_3",
+			"node_name": "K2Node_Knot_3",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
 			"comment": "",
-			"guid": "1976e44f-433e-bc1b-c626-ef82c1c3e5d5",
-			"x": 720,
-			"y": -192,
+			"guid": "2ccc48ef-430c-5846-e31c-0abf72f0ef1b",
+			"x": 1152,
+			"y": -336,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "SaveSlotName",
-					"direction": "Output",
-					"category": "string",
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "String",
+					"resolved_type": "SV_SaveGame_C",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "self",
-					"direction": "Input",
+					"pin_name": "OutputPin",
+					"direction": "Output",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
+					"resolved_type": "SV_SaveGame_C",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				}
 			],
 			"target_class": "WriteSaveToDisk"
 		},
 		{
-			"node_id": "K2Node_VariableGet_2",
-			"node_name": "K2Node_VariableGet_2",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get UserIndex",
-			"title_single_line": "Get UserIndex",
-			"comment": "",
-			"guid": "d8f141ee-40e2-6ace-51b9-518b684f4d31",
-			"x": 736,
-			"y": -144,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "UserIndex",
-					"direction": "Output",
-					"category": "int",
-					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "0",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "WriteSaveToDisk"
-		},
-		{
-			"node_id": "K2Node_IfThenElse_0",
-			"node_name": "K2Node_IfThenElse_0",
+			"node_id": "K2Node_IfThenElse_3",
+			"node_name": "K2Node_IfThenElse_3",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "d0e52770-43f8-b4ae-3871-c195752bf902",
-			"x": 1792,
-			"y": -304,
+			"guid": "7efcd9dd-43fe-1ec2-805a-cfb92d2f8587",
+			"x": 2528,
+			"y": -400,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -403,254 +1231,15 @@
 			"target_class": "WriteSaveToDisk"
 		},
 		{
-			"node_id": "K2Node_Knot_0",
-			"node_name": "K2Node_Knot_0",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "aae25d40-4ae3-cb5f-87bc-cf9d8624f14d",
-			"x": 624,
-			"y": -240,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "SV_SaveGame_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "SV_SaveGame_C",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "WriteSaveToDisk"
-		},
-		{
-			"node_id": "K2Node_CallFunction_5",
-			"node_name": "K2Node_CallFunction_5",
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Print String",
-			"title_single_line": "Print String",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
 			"comment": "",
-			"guid": "fedae6fb-4fb6-c595-8993-ca9080305da9",
-			"x": 1104,
-			"y": 208,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "KismetSystemLibrary",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "InString",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "WriteSaveToDisk failed: CurrentSaveObject invalid",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "TextColor",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "LinearColor",
-					"default_value": "(R=0.000000,G=0.660000,B=1.000000,A=1.000000)",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "float",
-					"resolved_type": "Float",
-					"default_value": "2.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Key",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 0
-				}
-			],
-			"target_class": "WriteSaveToDisk"
-		},
-		{
-			"node_id": "K2Node_CallFunction_8",
-			"node_name": "K2Node_CallFunction_8",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Log\nTarget is BP Save Manager",
-			"title_single_line": "Debug Log",
-			"comment": "",
-			"guid": "eb2657ed-43b4-f253-9113-7d8269886012",
-			"x": 1472,
-			"y": -544,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "WriteSaveToDisk called",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 1
-				}
-			],
-			"target_class": "WriteSaveToDisk"
-		},
-		{
-			"node_id": "K2Node_VariableGet_3",
-			"node_name": "K2Node_VariableGet_3",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bEnableSaveDebug",
-			"title_single_line": "Get bEnableSaveDebug",
-			"comment": "",
-			"guid": "cfc92d04-44a5-9d93-3c98-748b5543f0c8",
-			"x": 1488,
-			"y": -320,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "bEnableSaveDebug",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "WriteSaveToDisk"
-		},
-		{
-			"node_id": "K2Node_CallFunction_9",
-			"node_name": "K2Node_CallFunction_9",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Log\nTarget is BP Save Manager",
-			"title_single_line": "Debug Log",
-			"comment": "",
-			"guid": "d1fdfaec-4f20-5992-939c-95b14a989f17",
-			"x": 2144,
+			"guid": "04ae25b0-4070-81c2-e7cd-7584d92c784b",
+			"x": 2928,
 			"y": -640,
 			"has_error": false,
 			"has_warning": false,
@@ -671,8 +1260,105 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
 					"linked_count": 0
 				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[Save] WriteSaveToDisk completed successfully",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_Self_1",
+			"node_name": "K2Node_Self_1",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "c22ddfb8-40af-d9ae-0e09-babdde7ea9c7",
+			"x": 2672,
+			"y": -544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_CallFunction_7",
+			"node_name": "K2Node_CallFunction_7",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "86de5248-4608-c908-1718-119610284be9",
+			"x": 2704,
+			"y": -496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
 				{
 					"pin_name": "self",
 					"direction": "Input",
@@ -683,72 +1369,98 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
+					"pin_name": "SenderName",
+					"direction": "Output",
+					"category": "name",
 					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "Save Game to Slot succeeded",
-					"linked_count": 0
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "aba89183-4af9-eda9-b2aa-c583697f2bc5",
+			"x": 3472,
+			"y": -640,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
 				},
 				{
-					"pin_name": "bPrintToScreen",
+					"pin_name": "bSuccess",
 					"direction": "Input",
 					"category": "bool",
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "true",
-					"linked_count": 1
-				}
-			],
-			"target_class": "WriteSaveToDisk"
-		},
-		{
-			"node_id": "K2Node_VariableGet_5",
-			"node_name": "K2Node_VariableGet_5",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bEnableSaveDebug",
-			"title_single_line": "Get bEnableSaveDebug",
-			"comment": "",
-			"guid": "3effef97-4711-4395-0b6e-75b7db6c3dff",
-			"x": 2160,
-			"y": -416,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "bEnableSaveDebug",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
 					"linked_count": 0
 				}
 			],
 			"target_class": "WriteSaveToDisk"
 		},
 		{
-			"node_id": "K2Node_CallFunction_10",
-			"node_name": "K2Node_CallFunction_10",
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "bb40de25-4c76-0078-ae59-a9a92ba12d8d",
+			"x": 3472,
+			"y": -256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_CallFunction_6",
+			"node_name": "K2Node_CallFunction_6",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Log\nTarget is BP Save Manager",
-			"title_single_line": "Debug Log",
+			"title": "Debug Critical",
+			"title_single_line": "Debug Critical",
 			"comment": "",
-			"guid": "8af4e977-4824-f80b-81ad-89a670dbe4a4",
-			"x": 2144,
-			"y": -192,
+			"guid": "c9a22be6-4e9f-20b1-21a7-698b2e58fc52",
+			"x": 2912,
+			"y": -256,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -768,8 +1480,105 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
 					"linked_count": 0
 				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[Save] WriteSaveToDisk failed: SaveGameToSlot returned false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "a8298cc7-43df-0329-64c7-bdacf1db6df9",
+			"x": 2640,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "WriteSaveToDisk"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "7534710a-4e64-e401-5cf8-edbe5c3afc4e",
+			"x": 2672,
+			"y": -96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
 				{
 					"pin_name": "self",
 					"direction": "Input",
@@ -780,57 +1589,13 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "Save Game to Slot failed",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 1
-				}
-			],
-			"target_class": "WriteSaveToDisk"
-		},
-		{
-			"node_id": "K2Node_VariableGet_6",
-			"node_name": "K2Node_VariableGet_6",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bEnableSaveDebug",
-			"title_single_line": "Get bEnableSaveDebug",
-			"comment": "",
-			"guid": "b519d6a1-4a97-875b-9445-f399fe30e045",
-			"x": 2160,
-			"y": 32,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "bEnableSaveDebug",
+					"pin_name": "SenderName",
 					"direction": "Output",
-					"category": "bool",
+					"category": "name",
 					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 0
 				}
 			],
 			"target_class": "WriteSaveToDisk"
@@ -841,139 +1606,315 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "WriteSaveToDisk",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_15",
+			"from_node_title": "Debug Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_4",
 			"to_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_id": "K2Node_CallFunction_4",
 			"from_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"from_pin": "then",
-			"to_node_id": "K2Node_MacroInstance_0",
-			"to_node_title": "Is Valid",
-			"to_pin": "exec"
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_MacroInstance_0",
-			"from_node_title": "Is Valid",
-			"from_pin": "Is Valid",
-			"to_node_id": "K2Node_CallFunction_2",
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Debug Critical",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_12",
+			"from_node_title": "Debug Critical",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set SaveData",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_17",
+			"to_node_title": "Debug Critical",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_17",
+			"from_node_title": "Debug Critical",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_3",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set SaveData",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_14",
 			"to_node_title": "Save Game to Slot",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_MacroInstance_0",
-			"from_node_title": "Is Valid",
-			"from_pin": "Is Not Valid",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Print String",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_id": "K2Node_CallFunction_14",
 			"from_node_title": "Save Game to Slot",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_8",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_id": "K2Node_IfThenElse_3",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_9",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Info",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_id": "K2Node_IfThenElse_3",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_10",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Critical",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_8",
-			"from_node_title": "Debug Log\nTarget is BP Save Manager",
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Debug Info",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_0",
-			"to_node_title": "Branch",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_6",
+			"from_node_title": "Debug Critical",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
 	],
 	"data_links": [
 		{
-			"from_node_id": "K2Node_VariableGet_0",
-			"from_node_title": "Get CurrentSaveObject",
-			"from_pin": "CurrentSaveObject",
-			"to_node_id": "K2Node_MacroInstance_0",
-			"to_node_title": "Is Valid",
-			"to_pin": "InputObject"
+			"from_node_id": "K2Node_Self_3",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_0",
-			"from_node_title": "Get CurrentSaveObject",
-			"from_pin": "CurrentSaveObject",
-			"to_node_id": "K2Node_Knot_0",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
+			"from_node_id": "K2Node_CallFunction_16",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "SenderName",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_2",
-			"from_node_title": "Save Game to Slot",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_0",
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
+			"from_pin": "bSuccess",
+			"to_node_id": "K2Node_IfThenElse_1",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Debug Critical",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_13",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "SenderName",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Debug Critical",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get CurrentSaveObject",
+			"from_pin": "CurrentSaveObject",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get CurrentSaveObject",
+			"from_pin": "CurrentSaveObject",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set SaveData",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get CurrentSaveObject",
+			"from_pin": "CurrentSaveObject",
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get CurrentSaveObject",
+			"from_pin": "CurrentSaveObject",
+			"to_node_id": "K2Node_Knot_3",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Self_4",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_17",
+			"to_node_title": "Debug Critical",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_18",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "SenderName",
+			"to_node_id": "K2Node_CallFunction_17",
+			"to_node_title": "Debug Critical",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_7",
+			"from_node_title": "Get CurrentSaveData",
+			"from_pin": "CurrentSaveData",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set SaveData",
+			"to_pin": "SaveData"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_8",
 			"from_node_title": "Get SaveSlotName",
 			"from_pin": "SaveSlotName",
-			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_id": "K2Node_CallFunction_14",
 			"to_node_title": "Save Game to Slot",
 			"to_pin": "SlotName"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableGet_8",
+			"to_node_title": "Get SaveSlotName",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_2",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_9",
 			"from_node_title": "Get UserIndex",
 			"from_pin": "UserIndex",
-			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_id": "K2Node_CallFunction_14",
 			"to_node_title": "Save Game to Slot",
 			"to_pin": "UserIndex"
 		},
 		{
-			"from_node_id": "K2Node_Knot_0",
+			"from_node_id": "K2Node_Knot_2",
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_id": "K2Node_VariableGet_9",
+			"to_node_title": "Get UserIndex",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_14",
+			"from_node_title": "Save Game to Slot",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_3",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_14",
 			"to_node_title": "Save Game to Slot",
 			"to_pin": "SaveGameObject"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_3",
-			"from_node_title": "Get bEnableSaveDebug",
-			"from_pin": "bEnableSaveDebug",
-			"to_node_id": "K2Node_CallFunction_8",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
-			"to_pin": "bPrintToScreen"
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_5",
-			"from_node_title": "Get bEnableSaveDebug",
-			"from_pin": "bEnableSaveDebug",
-			"to_node_id": "K2Node_CallFunction_9",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
-			"to_pin": "bPrintToScreen"
+			"from_node_id": "K2Node_CallFunction_7",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "SenderName",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_6",
-			"from_node_title": "Get bEnableSaveDebug",
-			"from_pin": "bEnableSaveDebug",
-			"to_node_id": "K2Node_CallFunction_10",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
-			"to_pin": "bPrintToScreen"
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Critical",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "SenderName",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Critical",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

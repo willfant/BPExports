@@ -15,6 +15,7 @@ Auto-generated function summary.
 
 ## Called By
 - LoadSave
+- WriteSaveToDisk
 - BuildSnapshotFromManagers
 - ApplySnapshotToManagers
 - RestoreFullGameState

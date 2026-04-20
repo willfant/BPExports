@@ -6,17 +6,28 @@ Function
 ## Purpose
 Synchronizes or persists runtime state.
 
+## Returns
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+
 ## Reads
 - CurrentSaveObject
+- CurrentSaveData
 - SaveSlotName
 - UserIndex
-- bEnableSaveDebug
+
+## Writes
+- SaveData
 
 ## Calls
+- Debug Info
+- Get Sender Name
 - Build Snapshot from Managers
+- Debug Critical
+- Is Valid
 - Save Game to Slot
-- Print String
-- Debug Log
 
 ## Called By
 - InitializeSaveSystem
