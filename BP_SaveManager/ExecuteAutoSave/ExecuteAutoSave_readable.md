@@ -7,16 +7,19 @@ Function
 Synchronizes or persists runtime state.
 
 ## Reads
-- bEnableSaveDebug
+- bAutoSavePending
 - AutoSaveReasonLast
 
 ## Writes
+- bEnableAutoSave
 - AutoSaveReasonLast
-- bAutoSavePending
 
 ## Calls
-- Debug Log
+- Debug Info
+- Get Sender Name
+- To String (Text)
 - Write Save to Disk
+- Debug Critical
 
 ## Branch Points
 - Branch

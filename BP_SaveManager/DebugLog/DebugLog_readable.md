@@ -19,7 +19,6 @@ Provides debug or developer-facing behavior.
 - CreateNewSave
 - ApplySnapshotToManagers
 - RequestAutoSave
-- ExecuteAutoSave
 
 ## Branch Points
 - Branch
