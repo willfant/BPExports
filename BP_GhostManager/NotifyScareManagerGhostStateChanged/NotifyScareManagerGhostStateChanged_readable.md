@@ -20,7 +20,6 @@ Auto-generated function summary.
 
 ## Called By
 - SetGhostState
-- DEPRECATED__SetGhostStateFromSave
 
 ## Branch Points
 - Branch

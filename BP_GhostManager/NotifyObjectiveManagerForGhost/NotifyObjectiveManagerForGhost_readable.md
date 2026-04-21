@@ -8,16 +8,18 @@ Auto-generated function summary.
 
 ## Reads
 - bHasActiveGhost
-- DebugEnabled
 - CurrentGhostProfile
 - ObjectiveManagerRef
 - CurrentGhostId
 
 ## Calls
-- Debug
 - Get Game Instance
 - Initialize Objectives for Ghost
 - To String (Text)
+- Get Display Name
+- String To Name
+- Debug Warning
+- Debug Info
 
 ## Called By
 - SetActiveGhost

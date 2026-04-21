@@ -7,21 +7,26 @@ Function
 Initializes references, state, or startup flow.
 
 ## Reads
-- DebugEnabled
-- GhostIdToLoad
+- bInitialized
 - SaveManagerRef
 
 ## Writes
 - SaveManagerRef
-- bInitialized 
+- bInitialized
 
 ## Calls
+- Debug Info
+- Get Display Name
+- String To Name
 - Get Game Instance
-- Debug
-- To String (Text)
+- Debug Critical
+- Register Ghost Manager
 
 ## Called By
 - EventGraph
+
+## Branch Points
+- Branch
 
 ## Notes
 - Has latent nodes: No

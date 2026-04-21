@@ -13,14 +13,16 @@ Auto-generated function summary.
 
 ## Reads
 - GhostProfilesTable
-- DebugEnabled
 
 ## Writes
 - CurrentGhostProfile
 
 ## Calls
-- Debug
 - To String (Text)
+- Get Display Name
+- String To Name
+- Debug Critical
+- Debug Info
 
 ## Called By
 - SetActiveGhost
