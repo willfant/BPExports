@@ -41,7 +41,6 @@ Auto-generated function summary.
 - Get Cleared Ghost Ids
 
 ## Called By
-- CreateNewSave
 - WriteSaveToDisk
 
 ## Branch Points

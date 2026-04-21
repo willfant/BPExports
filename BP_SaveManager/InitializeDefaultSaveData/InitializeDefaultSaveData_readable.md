@@ -13,6 +13,7 @@ Initializes references, state, or startup flow.
 - Make Literal Name
 
 ## Called By
+- CreateNewSave
 - BuildSnapshotFromManagers
 
 ## Notes

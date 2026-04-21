@@ -6,20 +6,32 @@ Function
 ## Purpose
 Synchronizes or persists runtime state.
 
+## Returns
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+
 ## Reads
-- bEnableSaveDebug
+- CurrentSaveObject
+- CurrentSaveData
 
 ## Writes
 - CurrentSaveObject
 - CurrentSaveData
+- SaveData
 
 ## Calls
 - Create Save Game Object
-- Build Snapshot from Managers
-- Debug Log
+- Debug Info
+- Get Sender Name
+- Is Valid
+- Debug Critical
+- Initialize Default Save Data
 
 ## Called By
 - InitializeSaveSystem
+
+## Branch Points
+- Branch
 
 ## Notes
 - Has latent nodes: No

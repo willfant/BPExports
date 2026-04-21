@@ -15,6 +15,7 @@ Auto-generated function summary.
 
 ## Called By
 - LoadSave
+- CreateNewSave
 - WriteSaveToDisk
 - BuildSnapshotFromManagers
 - ApplySnapshotToManagers

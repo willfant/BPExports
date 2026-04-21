@@ -16,7 +16,6 @@ Provides debug or developer-facing behavior.
 
 ## Called By
 - InitializeSaveSystem
-- CreateNewSave
 - ApplySnapshotToManagers
 - RequestAutoSave
 
