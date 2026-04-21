@@ -20,6 +20,7 @@ Auto-generated function summary.
 - WriteSaveToDisk
 - BuildSnapshotFromManagers
 - ApplySnapshotToManagers
+- RequestAutoSave
 - ExecuteAutoSave
 - RestoreFullGameState
 - ResolveOwnerManagerRefs

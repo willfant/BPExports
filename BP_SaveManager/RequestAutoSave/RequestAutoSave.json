@@ -12,7 +12,6 @@
 		"purpose": "Synchronizes or persists runtime state.",
 		"reads_variables": [
 			"bEnableAutoSave",
-			"bEnableSaveDebug",
 			"bAutoSavePending",
 			"AutoSaveReasonLast",
 			"AutoSaveDelay"
@@ -22,8 +21,10 @@
 			"bAutoSavePending"
 		],
 		"calls": [
-			"Debug Log",
-			"Set Timer by Function Name"
+			"Set Timer by Function Name",
+			"Debug Warning",
+			"Get Sender Name",
+			"Debug Info"
 		],
 		"called_by": [],
 		"branch_points": [
@@ -135,103 +136,6 @@
 			"pins": [
 				{
 					"pin_name": "bEnableAutoSave",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "RequestAutoSave"
-		},
-		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Log\nTarget is BP Save Manager",
-			"title_single_line": "Debug Log",
-			"comment": "",
-			"guid": "ea8ef3d1-49d6-11d6-41a1-689d93d1af26",
-			"x": 608,
-			"y": 240,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "AutoSave request ignored because auto save is disabled",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 1
-				}
-			],
-			"target_class": "RequestAutoSave"
-		},
-		{
-			"node_id": "K2Node_VariableGet_2",
-			"node_name": "K2Node_VariableGet_2",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bEnableSaveDebug",
-			"title_single_line": "Get bEnableSaveDebug",
-			"comment": "",
-			"guid": "0b79a277-4fde-9901-5304-f5a6f379dda6",
-			"x": 624,
-			"y": 496,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "bEnableSaveDebug",
 					"direction": "Output",
 					"category": "bool",
 					"subcategory": "None",
@@ -437,103 +341,6 @@
 			"target_class": "RequestAutoSave"
 		},
 		{
-			"node_id": "K2Node_CallFunction_2",
-			"node_name": "K2Node_CallFunction_2",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Log\nTarget is BP Save Manager",
-			"title_single_line": "Debug Log",
-			"comment": "",
-			"guid": "b80417cc-47bb-5f0b-9efe-9fa0429e1bca",
-			"x": 1552,
-			"y": -528,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 1
-				}
-			],
-			"target_class": "RequestAutoSave"
-		},
-		{
-			"node_id": "K2Node_VariableGet_4",
-			"node_name": "K2Node_VariableGet_4",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bEnableSaveDebug",
-			"title_single_line": "Get bEnableSaveDebug",
-			"comment": "",
-			"guid": "539269a6-4b26-1525-f860-9ea591c0bbf6",
-			"x": 1568,
-			"y": -272,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "bEnableSaveDebug",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "RequestAutoSave"
-		},
-		{
 			"node_id": "K2Node_CommutativeAssociativeBinaryOperator_1",
 			"node_name": "K2Node_CommutativeAssociativeBinaryOperator_1",
 			"node_kind": "Unknown",
@@ -670,103 +477,6 @@
 					"resolved_type": "Boolean",
 					"default_value": "false",
 					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "RequestAutoSave"
-		},
-		{
-			"node_id": "K2Node_CallFunction_0",
-			"node_name": "K2Node_CallFunction_0",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Log\nTarget is BP Save Manager",
-			"title_single_line": "Debug Log",
-			"comment": "",
-			"guid": "e97a27ed-491c-ba60-9958-cab433e84e91",
-			"x": 1968,
-			"y": -160,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 1
-				}
-			],
-			"target_class": "RequestAutoSave"
-		},
-		{
-			"node_id": "K2Node_VariableGet_8",
-			"node_name": "K2Node_VariableGet_8",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bEnableSaveDebug",
-			"title_single_line": "Get bEnableSaveDebug",
-			"comment": "",
-			"guid": "43dfb378-4425-6384-bb07-e6a0700de728",
-			"x": 2000,
-			"y": 80,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "bEnableSaveDebug",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -1018,6 +728,456 @@
 				}
 			],
 			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_6",
+			"node_name": "K2Node_CallFunction_6",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Warning",
+			"title_single_line": "Debug Warning",
+			"comment": "",
+			"guid": "78c294a9-495a-8362-70cf-3ab238fdb90b",
+			"x": 752,
+			"y": 288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "AutoSave request ignored because auto save is disabled",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_Self_1",
+			"node_name": "K2Node_Self_1",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "aa0f9b61-4a46-c703-ffa8-fdb63bfc1604",
+			"x": 512,
+			"y": 368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_7",
+			"node_name": "K2Node_CallFunction_7",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "23a32250-4387-abbb-cfe7-8e857454616b",
+			"x": 544,
+			"y": 432,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "0bb605e7-41fc-aa33-ace0-75b2667abe95",
+			"x": 1712,
+			"y": -80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "1045aad7-4d4d-38a3-7315-68ba1c8e33cd",
+			"x": 1744,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "15f86373-4be8-357e-ff04-abba33f2a280",
+			"x": 1968,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "426feac6-42ee-a614-2627-099c50122f4f",
+			"x": 1600,
+			"y": -560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "a94bf50b-4b00-1269-6847-f9a324008836",
+			"x": 1632,
+			"y": -496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RequestAutoSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "a756f82c-492f-a62d-1b86-769fc22a44bf",
+			"x": 1856,
+			"y": -624,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RequestAutoSave"
 		}
 	],
 	"exec_flow": [
@@ -1041,8 +1201,8 @@
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Warning",
 			"to_pin": "execute"
 		},
 		{
@@ -1057,8 +1217,8 @@
 			"from_node_id": "K2Node_IfThenElse_1",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Info",
 			"to_pin": "execute"
 		},
 		{
@@ -1073,13 +1233,13 @@
 			"from_node_id": "K2Node_VariableSet_1",
 			"from_node_title": "Set bAutoSavePending",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Info",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_0",
-			"from_node_title": "Debug Log\nTarget is BP Save Manager",
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "Debug Info",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_3",
 			"to_node_title": "Set Timer by Function Name",
@@ -1112,14 +1272,6 @@
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_2",
-			"from_node_title": "Get bEnableSaveDebug",
-			"from_pin": "bEnableSaveDebug",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
-			"to_pin": "bPrintToScreen"
-		},
-		{
 			"from_node_id": "K2Node_Knot_0",
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
@@ -1136,19 +1288,11 @@
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_4",
-			"from_node_title": "Get bEnableSaveDebug",
-			"from_pin": "bEnableSaveDebug",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
-			"to_pin": "bPrintToScreen"
-		},
-		{
 			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_1",
 			"from_node_title": "Append",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Info",
 			"to_pin": "Message"
 		},
 		{
@@ -1160,19 +1304,11 @@
 			"to_pin": "B"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_8",
-			"from_node_title": "Get bEnableSaveDebug",
-			"from_pin": "bEnableSaveDebug",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
-			"to_pin": "bPrintToScreen"
-		},
-		{
 			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
 			"from_node_title": "Append",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Debug Log\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Info",
 			"to_pin": "Message"
 		},
 		{
@@ -1190,6 +1326,54 @@
 			"to_node_id": "K2Node_CallFunction_3",
 			"to_node_title": "Set Timer by Function Name",
 			"to_pin": "Time"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Warning",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_7",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "SenderName",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Warning",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_9",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "SenderName",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "SenderName",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

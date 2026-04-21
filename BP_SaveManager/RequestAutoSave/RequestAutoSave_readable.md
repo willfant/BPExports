@@ -8,7 +8,6 @@ Synchronizes or persists runtime state.
 
 ## Reads
 - bEnableAutoSave
-- bEnableSaveDebug
 - bAutoSavePending
 - AutoSaveReasonLast
 - AutoSaveDelay
@@ -18,8 +17,10 @@ Synchronizes or persists runtime state.
 - bAutoSavePending
 
 ## Calls
-- Debug Log
 - Set Timer by Function Name
+- Debug Warning
+- Get Sender Name
+- Debug Info
 
 ## Branch Points
 - Branch

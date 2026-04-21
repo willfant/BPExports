@@ -18,22 +18,12 @@ Auto-generated function summary.
 ## Reads
 - CurrentSaveObject
 - SaveData
-- bEnableSaveDebug
-- SavedGhostId
-- SavedGhostState
-- SavedWorldMode
-- SavedCurrentPuzzleId
-- SavedCurrentPuzzleStepIndex
-- SavedCompletedPuzzleIds
-- SavedCurrentLevelName
-- SavedCurrentLevel
 - CurrentSaveData
 
 ## Writes
 - CurrentSaveData
 
 ## Calls
-- Debug Log
 - Debug Critical
 - Get Sender Name
 - Resolve Owner Manager Refs

@@ -75,7 +75,7 @@
 		{
 			"graph": "ApplySnapshotToManagers",
 			"problem_type": "FunctionTooLarge",
-			"details": "Graph contains 81 nodes and may be too large.",
+			"details": "Graph contains 59 nodes and may be too large.",
 			"node_name": "",
 			"node_title": "",
 			"severity": "medium",
@@ -98,18 +98,6 @@
 		},
 		{
 			"graph": "ExecuteAutoSave",
-			"problem_type": "PotentialSaveSyncWithoutStateWrite",
-			"details": "Save/sync-related graph does not appear to write any obvious runtime state before syncing.",
-			"node_name": "",
-			"node_title": "",
-			"severity": "medium",
-			"confidence": 0.65000000000000002,
-			"why_it_matters": "A save/sync graph does not appear to write state before syncing.",
-			"likely_impact": "Persisted state may drift from runtime state.",
-			"suggested_fix": "Confirm whether state is already current; otherwise write state before sync."
-		},
-		{
-			"graph": "GetCurrentSaveData",
 			"problem_type": "PotentialSaveSyncWithoutStateWrite",
 			"details": "Save/sync-related graph does not appear to write any obvious runtime state before syncing.",
 			"node_name": "",
@@ -155,18 +143,6 @@
 			"why_it_matters": "A graph calling many internal functions may be becoming an orchestration bottleneck.",
 			"likely_impact": "Harder to trace behavior and maintain clear ownership.",
 			"suggested_fix": "Consider extracting subflows or moving orchestration into smaller dedicated graphs."
-		},
-		{
-			"graph": "GetSaveSnapshot",
-			"problem_type": "PotentialSaveSyncWithoutStateWrite",
-			"details": "Save/sync-related graph does not appear to write any obvious runtime state before syncing.",
-			"node_name": "",
-			"node_title": "",
-			"severity": "medium",
-			"confidence": 0.65000000000000002,
-			"why_it_matters": "A save/sync graph does not appear to write state before syncing.",
-			"likely_impact": "Persisted state may drift from runtime state.",
-			"suggested_fix": "Confirm whether state is already current; otherwise write state before sync."
 		},
 		{
 			"graph": "ResolveOwnerManagerRefs",
