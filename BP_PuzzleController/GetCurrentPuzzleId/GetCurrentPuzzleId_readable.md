@@ -12,9 +12,6 @@ Auto-generated function summary.
 ## Reads
 - CurrentPuzzleId
 
-## Called By
-- RestorePuzzleFromSave
-
 ## Notes
 - Has latent nodes: No
 - Has error nodes: No

@@ -21,6 +21,9 @@ Auto-generated function summary.
 - Destroy Ghost Actor
 - Debug Message
 
+## Called By
+- RestoreGhostFromSave
+
 ## Branch Points
 - Branch
 

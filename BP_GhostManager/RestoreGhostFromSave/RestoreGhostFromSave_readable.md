@@ -6,20 +6,26 @@ Function
 ## Purpose
 Restores runtime state from previously saved or cached data.
 
+## Returns
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+
 ## Reads
-- SaveManagerRef
 - CurrentGhostId
-- CurrentGhostState
-- DebugEnabled
 
 ## Writes
 - bIsRestoringFromSave
+- ClearedGhostIds
 
 ## Calls
-- Is Valid
-- Debug Message
 - Set Active Ghost
+- Debug Critical
+- Get Display Name
+- String To Name
+- Clear Active Ghost
 - Set Ghost State
+- Debug Info
 
 ## Called By
 - EventGraph

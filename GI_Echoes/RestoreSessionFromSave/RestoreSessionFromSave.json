@@ -492,7 +492,7 @@
 			"node_name": "K2Node_CallFunction_5",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Get Current World Mode\nTarget is BP Save Manager",
+			"title": "Get Current World Mode",
 			"title_single_line": "Get Current World Mode",
 			"comment": "",
 			"guid": "fa54a4f2-47f1-0026-04da-5ab5d9aff1e4",
@@ -1285,7 +1285,7 @@
 			"node_name": "K2Node_CallFunction_11",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Get Current Level Name\nTarget is BP Save Manager",
+			"title": "Get Current Level Name",
 			"title_single_line": "Get Current Level Name",
 			"comment": "",
 			"guid": "23f4c6da-4bf5-b7db-eb7a-a4b93abc744c",
@@ -1317,9 +1317,36 @@
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
+					"resolved_type": "GameplayStatics",
 					"default_value": "",
 					"linked_count": 1
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bRemovePrefixString",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 0
 				},
 				{
 					"pin_name": "OutLevelName",
@@ -1380,7 +1407,7 @@
 			"from_node_title": "Branch",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_11",
-			"to_node_title": "Get Current Level Name\nTarget is BP Save Manager",
+			"to_node_title": "Get Current Level Name",
 			"to_pin": "execute"
 		},
 		{
@@ -1425,7 +1452,7 @@
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_11",
-			"from_node_title": "Get Current Level Name\nTarget is BP Save Manager",
+			"from_node_title": "Get Current Level Name",
 			"from_pin": "then",
 			"to_node_id": "K2Node_VariableSet_7",
 			"to_node_title": "Set SavedLevelRef",
@@ -1470,7 +1497,7 @@
 			"from_node_title": "Get SaveManagerRef",
 			"from_pin": "SaveManagerRef",
 			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Get Current World Mode\nTarget is BP Save Manager",
+			"to_node_title": "Get Current World Mode",
 			"to_pin": "self"
 		},
 		{
@@ -1478,7 +1505,7 @@
 			"from_node_title": "Get SaveManagerRef",
 			"from_pin": "SaveManagerRef",
 			"to_node_id": "K2Node_CallFunction_11",
-			"to_node_title": "Get Current Level Name\nTarget is BP Save Manager",
+			"to_node_title": "Get Current Level Name",
 			"to_pin": "self"
 		},
 		{
@@ -1491,7 +1518,7 @@
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_5",
-			"from_node_title": "Get Current World Mode\nTarget is BP Save Manager",
+			"from_node_title": "Get Current World Mode",
 			"from_pin": "OutWorldMode",
 			"to_node_id": "K2Node_VariableSet_8",
 			"to_node_title": "Set Out World Mode",
@@ -1579,7 +1606,7 @@
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_11",
-			"from_node_title": "Get Current Level Name\nTarget is BP Save Manager",
+			"from_node_title": "Get Current Level Name",
 			"from_pin": "OutLevelName",
 			"to_node_id": "K2Node_VariableSet_7",
 			"to_node_title": "Set SavedLevelRef",

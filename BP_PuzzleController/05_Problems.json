@@ -2,6 +2,18 @@
 	"problems": [
 		{
 			"graph": "EventGraph",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CallFunction_6",
+			"node_title": "Restore Puzzle from Save",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
+		},
+		{
+			"graph": "EventGraph",
 			"problem_type": "CustomEventNameTooGeneric",
 			"details": "Custom event name is too generic and reduces readability.",
 			"node_name": "K2Node_CustomEvent_0",
@@ -35,6 +47,78 @@
 			"why_it_matters": "Repeated GetActorOfClass increases coupling and assumes a stable singleton-like level composition.",
 			"likely_impact": "Makes the Blueprint harder to scale and more fragile across maps or tests.",
 			"suggested_fix": "Resolve references centrally via GameInstance, subsystem, bootstrap actor, or cached refs."
+		},
+		{
+			"graph": "CompleteCurrentPuzzle",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CallFunction_2",
+			"node_title": "Mark Puzzle Completed",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
+		},
+		{
+			"graph": "HandleStepFailureConsequences",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CallFunction_5",
+			"node_title": "Set Current Puzzle Id",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
+		},
+		{
+			"graph": "HandleStepFailureConsequences",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CallFunction_6",
+			"node_title": "Set Current Puzzle Step Index",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
+		},
+		{
+			"graph": "HandlePuzzleCompletionConsequences",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CallFunction_8",
+			"node_title": "Mark Puzzle Completed",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
+		},
+		{
+			"graph": "HandlePuzzleCompletionConsequences",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CallFunction_9",
+			"node_title": "Set Current Puzzle Id",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
+		},
+		{
+			"graph": "HandlePuzzleCompletionConsequences",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CallFunction_10",
+			"node_title": "Set Current Puzzle Step Index",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
 		},
 		{
 			"graph": "HandlePuzzleCompletionConsequences",
@@ -74,15 +158,39 @@
 		},
 		{
 			"graph": "RestorePuzzleFromSave",
-			"problem_type": "PotentialSaveSyncWithoutStateWrite",
-			"details": "Save/sync-related graph does not appear to write any obvious runtime state before syncing.",
+			"problem_type": "FunctionTooLarge",
+			"details": "Graph contains 47 nodes and may be too large.",
 			"node_name": "",
 			"node_title": "",
 			"severity": "medium",
-			"confidence": 0.65000000000000002,
-			"why_it_matters": "A save/sync graph does not appear to write state before syncing.",
-			"likely_impact": "Persisted state may drift from runtime state.",
-			"suggested_fix": "Confirm whether state is already current; otherwise write state before sync."
+			"confidence": 0.93999999999999995,
+			"why_it_matters": "Large graphs are harder to debug, reason about, and safely refactor.",
+			"likely_impact": "Higher chance of regression, duplicated logic, and unreadable flow.",
+			"suggested_fix": "Split the graph into smaller functions by responsibility."
+		},
+		{
+			"graph": "SyncPuzzleProgressToSave",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CallFunction_3",
+			"node_title": "Set Current Puzzle Id",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
+		},
+		{
+			"graph": "SyncPuzzleProgressToSave",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CallFunction_4",
+			"node_title": "Set Current Puzzle Step Index",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
 		},
 		{
 			"graph": "SyncPuzzleProgressToSave",
@@ -95,6 +203,18 @@
 			"why_it_matters": "A save/sync graph does not appear to write state before syncing.",
 			"likely_impact": "Persisted state may drift from runtime state.",
 			"suggested_fix": "Confirm whether state is already current; otherwise write state before sync."
+		},
+		{
+			"graph": "IsPuzzleAlreadyCompleted",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_VariableGet_3",
+			"node_title": "Get DEPRECATED__CompletedPuzzleIds",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
 		},
 		{
 			"graph": "IsPuzzleAlreadyCompleted",

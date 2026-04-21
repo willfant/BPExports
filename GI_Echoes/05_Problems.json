@@ -85,7 +85,7 @@
 			"suggested_fix": "Confirm whether state is already current; otherwise write state before sync."
 		},
 		{
-			"graph": "GetObjectiveManager",
+			"graph": "GetObjectiveManagerRef",
 			"problem_type": "UsesRefWithoutBranchValidationHeuristic",
 			"details": "Reference variables are read but no branch/switch nodes were detected in this graph.",
 			"node_name": "",
@@ -97,7 +97,7 @@
 			"suggested_fix": "Confirm whether the reference is guaranteed valid here; otherwise add IsValid/branch protection."
 		},
 		{
-			"graph": "GetGhostManager",
+			"graph": "GetGhostManagerRef",
 			"problem_type": "UsesRefWithoutBranchValidationHeuristic",
 			"details": "Reference variables are read but no branch/switch nodes were detected in this graph.",
 			"node_name": "",
@@ -167,6 +167,66 @@
 			"why_it_matters": "Large graphs are harder to debug, reason about, and safely refactor.",
 			"likely_impact": "Higher chance of regression, duplicated logic, and unreadable flow.",
 			"suggested_fix": "Split the graph into smaller functions by responsibility."
+		},
+		{
+			"graph": "GetWorldModeSystem",
+			"problem_type": "UsesRefWithoutBranchValidationHeuristic",
+			"details": "Reference variables are read but no branch/switch nodes were detected in this graph.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.59999999999999998,
+			"why_it_matters": "Reference variables appear to be used without obvious branching validation in this graph.",
+			"likely_impact": "May cause null access or fallback bugs if the reference can be invalid.",
+			"suggested_fix": "Confirm whether the reference is guaranteed valid here; otherwise add IsValid/branch protection."
+		},
+		{
+			"graph": "GetPuzzleController",
+			"problem_type": "UsesRefWithoutBranchValidationHeuristic",
+			"details": "Reference variables are read but no branch/switch nodes were detected in this graph.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.59999999999999998,
+			"why_it_matters": "Reference variables appear to be used without obvious branching validation in this graph.",
+			"likely_impact": "May cause null access or fallback bugs if the reference can be invalid.",
+			"suggested_fix": "Confirm whether the reference is guaranteed valid here; otherwise add IsValid/branch protection."
+		},
+		{
+			"graph": "GetTransitionManagerRef",
+			"problem_type": "UsesRefWithoutBranchValidationHeuristic",
+			"details": "Reference variables are read but no branch/switch nodes were detected in this graph.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.59999999999999998,
+			"why_it_matters": "Reference variables appear to be used without obvious branching validation in this graph.",
+			"likely_impact": "May cause null access or fallback bugs if the reference can be invalid.",
+			"suggested_fix": "Confirm whether the reference is guaranteed valid here; otherwise add IsValid/branch protection."
+		},
+		{
+			"graph": "GetAudioManagerRef",
+			"problem_type": "UsesRefWithoutBranchValidationHeuristic",
+			"details": "Reference variables are read but no branch/switch nodes were detected in this graph.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.59999999999999998,
+			"why_it_matters": "Reference variables appear to be used without obvious branching validation in this graph.",
+			"likely_impact": "May cause null access or fallback bugs if the reference can be invalid.",
+			"suggested_fix": "Confirm whether the reference is guaranteed valid here; otherwise add IsValid/branch protection."
+		},
+		{
+			"graph": "GetScareManagerRef",
+			"problem_type": "UsesRefWithoutBranchValidationHeuristic",
+			"details": "Reference variables are read but no branch/switch nodes were detected in this graph.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.59999999999999998,
+			"why_it_matters": "Reference variables appear to be used without obvious branching validation in this graph.",
+			"likely_impact": "May cause null access or fallback bugs if the reference can be invalid.",
+			"suggested_fix": "Confirm whether the reference is guaranteed valid here; otherwise add IsValid/branch protection."
 		}
 	]
 }

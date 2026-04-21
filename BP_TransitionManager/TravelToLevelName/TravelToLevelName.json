@@ -3,7 +3,7 @@
 	"graph_type": "Function",
 	"entry_node_id": "K2Node_FunctionEntry_0",
 	"has_latent_nodes": false,
-	"has_error_nodes": false,
+	"has_error_nodes": true,
 	"has_warning_nodes": false,
 	"locals": [],
 	"returns": [],
@@ -19,7 +19,7 @@
 			"Set Current Level Name",
 			"Set Current Level",
 			"Open Level (by Name)",
-			"Push Manager Data to Save Object",
+			"Build Snapshot from Managers",
 			"Write Save to Disk"
 		],
 		"called_by": [],
@@ -130,13 +130,13 @@
 			"node_name": "K2Node_CallFunction_2",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Set Current World Mode\nTarget is BP Save Manager",
+			"title": "Set Current World Mode",
 			"title_single_line": "Set Current World Mode",
 			"comment": "",
 			"guid": "678c8c88-424b-7792-165a-26a97ad817c3",
 			"x": 544,
 			"y": -176,
-			"has_error": false,
+			"has_error": true,
 			"has_warning": false,
 			"pins": [
 				{
@@ -218,13 +218,13 @@
 			"node_name": "K2Node_CallFunction_3",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Set Current Level Name\nTarget is BP Save Manager",
+			"title": "Set Current Level Name",
 			"title_single_line": "Set Current Level Name",
 			"comment": "",
 			"guid": "4b52dfcd-48ae-9b3d-0cbd-41b5ead469c8",
 			"x": 912,
 			"y": -176,
-			"has_error": false,
+			"has_error": true,
 			"has_warning": false,
 			"pins": [
 				{
@@ -341,13 +341,13 @@
 			"node_name": "K2Node_CallFunction_5",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Set Current Level\nTarget is BP Save Manager",
+			"title": "Set Current Level",
 			"title_single_line": "Set Current Level",
 			"comment": "",
 			"guid": "7472f961-4703-725c-c6ae-6ea842618d52",
 			"x": 1248,
 			"y": -176,
-			"has_error": false,
+			"has_error": true,
 			"has_warning": false,
 			"pins": [
 				{
@@ -685,8 +685,8 @@
 			"node_name": "K2Node_CallFunction_6",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Push Manager Data to Save Object\nTarget is BP Save Manager",
-			"title_single_line": "Push Manager Data to Save Object",
+			"title": "Build Snapshot from Managers\nTarget is BP Save Manager",
+			"title_single_line": "Build Snapshot from Managers",
 			"comment": "",
 			"guid": "8a4bdfd5-412b-17a5-40fc-e89bb719baca",
 			"x": 1536,
@@ -720,6 +720,15 @@
 					"resolved_type": "BP_SaveManager_C",
 					"default_value": "",
 					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
 				}
 			],
 			"target_class": "TravelToLevelName"
@@ -764,6 +773,15 @@
 					"resolved_type": "BP_SaveManager_C",
 					"default_value": "",
 					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
 				}
 			],
 			"target_class": "TravelToLevelName"
@@ -850,26 +868,26 @@
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_2",
-			"from_node_title": "Set Current World Mode\nTarget is BP Save Manager",
+			"from_node_title": "Set Current World Mode",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Set Current Level Name\nTarget is BP Save Manager",
+			"to_node_title": "Set Current Level Name",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Set Current Level Name\nTarget is BP Save Manager",
+			"from_node_title": "Set Current Level Name",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Set Current Level\nTarget is BP Save Manager",
+			"to_node_title": "Set Current Level",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_5",
-			"from_node_title": "Set Current Level\nTarget is BP Save Manager",
+			"from_node_title": "Set Current Level",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Push Manager Data to Save Object\nTarget is BP Save Manager",
+			"to_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"to_pin": "execute"
 		},
 		{
@@ -877,12 +895,12 @@
 			"from_node_title": "Branch",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Set Current World Mode\nTarget is BP Save Manager",
+			"to_node_title": "Set Current World Mode",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_6",
-			"from_node_title": "Push Manager Data to Save Object\nTarget is BP Save Manager",
+			"from_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_7",
 			"to_node_title": "Write Save to Disk\nTarget is BP Save Manager",
@@ -943,7 +961,7 @@
 			"from_node_title": "Get CachedSaveManager",
 			"from_pin": "CachedSaveManager",
 			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Set Current World Mode\nTarget is BP Save Manager",
+			"to_node_title": "Set Current World Mode",
 			"to_pin": "self"
 		},
 		{
@@ -959,7 +977,7 @@
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
 			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Set Current World Mode\nTarget is BP Save Manager",
+			"to_node_title": "Set Current World Mode",
 			"to_pin": "NewWorldMode"
 		},
 		{
@@ -967,7 +985,7 @@
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
 			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Set Current Level Name\nTarget is BP Save Manager",
+			"to_node_title": "Set Current Level Name",
 			"to_pin": "self"
 		},
 		{
@@ -983,7 +1001,7 @@
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
 			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Set Current Level Name\nTarget is BP Save Manager",
+			"to_node_title": "Set Current Level Name",
 			"to_pin": "NewLevelName"
 		},
 		{
@@ -991,7 +1009,7 @@
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
 			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Set Current Level\nTarget is BP Save Manager",
+			"to_node_title": "Set Current Level",
 			"to_pin": "self"
 		},
 		{
@@ -1007,7 +1025,7 @@
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
 			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Set Current Level\nTarget is BP Save Manager",
+			"to_node_title": "Set Current Level",
 			"to_pin": "NewLevelName"
 		},
 		{
@@ -1031,7 +1049,7 @@
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
 			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Push Manager Data to Save Object\nTarget is BP Save Manager",
+			"to_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"to_pin": "self"
 		},
 		{

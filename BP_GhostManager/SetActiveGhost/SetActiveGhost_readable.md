@@ -6,32 +6,39 @@ Function
 ## Purpose
 Auto-generated function summary.
 
+## Returns
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+
 ## Reads
 - CurrentGhostId
 - CurrentGhostProfile
-- DebugEnabled
 - OldGhostId
-- SaveManagerRef
 - bIsRestoringFromSave
-- CurrentGhostState
+- SaveManagerRef
 
 ## Writes
 - CurrentGhostId
 - bHasActiveGhost
 - OldGhostId
+- CurrentGhostProfile
 
 ## Calls
 - Load Ghost Profile by Id
-- To String (Text)
 - Notify Objective Manager for Ghost
 - Spawn Ghost Actor
-- Debug Message
 - Destroy Ghost Actor
 - Set Timer by Event
 - Set Ghost State
+- Debug Info
+- To String (Text)
+- Get Display Name
+- String To Name
 - Is Valid
-- Set Current Ghost State
-- Set Current Ghost Id
+- Request Auto Save
+- Debug Warning
 
 ## Called By
 - EventGraph

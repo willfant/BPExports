@@ -9,17 +9,22 @@ Auto-generated function summary.
 ## Reads
 - CurrentGhostState
 - OldState
-- SaveManagerRef
 - bIsRestoringFromSave
+- SaveManagerRef
 
 ## Writes
-- CurrentGhostState
 - OldState
+- CurrentGhostState
 
 ## Calls
 - Notify Scare Manager Ghost State Changed
+- Debug Info
+- Get Display Name
+- String To Name
+- To String (Text)
 - Is Valid
-- Set Current Ghost State
+- Request Auto Save
+- Debug Warning
 
 ## Called By
 - SetActiveGhost
@@ -30,5 +35,5 @@ Auto-generated function summary.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

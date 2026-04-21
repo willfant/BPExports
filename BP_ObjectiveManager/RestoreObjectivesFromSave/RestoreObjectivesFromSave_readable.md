@@ -6,21 +6,24 @@ Function
 ## Purpose
 Restores runtime state from previously saved or cached data.
 
-## Reads
-- SaveManagerRef
-- bEnableObjectiveDebug
+## Returns
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
 
 ## Writes
-- CurrentObjectiveId
+- CurrentQuestId
 - ObjectiveStates
 - bObjectivesRestoredFromSave
+- CurrentObjectiveId
 
 ## Calls
-- Debug
-- Get Current Save Data
 - Find Current Active Objective from States
 - Broadcast Current Objective Changed
-- To String (Text)
+- Debug Info
+- Get Display Name
+- String To Name
+- Debug Warning
 
 ## Called By
 - EventGraph

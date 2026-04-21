@@ -31,5 +31,5 @@ Completes state, runtime flow, or progression.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: No
+- Has error nodes: Yes
 - Has warning nodes: No

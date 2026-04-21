@@ -12,7 +12,6 @@ Provides debug or developer-facing behavior.
 ## Called By
 - StartObjective
 - CompleteObjective
-- RestoreObjectivesFromSave
 - InitializeObjectivesForGhost
 
 ## Branch Points

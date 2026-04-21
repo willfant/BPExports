@@ -15,7 +15,7 @@ Auto-generated function summary.
 - Set Current Level Name
 - Open Level (by Object Reference)
 - Set Current Level
-- Push Manager Data to Save Object
+- Build Snapshot from Managers
 - Write Save to Disk
 
 ## Called By
@@ -26,5 +26,5 @@ Auto-generated function summary.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: No
+- Has error nodes: Yes
 - Has warning nodes: No

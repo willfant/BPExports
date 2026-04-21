@@ -14,9 +14,6 @@ Auto-generated function summary.
 - CurrentGhostId
 - OldGhostId
 
-## Called By
-- EventGraph
-
 ## Notes
 - Has latent nodes: No
 - Has error nodes: No

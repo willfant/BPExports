@@ -6,23 +6,29 @@
 	"has_error_nodes": false,
 	"has_warning_nodes": false,
 	"locals": [],
-	"returns": [],
+	"returns": [
+		"bSuccess (Boolean)",
+		"bSuccess (Boolean)",
+		"bSuccess (Boolean)"
+	],
 	"summary":
 	{
 		"purpose": "Restores runtime state from previously saved or cached data.",
 		"reads_variables": [
-			"SaveManagerRef",
-			"bDebugEnabled"
+			"CurrentWorldMode",
+			"OldWorldModeLocal"
 		],
 		"writes_variables": [
+			"OldWorldModeLocal",
 			"bIsRestoringFromSave "
 		],
 		"calls": [
-			"Is Valid",
 			"Set World Mode",
-			"Debug Message",
-			"Get Current World Mode",
-			"To String (Text)"
+			"Get World Mode",
+			"Debug Critical",
+			"Get Display Name",
+			"String To Name",
+			"Debug Info"
 		],
 		"called_by": [
 			"EventGraph"
@@ -54,21 +60,100 @@
 					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
+				},
+				{
+					"pin_name": "SavedWorldMode",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 2
 				}
 			],
 			"target_class": "RestoreWorldModeFromSave"
 		},
 		{
-			"node_id": "K2Node_CallDelegate_0",
-			"node_name": "K2Node_CallDelegate_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_CallDelegate",
-			"title": "Call On World Mode Changed",
-			"title_single_line": "Call On World Mode Changed",
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "f87fa2d0-4f6d-16ec-c3c1-309df7be61e3",
-			"x": 1344,
-			"y": 32,
+			"guid": "b3f67461-461c-3077-8c80-a39fe1e896f5",
+			"x": 176,
+			"y": -288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentWorldMode",
+			"title_single_line": "Get CurrentWorldMode",
+			"comment": "",
+			"guid": "9ed3acf1-405b-3f2d-2894-599420223a45",
+			"x": -464,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentWorldMode",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_WorldModeSystem_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set OldWorldModeLocal",
+			"title_single_line": "Set OldWorldModeLocal",
+			"comment": "",
+			"guid": "1fe7a2c3-4d1b-066a-294d-609f9010db63",
+			"x": -240,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -91,125 +176,37 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_WorldModeSystem_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "OldWorldMode",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "NewWorldMode",
+					"pin_name": "OldWorldModeLocal",
 					"direction": "Input",
 					"category": "byte",
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
 					"default_value": "NewEnumerator0",
 					"linked_count": 1
-				}
-			],
-			"target_class": "RestoreWorldModeFromSave"
-		},
-		{
-			"node_id": "K2Node_VariableGet_0",
-			"node_name": "K2Node_VariableGet_0",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get SaveManagerRef",
-			"title_single_line": "Get SaveManagerRef",
-			"comment": "",
-			"guid": "5661a473-472f-9e89-e929-6ba8f7cc7507",
-			"x": -587,
-			"y": 242,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "SaveManagerRef",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 2
 				},
 				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "byte",
 					"subcategory": "None",
-					"resolved_type": "BP_WorldModeSystem_C",
-					"default_value": "",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
 					"linked_count": 0
 				}
 			],
 			"target_class": "RestoreWorldModeFromSave"
 		},
 		{
-			"node_id": "K2Node_CallFunction_0",
-			"node_name": "K2Node_CallFunction_0",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Is Valid",
-			"title_single_line": "Is Valid",
+			"node_id": "K2Node_VariableSet_3",
+			"node_name": "K2Node_VariableSet_3",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bIsRestoringFromSave ",
+			"title_single_line": "Set bIsRestoringFromSave ",
 			"comment": "",
-			"guid": "36c70623-4307-bd9f-d07d-52a5e7017320",
-			"x": -395,
-			"y": 178,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "KismetSystemLibrary",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Object",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				}
-			],
-			"target_class": "RestoreWorldModeFromSave"
-		},
-		{
-			"node_id": "K2Node_IfThenElse_0",
-			"node_name": "K2Node_IfThenElse_0",
-			"node_kind": "Branch",
-			"ue_class": "K2Node_IfThenElse",
-			"title": "Branch",
-			"title_single_line": "Branch",
-			"comment": "",
-			"guid": "1852b501-4dad-074b-04c2-5fa14eed4db4",
-			"x": -80,
-			"y": 0,
+			"guid": "6bb8ab26-45e1-984b-3665-04a72dc330c9",
+			"x": 112,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -223,45 +220,54 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Condition",
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsRestoringFromSave ",
 					"direction": "Input",
 					"category": "bool",
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "true",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "exec",
+					"resolved_type": "BP_WorldModeSystem_C",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
-					"pin_name": "else",
+					"pin_name": "Output_Get",
 					"direction": "Output",
-					"category": "exec",
+					"category": "bool",
 					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
 				}
 			],
 			"target_class": "RestoreWorldModeFromSave"
 		},
 		{
-			"node_id": "K2Node_CallFunction_2",
-			"node_name": "K2Node_CallFunction_2",
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Set World Mode\nTarget is BP World Mode System",
 			"title_single_line": "Set World Mode",
 			"comment": "",
-			"guid": "6c3e0bbe-4564-78ed-9d12-0aa931d434c8",
-			"x": 704,
+			"guid": "9c19f910-4102-e172-a0b0-c5b750376a9b",
+			"x": 480,
 			"y": -16,
 			"has_error": false,
 			"has_warning": false,
@@ -306,16 +312,51 @@
 			"target_class": "RestoreWorldModeFromSave"
 		},
 		{
-			"node_id": "K2Node_CallFunction_4",
-			"node_name": "K2Node_CallFunction_4",
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "5a014613-48bc-8f61-b551-51ac25e15334",
+			"x": -320,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_6",
+			"node_name": "K2Node_CallFunction_6",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
+			"title": "Get World Mode\nTarget is BP World Mode System",
+			"title_single_line": "Get World Mode",
 			"comment": "",
-			"guid": "63330d76-4f63-45b6-cce5-4793490ec572",
-			"x": 992,
-			"y": 336,
+			"guid": "a7b442aa-4f87-c00f-63de-62af8488e3e8",
+			"x": 800,
+			"y": -16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -335,7 +376,254 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
 					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldMode",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_EnumEquality_0",
+			"node_name": "K2Node_EnumEquality_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumEquality",
+			"title": "Equal (Enum)",
+			"title_single_line": "Equal (Enum)",
+			"comment": "",
+			"guid": "85395fbe-4c84-68a9-4976-9aa25d2d1aa5",
+			"x": 1184,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "41584154-4e4a-981f-f56a-8594196eb4e4",
+			"x": -272,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "d52247b0-4056-a2c4-31f1-0fa5af9c8b1a",
+			"x": 1440,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_VariableSet_5",
+			"node_name": "K2Node_VariableSet_5",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bIsRestoringFromSave ",
+			"title_single_line": "Set bIsRestoringFromSave ",
+			"comment": "",
+			"guid": "14d940e1-48d3-6753-be4f-54af6af0afac",
+			"x": 1776,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsRestoringFromSave ",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_WorldModeSystem_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_7",
+			"node_name": "K2Node_CallFunction_7",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Critical",
+			"title_single_line": "Debug Critical",
+			"comment": "",
+			"guid": "5343c335-4c73-f3da-c08f-e397bdbee03e",
+			"x": 2224,
+			"y": 256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -361,16 +649,7 @@
 					"category": "byte",
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator6",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator2",
+					"default_value": "NewEnumerator3",
 					"linked_count": 0
 				},
 				{
@@ -379,8 +658,8 @@
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
-					"default_value": "BP_WorldModeSystem",
-					"linked_count": 0
+					"default_value": "None",
+					"linked_count": 1
 				},
 				{
 					"pin_name": "Message",
@@ -388,35 +667,8 @@
 					"category": "string",
 					"subcategory": "None",
 					"resolved_type": "String",
-					"default_value": "[WorldModeSystem] RestoreWorldModeFromSave failed: SaveManagerRef invalid",
+					"default_value": "[WorldModeSystem] RestoreWorldModeFromSave failed: current world mode does not match saved world mode",
 					"linked_count": 0
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "5.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
 				},
 				{
 					"pin_name": "__WorldContext",
@@ -431,53 +683,203 @@
 			"target_class": "RestoreWorldModeFromSave"
 		},
 		{
-			"node_id": "K2Node_Self_1",
-			"node_name": "K2Node_Self_1",
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
 			"node_kind": "SelfReference",
 			"ue_class": "K2Node_Self",
 			"title": "Self-Reference",
 			"title_single_line": "Self-Reference",
 			"comment": "",
-			"guid": "5fe4a9ca-41c1-63fb-b374-03906beccda7",
-			"x": 480,
+			"guid": "80b1baa0-46ca-ba4f-f36b-4e9558a7afa0",
+			"x": 1792,
+			"y": 320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Display Name",
+			"title_single_line": "Get Display Name",
+			"comment": "",
+			"guid": "884f6c04-4993-982e-1218-1c9f25d1255a",
+			"x": 1984,
+			"y": 352,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "String To Name",
+			"title_single_line": "String To Name",
+			"comment": "",
+			"guid": "d1c02e9e-4897-94fe-73d1-9999bf43fb0f",
+			"x": 2032,
 			"y": 368,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
 					"pin_name": "self",
-					"direction": "Output",
+					"direction": "Input",
 					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetStringLibrary",
 					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InString",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
 			"target_class": "RestoreWorldModeFromSave"
 		},
 		{
-			"node_id": "K2Node_VariableGet_1",
-			"node_name": "K2Node_VariableGet_1",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bDebugEnabled",
-			"title_single_line": "Get bDebugEnabled",
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "79a7d6e2-49c8-dd5b-2b9f-91a63e521f97",
-			"x": 528,
-			"y": 608,
+			"guid": "f81399f4-4695-ddae-ce9d-2eaf73e66b86",
+			"x": 2832,
+			"y": 256,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "bDebugEnabled",
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_VariableSet_4",
+			"node_name": "K2Node_VariableSet_4",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bIsRestoringFromSave ",
+			"title_single_line": "Set bIsRestoringFromSave ",
+			"comment": "",
+			"guid": "2bdde7c6-4341-7b14-c4e8-898ddfd3b463",
+			"x": 1776,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsRestoringFromSave ",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
 					"direction": "Output",
 					"category": "bool",
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "false",
-					"linked_count": 2
+					"linked_count": 0
 				},
 				{
 					"pin_name": "self",
@@ -492,179 +894,143 @@
 			"target_class": "RestoreWorldModeFromSave"
 		},
 		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Get Current World Mode\nTarget is BP Save Manager",
-			"title_single_line": "Get Current World Mode",
+			"node_id": "K2Node_CallDelegate_1",
+			"node_name": "K2Node_CallDelegate_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallDelegate",
+			"title": "Call On World Mode Changed",
+			"title_single_line": "Call On World Mode Changed",
 			"comment": "",
-			"guid": "ea3111a3-4d54-972a-9b21-69961ea3022f",
-			"x": 5,
-			"y": 210,
+			"guid": "3c92e49d-4e59-7d79-de3d-4482710d03ab",
+			"x": 2208,
+			"y": -128,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
 				{
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
+					"resolved_type": "BP_WorldModeSystem_C",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
-					"pin_name": "OutWorldMode",
-					"direction": "Output",
+					"pin_name": "OldWorldMode",
+					"direction": "Input",
 					"category": "byte",
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
 					"default_value": "NewEnumerator0",
-					"linked_count": 3
+					"linked_count": 1
+				},
+				{
+					"pin_name": "NewWorldMode",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
 				}
 			],
 			"target_class": "RestoreWorldModeFromSave"
 		},
 		{
-			"node_id": "K2Node_VariableSet_1",
-			"node_name": "K2Node_VariableSet_1",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set bIsRestoringFromSave ",
-			"title_single_line": "Set bIsRestoringFromSave ",
+			"node_id": "K2Node_VariableGet_3",
+			"node_name": "K2Node_VariableGet_3",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get OldWorldModeLocal",
+			"title_single_line": "Get OldWorldModeLocal",
 			"comment": "",
-			"guid": "b8b94f55-4eab-f479-0687-41a109045fb4",
-			"x": 272,
-			"y": 16,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bIsRestoringFromSave ",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_WorldModeSystem_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "RestoreWorldModeFromSave"
-		},
-		{
-			"node_id": "K2Node_VariableSet_2",
-			"node_name": "K2Node_VariableSet_2",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set bIsRestoringFromSave ",
-			"title_single_line": "Set bIsRestoringFromSave ",
-			"comment": "",
-			"guid": "efdfaf9f-42b6-6d37-91cb-428fe44f55e2",
-			"x": 1008,
-			"y": 48,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bIsRestoringFromSave ",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_WorldModeSystem_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "RestoreWorldModeFromSave"
-		},
-		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
-			"comment": "",
-			"guid": "904a6697-4dfb-49ca-cafa-10b927d19b62",
-			"x": 2320,
+			"guid": "ea366fc8-4941-4d86-6c38-e89a181e7c2e",
+			"x": 2240,
 			"y": 32,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
+					"pin_name": "OldWorldModeLocal",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_Knot_2",
+			"node_name": "K2Node_Knot_2",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "b1d0c384-4443-9600-9570-e383c2318d65",
+			"x": -304,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "9a3dcac5-4707-0145-27b1-bdb5025a1672",
+			"x": 3376,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
 					"pin_name": "execute",
 					"direction": "Input",
 					"category": "exec",
@@ -680,7 +1046,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -706,16 +1072,7 @@
 					"category": "byte",
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator6",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator2",
+					"default_value": "NewEnumerator3",
 					"linked_count": 0
 				},
 				{
@@ -724,8 +1081,8 @@
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
-					"default_value": "BP_WorldModeSystem",
-					"linked_count": 0
+					"default_value": "None",
+					"linked_count": 1
 				},
 				{
 					"pin_name": "Message",
@@ -733,35 +1090,8 @@
 					"category": "string",
 					"subcategory": "None",
 					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "5.000000",
+					"default_value": "[WorldModeSystem] RestoreWorldModeFromSave applied saved world mode successfully",
 					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
 				},
 				{
 					"pin_name": "__WorldContext",
@@ -776,16 +1106,16 @@
 			"target_class": "RestoreWorldModeFromSave"
 		},
 		{
-			"node_id": "K2Node_Self_0",
-			"node_name": "K2Node_Self_0",
+			"node_id": "K2Node_Self_3",
+			"node_name": "K2Node_Self_3",
 			"node_kind": "SelfReference",
 			"ue_class": "K2Node_Self",
 			"title": "Self-Reference",
 			"title_single_line": "Self-Reference",
 			"comment": "",
-			"guid": "0c217f6b-44dc-86f3-803e-1eba05eb419f",
-			"x": 1808,
-			"y": 64,
+			"guid": "48f3e61b-4966-3fdd-f998-159b28478ea0",
+			"x": 3056,
+			"y": -64,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -796,165 +1126,130 @@
 					"subcategory": "self",
 					"resolved_type": "object",
 					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Display Name",
+			"title_single_line": "Get Display Name",
+			"comment": "",
+			"guid": "ac05877b-4cc6-2d8a-5c9d-5f9cc827cae5",
+			"x": 3040,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
 					"linked_count": 1
 				}
 			],
 			"target_class": "RestoreWorldModeFromSave"
 		},
 		{
-			"node_id": "K2Node_VariableGet_15",
-			"node_name": "K2Node_VariableGet_15",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bDebugEnabled",
-			"title_single_line": "Get bDebugEnabled",
+			"node_id": "K2Node_CallFunction_12",
+			"node_name": "K2Node_CallFunction_12",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "String To Name",
+			"title_single_line": "String To Name",
 			"comment": "",
-			"guid": "e03627f3-4ef1-4b6c-09d7-c5be35e4f02d",
-			"x": 1856,
-			"y": 304,
+			"guid": "02a1bcd3-4d1b-0125-5a13-feb514ae8791",
+			"x": 3136,
+			"y": 0,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "bDebugEnabled",
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetStringLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InString",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
 					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RestoreWorldModeFromSave"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "d5202f2f-4d9e-c9f6-4ed7-059b8295dd0f",
+			"x": 4080,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Input",
 					"category": "bool",
 					"subcategory": "None",
 					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_WorldModeSystem_C",
-					"default_value": "",
+					"default_value": "true",
 					"linked_count": 0
-				}
-			],
-			"target_class": "RestoreWorldModeFromSave"
-		},
-		{
-			"node_id": "K2Node_FormatText_0",
-			"node_name": "K2Node_FormatText_0",
-			"node_kind": "FormatText",
-			"ue_class": "K2Node_FormatText",
-			"title": "Format Text",
-			"title_single_line": "Format Text",
-			"comment": "",
-			"guid": "b65f0350-40ad-d7dc-8c9a-788dce97c0ec",
-			"x": 1728,
-			"y": 448,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "Format",
-					"direction": "Input",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Result",
-					"direction": "Output",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "New",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "RestoreWorldModeFromSave"
-		},
-		{
-			"node_id": "K2Node_CallFunction_70",
-			"node_name": "K2Node_CallFunction_70",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "To String (Text)",
-			"title_single_line": "To String (Text)",
-			"comment": "",
-			"guid": "8bec09e2-4a85-0683-fc02-d5b9c74c1d22",
-			"x": 2080,
-			"y": 480,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "KismetTextLibrary",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "InText",
-					"direction": "Input",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "RestoreWorldModeFromSave"
-		},
-		{
-			"node_id": "K2Node_GetEnumeratorNameAsString_0",
-			"node_name": "K2Node_GetEnumeratorNameAsString_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_GetEnumeratorNameAsString",
-			"title": "Enum to String",
-			"title_single_line": "Enum to String",
-			"comment": "",
-			"guid": "6bad7122-429f-2315-0189-52a6109a7996",
-			"x": 1344,
-			"y": 272,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "Enumerator",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
 				}
 			],
 			"target_class": "RestoreWorldModeFromSave"
@@ -965,179 +1260,243 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "RestoreWorldModeFromSave",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_0",
-			"to_node_title": "Branch",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set OldWorldModeLocal",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallDelegate_0",
-			"from_node_title": "Call On World Mode Changed",
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set OldWorldModeLocal",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_IfThenElse_0",
-			"from_node_title": "Branch",
-			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_id": "K2Node_VariableSet_3",
 			"to_node_title": "Set bIsRestoringFromSave ",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_0",
-			"from_node_title": "Branch",
-			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_2",
-			"from_node_title": "Set World Mode\nTarget is BP World Mode System",
-			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_2",
-			"to_node_title": "Set bIsRestoringFromSave ",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_id": "K2Node_VariableSet_3",
 			"from_node_title": "Set bIsRestoringFromSave ",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_id": "K2Node_CallFunction_5",
 			"to_node_title": "Set World Mode\nTarget is BP World Mode System",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Set World Mode\nTarget is BP World Mode System",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Get World Mode\nTarget is BP World Mode System",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_6",
+			"from_node_title": "Get World Mode\nTarget is BP World Mode System",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_4",
+			"to_node_title": "Set bIsRestoringFromSave ",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_VariableSet_5",
+			"to_node_title": "Set bIsRestoringFromSave ",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_5",
 			"from_node_title": "Set bIsRestoringFromSave ",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallDelegate_0",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Debug Critical",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_7",
+			"from_node_title": "Debug Critical",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_4",
+			"from_node_title": "Set bIsRestoringFromSave ",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallDelegate_1",
 			"to_node_title": "Call On World Mode Changed",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallDelegate_1",
+			"from_node_title": "Call On World Mode Changed",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "Debug Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
 	],
 	"data_links": [
 		{
-			"from_node_id": "K2Node_VariableGet_0",
-			"from_node_title": "Get SaveManagerRef",
-			"from_pin": "SaveManagerRef",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Is Valid",
-			"to_pin": "Object"
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "RestoreWorldModeFromSave",
+			"from_pin": "SavedWorldMode",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_0",
-			"from_node_title": "Get SaveManagerRef",
-			"from_pin": "SaveManagerRef",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Get Current World Mode\nTarget is BP Save Manager",
-			"to_pin": "self"
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "RestoreWorldModeFromSave",
+			"from_pin": "SavedWorldMode",
+			"to_node_id": "K2Node_Knot_2",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_0",
-			"from_node_title": "Is Valid",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_0",
-			"to_node_title": "Branch",
-			"to_pin": "Condition"
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get CurrentWorldMode",
+			"from_pin": "CurrentWorldMode",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set OldWorldModeLocal",
+			"to_pin": "OldWorldModeLocal"
 		},
 		{
-			"from_node_id": "K2Node_Self_1",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
-			"to_pin": "WorldContextObject"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_1",
-			"from_node_title": "Get bDebugEnabled",
-			"from_pin": "bDebugEnabled",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_1",
-			"from_node_title": "Get bDebugEnabled",
-			"from_pin": "bDebugEnabled",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Get Current World Mode\nTarget is BP Save Manager",
-			"from_pin": "OutWorldMode",
-			"to_node_id": "K2Node_CallFunction_2",
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_5",
 			"to_node_title": "Set World Mode\nTarget is BP World Mode System",
 			"to_pin": "NewWorldMode"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Get Current World Mode\nTarget is BP Save Manager",
-			"from_pin": "OutWorldMode",
-			"to_node_id": "K2Node_CallDelegate_0",
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_6",
+			"from_node_title": "Get World Mode\nTarget is BP World Mode System",
+			"from_pin": "WorldMode",
+			"to_node_id": "K2Node_EnumEquality_0",
+			"to_node_title": "Equal (Enum)",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_EnumEquality_0",
+			"from_node_title": "Equal (Enum)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_EnumEquality_0",
+			"to_node_title": "Equal (Enum)",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Debug Critical",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Get Display Name",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Get Display Name",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "String To Name",
+			"to_pin": "InString"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_9",
+			"from_node_title": "String To Name",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Debug Critical",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_3",
+			"from_node_title": "Get OldWorldModeLocal",
+			"from_pin": "OldWorldModeLocal",
+			"to_node_id": "K2Node_CallDelegate_1",
+			"to_node_title": "Call On World Mode Changed",
+			"to_pin": "OldWorldMode"
+		},
+		{
+			"from_node_id": "K2Node_Knot_2",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallDelegate_1",
 			"to_node_title": "Call On World Mode Changed",
 			"to_pin": "NewWorldMode"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Get Current World Mode\nTarget is BP Save Manager",
-			"from_pin": "OutWorldMode",
-			"to_node_id": "K2Node_GetEnumeratorNameAsString_0",
-			"to_node_title": "Enum to String",
-			"to_pin": "Enumerator"
-		},
-		{
-			"from_node_id": "K2Node_Self_0",
+			"from_node_id": "K2Node_Self_3",
 			"from_node_title": "Self-Reference",
 			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Info",
 			"to_pin": "WorldContextObject"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_15",
-			"from_node_title": "Get bDebugEnabled",
-			"from_pin": "bDebugEnabled",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
+			"from_node_id": "K2Node_Self_3",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Get Display Name",
+			"to_pin": "Object"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_15",
-			"from_node_title": "Get bDebugEnabled",
-			"from_pin": "bDebugEnabled",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
-		},
-		{
-			"from_node_id": "K2Node_FormatText_0",
-			"from_node_title": "Format Text",
-			"from_pin": "Result",
-			"to_node_id": "K2Node_CallFunction_70",
-			"to_node_title": "To String (Text)",
-			"to_pin": "InText"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_70",
-			"from_node_title": "To String (Text)",
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Get Display Name",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "Message"
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "String To Name",
+			"to_pin": "InString"
 		},
 		{
-			"from_node_id": "K2Node_GetEnumeratorNameAsString_0",
-			"from_node_title": "Enum to String",
+			"from_node_id": "K2Node_CallFunction_12",
+			"from_node_title": "String To Name",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_FormatText_0",
-			"to_node_title": "Format Text",
-			"to_pin": "New"
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

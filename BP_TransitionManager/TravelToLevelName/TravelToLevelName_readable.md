@@ -14,7 +14,7 @@ Auto-generated function summary.
 - Set Current Level Name
 - Set Current Level
 - Open Level (by Name)
-- Push Manager Data to Save Object
+- Build Snapshot from Managers
 - Write Save to Disk
 
 ## Branch Points
@@ -22,5 +22,5 @@ Auto-generated function summary.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: No
+- Has error nodes: Yes
 - Has warning nodes: No

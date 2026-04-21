@@ -7,7 +7,6 @@ EventGraph
 Main runtime entry graph for this Blueprint.
 
 ## Reads
-- SaveManagerRef
 - DefaultGhostId
 - CurrentGhostId
 
@@ -19,7 +18,6 @@ Main runtime entry graph for this Blueprint.
 - Get Game Instance
 - Notify Scare Manager for Ghost
 - Restore Ghost from Save
-- Get Current Ghost Id
 - Set Active Ghost
 
 ## Branch Points

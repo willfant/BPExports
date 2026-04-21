@@ -11,7 +11,6 @@
 	{
 		"purpose": "Main runtime entry graph for this Blueprint.",
 		"reads_variables": [
-			"SaveManagerRef",
 			"DefaultGhostId",
 			"CurrentGhostId"
 		],
@@ -23,7 +22,6 @@
 			"Get Game Instance",
 			"Notify Scare Manager for Ghost",
 			"Restore Ghost from Save",
-			"Get Current Ghost Id",
 			"Set Active Ghost"
 		],
 		"called_by": [],
@@ -433,6 +431,42 @@
 					"resolved_type": "object",
 					"default_value": "",
 					"linked_count": 0
+				},
+				{
+					"pin_name": "SavedGhostId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SavedGhostState",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SavedClearedGhostIds",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
 				}
 			],
 			"target_class": "EventGraph"
@@ -580,129 +614,6 @@
 			"target_class": "EventGraph"
 		},
 		{
-			"node_id": "K2Node_VariableGet_2",
-			"node_name": "K2Node_VariableGet_2",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get SaveManagerRef",
-			"title_single_line": "Get SaveManagerRef",
-			"comment": "",
-			"guid": "78dc31c7-40cc-aaa2-b83e-788bdc40afb1",
-			"x": 944,
-			"y": 208,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "SaveManagerRef",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_GhostManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_CallFunction_23",
-			"node_name": "K2Node_CallFunction_23",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Get Current Ghost Id\nTarget is BP Save Manager",
-			"title_single_line": "Get Current Ghost Id",
-			"comment": "",
-			"guid": "e53ce7f7-4111-beaf-88a9-9b829483be5f",
-			"x": 1168,
-			"y": 176,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutGhostId",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_PromotableOperator_0",
-			"node_name": "K2Node_PromotableOperator_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_PromotableOperator",
-			"title": "Not Equal (Name)",
-			"title_single_line": "Not Equal (Name)",
-			"comment": "",
-			"guid": "7b1f0388-4a8d-308f-79f5-a5989c1d8be9",
-			"x": 1424,
-			"y": 176,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "A",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "B",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ErrorTolerance",
-					"direction": "Input",
-					"category": "None",
-					"subcategory": "None",
-					"resolved_type": "None",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
 			"node_id": "K2Node_IfThenElse_0",
 			"node_name": "K2Node_IfThenElse_0",
 			"node_kind": "Branch",
@@ -732,7 +643,7 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "true",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "then",
@@ -804,6 +715,15 @@
 					"resolved_type": "Name",
 					"default_value": "None",
 					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
 				}
 			],
 			"target_class": "EventGraph"
@@ -1099,30 +1019,6 @@
 			"to_node_id": "K2Node_VariableSet_0",
 			"to_node_title": "Set GhostManagerRef",
 			"to_pin": "GhostManagerRef"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_2",
-			"from_node_title": "Get SaveManagerRef",
-			"from_pin": "SaveManagerRef",
-			"to_node_id": "K2Node_CallFunction_23",
-			"to_node_title": "Get Current Ghost Id\nTarget is BP Save Manager",
-			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_23",
-			"from_node_title": "Get Current Ghost Id\nTarget is BP Save Manager",
-			"from_pin": "OutGhostId",
-			"to_node_id": "K2Node_PromotableOperator_0",
-			"to_node_title": "Not Equal (Name)",
-			"to_pin": "A"
-		},
-		{
-			"from_node_id": "K2Node_PromotableOperator_0",
-			"from_node_title": "Not Equal (Name)",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_0",
-			"to_node_title": "Branch",
-			"to_pin": "Condition"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_99",

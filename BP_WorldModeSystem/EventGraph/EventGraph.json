@@ -3,7 +3,7 @@
 	"graph_type": "EventGraph",
 	"entry_node_id": "K2Node_Event_0",
 	"has_latent_nodes": true,
-	"has_error_nodes": false,
+	"has_error_nodes": true,
 	"has_warning_nodes": false,
 	"locals": [],
 	"returns": [],
@@ -565,6 +565,24 @@
 					"resolved_type": "object",
 					"default_value": "",
 					"linked_count": 0
+				},
+				{
+					"pin_name": "SavedWorldMode",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
 				}
 			],
 			"target_class": "EventGraph"
@@ -609,13 +627,13 @@
 			"node_name": "K2Node_CallFunction_8",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Get Current World Mode\nTarget is BP Save Manager",
+			"title": "Get Current World Mode",
 			"title_single_line": "Get Current World Mode",
 			"comment": "",
 			"guid": "7fc91258-4551-8f70-9adb-90a6c34ed2f6",
 			"x": 208,
 			"y": 208,
-			"has_error": false,
+			"has_error": true,
 			"has_warning": false,
 			"pins": [
 				{
@@ -981,7 +999,7 @@
 			"from_node_title": "Get SaveManagerRef",
 			"from_pin": "SaveManagerRef",
 			"to_node_id": "K2Node_CallFunction_8",
-			"to_node_title": "Get Current World Mode\nTarget is BP Save Manager",
+			"to_node_title": "Get Current World Mode",
 			"to_pin": "self"
 		},
 		{
@@ -994,7 +1012,7 @@
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_8",
-			"from_node_title": "Get Current World Mode\nTarget is BP Save Manager",
+			"from_node_title": "Get Current World Mode",
 			"from_pin": "OutWorldMode",
 			"to_node_id": "K2Node_CallFunction_9",
 			"to_node_title": "Set World Mode\nTarget is BP World Mode System",

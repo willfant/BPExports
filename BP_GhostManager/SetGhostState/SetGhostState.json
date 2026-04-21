@@ -3,7 +3,7 @@
 	"graph_type": "Function",
 	"entry_node_id": "K2Node_FunctionEntry_0",
 	"has_latent_nodes": false,
-	"has_error_nodes": true,
+	"has_error_nodes": false,
 	"has_warning_nodes": false,
 	"locals": [],
 	"returns": [],
@@ -13,17 +13,22 @@
 		"reads_variables": [
 			"CurrentGhostState",
 			"OldState",
-			"SaveManagerRef",
-			"bIsRestoringFromSave"
+			"bIsRestoringFromSave",
+			"SaveManagerRef"
 		],
 		"writes_variables": [
-			"CurrentGhostState",
-			"OldState"
+			"OldState",
+			"CurrentGhostState"
 		],
 		"calls": [
 			"Notify Scare Manager Ghost State Changed",
+			"Debug Info",
+			"Get Display Name",
+			"String To Name",
+			"To String (Text)",
 			"Is Valid",
-			"Set Current Ghost State"
+			"Request Auto Save",
+			"Debug Warning"
 		],
 		"called_by": [
 			"SetActiveGhost",
@@ -70,16 +75,262 @@
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_VariableSet_0",
-			"node_name": "K2Node_VariableSet_0",
+			"node_id": "K2Node_VariableGet_7",
+			"node_name": "K2Node_VariableGet_7",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostState",
+			"title_single_line": "Get CurrentGhostState",
+			"comment": "",
+			"guid": "a0ec88ad-4b7e-b109-da73-b98bf9ca7690",
+			"x": -928,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostState",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_EnumEquality_1",
+			"node_name": "K2Node_EnumEquality_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumEquality",
+			"title": "Equal (Enum)",
+			"title_single_line": "Equal (Enum)",
+			"comment": "",
+			"guid": "b323f453-4987-dc33-cc28-a895607a0cf2",
+			"x": -576,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_6",
+			"node_name": "K2Node_IfThenElse_6",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "7803f279-46aa-cb01-4d95-17bb9eacdc2f",
+			"x": -304,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_5",
+			"node_name": "K2Node_FunctionResult_5",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "8b4399da-44f5-64dd-5a9d-3483eca992e6",
+			"x": 0,
+			"y": -224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_VariableGet_6",
+			"node_name": "K2Node_VariableGet_6",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostState",
+			"title_single_line": "Get CurrentGhostState",
+			"comment": "",
+			"guid": "03e02aa5-4f4c-1af2-a1a9-288016e65d71",
+			"x": -288,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostState",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_VariableSet_4",
+			"node_name": "K2Node_VariableSet_4",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set OldState",
+			"title_single_line": "Set OldState",
+			"comment": "",
+			"guid": "3a2d6f5e-4b4a-823e-032e-b783ec32ad58",
+			"x": -48,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OldState",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_VariableSet_5",
+			"node_name": "K2Node_VariableSet_5",
 			"node_kind": "VariableSet",
 			"ue_class": "K2Node_VariableSet",
 			"title": "Set CurrentGhostState",
 			"title_single_line": "Set CurrentGhostState",
 			"comment": "",
-			"guid": "87fe1ced-47ff-dc3f-aa4f-7e9a8a7d5c19",
-			"x": 96,
-			"y": 48,
+			"guid": "ac52029f-48b5-0845-74e4-7fae051939e7",
+			"x": 272,
+			"y": 144,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -111,15 +362,6 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				},
-				{
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
@@ -127,22 +369,66 @@
 					"resolved_type": "BP_GhostManager_C",
 					"default_value": "",
 					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
 				}
 			],
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_CallDelegate_0",
-			"node_name": "K2Node_CallDelegate_0",
+			"node_id": "K2Node_Knot_6",
+			"node_name": "K2Node_Knot_6",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "9ebffe42-44cc-7ce4-1dfb-b38b6dc78dbd",
+			"x": -720,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_CallDelegate_3",
+			"node_name": "K2Node_CallDelegate_3",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_CallDelegate",
 			"title": "Call On Ghost State Changed",
 			"title_single_line": "Call On Ghost State Changed",
 			"comment": "",
-			"guid": "33e68fc1-4a03-205a-291c-a5b6c3b3b144",
-			"x": 672,
-			"y": 32,
-			"has_error": true,
+			"guid": "b7c6d9ed-4778-db0a-3c6b-30a381a4d81d",
+			"x": 608,
+			"y": 128,
+			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
@@ -194,16 +480,16 @@
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_Knot_0",
-			"node_name": "K2Node_Knot_0",
+			"node_id": "K2Node_Knot_7",
+			"node_name": "K2Node_Knot_7",
 			"node_kind": "Reroute",
 			"ue_class": "K2Node_Knot",
 			"title": "Reroute Node",
 			"title_single_line": "Reroute Node",
 			"comment": "",
-			"guid": "33b8feb9-4faa-f7db-14ed-cdbbdbdbdfb0",
-			"x": 512,
-			"y": 272,
+			"guid": "a4426263-4496-60a1-8a59-588e76f8509c",
+			"x": -656,
+			"y": 224,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -229,40 +515,22 @@
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_Composite_1",
-			"node_name": "K2Node_Composite_1",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_Composite",
-			"title": "Debug10\nCollapsed Graph",
-			"title_single_line": "Debug10",
+			"node_id": "K2Node_VariableGet_8",
+			"node_name": "K2Node_VariableGet_8",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get OldState",
+			"title_single_line": "Get OldState",
 			"comment": "",
-			"guid": "0e00ccdb-4937-0eca-7f16-36b48cbe3440",
-			"x": 3168,
-			"y": 16,
-			"has_error": true,
+			"guid": "3b7ba662-47fb-a702-0ccc-579efbd2c14e",
+			"x": 384,
+			"y": 256,
+			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "Value",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "value2",
-					"direction": "Input",
+					"pin_name": "OldState",
+					"direction": "Output",
 					"category": "byte",
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
@@ -273,16 +541,16 @@
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
+			"node_id": "K2Node_CallFunction_14",
+			"node_name": "K2Node_CallFunction_14",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Notify Scare Manager Ghost State Changed\nTarget is BP Ghost Manager",
 			"title_single_line": "Notify Scare Manager Ghost State Changed",
 			"comment": "",
-			"guid": "2e061c24-4543-e5c9-d0b7-8b923a0c162b",
-			"x": 1088,
-			"y": 16,
+			"guid": "9351422b-400a-9817-da27-bcb49b4c638e",
+			"x": 1008,
+			"y": 112,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -317,16 +585,200 @@
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_VariableSet_1",
-			"node_name": "K2Node_VariableSet_1",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set OldState",
-			"title_single_line": "Set OldState",
+			"node_id": "K2Node_VariableGet_9",
+			"node_name": "K2Node_VariableGet_9",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get OldState",
+			"title_single_line": "Get OldState",
 			"comment": "",
-			"guid": "0b301db2-4782-eba9-be34-26bae355111c",
-			"x": -96,
-			"y": 48,
+			"guid": "c8348990-4cc7-6058-a2a1-9a86b4dfa34c",
+			"x": 400,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "OldState",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_VariableGet_10",
+			"node_name": "K2Node_VariableGet_10",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentGhostState",
+			"title_single_line": "Get CurrentGhostState",
+			"comment": "",
+			"guid": "0503f53b-433e-ad90-b024-30839bc13d28",
+			"x": 384,
+			"y": -80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentGhostState",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_GenericToText_0",
+			"node_name": "K2Node_GenericToText_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_GenericToText",
+			"title": "To Text",
+			"title_single_line": "To Text",
+			"comment": "",
+			"guid": "eec02cdd-44a7-9846-6bfd-f0a9f63dcf0c",
+			"x": 672,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Value",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_GenericToText_1",
+			"node_name": "K2Node_GenericToText_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_GenericToText",
+			"title": "To Text",
+			"title_single_line": "To Text",
+			"comment": "",
+			"guid": "da97e287-4d7a-89b6-35ba-739cb0ee27c3",
+			"x": 688,
+			"y": -48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Value",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_FormatText_0",
+			"node_name": "K2Node_FormatText_0",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "e1cffd04-474a-f3a8-de39-6c997bcc190c",
+			"x": 976,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Old",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "New",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_CallFunction_15",
+			"node_name": "K2Node_CallFunction_15",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "f0a32ca3-40d4-1cbb-ba29-71a242f6d9d1",
+			"x": 1584,
+			"y": 128,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -349,55 +801,56 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "OldState",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				}
-			],
-			"target_class": "SetGhostState"
-		},
-		{
-			"node_id": "K2Node_VariableGet_60",
-			"node_name": "K2Node_VariableGet_60",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CurrentGhostState",
-			"title_single_line": "Get CurrentGhostState",
-			"comment": "",
-			"guid": "52977784-4fab-ca53-3252-2c931bd0656d",
-			"x": -368,
-			"y": 208,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "CurrentGhostState",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				},
-				{
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "BP_GhostManager_C",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
 					"default_value": "",
 					"linked_count": 0
 				}
@@ -405,70 +858,184 @@
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_EnumEquality_0",
-			"node_name": "K2Node_EnumEquality_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_EnumEquality",
-			"title": "Equal (Enum)",
-			"title_single_line": "Equal (Enum)",
+			"node_id": "K2Node_Self_4",
+			"node_name": "K2Node_Self_4",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
 			"comment": "",
-			"guid": "91be02ca-47a5-5d48-ad42-6890a4b9ff5b",
-			"x": -720,
-			"y": 144,
+			"guid": "02c4b3f5-4ab0-435b-c315-a09e0b6308c4",
+			"x": 1168,
+			"y": 240,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_CallFunction_21",
+			"node_name": "K2Node_CallFunction_21",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Display Name",
+			"title_single_line": "Get Display Name",
+			"comment": "",
+			"guid": "ba8d9cfe-4abc-aa98-d4e2-84837479b89e",
+			"x": 1136,
+			"y": 288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
 					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_CallFunction_22",
+			"node_name": "K2Node_CallFunction_22",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "String To Name",
+			"title_single_line": "String To Name",
+			"comment": "",
+			"guid": "8aecbea3-4464-5e74-3bfe-3facc03d751b",
+			"x": 1280,
+			"y": 352,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetStringLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InString",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_CallFunction_28",
+			"node_name": "K2Node_CallFunction_28",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Text)",
+			"title_single_line": "To String (Text)",
+			"comment": "",
+			"guid": "1393c71c-4323-1768-4e3c-8bae1fb9efb8",
+			"x": 1248,
+			"y": -64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetTextLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InText",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_VariableGet_11",
+			"node_name": "K2Node_VariableGet_11",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bIsRestoringFromSave",
+			"title_single_line": "Get bIsRestoringFromSave",
+			"comment": "",
+			"guid": "95317537-4d2a-9582-1d15-e382d8ce684e",
+			"x": 1968,
+			"y": 288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bIsRestoringFromSave",
 					"direction": "Output",
 					"category": "bool",
 					"subcategory": "None",
 					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "A",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "B",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				}
-			],
-			"target_class": "SetGhostState"
-		},
-		{
-			"node_id": "K2Node_VariableGet_63",
-			"node_name": "K2Node_VariableGet_63",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CurrentGhostState",
-			"title_single_line": "Get CurrentGhostState",
-			"comment": "",
-			"guid": "39fe9642-40bf-2110-a7a5-6780528a5583",
-			"x": -912,
-			"y": 208,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "CurrentGhostState",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
+					"default_value": "false",
 					"linked_count": 1
 				},
 				{
@@ -484,16 +1051,16 @@
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_0",
-			"node_name": "K2Node_IfThenElse_0",
+			"node_id": "K2Node_IfThenElse_7",
+			"node_name": "K2Node_IfThenElse_7",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "f0f9ee73-40e2-10ad-97ca-40a0fac11b5a",
-			"x": -496,
-			"y": 0,
+			"guid": "c122eb96-459b-316e-cb34-b99476bc639b",
+			"x": 2144,
+			"y": 128,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -537,16 +1104,16 @@
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_FunctionResult_0",
-			"node_name": "K2Node_FunctionResult_0",
+			"node_id": "K2Node_FunctionResult_7",
+			"node_name": "K2Node_FunctionResult_7",
 			"node_kind": "Return",
 			"ue_class": "K2Node_FunctionResult",
 			"title": "Return Node",
 			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "7b17583d-43a3-18aa-ed41-139c4f93c2ce",
-			"x": -176,
-			"y": -144,
+			"guid": "887f2552-410d-db67-5992-eba0296962ad",
+			"x": 2464,
+			"y": -112,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -563,77 +1130,16 @@
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_VariableGet_64",
-			"node_name": "K2Node_VariableGet_64",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get OldState",
-			"title_single_line": "Get OldState",
-			"comment": "",
-			"guid": "743c7e22-4131-9604-87c2-fea8d28d3c42",
-			"x": 2896,
-			"y": 128,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "OldState",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				}
-			],
-			"target_class": "SetGhostState"
-		},
-		{
-			"node_id": "K2Node_VariableGet_65",
-			"node_name": "K2Node_VariableGet_65",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CurrentGhostState",
-			"title_single_line": "Get CurrentGhostState",
-			"comment": "",
-			"guid": "412f3839-405b-5977-9da4-f294c6cc17c6",
-			"x": 2976,
-			"y": 96,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "CurrentGhostState",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_GhostManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "SetGhostState"
-		},
-		{
-			"node_id": "K2Node_VariableGet_0",
-			"node_name": "K2Node_VariableGet_0",
+			"node_id": "K2Node_VariableGet_12",
+			"node_name": "K2Node_VariableGet_12",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get SaveManagerRef",
 			"title_single_line": "Get SaveManagerRef",
 			"comment": "",
-			"guid": "9c5ef1c7-47f3-f318-4579-63a26ed843bb",
-			"x": 1072,
-			"y": 272,
+			"guid": "8ebaaccd-4507-3b34-cffa-a7b64c855919",
+			"x": 2416,
+			"y": 288,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -659,16 +1165,16 @@
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_CallFunction_2",
-			"node_name": "K2Node_CallFunction_2",
+			"node_id": "K2Node_CallFunction_17",
+			"node_name": "K2Node_CallFunction_17",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Is Valid",
 			"title_single_line": "Is Valid",
 			"comment": "",
-			"guid": "37b6bb91-4bf9-76b8-adcd-2abb4619396a",
-			"x": 1296,
-			"y": 208,
+			"guid": "3715ffb1-4e33-bdd1-6b58-c5bd850ffbfb",
+			"x": 2400,
+			"y": 352,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -703,16 +1209,16 @@
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_1",
-			"node_name": "K2Node_IfThenElse_1",
+			"node_id": "K2Node_IfThenElse_8",
+			"node_name": "K2Node_IfThenElse_8",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "26b91322-4b01-5e8d-c889-168844acd540",
-			"x": 1728,
-			"y": 32,
+			"guid": "a003b381-48f8-361e-77bd-97937768c80e",
+			"x": 2688,
+			"y": 160,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -750,22 +1256,22 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				}
 			],
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
+			"node_id": "K2Node_CallFunction_18",
+			"node_name": "K2Node_CallFunction_18",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Set Current Ghost State\nTarget is BP Save Manager",
-			"title_single_line": "Set Current Ghost State",
+			"title": "Request Auto Save\nTarget is BP Save Manager",
+			"title_single_line": "Request Auto Save",
 			"comment": "",
-			"guid": "cf2e66a1-48ac-ce70-179e-b8875c1aba4c",
-			"x": 2512,
-			"y": 16,
+			"guid": "9474996b-4bf8-528f-ed20-c485a75f3281",
+			"x": 2960,
+			"y": -80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -797,98 +1303,89 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "NewGhostState",
+					"pin_name": "Reason",
 					"direction": "Input",
-					"category": "byte",
+					"category": "string",
 					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				}
-			],
-			"target_class": "SetGhostState"
-		},
-		{
-			"node_id": "K2Node_VariableGet_94",
-			"node_name": "K2Node_VariableGet_94",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CurrentGhostState",
-			"title_single_line": "Get CurrentGhostState",
-			"comment": "",
-			"guid": "e4879a68-4f15-a134-c297-5c831d0368e2",
-			"x": 2288,
-			"y": 240,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "CurrentGhostState",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_GhostManager_C",
-					"default_value": "",
+					"resolved_type": "String",
+					"default_value": "GhostStateChanged",
 					"linked_count": 0
 				}
 			],
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_VariableGet_1",
-			"node_name": "K2Node_VariableGet_1",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bIsRestoringFromSave",
-			"title_single_line": "Get bIsRestoringFromSave",
+			"node_id": "K2Node_Knot_8",
+			"node_name": "K2Node_Knot_8",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
 			"comment": "",
-			"guid": "370e5e25-41a8-b660-c4b9-a5bc27d6ba50",
-			"x": 1872,
-			"y": 256,
+			"guid": "d04968d7-41c6-b8a1-ecb8-07a1f88da9ed",
+			"x": 2576,
+			"y": 0,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "bIsRestoringFromSave",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
+					"pin_name": "InputPin",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "BP_GhostManager_C",
+					"resolved_type": "BP_SaveManager_C",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 1
 				}
 			],
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_2",
-			"node_name": "K2Node_IfThenElse_2",
-			"node_kind": "Branch",
-			"ue_class": "K2Node_IfThenElse",
-			"title": "Branch",
-			"title_single_line": "Branch",
+			"node_id": "K2Node_FunctionResult_8",
+			"node_name": "K2Node_FunctionResult_8",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "12036be9-40f7-9a57-3af2-adaba03dbbf5",
-			"x": 2064,
-			"y": 32,
+			"guid": "d888c529-4c06-1f5c-8f9d-79b26741eb97",
+			"x": 3376,
+			"y": -64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_CallFunction_20",
+			"node_name": "K2Node_CallFunction_20",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Warning",
+			"title_single_line": "Debug Warning",
+			"comment": "",
+			"guid": "385f0642-4354-b439-4134-a0acb071ab4a",
+			"x": 3072,
+			"y": 352,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -902,15 +1399,6 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Condition",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 1
-				},
-				{
 					"pin_name": "then",
 					"direction": "Output",
 					"category": "exec",
@@ -920,11 +1408,126 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "else",
-					"direction": "Output",
-					"category": "exec",
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "exec",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[GhostManager] Ghost state changed, but SaveManagerRef is invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_Self_3",
+			"node_name": "K2Node_Self_3",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "57d1d20b-470f-626f-7b13-0d90d2a6f357",
+			"x": 2736,
+			"y": 432,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "SetGhostState"
+		},
+		{
+			"node_id": "K2Node_CallFunction_16",
+			"node_name": "K2Node_CallFunction_16",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Display Name",
+			"title_single_line": "Get Display Name",
+			"comment": "",
+			"guid": "a0867451-4745-0ca5-6448-9c97a6e426ec",
+			"x": 2704,
+			"y": 480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -932,66 +1535,66 @@
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_Knot_2",
-			"node_name": "K2Node_Knot_2",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
+			"node_id": "K2Node_CallFunction_27",
+			"node_name": "K2Node_CallFunction_27",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "String To Name",
+			"title_single_line": "String To Name",
 			"comment": "",
-			"guid": "2a82d27f-4bea-8fb8-39b6-be8cf0bd8c8c",
-			"x": 2352,
-			"y": -144,
+			"guid": "8e2b7fde-4e5b-d395-3cc2-37adf5907f5d",
+			"x": 2848,
+			"y": 544,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "InputPin",
+					"pin_name": "self",
 					"direction": "Input",
-					"category": "exec",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "exec",
+					"resolved_type": "KismetStringLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InString",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "OutputPin",
+					"pin_name": "ReturnValue",
 					"direction": "Output",
-					"category": "exec",
+					"category": "name",
 					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
 			"target_class": "SetGhostState"
 		},
 		{
-			"node_id": "K2Node_Knot_3",
-			"node_name": "K2Node_Knot_3",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
+			"node_id": "K2Node_FunctionResult_6",
+			"node_name": "K2Node_FunctionResult_6",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "8d6273a2-47cc-0d1f-4edd-78bb22d63891",
-			"x": 2880,
-			"y": -144,
+			"guid": "5c9b131f-4ea6-aa30-5649-c4ab5f824803",
+			"x": 3696,
+			"y": 352,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "InputPin",
+					"pin_name": "execute",
 					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
 					"category": "exec",
 					"subcategory": "None",
 					"resolved_type": "exec",
@@ -1007,104 +1610,112 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "SetGhostState",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_id": "K2Node_IfThenElse_6",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_0",
-			"from_node_title": "Set CurrentGhostState",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallDelegate_0",
-			"to_node_title": "Call On Ghost State Changed",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallDelegate_0",
-			"from_node_title": "Call On Ghost State Changed",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Notify Scare Manager Ghost State Changed\nTarget is BP Ghost Manager",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_1",
-			"from_node_title": "Notify Scare Manager Ghost State Changed\nTarget is BP Ghost Manager",
-			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_1",
-			"to_node_title": "Branch",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_1",
-			"from_node_title": "Set OldState",
-			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set CurrentGhostState",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_id": "K2Node_IfThenElse_6",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_id": "K2Node_FunctionResult_5",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_id": "K2Node_IfThenElse_6",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_id": "K2Node_VariableSet_4",
 			"to_node_title": "Set OldState",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_1",
-			"from_node_title": "Branch",
+			"from_node_id": "K2Node_VariableSet_4",
+			"from_node_title": "Set OldState",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_id": "K2Node_VariableSet_5",
+			"to_node_title": "Set CurrentGhostState",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_5",
+			"from_node_title": "Set CurrentGhostState",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallDelegate_3",
+			"to_node_title": "Call On Ghost State Changed",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallDelegate_3",
+			"from_node_title": "Call On Ghost State Changed",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_14",
+			"to_node_title": "Notify Scare Manager Ghost State Changed\nTarget is BP Ghost Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_14",
+			"from_node_title": "Notify Scare Manager Ghost State Changed\nTarget is BP Ghost Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_15",
+			"from_node_title": "Debug Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_7",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Set Current Ghost State\nTarget is BP Save Manager",
+			"from_node_id": "K2Node_IfThenElse_7",
+			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_Composite_1",
-			"to_node_title": "Debug10\nCollapsed Graph",
+			"to_node_id": "K2Node_FunctionResult_7",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_2",
-			"from_node_title": "Branch",
-			"from_pin": "then",
-			"to_node_id": "K2Node_Knot_2",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_id": "K2Node_IfThenElse_7",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Set Current Ghost State\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_IfThenElse_8",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_Knot_2",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_Knot_3",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
+			"from_node_id": "K2Node_IfThenElse_8",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_18",
+			"to_node_title": "Request Auto Save\nTarget is BP Save Manager",
+			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_Knot_3",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_Composite_1",
-			"to_node_title": "Debug10\nCollapsed Graph",
+			"from_node_id": "K2Node_IfThenElse_8",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_20",
+			"to_node_title": "Debug Warning",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_18",
+			"from_node_title": "Request Auto Save\nTarget is BP Save Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_8",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_20",
+			"from_node_title": "Debug Warning",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_6",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
 	],
@@ -1113,121 +1724,225 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "SetGhostState",
 			"from_pin": "NewState",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set CurrentGhostState",
-			"to_pin": "CurrentGhostState"
+			"to_node_id": "K2Node_EnumEquality_1",
+			"to_node_title": "Equal (Enum)",
+			"to_pin": "B"
 		},
 		{
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "SetGhostState",
 			"from_pin": "NewState",
-			"to_node_id": "K2Node_EnumEquality_0",
-			"to_node_title": "Equal (Enum)",
-			"to_pin": "A"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_0",
-			"from_node_title": "Set CurrentGhostState",
-			"from_pin": "Output_Get",
-			"to_node_id": "K2Node_Knot_0",
+			"to_node_id": "K2Node_Knot_6",
 			"to_node_title": "Reroute Node",
 			"to_pin": "InputPin"
 		},
 		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallDelegate_0",
-			"to_node_title": "Call On Ghost State Changed",
-			"to_pin": "NewState"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_1",
-			"from_node_title": "Set OldState",
-			"from_pin": "Output_Get",
-			"to_node_id": "K2Node_CallDelegate_0",
-			"to_node_title": "Call On Ghost State Changed",
-			"to_pin": "OldState"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_60",
+			"from_node_id": "K2Node_VariableGet_7",
 			"from_node_title": "Get CurrentGhostState",
 			"from_pin": "CurrentGhostState",
-			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_id": "K2Node_EnumEquality_1",
+			"to_node_title": "Equal (Enum)",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_EnumEquality_1",
+			"from_node_title": "Equal (Enum)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_6",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_6",
+			"from_node_title": "Get CurrentGhostState",
+			"from_pin": "CurrentGhostState",
+			"to_node_id": "K2Node_VariableSet_4",
 			"to_node_title": "Set OldState",
 			"to_pin": "OldState"
 		},
 		{
-			"from_node_id": "K2Node_EnumEquality_0",
-			"from_node_title": "Equal (Enum)",
+			"from_node_id": "K2Node_Knot_6",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_5",
+			"to_node_title": "Set CurrentGhostState",
+			"to_pin": "CurrentGhostState"
+		},
+		{
+			"from_node_id": "K2Node_Knot_6",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_7",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Knot_7",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallDelegate_3",
+			"to_node_title": "Call On Ghost State Changed",
+			"to_pin": "NewState"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_8",
+			"from_node_title": "Get OldState",
+			"from_pin": "OldState",
+			"to_node_id": "K2Node_CallDelegate_3",
+			"to_node_title": "Call On Ghost State Changed",
+			"to_pin": "OldState"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_9",
+			"from_node_title": "Get OldState",
+			"from_pin": "OldState",
+			"to_node_id": "K2Node_GenericToText_0",
+			"to_node_title": "To Text",
+			"to_pin": "Value"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_10",
+			"from_node_title": "Get CurrentGhostState",
+			"from_pin": "CurrentGhostState",
+			"to_node_id": "K2Node_GenericToText_1",
+			"to_node_title": "To Text",
+			"to_pin": "Value"
+		},
+		{
+			"from_node_id": "K2Node_GenericToText_0",
+			"from_node_title": "To Text",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "Old"
+		},
+		{
+			"from_node_id": "K2Node_GenericToText_1",
+			"from_node_title": "To Text",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "New"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_0",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_28",
+			"to_node_title": "To String (Text)",
+			"to_pin": "InText"
+		},
+		{
+			"from_node_id": "K2Node_Self_4",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_4",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_21",
+			"to_node_title": "Get Display Name",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_21",
+			"from_node_title": "Get Display Name",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_22",
+			"to_node_title": "String To Name",
+			"to_pin": "InString"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_22",
+			"from_node_title": "String To Name",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_28",
+			"from_node_title": "To String (Text)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Info",
+			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_11",
+			"from_node_title": "Get bIsRestoringFromSave",
+			"from_pin": "bIsRestoringFromSave",
+			"to_node_id": "K2Node_IfThenElse_7",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_63",
-			"from_node_title": "Get CurrentGhostState",
-			"from_pin": "CurrentGhostState",
-			"to_node_id": "K2Node_EnumEquality_0",
-			"to_node_title": "Equal (Enum)",
-			"to_pin": "B"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_64",
-			"from_node_title": "Get OldState",
-			"from_pin": "OldState",
-			"to_node_id": "K2Node_Composite_1",
-			"to_node_title": "Debug10\nCollapsed Graph",
-			"to_pin": "Value"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_65",
-			"from_node_title": "Get CurrentGhostState",
-			"from_pin": "CurrentGhostState",
-			"to_node_id": "K2Node_Composite_1",
-			"to_node_title": "Debug10\nCollapsed Graph",
-			"to_pin": "value2"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_id": "K2Node_VariableGet_12",
 			"from_node_title": "Get SaveManagerRef",
 			"from_pin": "SaveManagerRef",
-			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_id": "K2Node_CallFunction_17",
 			"to_node_title": "Is Valid",
 			"to_pin": "Object"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_id": "K2Node_VariableGet_12",
 			"from_node_title": "Get SaveManagerRef",
 			"from_pin": "SaveManagerRef",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Set Current Ghost State\nTarget is BP Save Manager",
+			"to_node_id": "K2Node_Knot_8",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_17",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_8",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_8",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_18",
+			"to_node_title": "Request Auto Save\nTarget is BP Save Manager",
 			"to_pin": "self"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_2",
-			"from_node_title": "Is Valid",
+			"from_node_id": "K2Node_Self_3",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_16",
+			"to_node_title": "Get Display Name",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_Self_3",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_20",
+			"to_node_title": "Debug Warning",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_16",
+			"from_node_title": "Get Display Name",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_1",
-			"to_node_title": "Branch",
-			"to_pin": "Condition"
+			"to_node_id": "K2Node_CallFunction_27",
+			"to_node_title": "String To Name",
+			"to_pin": "InString"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_94",
-			"from_node_title": "Get CurrentGhostState",
-			"from_pin": "CurrentGhostState",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Set Current Ghost State\nTarget is BP Save Manager",
-			"to_pin": "NewGhostState"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_1",
-			"from_node_title": "Get bIsRestoringFromSave",
-			"from_pin": "bIsRestoringFromSave",
-			"to_node_id": "K2Node_IfThenElse_2",
-			"to_node_title": "Branch",
-			"to_pin": "Condition"
+			"from_node_id": "K2Node_CallFunction_27",
+			"from_node_title": "String To Name",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_20",
+			"to_node_title": "Debug Warning",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

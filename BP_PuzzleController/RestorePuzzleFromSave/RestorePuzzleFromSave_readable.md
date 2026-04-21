@@ -7,19 +7,30 @@ Function
 Restores runtime state from previously saved or cached data.
 
 ## Returns
-- bRestoreSuccessfully (Boolean)
-- bRestoreSuccessfully (Boolean)
-- bRestoreSuccessfully (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
 
 ## Reads
-- SaveManagerRef
+- CurrentPuzzleId
+- CurrentStepIndex
+
+## Writes
+- CompletedPuzzleIds
+- CurrentPuzzleId
+- bHasActivePuzzle
+- CurrentStepIndex
+- bStepActive
+- CurrentPuzzleData
+- CurrentStepData
 
 ## Calls
-- Is Valid
-- Get Current Puzzle Id
-- Get Current Puzzle Step Index
+- Debug Info
+- Get Display Name
+- String To Name
+- Debug Critical
 - Start Puzzle by Row Name and Step
-- Debug Puzzle Message
 
 ## Called By
 - EventGraph

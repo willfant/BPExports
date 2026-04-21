@@ -12,6 +12,9 @@ Auto-generated function summary.
 ## Reads
 - CurrentWorldMode
 
+## Called By
+- RestoreWorldModeFromSave
+
 ## Notes
 - Has latent nodes: No
 - Has error nodes: No

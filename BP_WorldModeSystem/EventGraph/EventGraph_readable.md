@@ -25,5 +25,5 @@ Main runtime entry graph for this Blueprint.
 
 ## Notes
 - Has latent nodes: Yes
-- Has error nodes: No
+- Has error nodes: Yes
 - Has warning nodes: No

@@ -6,19 +6,26 @@ Function
 ## Purpose
 Restores runtime state from previously saved or cached data.
 
+## Returns
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+
 ## Reads
-- SaveManagerRef
-- bDebugEnabled
+- CurrentWorldMode
+- OldWorldModeLocal
 
 ## Writes
+- OldWorldModeLocal
 - bIsRestoringFromSave 
 
 ## Calls
-- Is Valid
 - Set World Mode
-- Debug Message
-- Get Current World Mode
-- To String (Text)
+- Get World Mode
+- Debug Critical
+- Get Display Name
+- String To Name
+- Debug Info
 
 ## Called By
 - EventGraph
