@@ -27,9 +27,6 @@ Restores runtime state from previously saved or cached data.
 - Set Ghost State
 - Debug Info
 
-## Called By
-- EventGraph
-
 ## Branch Points
 - Branch
 

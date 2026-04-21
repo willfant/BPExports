@@ -27,10 +27,8 @@ Auto-generated function summary.
 
 ## Calls
 - Load Ghost Profile by Id
-- Notify Objective Manager for Ghost
 - Spawn Ghost Actor
 - Destroy Ghost Actor
-- Set Timer by Event
 - Set Ghost State
 - Debug Info
 - To String (Text)
@@ -41,7 +39,6 @@ Auto-generated function summary.
 - Debug Warning
 
 ## Called By
-- EventGraph
 - RestoreGhostFromSave
 
 ## Branch Points

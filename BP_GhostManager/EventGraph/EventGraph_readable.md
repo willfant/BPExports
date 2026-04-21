@@ -6,24 +6,10 @@ EventGraph
 ## Purpose
 Main runtime entry graph for this Blueprint.
 
-## Reads
-- DefaultGhostId
-- CurrentGhostId
-
-## Writes
-- GhostManagerRef
-
 ## Calls
 - Initialize Ghost Manager
-- Get Game Instance
-- Notify Scare Manager for Ghost
-- Restore Ghost from Save
-- Set Active Ghost
-
-## Branch Points
-- Branch
 
 ## Notes
-- Has latent nodes: Yes
+- Has latent nodes: No
 - Has error nodes: No
 - Has warning nodes: No

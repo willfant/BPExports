@@ -17,7 +17,6 @@ Auto-generated function summary.
 - CurrentGhostState
 
 ## Calls
-- Notify Scare Manager Ghost State Changed
 - Debug Info
 - Get Display Name
 - String To Name
