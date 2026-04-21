@@ -20,6 +20,7 @@ Initializes references, state, or startup flow.
 ## Writes
 - bSaveSystemReady
 - AutoSaveReasonLast
+- bAutoSavePending
 
 ## Calls
 - Debug Info

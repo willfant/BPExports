@@ -22,7 +22,8 @@
 		],
 		"writes_variables": [
 			"bSaveSystemReady",
-			"AutoSaveReasonLast"
+			"AutoSaveReasonLast",
+			"bAutoSavePending"
 		],
 		"calls": [
 			"Debug Info",
@@ -50,7 +51,7 @@
 			"title_single_line": "InitializeSaveSystem",
 			"comment": "",
 			"guid": "f0d5486d-4833-bed0-357e-5aba49f4ff99",
-			"x": -368,
+			"x": -688,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -111,7 +112,7 @@
 			"title_single_line": "Set bSaveSystemReady",
 			"comment": "",
 			"guid": "30264e79-46ab-39ff-f4f8-3d903ac7b83e",
-			"x": -80,
+			"x": -400,
 			"y": 16,
 			"has_error": false,
 			"has_warning": false,
@@ -2236,6 +2237,68 @@
 				}
 			],
 			"target_class": "InitializeSaveSystem"
+		},
+		{
+			"node_id": "K2Node_VariableSet_6",
+			"node_name": "K2Node_VariableSet_6",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bAutoSavePending",
+			"title_single_line": "Set bAutoSavePending",
+			"comment": "",
+			"guid": "902501fb-4fba-f4aa-a835-b7b39d064167",
+			"x": -80,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bAutoSavePending",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeSaveSystem"
 		}
 	],
 	"exec_flow": [
@@ -2251,8 +2314,8 @@
 			"from_node_id": "K2Node_VariableSet_2",
 			"from_node_title": "Set bSaveSystemReady",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_3",
-			"to_node_title": "Set AutoSaveReasonLast",
+			"to_node_id": "K2Node_VariableSet_6",
+			"to_node_title": "Set bAutoSavePending",
 			"to_pin": "execute"
 		},
 		{
@@ -2445,6 +2508,14 @@
 			"from_pin": "then",
 			"to_node_id": "K2Node_FunctionResult_0",
 			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_6",
+			"from_node_title": "Set bAutoSavePending",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set AutoSaveReasonLast",
 			"to_pin": "execute"
 		}
 	],
