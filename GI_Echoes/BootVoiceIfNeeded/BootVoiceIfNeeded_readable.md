@@ -12,6 +12,9 @@ Auto-generated function summary.
 ## Writes
 - bBooted
 
+## Called By
+- EventGraph
+
 ## Branch Points
 - Branch
 

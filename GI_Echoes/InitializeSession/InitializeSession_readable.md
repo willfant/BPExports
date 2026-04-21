@@ -20,6 +20,7 @@ Initializes references, state, or startup flow.
 - String To Name
 
 ## Called By
+- EventGraph
 - ResetSession
 
 ## Branch Points
