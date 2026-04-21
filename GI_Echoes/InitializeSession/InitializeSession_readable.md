@@ -10,16 +10,14 @@ Initializes references, state, or startup flow.
 - bSessionInitialized
 
 ## Writes
-- CurrentWorldMode
-- CurrentGhostId
-- CurrentQuestId
-- CurrentObjectiveId
+- bHasPendingTransition
+- PendingTransitionData
 - bSessionInitialized
-- bIsTransitioning
-- PendingLevel
-- PendingWorldMode
-- PendingGhostId
-- CurrentSaveSlot
+
+## Calls
+- Debug Info
+- Get Display Name
+- String To Name
 
 ## Called By
 - ResetSession

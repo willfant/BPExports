@@ -10,14 +10,14 @@
 	"summary":
 	{
 		"purpose": "Auto-generated function summary.",
-		"reads_variables": [
-			"bIsDebug"
-		],
+		"reads_variables": [],
 		"writes_variables": [
 			"ObjectiveManagerRef"
 		],
 		"calls": [
-			"Debug"
+			"Debug Info",
+			"Get Display Name",
+			"String To Name"
 		],
 		"called_by": [],
 		"branch_points": []
@@ -121,16 +121,16 @@
 			"target_class": "RegisterObjectiveManager"
 		},
 		{
-			"node_id": "K2Node_CallFunction_0",
-			"node_name": "K2Node_CallFunction_0",
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Debug\nTarget is GI Echoes",
-			"title_single_line": "Debug",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
 			"comment": "",
-			"guid": "84735e38-4c3e-2369-20a9-47bc382af856",
-			"x": 672,
-			"y": -16,
+			"guid": "ff9170bd-4b72-f2ef-0498-5fb6b7281490",
+			"x": 624,
+			"y": 0,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -156,18 +156,36 @@
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
 					"default_value": "",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "bIsDebug",
+					"pin_name": "WorldContextObject",
 					"direction": "Input",
-					"category": "bool",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				},
 				{
@@ -176,43 +194,131 @@
 					"category": "string",
 					"subcategory": "None",
 					"resolved_type": "String",
-					"default_value": "[GI_Echoes] ObjectiveManager registered",
+					"default_value": "[GI] Registered ObjectiveManagerRef",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
 					"linked_count": 0
 				}
 			],
 			"target_class": "RegisterObjectiveManager"
 		},
 		{
-			"node_id": "K2Node_VariableGet_0",
-			"node_name": "K2Node_VariableGet_0",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bIsDebug",
-			"title_single_line": "Get bIsDebug",
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
 			"comment": "",
-			"guid": "ec7dba25-4b0f-50e5-ac02-31abc136dbaf",
-			"x": 672,
-			"y": 176,
+			"guid": "f5f64c0c-4e1f-ae0e-6754-f3960c3af04a",
+			"x": 272,
+			"y": 112,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "bIsDebug",
+					"pin_name": "self",
 					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "RegisterObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Display Name",
+			"title_single_line": "Get Display Name",
+			"comment": "",
+			"guid": "c416d607-4a62-7529-461b-269cfd654e9b",
+			"x": 256,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
 				{
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "GI_Echoes_C",
+					"resolved_type": "KismetSystemLibrary",
 					"default_value": "",
 					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RegisterObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_48",
+			"node_name": "K2Node_CallFunction_48",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "String To Name",
+			"title_single_line": "String To Name",
+			"comment": "",
+			"guid": "b4ac2be8-4f70-db57-e522-9ca9d36de9d5",
+			"x": 336,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetStringLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InString",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
 				}
 			],
 			"target_class": "RegisterObjectiveManager"
@@ -231,8 +337,8 @@
 			"from_node_id": "K2Node_VariableSet_0",
 			"from_node_title": "Set ObjectiveManagerRef",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Debug\nTarget is GI Echoes",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Info",
 			"to_pin": "execute"
 		}
 	],
@@ -246,12 +352,36 @@
 			"to_pin": "ObjectiveManagerRef"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_0",
-			"from_node_title": "Get bIsDebug",
-			"from_pin": "bIsDebug",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Debug\nTarget is GI Echoes",
-			"to_pin": "bIsDebug"
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Get Display Name",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Get Display Name",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_48",
+			"to_node_title": "String To Name",
+			"to_pin": "InString"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_48",
+			"from_node_title": "String To Name",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

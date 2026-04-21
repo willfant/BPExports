@@ -6,14 +6,13 @@ Function
 ## Purpose
 Auto-generated function summary.
 
-## Reads
-- bIsDebug
-
 ## Writes
 - GhostManagerRef
 
 ## Calls
-- Debug Message
+- Debug Info
+- Get Display Name
+- String To Name
 
 ## Notes
 - Has latent nodes: No

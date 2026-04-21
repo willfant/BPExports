@@ -6,14 +6,13 @@ Function
 ## Purpose
 Synchronizes or persists runtime state.
 
-## Reads
-- bIsDebug
-
 ## Writes
 - SaveManagerRef
 
 ## Calls
-- Debug
+- Debug Info
+- Get Display Name
+- String To Name
 
 ## Notes
 - Has latent nodes: No

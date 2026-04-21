@@ -8,10 +8,14 @@ Resets runtime state or reinitializes a sub-flow.
 
 ## Writes
 - bSessionInitialized
+- bHasPendingTransition
+- PendingTransitionData
 
 ## Calls
 - Initialize Session
-- Print String
+- Debug Info
+- Get Display Name
+- String To Name
 
 ## Notes
 - Has latent nodes: No

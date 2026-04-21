@@ -1,0 +1,212 @@
+{
+	"graph_name": "SetStartupPendingTransition",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Starts a flow, state transition, or activation sequence.",
+		"reads_variables": [],
+		"writes_variables": [
+			"PendingTransitionData",
+			"bHasPendingTransition"
+		],
+		"calls": [],
+		"called_by": [],
+		"branch_points": []
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "SetStartupPendingTransition",
+			"title_single_line": "SetStartupPendingTransition",
+			"comment": "",
+			"guid": "61cf544c-4ea8-18d9-f1e8-d9837583ea20",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InTransitionData",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetStartupPendingTransition"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set PendingTransitionData",
+			"title_single_line": "Set PendingTransitionData",
+			"comment": "",
+			"guid": "720446e2-4567-158f-c0cc-77b9515c5bc9",
+			"x": 288,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "PendingTransitionData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "SetStartupPendingTransition"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bHasPendingTransition",
+			"title_single_line": "Set bHasPendingTransition",
+			"comment": "",
+			"guid": "d3758009-4785-da01-d4d3-6aaac30d77ba",
+			"x": 688,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bHasPendingTransition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "SetStartupPendingTransition"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "SetStartupPendingTransition",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set PendingTransitionData",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set PendingTransitionData",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set bHasPendingTransition",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "SetStartupPendingTransition",
+			"from_pin": "InTransitionData",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set PendingTransitionData",
+			"to_pin": "PendingTransitionData"
+		}
+	],
+	"problems": []
+}

@@ -6,14 +6,13 @@ Function
 ## Purpose
 Auto-generated function summary.
 
-## Reads
-- bIsDebug
-
 ## Writes
 - ObjectiveManagerRef
 
 ## Calls
-- Debug
+- Debug Info
+- Get Display Name
+- String To Name
 
 ## Notes
 - Has latent nodes: No

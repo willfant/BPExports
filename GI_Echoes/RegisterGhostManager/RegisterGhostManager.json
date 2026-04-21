@@ -10,14 +10,14 @@
 	"summary":
 	{
 		"purpose": "Auto-generated function summary.",
-		"reads_variables": [
-			"bIsDebug"
-		],
+		"reads_variables": [],
 		"writes_variables": [
 			"GhostManagerRef"
 		],
 		"calls": [
-			"Debug Message"
+			"Debug Info",
+			"Get Display Name",
+			"String To Name"
 		],
 		"called_by": [],
 		"branch_points": []
@@ -125,10 +125,10 @@
 			"node_name": "K2Node_CallFunction_1",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
 			"comment": "",
-			"guid": "f217947a-4368-86ae-9072-e1b2e4f1d8ad",
+			"guid": "289ef1d7-4529-464b-2585-c19564c52749",
 			"x": 208,
 			"y": 0,
 			"has_error": false,
@@ -180,22 +180,13 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 0
-				},
-				{
 					"pin_name": "SenderName",
 					"direction": "Input",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
-					"default_value": "GI_Echoes",
-					"linked_count": 0
+					"default_value": "None",
+					"linked_count": 1
 				},
 				{
 					"pin_name": "Message",
@@ -203,35 +194,8 @@
 					"category": "string",
 					"subcategory": "None",
 					"resolved_type": "String",
-					"default_value": "[GI_Echoes] GhostManager registered",
+					"default_value": "[GI] Registered GhostManagerRef",
 					"linked_count": 0
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "5.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
 				},
 				{
 					"pin_name": "__WorldContext",
@@ -246,41 +210,6 @@
 			"target_class": "RegisterGhostManager"
 		},
 		{
-			"node_id": "K2Node_VariableGet_84",
-			"node_name": "K2Node_VariableGet_84",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bIsDebug",
-			"title_single_line": "Get bIsDebug",
-			"comment": "",
-			"guid": "711f8159-45d1-ceac-b6a6-a18ec9d6d1ea",
-			"x": 16,
-			"y": 352,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "bIsDebug",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "GI_Echoes_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "RegisterGhostManager"
-		},
-		{
 			"node_id": "K2Node_Self_0",
 			"node_name": "K2Node_Self_0",
 			"node_kind": "SelfReference",
@@ -288,9 +217,9 @@
 			"title": "Self-Reference",
 			"title_single_line": "Self-Reference",
 			"comment": "",
-			"guid": "2e0557bc-406f-6661-c87e-f39f1230db90",
-			"x": 64,
-			"y": 160,
+			"guid": "721735af-48ea-7c10-f1fb-2cb05344d9ad",
+			"x": -144,
+			"y": 112,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -301,6 +230,94 @@
 					"subcategory": "self",
 					"resolved_type": "object",
 					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "RegisterGhostManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Display Name",
+			"title_single_line": "Get Display Name",
+			"comment": "",
+			"guid": "bdfc97df-4a98-b49c-fb7a-99b25d451cee",
+			"x": -160,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "RegisterGhostManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_48",
+			"node_name": "K2Node_CallFunction_48",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "String To Name",
+			"title_single_line": "String To Name",
+			"comment": "",
+			"guid": "72a8fd01-48ca-533a-8e2e-589f39164119",
+			"x": -80,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetStringLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InString",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
@@ -321,7 +338,7 @@
 			"from_node_title": "Set GhostManagerRef",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
+			"to_node_title": "Debug Info",
 			"to_pin": "execute"
 		}
 	],
@@ -335,28 +352,36 @@
 			"to_pin": "GhostManagerRef"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_84",
-			"from_node_title": "Get bIsDebug",
-			"from_pin": "bIsDebug",
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
 			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_84",
-			"from_node_title": "Get bIsDebug",
-			"from_pin": "bIsDebug",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
 		},
 		{
 			"from_node_id": "K2Node_Self_0",
 			"from_node_title": "Self-Reference",
 			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Get Display Name",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Get Display Name",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_48",
+			"to_node_title": "String To Name",
+			"to_pin": "InString"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_48",
+			"from_node_title": "String To Name",
+			"from_pin": "ReturnValue",
 			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "WorldContextObject"
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []
