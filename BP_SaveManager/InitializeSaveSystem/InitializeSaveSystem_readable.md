@@ -6,20 +6,29 @@ Function
 ## Purpose
 Initializes references, state, or startup flow.
 
+## Returns
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
+
 ## Reads
 - SaveSlotName
 - UserIndex
-- bEnableSaveDebug
 
 ## Writes
 - bSaveSystemReady
+- AutoSaveReasonLast
 
 ## Calls
+- Debug Info
+- Get Sender Name
 - Does Save Game Exist
 - Load Save
+- Debug Critical
 - Create New Save
 - Write Save to Disk
-- Debug Log
 
 ## Called By
 - EventGraph

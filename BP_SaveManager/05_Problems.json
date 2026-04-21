@@ -2,6 +2,18 @@
 	"problems": [
 		{
 			"graph": "InitializeSaveSystem",
+			"problem_type": "HighInternalCallCount",
+			"details": "Graph performs 11 self-context function calls.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.84999999999999998,
+			"why_it_matters": "A graph calling many internal functions may be becoming an orchestration bottleneck.",
+			"likely_impact": "Harder to trace behavior and maintain clear ownership.",
+			"suggested_fix": "Consider extracting subflows or moving orchestration into smaller dedicated graphs."
+		},
+		{
+			"graph": "InitializeSaveSystem",
 			"problem_type": "PotentialSaveSyncWithoutStateWrite",
 			"details": "Save/sync-related graph does not appear to write any obvious runtime state before syncing.",
 			"node_name": "",
