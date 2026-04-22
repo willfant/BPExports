@@ -10,7 +10,7 @@ Auto-generated function summary.
 - Output (Boolean)
 
 ## Reads
-- bScareCooldownActive 
+- bScareCooldownActive
 
 ## Calls
 - Is Scare Running

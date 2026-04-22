@@ -3,7 +3,7 @@
 	"graph_type": "Function",
 	"entry_node_id": "K2Node_FunctionEntry_0",
 	"has_latent_nodes": false,
-	"has_error_nodes": true,
+	"has_error_nodes": false,
 	"has_warning_nodes": false,
 	"locals": [],
 	"returns": [
@@ -25,7 +25,10 @@
 		"calls": [
 			"Is Scare Allowed in Current World Mode",
 			"Is Scare Allowed for Current Ghost State",
-			"Is Scare Distance Valid"
+			"Is Scare Distance Valid",
+			"To String (Text)",
+			"Debug Info",
+			"Get Sender Name"
 		],
 		"called_by": [
 			"IsScareValidAdvanced"
@@ -738,34 +741,87 @@
 			"target_class": "IsScareValidBasic"
 		},
 		{
-			"node_id": "K2Node_Composite_0",
-			"node_name": "K2Node_Composite_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_Composite",
-			"title": "debug20\nCollapsed Graph",
-			"title_single_line": "debug20",
+			"node_id": "K2Node_Self_1",
+			"node_name": "K2Node_Self_1",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
 			"comment": "",
-			"guid": "38b359e9-4dd4-0739-2b6b-9a85f4bff57f",
-			"x": 2608,
-			"y": -32,
-			"has_error": true,
+			"guid": "39388b46-4983-3e18-9c3b-a59437a48c60",
+			"x": 2240,
+			"y": 32,
+			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "then",
+					"pin_name": "self",
 					"direction": "Output",
-					"category": "exec",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_FormatText_1",
+			"node_name": "K2Node_FormatText_1",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "17051000-4e03-b7b0-2f7e-87a3a6bae450",
+			"x": 2032,
+			"y": -224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
 					"subcategory": "None",
-					"resolved_type": "exec",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "execute",
+					"pin_name": "W",
 					"direction": "Input",
-					"category": "exec",
+					"category": "bool",
 					"subcategory": "None",
-					"resolved_type": "exec",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "G",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "D",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
 					"default_value": "",
 					"linked_count": 1
 				},
@@ -776,6 +832,270 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_7",
+			"node_name": "K2Node_CallFunction_7",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Text)",
+			"title_single_line": "To String (Text)",
+			"comment": "",
+			"guid": "1598b5a2-4532-bee2-3ed6-d38764f3cd20",
+			"x": 2336,
+			"y": -48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetTextLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InText",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_29",
+			"node_name": "K2Node_VariableGet_29",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DistOk",
+			"title_single_line": "Get DistOk",
+			"comment": "",
+			"guid": "a7c3e8a1-42ed-c12b-1a2f-17a510624175",
+			"x": 1840,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DistOk",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_30",
+			"node_name": "K2Node_VariableGet_30",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get WorldOk",
+			"title_single_line": "Get WorldOk",
+			"comment": "",
+			"guid": "81ad5c02-43ea-6c09-af23-bf8b71a33826",
+			"x": 1840,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "WorldOk",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_VariableGet_31",
+			"node_name": "K2Node_VariableGet_31",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get GhostOk",
+			"title_single_line": "Get GhostOk",
+			"comment": "",
+			"guid": "c42d02d9-4141-9cf3-42c9-0b93eb3c8825",
+			"x": 1840,
+			"y": -96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "GhostOk",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "533108cc-407d-4b7e-c3ca-4486d91e163a",
+			"x": 2592,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator1",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareValidBasic"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "57b9074b-4d08-6a8a-69c5-9a923bb00066",
+			"x": 2336,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
@@ -835,13 +1155,13 @@
 			"from_node_id": "K2Node_VariableSet_4",
 			"from_node_title": "Set DistOk",
 			"from_pin": "then",
-			"to_node_id": "K2Node_Composite_0",
-			"to_node_title": "debug20\nCollapsed Graph",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Info",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_Composite_0",
-			"from_node_title": "debug20\nCollapsed Graph",
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Debug Info",
 			"from_pin": "then",
 			"to_node_id": "K2Node_FunctionResult_0",
 			"to_node_title": "Return Node",
@@ -949,17 +1269,17 @@
 			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
 			"from_node_title": "AND Boolean",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_Composite_0",
-			"to_node_title": "debug20\nCollapsed Graph",
-			"to_pin": "R"
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "bValid"
 		},
 		{
 			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
 			"from_node_title": "AND Boolean",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_FunctionResult_0",
-			"to_node_title": "Return Node",
-			"to_pin": "bValid"
+			"to_node_id": "K2Node_FormatText_1",
+			"to_node_title": "Format Text",
+			"to_pin": "R"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_28",
@@ -968,6 +1288,70 @@
 			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
 			"to_node_title": "AND Boolean",
 			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_1",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "To String (Text)",
+			"to_pin": "InText"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_7",
+			"from_node_title": "To String (Text)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Info",
+			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_29",
+			"from_node_title": "Get DistOk",
+			"from_pin": "DistOk",
+			"to_node_id": "K2Node_FormatText_1",
+			"to_node_title": "Format Text",
+			"to_pin": "D"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_30",
+			"from_node_title": "Get WorldOk",
+			"from_pin": "WorldOk",
+			"to_node_id": "K2Node_FormatText_1",
+			"to_node_title": "Format Text",
+			"to_pin": "W"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_31",
+			"from_node_title": "Get GhostOk",
+			"from_pin": "GhostOk",
+			"to_node_id": "K2Node_FormatText_1",
+			"to_node_title": "Format Text",
+			"to_pin": "G"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

@@ -680,6 +680,27 @@
 			"target_class": ""
 		},
 		{
+			"from_graph": "IsScareValidBasic",
+			"from_node_title": "To String (Text)",
+			"to_graph": "Conv_TextToString",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetTextLibrary"
+		},
+		{
+			"from_graph": "IsScareValidBasic",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "IsScareValidBasic",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
 			"from_graph": "IsScareOffCooldown",
 			"from_node_title": "Get Game Time in Seconds",
 			"to_graph": "GetGameTimeInSeconds",
@@ -720,6 +741,27 @@
 			"to_graph": "Map_Add",
 			"call_type": "ExternalFunction",
 			"target_class": "BlueprintMapLibrary"
+		},
+		{
+			"from_graph": "RegisterTriggeredScare",
+			"from_node_title": "To String (Text)",
+			"to_graph": "Conv_TextToString",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetTextLibrary"
+		},
+		{
+			"from_graph": "RegisterTriggeredScare",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "RegisterTriggeredScare",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "IsScareValidAdvanced",
@@ -765,17 +807,24 @@
 		},
 		{
 			"from_graph": "IsScareLineOfSightValid",
-			"from_node_title": "Get Actor Location",
-			"to_graph": "K2_GetActorLocation",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "IsScareLineOfSightValid",
 			"from_node_title": "Line Trace By Channel",
 			"to_graph": "LineTraceSingle",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "IsScareLineOfSightValid",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "IsScareLineOfSightValid",
+			"from_node_title": "Distance (Vector)",
+			"to_graph": "Vector_Distance",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetMathLibrary"
 		},
 		{
 			"from_graph": "IsScareSpawnConditionValid",
@@ -797,6 +846,34 @@
 			"to_graph": "GetPlayerLookingAway",
 			"call_type": "SelfFunction",
 			"target_class": ""
+		},
+		{
+			"from_graph": "GetDistanceToPlayer",
+			"from_node_title": "Get Player Pawn",
+			"to_graph": "GetPlayerPawn",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "GetDistanceToPlayer",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "GetDistanceToPlayer",
+			"from_node_title": "Get Actor Location",
+			"to_graph": "K2_GetActorLocation",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "GetDistanceToPlayer",
+			"from_node_title": "Distance (Vector)",
+			"to_graph": "Vector_Distance",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetMathLibrary"
 		},
 		{
 			"from_graph": "GetPlayerLookingAway",

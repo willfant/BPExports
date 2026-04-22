@@ -7,7 +7,7 @@ Function
 Resets runtime state or reinitializes a sub-flow.
 
 ## Writes
-- bScareCooldownActive 
+- bScareCooldownActive
 
 ## Calls
 - Debug Info

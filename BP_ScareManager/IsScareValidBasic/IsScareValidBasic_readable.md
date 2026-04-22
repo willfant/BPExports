@@ -23,11 +23,14 @@ Auto-generated function summary.
 - Is Scare Allowed in Current World Mode
 - Is Scare Allowed for Current Ghost State
 - Is Scare Distance Valid
+- To String (Text)
+- Debug Info
+- Get Sender Name
 
 ## Called By
 - IsScareValidAdvanced
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

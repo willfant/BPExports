@@ -10,7 +10,7 @@ Starts a flow, state transition, or activation sequence.
 - ScareCooldownTime
 
 ## Writes
-- bScareCooldownActive 
+- bScareCooldownActive
 - ScareCooldownTimerHandle
 
 ## Calls

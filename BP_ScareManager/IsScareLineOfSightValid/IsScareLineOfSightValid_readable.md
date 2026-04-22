@@ -9,12 +9,15 @@ Auto-generated function summary.
 ## Returns
 - bIsValid (Boolean)
 - bIsValid (Boolean)
+- bIsValid (Boolean)
+- bIsValid (Boolean)
 
 ## Calls
 - Get Player Controller
 - Get Player View Point
-- Get Actor Location
 - Line Trace By Channel
+- Is Valid
+- Distance (Vector)
 
 ## Called By
 - IsScareValidAdvanced

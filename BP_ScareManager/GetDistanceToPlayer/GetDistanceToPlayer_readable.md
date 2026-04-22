@@ -8,6 +8,16 @@ Auto-generated function summary.
 
 ## Returns
 - Distance (Double)
+- Distance (Double)
+
+## Calls
+- Get Player Pawn
+- Is Valid
+- Get Actor Location
+- Distance (Vector)
+
+## Branch Points
+- Branch
 
 ## Notes
 - Has latent nodes: No

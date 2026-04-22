@@ -8,6 +8,8 @@
 	"locals": [],
 	"returns": [
 		"bIsValid (Boolean)",
+		"bIsValid (Boolean)",
+		"bIsValid (Boolean)",
 		"bIsValid (Boolean)"
 	],
 	"summary":
@@ -18,8 +20,9 @@
 		"calls": [
 			"Get Player Controller",
 			"Get Player View Point",
-			"Get Actor Location",
-			"Line Trace By Channel"
+			"Line Trace By Channel",
+			"Is Valid",
+			"Distance (Vector)"
 		],
 		"called_by": [
 			"IsScareValidAdvanced",
@@ -39,7 +42,7 @@
 			"title_single_line": "IsScareLineOfSightValid",
 			"comment": "",
 			"guid": "596fd0e6-4451-961d-69e9-21a967278912",
-			"x": -1120,
+			"x": -1520,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -61,13 +64,22 @@
 					"resolved_type": "S_ScareEntry",
 					"default_value": "",
 					"linked_count": 1
+				},
+				{
+					"pin_name": "TargetLocation",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 2
 				}
 			],
 			"target_class": "IsScareLineOfSightValid"
 		},
 		{
-			"node_id": "K2Node_FunctionResult_1",
-			"node_name": "K2Node_FunctionResult_1",
+			"node_id": "K2Node_FunctionResult_3",
+			"node_name": "K2Node_FunctionResult_3",
 			"node_kind": "Return",
 			"ue_class": "K2Node_FunctionResult",
 			"title": "Return Node",
@@ -109,8 +121,8 @@
 			"title_single_line": "Break S Scare Entry",
 			"comment": "",
 			"guid": "cf15e995-4bc7-6dd0-6bbd-e09a4b91677d",
-			"x": -896,
-			"y": 128,
+			"x": -1120,
+			"y": 192,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -202,7 +214,7 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "",
-					"linked_count": 3
+					"linked_count": 2
 				},
 				{
 					"pin_name": "ProbabilityWeight_25_7C94BA17422076A53B33F0A8B1CC62F8",
@@ -457,7 +469,7 @@
 			"title_single_line": "Get Player Controller",
 			"comment": "",
 			"guid": "fbd8a8b1-40ac-c089-7620-ee8219d351d3",
-			"x": -560,
+			"x": -640,
 			"y": -192,
 			"has_error": false,
 			"has_warning": false,
@@ -496,7 +508,7 @@
 					"subcategory": "None",
 					"resolved_type": "PlayerController",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				}
 			],
 			"target_class": "IsScareLineOfSightValid"
@@ -510,8 +522,8 @@
 			"title_single_line": "Get Player View Point",
 			"comment": "",
 			"guid": "8b493335-4526-bc31-5499-0a9d264043a2",
-			"x": -224,
-			"y": -144,
+			"x": 144,
+			"y": -208,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -541,41 +553,6 @@
 					"resolved_type": "Rotator",
 					"default_value": "0, 0, 0",
 					"linked_count": 0
-				}
-			],
-			"target_class": "IsScareLineOfSightValid"
-		},
-		{
-			"node_id": "K2Node_CallFunction_5",
-			"node_name": "K2Node_CallFunction_5",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Get Actor Location\nTarget is Actor",
-			"title_single_line": "Get Actor Location",
-			"comment": "",
-			"guid": "4ad4f1c6-4ab7-0b8e-5e2d-8b89ff82f66a",
-			"x": 32,
-			"y": 112,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Actor",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "Vector",
-					"default_value": "0, 0, 0",
-					"linked_count": 1
 				}
 			],
 			"target_class": "IsScareLineOfSightValid"
@@ -681,7 +658,7 @@
 					"category": "byte",
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
-					"default_value": "Persistent",
+					"default_value": "None",
 					"linked_count": 0
 				},
 				{
@@ -745,7 +722,7 @@
 					"subcategory": "None",
 					"resolved_type": "Vector",
 					"default_value": "0, 0, 0",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "OutHit_Normal",
@@ -781,7 +758,7 @@
 					"subcategory": "None",
 					"resolved_type": "Actor",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 0
 				},
 				{
 					"pin_name": "OutHit_HitComponent",
@@ -898,139 +875,7 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "false",
-					"linked_count": 2
-				}
-			],
-			"target_class": "IsScareLineOfSightValid"
-		},
-		{
-			"node_id": "K2Node_PromotableOperator_0",
-			"node_name": "K2Node_PromotableOperator_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_PromotableOperator",
-			"title": "Equal (Object)",
-			"title_single_line": "Equal (Object)",
-			"comment": "",
-			"guid": "5c1b1567-4023-a88a-5e74-e9bdff1f1aa5",
-			"x": 1040,
-			"y": 208,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "A",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
 					"linked_count": 1
-				},
-				{
-					"pin_name": "B",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ErrorTolerance",
-					"direction": "Input",
-					"category": "None",
-					"subcategory": "None",
-					"resolved_type": "None",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "IsScareLineOfSightValid"
-		},
-		{
-			"node_id": "K2Node_Self_1",
-			"node_name": "K2Node_Self_1",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "8640710b-44a9-19fb-5191-8ab2f4d4c508",
-			"x": 976,
-			"y": 304,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "IsScareLineOfSightValid"
-		},
-		{
-			"node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
-			"node_name": "K2Node_CommutativeAssociativeBinaryOperator_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_CommutativeAssociativeBinaryOperator",
-			"title": "AND Boolean",
-			"title_single_line": "AND Boolean",
-			"comment": "",
-			"guid": "cb0a2557-43b4-979a-36b9-ea92b06b15c1",
-			"x": 1264,
-			"y": 224,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "KismetMathLibrary",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "A",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "B",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
 				}
 			],
 			"target_class": "IsScareLineOfSightValid"
@@ -1044,8 +889,8 @@
 			"title_single_line": "Return Node",
 			"comment": "",
 			"guid": "d38476b4-45e3-a930-4639-7aac45dee347",
-			"x": 2064,
-			"y": 0,
+			"x": 2272,
+			"y": -176,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1071,36 +916,62 @@
 			"target_class": "IsScareLineOfSightValid"
 		},
 		{
-			"node_id": "K2Node_Composite_1",
-			"node_name": "K2Node_Composite_1",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_Composite",
-			"title": "Debug24\nCollapsed Graph",
-			"title_single_line": "Debug24",
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
 			"comment": "",
-			"guid": "24b2e28a-43e4-2593-fa97-1fab1eb277ce",
-			"x": 1616,
-			"y": -16,
-			"has_error": true,
+			"guid": "ea12787c-4196-3f8a-bb33-6a81d5e5e339",
+			"x": -640,
+			"y": 400,
+			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "bool",
 					"subcategory": "None",
-					"resolved_type": "exec",
+					"resolved_type": "Boolean",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "bool",
 					"subcategory": "None",
-					"resolved_type": "exec",
+					"resolved_type": "Boolean",
 					"default_value": "",
 					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareLineOfSightValid"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "28660f0c-4a0a-d2c1-aa18-c3819ce5bfa6",
+			"x": -288,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
 				},
 				{
 					"pin_name": "Object",
@@ -1112,7 +983,235 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Hit",
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareLineOfSightValid"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "9ddd200b-421a-ea80-9c84-d592a25cb5a8",
+			"x": -48,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareLineOfSightValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "952e1cf3-470d-a261-6265-89805c0efbd4",
+			"x": 176,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareLineOfSightValid"
+		},
+		{
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "878faef7-48a8-a8c1-b6e5-949cc13515ed",
+			"x": 1952,
+			"y": -704,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareLineOfSightValid"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_2",
+			"node_name": "K2Node_IfThenElse_2",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "40772114-4c35-4601-3a29-c68d1fd68ffa",
+			"x": 1648,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareLineOfSightValid"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "2141761f-4aa6-cf69-324c-c5b7d4218a22",
+			"x": 2528,
+			"y": 304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bIsValid",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareLineOfSightValid"
+		},
+		{
+			"node_id": "K2Node_Knot_3",
+			"node_name": "K2Node_Knot_3",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "53b888e3-4b8a-43a7-d227-388fef0a15d0",
+			"x": 1424,
+			"y": 64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
 					"direction": "Input",
 					"category": "bool",
 					"subcategory": "None",
@@ -1121,17 +1220,8 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Req",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Res",
-					"direction": "Input",
+					"pin_name": "OutputPin",
+					"direction": "Output",
 					"category": "bool",
 					"subcategory": "None",
 					"resolved_type": "Boolean",
@@ -1142,15 +1232,156 @@
 			"target_class": "IsScareLineOfSightValid"
 		},
 		{
-			"node_id": "K2Node_Knot_0",
-			"node_name": "K2Node_Knot_0",
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Distance (Vector)",
+			"title_single_line": "Distance (Vector)",
+			"comment": "",
+			"guid": "386add43-4571-6804-87ef-dd9c8d85a5d5",
+			"x": 1024,
+			"y": 176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "V1",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "V2",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareLineOfSightValid"
+		},
+		{
+			"node_id": "K2Node_Knot_5",
+			"node_name": "K2Node_Knot_5",
 			"node_kind": "Reroute",
 			"ue_class": "K2Node_Knot",
 			"title": "Reroute Node",
 			"title_single_line": "Reroute Node",
 			"comment": "",
-			"guid": "c48989c2-490f-ba01-b60b-00a8b815a660",
-			"x": 1904,
+			"guid": "e21fcfa9-4abe-f404-590b-5c8ea3b99114",
+			"x": -496,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareLineOfSightValid"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_1",
+			"node_name": "K2Node_PromotableOperator_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "float <= float",
+			"title_single_line": "float <= float",
+			"comment": "",
+			"guid": "85ba57d2-4ccf-7d85-670e-d68d4ae1b61d",
+			"x": 1328,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "30.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "IsScareLineOfSightValid"
+		},
+		{
+			"node_id": "K2Node_Knot_6",
+			"node_name": "K2Node_Knot_6",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "2c3e1239-4795-964f-aed5-7cb88f1a3187",
+			"x": 2112,
 			"y": 224,
 			"has_error": false,
 			"has_warning": false,
@@ -1190,8 +1421,8 @@
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Line Trace By Channel",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
@@ -1206,7 +1437,7 @@
 			"from_node_id": "K2Node_Composite_0",
 			"from_node_title": "Debug23\nCollapsed Graph",
 			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_id": "K2Node_FunctionResult_3",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
@@ -1214,15 +1445,39 @@
 			"from_node_id": "K2Node_CallFunction_6",
 			"from_node_title": "Line Trace By Channel",
 			"from_pin": "then",
-			"to_node_id": "K2Node_Composite_1",
-			"to_node_title": "Debug24\nCollapsed Graph",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_Composite_1",
-			"from_node_title": "Debug24\nCollapsed Graph",
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Line Trace By Channel",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
 			"from_pin": "then",
 			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_FunctionResult_2",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
@@ -1237,6 +1492,22 @@
 			"to_pin": "S_ScareEntry"
 		},
 		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "IsScareLineOfSightValid",
+			"from_pin": "TargetLocation",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Line Trace By Channel",
+			"to_pin": "End"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "IsScareLineOfSightValid",
+			"from_pin": "TargetLocation",
+			"to_node_id": "K2Node_Knot_5",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Scare Entry",
 			"from_pin": "RequiresLineOfSight_22_896AA34D4E6D0832B181AA85B1B6496D",
@@ -1248,17 +1519,9 @@
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Scare Entry",
 			"from_pin": "RequiresLineOfSight_22_896AA34D4E6D0832B181AA85B1B6496D",
-			"to_node_id": "K2Node_Composite_0",
-			"to_node_title": "Debug23\nCollapsed Graph",
-			"to_pin": "Req"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_0",
-			"from_node_title": "Break S Scare Entry",
-			"from_pin": "RequiresLineOfSight_22_896AA34D4E6D0832B181AA85B1B6496D",
-			"to_node_id": "K2Node_Composite_1",
-			"to_node_title": "Debug24\nCollapsed Graph",
-			"to_pin": "Req"
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_3",
@@ -1269,6 +1532,14 @@
 			"to_pin": "self"
 		},
 		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Get Player Controller",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
 			"from_node_id": "K2Node_CallFunction_4",
 			"from_node_title": "Get Player View Point\nTarget is Controller",
 			"from_pin": "Location",
@@ -1277,79 +1548,71 @@
 			"to_pin": "Start"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_5",
-			"from_node_title": "Get Actor Location\nTarget is Actor",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Line Trace By Channel",
-			"to_pin": "End"
-		},
-		{
 			"from_node_id": "K2Node_CallFunction_6",
 			"from_node_title": "Line Trace By Channel",
-			"from_pin": "OutHit_HitActor",
-			"to_node_id": "K2Node_PromotableOperator_0",
-			"to_node_title": "Equal (Object)",
-			"to_pin": "A"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_6",
-			"from_node_title": "Line Trace By Channel",
-			"from_pin": "OutHit_HitActor",
-			"to_node_id": "K2Node_Composite_1",
-			"to_node_title": "Debug24\nCollapsed Graph",
-			"to_pin": "Object"
+			"from_pin": "OutHit_ImpactPoint",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Distance (Vector)",
+			"to_pin": "V1"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_6",
 			"from_node_title": "Line Trace By Channel",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
-			"to_node_title": "AND Boolean",
-			"to_pin": "B"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_6",
-			"from_node_title": "Line Trace By Channel",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_Composite_1",
-			"to_node_title": "Debug24\nCollapsed Graph",
-			"to_pin": "Hit"
-		},
-		{
-			"from_node_id": "K2Node_PromotableOperator_0",
-			"from_node_title": "Equal (Object)",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
-			"to_node_title": "AND Boolean",
-			"to_pin": "A"
-		},
-		{
-			"from_node_id": "K2Node_Self_1",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_PromotableOperator_0",
-			"to_node_title": "Equal (Object)",
-			"to_pin": "B"
-		},
-		{
-			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
-			"from_node_title": "AND Boolean",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_Composite_1",
-			"to_node_title": "Debug24\nCollapsed Graph",
-			"to_pin": "Res"
-		},
-		{
-			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
-			"from_node_title": "AND Boolean",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_Knot_0",
+			"to_node_id": "K2Node_Knot_3",
 			"to_node_title": "Reroute Node",
 			"to_pin": "InputPin"
 		},
 		{
-			"from_node_id": "K2Node_Knot_0",
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Composite_0",
+			"to_node_title": "Debug23\nCollapsed Graph",
+			"to_pin": "Req"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_3",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Distance (Vector)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_PromotableOperator_1",
+			"to_node_title": "float <= float",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_Knot_5",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Distance (Vector)",
+			"to_pin": "V2"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_1",
+			"from_node_title": "float <= float",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_Knot_6",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Knot_6",
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
 			"to_node_id": "K2Node_FunctionResult_0",
