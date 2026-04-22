@@ -19,7 +19,7 @@ Starts a flow, state transition, or activation sequence.
 ## Calls
 - Play Transition SFX
 - Is Valid
-- Set Pending Transition
+- Set Startup Pending Transition
 - Play Fade Out
 - Set Timer by Event
 - Debug Message

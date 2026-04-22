@@ -589,7 +589,7 @@
 			"title_single_line": "Set bHasActiveGhost",
 			"comment": "",
 			"guid": "3184d1ce-4fcb-cc97-6457-9ab444e712b0",
-			"x": 992,
+			"x": 976,
 			"y": 352,
 			"has_error": false,
 			"has_warning": false,
@@ -2927,59 +2927,6 @@
 			"target_class": "SetActiveGhost"
 		},
 		{
-			"node_id": "K2Node_CallDelegate_2",
-			"node_name": "K2Node_CallDelegate_2",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_CallDelegate",
-			"title": "Call On Active Ghost Changed",
-			"title_single_line": "Call On Active Ghost Changed",
-			"comment": "",
-			"guid": "6de62b2b-4ec0-04f2-7567-ae9c1f23591f",
-			"x": 2704,
-			"y": -160,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_GhostManager_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "GhostId",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "SetActiveGhost"
-		},
-		{
 			"node_id": "K2Node_Knot_4",
 			"node_name": "K2Node_Knot_4",
 			"node_kind": "Reroute",
@@ -3009,7 +2956,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 1
 				}
 			],
 			"target_class": "SetActiveGhost"
@@ -3143,8 +3090,8 @@
 			"from_node_id": "K2Node_CallDelegate_1",
 			"from_node_title": "Call On Ghost Changed",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallDelegate_2",
-			"to_node_title": "Call On Active Ghost Changed",
+			"to_node_id": "K2Node_CallDelegate_0",
+			"to_node_title": "Call On Ghost Loaded",
 			"to_pin": "execute"
 		},
 		{
@@ -3241,14 +3188,6 @@
 			"from_pin": "then",
 			"to_node_id": "K2Node_FunctionResult_1",
 			"to_node_title": "Return Node",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallDelegate_2",
-			"from_node_title": "Call On Active Ghost Changed",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallDelegate_0",
-			"to_node_title": "Call On Ghost Loaded",
 			"to_pin": "execute"
 		}
 	],
@@ -3588,14 +3527,6 @@
 			"to_node_id": "K2Node_CallFunction_25",
 			"to_node_title": "Debug Warning",
 			"to_pin": "Message"
-		},
-		{
-			"from_node_id": "K2Node_Knot_4",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallDelegate_2",
-			"to_node_title": "Call On Active Ghost Changed",
-			"to_pin": "GhostId"
 		},
 		{
 			"from_node_id": "K2Node_Knot_4",

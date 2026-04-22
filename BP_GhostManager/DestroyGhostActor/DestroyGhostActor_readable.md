@@ -8,7 +8,6 @@ Auto-generated function summary.
 
 ## Reads
 - CurrentGhostActor
-- DebugEnabled
 
 ## Writes
 - CurrentGhostActor
@@ -16,7 +15,9 @@ Auto-generated function summary.
 ## Calls
 - Is Valid
 - Destroy Actor
-- Debug Message
+- Debug Info
+- Get Display Name
+- String To Name
 
 ## Called By
 - SetActiveGhost

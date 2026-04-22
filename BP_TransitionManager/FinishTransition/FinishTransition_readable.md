@@ -14,7 +14,7 @@ Auto-generated function summary.
 
 ## Calls
 - Is Valid
-- Clear Pending Transition
+- Clear Startup Pending Transition
 
 ## Called By
 - EventGraph

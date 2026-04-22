@@ -8,7 +8,6 @@ Auto-generated function summary.
 
 ## Reads
 - bHasActiveGhost
-- DebugEnabled
 - GhostPlaceholderClass
 
 ## Writes
@@ -16,11 +15,14 @@ Auto-generated function summary.
 
 ## Calls
 - Destroy Ghost Actor
-- Debug Message
 - Make Transform
 - Get Actor Location
 - Get Player Pawn
 - Get Actor Forward Vector
+- Get Display Name
+- String To Name
+- Debug Info
+- Debug Warning
 
 ## Called By
 - SetActiveGhost

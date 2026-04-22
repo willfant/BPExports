@@ -9,7 +9,6 @@ Auto-generated function summary.
 ## Reads
 - bHasActiveGhost
 - CurrentGhostId
-- DebugEnabled
 
 ## Writes
 - bHasActiveGhost
@@ -19,7 +18,9 @@ Auto-generated function summary.
 
 ## Calls
 - Destroy Ghost Actor
-- Debug Message
+- Debug Info
+- Get Display Name
+- String To Name
 
 ## Called By
 - RestoreGhostFromSave
