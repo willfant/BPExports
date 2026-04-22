@@ -10,8 +10,14 @@ Auto-generated function summary.
 - bIsValid (Boolean)
 - bIsValid (Boolean)
 
+## Calls
+- Get Distance to Player
+
 ## Called By
 - IsScareValidBasic
+
+## Branch Points
+- Branch
 
 ## Notes
 - Has latent nodes: No

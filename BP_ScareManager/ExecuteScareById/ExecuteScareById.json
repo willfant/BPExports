@@ -31,7 +31,8 @@
 			"Get Sender Name",
 			"Debug Critical",
 			"Is Scare Allowed in Current World Mode",
-			"Debug Warning"
+			"Debug Warning",
+			"Make Transform"
 		],
 		"called_by": [
 			"TryTriggerNextScare"
@@ -72,6 +73,24 @@
 					"resolved_type": "Name",
 					"default_value": "",
 					"linked_count": 3
+				},
+				{
+					"pin_name": "TargetLocation",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "TargetRotation",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Rotator",
+					"default_value": "",
+					"linked_count": 1
 				}
 			],
 			"target_class": "ExecuteScareById"
@@ -683,7 +702,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "else",
@@ -788,7 +807,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "then",
@@ -1379,50 +1398,6 @@
 					"category": "object",
 					"subcategory": "None",
 					"resolved_type": "BP_ScareBase_C",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ExecuteScareById"
-		},
-		{
-			"node_id": "K2Node_Composite_0",
-			"node_name": "K2Node_Composite_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_Composite",
-			"title": "Build SpwanTransform\nCollapsed Graph",
-			"title_single_line": "Build SpwanTransform",
-			"comment": "",
-			"guid": "01805871-4900-e0e6-1fb8-bda7fcd76715",
-			"x": 2416,
-			"y": -656,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "Transform",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -3434,6 +3409,68 @@
 				}
 			],
 			"target_class": "ExecuteScareById"
+		},
+		{
+			"node_id": "K2Node_CallFunction_13",
+			"node_name": "K2Node_CallFunction_13",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Make Transform",
+			"title_single_line": "Make Transform",
+			"comment": "",
+			"guid": "18a953da-40e9-1081-3a3d-8595f609dd2b",
+			"x": 2272,
+			"y": -544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Location",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Rotation",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Rotator",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Scale",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "1.000000,1.000000,1.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Transform",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ExecuteScareById"
 		}
 	],
 	"exec_flow": [
@@ -3475,14 +3512,6 @@
 			"from_pin": "RowNotFound",
 			"to_node_id": "K2Node_Composite_1",
 			"to_node_title": "Debug\nCollapsed Graph",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_IfThenElse_1",
-			"from_node_title": "Branch",
-			"from_pin": "then",
-			"to_node_id": "K2Node_Composite_0",
-			"to_node_title": "Build SpwanTransform\nCollapsed Graph",
 			"to_pin": "execute"
 		},
 		{
@@ -3555,14 +3584,6 @@
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_11",
 			"to_node_title": "Debug Info",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_Composite_0",
-			"from_node_title": "Build SpwanTransform\nCollapsed Graph",
-			"from_pin": "then",
-			"to_node_id": "K2Node_SpawnActorFromClass_0",
-			"to_node_title": "SpawnActor",
 			"to_pin": "execute"
 		},
 		{
@@ -3702,6 +3723,22 @@
 			"to_node_id": "K2Node_Knot_1",
 			"to_node_title": "Reroute Node",
 			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "ExecuteScareById",
+			"from_pin": "TargetLocation",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Make Transform",
+			"to_pin": "Location"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "ExecuteScareById",
+			"from_pin": "TargetRotation",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Make Transform",
+			"to_pin": "Rotation"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_0",
@@ -3894,14 +3931,6 @@
 			"to_node_id": "K2Node_FormatText_3",
 			"to_node_title": "Format Text",
 			"to_pin": "ScareId"
-		},
-		{
-			"from_node_id": "K2Node_Composite_0",
-			"from_node_title": "Build SpwanTransform\nCollapsed Graph",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_SpawnActorFromClass_0",
-			"to_node_title": "SpawnActor",
-			"to_pin": "SpawnTransform"
 		},
 		{
 			"from_node_id": "K2Node_Knot_6",
@@ -4190,6 +4219,14 @@
 			"to_node_id": "K2Node_CallFunction_11",
 			"to_node_title": "Debug Info",
 			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_13",
+			"from_node_title": "Make Transform",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_SpawnActorFromClass_0",
+			"to_node_title": "SpawnActor",
+			"to_pin": "SpawnTransform"
 		}
 	],
 	"problems": []

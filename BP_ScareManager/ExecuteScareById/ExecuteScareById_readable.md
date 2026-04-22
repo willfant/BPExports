@@ -28,6 +28,7 @@ Auto-generated function summary.
 - Debug Critical
 - Is Scare Allowed in Current World Mode
 - Debug Warning
+- Make Transform
 
 ## Called By
 - TryTriggerNextScare

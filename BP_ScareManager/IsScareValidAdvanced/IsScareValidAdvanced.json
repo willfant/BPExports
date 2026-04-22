@@ -67,6 +67,15 @@
 					"resolved_type": "S_ScareEntry",
 					"default_value": "",
 					"linked_count": 2
+				},
+				{
+					"pin_name": "TargetLocation",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 2
 				}
 			],
 			"target_class": "IsScareValidAdvanced"
@@ -263,12 +272,21 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "ScareData ",
+					"pin_name": "ScareData",
 					"direction": "Input",
 					"category": "struct",
 					"subcategory": "None",
 					"resolved_type": "S_ScareEntry",
 					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "TargetLocation",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
 					"linked_count": 1
 				},
 				{
@@ -568,7 +586,7 @@
 					"subcategory": "None",
 					"resolved_type": "Vector",
 					"default_value": "0, 0, 0",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "bIsValid",
@@ -626,8 +644,8 @@
 			"title_single_line": "Set LineofOk",
 			"comment": "",
 			"guid": "25539f9b-4891-6d4d-04ed-ff963e5ed8e9",
-			"x": 1136,
-			"y": 0,
+			"x": 1152,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -977,6 +995,76 @@
 				}
 			],
 			"target_class": "IsScareValidAdvanced"
+		},
+		{
+			"node_id": "K2Node_Knot_4",
+			"node_name": "K2Node_Knot_4",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "97202096-49b0-e091-9a6a-5b9c7d122023",
+			"x": -592,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidAdvanced"
+		},
+		{
+			"node_id": "K2Node_Knot_5",
+			"node_name": "K2Node_Knot_5",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "9dcc909b-4db5-f387-c206-149b310b6692",
+			"x": -560,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "IsScareValidAdvanced"
 		}
 	],
 	"exec_flow": [
@@ -1071,6 +1159,22 @@
 			"to_pin": "InputPin"
 		},
 		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "IsScareValidAdvanced",
+			"from_pin": "TargetLocation",
+			"to_node_id": "K2Node_Knot_4",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "IsScareValidAdvanced",
+			"from_pin": "TargetLocation",
+			"to_node_id": "K2Node_Knot_5",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
 			"from_node_id": "K2Node_CallFunction_0",
 			"from_node_title": "Is Scare Off Cooldown\nTarget is BP Scare Manager",
 			"from_pin": "bIsOffCooldown",
@@ -1100,7 +1204,7 @@
 			"from_pin": "OutputPin",
 			"to_node_id": "K2Node_CallFunction_1",
 			"to_node_title": "Is Scare Valid Basic\nTarget is BP Scare Manager",
-			"to_pin": "ScareData "
+			"to_pin": "ScareData"
 		},
 		{
 			"from_node_id": "K2Node_Knot_1",
@@ -1205,6 +1309,22 @@
 			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
 			"to_node_title": "AND Boolean",
 			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_Knot_4",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Is Scare Valid Basic\nTarget is BP Scare Manager",
+			"to_pin": "TargetLocation"
+		},
+		{
+			"from_node_id": "K2Node_Knot_5",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Is Scare Line Of Sight Valid\nTarget is BP Scare Manager",
+			"to_pin": "TargetLocation"
 		}
 	],
 	"problems": []

@@ -32,7 +32,8 @@
 			"To String (Text)",
 			"Is Valid",
 			"Debug Critical",
-			"Debug Warning"
+			"Debug Warning",
+			"Resolve Scare Target Transform"
 		],
 		"called_by": [],
 		"branch_points": [
@@ -348,7 +349,7 @@
 			"title_single_line": "Execute Scare by Id",
 			"comment": "",
 			"guid": "6c1d62be-41f8-454d-4c3b-1da1c21ca26d",
-			"x": 3536,
+			"x": 3952,
 			"y": 544,
 			"has_error": false,
 			"has_warning": false,
@@ -387,6 +388,24 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "TargetLocation",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "TargetRotation",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Rotator",
+					"default_value": "0, 0, 0",
 					"linked_count": 1
 				}
 			],
@@ -1010,7 +1029,7 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "eaecd071-4d30-4ff6-efd9-c3a4785b109c",
-			"x": 3504,
+			"x": 4320,
 			"y": -192,
 			"has_error": false,
 			"has_warning": false,
@@ -1063,7 +1082,7 @@
 			"title_single_line": "Add",
 			"comment": "",
 			"guid": "121c2a85-421b-c6d8-f675-11b79ead4421",
-			"x": 4224,
+			"x": 5040,
 			"y": -176,
 			"has_error": false,
 			"has_warning": false,
@@ -1134,7 +1153,7 @@
 			"title_single_line": "Get ValidScareIds",
 			"comment": "",
 			"guid": "c0b6609d-4224-3b5f-01b8-0e8c06dc7559",
-			"x": 4048,
+			"x": 4864,
 			"y": -128,
 			"has_error": false,
 			"has_warning": false,
@@ -1389,7 +1408,7 @@
 			"title_single_line": "Register Triggered Scare",
 			"comment": "",
 			"guid": "f5c4fbde-4e74-ecda-12e2-4a89db46cb65",
-			"x": 3920,
+			"x": 4336,
 			"y": 544,
 			"has_error": false,
 			"has_warning": false,
@@ -1442,7 +1461,7 @@
 			"title_single_line": "Is Scare Valid Advanced",
 			"comment": "",
 			"guid": "a3ea8c79-4927-64a2-3944-c3b839f5b88e",
-			"x": 3184,
+			"x": 4000,
 			"y": -208,
 			"has_error": false,
 			"has_warning": false,
@@ -1481,6 +1500,15 @@
 					"subcategory": "None",
 					"resolved_type": "S_ScareEntry",
 					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "TargetLocation",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
 					"linked_count": 1
 				},
 				{
@@ -1672,7 +1700,7 @@
 			"title_single_line": "Get ValidScareCandidates",
 			"comment": "",
 			"guid": "1b1b7962-443d-f6b8-d6c6-08987e58263a",
-			"x": 3664,
+			"x": 4480,
 			"y": -64,
 			"has_error": false,
 			"has_warning": false,
@@ -1707,7 +1735,7 @@
 			"title_single_line": "Add",
 			"comment": "",
 			"guid": "57a7cd6b-4b0b-c153-a28b-21812fe700c2",
-			"x": 3872,
+			"x": 4688,
 			"y": -176,
 			"has_error": false,
 			"has_warning": false,
@@ -3197,7 +3225,7 @@
 			"title_single_line": "Reroute Node",
 			"comment": "",
 			"guid": "ff9d5a5f-46a3-01bb-c40f-a68280bd2815",
-			"x": 4096,
+			"x": 4912,
 			"y": 16,
 			"has_error": false,
 			"has_warning": false,
@@ -3875,7 +3903,7 @@
 			"title_single_line": "Reroute Node",
 			"comment": "",
 			"guid": "65a475f2-4a45-b095-4db1-fea6488f99d9",
-			"x": 3792,
+			"x": 4208,
 			"y": 688,
 			"has_error": false,
 			"has_warning": false,
@@ -3945,7 +3973,7 @@
 			"title_single_line": "Format Text",
 			"comment": "",
 			"guid": "3281d32e-4a8d-c0c1-ff42-c38381bad8c9",
-			"x": 4128,
+			"x": 4544,
 			"y": 784,
 			"has_error": false,
 			"has_warning": false,
@@ -3989,8 +4017,8 @@
 			"title_single_line": "Reroute Node",
 			"comment": "",
 			"guid": "4d399d47-47ff-fa6a-4f2e-d2b9fadcb005",
-			"x": 3904,
-			"y": 864,
+			"x": 4320,
+			"y": 848,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -4024,7 +4052,7 @@
 			"title_single_line": "Reroute Node",
 			"comment": "",
 			"guid": "18417151-4c09-cbc9-d56d-b69eb768e521",
-			"x": 3760,
+			"x": 4176,
 			"y": 784,
 			"has_error": false,
 			"has_warning": false,
@@ -4059,7 +4087,7 @@
 			"title_single_line": "Debug Info",
 			"comment": "",
 			"guid": "ae0421c8-47fd-16da-79ea-e39c5d2615fd",
-			"x": 4816,
+			"x": 5232,
 			"y": 576,
 			"has_error": false,
 			"has_warning": false,
@@ -4148,7 +4176,7 @@
 			"title_single_line": "Self-Reference",
 			"comment": "",
 			"guid": "b87d502c-40ee-0a40-8953-268ea007e1dc",
-			"x": 4448,
+			"x": 4864,
 			"y": 640,
 			"has_error": false,
 			"has_warning": false,
@@ -4174,7 +4202,7 @@
 			"title_single_line": "Get Sender Name",
 			"comment": "",
 			"guid": "53215ba2-45f0-2c9d-4617-0584e9b919f7",
-			"x": 4592,
+			"x": 5008,
 			"y": 704,
 			"has_error": false,
 			"has_warning": false,
@@ -4271,8 +4299,300 @@
 			"title_single_line": "Return Node",
 			"comment": "",
 			"guid": "97c0d99b-41ee-2f6f-b9a3-798664c891c5",
-			"x": 5216,
+			"x": 5632,
 			"y": 576,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallFunction_24",
+			"node_name": "K2Node_CallFunction_24",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Resolve Scare Target Transform\nTarget is BP Scare Manager",
+			"title_single_line": "Resolve Scare Target Transform",
+			"comment": "",
+			"guid": "c95d79de-46a8-634d-4362-08a821ecf587",
+			"x": 3088,
+			"y": -208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bResolved",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "TargetLocation",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "TargetRotation",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Rotator",
+					"default_value": "0, 0, 0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_9",
+			"node_name": "K2Node_IfThenElse_9",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "3a7df5d8-42a6-ff4c-7c98-7793964bc210",
+			"x": 3440,
+			"y": -192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_CallFunction_25",
+			"node_name": "K2Node_CallFunction_25",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Resolve Scare Target Transform\nTarget is BP Scare Manager",
+			"title_single_line": "Resolve Scare Target Transform",
+			"comment": "",
+			"guid": "599cebc6-4201-864d-6fcb-0da08425f9c5",
+			"x": 3456,
+			"y": 544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ScareData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bResolved",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "TargetLocation",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "TargetRotation",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Rotator",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_10",
+			"node_name": "K2Node_IfThenElse_10",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "1bad3580-4f24-5b04-2d1e-d0b7e102d476",
+			"x": 3728,
+			"y": 560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryTriggerNextScare"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_7",
+			"node_name": "K2Node_FunctionResult_7",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "056f5ae5-452d-2d14-6fb5-018195f762c2",
+			"x": 3936,
+			"y": 912,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -4414,8 +4734,8 @@
 			"from_node_id": "K2Node_IfThenElse_5",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_11",
-			"to_node_title": "Is Scare Valid Advanced\nTarget is BP Scare Manager",
+			"to_node_id": "K2Node_CallFunction_24",
+			"to_node_title": "Resolve Scare Target Transform\nTarget is BP Scare Manager",
 			"to_pin": "execute"
 		},
 		{
@@ -4574,8 +4894,8 @@
 			"from_node_id": "K2Node_VariableSet_1",
 			"from_node_title": "Set SelectedScareId",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Execute Scare by Id\nTarget is BP Scare Manager",
+			"to_node_id": "K2Node_CallFunction_25",
+			"to_node_title": "Resolve Scare Target Transform\nTarget is BP Scare Manager",
 			"to_pin": "execute"
 		},
 		{
@@ -4583,6 +4903,46 @@
 			"from_node_title": "Debug Info",
 			"from_pin": "then",
 			"to_node_id": "K2Node_FunctionResult_6",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_24",
+			"from_node_title": "Resolve Scare Target Transform\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_9",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_9",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Is Scare Valid Advanced\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_25",
+			"from_node_title": "Resolve Scare Target Transform\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_10",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_10",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Execute Scare by Id\nTarget is BP Scare Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_10",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_FunctionResult_7",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
@@ -5171,6 +5531,46 @@
 			"to_node_id": "K2Node_CallFunction_22",
 			"to_node_title": "Debug Info",
 			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_24",
+			"from_node_title": "Resolve Scare Target Transform\nTarget is BP Scare Manager",
+			"from_pin": "bResolved",
+			"to_node_id": "K2Node_IfThenElse_9",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_24",
+			"from_node_title": "Resolve Scare Target Transform\nTarget is BP Scare Manager",
+			"from_pin": "TargetLocation",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Is Scare Valid Advanced\nTarget is BP Scare Manager",
+			"to_pin": "TargetLocation"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_25",
+			"from_node_title": "Resolve Scare Target Transform\nTarget is BP Scare Manager",
+			"from_pin": "bResolved",
+			"to_node_id": "K2Node_IfThenElse_10",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_25",
+			"from_node_title": "Resolve Scare Target Transform\nTarget is BP Scare Manager",
+			"from_pin": "TargetLocation",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Execute Scare by Id\nTarget is BP Scare Manager",
+			"to_pin": "TargetLocation"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_25",
+			"from_node_title": "Resolve Scare Target Transform\nTarget is BP Scare Manager",
+			"from_pin": "TargetRotation",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Execute Scare by Id\nTarget is BP Scare Manager",
+			"to_pin": "TargetRotation"
 		}
 	],
 	"problems": []

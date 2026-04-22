@@ -16,6 +16,9 @@ Auto-generated function summary.
 - Get Actor Location
 - Distance (Vector)
 
+## Called By
+- IsScareDistanceValid
+
 ## Branch Points
 - Branch
 

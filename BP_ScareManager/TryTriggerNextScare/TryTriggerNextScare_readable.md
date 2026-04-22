@@ -29,6 +29,7 @@ Auto-generated function summary.
 - Is Valid
 - Debug Critical
 - Debug Warning
+- Resolve Scare Target Transform
 
 ## Branch Points
 - Branch
