@@ -9,6 +9,7 @@ Auto-generated function summary.
 ## Reads
 - ScaresDataTable
 - CurrentGhostId
+- CurrentScareActor
 
 ## Writes
 - CurrentScareActor
@@ -19,9 +20,14 @@ Auto-generated function summary.
 - Initialize Scare
 - Apply Scare Entry Data
 - Execute Scare
-- Is Scare Allowed in Current World Mode
 - Is Scare Blocked
 - Is Scare Allowed for Current Ghost State
+- Debug Info
+- To String (Text)
+- Get Sender Name
+- Debug Critical
+- Is Scare Allowed in Current World Mode
+- Debug Warning
 
 ## Called By
 - TryTriggerNextScare
