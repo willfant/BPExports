@@ -7,22 +7,15 @@ EventGraph
 Main runtime entry graph for this Blueprint.
 
 ## Reads
-- SaveManagerRef
 - ObjectiveStates
-- CurrentObjectiveId
-
-## Writes
-- SaveManagerRef
 
 ## Calls
-- Get Game Instance
-- Register Objective Manager
-- Restore Objectives from Save
 - Print String
 - To String (Name)
 - To String (Integer)
+- Initialize Objective Manager
 
 ## Notes
-- Has latent nodes: Yes
+- Has latent nodes: No
 - Has error nodes: No
 - Has warning nodes: No

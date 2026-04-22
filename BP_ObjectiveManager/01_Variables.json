@@ -1,26 +1,9 @@
 {
 	"variables": [
 		{
-			"name": "bEnableObjectiveDebug",
-			"friendly_name": "Enable Objective Debug",
-			"category": "Debug",
-			"editable": true,
-			"kind": "Debug",
-			"is_array": false,
-			"is_set": false,
-			"is_map": false,
-			"type":
-			{
-				"pin_category": "bool",
-				"pin_subcategory": "None",
-				"resolved_type": "Boolean"
-			},
-			"used_in_graphs": []
-		},
-		{
 			"name": "CurrentQuestId",
 			"friendly_name": "Current Quest Id",
-			"category": "Objectives",
+			"category": "Objectives|State",
 			"editable": true,
 			"kind": "State",
 			"is_array": false,
@@ -37,7 +20,7 @@
 		{
 			"name": "CurrentObjectiveId",
 			"friendly_name": "Current Objective Id",
-			"category": "Objectives",
+			"category": "Objectives|State",
 			"editable": true,
 			"kind": "State",
 			"is_array": false,
@@ -54,7 +37,7 @@
 		{
 			"name": "ObjectiveStates",
 			"friendly_name": "Objective States",
-			"category": "Objectives",
+			"category": "Objectives|State",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": true,
@@ -71,7 +54,7 @@
 		{
 			"name": "ObjectivesDataTable",
 			"friendly_name": "Objectives Data Table",
-			"category": "Objectives",
+			"category": "Objectives|Config",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,
@@ -88,7 +71,7 @@
 		{
 			"name": "CurrentGhostId",
 			"friendly_name": "Current Ghost Id",
-			"category": "Objectives",
+			"category": "Ghost|State",
 			"editable": true,
 			"kind": "State",
 			"is_array": false,
@@ -105,7 +88,7 @@
 		{
 			"name": "SaveManagerRef",
 			"friendly_name": "Save Manager Ref",
-			"category": "Save",
+			"category": "Registry",
 			"editable": true,
 			"kind": "Reference",
 			"is_array": false,
@@ -120,26 +103,9 @@
 			"used_in_graphs": []
 		},
 		{
-			"name": "ObjectiveDebugPrefix",
-			"friendly_name": "Objective Debug Prefix",
-			"category": "Debug",
-			"editable": true,
-			"kind": "Debug",
-			"is_array": false,
-			"is_set": false,
-			"is_map": false,
-			"type":
-			{
-				"pin_category": "string",
-				"pin_subcategory": "None",
-				"resolved_type": "String"
-			},
-			"used_in_graphs": []
-		},
-		{
 			"name": "OnCurrentObjectiveChanged",
 			"friendly_name": "On Current Objective Changed",
-			"category": "Default",
+			"category": "Dispatchers",
 			"editable": true,
 			"kind": "Dispatcher",
 			"is_array": false,
@@ -156,7 +122,41 @@
 		{
 			"name": "bObjectivesRestoredFromSave",
 			"friendly_name": "Objectives Restored from Save",
-			"category": "Objectives",
+			"category": "Objectives|Restore",
+			"editable": true,
+			"kind": "Unknown",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "bool",
+				"pin_subcategory": "None",
+				"resolved_type": "Boolean"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "GhostManagerRef",
+			"friendly_name": "Ghost Manager Ref",
+			"category": "Registry",
+			"editable": true,
+			"kind": "Reference",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "object",
+				"pin_subcategory": "None",
+				"resolved_type": "BP_GhostManager_C"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "bInitialized",
+			"friendly_name": "Initialized",
+			"category": "Objective|Internal",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,

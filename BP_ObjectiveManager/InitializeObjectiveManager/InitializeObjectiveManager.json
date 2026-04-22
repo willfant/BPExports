@@ -1,0 +1,1518 @@
+{
+	"graph_name": "InitializeObjectiveManager",
+	"graph_type": "Function",
+	"entry_node_id": "K2Node_FunctionEntry_0",
+	"has_latent_nodes": false,
+	"has_error_nodes": false,
+	"has_warning_nodes": false,
+	"locals": [],
+	"returns": [],
+	"summary":
+	{
+		"purpose": "Initializes references, state, or startup flow.",
+		"reads_variables": [
+			"bInitialized",
+			"SaveManagerRef",
+			"GhostManagerRef"
+		],
+		"writes_variables": [
+			"SaveManagerRef",
+			"GhostManagerRef",
+			"bInitialized"
+		],
+		"calls": [
+			"Debug Info",
+			"Get Sender Name",
+			"Get Game Instance",
+			"Debug Critical",
+			"Register Objective Manager",
+			"Initialize Ghost Binding"
+		],
+		"called_by": [
+			"EventGraph"
+		],
+		"branch_points": [
+			"Branch"
+		]
+	},
+	"nodes": [
+		{
+			"node_id": "K2Node_FunctionEntry_0",
+			"node_name": "K2Node_FunctionEntry_0",
+			"node_kind": "FunctionEntry",
+			"ue_class": "K2Node_FunctionEntry",
+			"title": "InitializeObjectiveManager",
+			"title_single_line": "InitializeObjectiveManager",
+			"comment": "",
+			"guid": "b6add341-4a1b-bf81-3e59-4db7054df874",
+			"x": 0,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bInitialized",
+			"title_single_line": "Get bInitialized",
+			"comment": "",
+			"guid": "e0fa2685-4cad-5157-34ba-9581cd60dc1a",
+			"x": 128,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bInitialized",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "e8bcea4d-49c9-a3b6-ea33-d7b07239568e",
+			"x": 384,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "e49975e2-4703-390e-3436-daa77f3cc49e",
+			"x": 784,
+			"y": -288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator5",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[ObjectiveManager] InitializeObjectiveManager ignored because manager is already initialized",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "5345ad94-427a-11c0-5299-51b205d12ce8",
+			"x": 400,
+			"y": -240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "a5a6cbc4-46b7-21b0-d2a2-4cb0fbe7df45",
+			"x": 560,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "16cfd921-4348-dcb0-0c78-128b1b095fd8",
+			"x": 1376,
+			"y": -288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Game Instance",
+			"title_single_line": "Get Game Instance",
+			"comment": "",
+			"guid": "07509fd8-4ffd-e74f-59fc-228138e5aec7",
+			"x": 368,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameInstance",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_DynamicCast_0",
+			"node_name": "K2Node_DynamicCast_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_DynamicCast",
+			"title": "Cast To GI_Echoes",
+			"title_single_line": "Cast To GI_Echoes",
+			"comment": "",
+			"guid": "e01c4089-439a-b5cd-36ff-ecb0efd0a8b3",
+			"x": 672,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CastFailed",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "AsGI Echoes",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 3
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Critical",
+			"title_single_line": "Debug Critical",
+			"comment": "",
+			"guid": "146dc93d-4cbd-0c5e-e8eb-8094b5df0675",
+			"x": 1024,
+			"y": 400,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator5",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[ObjectiveManager] InitializeObjectiveManager failed because GI_Echoes cast failed",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_Self_1",
+			"node_name": "K2Node_Self_1",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "677bee73-4e29-fd91-8f49-fa9a0df7808e",
+			"x": 592,
+			"y": 464,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "164ecc28-4838-de8c-c8d5-73b40ecec7f1",
+			"x": 704,
+			"y": 512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "bbf4fc94-43b6-c131-97df-81a13d099777",
+			"x": 1584,
+			"y": 400,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Register Objective Manager\nTarget is GI Echoes",
+			"title_single_line": "Register Objective Manager",
+			"comment": "",
+			"guid": "80631c19-4cde-e0f3-95f4-17b24f217e7c",
+			"x": 1040,
+			"y": 64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "InObjectiveManager",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "4ec5f304-409c-dfbb-3c43-3dbdfe1cd3bc",
+			"x": 864,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get SaveManagerRef",
+			"title_single_line": "Get SaveManagerRef",
+			"comment": "",
+			"guid": "de509d01-47e6-fb95-4344-158b67ef6842",
+			"x": 1104,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "SaveManagerRef",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set SaveManagerRef",
+			"title_single_line": "Set SaveManagerRef",
+			"comment": "",
+			"guid": "b969f85a-4003-b672-ccac-e387e8cda28f",
+			"x": 1488,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "SaveManagerRef",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_VariableGet_3",
+			"node_name": "K2Node_VariableGet_3",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get GhostManagerRef",
+			"title_single_line": "Get GhostManagerRef",
+			"comment": "",
+			"guid": "812f092b-4fd5-8813-951f-8b9345ad391f",
+			"x": 1104,
+			"y": 272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "GhostManagerRef",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set GhostManagerRef",
+			"title_single_line": "Set GhostManagerRef",
+			"comment": "",
+			"guid": "527c110b-478e-7467-6512-bfa779bd187d",
+			"x": 1792,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostManagerRef",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "db3fd964-402d-1950-3885-ccb82ebc5978",
+			"x": 1696,
+			"y": 272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_7",
+			"node_name": "K2Node_CallFunction_7",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Initialize Ghost Binding\nTarget is BP Objective Manager",
+			"title_single_line": "Initialize Ghost Binding",
+			"comment": "",
+			"guid": "7cbc0542-4fff-0dc3-ec24-f5a007cc9451",
+			"x": 2080,
+			"y": 64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_VariableSet_2",
+			"node_name": "K2Node_VariableSet_2",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bInitialized",
+			"title_single_line": "Set bInitialized",
+			"comment": "",
+			"guid": "c65804b1-4250-7636-e1fc-398439ae2327",
+			"x": 2416,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bInitialized",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "356a228d-4036-4fca-8bad-f7a4a4d34f52",
+			"x": 2768,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[ObjectiveManager] InitializeObjectiveManager completed successfully",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_Self_3",
+			"node_name": "K2Node_Self_3",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "0f6b1a4b-4084-97bc-354f-6db45ea1e513",
+			"x": 2416,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "56e5d4a8-4a16-eff8-5ee6-57baa7bd8d6d",
+			"x": 2576,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "0d42f559-484f-3f37-c29f-1caa75e080c5",
+			"x": 3280,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeObjectiveManager"
+		}
+	],
+	"exec_flow": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "InitializeObjectiveManager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Debug Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Register Objective Manager\nTarget is GI Echoes",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "CastFailed",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Debug Critical",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Debug Critical",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Register Objective Manager\nTarget is GI Echoes",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set SaveManagerRef",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set SaveManagerRef",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set GhostManagerRef",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set GhostManagerRef",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Initialize Ghost Binding\nTarget is BP Objective Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_7",
+			"from_node_title": "Initialize Ghost Binding\nTarget is BP Objective Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set bInitialized",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set bInitialized",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Debug Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		}
+	],
+	"data_links": [
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get bInitialized",
+			"from_pin": "bInitialized",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Get Game Instance",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "AsGI Echoes",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Register Objective Manager\nTarget is GI Echoes",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "AsGI Echoes",
+			"to_node_id": "K2Node_VariableGet_2",
+			"to_node_title": "Get SaveManagerRef",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "AsGI Echoes",
+			"to_node_id": "K2Node_VariableGet_3",
+			"to_node_title": "Get GhostManagerRef",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Debug Critical",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Debug Critical",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Register Objective Manager\nTarget is GI Echoes",
+			"to_pin": "InObjectiveManager"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get SaveManagerRef",
+			"from_pin": "SaveManagerRef",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set SaveManagerRef",
+			"to_pin": "SaveManagerRef"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_3",
+			"from_node_title": "Get GhostManagerRef",
+			"from_pin": "GhostManagerRef",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set GhostManagerRef",
+			"to_pin": "GhostManagerRef"
+		},
+		{
+			"from_node_id": "K2Node_Self_3",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_3",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_9",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
+		}
+	],
+	"problems": []
+}

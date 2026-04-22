@@ -14,6 +14,7 @@ Restores runtime state from previously saved or cached data.
 
 ## Called By
 - InitializeObjectivesForGhost
+- HandleGhostChanged
 
 ## Notes
 - Has latent nodes: No

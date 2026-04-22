@@ -1,4 +1,4 @@
-# HasActiveObjective
+# HandleGhostCleared
 
 ## Graph Type
 Function
@@ -6,19 +6,15 @@ Function
 ## Purpose
 Auto-generated function summary.
 
-## Returns
-- Result (Boolean)
-- Result (Boolean)
+## Writes
+- CurrentGhostId
 
-## Reads
-- CurrentObjectiveId
+## Calls
+- Debug Info
+- Get Sender Name
 
 ## Called By
-- InitializeObjectivesForGhost
 - HandleGhostChanged
-
-## Branch Points
-- Branch
 
 ## Notes
 - Has latent nodes: No

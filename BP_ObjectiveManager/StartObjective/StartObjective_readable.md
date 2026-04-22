@@ -8,7 +8,6 @@ Starts a flow, state transition, or activation sequence.
 
 ## Reads
 - ObjectivesDataTable
-- bEnableObjectiveDebug
 - ObjectiveStates
 - LocalObjectiveStates
 - bFoundExistingObjective

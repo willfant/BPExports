@@ -25,9 +25,6 @@ Restores runtime state from previously saved or cached data.
 - String To Name
 - Debug Warning
 
-## Called By
-- EventGraph
-
 ## Branch Points
 - Branch
 

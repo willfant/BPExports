@@ -1,4 +1,4 @@
-# InitializeObjectivesForGhost
+# InitializeGhostBinding
 
 ## Graph Type
 Function
@@ -7,17 +7,17 @@ Function
 Initializes references, state, or startup flow.
 
 ## Reads
-- CurrentObjectiveId
+- GhostManagerRef
 
 ## Calls
-- Has Restored Objective State
-- Debug
-- To String (Text)
-- Has Active Objective
-- Start Objective
+- Is Valid
+- Debug Warning
+- Get Sender Name
+- Handle Ghost Changed
+- Debug Info
 
 ## Called By
-- HandleGhostChanged
+- InitializeObjectiveManager
 
 ## Branch Points
 - Branch
