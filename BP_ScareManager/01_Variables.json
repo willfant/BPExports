@@ -3,7 +3,7 @@
 		{
 			"name": "CurrentGhostId",
 			"friendly_name": "Current Ghost Id",
-			"category": "Ghost",
+			"category": "Ghost|State",
 			"editable": true,
 			"kind": "State",
 			"is_array": false,
@@ -20,7 +20,7 @@
 		{
 			"name": "CurrentGhostState",
 			"friendly_name": "Current Ghost State",
-			"category": "Ghost",
+			"category": "Ghost|State",
 			"editable": true,
 			"kind": "State",
 			"is_array": false,
@@ -37,7 +37,7 @@
 		{
 			"name": "ActiveScareIds",
 			"friendly_name": "Active Scare Ids",
-			"category": "Scares",
+			"category": "Scares|Runtime",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": true,
@@ -54,7 +54,7 @@
 		{
 			"name": "bScareLoopActive",
 			"friendly_name": "Scare Loop Active",
-			"category": "Scares",
+			"category": "Scares|Loop",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,
@@ -71,7 +71,7 @@
 		{
 			"name": "ScareLoopInterval",
 			"friendly_name": "Scare Loop Interval",
-			"category": "Scares",
+			"category": "Scares|Loop",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,
@@ -88,7 +88,7 @@
 		{
 			"name": "ScareLoopTimerHandle",
 			"friendly_name": "Scare Loop Timer Handle",
-			"category": "Scares",
+			"category": "Scares|Loop",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,
@@ -122,7 +122,7 @@
 		{
 			"name": "ScaresDataTable",
 			"friendly_name": "Scares Data Table",
-			"category": "Scares",
+			"category": "Scares|Config",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,
@@ -139,7 +139,7 @@
 		{
 			"name": "CurrentScareActor",
 			"friendly_name": "Current Scare Actor",
-			"category": "Scares",
+			"category": "Scares|Runtime",
 			"editable": true,
 			"kind": "State",
 			"is_array": false,
@@ -156,7 +156,7 @@
 		{
 			"name": "bScareCooldownActive ",
 			"friendly_name": "Scare Cooldown Active ",
-			"category": "Scares",
+			"category": "Scares|Cooldown",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,
@@ -173,7 +173,7 @@
 		{
 			"name": "ScareCooldownTime",
 			"friendly_name": "Scare Cooldown Time",
-			"category": "Scares",
+			"category": "Scares|Cooldown",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,
@@ -190,7 +190,7 @@
 		{
 			"name": "ScareCooldownTimerHandle",
 			"friendly_name": "Scare Cooldown Timer Handle",
-			"category": "Scares",
+			"category": "Scares|Cooldown",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,
@@ -207,7 +207,7 @@
 		{
 			"name": "ValidScareIds",
 			"friendly_name": "Valid Scare Ids",
-			"category": "Scares",
+			"category": "Scares|Selection",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": true,
@@ -224,7 +224,7 @@
 		{
 			"name": "CandidateScareData",
 			"friendly_name": "Candidate Scare Data",
-			"category": "Scares",
+			"category": "Scares|Selection",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,
@@ -241,7 +241,7 @@
 		{
 			"name": "SelectedScareId",
 			"friendly_name": "Selected Scare Id",
-			"category": "Scares",
+			"category": "Scares|Selection",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,
@@ -258,7 +258,7 @@
 		{
 			"name": "CurrentWorldMode",
 			"friendly_name": "Current World Mode",
-			"category": "World",
+			"category": "World|State",
 			"editable": true,
 			"kind": "State",
 			"is_array": false,
@@ -275,7 +275,7 @@
 		{
 			"name": "WorldModeSystemRef",
 			"friendly_name": "World Mode System Ref",
-			"category": "World",
+			"category": "Registry",
 			"editable": true,
 			"kind": "Reference",
 			"is_array": false,
@@ -292,7 +292,7 @@
 		{
 			"name": "LastAnyScareTime",
 			"friendly_name": "Last Any Scare Time",
-			"category": "Scares",
+			"category": "Scares|Cooldown",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,
@@ -309,7 +309,7 @@
 		{
 			"name": "LastTriggeredScareTimes",
 			"friendly_name": "Last Triggered Scare Times",
-			"category": "Scares",
+			"category": "Scares|Cooldown",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": false,
@@ -326,7 +326,7 @@
 		{
 			"name": "ValidScareCandidates",
 			"friendly_name": "Valid Scare Candidates",
-			"category": "Default",
+			"category": "Scares|Selectio",
 			"editable": true,
 			"kind": "Unknown",
 			"is_array": true,
@@ -337,6 +337,23 @@
 				"pin_category": "struct",
 				"pin_subcategory": "None",
 				"resolved_type": "S_ScareEntry"
+			},
+			"used_in_graphs": []
+		},
+		{
+			"name": "bInitialized",
+			"friendly_name": "Initialized",
+			"category": "Scare|Internal",
+			"editable": true,
+			"kind": "Unknown",
+			"is_array": false,
+			"is_set": false,
+			"is_map": false,
+			"type":
+			{
+				"pin_category": "bool",
+				"pin_subcategory": "None",
+				"resolved_type": "Boolean"
 			},
 			"used_in_graphs": []
 		}

@@ -6,16 +6,14 @@ Function
 ## Purpose
 Auto-generated function summary.
 
-## Reads
-- DebugEnabled
-
 ## Writes
 - CurrentGhostState
 
 ## Calls
 - Restart Scare Loop for Current State
-- Debug Message
 - To String (Text)
+- Debug Info
+- Get Sender Name
 
 ## Notes
 - Has latent nodes: No

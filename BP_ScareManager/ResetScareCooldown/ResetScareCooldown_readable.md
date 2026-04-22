@@ -6,14 +6,12 @@ Function
 ## Purpose
 Resets runtime state or reinitializes a sub-flow.
 
-## Reads
-- DebugEnabled
-
 ## Writes
 - bScareCooldownActive 
 
 ## Calls
-- Debug Message
+- Debug Info
+- Get Sender Name
 
 ## Notes
 - Has latent nodes: No

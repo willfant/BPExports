@@ -26,8 +26,7 @@
 		"reads_variables": [
 			"TotalWeight",
 			"RunningWeight",
-			"RandomPick",
-			"DebugEnabled"
+			"RandomPick"
 		],
 		"writes_variables": [
 			"TotalWeight",
@@ -36,8 +35,9 @@
 		],
 		"calls": [
 			"Random Float in Range",
-			"Debug Message",
-			"To String (Text)"
+			"To String (Text)",
+			"Debug Info",
+			"Get Sender Name"
 		],
 		"called_by": [
 			"TryTriggerNextScare"
@@ -757,8 +757,8 @@
 			"title_single_line": "Get TotalWeight",
 			"comment": "",
 			"guid": "43b14643-4260-2971-0c87-ea991f038d8c",
-			"x": 928,
-			"y": 32,
+			"x": 960,
+			"y": -80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -783,8 +783,8 @@
 			"title_single_line": "Set TotalWeight",
 			"comment": "",
 			"guid": "b4e3962a-4651-cf0e-d07b-04b8e2caad1f",
-			"x": 1696,
-			"y": 32,
+			"x": 1712,
+			"y": -80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -836,8 +836,8 @@
 			"title_single_line": "float + float",
 			"comment": "",
 			"guid": "92e03b8f-4512-458d-7826-3690e557e5c6",
-			"x": 1136,
-			"y": 64,
+			"x": 1168,
+			"y": -48,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1625,8 +1625,8 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "36b09774-444f-3d23-5baa-aaa56c00cf85",
-			"x": 3216,
-			"y": 576,
+			"x": 3184,
+			"y": 528,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1678,8 +1678,8 @@
 			"title_single_line": "Get RunningWeight",
 			"comment": "",
 			"guid": "99237583-41cd-e63d-9cd1-65b071ef52e2",
-			"x": 3088,
-			"y": 432,
+			"x": 3056,
+			"y": 256,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1704,8 +1704,8 @@
 			"title_single_line": "Set RunningWeight",
 			"comment": "",
 			"guid": "16bf8ec8-42a1-d5e6-792a-32a89487a725",
-			"x": 3504,
-			"y": 560,
+			"x": 3520,
+			"y": 544,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1757,8 +1757,8 @@
 			"title_single_line": "float + float",
 			"comment": "",
 			"guid": "02916b1c-4778-db66-cc2b-9e97a312318a",
-			"x": 3216,
-			"y": 480,
+			"x": 3184,
+			"y": 304,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2021,8 +2021,8 @@
 			"title_single_line": "Return Node",
 			"comment": "",
 			"guid": "f27fdae1-42ad-8167-5055-1ba5b3109727",
-			"x": 5376,
-			"y": 560,
+			"x": 5904,
+			"y": 544,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2119,131 +2119,6 @@
 			"target_class": "SelectWeightedRandomScare"
 		},
 		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
-			"comment": "",
-			"guid": "36afea9e-4052-ceec-01fa-ba935cfd0abb",
-			"x": 4912,
-			"y": 592,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator2",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "10.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "SelectWeightedRandomScare"
-		},
-		{
 			"node_id": "K2Node_Self_0",
 			"node_name": "K2Node_Self_0",
 			"node_kind": "SelfReference",
@@ -2252,8 +2127,8 @@
 			"title_single_line": "Self-Reference",
 			"comment": "",
 			"guid": "5c0a2fa1-46ee-b8d4-ed2e-079148c5b0a1",
-			"x": 4704,
-			"y": 736,
+			"x": 4656,
+			"y": 640,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2264,7 +2139,7 @@
 					"subcategory": "self",
 					"resolved_type": "object",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				}
 			],
 			"target_class": "SelectWeightedRandomScare"
@@ -2349,8 +2224,8 @@
 			"title_single_line": "Get RandomPick",
 			"comment": "",
 			"guid": "a900a5a7-44fc-6e99-d52a-c8b6acd51338",
-			"x": 4176,
-			"y": 1008,
+			"x": 3920,
+			"y": 1024,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2375,7 +2250,7 @@
 			"title_single_line": "Get RunningWeight",
 			"comment": "",
 			"guid": "a0aa99cf-4cc8-3427-1b3c-f1875f12243d",
-			"x": 4176,
+			"x": 3872,
 			"y": 976,
 			"has_error": false,
 			"has_warning": false,
@@ -2401,8 +2276,8 @@
 			"title_single_line": "To String (Text)",
 			"comment": "",
 			"guid": "4d2a5f45-408c-465a-124d-0586a937c209",
-			"x": 4640,
-			"y": 704,
+			"x": 4912,
+			"y": 784,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2437,36 +2312,388 @@
 			"target_class": "SelectWeightedRandomScare"
 		},
 		{
-			"node_id": "K2Node_VariableGet_54",
-			"node_name": "K2Node_VariableGet_54",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get DebugEnabled",
-			"title_single_line": "Get DebugEnabled",
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
 			"comment": "",
-			"guid": "df871e81-41fa-b303-c6b6-4eb5a6c2144c",
-			"x": 4720,
-			"y": 896,
+			"guid": "d6797f6e-49fe-8545-2658-729bd205dc90",
+			"x": 1552,
+			"y": -64,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "DebugEnabled",
-					"direction": "Output",
-					"category": "bool",
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
 					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SelectWeightedRandomScare"
+		},
+		{
+			"node_id": "K2Node_Knot_2",
+			"node_name": "K2Node_Knot_2",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "056f5d16-46e3-6f59-1349-d4b068791967",
+			"x": 384,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SelectWeightedRandomScare"
+		},
+		{
+			"node_id": "K2Node_Knot_3",
+			"node_name": "K2Node_Knot_3",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "aafe448d-4530-06db-5428-16a3cdacc8eb",
+			"x": 5520,
+			"y": 1296,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SelectWeightedRandomScare"
+		},
+		{
+			"node_id": "K2Node_Knot_4",
+			"node_name": "K2Node_Knot_4",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "98a7acd5-402a-9bbf-a04d-35a53a7b5c65",
+			"x": 64,
+			"y": 560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SelectWeightedRandomScare"
+		},
+		{
+			"node_id": "K2Node_Knot_5",
+			"node_name": "K2Node_Knot_5",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "eacfa151-4ec0-e028-071b-78be25540238",
+			"x": 2608,
+			"y": 1296,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_ScareEntry",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SelectWeightedRandomScare"
+		},
+		{
+			"node_id": "K2Node_Knot_6",
+			"node_name": "K2Node_Knot_6",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "f948db34-4fbc-1a89-fd5c-f99cc2b70b46",
+			"x": 976,
+			"y": 960,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SelectWeightedRandomScare"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "63e609a2-4aa7-7956-555c-52b2165aed70",
+			"x": 5088,
+			"y": 544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "BP_ScareManager_C",
+					"resolved_type": "BFL_Debug_C",
 					"default_value": "",
 					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "SelectWeightedRandomScare"
+		},
+		{
+			"node_id": "K2Node_Knot_7",
+			"node_name": "K2Node_Knot_7",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "c0530ad6-4b20-3ad0-cd92-f8a5cb0706a9",
+			"x": 5600,
+			"y": 624,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SelectWeightedRandomScare"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "ba28d55c-45cc-8509-cba5-8b934fd2816a",
+			"x": 4848,
+			"y": 688,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
 				}
 			],
 			"target_class": "SelectWeightedRandomScare"
@@ -2485,9 +2712,9 @@
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_1",
-			"to_node_title": "Return Node",
-			"to_pin": "execute"
+			"to_node_id": "K2Node_Knot_2",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_IfThenElse_0",
@@ -2517,9 +2744,9 @@
 			"from_node_id": "K2Node_IfThenElse_1",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set TotalWeight",
-			"to_pin": "execute"
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_IfThenElse_2",
@@ -2597,13 +2824,29 @@
 			"from_node_id": "K2Node_VariableSet_4",
 			"from_node_title": "Set SelectedScareId",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Info",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_1",
-			"from_node_title": "Debug Message",
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set TotalWeight",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Knot_2",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Debug Info",
 			"from_pin": "then",
 			"to_node_id": "K2Node_FunctionResult_3",
 			"to_node_title": "Return Node",
@@ -2663,9 +2906,9 @@
 			"from_node_id": "K2Node_Knot_0",
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_MacroInstance_1",
-			"to_node_title": "For Each Loop",
-			"to_pin": "Array"
+			"to_node_id": "K2Node_Knot_4",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
@@ -2687,9 +2930,9 @@
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Scare Entry",
 			"from_pin": "ProbabilityWeight_25_7C94BA17422076A53B33F0A8B1CC62F8",
-			"to_node_id": "K2Node_FormatText_0",
-			"to_node_title": "Format Text",
-			"to_pin": "W"
+			"to_node_id": "K2Node_Knot_6",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_PromotableOperator_1",
@@ -2759,9 +3002,9 @@
 			"from_node_id": "K2Node_MacroInstance_1",
 			"from_node_title": "For Each Loop",
 			"from_pin": "Array Element",
-			"to_node_id": "K2Node_FunctionResult_3",
-			"to_node_title": "Return Node",
-			"to_pin": "ScareDate"
+			"to_node_id": "K2Node_Knot_5",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_1",
@@ -2839,25 +3082,33 @@
 			"from_node_id": "K2Node_VariableSet_4",
 			"from_node_title": "Set SelectedScareId",
 			"from_pin": "Output_Get",
-			"to_node_id": "K2Node_FunctionResult_3",
-			"to_node_title": "Return Node",
-			"to_pin": "SelectedScare"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_4",
-			"from_node_title": "Set SelectedScareId",
-			"from_pin": "Output_Get",
 			"to_node_id": "K2Node_FormatText_0",
 			"to_node_title": "Format Text",
 			"to_pin": "Id"
 		},
 		{
+			"from_node_id": "K2Node_VariableSet_4",
+			"from_node_title": "Set SelectedScareId",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_Knot_7",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
 			"from_node_id": "K2Node_Self_0",
 			"from_node_title": "Self-Reference",
 			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Info",
 			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
 		},
 		{
 			"from_node_id": "K2Node_FormatText_0",
@@ -2887,25 +3138,57 @@
 			"from_node_id": "K2Node_CallFunction_60",
 			"from_node_title": "To String (Text)",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Info",
 			"to_pin": "Message"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_54",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
+			"from_node_id": "K2Node_Knot_3",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_FunctionResult_3",
+			"to_node_title": "Return Node",
+			"to_pin": "ScareDate"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_54",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
+			"from_node_id": "K2Node_Knot_4",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_title": "For Each Loop",
+			"to_pin": "Array"
+		},
+		{
+			"from_node_id": "K2Node_Knot_5",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_3",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Knot_6",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "W"
+		},
+		{
+			"from_node_id": "K2Node_Knot_7",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_FunctionResult_3",
+			"to_node_title": "Return Node",
+			"to_pin": "SelectedScare"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

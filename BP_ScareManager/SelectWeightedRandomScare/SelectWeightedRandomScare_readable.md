@@ -24,7 +24,6 @@ Auto-generated function summary.
 - TotalWeight
 - RunningWeight
 - RandomPick
-- DebugEnabled
 
 ## Writes
 - TotalWeight
@@ -33,8 +32,9 @@ Auto-generated function summary.
 
 ## Calls
 - Random Float in Range
-- Debug Message
 - To String (Text)
+- Debug Info
+- Get Sender Name
 
 ## Called By
 - TryTriggerNextScare

@@ -193,30 +193,6 @@
 			"suggested_fix": "Split the graph into smaller functions by responsibility."
 		},
 		{
-			"graph": "IsScareAllowedInCurrentWorldMode",
-			"problem_type": "NodeError",
-			"details": "Node has explicit error state.",
-			"node_name": "K2Node_CallFunction_0",
-			"node_title": "Get Current World Mode",
-			"severity": "critical",
-			"confidence": 0.97999999999999998,
-			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
-			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
-			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
-		},
-		{
-			"graph": "InitializeWorldModeBinding",
-			"problem_type": "NodeError",
-			"details": "Node has explicit error state.",
-			"node_name": "K2Node_CreateDelegate_0",
-			"node_title": "Create Event",
-			"severity": "critical",
-			"confidence": 0.97999999999999998,
-			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
-			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
-			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
-		},
-		{
 			"graph": "IsScareValidBasic",
 			"problem_type": "NodeError",
 			"details": "Node has explicit error state.",
@@ -299,6 +275,18 @@
 			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
 			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
 			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
+		},
+		{
+			"graph": "SelectWeightedRandomScare",
+			"problem_type": "FunctionTooLarge",
+			"details": "Graph contains 49 nodes and may be too large.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.93999999999999995,
+			"why_it_matters": "Large graphs are harder to debug, reason about, and safely refactor.",
+			"likely_impact": "Higher chance of regression, duplicated logic, and unreadable flow.",
+			"suggested_fix": "Split the graph into smaller functions by responsibility."
 		}
 	]
 }

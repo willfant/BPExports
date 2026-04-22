@@ -9,9 +9,8 @@ Auto-generated function summary.
 ## Returns
 - Return (Boolean)
 
-## Calls
-- Get Game Instance
-- Get Current World Mode
+## Reads
+- CurrentWorldMode
 
 ## Called By
 - TryTriggerNextScare
@@ -20,5 +19,5 @@ Auto-generated function summary.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

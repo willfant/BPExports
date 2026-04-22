@@ -1,29 +1,24 @@
-# InitializeWorldModeBinding
+# HandleWorldModeChanged
 
 ## Graph Type
 Function
 
 ## Purpose
-Initializes references, state, or startup flow.
+Auto-generated function summary.
 
 ## Reads
 - WorldModeSystemRef
 
 ## Writes
 - CurrentWorldMode
-- WorldModeSystemRef
 
 ## Calls
 - Is Valid
-- Get World Mode
-- Get Game Instance
-- Debug Critical
-- Get Sender Name
 - Debug Warning
+- Get Sender Name
+- Get World Mode
+- Restart Scare Loop for Current State
 - Debug Info
-
-## Called By
-- InitializeScareManager
 
 ## Branch Points
 - Branch

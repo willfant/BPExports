@@ -12,15 +12,11 @@
 		"purpose": "Main runtime entry graph for this Blueprint.",
 		"reads_variables": [],
 		"writes_variables": [
-			"ScareManagerRef",
-			"CurrentScareActor",
-			"CurrentWorldMode"
+			"CurrentScareActor"
 		],
 		"calls": [
-			"Get Game Instance",
 			"Start Scare Cooldown",
-			"Restart Scare Loop for Current State",
-			"Initialize World Mode Binding"
+			"Initialize Scare Manager"
 		],
 		"called_by": [],
 		"branch_points": []
@@ -55,209 +51,6 @@
 					"category": "exec",
 					"subcategory": "None",
 					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Get Game Instance",
-			"title_single_line": "Get Game Instance",
-			"comment": "",
-			"guid": "691b1323-43f0-ac69-1bea-ecbec73c33ca",
-			"x": 112,
-			"y": 128,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "GameplayStatics",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "GameInstance",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_DynamicCast_0",
-			"node_name": "K2Node_DynamicCast_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_DynamicCast",
-			"title": "Cast To GI_Echoes",
-			"title_single_line": "Cast To GI_Echoes",
-			"comment": "",
-			"guid": "fce6e0f4-48e2-20d1-c03d-4eac1518f56b",
-			"x": 384,
-			"y": 0,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "CastFailed",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Object",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "AsGI Echoes",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "GI_Echoes_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bSuccess",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_VariableSet_0",
-			"node_name": "K2Node_VariableSet_0",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set ScareManagerRef",
-			"title_single_line": "Set ScareManagerRef",
-			"comment": "",
-			"guid": "178bf312-4a43-0eab-075c-65bcf22b885b",
-			"x": 800,
-			"y": 16,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ScareManagerRef",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_ScareManager_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_ScareManager_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "GI_Echoes_C",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_Self_1",
-			"node_name": "K2Node_Self_1",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "8615b097-4283-3296-63cf-86955b0587f7",
-			"x": 816,
-			"y": 128,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -468,174 +261,15 @@
 			"target_class": "EventGraph"
 		},
 		{
-			"node_id": "K2Node_CustomEvent_0",
-			"node_name": "K2Node_CustomEvent_0",
-			"node_kind": "CustomEvent",
-			"ue_class": "K2Node_CustomEvent",
-			"title": "HandleWorldModeChanged\nCustom Event",
-			"title_single_line": "HandleWorldModeChanged",
-			"comment": "",
-			"guid": "756a9ca0-4f0e-ada9-2724-fd822e092bf1",
-			"x": 112,
-			"y": 800,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "OutputDelegate",
-					"direction": "Output",
-					"category": "delegate",
-					"subcategory": "None",
-					"resolved_type": "delegate",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OldWorldMode",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "NewWorldMode",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_VariableSet_2",
-			"node_name": "K2Node_VariableSet_2",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set CurrentWorldMode",
-			"title_single_line": "Set CurrentWorldMode",
-			"comment": "",
-			"guid": "df905335-4a28-410d-bd91-a3b123ad0774",
-			"x": 448,
-			"y": 832,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "CurrentWorldMode",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_ScareManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_CallFunction_6",
-			"node_name": "K2Node_CallFunction_6",
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Restart Scare Loop for Current State\nTarget is BP Scare Manager",
-			"title_single_line": "Restart Scare Loop for Current State",
+			"title": "Initialize Scare Manager\nTarget is BP Scare Manager",
+			"title_single_line": "Initialize Scare Manager",
 			"comment": "",
-			"guid": "03d564b1-493f-676f-1c1d-daacb23c0876",
-			"x": 784,
-			"y": 800,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
-			"node_id": "K2Node_CallFunction_7",
-			"node_name": "K2Node_CallFunction_7",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Initialize World Mode Binding\nTarget is BP Scare Manager",
-			"title_single_line": "Initialize World Mode Binding",
-			"comment": "",
-			"guid": "be7e9efa-4c18-7f06-ca38-679a343aab75",
-			"x": 1328,
+			"guid": "d7b91114-4344-e79e-55f3-86a865687b61",
+			"x": 304,
 			"y": -16,
 			"has_error": false,
 			"has_warning": false,
@@ -676,24 +310,8 @@
 			"from_node_id": "K2Node_Event_0",
 			"from_node_title": "Event BeginPlay",
 			"from_pin": "then",
-			"to_node_id": "K2Node_DynamicCast_0",
-			"to_node_title": "Cast To GI_Echoes",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_DynamicCast_0",
-			"from_node_title": "Cast To GI_Echoes",
-			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set ScareManagerRef",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_0",
-			"from_node_title": "Set ScareManagerRef",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_7",
-			"to_node_title": "Initialize World Mode Binding\nTarget is BP Scare Manager",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Initialize Scare Manager\nTarget is BP Scare Manager",
 			"to_pin": "execute"
 		},
 		{
@@ -719,49 +337,9 @@
 			"to_node_id": "K2Node_VariableSet_1",
 			"to_node_title": "Set CurrentScareActor",
 			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CustomEvent_0",
-			"from_node_title": "HandleWorldModeChanged\nCustom Event",
-			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_2",
-			"to_node_title": "Set CurrentWorldMode",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_2",
-			"from_node_title": "Set CurrentWorldMode",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Restart Scare Loop for Current State\nTarget is BP Scare Manager",
-			"to_pin": "execute"
 		}
 	],
 	"data_links": [
-		{
-			"from_node_id": "K2Node_CallFunction_1",
-			"from_node_title": "Get Game Instance",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_DynamicCast_0",
-			"to_node_title": "Cast To GI_Echoes",
-			"to_pin": "Object"
-		},
-		{
-			"from_node_id": "K2Node_DynamicCast_0",
-			"from_node_title": "Cast To GI_Echoes",
-			"from_pin": "AsGI Echoes",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set ScareManagerRef",
-			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_Self_1",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set ScareManagerRef",
-			"to_pin": "ScareManagerRef"
-		},
 		{
 			"from_node_id": "K2Node_CustomEvent_1",
 			"from_node_title": "HandleScareFinished\nCustom Event",
@@ -769,14 +347,6 @@
 			"to_node_id": "K2Node_Composite_1",
 			"to_node_title": "Debug7\nCollapsed Graph",
 			"to_pin": "ScareId"
-		},
-		{
-			"from_node_id": "K2Node_CustomEvent_0",
-			"from_node_title": "HandleWorldModeChanged\nCustom Event",
-			"from_pin": "NewWorldMode",
-			"to_node_id": "K2Node_VariableSet_2",
-			"to_node_title": "Set CurrentWorldMode",
-			"to_pin": "CurrentWorldMode"
 		}
 	],
 	"problems": []

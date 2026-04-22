@@ -2,13 +2,6 @@
 	"calls": [
 		{
 			"from_graph": "EventGraph",
-			"from_node_title": "Get Game Instance",
-			"to_graph": "GetGameInstance",
-			"call_type": "ExternalFunction",
-			"target_class": "GameplayStatics"
-		},
-		{
-			"from_graph": "EventGraph",
 			"from_node_title": "Start Scare Cooldown",
 			"to_graph": "StartScareCooldown",
 			"call_type": "SelfFunction",
@@ -16,24 +9,10 @@
 		},
 		{
 			"from_graph": "EventGraph",
-			"from_node_title": "Restart Scare Loop for Current State",
-			"to_graph": "RestartScareLoopForCurrentState",
+			"from_node_title": "Initialize Scare Manager",
+			"to_graph": "InitializeScareManager",
 			"call_type": "SelfFunction",
 			"target_class": ""
-		},
-		{
-			"from_graph": "EventGraph",
-			"from_node_title": "Initialize World Mode Binding",
-			"to_graph": "InitializeWorldModeBinding",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "InitializeScaresForGhost",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "InitializeScaresForGhost",
@@ -48,6 +27,20 @@
 			"to_graph": "Conv_TextToString",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetTextLibrary"
+		},
+		{
+			"from_graph": "InitializeScaresForGhost",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeScaresForGhost",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "StartScareLoop",
@@ -176,20 +169,6 @@
 			"target_class": ""
 		},
 		{
-			"from_graph": "IsScareAllowedInCurrentWorldMode",
-			"from_node_title": "Get Game Instance",
-			"to_graph": "GetGameInstance",
-			"call_type": "ExternalFunction",
-			"target_class": "GameplayStatics"
-		},
-		{
-			"from_graph": "IsScareAllowedInCurrentWorldMode",
-			"from_node_title": "Get Current World Mode",
-			"to_graph": "GetCurrentWorldMode",
-			"call_type": "ExternalFunction",
-			"target_class": "GI_Echoes_C"
-		},
-		{
 			"from_graph": "IsScareRunning",
 			"from_node_title": "Is Valid",
 			"to_graph": "IsValid",
@@ -212,22 +191,36 @@
 		},
 		{
 			"from_graph": "StartScareCooldown",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "StartScareCooldown",
 			"from_node_title": "To String (Text)",
 			"to_graph": "Conv_TextToString",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetTextLibrary"
 		},
 		{
+			"from_graph": "StartScareCooldown",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "StartScareCooldown",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
 			"from_graph": "ResetScareCooldown",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "ResetScareCooldown",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
 		},
@@ -240,17 +233,24 @@
 		},
 		{
 			"from_graph": "UpdateGhostState",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_node_title": "To String (Text)",
+			"to_graph": "Conv_TextToString",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetTextLibrary"
+		},
+		{
+			"from_graph": "UpdateGhostState",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "UpdateGhostState",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "RestartScareLoopForCurrentState",
@@ -268,13 +268,6 @@
 		},
 		{
 			"from_graph": "InitializeWorldModeBinding",
-			"from_node_title": "Get Actor Of Class",
-			"to_graph": "GetActorOfClass",
-			"call_type": "ExternalFunction",
-			"target_class": "GameplayStatics"
-		},
-		{
-			"from_graph": "InitializeWorldModeBinding",
 			"from_node_title": "Is Valid",
 			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
@@ -286,6 +279,55 @@
 			"to_graph": "GetWorldMode",
 			"call_type": "ExternalFunction",
 			"target_class": "BP_WorldModeSystem_C"
+		},
+		{
+			"from_graph": "InitializeWorldModeBinding",
+			"from_node_title": "Get Game Instance",
+			"to_graph": "GetGameInstance",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "InitializeWorldModeBinding",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeWorldModeBinding",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeWorldModeBinding",
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeWorldModeBinding",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeWorldModeBinding",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeWorldModeBinding",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "IsScareValidBasic",
@@ -485,17 +527,143 @@
 		},
 		{
 			"from_graph": "SelectWeightedRandomScare",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_node_title": "To String (Text)",
+			"to_graph": "Conv_TextToString",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetTextLibrary"
+		},
+		{
+			"from_graph": "SelectWeightedRandomScare",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "SelectWeightedRandomScare",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeScareManager",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeScareManager",
+			"from_node_title": "Get Display Name",
+			"to_graph": "GetDisplayName",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "InitializeScareManager",
+			"from_node_title": "String To Name",
+			"to_graph": "Conv_StringToName",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetStringLibrary"
+		},
+		{
+			"from_graph": "InitializeScareManager",
+			"from_node_title": "Get Game Instance",
+			"to_graph": "GetGameInstance",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "InitializeScareManager",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeScareManager",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeScareManager",
+			"from_node_title": "Register Scare Manager",
+			"to_graph": "RegisterScareManager",
+			"call_type": "ExternalFunction",
+			"target_class": "GI_Echoes_C"
+		},
+		{
+			"from_graph": "InitializeScareManager",
+			"from_node_title": "Initialize World Mode Binding",
+			"to_graph": "InitializeWorldModeBinding",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "InitializeScareManager",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeScareManager",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "HandleWorldModeChanged",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "HandleWorldModeChanged",
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "HandleWorldModeChanged",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "HandleWorldModeChanged",
+			"from_node_title": "Get World Mode",
+			"to_graph": "GetWorldMode",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_WorldModeSystem_C"
+		},
+		{
+			"from_graph": "HandleWorldModeChanged",
+			"from_node_title": "Restart Scare Loop for Current State",
+			"to_graph": "RestartScareLoopForCurrentState",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "HandleWorldModeChanged",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "HandleWorldModeChanged",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		}
 	]
 }

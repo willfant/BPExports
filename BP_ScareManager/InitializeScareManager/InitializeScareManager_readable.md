@@ -1,4 +1,4 @@
-# InitializeWorldModeBinding
+# InitializeScareManager
 
 ## Graph Type
 Function
@@ -7,23 +7,23 @@ Function
 Initializes references, state, or startup flow.
 
 ## Reads
-- WorldModeSystemRef
+- bInitialized
 
 ## Writes
-- CurrentWorldMode
-- WorldModeSystemRef
+- bInitialized
 
 ## Calls
-- Is Valid
-- Get World Mode
+- Debug Info
+- Get Display Name
+- String To Name
 - Get Game Instance
 - Debug Critical
 - Get Sender Name
-- Debug Warning
-- Debug Info
+- Register Scare Manager
+- Initialize World Mode Binding
 
 ## Called By
-- InitializeScareManager
+- EventGraph
 
 ## Branch Points
 - Branch

@@ -8,7 +8,6 @@ Starts a flow, state transition, or activation sequence.
 
 ## Reads
 - ScareCooldownTime
-- DebugEnabled
 
 ## Writes
 - bScareCooldownActive 
@@ -16,8 +15,9 @@ Starts a flow, state transition, or activation sequence.
 
 ## Calls
 - Set Timer by Function Name
-- Debug Message
 - To String (Text)
+- Debug Info
+- Get Sender Name
 
 ## Called By
 - EventGraph

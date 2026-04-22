@@ -17,8 +17,8 @@ Starts a flow, state transition, or activation sequence.
 - Start Scare Loop
 
 ## Called By
-- EventGraph
 - UpdateGhostState
+- HandleWorldModeChanged
 
 ## Notes
 - Has latent nodes: No
