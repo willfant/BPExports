@@ -15,9 +15,9 @@ Auto-generated function summary.
 - SelectedScareId
 
 ## Calls
-- Start Scare Loop
 - Debug Info
 - Get Sender Name
+- Stop Scare Loop
 
 ## Called By
 - HandleGhostChanged

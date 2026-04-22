@@ -9,26 +9,32 @@ Starts a flow, state transition, or activation sequence.
 ## Reads
 - bScareLoopActive
 - CurrentGhostState
-- CurrentWorldMode
+- CurrentGhostId
+- ScareLoopTimerHandle
+- ScareLoopInterval
 
 ## Writes
 - bScareLoopActive
+- ScareLoopInterval
 - ScareLoopTimerHandle
 
 ## Calls
-- Set Timer by Function Name
-- Get Scare Interval for Current Ghost State
 - Get Scare Interval for Current Context
+- Debug Info
+- Get Sender Name
+- Debug Warning
+- Clear and Invalidate Timer by Handle
+- Set Timer by Function Name
+- To String (Text)
 
 ## Called By
 - InitializeScaresForGhost
 - RestartScareLoopForCurrentState
-- HandleGhostCleared
 
 ## Branch Points
 - Branch
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

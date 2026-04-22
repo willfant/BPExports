@@ -15,9 +15,6 @@ Auto-generated function summary.
 ## Reads
 - CurrentGhostState
 
-## Called By
-- StartScareLoop
-
 ## Branch Points
 - Switch on E_GhostState
 

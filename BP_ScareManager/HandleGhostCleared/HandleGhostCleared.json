@@ -19,9 +19,9 @@
 			"SelectedScareId"
 		],
 		"calls": [
-			"Start Scare Loop",
 			"Debug Info",
-			"Get Sender Name"
+			"Get Sender Name",
+			"Stop Scare Loop"
 		],
 		"called_by": [
 			"HandleGhostChanged",
@@ -59,50 +59,6 @@
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "HandleGhostCleared"
-		},
-		{
-			"node_id": "K2Node_CallFunction_0",
-			"node_name": "K2Node_CallFunction_0",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Start Scare Loop\nTarget is BP Scare Manager",
-			"title_single_line": "Start Scare Loop",
-			"comment": "",
-			"guid": "776fb399-4e8a-a41c-a3ef-cd93c41c84a0",
-			"x": 304,
-			"y": -16,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
 					"default_value": "",
 					"linked_count": 0
 				}
@@ -550,6 +506,50 @@
 				}
 			],
 			"target_class": "HandleGhostCleared"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Stop Scare Loop\nTarget is BP Scare Manager",
+			"title_single_line": "Stop Scare Loop",
+			"comment": "",
+			"guid": "2e79dba9-4c90-741d-c166-358c196d6f47",
+			"x": 288,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "HandleGhostCleared"
 		}
 	],
 	"exec_flow": [
@@ -557,16 +557,8 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "HandleGhostCleared",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Start Scare Loop\nTarget is BP Scare Manager",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_0",
-			"from_node_title": "Start Scare Loop\nTarget is BP Scare Manager",
-			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set CurrentGhostId",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Stop Scare Loop\nTarget is BP Scare Manager",
 			"to_pin": "execute"
 		},
 		{
@@ -599,6 +591,14 @@
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_1",
 			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Stop Scare Loop\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set CurrentGhostId",
 			"to_pin": "execute"
 		}
 	],
