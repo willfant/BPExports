@@ -17,13 +17,13 @@ Auto-generated function summary.
 - bIsValid (Boolean)
 - bIsValid (Boolean)
 - bIsValid (Boolean)
-- bIsValid (Boolean)
-- bIsValid (Boolean)
 
 ## Calls
 - Is Scare Off Cooldown
 - Is Scare Line Of Sight Valid
 - Get Player Looking Away
+- NOT Boolean
+- Get Distance to Player
 
 ## Called By
 - IsScareValidAdvanced

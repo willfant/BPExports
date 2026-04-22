@@ -18,6 +18,7 @@ Auto-generated function summary.
 
 ## Called By
 - IsScareDistanceValid
+- IsScareSpawnConditionValid
 
 ## Branch Points
 - Branch
