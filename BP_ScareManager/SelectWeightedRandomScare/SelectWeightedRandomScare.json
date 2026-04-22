@@ -9,16 +9,16 @@
 	"returns": [
 		"bFound (Boolean)",
 		"SelectedScare (Name)",
-		"ScareDate (S_ScareEntry)",
+		"SelectedScareData (S_ScareEntry)",
 		"bFound (Boolean)",
 		"SelectedScare (Name)",
-		"ScareDate (S_ScareEntry)",
+		"SelectedScareData (S_ScareEntry)",
 		"bFound (Boolean)",
 		"SelectedScare (Name)",
-		"ScareDate (S_ScareEntry)",
+		"SelectedScareData (S_ScareEntry)",
 		"bFound (Boolean)",
 		"SelectedScare (Name)",
-		"ScareDate (S_ScareEntry)"
+		"SelectedScareData (S_ScareEntry)"
 	],
 	"summary":
 	{
@@ -30,8 +30,7 @@
 		],
 		"writes_variables": [
 			"TotalWeight",
-			"RunningWeight",
-			"SelectedScareId"
+			"RunningWeight"
 		],
 		"calls": [
 			"Random Float in Range",
@@ -124,7 +123,7 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "ScareDate",
+					"pin_name": "SelectedScareData",
 					"direction": "Input",
 					"category": "struct",
 					"subcategory": "None",
@@ -1045,7 +1044,7 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "ScareDate",
+					"pin_name": "SelectedScareData",
 					"direction": "Input",
 					"category": "struct",
 					"subcategory": "None",
@@ -1351,7 +1350,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				},
 				{
 					"pin_name": "ScareType_5_ABA6A05148893F3080946FAE973893FF",
@@ -1951,68 +1950,6 @@
 			"target_class": "SelectWeightedRandomScare"
 		},
 		{
-			"node_id": "K2Node_VariableSet_4",
-			"node_name": "K2Node_VariableSet_4",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set SelectedScareId",
-			"title_single_line": "Set SelectedScareId",
-			"comment": "",
-			"guid": "600b7efb-497b-cd2e-1491-63a59e807aa8",
-			"x": 4352,
-			"y": 560,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "SelectedScareId",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_ScareManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "SelectWeightedRandomScare"
-		},
-		{
 			"node_id": "K2Node_FunctionResult_3",
 			"node_name": "K2Node_FunctionResult_3",
 			"node_kind": "Return",
@@ -2054,7 +1991,7 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "ScareDate",
+					"pin_name": "SelectedScareData",
 					"direction": "Input",
 					"category": "struct",
 					"subcategory": "None",
@@ -2107,7 +2044,7 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "ScareDate",
+					"pin_name": "SelectedScareData",
 					"direction": "Input",
 					"category": "struct",
 					"subcategory": "None",
@@ -2699,41 +2636,6 @@
 			"target_class": "SelectWeightedRandomScare"
 		},
 		{
-			"node_id": "K2Node_Knot_8",
-			"node_name": "K2Node_Knot_8",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "510e3113-46b9-e0e7-1c6a-a09a036b0333",
-			"x": 2880,
-			"y": 592,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "SelectWeightedRandomScare"
-		},
-		{
 			"node_id": "K2Node_Knot_9",
 			"node_name": "K2Node_Knot_9",
 			"node_kind": "Reroute",
@@ -2885,14 +2787,6 @@
 		{
 			"from_node_id": "K2Node_IfThenElse_4",
 			"from_node_title": "Branch",
-			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_4",
-			"to_node_title": "Set SelectedScareId",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_4",
-			"from_node_title": "Set SelectedScareId",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_2",
 			"to_node_title": "Debug Info",
@@ -3080,7 +2974,15 @@
 			"from_node_id": "K2Node_BreakStruct_1",
 			"from_node_title": "Break S Scare Entry",
 			"from_pin": "ScareId_2_021A42D94D2AE9278A9E9491C5F03B5F",
-			"to_node_id": "K2Node_Knot_8",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "Id"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_1",
+			"from_node_title": "Break S Scare Entry",
+			"from_pin": "ScareId_2_021A42D94D2AE9278A9E9491C5F03B5F",
+			"to_node_id": "K2Node_Knot_7",
 			"to_node_title": "Reroute Node",
 			"to_pin": "InputPin"
 		},
@@ -3149,22 +3051,6 @@
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_4",
-			"from_node_title": "Set SelectedScareId",
-			"from_pin": "Output_Get",
-			"to_node_id": "K2Node_FormatText_0",
-			"to_node_title": "Format Text",
-			"to_pin": "Id"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_4",
-			"from_node_title": "Set SelectedScareId",
-			"from_pin": "Output_Get",
-			"to_node_id": "K2Node_Knot_7",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
 			"from_node_id": "K2Node_Self_0",
 			"from_node_title": "Self-Reference",
 			"from_pin": "self",
@@ -3218,7 +3104,7 @@
 			"from_pin": "OutputPin",
 			"to_node_id": "K2Node_FunctionResult_3",
 			"to_node_title": "Return Node",
-			"to_pin": "ScareDate"
+			"to_pin": "SelectedScareData"
 		},
 		{
 			"from_node_id": "K2Node_Knot_4",
@@ -3259,14 +3145,6 @@
 			"to_node_id": "K2Node_CallFunction_2",
 			"to_node_title": "Debug Info",
 			"to_pin": "SenderName"
-		},
-		{
-			"from_node_id": "K2Node_Knot_8",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_VariableSet_4",
-			"to_node_title": "Set SelectedScareId",
-			"to_pin": "SelectedScareId"
 		},
 		{
 			"from_node_id": "K2Node_Knot_9",

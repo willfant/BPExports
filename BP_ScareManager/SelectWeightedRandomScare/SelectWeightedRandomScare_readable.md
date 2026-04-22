@@ -9,16 +9,16 @@ Auto-generated function summary.
 ## Returns
 - bFound (Boolean)
 - SelectedScare (Name)
-- ScareDate (S_ScareEntry)
+- SelectedScareData (S_ScareEntry)
 - bFound (Boolean)
 - SelectedScare (Name)
-- ScareDate (S_ScareEntry)
+- SelectedScareData (S_ScareEntry)
 - bFound (Boolean)
 - SelectedScare (Name)
-- ScareDate (S_ScareEntry)
+- SelectedScareData (S_ScareEntry)
 - bFound (Boolean)
 - SelectedScare (Name)
-- ScareDate (S_ScareEntry)
+- SelectedScareData (S_ScareEntry)
 
 ## Reads
 - TotalWeight
@@ -28,7 +28,6 @@ Auto-generated function summary.
 ## Writes
 - TotalWeight
 - RunningWeight
-- SelectedScareId
 
 ## Calls
 - Random Float in Range
