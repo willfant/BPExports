@@ -23,6 +23,7 @@ Starts a flow, state transition, or activation sequence.
 ## Called By
 - InitializeScaresForGhost
 - RestartScareLoopForCurrentState
+- HandleGhostCleared
 
 ## Branch Points
 - Branch

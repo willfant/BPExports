@@ -17,6 +17,9 @@ Initializes references, state, or startup flow.
 - Debug Info
 - Get Sender Name
 
+## Called By
+- HandleGhostChanged
+
 ## Notes
 - Has latent nodes: No
 - Has error nodes: No

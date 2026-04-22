@@ -15,6 +15,9 @@ Auto-generated function summary.
 - Debug Info
 - Get Sender Name
 
+## Called By
+- HandleGhostStateChanged
+
 ## Notes
 - Has latent nodes: No
 - Has error nodes: No

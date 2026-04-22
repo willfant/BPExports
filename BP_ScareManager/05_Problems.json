@@ -279,7 +279,7 @@
 		{
 			"graph": "SelectWeightedRandomScare",
 			"problem_type": "FunctionTooLarge",
-			"details": "Graph contains 49 nodes and may be too large.",
+			"details": "Graph contains 51 nodes and may be too large.",
 			"node_name": "",
 			"node_title": "",
 			"severity": "medium",
@@ -287,6 +287,54 @@
 			"why_it_matters": "Large graphs are harder to debug, reason about, and safely refactor.",
 			"likely_impact": "Higher chance of regression, duplicated logic, and unreadable flow.",
 			"suggested_fix": "Split the graph into smaller functions by responsibility."
+		},
+		{
+			"graph": "HandleGhostCleared",
+			"problem_type": "PotentialIndexValidationIssue",
+			"details": "Graph writes or uses index/selection-like state but no branch/switch validation was detected.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.59999999999999998,
+			"why_it_matters": "Numeric or index-like state appears used without visible validation.",
+			"likely_impact": "May cause out-of-range or invalid selection issues.",
+			"suggested_fix": "Confirm index bounds/validity before using it in flow or selection."
+		},
+		{
+			"graph": "InitializeGhostBinding",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CreateDelegate_0",
+			"node_title": "Create Event",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
+		},
+		{
+			"graph": "InitializeGhostBinding",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CreateDelegate_1",
+			"node_title": "Create Event",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
+		},
+		{
+			"graph": "InitializeGhostBinding",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CreateDelegate_2",
+			"node_title": "Create Event",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
 		}
 	]
 }

@@ -21,6 +21,7 @@ Initializes references, state, or startup flow.
 - Get Sender Name
 - Register Scare Manager
 - Initialize World Mode Binding
+- Initialize Ghost Binding
 
 ## Called By
 - EventGraph

@@ -24,7 +24,8 @@
 			"Debug Critical",
 			"Get Sender Name",
 			"Register Scare Manager",
-			"Initialize World Mode Binding"
+			"Initialize World Mode Binding",
+			"Initialize Ghost Binding"
 		],
 		"called_by": [
 			"EventGraph"
@@ -818,7 +819,7 @@
 			"title_single_line": "Set bInitialized",
 			"comment": "",
 			"guid": "9a575d06-4197-142c-2343-c6a196a2658a",
-			"x": 2016,
+			"x": 2544,
 			"y": 208,
 			"has_error": false,
 			"has_warning": false,
@@ -880,7 +881,7 @@
 			"title_single_line": "Debug Info",
 			"comment": "",
 			"guid": "b9ee616f-4280-bc7e-272e-029b8ed53dc1",
-			"x": 2560,
+			"x": 3088,
 			"y": 192,
 			"has_error": false,
 			"has_warning": false,
@@ -969,7 +970,7 @@
 			"title_single_line": "Get Sender Name",
 			"comment": "",
 			"guid": "9cde91bf-42b4-c862-c749-81b3e9aad61b",
-			"x": 2336,
+			"x": 2864,
 			"y": 320,
 			"has_error": false,
 			"has_warning": false,
@@ -1022,7 +1023,7 @@
 			"title_single_line": "Self-Reference",
 			"comment": "",
 			"guid": "bb60db37-4697-d7a3-3abb-8aa0b282c0fb",
-			"x": 2224,
+			"x": 2752,
 			"y": 256,
 			"has_error": false,
 			"has_warning": false,
@@ -1035,6 +1036,50 @@
 					"resolved_type": "object",
 					"default_value": "",
 					"linked_count": 2
+				}
+			],
+			"target_class": "InitializeScareManager"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Initialize Ghost Binding\nTarget is BP Scare Manager",
+			"title_single_line": "Initialize Ghost Binding",
+			"comment": "",
+			"guid": "19b73731-4ccd-1f52-170d-0f9a1503a86e",
+			"x": 2080,
+			"y": 176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
 				}
 			],
 			"target_class": "InitializeScareManager"
@@ -1109,8 +1154,8 @@
 			"from_node_id": "K2Node_CallFunction_7",
 			"from_node_title": "Initialize World Mode Binding\nTarget is BP Scare Manager",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set bInitialized",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Initialize Ghost Binding\nTarget is BP Scare Manager",
 			"to_pin": "execute"
 		},
 		{
@@ -1119,6 +1164,14 @@
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_8",
 			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "Initialize Ghost Binding\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set bInitialized",
 			"to_pin": "execute"
 		}
 	],
