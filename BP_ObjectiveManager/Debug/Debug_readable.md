@@ -9,9 +9,6 @@ Provides debug or developer-facing behavior.
 ## Calls
 - Print String
 
-## Called By
-- InitializeObjectivesForGhost
-
 ## Branch Points
 - Branch
 

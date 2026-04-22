@@ -13,7 +13,6 @@ Restores runtime state from previously saved or cached data.
 - bObjectivesRestoredFromSave
 
 ## Called By
-- InitializeObjectivesForGhost
 - HandleGhostChanged
 
 ## Notes

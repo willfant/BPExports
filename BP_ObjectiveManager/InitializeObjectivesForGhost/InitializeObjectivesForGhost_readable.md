@@ -6,15 +6,15 @@ Function
 ## Purpose
 Initializes references, state, or startup flow.
 
-## Reads
-- CurrentObjectiveId
+## Writes
+- CurrentGhostId
 
 ## Calls
-- Has Restored Objective State
-- Debug
+- Debug Warning
+- Get Sender Name
 - To String (Text)
-- Has Active Objective
 - Start Objective
+- Debug Info
 
 ## Called By
 - HandleGhostChanged

@@ -6,13 +6,7 @@ EventGraph
 ## Purpose
 Main runtime entry graph for this Blueprint.
 
-## Reads
-- ObjectiveStates
-
 ## Calls
-- Print String
-- To String (Name)
-- To String (Integer)
 - Initialize Objective Manager
 
 ## Notes

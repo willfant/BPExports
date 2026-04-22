@@ -14,7 +14,6 @@ Auto-generated function summary.
 - CurrentObjectiveId
 
 ## Called By
-- InitializeObjectivesForGhost
 - HandleGhostChanged
 
 ## Branch Points
