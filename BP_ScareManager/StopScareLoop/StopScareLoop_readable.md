@@ -18,6 +18,7 @@ Auto-generated function summary.
 - Get Sender Name
 
 ## Called By
+- InitializeScaresForGhost
 - HandleGhostCleared
 
 ## Notes

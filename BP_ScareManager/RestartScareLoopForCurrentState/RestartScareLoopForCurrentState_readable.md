@@ -17,6 +17,7 @@ Starts a flow, state transition, or activation sequence.
 - Start Scare Loop
 
 ## Called By
+- InitializeScaresForGhost
 - UpdateGhostState
 - HandleWorldModeChanged
 

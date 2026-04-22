@@ -13,40 +13,16 @@
 			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
 		},
 		{
-			"graph": "InitializeScaresForGhost",
-			"problem_type": "PotentialIndexValidationIssue",
-			"details": "Graph writes or uses index/selection-like state but no branch/switch validation was detected.",
+			"graph": "TryTriggerNextScare",
+			"problem_type": "FunctionTooLarge",
+			"details": "Graph contains 90 nodes and may be too large.",
 			"node_name": "",
 			"node_title": "",
 			"severity": "medium",
-			"confidence": 0.59999999999999998,
-			"why_it_matters": "Numeric or index-like state appears used without visible validation.",
-			"likely_impact": "May cause out-of-range or invalid selection issues.",
-			"suggested_fix": "Confirm index bounds/validity before using it in flow or selection."
-		},
-		{
-			"graph": "TryTriggerNextScare",
-			"problem_type": "NodeError",
-			"details": "Node has explicit error state.",
-			"node_name": "K2Node_Composite_1",
-			"node_title": "Debug11",
-			"severity": "critical",
-			"confidence": 0.97999999999999998,
-			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
-			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
-			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
-		},
-		{
-			"graph": "TryTriggerNextScare",
-			"problem_type": "NodeError",
-			"details": "Node has explicit error state.",
-			"node_name": "K2Node_Composite_2",
-			"node_title": "Debug12",
-			"severity": "critical",
-			"confidence": 0.97999999999999998,
-			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
-			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
-			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
+			"confidence": 0.93999999999999995,
+			"why_it_matters": "Large graphs are harder to debug, reason about, and safely refactor.",
+			"likely_impact": "Higher chance of regression, duplicated logic, and unreadable flow.",
+			"suggested_fix": "Split the graph into smaller functions by responsibility."
 		},
 		{
 			"graph": "ExecuteScareById",

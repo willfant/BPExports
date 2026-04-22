@@ -13,19 +13,27 @@ Auto-generated function summary.
 - ScaresDataTable
 - ValidScareCandidates
 
+## Writes
+- SelectedScareId
+
 ## Calls
 - Execute Scare by Id
 - Is Scare Blocked
-- Is Valid
 - Is Scare Allowed in Current World Mode
 - Register Triggered Scare
 - Is Scare Valid Advanced
 - Select Weighted Random Scare
+- Debug Info
+- Get Sender Name
+- To String (Text)
+- Is Valid
+- Debug Critical
+- Debug Warning
 
 ## Branch Points
 - Branch
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

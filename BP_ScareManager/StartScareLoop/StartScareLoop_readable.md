@@ -28,7 +28,6 @@ Starts a flow, state transition, or activation sequence.
 - To String (Text)
 
 ## Called By
-- InitializeScaresForGhost
 - RestartScareLoopForCurrentState
 
 ## Branch Points
