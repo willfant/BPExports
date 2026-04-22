@@ -12,25 +12,29 @@
 		"purpose": "Starts a flow, state transition, or activation sequence.",
 		"reads_variables": [
 			"ObjectivesDataTable",
-			"ObjectiveStates",
 			"LocalObjectiveStates",
 			"bFoundExistingObjective",
 			"FoundObjectiveIndex",
-			"PreparedObjective"
+			"PreparedObjective",
+			"ObjectiveStates",
+			"ExistingObjectiveData"
 		],
 		"writes_variables": [
-			"CurrentObjectiveId",
 			"PreparedObjective",
-			"LocalObjectiveStates",
 			"bFoundExistingObjective",
 			"FoundObjectiveIndex",
-			"ObjectiveStates"
+			"ObjectiveStates",
+			"LocalObjectiveStates",
+			"CurrentObjectiveId",
+			"ExistingObjectiveData"
 		],
 		"calls": [
-			"Debug",
-			"Sync Objectives to Save",
 			"Broadcast Current Objective Changed",
-			"To String (Text)"
+			"Debug Warning",
+			"Get Sender Name",
+			"Debug Critical",
+			"Sync Objectives to Save",
+			"Debug Info"
 		],
 		"called_by": [
 			"CompleteObjective",
@@ -50,8 +54,8 @@
 			"title_single_line": "StartObjective",
 			"comment": "",
 			"guid": "5e4c14b1-4a0a-c946-f70c-f9a6666edb46",
-			"x": 0,
-			"y": 0,
+			"x": -720,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -71,7 +75,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 4
 				}
 			],
 			"target_class": "StartObjective"
@@ -121,7 +125,7 @@
 			"comment": "",
 			"guid": "a6be8a68-4356-4b21-a9cf-728a212db0eb",
 			"x": 304,
-			"y": 0,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -160,68 +164,6 @@
 					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
-				}
-			],
-			"target_class": "StartObjective"
-		},
-		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug\nTarget is BP Objective Manager",
-			"title_single_line": "Debug",
-			"comment": "",
-			"guid": "238f3238-4863-2f2e-092c-f6a96d359359",
-			"x": 640,
-			"y": 96,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bIsDebug",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "[ObjectiveManager] StartObjective failed: ObjectivesDataTable is invalid",
-					"linked_count": 0
 				}
 			],
 			"target_class": "StartObjective"
@@ -341,167 +283,8 @@
 			"title_single_line": "Reroute Node",
 			"comment": "",
 			"guid": "af532c75-4f8d-81dd-1515-d789177456d8",
-			"x": 208,
+			"x": -448,
 			"y": -112,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 2
-				}
-			],
-			"target_class": "StartObjective"
-		},
-		{
-			"node_id": "K2Node_CallFunction_0",
-			"node_name": "K2Node_CallFunction_0",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug\nTarget is BP Objective Manager",
-			"title_single_line": "Debug",
-			"comment": "",
-			"guid": "cdb72f17-400d-3ff9-ed95-6089511629ee",
-			"x": 1424,
-			"y": 96,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bIsDebug",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "[ObjectiveManager] StartObjective failed: Row not found in DT_Objectives",
-					"linked_count": 0
-				}
-			],
-			"target_class": "StartObjective"
-		},
-		{
-			"node_id": "K2Node_VariableSet_0",
-			"node_name": "K2Node_VariableSet_0",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set CurrentObjectiveId",
-			"title_single_line": "Set CurrentObjectiveId",
-			"comment": "",
-			"guid": "07ab9944-4a93-1576-24a4-06ad1455c37e",
-			"x": 1568,
-			"y": -320,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "CurrentObjectiveId",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_ObjectiveManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "StartObjective"
-		},
-		{
-			"node_id": "K2Node_Knot_1",
-			"node_name": "K2Node_Knot_1",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "2407da4c-4284-4568-2942-4097436d685a",
-			"x": 320,
-			"y": -256,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -535,7 +318,7 @@
 			"title_single_line": "Set members in S Objective",
 			"comment": "",
 			"guid": "0f851e2a-43df-b3a1-e244-7d8af4a4dcf6",
-			"x": 1856,
+			"x": 2176,
 			"y": -320,
 			"has_error": false,
 			"has_warning": false,
@@ -632,7 +415,7 @@
 			"title_single_line": "Set PreparedObjective",
 			"comment": "",
 			"guid": "5383319f-45df-1e37-f588-b6a15400c9d1",
-			"x": 2416,
+			"x": 2736,
 			"y": -304,
 			"has_error": false,
 			"has_warning": false,
@@ -677,94 +460,6 @@
 			"target_class": "StartObjective"
 		},
 		{
-			"node_id": "K2Node_VariableSet_2",
-			"node_name": "K2Node_VariableSet_2",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set LocalObjectiveStates",
-			"title_single_line": "Set LocalObjectiveStates",
-			"comment": "",
-			"guid": "43371e47-41c8-33c5-31e5-e8be9abd2840",
-			"x": 2736,
-			"y": -304,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "LocalObjectiveStates",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_Objective",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_Objective",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "StartObjective"
-		},
-		{
-			"node_id": "K2Node_VariableGet_5",
-			"node_name": "K2Node_VariableGet_5",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get ObjectiveStates",
-			"title_single_line": "Get ObjectiveStates",
-			"comment": "",
-			"guid": "8fd14114-456f-c14c-17b4-8f98d341b860",
-			"x": 2736,
-			"y": -208,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "ObjectiveStates",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_Objective",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_ObjectiveManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "StartObjective"
-		},
-		{
 			"node_id": "K2Node_VariableSet_3",
 			"node_name": "K2Node_VariableSet_3",
 			"node_kind": "VariableSet",
@@ -773,7 +468,7 @@
 			"title_single_line": "Set bFoundExistingObjective",
 			"comment": "",
 			"guid": "3df54106-4a93-2526-ecf8-6687bc38071f",
-			"x": 3056,
+			"x": 1504,
 			"y": -304,
 			"has_error": false,
 			"has_warning": false,
@@ -826,7 +521,7 @@
 			"title_single_line": "Set FoundObjectiveIndex",
 			"comment": "",
 			"guid": "977ca498-4396-7086-5c55-d9a6effa9f3c",
-			"x": 3376,
+			"x": 1824,
 			"y": -304,
 			"has_error": false,
 			"has_warning": false,
@@ -879,7 +574,7 @@
 			"title_single_line": "Get LocalObjectiveStates",
 			"comment": "",
 			"guid": "654732de-49a8-2872-bbd9-63bc4e91d2b6",
-			"x": 3632,
+			"x": 2960,
 			"y": -192,
 			"has_error": false,
 			"has_warning": false,
@@ -905,8 +600,8 @@
 			"title_single_line": "Break S Objective",
 			"comment": "",
 			"guid": "c285cf0c-4db2-8199-d496-8fa25c30b457",
-			"x": 4112,
-			"y": -144,
+			"x": 3552,
+			"y": -176,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -967,8 +662,8 @@
 			"title_single_line": "Equal (Name)",
 			"comment": "",
 			"guid": "a9dc36d1-4899-612d-1982-d7ac1f777ba8",
-			"x": 4544,
-			"y": -128,
+			"x": 3920,
+			"y": -160,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1020,7 +715,7 @@
 			"title_single_line": "Reroute Node",
 			"comment": "",
 			"guid": "a3654330-44d7-5fc0-7f6a-6f85f762ddef",
-			"x": 4304,
+			"x": 3632,
 			"y": 368,
 			"has_error": false,
 			"has_warning": false,
@@ -1076,7 +771,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				}
 			],
 			"target_class": "StartObjective"
@@ -1090,7 +785,7 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "bcac7b28-41dc-6448-e6a3-c38fdd6fd912",
-			"x": 4960,
+			"x": 4288,
 			"y": -320,
 			"has_error": false,
 			"has_warning": false,
@@ -1143,8 +838,8 @@
 			"title_single_line": "Set bFoundExistingObjective",
 			"comment": "",
 			"guid": "77f53645-4c0e-b6ff-6e2f-0eb09c1b47bb",
-			"x": 5264,
-			"y": -432,
+			"x": 4544,
+			"y": -304,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1196,8 +891,8 @@
 			"title_single_line": "Set FoundObjectiveIndex",
 			"comment": "",
 			"guid": "274bda03-408c-c744-909e-ec8414c49a7c",
-			"x": 5568,
-			"y": -336,
+			"x": 4896,
+			"y": -304,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1249,7 +944,7 @@
 			"title_single_line": "Reroute Node",
 			"comment": "",
 			"guid": "0647c2fb-4973-3dd8-538e-bea52b3334a1",
-			"x": 5408,
+			"x": 4736,
 			"y": -224,
 			"has_error": false,
 			"has_warning": false,
@@ -1284,7 +979,7 @@
 			"title_single_line": "For Each Loop with Break",
 			"comment": "",
 			"guid": "db260f0e-43a4-9dab-fc4d-e896f8e5c1f2",
-			"x": 3904,
+			"x": 3232,
 			"y": -320,
 			"has_error": false,
 			"has_warning": false,
@@ -1364,7 +1059,7 @@
 			"title_single_line": "Reroute Node",
 			"comment": "",
 			"guid": "b358d0c6-4c4d-5885-bcb8-d4a95034c7eb",
-			"x": 5792,
+			"x": 5120,
 			"y": -496,
 			"has_error": false,
 			"has_warning": false,
@@ -1399,7 +1094,7 @@
 			"title_single_line": "Reroute Node",
 			"comment": "",
 			"guid": "a2c22bb1-4972-d094-e814-819825f10216",
-			"x": 3920,
+			"x": 3248,
 			"y": -496,
 			"has_error": false,
 			"has_warning": false,
@@ -1434,7 +1129,7 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "7b8eb666-44f4-2135-8332-97ab449b2abf",
-			"x": 4224,
+			"x": 3552,
 			"y": 112,
 			"has_error": false,
 			"has_warning": false,
@@ -1487,7 +1182,7 @@
 			"title_single_line": "Get bFoundExistingObjective",
 			"comment": "",
 			"guid": "3e840470-41ee-69ee-6383-6fae3a17b775",
-			"x": 4176,
+			"x": 3504,
 			"y": 224,
 			"has_error": false,
 			"has_warning": false,
@@ -1505,112 +1200,6 @@
 			"target_class": "StartObjective"
 		},
 		{
-			"node_id": "K2Node_CallArrayFunction_0",
-			"node_name": "K2Node_CallArrayFunction_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_CallArrayFunction",
-			"title": "Set Array Elem",
-			"title_single_line": "Set Array Elem",
-			"comment": "",
-			"guid": "3ea021a2-45ce-f619-a3b5-6ea53149fde8",
-			"x": 4832,
-			"y": 112,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "KismetArrayLibrary",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "TargetArray",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_Objective",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Index",
-					"direction": "Input",
-					"category": "int",
-					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "0",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Item",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_Objective",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bSizeToFit",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 0
-				}
-			],
-			"target_class": "StartObjective"
-		},
-		{
-			"node_id": "K2Node_VariableGet_8",
-			"node_name": "K2Node_VariableGet_8",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get LocalObjectiveStates",
-			"title_single_line": "Get LocalObjectiveStates",
-			"comment": "",
-			"guid": "8b78720d-4087-99b8-9109-0ebd8b5d5ceb",
-			"x": 4848,
-			"y": 64,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "LocalObjectiveStates",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_Objective",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "StartObjective"
-		},
-		{
 			"node_id": "K2Node_VariableGet_9",
 			"node_name": "K2Node_VariableGet_9",
 			"node_kind": "VariableGet",
@@ -1619,8 +1208,8 @@
 			"title_single_line": "Get FoundObjectiveIndex",
 			"comment": "",
 			"guid": "1635c3f3-4def-26d4-d460-b79d63b2af17",
-			"x": 4576,
-			"y": 192,
+			"x": 3904,
+			"y": 208,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1637,32 +1226,6 @@
 			"target_class": "StartObjective"
 		},
 		{
-			"node_id": "K2Node_VariableGet_10",
-			"node_name": "K2Node_VariableGet_10",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get PreparedObjective",
-			"title_single_line": "Get PreparedObjective",
-			"comment": "",
-			"guid": "6f339ab9-4984-f067-731a-f7899b238509",
-			"x": 4592,
-			"y": 240,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "PreparedObjective",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_Objective",
-					"default_value": "",
-					"linked_count": 2
-				}
-			],
-			"target_class": "StartObjective"
-		},
-		{
 			"node_id": "K2Node_CallArrayFunction_1",
 			"node_name": "K2Node_CallArrayFunction_1",
 			"node_kind": "Unknown",
@@ -1671,7 +1234,7 @@
 			"title_single_line": "Add",
 			"comment": "",
 			"guid": "af2b18c2-4096-e1e0-63fd-01a66173ee36",
-			"x": 4560,
+			"x": 3888,
 			"y": 384,
 			"has_error": false,
 			"has_warning": false,
@@ -1742,7 +1305,7 @@
 			"title_single_line": "Get LocalObjectiveStates",
 			"comment": "",
 			"guid": "f4003a2d-40cc-5f9c-0416-abbf6a0e58e5",
-			"x": 4288,
+			"x": 3616,
 			"y": 432,
 			"has_error": false,
 			"has_warning": false,
@@ -1768,7 +1331,7 @@
 			"title_single_line": "Get PreparedObjective",
 			"comment": "",
 			"guid": "4cf93898-44f5-82e7-8e26-aba38c79f5af",
-			"x": 4288,
+			"x": 3616,
 			"y": 480,
 			"has_error": false,
 			"has_warning": false,
@@ -1794,7 +1357,7 @@
 			"title_single_line": "Set ObjectiveStates",
 			"comment": "",
 			"guid": "ce6a2ba2-4da9-91a4-dc9d-7586ffea559a",
-			"x": 5920,
+			"x": 5248,
 			"y": 384,
 			"has_error": false,
 			"has_warning": false,
@@ -1806,7 +1369,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 1
 				},
 				{
 					"pin_name": "then",
@@ -1856,7 +1419,7 @@
 			"title_single_line": "Get LocalObjectiveStates",
 			"comment": "",
 			"guid": "7c896131-4f47-f2b3-c3d6-4fa8868a02f2",
-			"x": 5728,
+			"x": 5056,
 			"y": 496,
 			"has_error": false,
 			"has_warning": false,
@@ -1874,183 +1437,6 @@
 			"target_class": "StartObjective"
 		},
 		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug\nTarget is BP Objective Manager",
-			"title_single_line": "Debug",
-			"comment": "",
-			"guid": "febd6c8b-4752-b99b-d521-c88e2bc8d6ce",
-			"x": 5504,
-			"y": -48,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bIsDebug",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "StartObjective"
-		},
-		{
-			"node_id": "K2Node_CallFunction_2",
-			"node_name": "K2Node_CallFunction_2",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug\nTarget is BP Objective Manager",
-			"title_single_line": "Debug",
-			"comment": "",
-			"guid": "4cb151f8-420e-1e48-cb2e-07b0bea14bb7",
-			"x": 5008,
-			"y": 352,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bIsDebug",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "[ObjectiveManager] New objective added and set to Active",
-					"linked_count": 0
-				}
-			],
-			"target_class": "StartObjective"
-		},
-		{
-			"node_id": "K2Node_CallFunction_4",
-			"node_name": "K2Node_CallFunction_4",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Sync Objectives to Save\nTarget is BP Objective Manager",
-			"title_single_line": "Sync Objectives to Save",
-			"comment": "",
-			"guid": "934dc674-43c4-b5f6-1e86-0bb91ef5a0d8",
-			"x": 6720,
-			"y": 352,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SaveReason",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "ObjectiveStarted",
-					"linked_count": 0
-				}
-			],
-			"target_class": "StartObjective"
-		},
-		{
 			"node_id": "K2Node_CallFunction_5",
 			"node_name": "K2Node_CallFunction_5",
 			"node_kind": "FunctionCall",
@@ -2059,7 +1445,7 @@
 			"title_single_line": "Broadcast Current Objective Changed",
 			"comment": "",
 			"guid": "f7a7f27a-4005-c7ab-4cd6-4aa115aadaad",
-			"x": 6272,
+			"x": 5952,
 			"y": 352,
 			"has_error": false,
 			"has_warning": false,
@@ -2112,8 +1498,8 @@
 			"title_single_line": "Get PreparedObjective",
 			"comment": "",
 			"guid": "17ffe7ff-45fb-25e5-82d9-278043992732",
-			"x": 6032,
-			"y": 480,
+			"x": 5792,
+			"y": 544,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2130,16 +1516,1285 @@
 			"target_class": "StartObjective"
 		},
 		{
-			"node_id": "K2Node_BreakStruct_3",
-			"node_name": "K2Node_BreakStruct_3",
+			"node_id": "K2Node_PromotableOperator_1",
+			"node_name": "K2Node_PromotableOperator_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "Not Equal (Name)",
+			"title_single_line": "Not Equal (Name)",
+			"comment": "",
+			"guid": "f4a92936-4252-eddb-53b3-c78408f4cdaf",
+			"x": -512,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "3fff2b6d-477c-3aba-135a-25b71a8fe7c9",
+			"x": -256,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_15",
+			"node_name": "K2Node_CallFunction_15",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Warning",
+			"title_single_line": "Debug Warning",
+			"comment": "",
+			"guid": "b9ea9e92-49a7-ffaa-7734-f186dc89489e",
+			"x": -112,
+			"y": 448,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator5",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[ObjectiveManager] StartObjective aborted because InObjectiveId is None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "49b813a3-4b5a-a2fa-2613-79bec460ae13",
+			"x": 448,
+			"y": 448,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_Self_4",
+			"node_name": "K2Node_Self_4",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "ce4642ee-40d7-798f-8dd9-da9af51e4748",
+			"x": -560,
+			"y": 496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_16",
+			"node_name": "K2Node_CallFunction_16",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "baaf10a2-4beb-23e1-9f9b-c39593e043f2",
+			"x": -368,
+			"y": 544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Critical",
+			"title_single_line": "Debug Critical",
+			"comment": "",
+			"guid": "3b62d690-4a32-828e-1092-aab87d743645",
+			"x": 816,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator5",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[ObjectiveManager] StartObjective failed because ObjectivesDataTable is invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "09313845-4cdf-c26b-5c34-668072a756dc",
+			"x": 384,
+			"y": 272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_7",
+			"node_name": "K2Node_CallFunction_7",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "3c93fc3d-44aa-631f-ba6d-bc9c7c484523",
+			"x": 576,
+			"y": 320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "8ce6b75e-46a0-8baf-b523-4e85922fb3e7",
+			"x": 1296,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_6",
+			"node_name": "K2Node_CallFunction_6",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Warning",
+			"title_single_line": "Debug Warning",
+			"comment": "",
+			"guid": "21d7832e-4524-1e13-e598-14a3afdbdea8",
+			"x": 1616,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator5",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[ObjectiveManager] StartObjective failed because objective row was not found in ObjectivesDataTable",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "064e4b72-4bcf-c34d-1e57-ada54353b252",
+			"x": 2176,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_Self_1",
+			"node_name": "K2Node_Self_1",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "e041db9e-40da-e310-c8f2-6eb048a6c29f",
+			"x": 1168,
+			"y": 48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "281bd773-4feb-0757-66ed-00851a2f30b2",
+			"x": 1360,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_VariableSet_2",
+			"node_name": "K2Node_VariableSet_2",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set LocalObjectiveStates",
+			"title_single_line": "Set LocalObjectiveStates",
+			"comment": "",
+			"guid": "61d7f718-4d67-9b88-d136-1f9f279f89c7",
+			"x": 1232,
+			"y": -304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "LocalObjectiveStates",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_VariableGet_4",
+			"node_name": "K2Node_VariableGet_4",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ObjectiveStates",
+			"title_single_line": "Get ObjectiveStates",
+			"comment": "",
+			"guid": "1d516518-4089-ce61-3d8f-c7acd0de22e6",
+			"x": 1024,
+			"y": -256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ObjectiveStates",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_VariableSet_11",
+			"node_name": "K2Node_VariableSet_11",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentObjectiveId",
+			"title_single_line": "Set CurrentObjectiveId",
+			"comment": "",
+			"guid": "1cc96fc6-49d7-2b8d-cf53-00aaf631d4fd",
+			"x": 4128,
+			"y": 384,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentObjectiveId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_Knot_8",
+			"node_name": "K2Node_Knot_8",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "37c5ad7b-4c98-b1d7-7be5-d19c55416567",
+			"x": 704,
+			"y": 464,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_12",
+			"node_name": "K2Node_CallFunction_12",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Sync Objectives to Save\nTarget is BP Objective Manager",
+			"title_single_line": "Sync Objectives to Save",
+			"comment": "",
+			"guid": "96a109dc-434e-60da-d3db-818388fe46d1",
+			"x": 5520,
+			"y": 352,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_21",
+			"node_name": "K2Node_CallFunction_21",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "228700cb-4c27-9bc1-8382-e2b4299c92c5",
+			"x": 6704,
+			"y": 368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator5",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[ObjectiveManager] Objective started successfully (new entry added)",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_Self_6",
+			"node_name": "K2Node_Self_6",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "a16c88d7-4cfb-dffe-4024-18a6cfc8aa30",
+			"x": 6288,
+			"y": 480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_22",
+			"node_name": "K2Node_CallFunction_22",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "5b183eff-452c-4186-a564-1d8b60e0f15f",
+			"x": 6416,
+			"y": 512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_5",
+			"node_name": "K2Node_FunctionResult_5",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "0e39c58e-462e-2b5b-75e4-e4b24ce16a17",
+			"x": 7328,
+			"y": 368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_VariableGet_17",
+			"node_name": "K2Node_VariableGet_17",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LocalObjectiveStates",
+			"title_single_line": "Get LocalObjectiveStates",
+			"comment": "",
+			"guid": "d4b9ebd3-4a50-14a8-9dc8-88af5a188c53",
+			"x": 3920,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LocalObjectiveStates",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_GetArrayItem_0",
+			"node_name": "K2Node_GetArrayItem_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_GetArrayItem",
+			"title": "GET",
+			"title_single_line": "GET",
+			"comment": "",
+			"guid": "cbc4c86f-40ed-221f-cab6-ce8824b92326",
+			"x": 4176,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Array",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Dimension 1",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_VariableSet_10",
+			"node_name": "K2Node_VariableSet_10",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set ExistingObjectiveData",
+			"title_single_line": "Set ExistingObjectiveData",
+			"comment": "",
+			"guid": "6de31a34-4466-cfa0-e571-d0af2982ddff",
+			"x": 4384,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ExistingObjectiveData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_Knot_9",
+			"node_name": "K2Node_Knot_9",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "29e3e52a-4537-6b99-738f-f48acbe30da9",
+			"x": 3888,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_BreakStruct_0",
+			"node_name": "K2Node_BreakStruct_0",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_BreakStruct",
 			"title": "Break S Objective",
 			"title_single_line": "Break S Objective",
 			"comment": "",
-			"guid": "ceab614c-405e-2513-9574-9a8f00183381",
-			"x": 5024,
-			"y": 176,
+			"guid": "bd0396ee-4d2a-e91f-fee1-5eb2401cf8bb",
+			"x": 4704,
+			"y": 96,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2177,7 +2832,7 @@
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 2
 				},
 				{
 					"pin_name": "NextObjectiveId_11_C49F48F94BE04C4D6F8B4592AA2E84DF",
@@ -2192,40 +2847,913 @@
 			"target_class": "StartObjective"
 		},
 		{
-			"node_id": "K2Node_FormatText_0",
-			"node_name": "K2Node_FormatText_0",
-			"node_kind": "FormatText",
-			"ue_class": "K2Node_FormatText",
-			"title": "Format Text",
-			"title_single_line": "Format Text",
+			"node_id": "K2Node_EnumEquality_0",
+			"node_name": "K2Node_EnumEquality_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumEquality",
+			"title": "Equal (Enum)",
+			"title_single_line": "Equal (Enum)",
 			"comment": "",
-			"guid": "f14b4ad2-4b44-607d-34f2-5e9ca278a24f",
-			"x": 5648,
-			"y": 224,
+			"guid": "d190c0c7-4a46-39e3-492c-8dbe7ab6f9e5",
+			"x": 4992,
+			"y": 272,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "Format",
-					"direction": "Input",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Result",
+					"pin_name": "ReturnValue",
 					"direction": "Output",
-					"category": "text",
+					"category": "bool",
 					"subcategory": "None",
-					"resolved_type": "Text",
+					"resolved_type": "Boolean",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "OBJ",
+					"pin_name": "A",
 					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator2",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_3",
+			"node_name": "K2Node_IfThenElse_3",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "d83caaab-407b-4f12-5b0a-c09c2c746a89",
+			"x": 5472,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Warning",
+			"title_single_line": "Debug Warning",
+			"comment": "",
+			"guid": "5c670663-4c82-0348-c6e3-d282e6f1f93f",
+			"x": 5856,
+			"y": -288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator5",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[ObjectiveManager] StartObjective ignored because the objective is already completed",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "9e966e11-4db3-558e-273a-83b6e666ed82",
+			"x": 5408,
+			"y": -240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "31516f1d-46cc-ae0f-91bf-9ca5531791fc",
+			"x": 5600,
+			"y": -192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_EnumEquality_1",
+			"node_name": "K2Node_EnumEquality_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_EnumEquality",
+			"title": "Equal (Enum)",
+			"title_single_line": "Equal (Enum)",
+			"comment": "",
+			"guid": "b9c30fd1-48a8-2262-23cc-e895f4973412",
+			"x": 5456,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator1",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_2",
+			"node_name": "K2Node_PromotableOperator_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "Equal (Name)",
+			"title_single_line": "Equal (Name)",
+			"comment": "",
+			"guid": "7d17cf7a-4c50-cc6f-6efa-19879594033e",
+			"x": 5664,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"node_name": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CommutativeAssociativeBinaryOperator",
+			"title": "AND Boolean",
+			"title_single_line": "AND Boolean",
+			"comment": "",
+			"guid": "5b9b2623-4c8f-4214-cb2b-19be8fe4bd28",
+			"x": 5856,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_4",
+			"node_name": "K2Node_IfThenElse_4",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "a4592d38-40aa-f795-2a13-39912a27f0f9",
+			"x": 6528,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_13",
+			"node_name": "K2Node_CallFunction_13",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "c2d2af95-4b75-6a26-5b98-258a31c8a640",
+			"x": 6896,
+			"y": -256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator5",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[ObjectiveManager] StartObjective ignored because objective is already active and current",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_Self_3",
+			"node_name": "K2Node_Self_3",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "2c772ca6-49c2-8501-bcdb-b0b323de86e9",
+			"x": 6480,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_14",
+			"node_name": "K2Node_CallFunction_14",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "db6e6008-4fbb-f4fd-f0e3-0eb545659da3",
+			"x": 6608,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_3",
+			"node_name": "K2Node_FunctionResult_3",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "007de6cd-4b29-8bbf-b12e-a692887b3375",
+			"x": 7520,
+			"y": -256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_VariableGet_19",
+			"node_name": "K2Node_VariableGet_19",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LocalObjectiveStates",
+			"title_single_line": "Get LocalObjectiveStates",
+			"comment": "",
+			"guid": "e6034796-4a4a-16a5-95a4-53b1749faa22",
+			"x": 6608,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LocalObjectiveStates",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_2",
+			"node_name": "K2Node_CallArrayFunction_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Set Array Elem",
+			"title_single_line": "Set Array Elem",
+			"comment": "",
+			"guid": "bdb35bfa-4b68-fc1a-7ec5-30b3712c2f60",
+			"x": 6944,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Index",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Item",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSizeToFit",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_VariableGet_20",
+			"node_name": "K2Node_VariableGet_20",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get FoundObjectiveIndex",
+			"title_single_line": "Get FoundObjectiveIndex",
+			"comment": "",
+			"guid": "dea41787-4d91-1722-7ee9-878418ae0eee",
+			"x": 6608,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "FoundObjectiveIndex",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_VariableGet_21",
+			"node_name": "K2Node_VariableGet_21",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get PreparedObjective",
+			"title_single_line": "Get PreparedObjective",
+			"comment": "",
+			"guid": "3574cfcf-4d05-1845-747a-af8cb9fd2cd0",
+			"x": 6624,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "PreparedObjective",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_VariableSet_9",
+			"node_name": "K2Node_VariableSet_9",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentObjectiveId",
+			"title_single_line": "Set CurrentObjectiveId",
+			"comment": "",
+			"guid": "618f8c7f-444a-94c4-796d-96b053fa38c3",
+			"x": 7184,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentObjectiveId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_Knot_10",
+			"node_name": "K2Node_Knot_10",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "cc192510-45f2-d1fc-afb9-2ca7cb96d4f7",
+			"x": -16,
+			"y": 176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
@@ -2236,16 +3764,377 @@
 			"target_class": "StartObjective"
 		},
 		{
-			"node_id": "K2Node_CallFunction_75",
-			"node_name": "K2Node_CallFunction_75",
+			"node_id": "K2Node_Knot_11",
+			"node_name": "K2Node_Knot_11",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "dc2216ef-456b-9f8d-3f99-e888fbadaa8e",
+			"x": 5248,
+			"y": 176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_VariableSet_12",
+			"node_name": "K2Node_VariableSet_12",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set ObjectiveStates",
+			"title_single_line": "Set ObjectiveStates",
+			"comment": "",
+			"guid": "5868b8f0-4817-88a9-236f-08936b334872",
+			"x": 7600,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ObjectiveStates",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ObjectiveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_VariableGet_22",
+			"node_name": "K2Node_VariableGet_22",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LocalObjectiveStates",
+			"title_single_line": "Get LocalObjectiveStates",
+			"comment": "",
+			"guid": "4eda6662-4fe0-d15d-96ca-8094989e5435",
+			"x": 7408,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LocalObjectiveStates",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_19",
+			"node_name": "K2Node_CallFunction_19",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "To String (Text)",
-			"title_single_line": "To String (Text)",
+			"title": "Sync Objectives to Save\nTarget is BP Objective Manager",
+			"title_single_line": "Sync Objectives to Save",
 			"comment": "",
-			"guid": "e0949d09-466d-1b85-f8aa-70b4668bd732",
-			"x": 5568,
+			"guid": "a4278d72-4ddd-c96c-f6f4-61a927433e64",
+			"x": 7872,
 			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_20",
+			"node_name": "K2Node_CallFunction_20",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Broadcast Current Objective Changed\nTarget is BP Objective Manager",
+			"title_single_line": "Broadcast Current Objective Changed",
+			"comment": "",
+			"guid": "b6e64916-4351-6716-845e-a0b0811cb3cf",
+			"x": 8272,
+			"y": 80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ObjectiveData",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_VariableGet_23",
+			"node_name": "K2Node_VariableGet_23",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ExistingObjectiveData",
+			"title_single_line": "Get ExistingObjectiveData",
+			"comment": "",
+			"guid": "8e0006bc-4c16-6866-d8ec-4da76f2d821e",
+			"x": 8032,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ExistingObjectiveData",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_Objective",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_17",
+			"node_name": "K2Node_CallFunction_17",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "6536f29e-4ac4-1cdc-241c-5f8520475791",
+			"x": 8704,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator5",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[ObjectiveManager] Objective started successfully (existing entry updated)",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_Self_5",
+			"node_name": "K2Node_Self_5",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "928bbbd5-4141-56d4-571e-68ab8965aba8",
+			"x": 8304,
+			"y": 288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_CallFunction_18",
+			"node_name": "K2Node_CallFunction_18",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "738843eb-48f5-c6ba-730b-aabd884f154c",
+			"x": 8432,
+			"y": 320,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2254,25 +4143,60 @@
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "KismetTextLibrary",
+					"resolved_type": "BFL_Debug_C",
 					"default_value": "",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "InText",
+					"pin_name": "Ref",
 					"direction": "Input",
-					"category": "text",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "Text",
+					"resolved_type": "Object",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "string",
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "String",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartObjective"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_4",
+			"node_name": "K2Node_FunctionResult_4",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "a94eb44e-4878-8244-3676-a9a3d1e18b67",
+			"x": 9360,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -2285,9 +4209,9 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "StartObjective",
 			"from_pin": "then",
-			"to_node_id": "K2Node_MacroInstance_0",
-			"to_node_title": "Is Valid",
-			"to_pin": "exec"
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_MacroInstance_0",
@@ -2301,32 +4225,24 @@
 			"from_node_id": "K2Node_MacroInstance_0",
 			"from_node_title": "Is Valid",
 			"from_pin": "Is Not Valid",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug\nTarget is BP Objective Manager",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Critical",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_GetDataTableRow_0",
 			"from_node_title": "Get Data Table Row",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set CurrentObjectiveId",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set LocalObjectiveStates",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_GetDataTableRow_0",
 			"from_node_title": "Get Data Table Row",
 			"from_pin": "RowNotFound",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Debug\nTarget is BP Objective Manager",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_0",
-			"from_node_title": "Set CurrentObjectiveId",
-			"from_pin": "then",
-			"to_node_id": "K2Node_SetFieldsInStruct_0",
-			"to_node_title": "Set members in S Objective",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Warning",
 			"to_pin": "execute"
 		},
 		{
@@ -2341,17 +4257,9 @@
 			"from_node_id": "K2Node_VariableSet_1",
 			"from_node_title": "Set PreparedObjective",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_2",
-			"to_node_title": "Set LocalObjectiveStates",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_2",
-			"from_node_title": "Set LocalObjectiveStates",
-			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_3",
-			"to_node_title": "Set bFoundExistingObjective",
-			"to_pin": "execute"
+			"to_node_id": "K2Node_MacroInstance_2",
+			"to_node_title": "For Each Loop with Break",
+			"to_pin": "Exec"
 		},
 		{
 			"from_node_id": "K2Node_VariableSet_3",
@@ -2365,9 +4273,9 @@
 			"from_node_id": "K2Node_VariableSet_4",
 			"from_node_title": "Set FoundObjectiveIndex",
 			"from_pin": "then",
-			"to_node_id": "K2Node_MacroInstance_2",
-			"to_node_title": "For Each Loop with Break",
-			"to_pin": "Exec"
+			"to_node_id": "K2Node_SetFieldsInStruct_0",
+			"to_node_title": "Set members in S Objective",
+			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_IfThenElse_1",
@@ -2429,9 +4337,9 @@
 			"from_node_id": "K2Node_IfThenElse_2",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallArrayFunction_0",
-			"to_node_title": "Set Array Elem",
-			"to_pin": "execute"
+			"to_node_id": "K2Node_Knot_9",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_IfThenElse_2",
@@ -2442,51 +4350,203 @@
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallArrayFunction_0",
-			"from_node_title": "Set Array Elem",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug\nTarget is BP Objective Manager",
-			"to_pin": "execute"
-		},
-		{
 			"from_node_id": "K2Node_CallArrayFunction_1",
 			"from_node_title": "Add",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Debug\nTarget is BP Objective Manager",
+			"to_node_id": "K2Node_VariableSet_11",
+			"to_node_title": "Set CurrentObjectiveId",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_VariableSet_7",
 			"from_node_title": "Set ObjectiveStates",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Broadcast Current Objective Changed\nTarget is BP Objective Manager",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Debug\nTarget is BP Objective Manager",
-			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_7",
-			"to_node_title": "Set ObjectiveStates",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_2",
-			"from_node_title": "Debug\nTarget is BP Objective Manager",
-			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_7",
-			"to_node_title": "Set ObjectiveStates",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Sync Objectives to Save\nTarget is BP Objective Manager",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_5",
 			"from_node_title": "Broadcast Current Objective Changed\nTarget is BP Objective Manager",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_id": "K2Node_CallFunction_21",
+			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "Is Valid",
+			"to_pin": "exec"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Warning",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_15",
+			"from_node_title": "Debug Warning",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Debug Critical",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_6",
+			"from_node_title": "Debug Warning",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set LocalObjectiveStates",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set bFoundExistingObjective",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_11",
+			"from_node_title": "Set CurrentObjectiveId",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_7",
+			"to_node_title": "Set ObjectiveStates",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_12",
+			"from_node_title": "Sync Objectives to Save\nTarget is BP Objective Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Broadcast Current Objective Changed\nTarget is BP Objective Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_21",
+			"from_node_title": "Debug Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_5",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_10",
+			"from_node_title": "Set ExistingObjectiveData",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Knot_9",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_10",
+			"to_node_title": "Set ExistingObjectiveData",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Warning",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallArrayFunction_2",
+			"to_node_title": "Set Array Elem",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_13",
+			"from_node_title": "Debug Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_3",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallArrayFunction_2",
+			"from_node_title": "Set Array Elem",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_9",
+			"to_node_title": "Set CurrentObjectiveId",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_9",
+			"from_node_title": "Set CurrentObjectiveId",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_12",
+			"to_node_title": "Set ObjectiveStates",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_12",
+			"from_node_title": "Set ObjectiveStates",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_19",
 			"to_node_title": "Sync Objectives to Save\nTarget is BP Objective Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_19",
+			"from_node_title": "Sync Objectives to Save\nTarget is BP Objective Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_20",
+			"to_node_title": "Broadcast Current Objective Changed\nTarget is BP Objective Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_20",
+			"from_node_title": "Broadcast Current Objective Changed\nTarget is BP Objective Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_17",
+			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_17",
+			"from_node_title": "Debug Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_4",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
 	],
@@ -2504,6 +4564,22 @@
 			"from_node_title": "StartObjective",
 			"from_pin": "InObjectiveId",
 			"to_node_id": "K2Node_Knot_4",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "StartObjective",
+			"from_pin": "InObjectiveId",
+			"to_node_id": "K2Node_PromotableOperator_1",
+			"to_node_title": "Not Equal (Name)",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "StartObjective",
+			"from_pin": "InObjectiveId",
+			"to_node_id": "K2Node_Knot_10",
 			"to_node_title": "Reroute Node",
 			"to_pin": "InputPin"
 		},
@@ -2540,22 +4616,6 @@
 			"to_pin": "RowName"
 		},
 		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_Knot_1",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_Knot_1",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set CurrentObjectiveId",
-			"to_pin": "CurrentObjectiveId"
-		},
-		{
 			"from_node_id": "K2Node_SetFieldsInStruct_0",
 			"from_node_title": "Set members in S Objective",
 			"from_pin": "StructOut",
@@ -2570,14 +4630,6 @@
 			"to_node_id": "K2Node_SetFieldsInStruct_0",
 			"to_node_title": "Set members in S Objective",
 			"to_pin": "StructRef"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_5",
-			"from_node_title": "Get ObjectiveStates",
-			"from_pin": "ObjectiveStates",
-			"to_node_id": "K2Node_VariableSet_2",
-			"to_node_title": "Set LocalObjectiveStates",
-			"to_pin": "LocalObjectiveStates"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_6",
@@ -2620,6 +4672,14 @@
 			"to_pin": "InputPin"
 		},
 		{
+			"from_node_id": "K2Node_Knot_4",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_8",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
 			"from_node_id": "K2Node_Knot_5",
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
@@ -2652,36 +4712,12 @@
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_8",
-			"from_node_title": "Get LocalObjectiveStates",
-			"from_pin": "LocalObjectiveStates",
-			"to_node_id": "K2Node_CallArrayFunction_0",
-			"to_node_title": "Set Array Elem",
-			"to_pin": "TargetArray"
-		},
-		{
 			"from_node_id": "K2Node_VariableGet_9",
 			"from_node_title": "Get FoundObjectiveIndex",
 			"from_pin": "FoundObjectiveIndex",
-			"to_node_id": "K2Node_CallArrayFunction_0",
-			"to_node_title": "Set Array Elem",
-			"to_pin": "Index"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_10",
-			"from_node_title": "Get PreparedObjective",
-			"from_pin": "PreparedObjective",
-			"to_node_id": "K2Node_CallArrayFunction_0",
-			"to_node_title": "Set Array Elem",
-			"to_pin": "Item"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_10",
-			"from_node_title": "Get PreparedObjective",
-			"from_pin": "PreparedObjective",
-			"to_node_id": "K2Node_BreakStruct_3",
-			"to_node_title": "Break S Objective",
-			"to_pin": "S_Objective"
+			"to_node_id": "K2Node_GetArrayItem_0",
+			"to_node_title": "GET",
+			"to_pin": "Dimension 1"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_11",
@@ -2716,28 +4752,340 @@
 			"to_pin": "ObjectiveData"
 		},
 		{
-			"from_node_id": "K2Node_BreakStruct_3",
+			"from_node_id": "K2Node_PromotableOperator_1",
+			"from_node_title": "Not Equal (Name)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Self_4",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Warning",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_4",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_16",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_16",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Debug Warning",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Critical",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_7",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Critical",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Warning",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_9",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Warning",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get ObjectiveStates",
+			"from_pin": "ObjectiveStates",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set LocalObjectiveStates",
+			"to_pin": "LocalObjectiveStates"
+		},
+		{
+			"from_node_id": "K2Node_Knot_8",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_11",
+			"to_node_title": "Set CurrentObjectiveId",
+			"to_pin": "CurrentObjectiveId"
+		},
+		{
+			"from_node_id": "K2Node_Self_6",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_21",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_6",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_22",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_22",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_21",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_17",
+			"from_node_title": "Get LocalObjectiveStates",
+			"from_pin": "LocalObjectiveStates",
+			"to_node_id": "K2Node_GetArrayItem_0",
+			"to_node_title": "GET",
+			"to_pin": "Array"
+		},
+		{
+			"from_node_id": "K2Node_GetArrayItem_0",
+			"from_node_title": "GET",
+			"from_pin": "Output",
+			"to_node_id": "K2Node_VariableSet_10",
+			"to_node_title": "Set ExistingObjectiveData",
+			"to_pin": "ExistingObjectiveData"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_10",
+			"from_node_title": "Set ExistingObjectiveData",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_BreakStruct_0",
+			"to_node_title": "Break S Objective",
+			"to_pin": "S_Objective"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Objective",
 			"from_pin": "ObjectiveId_3_F5AD8AF344AA6797E117B4AD22EED0F2",
-			"to_node_id": "K2Node_FormatText_0",
-			"to_node_title": "Format Text",
-			"to_pin": "OBJ"
+			"to_node_id": "K2Node_PromotableOperator_2",
+			"to_node_title": "Equal (Name)",
+			"to_pin": "A"
 		},
 		{
-			"from_node_id": "K2Node_FormatText_0",
-			"from_node_title": "Format Text",
-			"from_pin": "Result",
-			"to_node_id": "K2Node_CallFunction_75",
-			"to_node_title": "To String (Text)",
-			"to_pin": "InText"
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Objective",
+			"from_pin": "Status_8_AF1235B44A17948E5A37EDBDB50268DF",
+			"to_node_id": "K2Node_EnumEquality_0",
+			"to_node_title": "Equal (Enum)",
+			"to_pin": "A"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_75",
-			"from_node_title": "To String (Text)",
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Objective",
+			"from_pin": "Status_8_AF1235B44A17948E5A37EDBDB50268DF",
+			"to_node_id": "K2Node_EnumEquality_1",
+			"to_node_title": "Equal (Enum)",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_EnumEquality_0",
+			"from_node_title": "Equal (Enum)",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug\nTarget is BP Objective Manager",
-			"to_pin": "Message"
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Warning",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Warning",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_EnumEquality_1",
+			"from_node_title": "Equal (Enum)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"to_node_title": "AND Boolean",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_2",
+			"from_node_title": "Equal (Name)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"to_node_title": "AND Boolean",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"from_node_title": "AND Boolean",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Self_3",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_3",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_14",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_14",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_19",
+			"from_node_title": "Get LocalObjectiveStates",
+			"from_pin": "LocalObjectiveStates",
+			"to_node_id": "K2Node_CallArrayFunction_2",
+			"to_node_title": "Set Array Elem",
+			"to_pin": "TargetArray"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_20",
+			"from_node_title": "Get FoundObjectiveIndex",
+			"from_pin": "FoundObjectiveIndex",
+			"to_node_id": "K2Node_CallArrayFunction_2",
+			"to_node_title": "Set Array Elem",
+			"to_pin": "Index"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_21",
+			"from_node_title": "Get PreparedObjective",
+			"from_pin": "PreparedObjective",
+			"to_node_id": "K2Node_CallArrayFunction_2",
+			"to_node_title": "Set Array Elem",
+			"to_pin": "Item"
+		},
+		{
+			"from_node_id": "K2Node_Knot_10",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_11",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Knot_11",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_PromotableOperator_2",
+			"to_node_title": "Equal (Name)",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_Knot_11",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_9",
+			"to_node_title": "Set CurrentObjectiveId",
+			"to_pin": "CurrentObjectiveId"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_22",
+			"from_node_title": "Get LocalObjectiveStates",
+			"from_pin": "LocalObjectiveStates",
+			"to_node_id": "K2Node_VariableSet_12",
+			"to_node_title": "Set ObjectiveStates",
+			"to_pin": "ObjectiveStates"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_23",
+			"from_node_title": "Get ExistingObjectiveData",
+			"from_pin": "ExistingObjectiveData",
+			"to_node_id": "K2Node_CallFunction_20",
+			"to_node_title": "Broadcast Current Objective Changed\nTarget is BP Objective Manager",
+			"to_pin": "ObjectiveData"
+		},
+		{
+			"from_node_id": "K2Node_Self_5",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_17",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_5",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_18",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_18",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_17",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

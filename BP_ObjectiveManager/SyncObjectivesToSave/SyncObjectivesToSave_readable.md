@@ -8,19 +8,26 @@ Synchronizes or persists runtime state.
 
 ## Reads
 - SaveManagerRef
-- ObjectiveStates
+
+## Writes
+- SaveManagerRef
 
 ## Calls
-- Set Current Quest Id
-- Set Objective States
 - Request Auto Save
-- To String (Name)
+- Is Valid
+- Debug Info
+- Get Sender Name
+- Get Game Instance
+- Debug Warning
 
 ## Called By
 - StartObjective
 - CompleteObjective
 
+## Branch Points
+- Branch
+
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

@@ -11,6 +11,7 @@ Completes state, runtime flow, or progression.
 - LocalObjectiveStates
 - bFoundObjectiveToComplete
 - FoundObjectiveIndex
+- ExistingObjectiveData
 - PreparedCompletedObjective
 - NextObjectiveIdLocal
 
@@ -19,21 +20,23 @@ Completes state, runtime flow, or progression.
 - bFoundObjectiveToComplete
 - FoundObjectiveIndex
 - NextObjectiveIdLocal
+- ExistingObjectiveData
 - PreparedCompletedObjective
 - ObjectiveStates
+- CurrentObjectiveId
 
 ## Calls
-- Debug
+- Debug Warning
+- Get Sender Name
+- Debug Info
 - Start Objective
 - Sync Objectives to Save
 - Broadcast Current Objective Changed
-- To String (Text)
-- Debug Message
 
 ## Branch Points
 - Branch
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

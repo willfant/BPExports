@@ -10,8 +10,6 @@ Provides debug or developer-facing behavior.
 - Print String
 
 ## Called By
-- StartObjective
-- CompleteObjective
 - InitializeObjectivesForGhost
 
 ## Branch Points

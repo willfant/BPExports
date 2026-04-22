@@ -8,25 +8,29 @@ Starts a flow, state transition, or activation sequence.
 
 ## Reads
 - ObjectivesDataTable
-- ObjectiveStates
 - LocalObjectiveStates
 - bFoundExistingObjective
 - FoundObjectiveIndex
 - PreparedObjective
+- ObjectiveStates
+- ExistingObjectiveData
 
 ## Writes
-- CurrentObjectiveId
 - PreparedObjective
-- LocalObjectiveStates
 - bFoundExistingObjective
 - FoundObjectiveIndex
 - ObjectiveStates
+- LocalObjectiveStates
+- CurrentObjectiveId
+- ExistingObjectiveData
 
 ## Calls
-- Debug
-- Sync Objectives to Save
 - Broadcast Current Objective Changed
-- To String (Text)
+- Debug Warning
+- Get Sender Name
+- Debug Critical
+- Sync Objectives to Save
+- Debug Info
 
 ## Called By
 - CompleteObjective
