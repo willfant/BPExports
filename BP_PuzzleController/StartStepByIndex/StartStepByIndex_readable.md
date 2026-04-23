@@ -24,10 +24,8 @@ Starts a flow, state transition, or activation sequence.
 - Sync Puzzle Progress to Save
 
 ## Called By
-- StartPuzzleById
 - ReportStepSuccess
 - ResetCurrentStep
-- StartPuzzleByRowName
 - StartPuzzleByRowNameAndStep
 
 ## Branch Points

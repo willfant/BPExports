@@ -7,12 +7,13 @@ Function
 Starts a flow, state transition, or activation sequence.
 
 ## Returns
-- bStartedPuzzle (Boolean)
-- bStartedPuzzle (Boolean)
+- NewParam (Boolean)
+- NewParam (Boolean)
 
 ## Calls
-- Debug Puzzle Message
 - Get Next Valid Puzzle Row Name for Current Context
+- Debug Info
+- Get Sender Name
 - Start Puzzle by Row Name
 
 ## Called By

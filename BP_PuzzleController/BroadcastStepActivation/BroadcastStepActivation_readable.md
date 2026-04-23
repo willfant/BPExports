@@ -11,7 +11,6 @@ Auto-generated function summary.
 - Debug Puzzle Message
 
 ## Called By
-- StartPuzzleById
 - StartStepByIndex
 
 ## Notes

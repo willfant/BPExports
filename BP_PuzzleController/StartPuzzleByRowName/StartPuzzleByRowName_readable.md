@@ -6,31 +6,16 @@ Function
 ## Purpose
 Starts a flow, state transition, or activation sequence.
 
-## Reads
-- DT_Puzzles
-- CompletedStepIds
-- FailedStepsIds
-- CurrentPuzzleId
-- StartedPuzzleIds
-
-## Writes
-- CurrentPuzzleId
-- bHasActivePuzzle
-- bStepActive
-- CurrentStepIndex
-- CurrentPuzzleData
+## Returns
+- bStartedPuzzle (Boolean)
 
 ## Calls
-- Is Valid
-- Start Step by Index
+- Start Puzzle by Row Name and Step
 
 ## Called By
 - StartNextValidPuzzleForCurrentContext
 
-## Branch Points
-- Branch
-
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

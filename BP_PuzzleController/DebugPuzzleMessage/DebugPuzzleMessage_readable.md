@@ -12,8 +12,6 @@ Provides debug or developer-facing behavior.
 
 ## Called By
 - DebugCurrentPuzzleCatalog
-- StartFirstPuzzleForCurrentGhost
-- StartPuzzleById
 - StartStepByIndex
 - CompleteCurrentPuzzle
 - BroadcastStepActivation
@@ -23,7 +21,6 @@ Provides debug or developer-facing behavior.
 - HandlePuzzleCompletionConsequences
 - ResetCurrentPuzzle
 - SyncPuzzleProgressToSave
-- StartNextValidPuzzleForCurrentContext
 
 ## Branch Points
 - Branch

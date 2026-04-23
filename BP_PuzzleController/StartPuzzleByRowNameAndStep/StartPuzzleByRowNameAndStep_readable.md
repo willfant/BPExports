@@ -51,7 +51,7 @@ Starts a flow, state transition, or activation sequence.
 - Start Step by Index
 
 ## Called By
-- StartFirstPuzzleForCurrentGhost
+- StartPuzzleByRowName
 - RestorePuzzleFromSave
 
 ## Branch Points
