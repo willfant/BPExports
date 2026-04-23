@@ -22,8 +22,8 @@ Synchronizes or persists runtime state.
 
 ## Called By
 - StartStepByIndex
+- CompleteCurrentPuzzle
 - HandleStepFailureConsequences
-- HandlePuzzleCompletionConsequences
 
 ## Branch Points
 - Branch

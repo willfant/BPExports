@@ -7,29 +7,17 @@ Function
 Auto-generated function summary.
 
 ## Reads
-- CurrentPuzzleId
-- ObjectiveManagerRef
-- GhostManagerRef
 - CurrentPuzzleData
-- SaveManagerRef
+- ObjectiveManagerRef
 - TransitionManagerRef
-- CachedWorldModeSystem
 
 ## Calls
-- Complete Objective
-- Start Objective
-- Set Ghost State
-- Debug Puzzle Message
 - Is Valid
-- Mark Puzzle Completed
-- Set Current Puzzle Id
-- Set Current Puzzle Step Index
-- Sync Puzzle Progress to Save
-- Start Memory Transition
-- Get Current Ghost Profile
-- Set World Mode
+- Start Objective
+- Debug Warning
+- Get Sender Name
 - Start Next Valid Puzzle for Current Context
-- Travel to Level Name
+- Debug Info
 
 ## Called By
 - CompleteCurrentPuzzle
@@ -39,5 +27,5 @@ Auto-generated function summary.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
-- Has warning nodes: Yes
+- Has error nodes: No
+- Has warning nodes: No

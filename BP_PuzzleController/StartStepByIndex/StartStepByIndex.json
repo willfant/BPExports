@@ -4,7 +4,7 @@
 	"entry_node_id": "K2Node_FunctionEntry_0",
 	"has_latent_nodes": false,
 	"has_error_nodes": false,
-	"has_warning_nodes": true,
+	"has_warning_nodes": false,
 	"locals": [],
 	"returns": [],
 	"summary":
@@ -1379,59 +1379,6 @@
 			"target_class": "StartStepByIndex"
 		},
 		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Sync Puzzle Progress to Save\nTarget is BP Puzzle Controller",
-			"title_single_line": "Sync Puzzle Progress to Save",
-			"comment": "",
-			"guid": "862d1c9b-43f0-4e7e-c63e-fea43094a056",
-			"x": 5616,
-			"y": -432,
-			"has_error": false,
-			"has_warning": true,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SaveReason",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "PuzzleStepStarted",
-					"linked_count": 0
-				}
-			],
-			"target_class": "StartStepByIndex"
-		},
-		{
 			"node_id": "K2Node_FormatText_4",
 			"node_name": "K2Node_FormatText_4",
 			"node_kind": "FormatText",
@@ -2110,6 +2057,50 @@
 				}
 			],
 			"target_class": "StartStepByIndex"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Sync Puzzle Progress to Save\nTarget is BP Puzzle Controller",
+			"title_single_line": "Sync Puzzle Progress to Save",
+			"comment": "",
+			"guid": "69a15604-4e98-377d-7d6a-5e9b04bb7839",
+			"x": 5632,
+			"y": -432,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartStepByIndex"
 		}
 	],
 	"exec_flow": [
@@ -2181,7 +2172,7 @@
 			"from_node_id": "K2Node_CallFunction_5",
 			"from_node_title": "Broadcast Step Activation\nTarget is BP Puzzle Controller",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_id": "K2Node_CallFunction_0",
 			"to_node_title": "Sync Puzzle Progress to Save\nTarget is BP Puzzle Controller",
 			"to_pin": "execute"
 		},
@@ -2191,14 +2182,6 @@
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallDelegate_0",
 			"to_node_title": "Call On Step Started",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Sync Puzzle Progress to Save\nTarget is BP Puzzle Controller",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
 			"to_pin": "execute"
 		},
 		{
@@ -2230,6 +2213,14 @@
 			"from_node_title": "Branch",
 			"from_pin": "else",
 			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Sync Puzzle Progress to Save\nTarget is BP Puzzle Controller",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_6",
 			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
 			"to_pin": "execute"
 		}

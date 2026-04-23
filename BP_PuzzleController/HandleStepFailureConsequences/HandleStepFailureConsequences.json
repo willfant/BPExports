@@ -23,7 +23,8 @@
 			"Get Sender Name",
 			"Is Valid",
 			"Execute Scare by Id",
-			"Sync Puzzle Progress to Save"
+			"Sync Puzzle Progress to Save",
+			"Debug Info"
 		],
 		"called_by": [
 			"ReportStepFailure"
@@ -124,7 +125,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 3
+					"linked_count": 2
 				},
 				{
 					"pin_name": "Description_5_B945EB214A942086F3C5289280FCAB92",
@@ -205,7 +206,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				}
 			],
 			"target_class": "HandleStepFailureConsequences"
@@ -231,7 +232,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 3
 				},
 				{
 					"pin_name": "then",
@@ -633,7 +634,7 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "e78eb49a-476c-9318-3088-6cb9bd4bd450",
-			"x": -160,
+			"x": -256,
 			"y": -16,
 			"has_error": false,
 			"has_warning": false,
@@ -686,7 +687,7 @@
 			"title_single_line": "Get FailedStepsIds",
 			"comment": "",
 			"guid": "07d2a783-4f1b-4b3a-117c-3e9fde98cf53",
-			"x": -32,
+			"x": -240,
 			"y": 192,
 			"has_error": false,
 			"has_warning": false,
@@ -721,7 +722,7 @@
 			"title_single_line": "Add",
 			"comment": "",
 			"guid": "3d0a9cd2-4134-85aa-f799-2dbe11ffc75d",
-			"x": 192,
+			"x": -16,
 			"y": 160,
 			"has_error": false,
 			"has_warning": false,
@@ -819,50 +820,6 @@
 			"target_class": "HandleStepFailureConsequences"
 		},
 		{
-			"node_id": "K2Node_ExecutionSequence_0",
-			"node_name": "K2Node_ExecutionSequence_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_ExecutionSequence",
-			"title": "Sequence",
-			"title_single_line": "Sequence",
-			"comment": "",
-			"guid": "cd5f0912-4721-2bdf-7815-f2933be0342a",
-			"x": 432,
-			"y": 176,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then_0",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "then_1",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "HandleStepFailureConsequences"
-		},
-		{
 			"node_id": "K2Node_PromotableOperator_1",
 			"node_name": "K2Node_PromotableOperator_1",
 			"node_kind": "Unknown",
@@ -924,8 +881,8 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "0a1510d6-4736-e195-18ae-9fb5720c30b4",
-			"x": 292,
-			"y": -112,
+			"x": 400,
+			"y": -16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -936,7 +893,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				},
 				{
 					"pin_name": "Condition",
@@ -963,7 +920,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				}
 			],
 			"target_class": "HandleStepFailureConsequences"
@@ -1130,7 +1087,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -1568,7 +1525,7 @@
 			"title_single_line": "Return Node",
 			"comment": "",
 			"guid": "75c9a99c-4bba-6ba9-6856-efb7fa8dbadf",
-			"x": 2768,
+			"x": 3568,
 			"y": -32,
 			"has_error": false,
 			"has_warning": false,
@@ -1580,6 +1537,279 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "HandleStepFailureConsequences"
+		},
+		{
+			"node_id": "K2Node_Knot_6",
+			"node_name": "K2Node_Knot_6",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "ddb5afc7-44ad-3595-6dfd-248acb9dbb31",
+			"x": 1936,
+			"y": 64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "HandleStepFailureConsequences"
+		},
+		{
+			"node_id": "K2Node_Knot_7",
+			"node_name": "K2Node_Knot_7",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "7c5eabf6-45e8-9c77-3d32-e794ca6f4c9d",
+			"x": -208,
+			"y": -560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "HandleStepFailureConsequences"
+		},
+		{
+			"node_id": "K2Node_Knot_8",
+			"node_name": "K2Node_Knot_8",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "eda15dab-4ee3-f6dc-f62b-169d53355724",
+			"x": 1632,
+			"y": -608,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "HandleStepFailureConsequences"
+		},
+		{
+			"node_id": "K2Node_CallFunction_13",
+			"node_name": "K2Node_CallFunction_13",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "3dc74179-4b56-6045-d0f7-20a62c9d23c8",
+			"x": 2848,
+			"y": -32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator2",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[PuzzleController] Step failure consequences processed successfully",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "HandleStepFailureConsequences"
+		},
+		{
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "a8564597-49aa-e017-2510-f2b6793f1054",
+			"x": 2416,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "HandleStepFailureConsequences"
+		},
+		{
+			"node_id": "K2Node_CallFunction_14",
+			"node_name": "K2Node_CallFunction_14",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "9216d613-491a-c36d-b3c6-4f8ee912ae2b",
+			"x": 2576,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
@@ -1647,8 +1877,8 @@
 			"from_node_id": "K2Node_CallArrayFunction_1",
 			"from_node_title": "Add",
 			"from_pin": "then",
-			"to_node_id": "K2Node_ExecutionSequence_0",
-			"to_node_title": "Sequence",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
@@ -1658,6 +1888,14 @@
 			"to_node_id": "K2Node_IfThenElse_5",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_Knot_6",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_IfThenElse_5",
@@ -1676,6 +1914,14 @@
 			"to_pin": "execute"
 		},
 		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Execute Scare by Id\nTarget is BP Scare Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_Knot_8",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
 			"from_node_id": "K2Node_CallFunction_9",
 			"from_node_title": "Debug Warning",
 			"from_pin": "then",
@@ -1686,6 +1932,30 @@
 		{
 			"from_node_id": "K2Node_CallFunction_11",
 			"from_node_title": "Sync Puzzle Progress to Save\nTarget is BP Puzzle Controller",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Knot_6",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Reset Current Step\nTarget is BP Puzzle Controller",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Knot_8",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Reset Current Step\nTarget is BP Puzzle Controller",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_13",
+			"from_node_title": "Debug Info",
 			"from_pin": "then",
 			"to_node_id": "K2Node_FunctionResult_1",
 			"to_node_title": "Return Node",
@@ -1720,14 +1990,6 @@
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Puzzle Step",
-			"from_pin": "StepId_2_000F84904F7D9572E1ED60B4156973AA",
-			"to_node_id": "K2Node_CallFunction_8",
-			"to_node_title": "Execute Scare by Id\nTarget is BP Scare Manager",
-			"to_pin": "ScareId"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_0",
-			"from_node_title": "Break S Puzzle Step",
 			"from_pin": "TargetAnchor_8_E365BE2D4FF4769824E203AD3435EF47",
 			"to_node_id": "K2Node_BreakStruct_1",
 			"to_node_title": "Break S Anchor Binding",
@@ -1740,6 +2002,14 @@
 			"to_node_id": "K2Node_PromotableOperator_1",
 			"to_node_title": "Not Equal (Name)",
 			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Puzzle Step",
+			"from_pin": "OnFailScareId_28_BACB94EA4AF156ADFAD9018ECF3116CB",
+			"to_node_id": "K2Node_Knot_7",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_3",
@@ -1899,6 +2169,38 @@
 			"from_pin": "Name",
 			"to_node_id": "K2Node_CallFunction_9",
 			"to_node_title": "Debug Warning",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_Knot_7",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Execute Scare by Id\nTarget is BP Scare Manager",
+			"to_pin": "ScareId"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_14",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_14",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Debug Info",
 			"to_pin": "SenderName"
 		}
 	],

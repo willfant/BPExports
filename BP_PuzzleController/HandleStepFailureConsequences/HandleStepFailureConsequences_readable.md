@@ -19,6 +19,7 @@ Auto-generated function summary.
 - Is Valid
 - Execute Scare by Id
 - Sync Puzzle Progress to Save
+- Debug Info
 
 ## Called By
 - ReportStepFailure

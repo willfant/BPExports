@@ -10,18 +10,21 @@ Completes state, runtime flow, or progression.
 - bHasActivePuzzle
 - CompletedStepIds
 - CurrentPuzzleId
-- SaveManagerRef
-- CompletedPuzzleIds
 
 ## Writes
 - bHasActivePuzzle
 - bStepActive
 - CurrentStepIndex
+- bPuzzleRestoredFromSave
+- CurrentPuzzleId
 
 ## Calls
-- Debug Puzzle Message
-- Mark Puzzle Completed
+- Debug Warning
+- Get Sender Name
+- Debug Critical
+- Sync Puzzle Progress to Save
 - Handle Puzzle Completion Consequences
+- Debug Info
 
 ## Called By
 - ReportStepSuccess
@@ -31,5 +34,5 @@ Completes state, runtime flow, or progression.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

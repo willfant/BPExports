@@ -65,52 +65,66 @@
 		},
 		{
 			"from_graph": "StartStepByIndex",
+			"from_node_title": "Debug Puzzle Message",
+			"to_graph": "DebugPuzzleMessage",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "StartStepByIndex",
+			"from_node_title": "Debug Puzzle Message",
+			"to_graph": "DebugPuzzleMessage",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "StartStepByIndex",
+			"from_node_title": "Debug Puzzle Message",
+			"to_graph": "DebugPuzzleMessage",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "StartStepByIndex",
 			"from_node_title": "Sync Puzzle Progress to Save",
 			"to_graph": "SyncPuzzleProgressToSave",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
-			"from_graph": "StartStepByIndex",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "StartStepByIndex",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "StartStepByIndex",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
 			"from_graph": "CompleteCurrentPuzzle",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "CompleteCurrentPuzzle",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "CompleteCurrentPuzzle",
-			"from_node_title": "Mark Puzzle Completed",
-			"to_graph": "MarkPuzzleCompleted",
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
 			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "CompleteCurrentPuzzle",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "CompleteCurrentPuzzle",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "CompleteCurrentPuzzle",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "CompleteCurrentPuzzle",
+			"from_node_title": "Sync Puzzle Progress to Save",
+			"to_graph": "SyncPuzzleProgressToSave",
+			"call_type": "SelfFunction",
+			"target_class": ""
 		},
 		{
 			"from_graph": "CompleteCurrentPuzzle",
@@ -118,6 +132,20 @@
 			"to_graph": "HandlePuzzleCompletionConsequences",
 			"call_type": "SelfFunction",
 			"target_class": ""
+		},
+		{
+			"from_graph": "CompleteCurrentPuzzle",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "CompleteCurrentPuzzle",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "BroadcastStepActivation",
@@ -274,6 +302,20 @@
 			"target_class": ""
 		},
 		{
+			"from_graph": "HandleStepFailureConsequences",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "HandleStepFailureConsequences",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
 			"from_graph": "ResetCurrentStep",
 			"from_node_title": "Broadcast Step Reset",
 			"to_graph": "BroadcastStepReset",
@@ -296,10 +338,10 @@
 		},
 		{
 			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Complete Objective",
-			"to_graph": "CompleteObjective",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
-			"target_class": "BP_ObjectiveManager_C"
+			"target_class": "KismetSystemLibrary"
 		},
 		{
 			"from_graph": "HandlePuzzleCompletionConsequences",
@@ -310,17 +352,17 @@
 		},
 		{
 			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Set Ghost State",
-			"to_graph": "SetGhostState",
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
 			"call_type": "ExternalFunction",
-			"target_class": "BP_GhostManager_C"
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "HandlePuzzleCompletionConsequences",
@@ -331,167 +373,6 @@
 		},
 		{
 			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Mark Puzzle Completed",
-			"to_graph": "MarkPuzzleCompleted",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Set Current Puzzle Id",
-			"to_graph": "SetCurrentPuzzleId",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Set Current Puzzle Step Index",
-			"to_graph": "SetCurrentPuzzleStepIndex",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Sync Puzzle Progress to Save",
-			"to_graph": "SyncPuzzleProgressToSave",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Complete Objective",
-			"to_graph": "CompleteObjective",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_ObjectiveManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Start Objective",
-			"to_graph": "StartObjective",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_ObjectiveManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Set Ghost State",
-			"to_graph": "SetGhostState",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_GhostManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Complete Objective",
-			"to_graph": "CompleteObjective",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_ObjectiveManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Start Objective",
-			"to_graph": "StartObjective",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_ObjectiveManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Set Ghost State",
-			"to_graph": "SetGhostState",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_GhostManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Complete Objective",
-			"to_graph": "CompleteObjective",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_ObjectiveManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Start Objective",
-			"to_graph": "StartObjective",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_ObjectiveManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Set Ghost State",
-			"to_graph": "SetGhostState",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_GhostManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Start Memory Transition",
-			"to_graph": "StartMemoryTransition",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_TransitionManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Get Current Ghost Profile",
-			"to_graph": "GetCurrentGhostProfile",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_GhostManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Complete Objective",
-			"to_graph": "CompleteObjective",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_ObjectiveManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Start Objective",
-			"to_graph": "StartObjective",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_ObjectiveManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Set World Mode",
-			"to_graph": "SetWorldMode",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_WorldModeSystem_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
 			"from_node_title": "Start Next Valid Puzzle for Current Context",
 			"to_graph": "StartNextValidPuzzleForCurrentContext",
 			"call_type": "SelfFunction",
@@ -499,31 +380,17 @@
 		},
 		{
 			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Start Next Valid Puzzle for Current Context",
-			"to_graph": "StartNextValidPuzzleForCurrentContext",
-			"call_type": "SelfFunction",
-			"target_class": ""
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Complete Objective",
-			"to_graph": "CompleteObjective",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "ExternalFunction",
-			"target_class": "BP_ObjectiveManager_C"
-		},
-		{
-			"from_graph": "HandlePuzzleCompletionConsequences",
-			"from_node_title": "Travel to Level Name",
-			"to_graph": "TravelToLevelName",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_TransitionManager_C"
-		},
-		{
-			"from_graph": "ResetCurrentPuzzle",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "StartPuzzleByRowName",

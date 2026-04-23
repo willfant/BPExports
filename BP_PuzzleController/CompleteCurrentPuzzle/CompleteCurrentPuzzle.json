@@ -3,7 +3,7 @@
 	"graph_type": "Function",
 	"entry_node_id": "K2Node_FunctionEntry_0",
 	"has_latent_nodes": false,
-	"has_error_nodes": true,
+	"has_error_nodes": false,
 	"has_warning_nodes": false,
 	"locals": [],
 	"returns": [],
@@ -13,19 +13,22 @@
 		"reads_variables": [
 			"bHasActivePuzzle",
 			"CompletedStepIds",
-			"CurrentPuzzleId",
-			"SaveManagerRef",
-			"CompletedPuzzleIds"
+			"CurrentPuzzleId"
 		],
 		"writes_variables": [
 			"bHasActivePuzzle",
 			"bStepActive",
-			"CurrentStepIndex"
+			"CurrentStepIndex",
+			"bPuzzleRestoredFromSave",
+			"CurrentPuzzleId"
 		],
 		"calls": [
-			"Debug Puzzle Message",
-			"Mark Puzzle Completed",
-			"Handle Puzzle Completion Consequences"
+			"Debug Warning",
+			"Get Sender Name",
+			"Debug Critical",
+			"Sync Puzzle Progress to Save",
+			"Handle Puzzle Completion Consequences",
+			"Debug Info"
 		],
 		"called_by": [
 			"ReportStepSuccess"
@@ -150,77 +153,6 @@
 			"target_class": "CompleteCurrentPuzzle"
 		},
 		{
-			"node_id": "K2Node_CallFunction_0",
-			"node_name": "K2Node_CallFunction_0",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
-			"title_single_line": "Debug Puzzle Message",
-			"comment": "",
-			"guid": "147b77bf-404e-c2d5-3aa5-fdbc27c4974d",
-			"x": 768,
-			"y": 224,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "10.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator1",
-					"linked_count": 0
-				}
-			],
-			"target_class": "CompleteCurrentPuzzle"
-		},
-		{
 			"node_id": "K2Node_FormatText_0",
 			"node_name": "K2Node_FormatText_0",
 			"node_kind": "FormatText",
@@ -250,7 +182,7 @@
 					"subcategory": "None",
 					"resolved_type": "Text",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "PuzzleId",
@@ -274,8 +206,8 @@
 			"target_class": "CompleteCurrentPuzzle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_1",
-			"node_name": "K2Node_VariableGet_1",
+			"node_id": "K2Node_VariableGet_6",
+			"node_name": "K2Node_VariableGet_6",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get CompletedStepIds",
@@ -353,8 +285,8 @@
 			"target_class": "CompleteCurrentPuzzle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_16",
-			"node_name": "K2Node_VariableGet_16",
+			"node_id": "K2Node_VariableGet_5",
+			"node_name": "K2Node_VariableGet_5",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get CurrentPuzzleId",
@@ -388,16 +320,16 @@
 			"target_class": "CompleteCurrentPuzzle"
 		},
 		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
-			"title_single_line": "Debug Puzzle Message",
+			"title": "Debug Warning",
+			"title_single_line": "Debug Warning",
 			"comment": "",
-			"guid": "3393d149-4b9c-561e-ee87-0ab61f935dad",
-			"x": 1280,
-			"y": -496,
+			"guid": "deaf9e78-4966-8342-987d-4b969cc15f41",
+			"x": 768,
+			"y": 400,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -423,111 +355,32 @@
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
 					"default_value": "",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "Message",
+					"pin_name": "WorldContextObject",
 					"direction": "Input",
-					"category": "text",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "Text",
+					"resolved_type": "Object",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "10.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
+					"pin_name": "Category",
 					"direction": "Input",
 					"category": "byte",
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 0
-				}
-			],
-			"target_class": "CompleteCurrentPuzzle"
-		},
-		{
-			"node_id": "K2Node_CallDelegate_0",
-			"node_name": "K2Node_CallDelegate_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_CallDelegate",
-			"title": "Call On Puzzle Completed",
-			"title_single_line": "Call On Puzzle Completed",
-			"comment": "",
-			"guid": "01c5ee8c-42ed-878e-68d5-ab8dd4fb48d4",
-			"x": 1744,
-			"y": -480,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_PuzzleController_C",
-					"default_value": "",
+					"default_value": "NewEnumerator2",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "PuzzleId",
+					"pin_name": "SenderName",
 					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "CompleteCurrentPuzzle"
-		},
-		{
-			"node_id": "K2Node_VariableGet_17",
-			"node_name": "K2Node_VariableGet_17",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CurrentPuzzleId",
-			"title_single_line": "Get CurrentPuzzleId",
-			"comment": "",
-			"guid": "3cb6c41b-4d4c-ef7a-0d89-88a3c3410048",
-			"x": 1616,
-			"y": -304,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "CurrentPuzzleId",
-					"direction": "Output",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
@@ -535,11 +388,20 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "self",
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[PuzzleController] CompleteCurrentPuzzle aborted because there is no active puzzle",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "BP_PuzzleController_C",
+					"resolved_type": "Object",
 					"default_value": "",
 					"linked_count": 0
 				}
@@ -547,374 +409,461 @@
 			"target_class": "CompleteCurrentPuzzle"
 		},
 		{
-			"node_id": "K2Node_VariableSet_0",
-			"node_name": "K2Node_VariableSet_0",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set bHasActivePuzzle",
-			"title_single_line": "Set bHasActivePuzzle",
+			"node_id": "K2Node_Self_1",
+			"node_name": "K2Node_Self_1",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
 			"comment": "",
-			"guid": "229c7993-4102-deb5-3199-4e9bb88ed6f0",
-			"x": 2288,
-			"y": -464,
+			"guid": "2038798c-4e23-5b40-9376-4e958a37a887",
+			"x": 416,
+			"y": 464,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bHasActivePuzzle",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 0
-				},
-				{
 					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_PuzzleController_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "CompleteCurrentPuzzle"
-		},
-		{
-			"node_id": "K2Node_VariableSet_1",
-			"node_name": "K2Node_VariableSet_1",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set bStepActive",
-			"title_single_line": "Set bStepActive",
-			"comment": "",
-			"guid": "881bb320-4ba0-e999-b152-9d943dab6ddf",
-			"x": 2064,
-			"y": -464,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
 					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bStepActive",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_PuzzleController_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "CompleteCurrentPuzzle"
-		},
-		{
-			"node_id": "K2Node_VariableSet_2",
-			"node_name": "K2Node_VariableSet_2",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set CurrentStepIndex",
-			"title_single_line": "Set CurrentStepIndex",
-			"comment": "",
-			"guid": "147565b7-4c54-ee6f-ebce-79a8f558d9c6",
-			"x": 2608,
-			"y": -464,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "CurrentStepIndex",
-					"direction": "Input",
-					"category": "int",
-					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "-1",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "int",
-					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "0",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_PuzzleController_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "CompleteCurrentPuzzle"
-		},
-		{
-			"node_id": "K2Node_VariableGet_2",
-			"node_name": "K2Node_VariableGet_2",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get SaveManagerRef",
-			"title_single_line": "Get SaveManagerRef",
-			"comment": "",
-			"guid": "645dda77-4ec7-612f-8a00-6da2e87bd7e0",
-			"x": 3440,
-			"y": -288,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "SaveManagerRef",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_PuzzleController_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "CompleteCurrentPuzzle"
-		},
-		{
-			"node_id": "K2Node_CallFunction_2",
-			"node_name": "K2Node_CallFunction_2",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Mark Puzzle Completed",
-			"title_single_line": "Mark Puzzle Completed",
-			"comment": "",
-			"guid": "d72a29bf-4c01-e008-c04a-5bbcb2d32fdc",
-			"x": 3440,
-			"y": -496,
-			"has_error": true,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "PuzzleId",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				}
-			],
-			"target_class": "CompleteCurrentPuzzle"
-		},
-		{
-			"node_id": "K2Node_VariableGet_4",
-			"node_name": "K2Node_VariableGet_4",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CurrentPuzzleId",
-			"title_single_line": "Get CurrentPuzzleId",
-			"comment": "",
-			"guid": "730d104c-47a3-4893-5ba7-cba1a0e8d47e",
-			"x": 3424,
-			"y": -336,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "CurrentPuzzleId",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_PuzzleController_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "CompleteCurrentPuzzle"
-		},
-		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Handle Puzzle Completion Consequences\nTarget is BP Puzzle Controller",
-			"title_single_line": "Handle Puzzle Completion Consequences",
-			"comment": "",
-			"guid": "093c7f36-44a2-d181-1195-62bc2ee55581",
-			"x": 3856,
-			"y": -496,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
 					"category": "object",
 					"subcategory": "self",
 					"resolved_type": "object",
 					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_CallFunction_7",
+			"node_name": "K2Node_CallFunction_7",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "aa81b14d-495a-60b6-588d-8cb750034fdf",
+			"x": 560,
+			"y": 528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "ef6d729d-44d7-4ef3-b1ca-2094d142a233",
+			"x": 1376,
+			"y": 400,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_VariableGet_7",
+			"node_name": "K2Node_VariableGet_7",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentPuzzleId",
+			"title_single_line": "Get CurrentPuzzleId",
+			"comment": "",
+			"guid": "e8089292-4748-415e-291e-50aee00dee7e",
+			"x": 336,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentPuzzleId",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
 					"linked_count": 0
 				}
 			],
 			"target_class": "CompleteCurrentPuzzle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_3",
-			"node_name": "K2Node_VariableGet_3",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CompletedPuzzleIds",
-			"title_single_line": "Get CompletedPuzzleIds",
+			"node_id": "K2Node_PromotableOperator_0",
+			"node_name": "K2Node_PromotableOperator_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "Not Equal (Name)",
+			"title_single_line": "Not Equal (Name)",
 			"comment": "",
-			"guid": "5163946e-4233-60be-d108-158692c90996",
-			"x": 3008,
-			"y": -304,
+			"guid": "43ee8694-4d70-1e59-4051-09acf7ddd09a",
+			"x": 608,
+			"y": -112,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "CompletedPuzzleIds",
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "de5cb13e-41b8-f090-be98-61b2de3244a0",
+			"x": 960,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_CallFunction_6",
+			"node_name": "K2Node_CallFunction_6",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Critical",
+			"title_single_line": "Debug Critical",
+			"comment": "",
+			"guid": "0f197ab8-4fb0-c60d-2b3e-b08f584d463a",
+			"x": 1328,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator2",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[PuzzleController] CompleteCurrentPuzzle failed because CurrentPuzzleId is None while bHasActivePuzzle is true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "51366764-4323-eeb4-e344-859f228f9d61",
+			"x": 1840,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "4c89f0b1-4527-a117-3122-158ab8624aa5",
+			"x": 976,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "682a0bf5-4388-bcac-396d-0781d47e592c",
+			"x": 1072,
+			"y": 256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_VariableGet_8",
+			"node_name": "K2Node_VariableGet_8",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CompletedStepIds",
+			"title_single_line": "Get CompletedStepIds",
+			"comment": "",
+			"guid": "6d30b3e7-4d4c-09d0-7db8-08a482ce70f9",
+			"x": 1424,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CompletedStepIds",
 					"direction": "Output",
 					"category": "name",
 					"subcategory": "None",
@@ -935,16 +884,192 @@
 			"target_class": "CompleteCurrentPuzzle"
 		},
 		{
-			"node_id": "K2Node_CallArrayFunction_1",
-			"node_name": "K2Node_CallArrayFunction_1",
+			"node_id": "K2Node_CallArrayFunction_2",
+			"node_name": "K2Node_CallArrayFunction_2",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_CallArrayFunction",
-			"title": "Add Unique",
-			"title_single_line": "Add Unique",
+			"title": "Contains Item",
+			"title_single_line": "Contains Item",
 			"comment": "",
-			"guid": "eb4afa77-46a1-aeb2-f12c-8889d6527aa4",
-			"x": 3024,
-			"y": -464,
+			"guid": "3d931f6d-4aad-3b85-a3f0-59bc4578ea17",
+			"x": 1712,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetArrayLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "TargetArray",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ItemToFind",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_VariableGet_9",
+			"node_name": "K2Node_VariableGet_9",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentPuzzleId",
+			"title_single_line": "Get CurrentPuzzleId",
+			"comment": "",
+			"guid": "9c41e200-43de-1da2-5832-0894d837bcfb",
+			"x": 1440,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentPuzzleId",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_2",
+			"node_name": "K2Node_IfThenElse_2",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "acfbb244-4b68-f5d1-5a0c-dbad5ff8e812",
+			"x": 2112,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_VariableGet_1",
+			"node_name": "K2Node_VariableGet_1",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CompletedStepIds",
+			"title_single_line": "Get CompletedStepIds",
+			"comment": "",
+			"guid": "9c298e9d-479e-79e1-02cc-0eb3812c3c93",
+			"x": 2192,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CompletedStepIds",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_CallArrayFunction_3",
+			"node_name": "K2Node_CallArrayFunction_3",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallArrayFunction",
+			"title": "Add",
+			"title_single_line": "Add",
+			"comment": "",
+			"guid": "deabc3b1-4340-5c8c-0125-2ea671cb383c",
+			"x": 2416,
+			"y": 208,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1006,16 +1131,16 @@
 			"target_class": "CompleteCurrentPuzzle"
 		},
 		{
-			"node_id": "K2Node_VariableGet_66",
-			"node_name": "K2Node_VariableGet_66",
+			"node_id": "K2Node_VariableGet_16",
+			"node_name": "K2Node_VariableGet_16",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get CurrentPuzzleId",
 			"title_single_line": "Get CurrentPuzzleId",
 			"comment": "",
-			"guid": "9b02b1d6-4cdd-6c92-a810-dfb006d71988",
-			"x": 3024,
-			"y": -352,
+			"guid": "579b14f9-47be-e309-1673-da854d26fc1f",
+			"x": 2192,
+			"y": 304,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1039,6 +1164,598 @@
 				}
 			],
 			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_VariableSet_3",
+			"node_name": "K2Node_VariableSet_3",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bHasActivePuzzle",
+			"title_single_line": "Set bHasActivePuzzle",
+			"comment": "",
+			"guid": "8c9d1962-4a79-f4ee-7174-d197d91ae02c",
+			"x": 2736,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 2
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bHasActivePuzzle",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_VariableSet_4",
+			"node_name": "K2Node_VariableSet_4",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bStepActive",
+			"title_single_line": "Set bStepActive",
+			"comment": "",
+			"guid": "34ef36c8-4ff4-1cfe-627c-4bb26d71fcd5",
+			"x": 3152,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bStepActive",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_VariableSet_5",
+			"node_name": "K2Node_VariableSet_5",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentStepIndex",
+			"title_single_line": "Set CurrentStepIndex",
+			"comment": "",
+			"guid": "1ad2f741-4112-ee89-c023-028009c6b73f",
+			"x": 3424,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentStepIndex",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "-1",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_VariableSet_6",
+			"node_name": "K2Node_VariableSet_6",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bPuzzleRestoredFromSave",
+			"title_single_line": "Set bPuzzleRestoredFromSave",
+			"comment": "",
+			"guid": "ce46e997-49c1-62e9-b91d-069b533102eb",
+			"x": 3792,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bPuzzleRestoredFromSave",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Sync Puzzle Progress to Save\nTarget is BP Puzzle Controller",
+			"title_single_line": "Sync Puzzle Progress to Save",
+			"comment": "",
+			"guid": "882d3883-428a-75ed-b011-02b50d70b670",
+			"x": 4144,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Handle Puzzle Completion Consequences\nTarget is BP Puzzle Controller",
+			"title_single_line": "Handle Puzzle Completion Consequences",
+			"comment": "",
+			"guid": "0961c386-4a98-60a2-b366-5a97ed6dd44e",
+			"x": 4480,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_VariableSet_7",
+			"node_name": "K2Node_VariableSet_7",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentPuzzleId",
+			"title_single_line": "Set CurrentPuzzleId",
+			"comment": "",
+			"guid": "363dc844-4f8e-bb77-11f1-728cd23325cc",
+			"x": 4912,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentPuzzleId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "d270a6a6-421a-ec46-5f22-49a846b45d2e",
+			"x": 5424,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[PuzzleController] Current puzzle completed successfully",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "c4a6d6e5-4a08-c4a5-5abf-4fa3801f56c2",
+			"x": 6048,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "97c0a66d-497d-08b7-aa13-9595bc0e8c37",
+			"x": 5040,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
+		},
+		{
+			"node_id": "K2Node_CallFunction_12",
+			"node_name": "K2Node_CallFunction_12",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "17cf32a8-4760-d534-44c3-a7a9e7d66473",
+			"x": 5232,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CompleteCurrentPuzzle"
 		}
 	],
 	"exec_flow": [
@@ -1054,72 +1771,136 @@
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Debug Warning",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_1",
-			"from_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Debug Warning",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallDelegate_0",
-			"to_node_title": "Call On Puzzle Completed",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallDelegate_0",
-			"from_node_title": "Call On Puzzle Completed",
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_1",
-			"to_node_title": "Set bStepActive",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_0",
-			"from_node_title": "Set bHasActivePuzzle",
-			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_2",
-			"to_node_title": "Set CurrentStepIndex",
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Critical",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_1",
-			"from_node_title": "Set bStepActive",
+			"from_node_id": "K2Node_CallFunction_6",
+			"from_node_title": "Debug Critical",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_3",
 			"to_node_title": "Set bHasActivePuzzle",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_2",
-			"from_node_title": "Set CurrentStepIndex",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallArrayFunction_1",
-			"to_node_title": "Add Unique",
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallArrayFunction_3",
+			"to_node_title": "Add",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_2",
-			"from_node_title": "Mark Puzzle Completed",
+			"from_node_id": "K2Node_CallArrayFunction_3",
+			"from_node_title": "Add",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set bHasActivePuzzle",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_3",
+			"from_node_title": "Set bHasActivePuzzle",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_4",
+			"to_node_title": "Set bStepActive",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_4",
+			"from_node_title": "Set bStepActive",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_5",
+			"to_node_title": "Set CurrentStepIndex",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_5",
+			"from_node_title": "Set CurrentStepIndex",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_6",
+			"to_node_title": "Set bPuzzleRestoredFromSave",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_6",
+			"from_node_title": "Set bPuzzleRestoredFromSave",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Sync Puzzle Progress to Save\nTarget is BP Puzzle Controller",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Sync Puzzle Progress to Save\nTarget is BP Puzzle Controller",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_9",
 			"to_node_title": "Handle Puzzle Completion Consequences\nTarget is BP Puzzle Controller",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallArrayFunction_1",
-			"from_node_title": "Add Unique",
+			"from_node_id": "K2Node_CallFunction_9",
+			"from_node_title": "Handle Puzzle Completion Consequences\nTarget is BP Puzzle Controller",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Mark Puzzle Completed",
+			"to_node_id": "K2Node_VariableSet_7",
+			"to_node_title": "Set CurrentPuzzleId",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_7",
+			"from_node_title": "Set CurrentPuzzleId",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Debug Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
 	],
@@ -1133,15 +1914,7 @@
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_FormatText_0",
-			"from_node_title": "Format Text",
-			"from_pin": "Result",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
-			"to_pin": "Message"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_id": "K2Node_VariableGet_6",
 			"from_node_title": "Get CompletedStepIds",
 			"from_pin": "CompletedStepIds",
 			"to_node_id": "K2Node_CallArrayFunction_0",
@@ -1157,7 +1930,7 @@
 			"to_pin": "Count"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_16",
+			"from_node_id": "K2Node_VariableGet_5",
 			"from_node_title": "Get CurrentPuzzleId",
 			"from_pin": "CurrentPuzzleId",
 			"to_node_id": "K2Node_FormatText_0",
@@ -1165,44 +1938,132 @@
 			"to_pin": "PuzzleId"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_17",
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Debug Warning",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_7",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Debug Warning",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_7",
 			"from_node_title": "Get CurrentPuzzleId",
 			"from_pin": "CurrentPuzzleId",
-			"to_node_id": "K2Node_CallDelegate_0",
-			"to_node_title": "Call On Puzzle Completed",
-			"to_pin": "PuzzleId"
+			"to_node_id": "K2Node_PromotableOperator_0",
+			"to_node_title": "Not Equal (Name)",
+			"to_pin": "A"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_2",
-			"from_node_title": "Get SaveManagerRef",
-			"from_pin": "SaveManagerRef",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Mark Puzzle Completed",
-			"to_pin": "self"
+			"from_node_id": "K2Node_PromotableOperator_0",
+			"from_node_title": "Not Equal (Name)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_4",
-			"from_node_title": "Get CurrentPuzzleId",
-			"from_pin": "CurrentPuzzleId",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Mark Puzzle Completed",
-			"to_pin": "PuzzleId"
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_3",
-			"from_node_title": "Get CompletedPuzzleIds",
-			"from_pin": "CompletedPuzzleIds",
-			"to_node_id": "K2Node_CallArrayFunction_1",
-			"to_node_title": "Add Unique",
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Critical",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Debug Critical",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_8",
+			"from_node_title": "Get CompletedStepIds",
+			"from_pin": "CompletedStepIds",
+			"to_node_id": "K2Node_CallArrayFunction_2",
+			"to_node_title": "Contains Item",
 			"to_pin": "TargetArray"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_66",
+			"from_node_id": "K2Node_CallArrayFunction_2",
+			"from_node_title": "Contains Item",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_9",
 			"from_node_title": "Get CurrentPuzzleId",
 			"from_pin": "CurrentPuzzleId",
-			"to_node_id": "K2Node_CallArrayFunction_1",
-			"to_node_title": "Add Unique",
+			"to_node_id": "K2Node_CallArrayFunction_2",
+			"to_node_title": "Contains Item",
+			"to_pin": "ItemToFind"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get CompletedStepIds",
+			"from_pin": "CompletedStepIds",
+			"to_node_id": "K2Node_CallArrayFunction_3",
+			"to_node_title": "Add",
+			"to_pin": "TargetArray"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_16",
+			"from_node_title": "Get CurrentPuzzleId",
+			"from_pin": "CurrentPuzzleId",
+			"to_node_id": "K2Node_CallArrayFunction_3",
+			"to_node_title": "Add",
 			"to_pin": "NewItem"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_12",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

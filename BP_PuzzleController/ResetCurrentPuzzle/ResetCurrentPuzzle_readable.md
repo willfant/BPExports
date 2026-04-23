@@ -7,16 +7,9 @@ Function
 Resets runtime state or reinitializes a sub-flow.
 
 ## Reads
-- CurrentPuzzleId
 - CompletedStepIds
 - FailedStepsIds
-
-## Writes
-- bStepActive
-- bHasActivePuzzle
-
-## Calls
-- Debug Puzzle Message
+- CurrentPuzzleId
 
 ## Notes
 - Has latent nodes: No

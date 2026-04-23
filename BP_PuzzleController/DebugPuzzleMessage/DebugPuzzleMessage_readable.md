@@ -13,13 +13,10 @@ Provides debug or developer-facing behavior.
 ## Called By
 - DebugCurrentPuzzleCatalog
 - StartStepByIndex
-- CompleteCurrentPuzzle
 - BroadcastStepActivation
 - ReportStepSuccess
 - HandleStepSuccessConsequences
 - ReportStepFailure
-- HandlePuzzleCompletionConsequences
-- ResetCurrentPuzzle
 
 ## Branch Points
 - Branch
