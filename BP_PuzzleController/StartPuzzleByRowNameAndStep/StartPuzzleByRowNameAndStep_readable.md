@@ -13,6 +13,7 @@ Starts a flow, state transition, or activation sequence.
 - bStartedPuzzle (Boolean)
 - bStartedPuzzle (Boolean)
 - bStartedPuzzle (Boolean)
+- bStartedPuzzle (Boolean)
 
 ## Reads
 - DT_Puzzles
@@ -21,6 +22,7 @@ Starts a flow, state transition, or activation sequence.
 - CompletedStepIds
 - FailedStepsIds
 - StartedPuzzleIds
+- StartedOkL
 
 ## Writes
 - PuzzleDataL
@@ -30,6 +32,7 @@ Starts a flow, state transition, or activation sequence.
 - bHasActivePuzzle
 - bStepActive
 - CurrentStepIndex
+- StartedOkL
 
 ## Calls
 - Is Valid
@@ -39,6 +42,7 @@ Starts a flow, state transition, or activation sequence.
 - To String (Text)
 - Can Puzzle be Selected for Current Context
 - Debug Info
+- Start Step by Index
 
 ## Called By
 - StartFirstPuzzleForCurrentGhost

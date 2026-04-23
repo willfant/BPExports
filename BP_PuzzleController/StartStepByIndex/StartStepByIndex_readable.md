@@ -28,6 +28,7 @@ Starts a flow, state transition, or activation sequence.
 - ReportStepSuccess
 - ResetCurrentStep
 - StartPuzzleByRowName
+- StartPuzzleByRowNameAndStep
 
 ## Branch Points
 - Branch
