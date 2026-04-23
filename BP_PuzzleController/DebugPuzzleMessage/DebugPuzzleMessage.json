@@ -13,20 +13,18 @@
 		"reads_variables": [],
 		"writes_variables": [],
 		"calls": [
-			"Debug Message",
+			"Debug Info",
+			"Get Sender Name",
 			"To String (Text)"
 		],
 		"called_by": [
-			"DebugCurrentPuzzleCatalog",
 			"StartStepByIndex",
 			"BroadcastStepActivation",
 			"ReportStepSuccess",
 			"HandleStepSuccessConsequences",
 			"ReportStepFailure"
 		],
-		"branch_points": [
-			"Branch"
-		]
+		"branch_points": []
 	},
 	"nodes": [
 		{
@@ -60,92 +58,47 @@
 					"resolved_type": "Text",
 					"default_value": "",
 					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "10.000000",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
 				}
 			],
 			"target_class": "DebugPuzzleMessage"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_0",
-			"node_name": "K2Node_IfThenElse_0",
-			"node_kind": "Branch",
-			"ue_class": "K2Node_IfThenElse",
-			"title": "Branch",
-			"title_single_line": "Branch",
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
 			"comment": "",
-			"guid": "f0d37835-492c-6fbb-ff49-129c6914ba8d",
-			"x": 352,
-			"y": 0,
+			"guid": "da32ef08-4c4c-d855-c0f1-72a9bef891e9",
+			"x": 448,
+			"y": 80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Condition",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "then",
+					"pin_name": "self",
 					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
 					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "else",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
+					"linked_count": 2
 				}
 			],
 			"target_class": "DebugPuzzleMessage"
 		},
 		{
-			"node_id": "K2Node_CallFunction_0",
-			"node_name": "K2Node_CallFunction_0",
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
 			"comment": "",
-			"guid": "6b12c9e3-441b-619d-a209-acb19b1fac78",
-			"x": 944,
-			"y": -16,
+			"guid": "fbdbfe04-4262-5811-cc43-879356c1fcee",
+			"x": 880,
+			"y": -96,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -195,22 +148,13 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				},
-				{
 					"pin_name": "SenderName",
 					"direction": "Input",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "None",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "Message",
@@ -220,33 +164,6 @@
 					"resolved_type": "String",
 					"default_value": "",
 					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "0.0",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 0
 				},
 				{
 					"pin_name": "__WorldContext",
@@ -261,42 +178,69 @@
 			"target_class": "DebugPuzzleMessage"
 		},
 		{
-			"node_id": "K2Node_Self_0",
-			"node_name": "K2Node_Self_0",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
 			"comment": "",
-			"guid": "da32ef08-4c4c-d855-c0f1-72a9bef891e9",
-			"x": 816,
+			"guid": "69a25a44-4968-90ab-5fec-04838546386a",
+			"x": 672,
 			"y": 80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
 					"pin_name": "self",
-					"direction": "Output",
+					"direction": "Input",
 					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
 					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
 			"target_class": "DebugPuzzleMessage"
 		},
 		{
-			"node_id": "K2Node_CallFunction_51",
-			"node_name": "K2Node_CallFunction_51",
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "To String (Text)",
 			"title_single_line": "To String (Text)",
 			"comment": "",
-			"guid": "74b0b717-40fe-b6fb-e155-5795b66728ef",
-			"x": 528,
-			"y": 160,
+			"guid": "08f5fa1a-4905-6c0d-6712-999da7793556",
+			"x": 432,
+			"y": -48,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -336,16 +280,8 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "DebugPuzzleMessage",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_0",
-			"to_node_title": "Branch",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_IfThenElse_0",
-			"from_node_title": "Branch",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Info",
 			"to_pin": "execute"
 		}
 	],
@@ -354,40 +290,40 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "DebugPuzzleMessage",
 			"from_pin": "Message",
-			"to_node_id": "K2Node_CallFunction_51",
+			"to_node_id": "K2Node_CallFunction_9",
 			"to_node_title": "To String (Text)",
 			"to_pin": "InText"
-		},
-		{
-			"from_node_id": "K2Node_FunctionEntry_0",
-			"from_node_title": "DebugPuzzleMessage",
-			"from_pin": "Duration",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Debug Message",
-			"to_pin": "Duration"
-		},
-		{
-			"from_node_id": "K2Node_FunctionEntry_0",
-			"from_node_title": "DebugPuzzleMessage",
-			"from_pin": "Severity",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Debug Message",
-			"to_pin": "Severity"
 		},
 		{
 			"from_node_id": "K2Node_Self_0",
 			"from_node_title": "Self-Reference",
 			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Info",
 			"to_pin": "WorldContextObject"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_51",
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_9",
 			"from_node_title": "To String (Text)",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Debug Info",
 			"to_pin": "Message"
 		}
 	],

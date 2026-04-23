@@ -21,13 +21,10 @@ Auto-generated function summary.
 - Step Id
 
 ## Calls
-- Debug Puzzle Message
 - Handle Step Success Consequences
 - Start Step by Index
 - Complete Current Puzzle
-
-## Called By
-- Debug_ForceCompleteCurrentStep
+- Debug Puzzle Message
 
 ## Branch Points
 - Branch

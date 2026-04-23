@@ -9,8 +9,15 @@
 		},
 		{
 			"from_graph": "DebugPuzzleMessage",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "DebugPuzzleMessage",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
 		},
@@ -22,41 +29,6 @@
 			"target_class": "KismetTextLibrary"
 		},
 		{
-			"from_graph": "DebugCurrentPuzzleCatalog",
-			"from_node_title": "Is Valid",
-			"to_graph": "IsValid",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
-		},
-		{
-			"from_graph": "DebugCurrentPuzzleCatalog",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "DebugCurrentPuzzleCatalog",
-			"from_node_title": "Get Data Table Row Names",
-			"to_graph": "GetDataTableRowNames",
-			"call_type": "ExternalFunction",
-			"target_class": "DataTableFunctionLibrary"
-		},
-		{
-			"from_graph": "DebugCurrentPuzzleCatalog",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "StartStepByIndex",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
 			"from_graph": "StartStepByIndex",
 			"from_node_title": "Broadcast Step Activation",
 			"to_graph": "BroadcastStepActivation",
@@ -65,29 +37,36 @@
 		},
 		{
 			"from_graph": "StartStepByIndex",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "StartStepByIndex",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "StartStepByIndex",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "StartStepByIndex",
 			"from_node_title": "Sync Puzzle Progress to Save",
 			"to_graph": "SyncPuzzleProgressToSave",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "StartStepByIndex",
+			"from_node_title": "Debug Puzzle Message",
+			"to_graph": "DebugPuzzleMessage",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "StartStepByIndex",
+			"from_node_title": "Debug Puzzle Message",
+			"to_graph": "DebugPuzzleMessage",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "StartStepByIndex",
+			"from_node_title": "Debug Puzzle Message",
+			"to_graph": "DebugPuzzleMessage",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "StartStepByIndex",
+			"from_node_title": "Debug Puzzle Message",
+			"to_graph": "DebugPuzzleMessage",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
@@ -163,20 +142,6 @@
 		},
 		{
 			"from_graph": "ReportStepSuccess",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "ReportStepSuccess",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "ReportStepSuccess",
 			"from_node_title": "Handle Step Success Consequences",
 			"to_graph": "HandleStepSuccessConsequences",
 			"call_type": "SelfFunction",
@@ -193,6 +158,20 @@
 			"from_graph": "ReportStepSuccess",
 			"from_node_title": "Complete Current Puzzle",
 			"to_graph": "CompleteCurrentPuzzle",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "ReportStepSuccess",
+			"from_node_title": "Debug Puzzle Message",
+			"to_graph": "DebugPuzzleMessage",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "ReportStepSuccess",
+			"from_node_title": "Debug Puzzle Message",
+			"to_graph": "DebugPuzzleMessage",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
@@ -233,15 +212,15 @@
 		},
 		{
 			"from_graph": "ReportStepFailure",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
+			"from_node_title": "Handle Step Failure Consequences",
+			"to_graph": "HandleStepFailureConsequences",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
 			"from_graph": "ReportStepFailure",
-			"from_node_title": "Handle Step Failure Consequences",
-			"to_graph": "HandleStepFailureConsequences",
+			"from_node_title": "Debug Puzzle Message",
+			"to_graph": "DebugPuzzleMessage",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
@@ -734,41 +713,6 @@
 			"to_graph": "GetSenderName",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "Debug_ForceCompleteCurrentStep",
-			"from_node_title": "Print String",
-			"to_graph": "PrintString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
-		},
-		{
-			"from_graph": "Debug_ForceCompleteCurrentStep",
-			"from_node_title": "Print String",
-			"to_graph": "PrintString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
-		},
-		{
-			"from_graph": "Debug_ForceCompleteCurrentStep",
-			"from_node_title": "Print String",
-			"to_graph": "PrintString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
-		},
-		{
-			"from_graph": "Debug_ForceCompleteCurrentStep",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
-		},
-		{
-			"from_graph": "Debug_ForceCompleteCurrentStep",
-			"from_node_title": "Report Step Success",
-			"to_graph": "ReportStepSuccess",
-			"call_type": "SelfFunction",
-			"target_class": ""
 		},
 		{
 			"from_graph": "CanPuzzleBeSelectedForCurrentContext",

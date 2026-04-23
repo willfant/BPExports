@@ -188,41 +188,6 @@
 			"target_class": "TryAutoStartPuzzleForCurrentContext"
 		},
 		{
-			"node_id": "K2Node_FunctionResult_0",
-			"node_name": "K2Node_FunctionResult_0",
-			"node_kind": "Return",
-			"ue_class": "K2Node_FunctionResult",
-			"title": "Return Node",
-			"title_single_line": "Return Node",
-			"comment": "",
-			"guid": "df70f901-4d69-1f33-b7c9-c09ad06743ce",
-			"x": 1104,
-			"y": 416,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bStartedPuzzle",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 0
-				}
-			],
-			"target_class": "TryAutoStartPuzzleForCurrentContext"
-		},
-		{
 			"node_id": "K2Node_VariableGet_1",
 			"node_name": "K2Node_VariableGet_1",
 			"node_kind": "VariableGet",
@@ -1237,16 +1202,104 @@
 			"target_class": "TryAutoStartPuzzleForCurrentContext"
 		},
 		{
-			"node_id": "K2Node_FunctionResult_1",
-			"node_name": "K2Node_FunctionResult_1",
+			"node_id": "K2Node_IfThenElse_4",
+			"node_name": "K2Node_IfThenElse_4",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "21c490f8-4d13-a960-34c8-51acf84cff5c",
+			"x": 3536,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TryAutoStartPuzzleForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_7",
+			"node_name": "K2Node_FunctionResult_7",
 			"node_kind": "Return",
 			"ue_class": "K2Node_FunctionResult",
 			"title": "Return Node",
 			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "0925cc61-4792-dc3c-eaaf-3799fa50cdeb",
-			"x": 3360,
-			"y": 208,
+			"guid": "b470ceb0-4384-3453-ea2a-0680551195af",
+			"x": 3952,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bStartedPuzzle",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				}
+			],
+			"target_class": "TryAutoStartPuzzleForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_6",
+			"node_name": "K2Node_FunctionResult_6",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "01ea7044-43aa-b5cc-6377-10aa89a12b38",
+			"x": 3968,
+			"y": 384,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1266,7 +1319,7 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "false",
-					"linked_count": 1
+					"linked_count": 0
 				}
 			],
 			"target_class": "TryAutoStartPuzzleForCurrentContext"
@@ -1381,7 +1434,23 @@
 			"from_node_id": "K2Node_CallFunction_6",
 			"from_node_title": "Start Next Valid Puzzle for Current Context\nTarget is BP Puzzle Controller",
 			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_7",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_FunctionResult_6",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
@@ -1503,9 +1572,9 @@
 			"from_node_id": "K2Node_CallFunction_6",
 			"from_node_title": "Start Next Valid Puzzle for Current Context\nTarget is BP Puzzle Controller",
 			"from_pin": "bStartedPuzzle ",
-			"to_node_id": "K2Node_FunctionResult_1",
-			"to_node_title": "Return Node",
-			"to_pin": "bStartedPuzzle"
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
 		}
 	],
 	"problems": []

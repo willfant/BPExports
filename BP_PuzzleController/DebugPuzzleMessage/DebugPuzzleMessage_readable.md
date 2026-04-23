@@ -7,19 +7,16 @@ Function
 Provides debug or developer-facing behavior.
 
 ## Calls
-- Debug Message
+- Debug Info
+- Get Sender Name
 - To String (Text)
 
 ## Called By
-- DebugCurrentPuzzleCatalog
 - StartStepByIndex
 - BroadcastStepActivation
 - ReportStepSuccess
 - HandleStepSuccessConsequences
 - ReportStepFailure
-
-## Branch Points
-- Branch
 
 ## Notes
 - Has latent nodes: No

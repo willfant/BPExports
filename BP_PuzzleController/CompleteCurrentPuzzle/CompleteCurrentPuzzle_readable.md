@@ -8,8 +8,8 @@ Completes state, runtime flow, or progression.
 
 ## Reads
 - bHasActivePuzzle
-- CompletedStepIds
 - CurrentPuzzleId
+- CompletedStepIds
 
 ## Writes
 - bHasActivePuzzle

@@ -307,77 +307,6 @@
 			"target_class": "BroadcastStepActivation"
 		},
 		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
-			"title_single_line": "Debug Puzzle Message",
-			"comment": "",
-			"guid": "39958140-46be-8d8d-2084-c4aaf30e586b",
-			"x": 1584,
-			"y": -64,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "10.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator1",
-					"linked_count": 0
-				}
-			],
-			"target_class": "BroadcastStepActivation"
-		},
-		{
 			"node_id": "K2Node_FormatText_0",
 			"node_name": "K2Node_FormatText_0",
 			"node_kind": "FormatText",
@@ -683,6 +612,59 @@
 				}
 			],
 			"target_class": "BroadcastStepActivation"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
+			"title_single_line": "Debug Puzzle Message",
+			"comment": "",
+			"guid": "1ae86b82-4291-608f-a795-e9bd84e1c6b8",
+			"x": 1968,
+			"y": -64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "BroadcastStepActivation"
 		}
 	],
 	"exec_flow": [
@@ -714,7 +696,7 @@
 			"from_node_id": "K2Node_MacroInstance_0",
 			"from_node_title": "For Each Loop",
 			"from_pin": "Completed",
-			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_id": "K2Node_CallFunction_2",
 			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
 			"to_pin": "execute"
 		}
@@ -788,7 +770,7 @@
 			"from_node_id": "K2Node_FormatText_0",
 			"from_node_title": "Format Text",
 			"from_pin": "Result",
-			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_id": "K2Node_CallFunction_2",
 			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Controller",
 			"to_pin": "Message"
 		},

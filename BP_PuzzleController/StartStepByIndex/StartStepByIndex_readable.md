@@ -19,9 +19,9 @@ Starts a flow, state transition, or activation sequence.
 - bStepActive
 
 ## Calls
-- Debug Puzzle Message
 - Broadcast Step Activation
 - Sync Puzzle Progress to Save
+- Debug Puzzle Message
 
 ## Called By
 - ReportStepSuccess

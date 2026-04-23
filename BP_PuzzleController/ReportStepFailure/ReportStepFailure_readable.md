@@ -15,8 +15,8 @@ Auto-generated function summary.
 - CurrentStepIndex
 
 ## Calls
-- Debug Puzzle Message
 - Handle Step Failure Consequences
+- Debug Puzzle Message
 
 ## Branch Points
 - Branch
