@@ -15,7 +15,9 @@
 		],
 		"writes_variables": [
 			"CurrentAudioStateId",
-			"CurrentStingerSound"
+			"CurrentStingerSound",
+			"CurrentAmbienceSound",
+			"CurrentAmbienceVolume"
 		],
 		"calls": [
 			"Is Valid",
@@ -24,7 +26,9 @@
 			"Debug Critical",
 			"To String (Text)",
 			"Play Stinger 2D",
-			"Debug Info"
+			"Debug Info",
+			"Play Ambience Sound",
+			"Stop Ambience Sound"
 		],
 		"called_by": [
 			"ApplyResolvedAudioStateFromContext"
@@ -556,8 +560,8 @@
 			"title_single_line": "Set CurrentAudioStateId",
 			"comment": "",
 			"guid": "255ab3df-41af-839e-8387-ce87a8a64957",
-			"x": 2832,
-			"y": -208,
+			"x": 2400,
+			"y": -192,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1527,95 +1531,6 @@
 			"target_class": "ApplyAudioStateById"
 		},
 		{
-			"node_id": "K2Node_Composite_4",
-			"node_name": "K2Node_Composite_4",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_Composite",
-			"title": "AmbientSound\nCollapsed Graph",
-			"title_single_line": "AmbientSound",
-			"comment": "",
-			"guid": "7de876b6-452b-b431-f3fc-6db02bb36f00",
-			"x": 3216,
-			"y": -240,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then2",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "CurrentAmbienceSound",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "SoundBase",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "sound",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "SoundBase",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "CurrentAmbienceVolume",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Volume",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Condition",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ApplyAudioStateById"
-		},
-		{
 			"node_id": "K2Node_CallFunction_17",
 			"node_name": "K2Node_CallFunction_17",
 			"node_kind": "FunctionCall",
@@ -2011,6 +1926,298 @@
 				}
 			],
 			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_4",
+			"node_name": "K2Node_IfThenElse_4",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "40cabc54-41f4-cc8e-40b2-d18e75e6bf50",
+			"x": 2752,
+			"y": -736,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_CallFunction_14",
+			"node_name": "K2Node_CallFunction_14",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Play Ambience Sound\nTarget is BP Audio Manager",
+			"title_single_line": "Play Ambience Sound",
+			"comment": "",
+			"guid": "1426a3ef-461a-d545-930b-ff91db97c729",
+			"x": 3040,
+			"y": -752,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "sound",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundBase",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Volume",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "1.000000",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "StartTime",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_VariableSet_2",
+			"node_name": "K2Node_VariableSet_2",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentAmbienceSound",
+			"title_single_line": "Set CurrentAmbienceSound",
+			"comment": "",
+			"guid": "e14eaf68-4246-c323-5087-ae82e838d21f",
+			"x": 3328,
+			"y": -720,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentAmbienceSound",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundBase",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundBase",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_AudioManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_VariableSet_4",
+			"node_name": "K2Node_VariableSet_4",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentAmbienceVolume",
+			"title_single_line": "Set CurrentAmbienceVolume",
+			"comment": "",
+			"guid": "faf3a1e9-4b7b-5c03-e02f-f5a3624cb40d",
+			"x": 3648,
+			"y": -720,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentAmbienceVolume",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "0.0",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_AudioManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_CallFunction_15",
+			"node_name": "K2Node_CallFunction_15",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Stop Ambience Sound\nTarget is BP Audio Manager",
+			"title_single_line": "Stop Ambience Sound",
+			"comment": "",
+			"guid": "b89ad325-4eb2-585b-1db9-579f29ce912e",
+			"x": 3040,
+			"y": -448,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ApplyAudioStateById"
 		}
 	],
 	"exec_flow": [
@@ -2058,8 +2265,8 @@
 			"from_node_id": "K2Node_VariableSet_0",
 			"from_node_title": "Set CurrentAudioStateId",
 			"from_pin": "then",
-			"to_node_id": "K2Node_Composite_4",
-			"to_node_title": "AmbientSound\nCollapsed Graph",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
@@ -2119,22 +2326,6 @@
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_Composite_4",
-			"from_node_title": "AmbientSound\nCollapsed Graph",
-			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_5",
-			"to_node_title": "Branch",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_Composite_4",
-			"from_node_title": "AmbientSound\nCollapsed Graph",
-			"from_pin": "then2",
-			"to_node_id": "K2Node_IfThenElse_5",
-			"to_node_title": "Branch",
-			"to_pin": "execute"
-		},
-		{
 			"from_node_id": "K2Node_CallFunction_17",
 			"from_node_title": "Play Stinger 2D\nTarget is BP Audio Manager",
 			"from_pin": "then",
@@ -2148,6 +2339,54 @@
 			"from_pin": "then",
 			"to_node_id": "K2Node_FunctionResult_3",
 			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_14",
+			"to_node_title": "Play Ambience Sound\nTarget is BP Audio Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Stop Ambience Sound\nTarget is BP Audio Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_14",
+			"from_node_title": "Play Ambience Sound\nTarget is BP Audio Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set CurrentAmbienceSound",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set CurrentAmbienceSound",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_4",
+			"to_node_title": "Set CurrentAmbienceVolume",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_4",
+			"from_node_title": "Set CurrentAmbienceVolume",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_15",
+			"from_node_title": "Stop Ambience Sound\nTarget is BP Audio Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		}
 	],
@@ -2244,17 +2483,17 @@
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "AmbienceCue_20_4133DF834AA78945E5BFC98C73315807",
-			"to_node_id": "K2Node_Composite_4",
-			"to_node_title": "AmbientSound\nCollapsed Graph",
-			"to_pin": "CurrentAmbienceSound"
+			"to_node_id": "K2Node_CallFunction_14",
+			"to_node_title": "Play Ambience Sound\nTarget is BP Audio Manager",
+			"to_pin": "sound"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "AmbienceCue_20_4133DF834AA78945E5BFC98C73315807",
-			"to_node_id": "K2Node_Composite_4",
-			"to_node_title": "AmbientSound\nCollapsed Graph",
-			"to_pin": "sound"
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set CurrentAmbienceSound",
+			"to_pin": "CurrentAmbienceSound"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
@@ -2284,24 +2523,24 @@
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "MusicLevel_26_9D880BA048EEE14074B7F7BD9D6F3E20",
-			"to_node_id": "K2Node_Composite_4",
-			"to_node_title": "AmbientSound\nCollapsed Graph",
-			"to_pin": "CurrentAmbienceVolume"
+			"to_node_id": "K2Node_CallFunction_14",
+			"to_node_title": "Play Ambience Sound\nTarget is BP Audio Manager",
+			"to_pin": "Volume"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "MusicLevel_26_9D880BA048EEE14074B7F7BD9D6F3E20",
-			"to_node_id": "K2Node_Composite_4",
-			"to_node_title": "AmbientSound\nCollapsed Graph",
-			"to_pin": "Volume"
+			"to_node_id": "K2Node_VariableSet_4",
+			"to_node_title": "Set CurrentAmbienceVolume",
+			"to_pin": "CurrentAmbienceVolume"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_1",
 			"from_node_title": "Is Valid",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_Composite_4",
-			"to_node_title": "AmbientSound\nCollapsed Graph",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{

@@ -12,6 +12,8 @@ Auto-generated function summary.
 ## Writes
 - CurrentAudioStateId
 - CurrentStingerSound
+- CurrentAmbienceSound
+- CurrentAmbienceVolume
 
 ## Calls
 - Is Valid
@@ -21,6 +23,8 @@ Auto-generated function summary.
 - To String (Text)
 - Play Stinger 2D
 - Debug Info
+- Play Ambience Sound
+- Stop Ambience Sound
 
 ## Called By
 - ApplyResolvedAudioStateFromContext
