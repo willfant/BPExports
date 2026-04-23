@@ -17,7 +17,7 @@ Resolves contextual state or external information.
 
 ## Called By
 - EventGraph
-- InitializeGhostAudioBinding
+- RefreshAudioContextFromManagers
 
 ## Branch Points
 - Branch

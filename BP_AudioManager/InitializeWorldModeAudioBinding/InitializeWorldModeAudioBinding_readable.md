@@ -7,20 +7,17 @@ Function
 Initializes references, state, or startup flow.
 
 ## Reads
-- DebugEnabled
-
-## Writes
 - WorldModeSystemRef
-- CurrentWorldMode
 
 ## Calls
-- Get Actor Of Class
 - Is Valid
-- Debug Message
-- Get World Mode
+- Debug Warning
+- Get Sender Name
+- Handle World Mode Audio Context Changed
+- Debug Info
 
 ## Called By
-- EventGraph
+- InitializeAudioManager
 
 ## Branch Points
 - Branch

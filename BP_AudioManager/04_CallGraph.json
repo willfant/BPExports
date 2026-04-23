@@ -23,13 +23,6 @@
 		},
 		{
 			"from_graph": "EventGraph",
-			"from_node_title": "Initialize World Mode Audio Binding",
-			"to_graph": "InitializeWorldModeAudioBinding",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "EventGraph",
 			"from_node_title": "Debug Message",
 			"to_graph": "DebugMessage",
 			"call_type": "ExternalFunction",
@@ -78,11 +71,18 @@
 			"target_class": ""
 		},
 		{
-			"from_graph": "EventGraph",
-			"from_node_title": "Initialize Ghost Audio Binding",
-			"to_graph": "InitializeGhostAudioBinding",
-			"call_type": "SelfFunction",
-			"target_class": ""
+			"from_graph": "InitializeAudioManager",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeAudioManager",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "InitializeAudioManager",
@@ -93,24 +93,52 @@
 		},
 		{
 			"from_graph": "InitializeAudioManager",
-			"from_node_title": "Get Current World Mode",
-			"to_graph": "GetCurrentWorldMode",
-			"call_type": "ExternalFunction",
-			"target_class": "GI_Echoes_C"
-		},
-		{
-			"from_graph": "InitializeAudioManager",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_node_title": "Debug Critical",
+			"to_graph": "DebugCritical",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "InitializeAudioManager",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeAudioManager",
+			"from_node_title": "Register Audio Manager",
+			"to_graph": "RegisterAudioManager",
+			"call_type": "ExternalFunction",
+			"target_class": "GI_Echoes_C"
+		},
+		{
+			"from_graph": "InitializeAudioManager",
+			"from_node_title": "Initialize World Mode Audio Binding",
+			"to_graph": "InitializeWorldModeAudioBinding",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "InitializeAudioManager",
+			"from_node_title": "Initialize Ghost Audio Binding",
+			"to_graph": "InitializeGhostAudioBinding",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "InitializeAudioManager",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeAudioManager",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "SetCurrentAudioState",
@@ -289,13 +317,6 @@
 		},
 		{
 			"from_graph": "InitializeWorldModeAudioBinding",
-			"from_node_title": "Get Actor Of Class",
-			"to_graph": "GetActorOfClass",
-			"call_type": "ExternalFunction",
-			"target_class": "GameplayStatics"
-		},
-		{
-			"from_graph": "InitializeWorldModeAudioBinding",
 			"from_node_title": "Is Valid",
 			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
@@ -303,52 +324,80 @@
 		},
 		{
 			"from_graph": "InitializeWorldModeAudioBinding",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "InitializeWorldModeAudioBinding",
-			"from_node_title": "Get World Mode",
-			"to_graph": "GetWorldMode",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_WorldModeSystem_C"
-		},
-		{
-			"from_graph": "InitializeGhostAudioBinding",
-			"from_node_title": "Get Actor Of Class",
-			"to_graph": "GetActorOfClass",
-			"call_type": "ExternalFunction",
-			"target_class": "GameplayStatics"
-		},
-		{
-			"from_graph": "InitializeGhostAudioBinding",
-			"from_node_title": "Is Valid",
-			"to_graph": "IsValid",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
-		},
-		{
-			"from_graph": "InitializeGhostAudioBinding",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
 		},
 		{
-			"from_graph": "InitializeGhostAudioBinding",
-			"from_node_title": "Get Current Ghost Id",
-			"to_graph": "GetCurrentGhostId",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_GhostManager_C"
-		},
-		{
-			"from_graph": "InitializeGhostAudioBinding",
-			"from_node_title": "Apply Resolved Audio State from Context",
-			"to_graph": "ApplyResolvedAudioStateFromContext",
+			"from_graph": "InitializeWorldModeAudioBinding",
+			"from_node_title": "Handle World Mode Audio Context Changed",
+			"to_graph": "HandleWorldModeAudioContextChanged",
 			"call_type": "SelfFunction",
 			"target_class": ""
+		},
+		{
+			"from_graph": "InitializeWorldModeAudioBinding",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeWorldModeAudioBinding",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeGhostAudioBinding",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "InitializeGhostAudioBinding",
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeGhostAudioBinding",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeGhostAudioBinding",
+			"from_node_title": "Handle Ghost Audio Context Changed",
+			"to_graph": "HandleGhostAudioContextChanged",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "InitializeGhostAudioBinding",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "InitializeGhostAudioBinding",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "ResolveAudioStateFromContext",
@@ -930,6 +979,111 @@
 			"to_graph": "DebugMessage",
 			"call_type": "ExternalFunction",
 			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "Get World Mode",
+			"to_graph": "GetWorldMode",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_WorldModeSystem_C"
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "Has Active Ghost",
+			"to_graph": "HasActiveGhost",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_GhostManager_C"
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "Apply Resolved Audio State from Context",
+			"to_graph": "ApplyResolvedAudioStateFromContext",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "HandleWorldModeAudioContextChanged",
+			"from_node_title": "Refresh Audio Context from Managers",
+			"to_graph": "RefreshAudioContextFromManagers",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "HandleGhostAudioContextChanged",
+			"from_node_title": "Refresh Audio Context from Managers",
+			"to_graph": "RefreshAudioContextFromManagers",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "HandleGhostStateAudioContextChanged",
+			"from_node_title": "Refresh Audio Context from Managers",
+			"to_graph": "RefreshAudioContextFromManagers",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "HandleGhostClearedAudioContextChanged",
+			"from_node_title": "Refresh Audio Context from Managers",
+			"to_graph": "RefreshAudioContextFromManagers",
+			"call_type": "SelfFunction",
+			"target_class": ""
 		}
 	]
 }

@@ -7,23 +7,32 @@ Function
 Initializes references, state, or startup flow.
 
 ## Reads
-- DebugEnabled
+- bInitialized
+- WorldModeSystemRef
+- GhostManagerRef
 
 ## Writes
 - CachedGameInstance
-- CurrentWorldMode
+- WorldModeSystemRef
+- GhostManagerRef
 - bInitialized
 
 ## Calls
+- Debug Info
+- Get Sender Name
 - Get Game Instance
-- Get Current World Mode
-- Debug Message
-- To String (Text)
+- Debug Critical
+- Register Audio Manager
+- Initialize World Mode Audio Binding
+- Initialize Ghost Audio Binding
 
 ## Called By
 - EventGraph
 
+## Branch Points
+- Branch
+
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No
