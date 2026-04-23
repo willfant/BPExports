@@ -1,54 +1,6 @@
 {
 	"problems": [
 		{
-			"graph": "EventGraph",
-			"problem_type": "NodeError",
-			"details": "Node has explicit error state.",
-			"node_name": "K2Node_CallFunction_6",
-			"node_title": "Restore Puzzle from Save",
-			"severity": "critical",
-			"confidence": 0.97999999999999998,
-			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
-			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
-			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
-		},
-		{
-			"graph": "EventGraph",
-			"problem_type": "CustomEventNameTooGeneric",
-			"details": "Custom event name is too generic and reduces readability.",
-			"node_name": "K2Node_CustomEvent_0",
-			"node_title": "BP_PuzzleController",
-			"severity": "low",
-			"confidence": 0.84999999999999998,
-			"why_it_matters": "Generic custom event names reduce graph readability and make debugging harder.",
-			"likely_impact": "Harder to understand intent and event ownership later.",
-			"suggested_fix": "Rename the custom event to reflect intent."
-		},
-		{
-			"graph": "InitializeManagerReferences",
-			"problem_type": "NodeError",
-			"details": "Node has explicit error state.",
-			"node_name": "K2Node_CallFunction_4",
-			"node_title": "Debug Puzzle Message",
-			"severity": "critical",
-			"confidence": 0.97999999999999998,
-			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
-			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
-			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
-		},
-		{
-			"graph": "InitializeManagerReferences",
-			"problem_type": "RepeatedGetActorOfClass",
-			"details": "Graph uses GetActorOfClass 6 times.",
-			"node_name": "",
-			"node_title": "",
-			"severity": "medium",
-			"confidence": 0.94999999999999996,
-			"why_it_matters": "Repeated GetActorOfClass increases coupling and assumes a stable singleton-like level composition.",
-			"likely_impact": "Makes the Blueprint harder to scale and more fragile across maps or tests.",
-			"suggested_fix": "Resolve references centrally via GameInstance, subsystem, bootstrap actor, or cached refs."
-		},
-		{
 			"graph": "CompleteCurrentPuzzle",
 			"problem_type": "NodeError",
 			"details": "Node has explicit error state.",
@@ -159,7 +111,7 @@
 		{
 			"graph": "RestorePuzzleFromSave",
 			"problem_type": "FunctionTooLarge",
-			"details": "Graph contains 47 nodes and may be too large.",
+			"details": "Graph contains 49 nodes and may be too large.",
 			"node_name": "",
 			"node_title": "",
 			"severity": "medium",
@@ -239,6 +191,30 @@
 			"why_it_matters": "Reference variables appear to be used without obvious branching validation in this graph.",
 			"likely_impact": "May cause null access or fallback bugs if the reference can be invalid.",
 			"suggested_fix": "Confirm whether the reference is guaranteed valid here; otherwise add IsValid/branch protection."
+		},
+		{
+			"graph": "HandleGhostCleared",
+			"problem_type": "PotentialIndexValidationIssue",
+			"details": "Graph writes or uses index/selection-like state but no branch/switch validation was detected.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.59999999999999998,
+			"why_it_matters": "Numeric or index-like state appears used without visible validation.",
+			"likely_impact": "May cause out-of-range or invalid selection issues.",
+			"suggested_fix": "Confirm index bounds/validity before using it in flow or selection."
+		},
+		{
+			"graph": "InitializeWorldModeBinding",
+			"problem_type": "NodeError",
+			"details": "Node has explicit error state.",
+			"node_name": "K2Node_CreateDelegate_0",
+			"node_title": "Create Event",
+			"severity": "critical",
+			"confidence": 0.97999999999999998,
+			"why_it_matters": "This node is reporting an explicit editor/runtime error state.",
+			"likely_impact": "The graph may fail to compile or behave incorrectly at runtime.",
+			"suggested_fix": "Open the graph, inspect the node error, and fix the broken connection, invalid reference, or missing asset."
 		}
 	]
 }

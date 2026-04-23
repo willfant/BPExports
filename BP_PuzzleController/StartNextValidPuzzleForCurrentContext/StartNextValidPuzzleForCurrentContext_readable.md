@@ -16,8 +16,8 @@ Starts a flow, state transition, or activation sequence.
 - Start Puzzle by Row Name
 
 ## Called By
-- EventGraph
 - HandlePuzzleCompletionConsequences
+- TryAutoStartPuzzleForCurrentContext
 
 ## Branch Points
 - Branch

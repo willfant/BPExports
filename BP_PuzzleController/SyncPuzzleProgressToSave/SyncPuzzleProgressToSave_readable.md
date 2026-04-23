@@ -10,7 +10,6 @@ Synchronizes or persists runtime state.
 - SaveManagerRef
 - CurrentPuzzleId
 - CurrentStepIndex
-- bDebugPuzzle
 
 ## Calls
 - Is Valid

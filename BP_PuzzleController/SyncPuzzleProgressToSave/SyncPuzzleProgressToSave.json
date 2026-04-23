@@ -13,8 +13,7 @@
 		"reads_variables": [
 			"SaveManagerRef",
 			"CurrentPuzzleId",
-			"CurrentStepIndex",
-			"bDebugPuzzle"
+			"CurrentStepIndex"
 		],
 		"writes_variables": [],
 		"calls": [
@@ -514,7 +513,7 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "true",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "bPrintToLog",
@@ -523,7 +522,7 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "true",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "TextColor",
@@ -595,41 +594,6 @@
 					"resolved_type": "String",
 					"default_value": "",
 					"linked_count": 1
-				}
-			],
-			"target_class": "SyncPuzzleProgressToSave"
-		},
-		{
-			"node_id": "K2Node_VariableGet_67",
-			"node_name": "K2Node_VariableGet_67",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bDebugPuzzle",
-			"title_single_line": "Get bDebugPuzzle",
-			"comment": "",
-			"guid": "f0c78e75-433d-fbbe-90ac-f9b22c437847",
-			"x": 1216,
-			"y": 208,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "bDebugPuzzle",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_PuzzleController_C",
-					"default_value": "",
-					"linked_count": 0
 				}
 			],
 			"target_class": "SyncPuzzleProgressToSave"
@@ -741,22 +705,6 @@
 			"to_node_id": "K2Node_CallFunction_5",
 			"to_node_title": "Print String",
 			"to_pin": "InString"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_67",
-			"from_node_title": "Get bDebugPuzzle",
-			"from_pin": "bDebugPuzzle",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Print String",
-			"to_pin": "bPrintToScreen"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_67",
-			"from_node_title": "Get bDebugPuzzle",
-			"from_pin": "bDebugPuzzle",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Print String",
-			"to_pin": "bPrintToLog"
 		}
 	],
 	"problems": []
