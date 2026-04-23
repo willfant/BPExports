@@ -19,6 +19,9 @@ Starts a flow, state transition, or activation sequence.
 - DT_Puzzles
 - PuzzleDataL
 - StepCountL
+- PuzzleRowNameL
+- FromRestoreL
+- StartingStepIndexL
 - CompletedStepIds
 - FailedStepsIds
 - StartedPuzzleIds
@@ -32,6 +35,9 @@ Starts a flow, state transition, or activation sequence.
 - bHasActivePuzzle
 - bStepActive
 - CurrentStepIndex
+- PuzzleRowNameL
+- StartingStepIndexL
+- FromRestoreL
 - StartedOkL
 
 ## Calls
