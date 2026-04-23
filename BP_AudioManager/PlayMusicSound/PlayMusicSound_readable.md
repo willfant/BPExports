@@ -7,8 +7,6 @@ Function
 Auto-generated function summary.
 
 ## Reads
-- DebugEnabled
-- CurrentMusicVolume
 - AC_Music
 
 ## Writes
@@ -18,11 +16,8 @@ Auto-generated function summary.
 
 ## Calls
 - Is Valid
-- Debug Message
 - Set Sound
 - Play
-- To String (Text)
-- Get Display Name
 - Set Volume Multiplier
 
 ## Branch Points

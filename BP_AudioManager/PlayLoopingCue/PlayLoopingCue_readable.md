@@ -8,12 +8,20 @@ Auto-generated function summary.
 
 ## Reads
 - ActiveLoopingCues
-- DebugEnabled
+- ReplaceIfExistsL
+- AudioCueL
+- LoopIDL
+- LocationL
+
+## Writes
+- LoopIDL
+- AudioCueL
+- LocationL
+- ReplaceIfExistsL
 
 ## Calls
 - Contains
 - Stop Looping Cue by Id
-- Debug Message
 - To String (Text)
 - Is Valid
 - Spawn Sound at Location

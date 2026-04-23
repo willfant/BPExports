@@ -7,9 +7,7 @@ Function
 Auto-generated function summary.
 
 ## Reads
-- DebugEnabled
 - AC_Ambient
-- CurrentAmbienceVolume
 
 ## Writes
 - CurrentAmbienceSound
@@ -17,11 +15,8 @@ Auto-generated function summary.
 
 ## Calls
 - Is Valid
-- Debug Message
 - Set Sound
 - Play
-- To String (Text)
-- Get Display Name
 - Set Volume Multiplier
 
 ## Called By

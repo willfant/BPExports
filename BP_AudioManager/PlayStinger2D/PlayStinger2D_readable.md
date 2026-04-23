@@ -7,7 +7,6 @@ Function
 Auto-generated function summary.
 
 ## Reads
-- DebugEnabled
 - AC_Stinger
 
 ## Writes
@@ -15,11 +14,8 @@ Auto-generated function summary.
 
 ## Calls
 - Is Valid
-- Debug Message
 - Set Sound
 - Play
-- To String (Text)
-- Get Display Name
 
 ## Called By
 - ApplyAudioStateById

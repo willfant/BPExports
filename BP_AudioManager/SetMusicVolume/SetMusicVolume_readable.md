@@ -14,6 +14,10 @@ Auto-generated function summary.
 
 ## Calls
 - Set Volume Multiplier
+- Is Valid
+
+## Branch Points
+- Branch
 
 ## Notes
 - Has latent nodes: No

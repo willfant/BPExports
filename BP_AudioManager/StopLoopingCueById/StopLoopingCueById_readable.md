@@ -8,11 +8,9 @@ Auto-generated function summary.
 
 ## Reads
 - ActiveLoopingCues
-- DebugEnabled
 
 ## Calls
 - Find
-- Debug Message
 - To String (Text)
 - Is Valid
 - Stop

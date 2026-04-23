@@ -17,10 +17,13 @@
 			"CurrentMusicVolume"
 		],
 		"calls": [
-			"Set Volume Multiplier"
+			"Set Volume Multiplier",
+			"Is Valid"
 		],
 		"called_by": [],
-		"branch_points": []
+		"branch_points": [
+			"Branch"
+		]
 	},
 	"nodes": [
 		{
@@ -32,7 +35,7 @@
 			"title_single_line": "SetMusicVolume",
 			"comment": "",
 			"guid": "8ec2ce0d-4dd2-8f6f-79b8-8b9a27191019",
-			"x": -256,
+			"x": -576,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -121,8 +124,8 @@
 			"target_class": "SetMusicVolume"
 		},
 		{
-			"node_id": "K2Node_VariableGet_0",
-			"node_name": "K2Node_VariableGet_0",
+			"node_id": "K2Node_VariableGet_1",
+			"node_name": "K2Node_VariableGet_1",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get AC_Music",
@@ -207,6 +210,138 @@
 				}
 			],
 			"target_class": "SetMusicVolume"
+		},
+		{
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get AC_Music",
+			"title_single_line": "Get AC_Music",
+			"comment": "",
+			"guid": "e5e55445-4c6b-d96a-5d8b-2aa0a0f54659",
+			"x": -688,
+			"y": 256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "AC_Music",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "AudioComponent",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_AudioManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "SetMusicVolume"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "570c6ab5-4435-1701-f239-a9a8782e7516",
+			"x": -496,
+			"y": 176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SetMusicVolume"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "580ea9ea-4725-bae1-cc96-8d8ebb75b3aa",
+			"x": -259,
+			"y": -1,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "SetMusicVolume"
 		}
 	],
 	"exec_flow": [
@@ -214,8 +349,8 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "SetMusicVolume",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set CurrentMusicVolume",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
@@ -224,6 +359,14 @@
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_0",
 			"to_node_title": "Set Volume Multiplier\nTarget is Audio Component",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set CurrentMusicVolume",
 			"to_pin": "execute"
 		}
 	],
@@ -245,12 +388,28 @@
 			"to_pin": "NewVolumeMultiplier"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_id": "K2Node_VariableGet_1",
 			"from_node_title": "Get AC_Music",
 			"from_pin": "AC_Music",
 			"to_node_id": "K2Node_CallFunction_0",
 			"to_node_title": "Set Volume Multiplier\nTarget is Audio Component",
 			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get AC_Music",
+			"from_pin": "AC_Music",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
 		}
 	],
 	"problems": []

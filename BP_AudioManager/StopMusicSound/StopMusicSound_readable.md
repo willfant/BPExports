@@ -7,7 +7,6 @@ Function
 Auto-generated function summary.
 
 ## Reads
-- DebugEnabled
 - AC_Music
 
 ## Writes
@@ -16,7 +15,10 @@ Auto-generated function summary.
 
 ## Calls
 - Stop
-- Debug Message
+- Is Valid
+
+## Branch Points
+- Branch
 
 ## Notes
 - Has latent nodes: No

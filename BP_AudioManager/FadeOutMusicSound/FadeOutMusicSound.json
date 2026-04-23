@@ -11,19 +11,20 @@
 	{
 		"purpose": "Auto-generated function summary.",
 		"reads_variables": [
-			"AC_Music",
-			"DebugEnabled"
+			"AC_Music"
 		],
 		"writes_variables": [
 			"bMusicPlaying"
 		],
 		"calls": [
 			"Fade Out",
-			"Debug Message",
-			"To String (Text)"
+			"To String (Text)",
+			"Is Valid"
 		],
 		"called_by": [],
-		"branch_points": []
+		"branch_points": [
+			"Branch"
+		]
 	},
 	"nodes": [
 		{
@@ -35,7 +36,7 @@
 			"title_single_line": "FadeOutMusicSound",
 			"comment": "",
 			"guid": "e19ecc9d-44cc-6b68-d301-7381958806c6",
-			"x": 0,
+			"x": -336,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -79,8 +80,8 @@
 			"title_single_line": "Get AC_Music",
 			"comment": "",
 			"guid": "e516e3a5-41f4-8077-b2c0-5f9378827c09",
-			"x": 96,
-			"y": 256,
+			"x": -320,
+			"y": 368,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -91,7 +92,7 @@
 					"subcategory": "None",
 					"resolved_type": "AudioComponent",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				},
 				{
 					"pin_name": "self",
@@ -239,192 +240,6 @@
 			"target_class": "FadeOutMusicSound"
 		},
 		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
-			"comment": "",
-			"guid": "ad063b21-4c54-0119-7910-d4a926141812",
-			"x": 1408,
-			"y": 0,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator9",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "BP_AudioManager",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "5.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "FadeOutMusicSound"
-		},
-		{
-			"node_id": "K2Node_Self_0",
-			"node_name": "K2Node_Self_0",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "79e251ae-4a1f-4b05-8cce-1197d34bb515",
-			"x": 1152,
-			"y": 128,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "FadeOutMusicSound"
-		},
-		{
-			"node_id": "K2Node_VariableGet_66",
-			"node_name": "K2Node_VariableGet_66",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get DebugEnabled",
-			"title_single_line": "Get DebugEnabled",
-			"comment": "",
-			"guid": "79db7394-42c6-18de-030b-0db44cd5dca1",
-			"x": 1216,
-			"y": 320,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "DebugEnabled",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "FadeOutMusicSound"
-		},
-		{
 			"node_id": "K2Node_FormatText_1",
 			"node_name": "K2Node_FormatText_1",
 			"node_kind": "FormatText",
@@ -433,7 +248,7 @@
 			"title_single_line": "Format Text",
 			"comment": "",
 			"guid": "dfe60acf-4f7c-52d1-4c97-508a216df499",
-			"x": 896,
+			"x": 752,
 			"y": 384,
 			"has_error": false,
 			"has_warning": false,
@@ -520,6 +335,226 @@
 				}
 			],
 			"target_class": "FadeOutMusicSound"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "5c830171-4f33-a426-3287-e180461aa54d",
+			"x": -256,
+			"y": 176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "FadeOutMusicSound"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "2546b6c3-4782-e347-66f1-41b503488340",
+			"x": 48,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "FadeOutMusicSound"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_0",
+			"node_name": "K2Node_MacroInstance_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Info",
+			"title_single_line": "DBG Info",
+			"comment": "",
+			"guid": "b70ae1f3-4f05-d647-36c3-7bb0859b08aa",
+			"x": 1376,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator9",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "FadeOutMusicSound"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "ac6be152-477b-fc63-03f8-53bc9cf6a06f",
+			"x": -16,
+			"y": 528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "FadeOutMusicSound"
+		},
+		{
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "6ab6aed7-4ec0-1a49-2b43-86ac68804098",
+			"x": 0,
+			"y": 480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "FadeOutMusicSound"
 		}
 	],
 	"exec_flow": [
@@ -527,8 +562,8 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "FadeOutMusicSound",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Fade Out\nTarget is Audio Component",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
@@ -543,8 +578,16 @@
 			"from_node_id": "K2Node_VariableSet_0",
 			"from_node_title": "Set bMusicPlaying",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "DBG Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Fade Out\nTarget is Audio Component",
 			"to_pin": "execute"
 		}
 	],
@@ -561,9 +604,9 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "FadeOutMusicSound",
 			"from_pin": "FadeTime",
-			"to_node_id": "K2Node_FormatText_1",
-			"to_node_title": "Format Text",
-			"to_pin": "Time"
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_FunctionEntry_0",
@@ -577,9 +620,9 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "FadeOutMusicSound",
 			"from_pin": "FadeVolumeLevel",
-			"to_node_id": "K2Node_FormatText_1",
-			"to_node_title": "Format Text",
-			"to_pin": "Vol"
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_0",
@@ -590,28 +633,12 @@
 			"to_pin": "self"
 		},
 		{
-			"from_node_id": "K2Node_Self_0",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "WorldContextObject"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_66",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_66",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get AC_Music",
+			"from_pin": "AC_Music",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
 		},
 		{
 			"from_node_id": "K2Node_FormatText_1",
@@ -625,9 +652,33 @@
 			"from_node_id": "K2Node_CallFunction_66",
 			"from_node_title": "To String (Text)",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "DBG Info",
 			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_FormatText_1",
+			"to_node_title": "Format Text",
+			"to_pin": "Vol"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_FormatText_1",
+			"to_node_title": "Format Text",
+			"to_pin": "Time"
 		}
 	],
 	"problems": []

@@ -8,7 +8,6 @@ Auto-generated function summary.
 
 ## Reads
 - AC_Music
-- DebugEnabled
 
 ## Writes
 - bMusicPlaying
@@ -16,8 +15,6 @@ Auto-generated function summary.
 - CurrentMusicVolume
 
 ## Calls
-- Debug Message
-- To String (Text)
 - Is Valid
 - Set Sound
 - Fade In

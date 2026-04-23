@@ -8,14 +8,12 @@ Auto-generated function summary.
 
 ## Reads
 - ActiveLoopingCues
-- DebugEnabled
 
 ## Calls
 - Values
 - Is Valid
 - Stop
 - Clear
-- Debug Message
 
 ## Branch Points
 - Branch

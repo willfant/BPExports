@@ -8,17 +8,19 @@ Auto-generated function summary.
 
 ## Reads
 - AC_Ambient
-- DebugEnabled
 
 ## Writes
 - CurrentAmbienceSound
 
 ## Calls
+- Is Valid
 - Stop
-- Debug Message
 
 ## Called By
 - ApplyAudioStateById
+
+## Branch Points
+- Branch
 
 ## Notes
 - Has latent nodes: No

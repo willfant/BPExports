@@ -8,15 +8,17 @@ Auto-generated function summary.
 
 ## Reads
 - AC_Music
-- DebugEnabled
 
 ## Writes
 - bMusicPlaying
 
 ## Calls
 - Fade Out
-- Debug Message
 - To String (Text)
+- Is Valid
+
+## Branch Points
+- Branch
 
 ## Notes
 - Has latent nodes: No

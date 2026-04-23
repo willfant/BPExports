@@ -12,13 +12,20 @@
 		"purpose": "Auto-generated function summary.",
 		"reads_variables": [
 			"ActiveLoopingCues",
-			"DebugEnabled"
+			"ReplaceIfExistsL",
+			"AudioCueL",
+			"LoopIDL",
+			"LocationL"
 		],
-		"writes_variables": [],
+		"writes_variables": [
+			"LoopIDL",
+			"AudioCueL",
+			"LocationL",
+			"ReplaceIfExistsL"
+		],
 		"calls": [
 			"Contains",
 			"Stop Looping Cue by Id",
-			"Debug Message",
 			"To String (Text)",
 			"Is Valid",
 			"Spawn Sound at Location",
@@ -40,7 +47,7 @@
 			"title_single_line": "PlayLoopingCue",
 			"comment": "",
 			"guid": "9231da5e-4e3d-9533-2b51-8fae840a2f2c",
-			"x": -192,
+			"x": -1312,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -61,7 +68,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 7
+					"linked_count": 1
 				},
 				{
 					"pin_name": "AudioCue",
@@ -102,8 +109,8 @@
 			"title_single_line": "Get ActiveLoopingCues",
 			"comment": "",
 			"guid": "0a120472-45a2-a871-1b86-63971a685a4d",
-			"x": -80,
-			"y": 256,
+			"x": -96,
+			"y": 128,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -296,8 +303,8 @@
 			"title_single_line": "Stop Looping Cue by Id",
 			"comment": "",
 			"guid": "508db97a-4b70-a97c-211e-fbabc76c9cf9",
-			"x": 1360,
-			"y": -880,
+			"x": 1264,
+			"y": -448,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -341,192 +348,6 @@
 			"target_class": "PlayLoopingCue"
 		},
 		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
-			"comment": "",
-			"guid": "49cdabfc-4dcd-adbb-3785-949774fd49a2",
-			"x": 1600,
-			"y": -480,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator9",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator1",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "BP_AudioManager",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "5.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "PlayLoopingCue"
-		},
-		{
-			"node_id": "K2Node_Self_0",
-			"node_name": "K2Node_Self_0",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "1898a9b9-4d14-f759-65dc-4db572cbc56a",
-			"x": 1440,
-			"y": -368,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "PlayLoopingCue"
-		},
-		{
-			"node_id": "K2Node_VariableGet_2",
-			"node_name": "K2Node_VariableGet_2",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get DebugEnabled",
-			"title_single_line": "Get DebugEnabled",
-			"comment": "",
-			"guid": "f3c9d3ae-49ff-c1fe-cb26-79bdd9f28d66",
-			"x": 1408,
-			"y": -144,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "DebugEnabled",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "PlayLoopingCue"
-		},
-		{
 			"node_id": "K2Node_FormatText_1",
 			"node_name": "K2Node_FormatText_1",
 			"node_kind": "FormatText",
@@ -535,8 +356,8 @@
 			"title_single_line": "Format Text",
 			"comment": "",
 			"guid": "acd7ef00-46e4-144e-0890-e69c11204974",
-			"x": 960,
-			"y": -336,
+			"x": 1232,
+			"y": -128,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -579,8 +400,8 @@
 			"title_single_line": "To String (Text)",
 			"comment": "",
 			"guid": "7610ca48-4011-e798-d292-3fb7916352b6",
-			"x": 1280,
-			"y": -272,
+			"x": 1264,
+			"y": 128,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -623,8 +444,8 @@
 			"title_single_line": "Break S Audio Cue",
 			"comment": "",
 			"guid": "fcfede97-45e0-28b5-937b-fdbbd9f12d72",
-			"x": 448,
-			"y": 480,
+			"x": 752,
+			"y": 384,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -644,7 +465,7 @@
 					"subcategory": "None",
 					"resolved_type": "SoundBase",
 					"default_value": "",
-					"linked_count": 3
+					"linked_count": 2
 				},
 				{
 					"pin_name": "VolumeMultiplier_5_BC1EF39748F6DDFA86E52293C0A84763",
@@ -703,8 +524,8 @@
 			"title_single_line": "Is Valid",
 			"comment": "",
 			"guid": "ecbd2582-4a3d-5765-f300-5cad5b2ab206",
-			"x": 848,
-			"y": 496,
+			"x": 784,
+			"y": 304,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -747,8 +568,8 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "f03c2832-4bf3-c14e-6ae0-709d3b586642",
-			"x": 1280,
-			"y": 448,
+			"x": 1008,
+			"y": 208,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -787,192 +608,6 @@
 					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
-				}
-			],
-			"target_class": "PlayLoopingCue"
-		},
-		{
-			"node_id": "K2Node_CallFunction_7",
-			"node_name": "K2Node_CallFunction_7",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
-			"comment": "",
-			"guid": "5e4559d7-4999-a306-0ef6-bca4637fdaab",
-			"x": 1664,
-			"y": 720,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator9",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator1",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "BP_AudioManager",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "5.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "PlayLoopingCue"
-		},
-		{
-			"node_id": "K2Node_Self_2",
-			"node_name": "K2Node_Self_2",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "7ec89efa-471d-6b10-cbb5-a9addfddea7c",
-			"x": 1504,
-			"y": 832,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "PlayLoopingCue"
-		},
-		{
-			"node_id": "K2Node_VariableGet_3",
-			"node_name": "K2Node_VariableGet_3",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get DebugEnabled",
-			"title_single_line": "Get DebugEnabled",
-			"comment": "",
-			"guid": "1e3b9a0b-436d-b9b6-0a26-838cbd98057b",
-			"x": 1472,
-			"y": 1056,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "DebugEnabled",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
 				}
 			],
 			"target_class": "PlayLoopingCue"
@@ -1031,7 +666,7 @@
 			"comment": "",
 			"guid": "654eb3c4-491c-640a-6c92-9cb6fe855eec",
 			"x": 1648,
-			"y": 240,
+			"y": 224,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1262,192 +897,6 @@
 			"target_class": "PlayLoopingCue"
 		},
 		{
-			"node_id": "K2Node_CallFunction_9",
-			"node_name": "K2Node_CallFunction_9",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
-			"comment": "",
-			"guid": "d996d122-4a7c-dbd1-ac01-e4aef0b7265e",
-			"x": 3264,
-			"y": 304,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator9",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator2",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "BP_AudioManager",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "5.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "PlayLoopingCue"
-		},
-		{
-			"node_id": "K2Node_Self_3",
-			"node_name": "K2Node_Self_3",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "f4fa8abb-496e-8b59-a813-65b85f4a7533",
-			"x": 3104,
-			"y": 416,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "PlayLoopingCue"
-		},
-		{
-			"node_id": "K2Node_VariableGet_5",
-			"node_name": "K2Node_VariableGet_5",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get DebugEnabled",
-			"title_single_line": "Get DebugEnabled",
-			"comment": "",
-			"guid": "c309bff6-48cc-1e63-e650-459a727a33ea",
-			"x": 3072,
-			"y": 640,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "DebugEnabled",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "PlayLoopingCue"
-		},
-		{
 			"node_id": "K2Node_FormatText_3",
 			"node_name": "K2Node_FormatText_3",
 			"node_kind": "FormatText",
@@ -1456,8 +905,8 @@
 			"title_single_line": "Format Text",
 			"comment": "",
 			"guid": "f20d5647-436c-0cb6-c47e-389efe95a650",
-			"x": 2624,
-			"y": 448,
+			"x": 2352,
+			"y": 480,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1598,192 +1047,6 @@
 			"target_class": "PlayLoopingCue"
 		},
 		{
-			"node_id": "K2Node_CallFunction_4",
-			"node_name": "K2Node_CallFunction_4",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
-			"comment": "",
-			"guid": "9cb74524-4c29-6212-2835-f99565e8837b",
-			"x": 3456,
-			"y": -416,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator9",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "BP_AudioManager",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "5.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "PlayLoopingCue"
-		},
-		{
-			"node_id": "K2Node_Self_1",
-			"node_name": "K2Node_Self_1",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "b17b1003-46a1-5a5b-cc62-06929f45f2d1",
-			"x": 3296,
-			"y": -304,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "PlayLoopingCue"
-		},
-		{
-			"node_id": "K2Node_VariableGet_1",
-			"node_name": "K2Node_VariableGet_1",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get DebugEnabled",
-			"title_single_line": "Get DebugEnabled",
-			"comment": "",
-			"guid": "db1ab0e8-4521-1c08-1f02-34814b52ad58",
-			"x": 3264,
-			"y": -80,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "DebugEnabled",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "PlayLoopingCue"
-		},
-		{
 			"node_id": "K2Node_FormatText_0",
 			"node_name": "K2Node_FormatText_0",
 			"node_kind": "FormatText",
@@ -1792,8 +1055,8 @@
 			"title_single_line": "Format Text",
 			"comment": "",
 			"guid": "ad8dea8c-43af-8c16-9170-0ca862abed10",
-			"x": 2816,
-			"y": -272,
+			"x": 2672,
+			"y": -512,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1845,8 +1108,8 @@
 			"title_single_line": "Get Display Name",
 			"comment": "",
 			"guid": "9b4eefbe-4491-3fc4-b365-d79bea073515",
-			"x": 2544,
-			"y": -96,
+			"x": 2704,
+			"y": -352,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1889,8 +1152,8 @@
 			"title_single_line": "To String (Text)",
 			"comment": "",
 			"guid": "95241aa1-4274-6806-c129-cb9797c95e90",
-			"x": 3136,
-			"y": -352,
+			"x": 3200,
+			"y": -608,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1933,8 +1196,8 @@
 			"title_single_line": "To String (Text)",
 			"comment": "",
 			"guid": "1c3b3dfe-4781-61b7-2cbd-8883b892b02c",
-			"x": 2944,
-			"y": 368,
+			"x": 2928,
+			"y": 464,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1977,8 +1240,8 @@
 			"title_single_line": "To String (Text)",
 			"comment": "",
 			"guid": "bd52f73e-4f99-9844-5dca-6b8af9888ab8",
-			"x": 1344,
-			"y": 784,
+			"x": 1488,
+			"y": 1008,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2011,6 +1274,901 @@
 				}
 			],
 			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set LoopIDL",
+			"title_single_line": "Set LoopIDL",
+			"comment": "",
+			"guid": "7a448da7-4bf3-8fb3-990d-1fb646e76fac",
+			"x": -224,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "LoopIDL",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set AudioCueL",
+			"title_single_line": "Set AudioCueL",
+			"comment": "",
+			"guid": "1ff1d95c-444d-8461-84ed-eb9fca01d444",
+			"x": -528,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "AudioCueL",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_AudioCue",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_AudioCue",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableSet_2",
+			"node_name": "K2Node_VariableSet_2",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set LocationL",
+			"title_single_line": "Set LocationL",
+			"comment": "",
+			"guid": "daa80102-4ac1-76ca-5e24-9aac996baa9f",
+			"x": -768,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "LocationL",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 0
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableSet_3",
+			"node_name": "K2Node_VariableSet_3",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set ReplaceIfExistsL",
+			"title_single_line": "Set ReplaceIfExistsL",
+			"comment": "",
+			"guid": "9c9dd395-4a01-303b-7512-a98f69ced1ef",
+			"x": -1088,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReplaceIfExistsL",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableGet_6",
+			"node_name": "K2Node_VariableGet_6",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ReplaceIfExistsL",
+			"title_single_line": "Get ReplaceIfExistsL",
+			"comment": "",
+			"guid": "5b47fda9-4190-e309-2fac-019c0f7d4472",
+			"x": 624,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ReplaceIfExistsL",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableGet_13",
+			"node_name": "K2Node_VariableGet_13",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get AudioCueL",
+			"title_single_line": "Get AudioCueL",
+			"comment": "",
+			"guid": "af76ffbe-48db-f15a-9aed-5ea04249da68",
+			"x": 800,
+			"y": 640,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "AudioCueL",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_AudioCue",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_0",
+			"node_name": "K2Node_MacroInstance_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
+			"comment": "",
+			"guid": "8ce01904-40c8-7a1d-7405-f69d94465b60",
+			"x": 1584,
+			"y": 800,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator9",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableGet_8",
+			"node_name": "K2Node_VariableGet_8",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LoopIDL",
+			"title_single_line": "Get LoopIDL",
+			"comment": "",
+			"guid": "b88b52f9-460e-e769-a5cc-d6b31c4cfc8f",
+			"x": 832,
+			"y": 928,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LoopIDL",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableGet_9",
+			"node_name": "K2Node_VariableGet_9",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LocationL",
+			"title_single_line": "Get LocationL",
+			"comment": "",
+			"guid": "c5bf48e0-477a-6f1c-a1bf-e3b79a5c4632",
+			"x": 1456,
+			"y": 336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LocationL",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Vector",
+					"default_value": "0, 0, 0",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "a6b3e3a7-402d-3b1a-9dde-56a2fe23b2b8",
+			"x": 1488,
+			"y": 480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "3434803c-46b4-0f5a-1342-4cbc78226c96",
+			"x": 1504,
+			"y": 448,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_1",
+			"node_name": "K2Node_MacroInstance_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
+			"comment": "",
+			"guid": "3650b580-4987-aef6-5bfb-44a976e7f68b",
+			"x": 3040,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator9",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableGet_10",
+			"node_name": "K2Node_VariableGet_10",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LoopIDL",
+			"title_single_line": "Get LoopIDL",
+			"comment": "",
+			"guid": "f057b7b6-4c38-e328-ec6a-d48679028654",
+			"x": 2384,
+			"y": 640,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LoopIDL",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableGet_11",
+			"node_name": "K2Node_VariableGet_11",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LoopIDL",
+			"title_single_line": "Get LoopIDL",
+			"comment": "",
+			"guid": "a09b030a-4eec-ad07-992f-d3addde02ce9",
+			"x": 2416,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LoopIDL",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableGet_12",
+			"node_name": "K2Node_VariableGet_12",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LoopIDL",
+			"title_single_line": "Get LoopIDL",
+			"comment": "",
+			"guid": "1e234795-43f4-051a-5b01-b194ee13d4b9",
+			"x": 2416,
+			"y": -448,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LoopIDL",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_2",
+			"node_name": "K2Node_MacroInstance_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Info",
+			"title_single_line": "DBG Info",
+			"comment": "",
+			"guid": "0043f786-441e-912f-122f-f79132f9335b",
+			"x": 3376,
+			"y": -512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator9",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableGet_7",
+			"node_name": "K2Node_VariableGet_7",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get AudioCueL",
+			"title_single_line": "Get AudioCueL",
+			"comment": "",
+			"guid": "d6552dae-4e57-06dd-73c8-b895665ab318",
+			"x": 2480,
+			"y": -208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "AudioCueL",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_AudioCue",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_BreakStruct_1",
+			"node_name": "K2Node_BreakStruct_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_BreakStruct",
+			"title": "Break S Audio Cue",
+			"title_single_line": "Break S Audio Cue",
+			"comment": "",
+			"guid": "542ba6d2-4d4d-18bf-7013-4dbfaee3cc59",
+			"x": 2384,
+			"y": -336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "S_AudioCue",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_AudioCue",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Sound_2_C8D023944B2C6B670E7D5C8725EF08BD",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundBase",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "VolumeMultiplier_5_BC1EF39748F6DDFA86E52293C0A84763",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "PitchMultiplier_7_8F883678474B1A26E399CAAD45B6CB8E",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Attenuation_10_96B90A89479F85A6E7AC709121B290A3",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundAttenuation",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Subtitle_13_079F33DD4F134AC673EF2B9126F7CDA6",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "CooldownSec_16_C4098AA84F7312D94C2D668DDEB36F6F",
+					"direction": "Output",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableGet_14",
+			"node_name": "K2Node_VariableGet_14",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LoopIDL",
+			"title_single_line": "Get LoopIDL",
+			"comment": "",
+			"guid": "36cbebba-4f7f-1939-7747-248cd8b298d1",
+			"x": -64,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LoopIDL",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_3",
+			"node_name": "K2Node_MacroInstance_3",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
+			"comment": "",
+			"guid": "ad1421af-459b-6205-e0f4-3e80fcde3ca9",
+			"x": 1440,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator9",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableGet_15",
+			"node_name": "K2Node_VariableGet_15",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LoopIDL",
+			"title_single_line": "Get LoopIDL",
+			"comment": "",
+			"guid": "46398948-47ac-de4c-6c84-3f8b0a6ae23b",
+			"x": 1520,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LoopIDL",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_VariableGet_16",
+			"node_name": "K2Node_VariableGet_16",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get LoopIDL",
+			"title_single_line": "Get LoopIDL",
+			"comment": "",
+			"guid": "6b5311c8-40ea-e429-177a-b3b554aeb46d",
+			"x": 1008,
+			"y": -336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "LoopIDL",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
+		},
+		{
+			"node_id": "K2Node_Knot_2",
+			"node_name": "K2Node_Knot_2",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "fa4df7be-47f3-133d-aa50-03bb4f0530ae",
+			"x": 2064,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "AudioComponent",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "AudioComponent",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "PlayLoopingCue"
 		}
 	],
 	"exec_flow": [
@@ -2018,8 +2176,8 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "PlayLoopingCue",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_0",
-			"to_node_title": "Branch",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set ReplaceIfExistsL",
 			"to_pin": "execute"
 		},
 		{
@@ -2050,8 +2208,8 @@
 			"from_node_id": "K2Node_IfThenElse_1",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_MacroInstance_3",
+			"to_node_title": "DBG Warning",
 			"to_pin": "execute"
 		},
 		{
@@ -2066,8 +2224,8 @@
 			"from_node_id": "K2Node_IfThenElse_2",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_7",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "DBG Warning",
 			"to_pin": "execute"
 		},
 		{
@@ -2090,16 +2248,48 @@
 			"from_node_id": "K2Node_IfThenElse_3",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_9",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_title": "DBG Warning",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_8",
 			"from_node_title": "Add",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_MacroInstance_2",
+			"to_node_title": "DBG Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set LoopIDL",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set AudioCueL",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set LoopIDL",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set LocationL",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set AudioCueL",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_3",
+			"from_node_title": "Set ReplaceIfExistsL",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set LocationL",
 			"to_pin": "execute"
 		}
 	],
@@ -2108,81 +2298,33 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "PlayLoopingCue",
 			"from_pin": "LoopId",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Contains",
-			"to_pin": "Key"
-		},
-		{
-			"from_node_id": "K2Node_FunctionEntry_0",
-			"from_node_title": "PlayLoopingCue",
-			"from_pin": "LoopId",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Stop Looping Cue by Id\nTarget is BP Audio Manager",
-			"to_pin": "LoopId"
-		},
-		{
-			"from_node_id": "K2Node_FunctionEntry_0",
-			"from_node_title": "PlayLoopingCue",
-			"from_pin": "LoopId",
-			"to_node_id": "K2Node_FormatText_1",
-			"to_node_title": "Format Text",
-			"to_pin": "LoopId"
-		},
-		{
-			"from_node_id": "K2Node_FunctionEntry_0",
-			"from_node_title": "PlayLoopingCue",
-			"from_pin": "LoopId",
-			"to_node_id": "K2Node_FormatText_2",
-			"to_node_title": "Format Text",
-			"to_pin": "LoopId"
-		},
-		{
-			"from_node_id": "K2Node_FunctionEntry_0",
-			"from_node_title": "PlayLoopingCue",
-			"from_pin": "LoopId",
-			"to_node_id": "K2Node_FormatText_3",
-			"to_node_title": "Format Text",
-			"to_pin": "LoopId"
-		},
-		{
-			"from_node_id": "K2Node_FunctionEntry_0",
-			"from_node_title": "PlayLoopingCue",
-			"from_pin": "LoopId",
-			"to_node_id": "K2Node_CallFunction_8",
-			"to_node_title": "Add",
-			"to_pin": "Key"
-		},
-		{
-			"from_node_id": "K2Node_FunctionEntry_0",
-			"from_node_title": "PlayLoopingCue",
-			"from_pin": "LoopId",
-			"to_node_id": "K2Node_FormatText_0",
-			"to_node_title": "Format Text",
-			"to_pin": "LoopId"
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set LoopIDL",
+			"to_pin": "LoopIDL"
 		},
 		{
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "PlayLoopingCue",
 			"from_pin": "AudioCue",
-			"to_node_id": "K2Node_BreakStruct_0",
-			"to_node_title": "Break S Audio Cue",
-			"to_pin": "S_AudioCue"
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set AudioCueL",
+			"to_pin": "AudioCueL"
 		},
 		{
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "PlayLoopingCue",
 			"from_pin": "Location",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Spawn Sound at Location",
-			"to_pin": "Location"
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set LocationL",
+			"to_pin": "LocationL"
 		},
 		{
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "PlayLoopingCue",
 			"from_pin": "bReplaceIfExists",
-			"to_node_id": "K2Node_IfThenElse_1",
-			"to_node_title": "Branch",
-			"to_pin": "Condition"
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set ReplaceIfExistsL",
+			"to_pin": "ReplaceIfExistsL"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_0",
@@ -2201,30 +2343,6 @@
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_Self_0",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug Message",
-			"to_pin": "WorldContextObject"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_2",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_2",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
-		},
-		{
 			"from_node_id": "K2Node_FormatText_1",
 			"from_node_title": "Format Text",
 			"from_pin": "Result",
@@ -2236,8 +2354,8 @@
 			"from_node_id": "K2Node_CallFunction_67",
 			"from_node_title": "To String (Text)",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_MacroInstance_3",
+			"to_node_title": "DBG Warning",
 			"to_pin": "Message"
 		},
 		{
@@ -2259,26 +2377,18 @@
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio Cue",
-			"from_pin": "Sound_2_C8D023944B2C6B670E7D5C8725EF08BD",
-			"to_node_id": "K2Node_CallFunction_10",
-			"to_node_title": "Get Display Name",
-			"to_pin": "Object"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_0",
-			"from_node_title": "Break S Audio Cue",
 			"from_pin": "VolumeMultiplier_5_BC1EF39748F6DDFA86E52293C0A84763",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Spawn Sound at Location",
-			"to_pin": "VolumeMultiplier"
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio Cue",
 			"from_pin": "PitchMultiplier_7_8F883678474B1A26E399CAAD45B6CB8E",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Spawn Sound at Location",
-			"to_pin": "PitchMultiplier"
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
@@ -2295,30 +2405,6 @@
 			"to_node_id": "K2Node_IfThenElse_2",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
-		},
-		{
-			"from_node_id": "K2Node_Self_2",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_7",
-			"to_node_title": "Debug Message",
-			"to_pin": "WorldContextObject"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_3",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_7",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_3",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_7",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
 		},
 		{
 			"from_node_id": "K2Node_FormatText_2",
@@ -2340,9 +2426,9 @@
 			"from_node_id": "K2Node_CallFunction_5",
 			"from_node_title": "Spawn Sound at Location",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_8",
-			"to_node_title": "Add",
-			"to_pin": "Value"
+			"to_node_id": "K2Node_Knot_2",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_6",
@@ -2351,30 +2437,6 @@
 			"to_node_id": "K2Node_IfThenElse_3",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
-		},
-		{
-			"from_node_id": "K2Node_Self_3",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_9",
-			"to_node_title": "Debug Message",
-			"to_pin": "WorldContextObject"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_5",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_9",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_5",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_9",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
 		},
 		{
 			"from_node_id": "K2Node_FormatText_3",
@@ -2391,30 +2453,6 @@
 			"to_node_id": "K2Node_CallFunction_8",
 			"to_node_title": "Add",
 			"to_pin": "TargetMap"
-		},
-		{
-			"from_node_id": "K2Node_Self_1",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
-			"to_pin": "WorldContextObject"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_1",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_1",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
 		},
 		{
 			"from_node_id": "K2Node_FormatText_0",
@@ -2436,25 +2474,145 @@
 			"from_node_id": "K2Node_CallFunction_69",
 			"from_node_title": "To String (Text)",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_MacroInstance_2",
+			"to_node_title": "DBG Info",
 			"to_pin": "Message"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_70",
 			"from_node_title": "To String (Text)",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_9",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_title": "DBG Warning",
 			"to_pin": "Message"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_71",
 			"from_node_title": "To String (Text)",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_7",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "DBG Warning",
 			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_6",
+			"from_node_title": "Get ReplaceIfExistsL",
+			"from_pin": "ReplaceIfExistsL",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_13",
+			"from_node_title": "Get AudioCueL",
+			"from_pin": "AudioCueL",
+			"to_node_id": "K2Node_BreakStruct_0",
+			"to_node_title": "Break S Audio Cue",
+			"to_pin": "S_AudioCue"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_8",
+			"from_node_title": "Get LoopIDL",
+			"from_pin": "LoopIDL",
+			"to_node_id": "K2Node_FormatText_2",
+			"to_node_title": "Format Text",
+			"to_pin": "LoopId"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_9",
+			"from_node_title": "Get LocationL",
+			"from_pin": "LocationL",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Spawn Sound at Location",
+			"to_pin": "Location"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Spawn Sound at Location",
+			"to_pin": "PitchMultiplier"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Spawn Sound at Location",
+			"to_pin": "VolumeMultiplier"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_10",
+			"from_node_title": "Get LoopIDL",
+			"from_pin": "LoopIDL",
+			"to_node_id": "K2Node_FormatText_3",
+			"to_node_title": "Format Text",
+			"to_pin": "LoopId"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_11",
+			"from_node_title": "Get LoopIDL",
+			"from_pin": "LoopIDL",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Add",
+			"to_pin": "Key"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_12",
+			"from_node_title": "Get LoopIDL",
+			"from_pin": "LoopIDL",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "LoopId"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_7",
+			"from_node_title": "Get AudioCueL",
+			"from_pin": "AudioCueL",
+			"to_node_id": "K2Node_BreakStruct_1",
+			"to_node_title": "Break S Audio Cue",
+			"to_pin": "S_AudioCue"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_1",
+			"from_node_title": "Break S Audio Cue",
+			"from_pin": "Sound_2_C8D023944B2C6B670E7D5C8725EF08BD",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Get Display Name",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_14",
+			"from_node_title": "Get LoopIDL",
+			"from_pin": "LoopIDL",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Contains",
+			"to_pin": "Key"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_15",
+			"from_node_title": "Get LoopIDL",
+			"from_pin": "LoopIDL",
+			"to_node_id": "K2Node_FormatText_1",
+			"to_node_title": "Format Text",
+			"to_pin": "LoopId"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_16",
+			"from_node_title": "Get LoopIDL",
+			"from_pin": "LoopIDL",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Stop Looping Cue by Id\nTarget is BP Audio Manager",
+			"to_pin": "LoopId"
+		},
+		{
+			"from_node_id": "K2Node_Knot_2",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Add",
+			"to_pin": "Value"
 		}
 	],
 	"problems": []
