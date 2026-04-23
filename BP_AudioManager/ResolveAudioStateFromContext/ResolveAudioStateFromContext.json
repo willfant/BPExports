@@ -21,7 +21,6 @@
 		"purpose": "Resolves contextual state or external information.",
 		"reads_variables": [
 			"DT_AudioStates",
-			"DebugEnabled",
 			"CurrentWorldMode",
 			"CurrentGhostState",
 			"CurrentGhostId",
@@ -38,9 +37,10 @@
 		],
 		"calls": [
 			"Is Valid",
-			"Debug Message",
 			"Get Data Table Row Names",
-			"To String (Text)"
+			"Debug Warning",
+			"Get Sender Name",
+			"Debug Info"
 		],
 		"called_by": [
 			"ApplyResolvedAudioStateFromContext"
@@ -59,7 +59,7 @@
 			"title_single_line": "ResolveAudioStateFromContext",
 			"comment": "",
 			"guid": "8fe9055b-4823-8cb6-5fc6-4abde0f960ba",
-			"x": -848,
+			"x": -1824,
 			"y": -16,
 			"has_error": false,
 			"has_warning": false,
@@ -85,8 +85,8 @@
 			"title_single_line": "Return Node",
 			"comment": "",
 			"guid": "a52b0ace-473e-0f51-d249-5fa87e934812",
-			"x": 464,
-			"y": 432,
+			"x": -368,
+			"y": 560,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -129,7 +129,7 @@
 			"title_single_line": "Get DT_AudioStates",
 			"comment": "",
 			"guid": "021598b7-4d82-0d50-8c06-3faeaa56c4cb",
-			"x": -928,
+			"x": -1904,
 			"y": 176,
 			"has_error": false,
 			"has_warning": false,
@@ -164,7 +164,7 @@
 			"title_single_line": "Is Valid",
 			"comment": "",
 			"guid": "019e5954-4c9c-fcdc-fd5c-37a8d7ff53a0",
-			"x": -736,
+			"x": -1712,
 			"y": 112,
 			"has_error": false,
 			"has_warning": false,
@@ -208,7 +208,7 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "910fd06d-4888-747d-8a02-d1a0fe0d7ff4",
-			"x": -384,
+			"x": -1360,
 			"y": -16,
 			"has_error": false,
 			"has_warning": false,
@@ -253,131 +253,6 @@
 			"target_class": "ResolveAudioStateFromContext"
 		},
 		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
-			"comment": "",
-			"guid": "b2815d20-4c01-8b38-25a5-89937ac499d5",
-			"x": -128,
-			"y": 432,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator9",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator2",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "BP_AudioManager",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "ResolveAudioStateFromContext failed: DT_AudioStates invalid",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "5.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
 			"node_id": "K2Node_Self_1",
 			"node_name": "K2Node_Self_1",
 			"node_kind": "SelfReference",
@@ -386,8 +261,8 @@
 			"title_single_line": "Self-Reference",
 			"comment": "",
 			"guid": "663d7330-47d7-6907-dd72-0ba1b9b30e05",
-			"x": -384,
-			"y": 560,
+			"x": -1344,
+			"y": 624,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -398,42 +273,7 @@
 					"subcategory": "self",
 					"resolved_type": "object",
 					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_VariableGet_3",
-			"node_name": "K2Node_VariableGet_3",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get DebugEnabled",
-			"title_single_line": "Get DebugEnabled",
-			"comment": "",
-			"guid": "ed7ef978-45cb-e04e-e776-a8b0e6da791f",
-			"x": -320,
-			"y": 752,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "DebugEnabled",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
 					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
 				}
 			],
 			"target_class": "ResolveAudioStateFromContext"
@@ -531,77 +371,6 @@
 					"resolved_type": "BP_AudioManager_C",
 					"default_value": "",
 					"linked_count": 0
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_MacroInstance_0",
-			"node_name": "K2Node_MacroInstance_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_MacroInstance",
-			"title": "For Each Loop",
-			"title_single_line": "For Each Loop",
-			"comment": "",
-			"guid": "d9d03ad4-429c-f667-8e93-16b70a8d59d3",
-			"x": 560,
-			"y": -16,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "Exec",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Array",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "LoopBody",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Array Element",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Array Index",
-					"direction": "Output",
-					"category": "int",
-					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Completed",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
 				}
 			],
 			"target_class": "ResolveAudioStateFromContext"
@@ -891,8 +660,8 @@
 			"title_single_line": "Equal (Enum)",
 			"comment": "",
 			"guid": "dc00a197-41be-19e1-c566-5181fcc4797a",
-			"x": 1808,
-			"y": 272,
+			"x": 1760,
+			"y": 176,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -903,7 +672,7 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				},
 				{
 					"pin_name": "A",
@@ -935,8 +704,8 @@
 			"title_single_line": "Get CurrentWorldMode",
 			"comment": "",
 			"guid": "21115dcd-40a0-5807-6a5d-75a48cb8ba3a",
-			"x": 1696,
-			"y": 384,
+			"x": 1600,
+			"y": 304,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -962,59 +731,6 @@
 			"target_class": "ResolveAudioStateFromContext"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_1",
-			"node_name": "K2Node_IfThenElse_1",
-			"node_kind": "Branch",
-			"ue_class": "K2Node_IfThenElse",
-			"title": "Branch",
-			"title_single_line": "Branch",
-			"comment": "",
-			"guid": "057f5530-4f8e-690c-caea-069216f4af2f",
-			"x": 2077,
-			"y": -10,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Condition",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "else",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
 			"node_id": "K2Node_EnumEquality_1",
 			"node_name": "K2Node_EnumEquality_1",
 			"node_kind": "Unknown",
@@ -1023,8 +739,8 @@
 			"title_single_line": "Equal (Enum)",
 			"comment": "",
 			"guid": "251cd3dd-4d07-5335-db79-879890c18d1d",
-			"x": 2224,
-			"y": 384,
+			"x": 1680,
+			"y": 448,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1067,8 +783,8 @@
 			"title_single_line": "Get CurrentGhostState",
 			"comment": "",
 			"guid": "55dd37b8-4e45-d073-1b45-7d88786fdb1c",
-			"x": 2032,
-			"y": 448,
+			"x": 1456,
+			"y": 528,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1094,59 +810,6 @@
 			"target_class": "ResolveAudioStateFromContext"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_2",
-			"node_name": "K2Node_IfThenElse_2",
-			"node_kind": "Branch",
-			"ue_class": "K2Node_IfThenElse",
-			"title": "Branch",
-			"title_single_line": "Branch",
-			"comment": "",
-			"guid": "f8ebcc10-4014-1579-86d0-2aaa000f7cc9",
-			"x": 2528,
-			"y": -16,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Condition",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "else",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
 			"node_id": "K2Node_PromotableOperator_1",
 			"node_name": "K2Node_PromotableOperator_1",
 			"node_kind": "Unknown",
@@ -1155,8 +818,8 @@
 			"title_single_line": "Equal (Name)",
 			"comment": "",
 			"guid": "32589b2c-4921-9fa9-4dd3-2989efebef6d",
-			"x": 2720,
-			"y": 256,
+			"x": 1984,
+			"y": 288,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1208,8 +871,8 @@
 			"title_single_line": "Get CurrentGhostId",
 			"comment": "",
 			"guid": "6fdb6b1a-431e-5934-a683-e1bc273afc15",
-			"x": 2528,
-			"y": 304,
+			"x": 1792,
+			"y": 336,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1243,8 +906,8 @@
 			"title_single_line": "Equal (Name)",
 			"comment": "",
 			"guid": "563c7c7b-4194-b5f6-b86e-57be36cfa24b",
-			"x": 2720,
-			"y": 496,
+			"x": 1968,
+			"y": 560,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1263,7 +926,7 @@
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
-					"default_value": "",
+					"default_value": "None",
 					"linked_count": 0
 				},
 				{
@@ -1388,7 +1051,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "None",
-					"linked_count": 1
+					"linked_count": 0
 				}
 			],
 			"target_class": "ResolveAudioStateFromContext"
@@ -1547,7 +1210,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "None",
-					"linked_count": 1
+					"linked_count": 0
 				}
 			],
 			"target_class": "ResolveAudioStateFromContext"
@@ -1582,7 +1245,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "bHasFallback",
@@ -1693,8 +1356,8 @@
 			"title_single_line": "Return Node",
 			"comment": "",
 			"guid": "47724ddb-4a6e-e85d-0a5a-fd9a4214ade2",
-			"x": 1600,
-			"y": 592,
+			"x": 1712,
+			"y": 656,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1737,8 +1400,8 @@
 			"title_single_line": "Get ExactStateId",
 			"comment": "",
 			"guid": "57a072ef-4ee4-b966-745c-a1ac71a14041",
-			"x": 1648,
-			"y": 736,
+			"x": 1504,
+			"y": 720,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1912,8 +1575,8 @@
 			"title_single_line": "Return Node",
 			"comment": "",
 			"guid": "8c133671-4d52-0ae0-0704-6c9d68d2bb75",
-			"x": 2576,
-			"y": 1264,
+			"x": 2800,
+			"y": 1120,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1948,131 +1611,6 @@
 			"target_class": "ResolveAudioStateFromContext"
 		},
 		{
-			"node_id": "K2Node_CallFunction_4",
-			"node_name": "K2Node_CallFunction_4",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
-			"comment": "",
-			"guid": "e20bda50-482f-70e3-86f0-30a125dd622f",
-			"x": 2080,
-			"y": 1264,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator9",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator2",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "BP_AudioManager",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "5.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
 			"node_id": "K2Node_Self_2",
 			"node_name": "K2Node_Self_2",
 			"node_kind": "SelfReference",
@@ -2081,8 +1619,8 @@
 			"title_single_line": "Self-Reference",
 			"comment": "",
 			"guid": "ef5207cd-443f-c4fa-2714-29b29a538b8b",
-			"x": 1824,
-			"y": 1392,
+			"x": 1712,
+			"y": 1200,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2093,239 +1631,73 @@
 					"subcategory": "self",
 					"resolved_type": "object",
 					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_VariableGet_6",
-			"node_name": "K2Node_VariableGet_6",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get DebugEnabled",
-			"title_single_line": "Get DebugEnabled",
-			"comment": "",
-			"guid": "d448505b-4f15-6098-1d86-869cf7906267",
-			"x": 1888,
-			"y": 1584,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "DebugEnabled",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
 					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
 				}
 			],
 			"target_class": "ResolveAudioStateFromContext"
 		},
 		{
-			"node_id": "K2Node_FormatText_1",
-			"node_name": "K2Node_FormatText_1",
-			"node_kind": "FormatText",
-			"ue_class": "K2Node_FormatText",
-			"title": "Format Text",
-			"title_single_line": "Format Text",
-			"comment": "",
-			"guid": "19891933-4d99-077e-2c66-549704be6065",
-			"x": 1472,
-			"y": 1536,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "Format",
-					"direction": "Input",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Result",
-					"direction": "Output",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "World",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Ghost",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "State",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_CallFunction_5",
-			"node_name": "K2Node_CallFunction_5",
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "To String (Text)",
-			"title_single_line": "To String (Text)",
+			"title": "Debug Warning",
+			"title_single_line": "Debug Warning",
 			"comment": "",
-			"guid": "fb4c58df-4bd0-9681-93e4-a1b9cdcb676a",
-			"x": 1776,
-			"y": 1504,
+			"guid": "1efab8b6-4c8c-871d-eb01-bb8931919dc1",
+			"x": -992,
+			"y": 560,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
 				{
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "KismetTextLibrary",
+					"resolved_type": "BFL_Debug_C",
 					"default_value": "",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "InText",
+					"pin_name": "WorldContextObject",
 					"direction": "Input",
-					"category": "text",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "Text",
+					"resolved_type": "Object",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_VariableGet_7",
-			"node_name": "K2Node_VariableGet_7",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CurrentWorldMode",
-			"title_single_line": "Get CurrentWorldMode",
-			"comment": "",
-			"guid": "44471350-4046-396a-fa92-53af54740db6",
-			"x": 1024,
-			"y": 1456,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "CurrentWorldMode",
-					"direction": "Output",
+					"pin_name": "Category",
+					"direction": "Input",
 					"category": "byte",
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
 					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
 					"linked_count": 0
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_GetEnumeratorNameAsString_2",
-			"node_name": "K2Node_GetEnumeratorNameAsString_2",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_GetEnumeratorNameAsString",
-			"title": "Enum to String",
-			"title_single_line": "Enum to String",
-			"comment": "",
-			"guid": "686ae124-438d-37a6-0b16-71916739fd1a",
-			"x": 1232,
-			"y": 1472,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "Enumerator",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 1
 				},
 				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_VariableGet_8",
-			"node_name": "K2Node_VariableGet_8",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CurrentGhostId",
-			"title_single_line": "Get CurrentGhostId",
-			"comment": "",
-			"guid": "fb45481a-48b6-e69e-1c40-54907c77e8bb",
-			"x": 1280,
-			"y": 1648,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "CurrentGhostId",
-					"direction": "Output",
+					"pin_name": "SenderName",
+					"direction": "Input",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
@@ -2333,98 +1705,90 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "self",
+					"pin_name": "Message",
 					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_VariableGet_9",
-			"node_name": "K2Node_VariableGet_9",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CurrentGhostState",
-			"title_single_line": "Get CurrentGhostState",
-			"comment": "",
-			"guid": "c5d5fcf0-4c1a-3419-83f2-18b39237ea20",
-			"x": 1024,
-			"y": 1760,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "CurrentGhostState",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_GetEnumeratorNameAsString_3",
-			"node_name": "K2Node_GetEnumeratorNameAsString_3",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_GetEnumeratorNameAsString",
-			"title": "Enum to String",
-			"title_single_line": "Enum to String",
-			"comment": "",
-			"guid": "e0bc6fed-40cd-1c3a-e196-379a3b007a4c",
-			"x": 1232,
-			"y": 1760,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "Enumerator",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
 					"category": "string",
 					"subcategory": "None",
 					"resolved_type": "String",
+					"default_value": "[AudioManager] ResolveAudioStateFromContext failed because DT_AudioStates is invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
 					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ResolveAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "e064e4fc-45f4-bc2c-a94b-f4b67750b1a4",
+			"x": -1216,
+			"y": 688,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
 			"target_class": "ResolveAudioStateFromContext"
 		},
 		{
-			"node_id": "K2Node_CallFunction_6",
-			"node_name": "K2Node_CallFunction_6",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
+			"node_id": "K2Node_VariableSet_4",
+			"node_name": "K2Node_VariableSet_4",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bHasExactMatch",
+			"title_single_line": "Set bHasExactMatch",
 			"comment": "",
-			"guid": "8a026d3a-40c6-a0cc-cbc7-e69f566ff6f8",
-			"x": 4560,
-			"y": 352,
+			"guid": "90289584-4a25-4c44-43e7-64beb36061ce",
+			"x": -1120,
+			"y": 0,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2444,197 +1808,355 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator9",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "BP_AudioManager",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "5.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
+					"pin_name": "bHasExactMatch",
 					"direction": "Input",
 					"category": "bool",
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "false",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
+					"pin_name": "Output_Get",
+					"direction": "Output",
 					"category": "bool",
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
 					"linked_count": 0
 				}
 			],
 			"target_class": "ResolveAudioStateFromContext"
 		},
 		{
-			"node_id": "K2Node_Self_3",
-			"node_name": "K2Node_Self_3",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
+			"node_id": "K2Node_VariableSet_5",
+			"node_name": "K2Node_VariableSet_5",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set ExactStateId",
+			"title_single_line": "Set ExactStateId",
 			"comment": "",
-			"guid": "d96b0bc6-4867-8c38-25f8-36a317bc55b7",
-			"x": 4304,
+			"guid": "46f0cfdc-426f-1603-2100-e0926a2ba35d",
+			"x": -880,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ExactStateId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ResolveAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_VariableSet_6",
+			"node_name": "K2Node_VariableSet_6",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bHasFallback",
+			"title_single_line": "Set bHasFallback",
+			"comment": "",
+			"guid": "3ac176c6-4e3f-3395-e6b7-9bbbb2bf6a75",
+			"x": -592,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bHasFallback",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ResolveAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_VariableSet_7",
+			"node_name": "K2Node_VariableSet_7",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set FallbackStateId",
+			"title_single_line": "Set FallbackStateId",
+			"comment": "",
+			"guid": "5cd66e4d-4385-1648-d1f8-498ef436ac79",
+			"x": -336,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "FallbackStateId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ResolveAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_CommutativeAssociativeBinaryOperator_1",
+			"node_name": "K2Node_CommutativeAssociativeBinaryOperator_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CommutativeAssociativeBinaryOperator",
+			"title": "AND Boolean",
+			"title_single_line": "AND Boolean",
+			"comment": "",
+			"guid": "2437feb1-4c17-f69d-c42a-8686b4e2adf1",
+			"x": 2288,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ResolveAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
+			"node_name": "K2Node_CommutativeAssociativeBinaryOperator_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CommutativeAssociativeBinaryOperator",
+			"title": "AND Boolean",
+			"title_single_line": "AND Boolean",
+			"comment": "",
+			"guid": "ce192e15-45d3-0e88-2689-c9a56b9d0b79",
+			"x": 2624,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ResolveAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "810a1ac1-47e6-7c24-b40e-6891c9ded767",
+			"x": 2240,
 			"y": 480,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
 					"default_value": "",
 					"linked_count": 1
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_VariableGet_10",
-			"node_name": "K2Node_VariableGet_10",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get DebugEnabled",
-			"title_single_line": "Get DebugEnabled",
-			"comment": "",
-			"guid": "c8013947-410c-aebf-3c63-1c96360ed454",
-			"x": 4368,
-			"y": 672,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
+				},
 				{
-					"pin_name": "DebugEnabled",
+					"pin_name": "OutputPin",
 					"direction": "Output",
 					"category": "bool",
 					"subcategory": "None",
 					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				}
 			],
 			"target_class": "ResolveAudioStateFromContext"
 		},
 		{
-			"node_id": "K2Node_FormatText_2",
-			"node_name": "K2Node_FormatText_2",
-			"node_kind": "FormatText",
-			"ue_class": "K2Node_FormatText",
-			"title": "Format Text",
-			"title_single_line": "Format Text",
+			"node_id": "K2Node_Knot_2",
+			"node_name": "K2Node_Knot_2",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
 			"comment": "",
-			"guid": "82c32164-4a56-b92e-23ea-208cba6799e0",
-			"x": 3952,
-			"y": 624,
+			"guid": "c87c3d66-4986-1407-3f4e-709379300b7e",
+			"x": 1808,
+			"y": 48,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "Format",
+					"pin_name": "InputPin",
 					"direction": "Input",
-					"category": "text",
+					"category": "name",
 					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Result",
-					"direction": "Output",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
+					"resolved_type": "Name",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "StateId",
-					"direction": "Input",
+					"pin_name": "OutputPin",
+					"direction": "Output",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
@@ -2645,16 +2167,166 @@
 			"target_class": "ResolveAudioStateFromContext"
 		},
 		{
-			"node_id": "K2Node_CallFunction_7",
-			"node_name": "K2Node_CallFunction_7",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "To String (Text)",
-			"title_single_line": "To String (Text)",
+			"node_id": "K2Node_MacroInstance_1",
+			"node_name": "K2Node_MacroInstance_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "For Each Loop with Break",
+			"title_single_line": "For Each Loop with Break",
 			"comment": "",
-			"guid": "e3dd9887-436d-da02-7976-7496d5cdde8c",
-			"x": 4256,
-			"y": 592,
+			"guid": "de7e64f3-4aef-662c-8c3d-c2889d53125d",
+			"x": 544,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Exec",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Array",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Break",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "LoopBody",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Array Element",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Array Index",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Completed",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ResolveAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_Knot_3",
+			"node_name": "K2Node_Knot_3",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "7f66aa1b-4d3f-f606-61ca-efb9ff76903b",
+			"x": 512,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ResolveAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_Knot_4",
+			"node_name": "K2Node_Knot_4",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "c11c5726-4670-3715-e9de-129252dc90c5",
+			"x": 3824,
+			"y": -96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ResolveAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_CommutativeAssociativeBinaryOperator_3",
+			"node_name": "K2Node_CommutativeAssociativeBinaryOperator_3",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CommutativeAssociativeBinaryOperator",
+			"title": "AND Boolean",
+			"title_single_line": "AND Boolean",
+			"comment": "",
+			"guid": "799dc355-4dc8-7f24-6240-4fa65e8dbf15",
+			"x": 2448,
+			"y": 512,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2663,25 +2335,69 @@
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "KismetTextLibrary",
+					"resolved_type": "KismetMathLibrary",
 					"default_value": "",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "InText",
+					"pin_name": "A",
 					"direction": "Input",
-					"category": "text",
+					"category": "bool",
 					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
 					"linked_count": 1
 				},
 				{
 					"pin_name": "ReturnValue",
 					"direction": "Output",
-					"category": "string",
+					"category": "bool",
 					"subcategory": "None",
-					"resolved_type": "String",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ResolveAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_Knot_5",
+			"node_name": "K2Node_Knot_5",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "e4938ccb-49e3-4e2f-3cba-da81800794a1",
+			"x": 1904,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -2689,16 +2405,51 @@
 			"target_class": "ResolveAudioStateFromContext"
 		},
 		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
+			"node_id": "K2Node_Knot_6",
+			"node_name": "K2Node_Knot_6",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "7d8aebb5-4ac0-07b2-f2ed-41bf5f733bdd",
+			"x": 3344,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ResolveAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
 			"comment": "",
-			"guid": "c29c3a11-494b-456b-1c36-d29cf15d5e16",
-			"x": 4416,
-			"y": -432,
+			"guid": "049cadd0-437d-9707-233c-9c93d3a1fc3b",
+			"x": 2112,
+			"y": 1120,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2718,7 +2469,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -2748,22 +2499,13 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator1",
-					"linked_count": 0
-				},
-				{
 					"pin_name": "SenderName",
 					"direction": "Input",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
-					"default_value": "BP_AudioManager",
-					"linked_count": 0
+					"default_value": "None",
+					"linked_count": 1
 				},
 				{
 					"pin_name": "Message",
@@ -2771,35 +2513,8 @@
 					"category": "string",
 					"subcategory": "None",
 					"resolved_type": "String",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "5.000000",
+					"default_value": "[AudioManager] No audio state could be resolved for the current context",
 					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
 				},
 				{
 					"pin_name": "__WorldContext",
@@ -2814,149 +2529,53 @@
 			"target_class": "ResolveAudioStateFromContext"
 		},
 		{
-			"node_id": "K2Node_Self_0",
-			"node_name": "K2Node_Self_0",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
 			"comment": "",
-			"guid": "fcc83c67-451e-6886-e987-4fa3bafae4c5",
-			"x": 4160,
-			"y": -304,
+			"guid": "5e16acfe-4e05-3bf0-9c70-32b09745e5cc",
+			"x": 1872,
+			"y": 1248,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
 					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_VariableGet_66",
-			"node_name": "K2Node_VariableGet_66",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get DebugEnabled",
-			"title_single_line": "Get DebugEnabled",
-			"comment": "",
-			"guid": "8a535b0e-412a-8128-d06a-858af41734e5",
-			"x": 4224,
-			"y": -112,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "DebugEnabled",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_FormatText_0",
-			"node_name": "K2Node_FormatText_0",
-			"node_kind": "FormatText",
-			"ue_class": "K2Node_FormatText",
-			"title": "Format Text",
-			"title_single_line": "Format Text",
-			"comment": "",
-			"guid": "344d8db8-47e0-d3e6-0148-61a804c0d8cb",
-			"x": 3808,
-			"y": -160,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "Format",
-					"direction": "Input",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
+					"resolved_type": "BFL_Debug_C",
 					"default_value": "",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "Result",
-					"direction": "Output",
-					"category": "text",
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "Text",
+					"resolved_type": "Object",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "StateId",
+					"pin_name": "__WorldContext",
 					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ResolveAudioStateFromContext"
-		},
-		{
-			"node_id": "K2Node_CallFunction_65",
-			"node_name": "K2Node_CallFunction_65",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "To String (Text)",
-			"title_single_line": "To String (Text)",
-			"comment": "",
-			"guid": "891dd8f7-4569-5a71-27c3-0d90939f2a79",
-			"x": 4112,
-			"y": -192,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "KismetTextLibrary",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "InText",
-					"direction": "Input",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
@@ -2976,69 +2595,29 @@
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Get Data Table Row Names",
+			"to_node_id": "K2Node_VariableSet_4",
+			"to_node_title": "Set bHasExactMatch",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug Message",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Debug Message",
-			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_1",
-			"to_node_title": "Return Node",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Warning",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_2",
 			"from_node_title": "Get Data Table Row Names",
 			"from_pin": "then",
-			"to_node_id": "K2Node_MacroInstance_0",
-			"to_node_title": "For Each Loop",
+			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_title": "For Each Loop with Break",
 			"to_pin": "Exec"
-		},
-		{
-			"from_node_id": "K2Node_MacroInstance_0",
-			"from_node_title": "For Each Loop",
-			"from_pin": "LoopBody",
-			"to_node_id": "K2Node_GetDataTableRow_0",
-			"to_node_title": "Get Data Table Row",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_MacroInstance_0",
-			"from_node_title": "For Each Loop",
-			"from_pin": "Completed",
-			"to_node_id": "K2Node_IfThenElse_5",
-			"to_node_title": "Branch",
-			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_GetDataTableRow_0",
 			"from_node_title": "Get Data Table Row",
-			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_1",
-			"to_node_title": "Branch",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_IfThenElse_1",
-			"from_node_title": "Branch",
-			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_2",
-			"to_node_title": "Branch",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_IfThenElse_2",
-			"from_node_title": "Branch",
 			"from_pin": "then",
 			"to_node_id": "K2Node_IfThenElse_3",
 			"to_node_title": "Branch",
@@ -3072,9 +2651,9 @@
 			"from_node_id": "K2Node_VariableSet_1",
 			"from_node_title": "Set bHasExactMatch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "execute"
+			"to_node_id": "K2Node_Knot_4",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_IfThenElse_4",
@@ -3090,14 +2669,6 @@
 			"from_pin": "then",
 			"to_node_id": "K2Node_VariableSet_3",
 			"to_node_title": "Set bHasFallback",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_3",
-			"from_node_title": "Set bHasFallback",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Debug Message",
 			"to_pin": "execute"
 		},
 		{
@@ -3128,13 +2699,85 @@
 			"from_node_id": "K2Node_IfThenElse_6",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Info",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_4",
-			"from_node_title": "Debug Message",
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Debug Warning",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_4",
+			"from_node_title": "Set bHasExactMatch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_5",
+			"to_node_title": "Set ExactStateId",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_5",
+			"from_node_title": "Set ExactStateId",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_6",
+			"to_node_title": "Set bHasFallback",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_6",
+			"from_node_title": "Set bHasFallback",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_7",
+			"to_node_title": "Set FallbackStateId",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_7",
+			"from_node_title": "Set FallbackStateId",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Get Data Table Row Names",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_1",
+			"from_node_title": "For Each Loop with Break",
+			"from_pin": "LoopBody",
+			"to_node_id": "K2Node_GetDataTableRow_0",
+			"to_node_title": "Get Data Table Row",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_1",
+			"from_node_title": "For Each Loop with Break",
+			"from_pin": "Completed",
+			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Knot_3",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_title": "For Each Loop with Break",
+			"to_pin": "Break"
+		},
+		{
+			"from_node_id": "K2Node_Knot_4",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_3",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "Debug Info",
 			"from_pin": "then",
 			"to_node_id": "K2Node_FunctionResult_2",
 			"to_node_title": "Return Node",
@@ -3162,32 +2805,24 @@
 			"from_node_id": "K2Node_Self_1",
 			"from_node_title": "Self-Reference",
 			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Warning",
 			"to_pin": "WorldContextObject"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_3",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_3",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_2",
 			"from_node_title": "Get Data Table Row Names",
 			"from_pin": "OutRowNames",
-			"to_node_id": "K2Node_MacroInstance_0",
-			"to_node_title": "For Each Loop",
+			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_title": "For Each Loop with Break",
 			"to_pin": "Array"
 		},
 		{
@@ -3205,14 +2840,6 @@
 			"to_node_id": "K2Node_Knot_0",
 			"to_node_title": "Reroute Node",
 			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_MacroInstance_0",
-			"from_node_title": "For Each Loop",
-			"from_pin": "Array Element",
-			"to_node_id": "K2Node_GetDataTableRow_0",
-			"to_node_title": "Get Data Table Row",
-			"to_pin": "RowName"
 		},
 		{
 			"from_node_id": "K2Node_GetDataTableRow_0",
@@ -3234,17 +2861,17 @@
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "StateID_14_EABD8075451C6BF27BF952B6C4C706E9",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set ExactStateId",
-			"to_pin": "ExactStateId"
+			"to_node_id": "K2Node_Knot_2",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "StateID_14_EABD8075451C6BF27BF952B6C4C706E9",
-			"to_node_id": "K2Node_VariableSet_2",
-			"to_node_title": "Set FallbackStateId",
-			"to_pin": "FallbackStateId"
+			"to_node_id": "K2Node_Knot_5",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
@@ -3282,9 +2909,17 @@
 			"from_node_id": "K2Node_EnumEquality_0",
 			"from_node_title": "Equal (Enum)",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_1",
-			"to_node_title": "Branch",
-			"to_pin": "Condition"
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_1",
+			"to_node_title": "AND Boolean",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_EnumEquality_0",
+			"from_node_title": "Equal (Enum)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_3",
+			"to_node_title": "AND Boolean",
+			"to_pin": "A"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_67",
@@ -3298,9 +2933,9 @@
 			"from_node_id": "K2Node_EnumEquality_1",
 			"from_node_title": "Equal (Enum)",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_2",
-			"to_node_title": "Branch",
-			"to_pin": "Condition"
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_68",
@@ -3314,9 +2949,9 @@
 			"from_node_id": "K2Node_PromotableOperator_1",
 			"from_node_title": "Equal (Name)",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_3",
-			"to_node_title": "Branch",
-			"to_pin": "Condition"
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_1",
+			"to_node_title": "AND Boolean",
+			"to_pin": "B"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_69",
@@ -3330,25 +2965,9 @@
 			"from_node_id": "K2Node_PromotableOperator_0",
 			"from_node_title": "Equal (Name)",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_4",
-			"to_node_title": "Branch",
-			"to_pin": "Condition"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_0",
-			"from_node_title": "Set ExactStateId",
-			"from_pin": "Output_Get",
-			"to_node_id": "K2Node_FormatText_0",
-			"to_node_title": "Format Text",
-			"to_pin": "StateId"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_2",
-			"from_node_title": "Set FallbackStateId",
-			"from_pin": "Output_Get",
-			"to_node_id": "K2Node_FormatText_2",
-			"to_node_title": "Format Text",
-			"to_pin": "StateId"
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_3",
+			"to_node_title": "AND Boolean",
+			"to_pin": "B"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_70",
@@ -3386,161 +3005,97 @@
 			"from_node_id": "K2Node_Self_2",
 			"from_node_title": "Self-Reference",
 			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Info",
 			"to_pin": "WorldContextObject"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_6",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_6",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
-		},
-		{
-			"from_node_id": "K2Node_FormatText_1",
-			"from_node_title": "Format Text",
-			"from_pin": "Result",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "To String (Text)",
-			"to_pin": "InText"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_5",
-			"from_node_title": "To String (Text)",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Message",
-			"to_pin": "Message"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_7",
-			"from_node_title": "Get CurrentWorldMode",
-			"from_pin": "CurrentWorldMode",
-			"to_node_id": "K2Node_GetEnumeratorNameAsString_2",
-			"to_node_title": "Enum to String",
-			"to_pin": "Enumerator"
-		},
-		{
-			"from_node_id": "K2Node_GetEnumeratorNameAsString_2",
-			"from_node_title": "Enum to String",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_FormatText_1",
-			"to_node_title": "Format Text",
-			"to_pin": "World"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_8",
-			"from_node_title": "Get CurrentGhostId",
-			"from_pin": "CurrentGhostId",
-			"to_node_id": "K2Node_FormatText_1",
-			"to_node_title": "Format Text",
-			"to_pin": "Ghost"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_9",
-			"from_node_title": "Get CurrentGhostState",
-			"from_pin": "CurrentGhostState",
-			"to_node_id": "K2Node_GetEnumeratorNameAsString_3",
-			"to_node_title": "Enum to String",
-			"to_pin": "Enumerator"
-		},
-		{
-			"from_node_id": "K2Node_GetEnumeratorNameAsString_3",
-			"from_node_title": "Enum to String",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_FormatText_1",
-			"to_node_title": "Format Text",
-			"to_pin": "State"
-		},
-		{
-			"from_node_id": "K2Node_Self_3",
+			"from_node_id": "K2Node_Self_2",
 			"from_node_title": "Self-Reference",
 			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Debug Message",
-			"to_pin": "WorldContextObject"
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_10",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
+			"from_node_id": "K2Node_CallFunction_9",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Warning",
+			"to_pin": "SenderName"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_10",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
-		},
-		{
-			"from_node_id": "K2Node_FormatText_2",
-			"from_node_title": "Format Text",
-			"from_pin": "Result",
-			"to_node_id": "K2Node_CallFunction_7",
-			"to_node_title": "To String (Text)",
-			"to_pin": "InText"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_7",
-			"from_node_title": "To String (Text)",
+			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_1",
+			"from_node_title": "AND Boolean",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Debug Message",
-			"to_pin": "Message"
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
+			"to_node_title": "AND Boolean",
+			"to_pin": "A"
 		},
 		{
-			"from_node_id": "K2Node_Self_0",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "WorldContextObject"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_66",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_66",
-			"from_node_title": "Get DebugEnabled",
-			"from_pin": "DebugEnabled",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
-		},
-		{
-			"from_node_id": "K2Node_FormatText_0",
-			"from_node_title": "Format Text",
-			"from_pin": "Result",
-			"to_node_id": "K2Node_CallFunction_65",
-			"to_node_title": "To String (Text)",
-			"to_pin": "InText"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_65",
-			"from_node_title": "To String (Text)",
+			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
+			"from_node_title": "AND Boolean",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Message",
-			"to_pin": "Message"
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_2",
+			"to_node_title": "AND Boolean",
+			"to_pin": "B"
+		},
+		{
+			"from_node_id": "K2Node_Knot_2",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set ExactStateId",
+			"to_pin": "ExactStateId"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_1",
+			"from_node_title": "For Each Loop with Break",
+			"from_pin": "Array Element",
+			"to_node_id": "K2Node_GetDataTableRow_0",
+			"to_node_title": "Get Data Table Row",
+			"to_pin": "RowName"
+		},
+		{
+			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_3",
+			"from_node_title": "AND Boolean",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_5",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_Knot_6",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_Knot_6",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set FallbackStateId",
+			"to_pin": "FallbackStateId"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

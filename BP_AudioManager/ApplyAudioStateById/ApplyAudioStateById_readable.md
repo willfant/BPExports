@@ -8,18 +8,19 @@ Auto-generated function summary.
 
 ## Reads
 - DT_AudioStates
-- AC_Ambient
-- AC_Stinger
 
 ## Writes
 - CurrentAudioStateId
-- VolumeMultiplier
+- CurrentStingerSound
 
 ## Calls
 - Is Valid
+- Debug Warning
+- Get Sender Name
+- Debug Critical
+- To String (Text)
 - Play Stinger 2D
-- Play Ambience Sound
-- Stop Ambience Sound
+- Debug Info
 
 ## Called By
 - ApplyResolvedAudioStateFromContext

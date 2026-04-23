@@ -11,19 +11,20 @@
 	{
 		"purpose": "Auto-generated function summary.",
 		"reads_variables": [
-			"DT_AudioStates",
-			"AC_Ambient",
-			"AC_Stinger"
+			"DT_AudioStates"
 		],
 		"writes_variables": [
 			"CurrentAudioStateId",
-			"VolumeMultiplier"
+			"CurrentStingerSound"
 		],
 		"calls": [
 			"Is Valid",
+			"Debug Warning",
+			"Get Sender Name",
+			"Debug Critical",
+			"To String (Text)",
 			"Play Stinger 2D",
-			"Play Ambience Sound",
-			"Stop Ambience Sound"
+			"Debug Info"
 		],
 		"called_by": [
 			"ApplyResolvedAudioStateFromContext"
@@ -42,7 +43,7 @@
 			"title_single_line": "ApplyAudioStateById",
 			"comment": "",
 			"guid": "91b3d496-486c-12fa-d197-89989fbfb8eb",
-			"x": -656,
+			"x": -1200,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -63,7 +64,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 3
+					"linked_count": 4
 				}
 			],
 			"target_class": "ApplyAudioStateById"
@@ -201,43 +202,8 @@
 			"target_class": "ApplyAudioStateById"
 		},
 		{
-			"node_id": "K2Node_Composite_1",
-			"node_name": "K2Node_Composite_1",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_Composite",
-			"title": "debug25\nCollapsed Graph",
-			"title_single_line": "debug25",
-			"comment": "",
-			"guid": "98d01a9e-46c8-8252-fb25-518c7dbf31d2",
-			"x": 624,
-			"y": 320,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "State",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ApplyAudioStateById"
-		},
-		{
-			"node_id": "K2Node_Knot_0",
-			"node_name": "K2Node_Knot_0",
+			"node_id": "K2Node_Knot_4",
+			"node_name": "K2Node_Knot_4",
 			"node_kind": "Reroute",
 			"ue_class": "K2Node_Knot",
 			"title": "Reroute Node",
@@ -265,7 +231,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 0
 				}
 			],
 			"target_class": "ApplyAudioStateById"
@@ -412,41 +378,6 @@
 			"target_class": "ApplyAudioStateById"
 		},
 		{
-			"node_id": "K2Node_Composite_2",
-			"node_name": "K2Node_Composite_2",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_Composite",
-			"title": "debug25_2\nCollapsed Graph",
-			"title_single_line": "debug25_2",
-			"comment": "",
-			"guid": "7dbb74e5-4be9-735d-7f8d-72b017645903",
-			"x": 1008,
-			"y": 16,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "State",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ApplyAudioStateById"
-		},
-		{
 			"node_id": "K2Node_BreakStruct_0",
 			"node_name": "K2Node_BreakStruct_0",
 			"node_kind": "Unknown",
@@ -455,7 +386,7 @@
 			"title_single_line": "Break S Audio State",
 			"comment": "",
 			"guid": "6b917bfd-4998-af4a-4e72-b08c9a7034ad",
-			"x": 1184,
+			"x": 2032,
 			"y": -160,
 			"has_error": false,
 			"has_warning": false,
@@ -494,7 +425,7 @@
 					"subcategory": "None",
 					"resolved_type": "SoundBase",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 3
 				},
 				{
 					"pin_name": "StingerCue_22_61F2CCA44FB2CBDB6773FCB4372822D6",
@@ -521,7 +452,7 @@
 					"subcategory": "double",
 					"resolved_type": "Double",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 0
 				},
 				{
 					"pin_name": "VoiceLevel_30_D5CF7A644BB4F91EE1668B9655DD08E2",
@@ -530,7 +461,7 @@
 					"subcategory": "double",
 					"resolved_type": "Double",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "ReverbSend_32_E3F9C6284A5BFCC3A022E482236CD5A9",
@@ -625,7 +556,7 @@
 			"title_single_line": "Set CurrentAudioStateId",
 			"comment": "",
 			"guid": "255ab3df-41af-839e-8387-ce87a8a64957",
-			"x": 1680,
+			"x": 2832,
 			"y": -208,
 			"has_error": false,
 			"has_warning": false,
@@ -687,8 +618,8 @@
 			"title_single_line": "Is Valid",
 			"comment": "",
 			"guid": "1bcbbde5-4243-bb20-e338-2d840ebb60a3",
-			"x": 2048,
-			"y": -64,
+			"x": 2560,
+			"y": -96,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -702,7 +633,7 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "Object",
+					"pin_name": "object",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
@@ -723,16 +654,69 @@
 			"target_class": "ApplyAudioStateById"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_1",
-			"node_name": "K2Node_IfThenElse_1",
+			"node_id": "K2Node_PromotableOperator_0",
+			"node_name": "K2Node_PromotableOperator_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "Not Equal (Name)",
+			"title_single_line": "Not Equal (Name)",
+			"comment": "",
+			"guid": "daee333d-4fc3-180a-c19a-6ca3e20ae555",
+			"x": -912,
+			"y": 176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_3",
+			"node_name": "K2Node_IfThenElse_3",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "2e53979b-47a8-611f-a075-eba1fd727548",
-			"x": 2528,
-			"y": -224,
+			"guid": "ece2f5f4-4142-629e-27c4-dc8cf3ebfb3e",
+			"x": -592,
+			"y": 0,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -776,16 +760,16 @@
 			"target_class": "ApplyAudioStateById"
 		},
 		{
-			"node_id": "K2Node_CallFunction_6",
-			"node_name": "K2Node_CallFunction_6",
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Play Stinger 2D\nTarget is BP Audio Manager",
-			"title_single_line": "Play Stinger 2D",
+			"title": "Debug Warning",
+			"title_single_line": "Debug Warning",
 			"comment": "",
-			"guid": "173411fe-478f-028a-4561-7486f216db47",
-			"x": 2832,
-			"y": -416,
+			"guid": "8c5b7c2e-43e8-5a3f-1d00-4b8d9799d93b",
+			"x": -368,
+			"y": 320,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -811,52 +795,158 @@
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
 					"default_value": "",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "sound",
+					"pin_name": "WorldContextObject",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "SoundBase",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ApplyAudioStateById"
-		},
-		{
-			"node_id": "K2Node_Knot_2",
-			"node_name": "K2Node_Knot_2",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "463d26d8-4e35-e2ec-160c-1a893345b8a5",
-			"x": 1616,
-			"y": -304,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "SoundBase",
+					"resolved_type": "Object",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator9",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[AudioManager] ApplyAudioStateById aborted because AudioStateId is None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "SoundBase",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_Self_0",
+			"node_name": "K2Node_Self_0",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "b3c3fc40-49f1-685a-950c-448fb363cafc",
+			"x": -816,
+			"y": 384,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "9203c225-4111-eaa7-da74-47afee6dc863",
+			"x": -672,
+			"y": 464,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "a0304553-4880-0f68-6030-45a9ca4ba1d3",
+			"x": 160,
+			"y": 320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -864,15 +954,491 @@
 			"target_class": "ApplyAudioStateById"
 		},
 		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
+			"node_id": "K2Node_CallFunction_13",
+			"node_name": "K2Node_CallFunction_13",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "7fcf017c-4b12-3890-a26e-d3ac2c33293c",
+			"x": 272,
+			"y": 656,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "a87b7907-4cf4-8c56-e5f9-8599c22c1fd9",
+			"x": 1104,
+			"y": 528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_Self_2",
+			"node_name": "K2Node_Self_2",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "faa8e77d-4137-89eb-83fc-fc8eec04f751",
+			"x": 368,
+			"y": 592,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Critical",
+			"title_single_line": "Debug Critical",
+			"comment": "",
+			"guid": "b6c6b31d-4e21-c25c-a762-d795f76613ae",
+			"x": 704,
+			"y": 528,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator9",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "Message = [AudioManager] ApplyAudioStateById failed because DT_AudioStates is invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_FormatText_0",
+			"node_name": "K2Node_FormatText_0",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "caed7654-43b3-9c1b-4e2c-3ca2f52a1b2f",
+			"x": 688,
+			"y": 48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "StateId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Warning",
+			"title_single_line": "Debug Warning",
+			"comment": "",
+			"guid": "2c5e3c58-4025-6a96-0f06-11baf72105d5",
+			"x": 1456,
+			"y": 64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator9",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_CallFunction_12",
+			"node_name": "K2Node_CallFunction_12",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Text)",
+			"title_single_line": "To String (Text)",
+			"comment": "",
+			"guid": "66fe5892-498f-a8be-faec-08a7449621c9",
+			"x": 1072,
+			"y": 48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetTextLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InText",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_CallFunction_7",
+			"node_name": "K2Node_CallFunction_7",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
+			"comment": "",
+			"guid": "51aa6e0e-4814-b4e0-0257-c9a0a2534090",
+			"x": 1120,
+			"y": 288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Ref",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Name",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_Self_1",
+			"node_name": "K2Node_Self_1",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "9b8c3bba-4347-0a34-5fdb-0e82eb781711",
+			"x": 1216,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 2
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "e1a2e053-4f92-7005-bd78-e982e31dab6d",
+			"x": 1840,
+			"y": 64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_CallFunction_16",
+			"node_name": "K2Node_CallFunction_16",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Is Valid",
 			"title_single_line": "Is Valid",
 			"comment": "",
-			"guid": "0d02bac5-4bee-ff77-3cfc-1ea15494af6d",
-			"x": 2096,
+			"guid": "a64c780c-4425-f151-17c0-0da911103ddc",
+			"x": 3440,
 			"y": 96,
 			"has_error": false,
 			"has_warning": false,
@@ -908,16 +1474,16 @@
 			"target_class": "ApplyAudioStateById"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_2",
-			"node_name": "K2Node_IfThenElse_2",
+			"node_id": "K2Node_IfThenElse_5",
+			"node_name": "K2Node_IfThenElse_5",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "c9df7bf7-4ea9-fc01-39d7-d982de731317",
-			"x": 3264,
-			"y": 0,
+			"guid": "1d2010ba-448c-5965-993b-f5b814b34a76",
+			"x": 3728,
+			"y": -224,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -961,16 +1527,105 @@
 			"target_class": "ApplyAudioStateById"
 		},
 		{
-			"node_id": "K2Node_CallFunction_4",
-			"node_name": "K2Node_CallFunction_4",
+			"node_id": "K2Node_Composite_4",
+			"node_name": "K2Node_Composite_4",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_Composite",
+			"title": "AmbientSound\nCollapsed Graph",
+			"title_single_line": "AmbientSound",
+			"comment": "",
+			"guid": "7de876b6-452b-b431-f3fc-6db02bb36f00",
+			"x": 3216,
+			"y": -240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then2",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentAmbienceSound",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundBase",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "sound",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "SoundBase",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CurrentAmbienceVolume",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Volume",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_CallFunction_17",
+			"node_name": "K2Node_CallFunction_17",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Play Ambience Sound\nTarget is BP Audio Manager",
-			"title_single_line": "Play Ambience Sound",
+			"title": "Play Stinger 2D\nTarget is BP Audio Manager",
+			"title_single_line": "Play Stinger 2D",
 			"comment": "",
-			"guid": "51eb96fd-4956-681f-a47a-fcadf089ac71",
-			"x": 3556,
-			"y": -61,
+			"guid": "939b9125-4925-b58d-5399-9fbdefa7b9d7",
+			"x": 4064,
+			"y": -320,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1009,44 +1664,44 @@
 					"resolved_type": "SoundBase",
 					"default_value": "",
 					"linked_count": 1
-				},
-				{
-					"pin_name": "Volume",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "1.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "StartTime",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "0.0",
-					"linked_count": 0
 				}
 			],
 			"target_class": "ApplyAudioStateById"
 		},
 		{
-			"node_id": "K2Node_Knot_3",
-			"node_name": "K2Node_Knot_3",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
+			"node_id": "K2Node_VariableSet_5",
+			"node_name": "K2Node_VariableSet_5",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CurrentStingerSound",
+			"title_single_line": "Set CurrentStingerSound",
 			"comment": "",
-			"guid": "5bd8d7f7-41f3-8b09-1d10-0e99c72d12a2",
-			"x": 1536,
-			"y": 48,
+			"guid": "9b3d3231-436c-4807-6193-2bbe6fc486a7",
+			"x": 4400,
+			"y": -288,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "InputPin",
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "CurrentStingerSound",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
@@ -1055,11 +1710,223 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "OutputPin",
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_AudioManager_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
 					"direction": "Output",
 					"category": "object",
 					"subcategory": "None",
 					"resolved_type": "SoundBase",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_FormatText_1",
+			"node_name": "K2Node_FormatText_1",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "b1fefbb1-48d7-ce32-9d01-5a9b62d0b99a",
+			"x": 3232,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "StateId",
+					"direction": "Input",
+					"category": "wildcard",
+					"subcategory": "None",
+					"resolved_type": "wildcard",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_CallFunction_18",
+			"node_name": "K2Node_CallFunction_18",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Debug Info",
+			"title_single_line": "Debug Info",
+			"comment": "",
+			"guid": "12e71dc0-4648-c05f-dc12-7595a1c8c6a4",
+			"x": 4176,
+			"y": -80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BFL_Debug_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator9",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SenderName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "__WorldContext",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_CallFunction_19",
+			"node_name": "K2Node_CallFunction_19",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Text)",
+			"title_single_line": "To String (Text)",
+			"comment": "",
+			"guid": "914dff68-4fd3-ffcd-7130-d893b2846343",
+			"x": 3888,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetTextLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InText",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyAudioStateById"
+		},
+		{
+			"node_id": "K2Node_Self_3",
+			"node_name": "K2Node_Self_3",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
+			"comment": "",
+			"guid": "ea4d37ca-41c9-1a84-c57e-f684f8add760",
+			"x": 3808,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
 					"default_value": "",
 					"linked_count": 2
 				}
@@ -1067,268 +1934,30 @@
 			"target_class": "ApplyAudioStateById"
 		},
 		{
-			"node_id": "K2Node_VariableGet_2",
-			"node_name": "K2Node_VariableGet_2",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get AC_Ambient",
-			"title_single_line": "Get AC_Ambient",
-			"comment": "",
-			"guid": "5d4a343a-4835-73d2-9416-87a1dddc1810",
-			"x": 3840,
-			"y": 192,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "AC_Ambient",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "AudioComponent",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ApplyAudioStateById"
-		},
-		{
-			"node_id": "K2Node_VariableSet_1",
-			"node_name": "K2Node_VariableSet_1",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set VolumeMultiplier",
-			"title_single_line": "Set VolumeMultiplier",
-			"comment": "",
-			"guid": "ea1155a0-4dcd-8140-51ae-cd86e9681a64",
-			"x": 3920,
-			"y": -32,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "VolumeMultiplier",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "float",
-					"resolved_type": "Float",
-					"default_value": "0.0",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "float",
-					"resolved_type": "Float",
-					"default_value": "0.0",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "AudioComponent",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ApplyAudioStateById"
-		},
-		{
-			"node_id": "K2Node_CallFunction_5",
-			"node_name": "K2Node_CallFunction_5",
+			"node_id": "K2Node_CallFunction_20",
+			"node_name": "K2Node_CallFunction_20",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Stop Ambience Sound\nTarget is BP Audio Manager",
-			"title_single_line": "Stop Ambience Sound",
+			"title": "Get Sender Name",
+			"title_single_line": "Get Sender Name",
 			"comment": "",
-			"guid": "9ef76211-4ba4-ec79-daa9-728bf1beadf4",
-			"x": 3552,
-			"y": 240,
+			"guid": "381ab9c4-40c9-7ebc-d294-19b7bfc49b16",
+			"x": 3920,
+			"y": 80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "ApplyAudioStateById"
-		},
-		{
-			"node_id": "K2Node_VariableGet_4",
-			"node_name": "K2Node_VariableGet_4",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get AC_Stinger",
-			"title_single_line": "Get AC_Stinger",
-			"comment": "",
-			"guid": "e50d2b04-4f13-b1a0-12a4-30bbe1f2326f",
-			"x": 2896,
-			"y": -224,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "AC_Stinger",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "AudioComponent",
-					"default_value": "",
-					"linked_count": 1
-				},
 				{
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
+					"resolved_type": "BFL_Debug_C",
 					"default_value": "",
 					"linked_count": 0
-				}
-			],
-			"target_class": "ApplyAudioStateById"
-		},
-		{
-			"node_id": "K2Node_VariableSet_3",
-			"node_name": "K2Node_VariableSet_3",
-			"node_kind": "VariableSet",
-			"ue_class": "K2Node_VariableSet",
-			"title": "Set VolumeMultiplier",
-			"title_single_line": "Set VolumeMultiplier",
-			"comment": "",
-			"guid": "5dea1357-487e-19ff-2619-289fa85c78c4",
-			"x": 3104,
-			"y": -352,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
 				},
 				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "VolumeMultiplier",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "float",
-					"resolved_type": "Float",
-					"default_value": "0.0",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "real",
-					"subcategory": "float",
-					"resolved_type": "Float",
-					"default_value": "0.0",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "AudioComponent",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ApplyAudioStateById"
-		},
-		{
-			"node_id": "K2Node_Composite_3",
-			"node_name": "K2Node_Composite_3",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_Composite",
-			"title": "Debug26\nCollapsed Graph",
-			"title_single_line": "Debug26",
-			"comment": "",
-			"guid": "3ef91781-4ed3-9a72-d5a4-40a2f171496c",
-			"x": 4608,
-			"y": -64,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Object",
+					"pin_name": "Ref",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
@@ -1337,82 +1966,46 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Object2",
+					"pin_name": "__WorldContext",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
 					"resolved_type": "Object",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
-					"pin_name": "Music",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "SFX",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Voice",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "State",
-					"direction": "Input",
+					"pin_name": "Name",
+					"direction": "Output",
 					"category": "name",
 					"subcategory": "None",
 					"resolved_type": "Name",
-					"default_value": "",
+					"default_value": "None",
 					"linked_count": 1
 				}
 			],
 			"target_class": "ApplyAudioStateById"
 		},
 		{
-			"node_id": "K2Node_Knot_5",
-			"node_name": "K2Node_Knot_5",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
+			"node_id": "K2Node_FunctionResult_3",
+			"node_name": "K2Node_FunctionResult_3",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "f285a3e1-48d5-71e3-331b-92b9fb9a6d25",
-			"x": 3200,
-			"y": 416,
+			"guid": "c62774d8-4936-866d-5802-4994b944763b",
+			"x": 4640,
+			"y": -80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "InputPin",
+					"pin_name": "execute",
 					"direction": "Input",
-					"category": "name",
+					"category": "exec",
 					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
+					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -1425,7 +2018,7 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "ApplyAudioStateById",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_id": "K2Node_IfThenElse_3",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
@@ -1441,8 +2034,8 @@
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_Composite_1",
-			"to_node_title": "debug25\nCollapsed Graph",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Critical",
 			"to_pin": "execute"
 		},
 		{
@@ -1457,80 +2050,104 @@
 			"from_node_id": "K2Node_GetDataTableRow_0",
 			"from_node_title": "Get Data Table Row",
 			"from_pin": "RowNotFound",
-			"to_node_id": "K2Node_Composite_2",
-			"to_node_title": "debug25_2\nCollapsed Graph",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Debug Warning",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_VariableSet_0",
 			"from_node_title": "Set CurrentAudioStateId",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_id": "K2Node_Composite_4",
+			"to_node_title": "AmbientSound\nCollapsed Graph",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Warning",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Debug Warning",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "Debug Critical",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Debug Warning",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_5",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_id": "K2Node_CallFunction_17",
 			"to_node_title": "Play Stinger 2D\nTarget is BP Audio Manager",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_id": "K2Node_IfThenElse_5",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_id": "K2Node_CallFunction_18",
+			"to_node_title": "Debug Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Composite_4",
+			"from_node_title": "AmbientSound\nCollapsed Graph",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_5",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_6",
+			"from_node_id": "K2Node_Composite_4",
+			"from_node_title": "AmbientSound\nCollapsed Graph",
+			"from_pin": "then2",
+			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_17",
 			"from_node_title": "Play Stinger 2D\nTarget is BP Audio Manager",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_3",
-			"to_node_title": "Set VolumeMultiplier",
+			"to_node_id": "K2Node_VariableSet_5",
+			"to_node_title": "Set CurrentStingerSound",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_2",
-			"from_node_title": "Branch",
+			"from_node_id": "K2Node_CallFunction_18",
+			"from_node_title": "Debug Info",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Play Ambience Sound\nTarget is BP Audio Manager",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_IfThenElse_2",
-			"from_node_title": "Branch",
-			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Stop Ambience Sound\nTarget is BP Audio Manager",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_4",
-			"from_node_title": "Play Ambience Sound\nTarget is BP Audio Manager",
-			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_1",
-			"to_node_title": "Set VolumeMultiplier",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_1",
-			"from_node_title": "Set VolumeMultiplier",
-			"from_pin": "then",
-			"to_node_id": "K2Node_Composite_3",
-			"to_node_title": "Debug26\nCollapsed Graph",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_VariableSet_3",
-			"from_node_title": "Set VolumeMultiplier",
-			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_2",
-			"to_node_title": "Branch",
+			"to_node_id": "K2Node_FunctionResult_3",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
 	],
@@ -1539,7 +2156,7 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "ApplyAudioStateById",
 			"from_pin": "AudioStateId",
-			"to_node_id": "K2Node_Knot_0",
+			"to_node_id": "K2Node_Knot_4",
 			"to_node_title": "Reroute Node",
 			"to_pin": "InputPin"
 		},
@@ -1555,9 +2172,17 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "ApplyAudioStateById",
 			"from_pin": "AudioStateId",
-			"to_node_id": "K2Node_Composite_2",
-			"to_node_title": "debug25_2\nCollapsed Graph",
-			"to_pin": "State"
+			"to_node_id": "K2Node_PromotableOperator_0",
+			"to_node_title": "Not Equal (Name)",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "ApplyAudioStateById",
+			"from_pin": "AudioStateId",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "StateId"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_0",
@@ -1574,22 +2199,6 @@
 			"to_node_id": "K2Node_IfThenElse_0",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
-		},
-		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_Composite_1",
-			"to_node_title": "debug25\nCollapsed Graph",
-			"to_pin": "State"
-		},
-		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_Knot_5",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_GetDataTableRow_0",
@@ -1627,23 +2236,31 @@
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "AmbienceCue_20_4133DF834AA78945E5BFC98C73315807",
-			"to_node_id": "K2Node_Knot_3",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Is Valid",
+			"to_pin": "object"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "AmbienceCue_20_4133DF834AA78945E5BFC98C73315807",
-			"to_node_id": "K2Node_Composite_3",
-			"to_node_title": "Debug26\nCollapsed Graph",
-			"to_pin": "Object"
+			"to_node_id": "K2Node_Composite_4",
+			"to_node_title": "AmbientSound\nCollapsed Graph",
+			"to_pin": "CurrentAmbienceSound"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_0",
+			"from_node_title": "Break S Audio State",
+			"from_pin": "AmbienceCue_20_4133DF834AA78945E5BFC98C73315807",
+			"to_node_id": "K2Node_Composite_4",
+			"to_node_title": "AmbientSound\nCollapsed Graph",
+			"to_pin": "sound"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "StingerCue_22_61F2CCA44FB2CBDB6773FCB4372822D6",
-			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_id": "K2Node_CallFunction_16",
 			"to_node_title": "Is Valid",
 			"to_pin": "Object"
 		},
@@ -1651,121 +2268,185 @@
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "StingerCue_22_61F2CCA44FB2CBDB6773FCB4372822D6",
-			"to_node_id": "K2Node_Knot_2",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
+			"to_node_id": "K2Node_CallFunction_17",
+			"to_node_title": "Play Stinger 2D\nTarget is BP Audio Manager",
+			"to_pin": "sound"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "StingerCue_22_61F2CCA44FB2CBDB6773FCB4372822D6",
-			"to_node_id": "K2Node_Composite_3",
-			"to_node_title": "Debug26\nCollapsed Graph",
-			"to_pin": "Object2"
+			"to_node_id": "K2Node_VariableSet_5",
+			"to_node_title": "Set CurrentStingerSound",
+			"to_pin": "CurrentStingerSound"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "MusicLevel_26_9D880BA048EEE14074B7F7BD9D6F3E20",
-			"to_node_id": "K2Node_VariableSet_1",
-			"to_node_title": "Set VolumeMultiplier",
-			"to_pin": "VolumeMultiplier"
+			"to_node_id": "K2Node_Composite_4",
+			"to_node_title": "AmbientSound\nCollapsed Graph",
+			"to_pin": "CurrentAmbienceVolume"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
 			"from_node_title": "Break S Audio State",
 			"from_pin": "MusicLevel_26_9D880BA048EEE14074B7F7BD9D6F3E20",
-			"to_node_id": "K2Node_Composite_3",
-			"to_node_title": "Debug26\nCollapsed Graph",
-			"to_pin": "Music"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_0",
-			"from_node_title": "Break S Audio State",
-			"from_pin": "SFXLevel_28_898CDBB14AB6A7FEC58340B6F3FDE6F9",
-			"to_node_id": "K2Node_VariableSet_3",
-			"to_node_title": "Set VolumeMultiplier",
-			"to_pin": "VolumeMultiplier"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_0",
-			"from_node_title": "Break S Audio State",
-			"from_pin": "SFXLevel_28_898CDBB14AB6A7FEC58340B6F3FDE6F9",
-			"to_node_id": "K2Node_Composite_3",
-			"to_node_title": "Debug26\nCollapsed Graph",
-			"to_pin": "SFX"
-		},
-		{
-			"from_node_id": "K2Node_BreakStruct_0",
-			"from_node_title": "Break S Audio State",
-			"from_pin": "VoiceLevel_30_D5CF7A644BB4F91EE1668B9655DD08E2",
-			"to_node_id": "K2Node_Composite_3",
-			"to_node_title": "Debug26\nCollapsed Graph",
-			"to_pin": "Voice"
+			"to_node_id": "K2Node_Composite_4",
+			"to_node_title": "AmbientSound\nCollapsed Graph",
+			"to_pin": "Volume"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_1",
 			"from_node_title": "Is Valid",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_id": "K2Node_Composite_4",
+			"to_node_title": "AmbientSound\nCollapsed Graph",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_0",
+			"from_node_title": "Not Equal (Name)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_3",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_Knot_2",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Play Stinger 2D\nTarget is BP Audio Manager",
-			"to_pin": "sound"
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Warning",
+			"to_pin": "WorldContextObject"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_id": "K2Node_Self_0",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_9",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Debug Warning",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_13",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Critical",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Debug Critical",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_Self_2",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_0",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_12",
+			"to_node_title": "To String (Text)",
+			"to_pin": "InText"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_12",
+			"from_node_title": "To String (Text)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Debug Warning",
+			"to_pin": "Message"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_7",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Debug Warning",
+			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Debug Warning",
+			"to_pin": "WorldContextObject"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_16",
 			"from_node_title": "Is Valid",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_id": "K2Node_IfThenElse_5",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_Knot_3",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Play Ambience Sound\nTarget is BP Audio Manager",
-			"to_pin": "sound"
+			"from_node_id": "K2Node_FormatText_1",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_19",
+			"to_node_title": "To String (Text)",
+			"to_pin": "InText"
 		},
 		{
-			"from_node_id": "K2Node_Knot_3",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Is Valid",
-			"to_pin": "Object"
+			"from_node_id": "K2Node_CallFunction_19",
+			"from_node_title": "To String (Text)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CallFunction_18",
+			"to_node_title": "Debug Info",
+			"to_pin": "Message"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_2",
-			"from_node_title": "Get AC_Ambient",
-			"from_pin": "AC_Ambient",
-			"to_node_id": "K2Node_VariableSet_1",
-			"to_node_title": "Set VolumeMultiplier",
-			"to_pin": "self"
+			"from_node_id": "K2Node_Self_3",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_18",
+			"to_node_title": "Debug Info",
+			"to_pin": "WorldContextObject"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_4",
-			"from_node_title": "Get AC_Stinger",
-			"from_pin": "AC_Stinger",
-			"to_node_id": "K2Node_VariableSet_3",
-			"to_node_title": "Set VolumeMultiplier",
-			"to_pin": "self"
+			"from_node_id": "K2Node_Self_3",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_20",
+			"to_node_title": "Get Sender Name",
+			"to_pin": "Ref"
 		},
 		{
-			"from_node_id": "K2Node_Knot_5",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_Composite_3",
-			"to_node_title": "Debug26\nCollapsed Graph",
-			"to_pin": "State"
+			"from_node_id": "K2Node_CallFunction_20",
+			"from_node_title": "Get Sender Name",
+			"from_pin": "Name",
+			"to_node_id": "K2Node_CallFunction_18",
+			"to_node_title": "Debug Info",
+			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

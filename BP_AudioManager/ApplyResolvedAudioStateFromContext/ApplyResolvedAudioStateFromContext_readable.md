@@ -6,14 +6,11 @@ Function
 ## Purpose
 Resolves contextual state or external information.
 
-## Reads
-- DebugEnabled
-
 ## Calls
 - Resolve Audio State from Context
+- Debug Info
+- Get Sender Name
 - Apply Audio State by Id
-- Debug Message
-- To String (Text)
 
 ## Called By
 - EventGraph

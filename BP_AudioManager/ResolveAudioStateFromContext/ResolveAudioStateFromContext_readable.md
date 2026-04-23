@@ -18,7 +18,6 @@ Resolves contextual state or external information.
 
 ## Reads
 - DT_AudioStates
-- DebugEnabled
 - CurrentWorldMode
 - CurrentGhostState
 - CurrentGhostId
@@ -35,9 +34,10 @@ Resolves contextual state or external information.
 
 ## Calls
 - Is Valid
-- Debug Message
 - Get Data Table Row Names
-- To String (Text)
+- Debug Warning
+- Get Sender Name
+- Debug Info
 
 ## Called By
 - ApplyResolvedAudioStateFromContext
