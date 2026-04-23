@@ -6,24 +6,39 @@ Function
 ## Purpose
 Starts a flow, state transition, or activation sequence.
 
+## Returns
+- bStartedPuzzle (Boolean)
+- bStartedPuzzle (Boolean)
+- bStartedPuzzle (Boolean)
+- bStartedPuzzle (Boolean)
+- bStartedPuzzle (Boolean)
+- bStartedPuzzle (Boolean)
+
 ## Reads
 - DT_Puzzles
+- PuzzleDataL
+- StepCountL
 - CompletedStepIds
 - FailedStepsIds
 - StartedPuzzleIds
-- CurrentPuzzleId
 
 ## Writes
+- PuzzleDataL
+- StepCountL
 - CurrentPuzzleId
 - CurrentPuzzleData
 - bHasActivePuzzle
-- CurrentStepIndex
 - bStepActive
+- CurrentStepIndex
 
 ## Calls
 - Is Valid
-- Start Step by Index
-- Debug Puzzle Message
+- Debug Warning
+- Get Sender Name
+- Debug Critical
+- To String (Text)
+- Can Puzzle be Selected for Current Context
+- Debug Info
 
 ## Called By
 - StartFirstPuzzleForCurrentGhost

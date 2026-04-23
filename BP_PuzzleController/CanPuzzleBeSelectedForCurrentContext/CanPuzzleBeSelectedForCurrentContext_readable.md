@@ -20,6 +20,7 @@ Auto-generated function summary.
 - NOT Boolean
 
 ## Called By
+- StartPuzzleByRowNameAndStep
 - GetNextValidPuzzleRowNameForCurrentContext
 
 ## Notes

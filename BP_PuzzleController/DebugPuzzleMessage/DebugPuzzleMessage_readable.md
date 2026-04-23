@@ -22,7 +22,6 @@ Provides debug or developer-facing behavior.
 - ReportStepFailure
 - HandlePuzzleCompletionConsequences
 - ResetCurrentPuzzle
-- StartPuzzleByRowNameAndStep
 - SyncPuzzleProgressToSave
 - StartNextValidPuzzleForCurrentContext
 
