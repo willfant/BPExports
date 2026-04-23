@@ -8,19 +8,21 @@ Synchronizes or persists runtime state.
 
 ## Reads
 - SaveManagerRef
-- CurrentPuzzleId
-- CurrentStepIndex
+
+## Writes
+- SaveManagerRef
 
 ## Calls
 - Is Valid
-- Debug Puzzle Message
-- Set Current Puzzle Id
-- Set Current Puzzle Step Index
-- Print String
-- To String (Integer)
+- Request Auto Save
+- Debug Info
+- Get Sender Name
+- Get Game Instance
+- Debug Warning
 
 ## Called By
 - StartStepByIndex
+- HandleStepFailureConsequences
 - HandlePuzzleCompletionConsequences
 
 ## Branch Points
@@ -28,5 +30,5 @@ Synchronizes or persists runtime state.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

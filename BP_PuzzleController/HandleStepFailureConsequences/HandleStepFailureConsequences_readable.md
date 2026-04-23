@@ -8,26 +8,25 @@ Auto-generated function summary.
 
 ## Reads
 - CurrentStepData
+- bStepActive
+- FailedStepsIds
 - ScareManagerRef
-- SaveManagerRef
-- CurrentPuzzleId
-- CurrentStepIndex
 
 ## Calls
 - Reset Current Step
-- Execute Scare by Id
+- Debug Warning
+- Get Sender Name
 - Is Valid
-- Set Current Puzzle Id
-- Set Current Puzzle Step Index
+- Execute Scare by Id
+- Sync Puzzle Progress to Save
 
 ## Called By
 - ReportStepFailure
 
 ## Branch Points
-- Switch on E_PuzzleType
 - Branch
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

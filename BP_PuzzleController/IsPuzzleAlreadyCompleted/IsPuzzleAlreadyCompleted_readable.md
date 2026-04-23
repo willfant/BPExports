@@ -8,15 +8,18 @@ Completes state, runtime flow, or progression.
 
 ## Returns
 - bIsCompleted (Boolean)
+- bIsCompleted (Boolean)
 
 ## Reads
-- SaveManagerRef
-- DEPRECATED__CompletedPuzzleIds
+- CompletedPuzzleIds
 
 ## Called By
 - CanPuzzleBeSelectedForCurrentContext
 
+## Branch Points
+- Branch
+
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

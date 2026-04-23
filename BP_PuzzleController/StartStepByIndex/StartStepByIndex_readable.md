@@ -34,4 +34,4 @@ Starts a flow, state transition, or activation sequence.
 ## Notes
 - Has latent nodes: No
 - Has error nodes: No
-- Has warning nodes: No
+- Has warning nodes: Yes

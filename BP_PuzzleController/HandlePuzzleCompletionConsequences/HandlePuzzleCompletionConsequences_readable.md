@@ -40,4 +40,4 @@ Auto-generated function summary.
 ## Notes
 - Has latent nodes: No
 - Has error nodes: Yes
-- Has warning nodes: No
+- Has warning nodes: Yes

@@ -226,10 +226,17 @@
 		},
 		{
 			"from_graph": "HandleStepFailureConsequences",
-			"from_node_title": "Execute Scare by Id",
-			"to_graph": "ExecuteScareById",
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
 			"call_type": "ExternalFunction",
-			"target_class": "BP_ScareManager_C"
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "HandleStepFailureConsequences",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "HandleStepFailureConsequences",
@@ -240,17 +247,31 @@
 		},
 		{
 			"from_graph": "HandleStepFailureConsequences",
-			"from_node_title": "Set Current Puzzle Id",
-			"to_graph": "SetCurrentPuzzleId",
+			"from_node_title": "Execute Scare by Id",
+			"to_graph": "ExecuteScareById",
 			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
+			"target_class": "BP_ScareManager_C"
 		},
 		{
 			"from_graph": "HandleStepFailureConsequences",
-			"from_node_title": "Set Current Puzzle Step Index",
-			"to_graph": "SetCurrentPuzzleStepIndex",
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
 			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "HandleStepFailureConsequences",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "HandleStepFailureConsequences",
+			"from_node_title": "Sync Puzzle Progress to Save",
+			"to_graph": "SyncPuzzleProgressToSave",
+			"call_type": "SelfFunction",
+			"target_class": ""
 		},
 		{
 			"from_graph": "ResetCurrentStep",
@@ -765,38 +786,87 @@
 		},
 		{
 			"from_graph": "SyncPuzzleProgressToSave",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "SyncPuzzleProgressToSave",
-			"from_node_title": "Set Current Puzzle Id",
-			"to_graph": "SetCurrentPuzzleId",
+			"from_node_title": "Request Auto Save",
+			"to_graph": "RequestAutoSave",
 			"call_type": "ExternalFunction",
 			"target_class": "BP_SaveManager_C"
 		},
 		{
 			"from_graph": "SyncPuzzleProgressToSave",
-			"from_node_title": "Set Current Puzzle Step Index",
-			"to_graph": "SetCurrentPuzzleStepIndex",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
 			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "SyncPuzzleProgressToSave",
-			"from_node_title": "Print String",
-			"to_graph": "PrintString",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "SyncPuzzleProgressToSave",
+			"from_node_title": "Get Game Instance",
+			"to_graph": "GetGameInstance",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "SyncPuzzleProgressToSave",
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "SyncPuzzleProgressToSave",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "SyncPuzzleProgressToSave",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetSystemLibrary"
 		},
 		{
 			"from_graph": "SyncPuzzleProgressToSave",
-			"from_node_title": "To String (Integer)",
-			"to_graph": "Conv_IntToString",
+			"from_node_title": "Debug Warning",
+			"to_graph": "DebugWarning",
 			"call_type": "ExternalFunction",
-			"target_class": "KismetStringLibrary"
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "SyncPuzzleProgressToSave",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "SyncPuzzleProgressToSave",
+			"from_node_title": "Request Auto Save",
+			"to_graph": "RequestAutoSave",
+			"call_type": "ExternalFunction",
+			"target_class": "BP_SaveManager_C"
+		},
+		{
+			"from_graph": "SyncPuzzleProgressToSave",
+			"from_node_title": "Debug Info",
+			"to_graph": "DebugInfo",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
+		},
+		{
+			"from_graph": "SyncPuzzleProgressToSave",
+			"from_node_title": "Get Sender Name",
+			"to_graph": "GetSenderName",
+			"call_type": "ExternalFunction",
+			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "Debug_ForceCompleteCurrentStep",

@@ -7,8 +7,8 @@ Function
 Starts a flow, state transition, or activation sequence.
 
 ## Returns
-- NewParam (Boolean)
-- NewParam (Boolean)
+- bStartedPuzzle  (Boolean)
+- bStartedPuzzle  (Boolean)
 
 ## Calls
 - Get Next Valid Puzzle Row Name for Current Context

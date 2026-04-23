@@ -20,7 +20,6 @@ Provides debug or developer-facing behavior.
 - ReportStepFailure
 - HandlePuzzleCompletionConsequences
 - ResetCurrentPuzzle
-- SyncPuzzleProgressToSave
 
 ## Branch Points
 - Branch
