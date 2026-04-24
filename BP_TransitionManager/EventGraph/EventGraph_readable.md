@@ -7,9 +7,7 @@ EventGraph
 Main runtime entry graph for this Blueprint.
 
 ## Calls
-- Finish Transition
 - Initialize Transition Manager
-- Execute Level Travel
 
 ## Notes
 - Has latent nodes: No

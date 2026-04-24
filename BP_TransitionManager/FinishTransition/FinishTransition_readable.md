@@ -17,7 +17,6 @@ Auto-generated function summary.
 - Clear Startup Pending Transition
 
 ## Called By
-- EventGraph
 - ExecuteLevelTravel
 - HandlePendingArrivalTransition
 - TravelToLevelRef

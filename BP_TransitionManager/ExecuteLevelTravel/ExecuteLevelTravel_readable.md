@@ -15,7 +15,6 @@ Auto-generated function summary.
 - Finish Transition
 
 ## Called By
-- EventGraph
 - StartMemoryTransition
 
 ## Branch Points
