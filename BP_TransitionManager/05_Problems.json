@@ -1,18 +1,6 @@
 {
 	"problems": [
 		{
-			"graph": "CacheManagerReferences",
-			"problem_type": "RepeatedGetActorOfClass",
-			"details": "Graph uses GetActorOfClass 2 times.",
-			"node_name": "",
-			"node_title": "",
-			"severity": "medium",
-			"confidence": 0.94999999999999996,
-			"why_it_matters": "Repeated GetActorOfClass increases coupling and assumes a stable singleton-like level composition.",
-			"likely_impact": "Makes the Blueprint harder to scale and more fragile across maps or tests.",
-			"suggested_fix": "Resolve references centrally via GameInstance, subsystem, bootstrap actor, or cached refs."
-		},
-		{
 			"graph": "HandlePendingArrivalTransition",
 			"problem_type": "NodeError",
 			"details": "Node has explicit error state.",

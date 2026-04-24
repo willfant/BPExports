@@ -30,7 +30,7 @@ Auto-generated function summary.
 - Debug Message
 
 ## Called By
-- EventGraph
+- InitializeTransitionManager
 
 ## Branch Points
 - Branch

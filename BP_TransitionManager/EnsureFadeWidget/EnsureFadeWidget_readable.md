@@ -9,7 +9,6 @@ Auto-generated function summary.
 ## Reads
 - FadeWidgetRef
 - FadeWidgetClass
-- bDebugTransitions
 
 ## Writes
 - FadeWidgetRef
@@ -19,10 +18,9 @@ Auto-generated function summary.
 - Get Player Controller
 - Add to Viewport
 - Set Fade Instant
-- Debug Message
 
 ## Called By
-- EventGraph
+- InitializeTransitionManager
 
 ## Branch Points
 - Branch
