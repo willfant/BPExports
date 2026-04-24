@@ -8,12 +8,17 @@ Initializes references, state, or startup flow.
 
 ## Reads
 - CachedWorldModeSystem
+- WorldModeSystemRef
+
+## Writes
+- CachedWorldModeSystem
 
 ## Calls
 - Is Valid
-- Debug Warning
-- Get Sender Name
 - Debug Info
+- Get Sender Name
+- Debug Warning
+- Get Game Instance
 
 ## Called By
 - InitializePuzzleController

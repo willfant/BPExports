@@ -19,7 +19,6 @@ Initializes references, state, or startup flow.
 - Get Game Instance
 - Debug Critical
 - Get Sender Name
-- Debug Warning
 - Debug Info
 
 ## Called By
@@ -30,5 +29,5 @@ Initializes references, state, or startup flow.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: No
+- Has error nodes: Yes
 - Has warning nodes: No
