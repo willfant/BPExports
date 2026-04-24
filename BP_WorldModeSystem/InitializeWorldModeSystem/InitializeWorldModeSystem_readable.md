@@ -7,8 +7,8 @@ Function
 Initializes references, state, or startup flow.
 
 ## Reads
-- bDebugEnabled
 - SaveManagerRef
+- bInitialized
 
 ## Writes
 - CachedGameInstance
@@ -17,8 +17,7 @@ Initializes references, state, or startup flow.
 
 ## Calls
 - Get Game Instance
-- Debug Message
-- Is Valid
+- Register World Mode System
 
 ## Called By
 - EventGraph

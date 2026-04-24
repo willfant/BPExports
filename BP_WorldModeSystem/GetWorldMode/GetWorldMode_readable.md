@@ -13,6 +13,7 @@ Auto-generated function summary.
 - CurrentWorldMode
 
 ## Called By
+- SyncFromGameInstance
 - RestoreWorldModeFromSave
 
 ## Notes

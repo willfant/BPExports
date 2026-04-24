@@ -9,45 +9,10 @@
 		},
 		{
 			"from_graph": "EventGraph",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "EventGraph",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
-		},
-		{
-			"from_graph": "EventGraph",
 			"from_node_title": "Restore World Mode from Save",
 			"to_graph": "RestoreWorldModeFromSave",
 			"call_type": "SelfFunction",
 			"target_class": ""
-		},
-		{
-			"from_graph": "EventGraph",
-			"from_node_title": "Get Current World Mode",
-			"to_graph": "GetCurrentWorldMode",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
-		},
-		{
-			"from_graph": "EventGraph",
-			"from_node_title": "Set World Mode",
-			"to_graph": "SetWorldMode",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "EventGraph",
-			"from_node_title": "Is Valid",
-			"to_graph": "IsValid",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
 		},
 		{
 			"from_graph": "InitializeWorldModeSystem",
@@ -58,17 +23,10 @@
 		},
 		{
 			"from_graph": "InitializeWorldModeSystem",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_node_title": "Register World Mode System",
+			"to_graph": "RegisterWorldModeSystem",
 			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "InitializeWorldModeSystem",
-			"from_node_title": "Is Valid",
-			"to_graph": "IsValid",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
+			"target_class": "GI_Echoes_C"
 		},
 		{
 			"from_graph": "SetWorldMode",
@@ -79,13 +37,6 @@
 		},
 		{
 			"from_graph": "SetWorldMode",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "SetWorldMode",
 			"from_node_title": "Is Valid",
 			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
@@ -93,20 +44,20 @@
 		},
 		{
 			"from_graph": "SetWorldMode",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "SetWorldMode",
-			"from_node_title": "Set Current World Mode",
-			"to_graph": "SetCurrentWorldMode",
+			"from_node_title": "Request Auto Save",
+			"to_graph": "RequestAutoSave",
 			"call_type": "ExternalFunction",
 			"target_class": "BP_SaveManager_C"
 		},
 		{
 			"from_graph": "SyncFromGameInstance",
+			"from_node_title": "Initialize World Mode System",
+			"to_graph": "InitializeWorldModeSystem",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "SyncFromGameInstance",
 			"from_node_title": "Is Valid",
 			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
@@ -114,8 +65,22 @@
 		},
 		{
 			"from_graph": "SyncFromGameInstance",
-			"from_node_title": "Initialize World Mode System",
-			"to_graph": "InitializeWorldModeSystem",
+			"from_node_title": "Get World Mode System Ref",
+			"to_graph": "GetWorldModeSystemRef",
+			"call_type": "ExternalFunction",
+			"target_class": "GI_Echoes_C"
+		},
+		{
+			"from_graph": "SyncFromGameInstance",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "SyncFromGameInstance",
+			"from_node_title": "Get World Mode",
+			"to_graph": "GetWorldMode",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
@@ -132,48 +97,6 @@
 			"to_graph": "GetWorldMode",
 			"call_type": "SelfFunction",
 			"target_class": ""
-		},
-		{
-			"from_graph": "RestoreWorldModeFromSave",
-			"from_node_title": "Debug Critical",
-			"to_graph": "DebugCritical",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "RestoreWorldModeFromSave",
-			"from_node_title": "Get Display Name",
-			"to_graph": "GetDisplayName",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
-		},
-		{
-			"from_graph": "RestoreWorldModeFromSave",
-			"from_node_title": "String To Name",
-			"to_graph": "Conv_StringToName",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetStringLibrary"
-		},
-		{
-			"from_graph": "RestoreWorldModeFromSave",
-			"from_node_title": "Debug Info",
-			"to_graph": "DebugInfo",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "RestoreWorldModeFromSave",
-			"from_node_title": "Get Display Name",
-			"to_graph": "GetDisplayName",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
-		},
-		{
-			"from_graph": "RestoreWorldModeFromSave",
-			"from_node_title": "String To Name",
-			"to_graph": "Conv_StringToName",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetStringLibrary"
 		}
 	]
 }

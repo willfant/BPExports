@@ -7,6 +7,7 @@ Function
 Synchronizes or persists runtime state.
 
 ## Reads
+- bInitialized
 - CachedGameInstance
 - CurrentWorldMode
 
@@ -14,13 +15,15 @@ Synchronizes or persists runtime state.
 - CurrentWorldMode
 
 ## Calls
-- Is Valid
 - Initialize World Mode System
+- Is Valid
+- Get World Mode System Ref
+- Get World Mode
 
 ## Branch Points
 - Branch
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

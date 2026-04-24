@@ -9,10 +9,9 @@ Auto-generated function summary.
 ## Reads
 - bInitialized
 - CurrentWorldMode
-- bDebugEnabled
 - OldMode
+- bIsRestoringFromSave
 - SaveManagerRef
-- bIsRestoringFromSave 
 
 ## Writes
 - OldMode
@@ -20,12 +19,10 @@ Auto-generated function summary.
 
 ## Calls
 - Initialize World Mode System
-- Debug Message
 - Is Valid
-- Set Current World Mode
+- Request Auto Save
 
 ## Called By
-- EventGraph
 - RestoreWorldModeFromSave
 
 ## Branch Points
@@ -33,5 +30,5 @@ Auto-generated function summary.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No
