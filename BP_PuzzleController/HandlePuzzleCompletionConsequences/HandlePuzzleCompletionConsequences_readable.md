@@ -9,15 +9,20 @@ Auto-generated function summary.
 ## Reads
 - CurrentPuzzleData
 - ObjectiveManagerRef
+- GhostManagerRef
 - TransitionManagerRef
+
+## Writes
+- bStartedNextPuzzleL
+- bStartedRewardObjectiveL
+- bTriggeredTransitionL
 
 ## Calls
 - Is Valid
 - Start Objective
-- Debug Warning
-- Get Sender Name
+- Set Ghost State
+- Start Memory Transition
 - Start Next Valid Puzzle for Current Context
-- Debug Info
 
 ## Called By
 - CompleteCurrentPuzzle
