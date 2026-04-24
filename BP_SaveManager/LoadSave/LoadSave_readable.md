@@ -25,7 +25,6 @@ Synchronizes or persists runtime state.
 - Debug Info
 - Get Sender Name
 - Is Valid
-- Debug Critical
 
 ## Called By
 - InitializeSaveSystem
@@ -36,5 +35,5 @@ Synchronizes or persists runtime state.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

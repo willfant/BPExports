@@ -13,32 +13,28 @@ Auto-generated function summary.
 
 ## Reads
 - CurrentSaveObject
+- CurrentGhostId
 - SnapshotLoc
-- CurrentSaveData
+- ClearedGhostIds
+- CurrentGhostState
+- CurrentQuestId
+- CurrentObjectiveId
+- ObjectiveStates
+- CompletedPuzzleIds
+- CurrentPuzzleId
+- CurrentStepIndex
 
 ## Writes
 - SnapshotLoc
 - CurrentSaveData
-- SaveData
 
 ## Calls
-- Debug Critical
-- Get Sender Name
 - Resolve Owner Manager Refs
 - Initialize Default Save Data
-- Get Current Ghost Id
+- Is Valid
 - Get World Mode
-- Get Current Quest Id
-- Get Current Step Index
-- Get Current Puzzle Id
-- Get Completed Puzzle Ids
 - Get Current Level Name
 - String To Name
-- Get Current Objective Id
-- Get Current Objective States
-- Get Current Ghost State
-- Debug Info
-- Get Cleared Ghost Ids
 
 ## Called By
 - WriteSaveToDisk
@@ -48,5 +44,5 @@ Auto-generated function summary.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

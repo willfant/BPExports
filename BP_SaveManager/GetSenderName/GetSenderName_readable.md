@@ -18,12 +18,10 @@ Auto-generated function summary.
 - LoadSave
 - CreateNewSave
 - WriteSaveToDisk
-- BuildSnapshotFromManagers
 - ApplySnapshotToManagers
 - RequestAutoSave
 - ExecuteAutoSave
 - RestoreFullGameState
-- ResolveOwnerManagerRefs
 
 ## Notes
 - Has latent nodes: No

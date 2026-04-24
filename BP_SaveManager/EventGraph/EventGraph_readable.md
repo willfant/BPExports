@@ -17,7 +17,6 @@ Main runtime entry graph for this Blueprint.
 - Initialize Save System
 - Get Game Instance
 - Register Save Manager
-- Debug Warning
 
 ## Branch Points
 - Branch
