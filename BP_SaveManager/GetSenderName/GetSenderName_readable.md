@@ -20,7 +20,6 @@ Auto-generated function summary.
 - WriteSaveToDisk
 - ApplySnapshotToManagers
 - RequestAutoSave
-- ExecuteAutoSave
 - RestoreFullGameState
 
 ## Notes

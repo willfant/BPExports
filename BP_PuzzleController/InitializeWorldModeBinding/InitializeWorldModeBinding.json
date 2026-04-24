@@ -3,7 +3,7 @@
 	"graph_type": "Function",
 	"entry_node_id": "K2Node_FunctionEntry_0",
 	"has_latent_nodes": false,
-	"has_error_nodes": true,
+	"has_error_nodes": false,
 	"has_warning_nodes": false,
 	"locals": [],
 	"returns": [],
@@ -11,18 +11,22 @@
 	{
 		"purpose": "Initializes references, state, or startup flow.",
 		"reads_variables": [
+			"bShuttingDown",
+			"bWorldModeBindingInitialized",
 			"CachedWorldModeSystem",
+			"WorldModeBindingRetryHandle",
 			"WorldModeSystemRef"
 		],
 		"writes_variables": [
-			"CachedWorldModeSystem"
+			"WorldModeBindingRetryHandle",
+			"CachedWorldModeSystem",
+			"bWorldModeBindingInitialized"
 		],
 		"calls": [
 			"Is Valid",
-			"Debug Info",
-			"Get Sender Name",
-			"Debug Warning",
-			"Get Game Instance"
+			"Get Game Instance",
+			"Clear and Invalidate Timer by Handle",
+			"Set Timer by Function Name"
 		],
 		"called_by": [
 			"InitializePuzzleController"
@@ -59,27 +63,27 @@
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_VariableGet_1",
-			"node_name": "K2Node_VariableGet_1",
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
-			"title": "Get CachedWorldModeSystem",
-			"title_single_line": "Get CachedWorldModeSystem",
+			"title": "Get bShuttingDown",
+			"title_single_line": "Get bShuttingDown",
 			"comment": "",
-			"guid": "2cca420e-47b4-6bf4-1a76-71936f496ab5",
+			"guid": "3b6d262a-4819-a243-d9f8-eb86ed3cc10b",
 			"x": 64,
-			"y": -144,
+			"y": 224,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "CachedWorldModeSystem",
+					"pin_name": "bShuttingDown",
 					"direction": "Output",
-					"category": "object",
+					"category": "bool",
 					"subcategory": "None",
-					"resolved_type": "BP_WorldModeSystem_C",
-					"default_value": "",
-					"linked_count": 2
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -94,60 +98,16 @@
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_CallFunction_7",
-			"node_name": "K2Node_CallFunction_7",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Is Valid",
-			"title_single_line": "Is Valid",
-			"comment": "",
-			"guid": "e156444c-4873-5b37-9344-58be60e2864d",
-			"x": 304,
-			"y": 112,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "KismetSystemLibrary",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Object",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_IfThenElse_0",
-			"node_name": "K2Node_IfThenElse_0",
+			"node_id": "K2Node_IfThenElse_2",
+			"node_name": "K2Node_IfThenElse_2",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "13ab7e7a-4730-6e31-4d68-b2ba8757cf80",
-			"x": 570,
-			"y": 9,
+			"guid": "69ba4e0f-466a-aaa1-f555-6e9ff39114e5",
+			"x": 368,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -191,16 +151,77 @@
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_AddDelegate_1",
-			"node_name": "K2Node_AddDelegate_1",
-			"node_kind": "BindDelegate",
-			"ue_class": "K2Node_AddDelegate",
-			"title": "Bind Event to On World Mode Changed",
-			"title_single_line": "Bind Event to On World Mode Changed",
+			"node_id": "K2Node_FunctionResult_5",
+			"node_name": "K2Node_FunctionResult_5",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "f9f8234f-473f-e337-07f0-d5a33e08bf6a",
-			"x": 2432,
-			"y": -320,
+			"guid": "29c36c8e-4631-297d-caab-c9af534efcd7",
+			"x": 624,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_VariableGet_3",
+			"node_name": "K2Node_VariableGet_3",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bWorldModeBindingInitialized",
+			"title_single_line": "Get bWorldModeBindingInitialized",
+			"comment": "",
+			"guid": "cf7326ce-48bc-5874-aeea-d68063588299",
+			"x": 464,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bWorldModeBindingInitialized",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_3",
+			"node_name": "K2Node_IfThenElse_3",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "51f0ff7f-4da2-3018-765c-df88c5baf1b7",
+			"x": 756,
+			"y": 48,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -214,6 +235,15 @@
 					"linked_count": 1
 				},
 				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
 					"pin_name": "then",
 					"direction": "Output",
 					"category": "exec",
@@ -223,8 +253,60 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "self",
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_6",
+			"node_name": "K2Node_FunctionResult_6",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "ad0b5291-46ec-75d8-6d22-7da0223ccd6f",
+			"x": 1008,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
 					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_VariableGet_4",
+			"node_name": "K2Node_VariableGet_4",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CachedWorldModeSystem",
+			"title_single_line": "Get CachedWorldModeSystem",
+			"comment": "",
+			"guid": "40fea76c-4274-b55e-9d65-468ec0900512",
+			"x": 944,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CachedWorldModeSystem",
+					"direction": "Output",
 					"category": "object",
 					"subcategory": "None",
 					"resolved_type": "BP_WorldModeSystem_C",
@@ -232,29 +314,29 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Delegate",
+					"pin_name": "self",
 					"direction": "Input",
-					"category": "delegate",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "delegate",
+					"resolved_type": "BP_PuzzleController_C",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				}
 			],
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_CreateDelegate_1",
-			"node_name": "K2Node_CreateDelegate_1",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_CreateDelegate",
-			"title": "Create Event",
-			"title_single_line": "Create Event",
+			"node_id": "K2Node_CallFunction_13",
+			"node_name": "K2Node_CallFunction_13",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
 			"comment": "",
-			"guid": "eba904b4-48a1-7f91-921f-1aa7630e50f5",
-			"x": 2112,
-			"y": -160,
-			"has_error": true,
+			"guid": "3f07b7a6-40ec-1686-2e6a-de8b50947f2a",
+			"x": 1040,
+			"y": 144,
+			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
@@ -262,68 +344,42 @@
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "Object",
+					"resolved_type": "KismetSystemLibrary",
 					"default_value": "",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "OutputDelegate",
-					"direction": "Output",
-					"category": "delegate",
-					"subcategory": "None",
-					"resolved_type": "delegate",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_Knot_0",
-			"node_name": "K2Node_Knot_0",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "f3d1d986-4940-aa6f-3c43-e5b7847d2654",
-			"x": 960,
-			"y": -160,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
+					"pin_name": "Object",
 					"direction": "Input",
-					"category": "exec",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "exec",
+					"resolved_type": "Object",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "OutputPin",
+					"pin_name": "ReturnValue",
 					"direction": "Output",
-					"category": "exec",
+					"category": "bool",
 					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
+					"resolved_type": "Boolean",
+					"default_value": "false",
 					"linked_count": 1
 				}
 			],
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_CallFunction_9",
-			"node_name": "K2Node_CallFunction_9",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Info",
-			"title_single_line": "Debug Info",
+			"node_id": "K2Node_IfThenElse_4",
+			"node_name": "K2Node_IfThenElse_4",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "4e3d041a-44dd-8d15-3373-77a808e74a1e",
-			"x": 2928,
-			"y": -320,
+			"guid": "75918713-47b8-f327-3bd9-54bc82608272",
+			"x": 1312,
+			"y": 80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -334,6 +390,15 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
 					"linked_count": 1
 				},
 				{
@@ -346,346 +411,28 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator15",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "[PuzzleController] World mode binding initialized successfully",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_Self_3",
-			"node_name": "K2Node_Self_3",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "854131e8-4484-2b75-4045-0eacf7d7a6d3",
-			"x": 2560,
-			"y": -192,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 2
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_CallFunction_10",
-			"node_name": "K2Node_CallFunction_10",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Get Sender Name",
-			"title_single_line": "Get Sender Name",
-			"comment": "",
-			"guid": "21af702f-4f8d-00bb-d83d-0c9a3f27e318",
-			"x": 2704,
-			"y": -144,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Ref",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Name",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_FunctionResult_3",
-			"node_name": "K2Node_FunctionResult_3",
-			"node_kind": "Return",
-			"ue_class": "K2Node_FunctionResult",
-			"title": "Return Node",
-			"title_single_line": "Return Node",
-			"comment": "",
-			"guid": "7a904487-4913-d454-db06-1bb9d1fb41ce",
-			"x": 3520,
-			"y": -320,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_CallFunction_11",
-			"node_name": "K2Node_CallFunction_11",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Warning",
-			"title_single_line": "Debug Warning",
-			"comment": "",
-			"guid": "4407d419-4e80-e0a9-7d4c-d9b3ae733a00",
-			"x": 1344,
-			"y": 480,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
+					"pin_name": "else",
 					"direction": "Output",
 					"category": "exec",
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator15",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "[PuzzleController] InitializeWorldModeAudioBinding skipped because WorldModeSystemRef is invalid",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
 				}
 			],
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_Self_4",
-			"node_name": "K2Node_Self_4",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "a3e3a3a4-47b4-0c9d-a6d0-088d3bb838d3",
-			"x": 944,
-			"y": 560,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 2
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_CallFunction_12",
-			"node_name": "K2Node_CallFunction_12",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Get Sender Name",
-			"title_single_line": "Get Sender Name",
-			"comment": "",
-			"guid": "39d27e02-4872-b089-b81a-6690a6a5a5d7",
-			"x": 1120,
-			"y": 608,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Ref",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Name",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_CallFunction_0",
-			"node_name": "K2Node_CallFunction_0",
+			"node_id": "K2Node_CallFunction_14",
+			"node_name": "K2Node_CallFunction_14",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Get Game Instance",
 			"title_single_line": "Get Game Instance",
 			"comment": "",
-			"guid": "75b8248d-4f0d-c977-c32e-6a89d24857d8",
-			"x": 448,
-			"y": 352,
+			"guid": "1f74bc52-4d83-9a28-6c10-fc9045e0dda5",
+			"x": 1280,
+			"y": 320,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -720,16 +467,16 @@
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_DynamicCast_0",
-			"node_name": "K2Node_DynamicCast_0",
+			"node_id": "K2Node_DynamicCast_1",
+			"node_name": "K2Node_DynamicCast_1",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_DynamicCast",
 			"title": "Cast To GI_Echoes",
 			"title_single_line": "Cast To GI_Echoes",
 			"comment": "",
-			"guid": "cebdf89f-4b1e-2cc9-cfa4-4296997a9657",
-			"x": 960,
-			"y": 160,
+			"guid": "6f8cf038-46d7-3dda-97e6-5bb7792d7d0f",
+			"x": 1616,
+			"y": 288,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -791,16 +538,370 @@
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_VariableGet_0",
-			"node_name": "K2Node_VariableGet_0",
+			"node_id": "K2Node_CallFunction_18",
+			"node_name": "K2Node_CallFunction_18",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Clear and Invalidate Timer by Handle",
+			"title_single_line": "Clear and Invalidate Timer by Handle",
+			"comment": "",
+			"guid": "48bc2a60-4335-da1a-94a7-099b6d0fc3e1",
+			"x": 1888,
+			"y": 544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Handle",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_VariableGet_6",
+			"node_name": "K2Node_VariableGet_6",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get WorldModeBindingRetryHandle",
+			"title_single_line": "Get WorldModeBindingRetryHandle",
+			"comment": "",
+			"guid": "775827e8-4039-0381-17df-beabf5c45a06",
+			"x": 1488,
+			"y": 592,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "WorldModeBindingRetryHandle",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_CallFunction_19",
+			"node_name": "K2Node_CallFunction_19",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Set Timer by Function Name",
+			"title_single_line": "Set Timer by Function Name",
+			"comment": "",
+			"guid": "217b4a20-4239-d547-85ac-25ab876c197c",
+			"x": 2320,
+			"y": 544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "FunctionName",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "InitializeWorldModeBinding",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Time",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.200000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bLooping",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bMaxOncePerFrame",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InitialStartDelay",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InitialStartDelayVariance",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_VariableSet_3",
+			"node_name": "K2Node_VariableSet_3",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set WorldModeBindingRetryHandle",
+			"title_single_line": "Set WorldModeBindingRetryHandle",
+			"comment": "",
+			"guid": "a4b04633-4c00-106b-026d-ada85ff0f118",
+			"x": 2768,
+			"y": 560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "WorldModeBindingRetryHandle",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_2",
+			"node_name": "K2Node_MacroInstance_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
+			"comment": "",
+			"guid": "5d145f27-4226-f5de-8f66-6fa89a0f777b",
+			"x": 3248,
+			"y": 544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator2",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[PuzzleController] InitializeWorldModeBinding retry scheduled because GI_Echoes is not ready yet",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_8",
+			"node_name": "K2Node_FunctionResult_8",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "ba58e261-4d8a-c76a-fc9d-d08f8d6c48d2",
+			"x": 3840,
+			"y": 544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_VariableGet_5",
+			"node_name": "K2Node_VariableGet_5",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get WorldModeSystemRef",
 			"title_single_line": "Get WorldModeSystemRef",
 			"comment": "",
-			"guid": "feb976b3-40ea-5194-6357-01a8322da6e3",
-			"x": 1232,
-			"y": 288,
+			"guid": "63a7e4ba-4a90-07bd-672d-c8be2a74f936",
+			"x": 1888,
+			"y": 192,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -826,42 +927,16 @@
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_FunctionResult_4",
-			"node_name": "K2Node_FunctionResult_4",
-			"node_kind": "Return",
-			"ue_class": "K2Node_FunctionResult",
-			"title": "Return Node",
-			"title_single_line": "Return Node",
-			"comment": "",
-			"guid": "812061f8-48ae-4ce7-ff06-5f842eab8bb6",
-			"x": 1952,
-			"y": 480,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_VariableSet_0",
-			"node_name": "K2Node_VariableSet_0",
+			"node_id": "K2Node_VariableSet_2",
+			"node_name": "K2Node_VariableSet_2",
 			"node_kind": "VariableSet",
 			"ue_class": "K2Node_VariableSet",
 			"title": "Set CachedWorldModeSystem",
 			"title_single_line": "Set CachedWorldModeSystem",
 			"comment": "",
-			"guid": "e137f4c8-482a-aef7-6e45-91a63108d1b6",
-			"x": 1376,
-			"y": 176,
+			"guid": "4bbd5b48-48f1-e5c0-f308-f986b224984b",
+			"x": 2192,
+			"y": 304,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -893,15 +968,6 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Output_Get",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_WorldModeSystem_C",
-					"default_value": "",
-					"linked_count": 2
-				},
-				{
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
@@ -909,21 +975,74 @@
 					"resolved_type": "BP_PuzzleController_C",
 					"default_value": "",
 					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_WorldModeSystem_C",
+					"default_value": "",
+					"linked_count": 1
 				}
 			],
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_1",
-			"node_name": "K2Node_IfThenElse_1",
+			"node_id": "K2Node_CallFunction_17",
+			"node_name": "K2Node_CallFunction_17",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "0a8f120c-4cda-6443-2ee2-059b8dd7b9ef",
+			"x": 2464,
+			"y": 384,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_5",
+			"node_name": "K2Node_IfThenElse_5",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "7913dd04-456b-5649-e803-5bbb5a976358",
-			"x": 2192,
-			"y": 176,
+			"guid": "afca2ee9-4e4c-6a3b-4237-1d9a512f9604",
+			"x": 2704,
+			"y": 96,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -967,19 +1086,134 @@
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_CallFunction_8",
-			"node_name": "K2Node_CallFunction_8",
+			"node_id": "K2Node_CallFunction_15",
+			"node_name": "K2Node_CallFunction_15",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Is Valid",
-			"title_single_line": "Is Valid",
+			"title": "Clear and Invalidate Timer by Handle",
+			"title_single_line": "Clear and Invalidate Timer by Handle",
 			"comment": "",
-			"guid": "3c2e24d8-4b94-78e1-a948-79958944e935",
-			"x": 1744,
+			"guid": "d06b8f6c-454b-6282-bf1a-8397b91cc6d0",
+			"x": 3136,
 			"y": 240,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Handle",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_VariableGet_22",
+			"node_name": "K2Node_VariableGet_22",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get WorldModeBindingRetryHandle",
+			"title_single_line": "Get WorldModeBindingRetryHandle",
+			"comment": "",
+			"guid": "7eea4c64-4d68-7f1e-2c06-74bd021abed4",
+			"x": 2736,
+			"y": 288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "WorldModeBindingRetryHandle",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_CallFunction_16",
+			"node_name": "K2Node_CallFunction_16",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Set Timer by Function Name",
+			"title_single_line": "Set Timer by Function Name",
+			"comment": "",
+			"guid": "ddccd833-4c0e-c056-f115-3cb88efec56c",
+			"x": 3568,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
 				{
 					"pin_name": "self",
 					"direction": "Input",
@@ -996,31 +1230,85 @@
 					"subcategory": "None",
 					"resolved_type": "Object",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
+					"pin_name": "FunctionName",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "InitializeWorldModeBinding",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Time",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.200000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bLooping",
+					"direction": "Input",
 					"category": "bool",
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bMaxOncePerFrame",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InitialStartDelay",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InitialStartDelayVariance",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "float",
+					"resolved_type": "Float",
+					"default_value": "0.000000",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
 					"linked_count": 1
 				}
 			],
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_AddDelegate_0",
-			"node_name": "K2Node_AddDelegate_0",
-			"node_kind": "BindDelegate",
-			"ue_class": "K2Node_AddDelegate",
-			"title": "Bind Event to On World Mode Changed",
-			"title_single_line": "Bind Event to On World Mode Changed",
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set WorldModeBindingRetryHandle",
+			"title_single_line": "Set WorldModeBindingRetryHandle",
 			"comment": "",
-			"guid": "21045ffe-422d-41ea-6e53-cb8fd0959fe6",
-			"x": 3008,
-			"y": 160,
+			"guid": "acec394b-4ca0-6986-443f-c3a33cc57806",
+			"x": 4016,
+			"y": 256,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1032,6 +1320,217 @@
 					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "WorldModeBindingRetryHandle",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_1",
+			"node_name": "K2Node_MacroInstance_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
+			"comment": "",
+			"guid": "5aa89645-4ec1-24de-1096-57baee1e7c7f",
+			"x": 4496,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator2",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[PuzzleController] InitializeWorldModeBinding retry scheduled because CachedWorldModeSystem is still invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_7",
+			"node_name": "K2Node_FunctionResult_7",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "b963948f-4b1a-a8c1-51d5-aea9e955bd06",
+			"x": 5088,
+			"y": 240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_Knot_2",
+			"node_name": "K2Node_Knot_2",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "67dddbf9-4000-80f7-060b-37afd577cb0c",
+			"x": 2528,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_VariableGet_7",
+			"node_name": "K2Node_VariableGet_7",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CachedWorldModeSystem",
+			"title_single_line": "Get CachedWorldModeSystem",
+			"comment": "",
+			"guid": "58c8fda3-45ff-5ddc-c524-7d88db5675d5",
+			"x": 3136,
+			"y": -160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CachedWorldModeSystem",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_WorldModeSystem_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_AddDelegate_2",
+			"node_name": "K2Node_AddDelegate_2",
+			"node_kind": "BindDelegate",
+			"ue_class": "K2Node_AddDelegate",
+			"title": "Bind Event to On World Mode Changed",
+			"title_single_line": "Bind Event to On World Mode Changed",
+			"comment": "",
+			"guid": "bba2d182-4918-531b-b87a-0791d8cae2e7",
+			"x": 3184,
+			"y": -96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 2
 				},
 				{
 					"pin_name": "then",
@@ -1064,17 +1563,52 @@
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_CreateDelegate_0",
-			"node_name": "K2Node_CreateDelegate_0",
+			"node_id": "K2Node_Knot_3",
+			"node_name": "K2Node_Knot_3",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "5b871df9-4185-33de-bc5f-27bd8b6416e4",
+			"x": 1808,
+			"y": -64,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_CreateDelegate_2",
+			"node_name": "K2Node_CreateDelegate_2",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_CreateDelegate",
 			"title": "Create Event",
 			"title_single_line": "Create Event",
 			"comment": "",
-			"guid": "e7ef5e0b-4b2f-191c-63c1-c596e68a593a",
-			"x": 2688,
-			"y": 304,
-			"has_error": true,
+			"guid": "900c7f4c-4995-271b-e9d0-d4bef89ee08b",
+			"x": 3104,
+			"y": 48,
+			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
@@ -1099,16 +1633,16 @@
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Info",
-			"title_single_line": "Debug Info",
+			"node_id": "K2Node_VariableSet_4",
+			"node_name": "K2Node_VariableSet_4",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bWorldModeBindingInitialized",
+			"title_single_line": "Set bWorldModeBindingInitialized",
 			"comment": "",
-			"guid": "f97d1777-4c04-4f98-0214-b085b45bd5f5",
-			"x": 3504,
-			"y": 144,
+			"guid": "ba2041ea-4bbc-82e8-f273-aea7894f1e27",
+			"x": 3696,
+			"y": -80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1131,20 +1665,55 @@
 					"linked_count": 1
 				},
 				{
+					"pin_name": "bWorldModeBindingInitialized",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
+					"resolved_type": "BP_PuzzleController_C",
 					"default_value": "",
 					"linked_count": 0
 				},
 				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
 					"subcategory": "None",
-					"resolved_type": "Object",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeWorldModeBinding"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_3",
+			"node_name": "K2Node_MacroInstance_3",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Info",
+			"title_single_line": "DBG Info",
+			"comment": "",
+			"guid": "a55bcede-4144-e012-3803-339985bf9e54",
+			"x": 4112,
+			"y": -96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
 				},
@@ -1154,17 +1723,8 @@
 					"category": "byte",
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator15",
+					"default_value": "NewEnumerator2",
 					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
 				},
 				{
 					"pin_name": "Message",
@@ -1176,146 +1736,6 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_Self_1",
-			"node_name": "K2Node_Self_1",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "3dc97b76-4b01-a4a4-d27e-1ea0d33e12dc",
-			"x": 3136,
-			"y": 272,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 2
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_CallFunction_6",
-			"node_name": "K2Node_CallFunction_6",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Get Sender Name",
-			"title_single_line": "Get Sender Name",
-			"comment": "",
-			"guid": "4196c3c7-407d-7e5b-cf1e-e89620301d1c",
-			"x": 3280,
-			"y": 320,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Ref",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Name",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_FunctionResult_1",
-			"node_name": "K2Node_FunctionResult_1",
-			"node_kind": "Return",
-			"ue_class": "K2Node_FunctionResult",
-			"title": "Return Node",
-			"title_single_line": "Return Node",
-			"comment": "",
-			"guid": "9f9f84c4-4abf-43f1-2633-73803f166411",
-			"x": 4096,
-			"y": 144,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_CallFunction_4",
-			"node_name": "K2Node_CallFunction_4",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Warning",
-			"title_single_line": "Debug Warning",
-			"comment": "",
-			"guid": "ef12daec-4219-f313-fd5b-8ca2a28ef326",
-			"x": 2816,
-			"y": 688,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
 					"pin_name": "then",
 					"direction": "Output",
 					"category": "exec",
@@ -1323,154 +1743,21 @@
 					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator15",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "[PuzzleController] InitializeWorldModeAudioBinding skipped because WorldModeSystemRef is invalid",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
 				}
 			],
 			"target_class": "InitializeWorldModeBinding"
 		},
 		{
-			"node_id": "K2Node_Self_0",
-			"node_name": "K2Node_Self_0",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "a7cb4f85-4369-632c-2323-e3932f4126a2",
-			"x": 2416,
-			"y": 768,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 2
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_CallFunction_5",
-			"node_name": "K2Node_CallFunction_5",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Get Sender Name",
-			"title_single_line": "Get Sender Name",
-			"comment": "",
-			"guid": "3f45c69a-4451-2c7d-edd4-a58217508735",
-			"x": 2592,
-			"y": 816,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Ref",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Name",
-					"direction": "Output",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
-					"linked_count": 1
-				}
-			],
-			"target_class": "InitializeWorldModeBinding"
-		},
-		{
-			"node_id": "K2Node_FunctionResult_0",
-			"node_name": "K2Node_FunctionResult_0",
+			"node_id": "K2Node_FunctionResult_9",
+			"node_name": "K2Node_FunctionResult_9",
 			"node_kind": "Return",
 			"ue_class": "K2Node_FunctionResult",
 			"title": "Return Node",
 			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "131441cb-4ee1-b28b-e32e-c8976485abce",
-			"x": 3424,
-			"y": 688,
+			"guid": "2a8054f6-41fe-4aeb-0666-0c8bd9b4484c",
+			"x": 4592,
+			"y": -96,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1492,307 +1779,323 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "InitializeWorldModeBinding",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_id": "K2Node_IfThenElse_2",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_id": "K2Node_IfThenElse_2",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_Knot_0",
+			"to_node_id": "K2Node_FunctionResult_5",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_6",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_Knot_3",
 			"to_node_title": "Reroute Node",
 			"to_pin": "InputPin"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_id": "K2Node_IfThenElse_4",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_id": "K2Node_DynamicCast_1",
 			"to_node_title": "Cast To GI_Echoes",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_AddDelegate_1",
-			"from_node_title": "Bind Event to On World Mode Changed",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_9",
-			"to_node_title": "Debug Info",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_AddDelegate_1",
-			"to_node_title": "Bind Event to On World Mode Changed",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_9",
-			"from_node_title": "Debug Info",
-			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_3",
-			"to_node_title": "Return Node",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_11",
-			"from_node_title": "Debug Warning",
-			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_4",
-			"to_node_title": "Return Node",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_id": "K2Node_DynamicCast_1",
 			"from_node_title": "Cast To GI_Echoes",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_id": "K2Node_VariableSet_2",
 			"to_node_title": "Set CachedWorldModeSystem",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_id": "K2Node_DynamicCast_1",
 			"from_node_title": "Cast To GI_Echoes",
 			"from_pin": "CastFailed",
-			"to_node_id": "K2Node_CallFunction_11",
-			"to_node_title": "Debug Warning",
+			"to_node_id": "K2Node_CallFunction_18",
+			"to_node_title": "Clear and Invalidate Timer by Handle",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_0",
-			"from_node_title": "Set CachedWorldModeSystem",
+			"from_node_id": "K2Node_CallFunction_18",
+			"from_node_title": "Clear and Invalidate Timer by Handle",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_1",
-			"to_node_title": "Branch",
+			"to_node_id": "K2Node_CallFunction_19",
+			"to_node_title": "Set Timer by Function Name",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_1",
-			"from_node_title": "Branch",
+			"from_node_id": "K2Node_CallFunction_19",
+			"from_node_title": "Set Timer by Function Name",
 			"from_pin": "then",
-			"to_node_id": "K2Node_AddDelegate_0",
-			"to_node_title": "Bind Event to On World Mode Changed",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set WorldModeBindingRetryHandle",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_1",
-			"from_node_title": "Branch",
-			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Warning",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_AddDelegate_0",
-			"from_node_title": "Bind Event to On World Mode Changed",
+			"from_node_id": "K2Node_VariableSet_3",
+			"from_node_title": "Set WorldModeBindingRetryHandle",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug Info",
+			"to_node_id": "K2Node_MacroInstance_2",
+			"to_node_title": "DBG Warning",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Debug Info",
+			"from_node_id": "K2Node_MacroInstance_2",
+			"from_node_title": "DBG Warning",
 			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_id": "K2Node_FunctionResult_8",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_4",
-			"from_node_title": "Debug Warning",
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set CachedWorldModeSystem",
 			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_id": "K2Node_Knot_2",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_5",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_AddDelegate_2",
+			"to_node_title": "Bind Event to On World Mode Changed",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_5",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Clear and Invalidate Timer by Handle",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_15",
+			"from_node_title": "Clear and Invalidate Timer by Handle",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_16",
+			"to_node_title": "Set Timer by Function Name",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_16",
+			"from_node_title": "Set Timer by Function Name",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set WorldModeBindingRetryHandle",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set WorldModeBindingRetryHandle",
+			"from_pin": "then",
+			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_title": "DBG Warning",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_1",
+			"from_node_title": "DBG Warning",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_7",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Knot_2",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_AddDelegate_2",
+			"from_node_title": "Bind Event to On World Mode Changed",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_4",
+			"to_node_title": "Set bWorldModeBindingInitialized",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Knot_3",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_AddDelegate_2",
+			"to_node_title": "Bind Event to On World Mode Changed",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_4",
+			"from_node_title": "Set bWorldModeBindingInitialized",
+			"from_pin": "then",
+			"to_node_id": "K2Node_MacroInstance_3",
+			"to_node_title": "DBG Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_3",
+			"from_node_title": "DBG Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_9",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
 	],
 	"data_links": [
 		{
-			"from_node_id": "K2Node_VariableGet_1",
-			"from_node_title": "Get CachedWorldModeSystem",
-			"from_pin": "CachedWorldModeSystem",
-			"to_node_id": "K2Node_CallFunction_7",
-			"to_node_title": "Is Valid",
-			"to_pin": "Object"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_1",
-			"from_node_title": "Get CachedWorldModeSystem",
-			"from_pin": "CachedWorldModeSystem",
-			"to_node_id": "K2Node_AddDelegate_1",
-			"to_node_title": "Bind Event to On World Mode Changed",
-			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_7",
-			"from_node_title": "Is Valid",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_0",
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get bShuttingDown",
+			"from_pin": "bShuttingDown",
+			"to_node_id": "K2Node_IfThenElse_2",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_CreateDelegate_1",
-			"from_node_title": "Create Event",
-			"from_pin": "OutputDelegate",
-			"to_node_id": "K2Node_AddDelegate_1",
-			"to_node_title": "Bind Event to On World Mode Changed",
-			"to_pin": "Delegate"
+			"from_node_id": "K2Node_VariableGet_3",
+			"from_node_title": "Get bWorldModeBindingInitialized",
+			"from_pin": "bWorldModeBindingInitialized",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_Self_3",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_9",
-			"to_node_title": "Debug Info",
-			"to_pin": "WorldContextObject"
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get CachedWorldModeSystem",
+			"from_pin": "CachedWorldModeSystem",
+			"to_node_id": "K2Node_CallFunction_13",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
 		},
 		{
-			"from_node_id": "K2Node_Self_3",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_10",
-			"to_node_title": "Get Sender Name",
-			"to_pin": "Ref"
+			"from_node_id": "K2Node_CallFunction_13",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_10",
-			"from_node_title": "Get Sender Name",
-			"from_pin": "Name",
-			"to_node_id": "K2Node_CallFunction_9",
-			"to_node_title": "Debug Info",
-			"to_pin": "SenderName"
-		},
-		{
-			"from_node_id": "K2Node_Self_4",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_11",
-			"to_node_title": "Debug Warning",
-			"to_pin": "WorldContextObject"
-		},
-		{
-			"from_node_id": "K2Node_Self_4",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_12",
-			"to_node_title": "Get Sender Name",
-			"to_pin": "Ref"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_12",
-			"from_node_title": "Get Sender Name",
-			"from_pin": "Name",
-			"to_node_id": "K2Node_CallFunction_11",
-			"to_node_title": "Debug Warning",
-			"to_pin": "SenderName"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_id": "K2Node_CallFunction_14",
 			"from_node_title": "Get Game Instance",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_id": "K2Node_DynamicCast_1",
 			"to_node_title": "Cast To GI_Echoes",
 			"to_pin": "Object"
 		},
 		{
-			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_id": "K2Node_DynamicCast_1",
 			"from_node_title": "Cast To GI_Echoes",
 			"from_pin": "AsGI Echoes",
-			"to_node_id": "K2Node_VariableGet_0",
+			"to_node_id": "K2Node_VariableGet_5",
 			"to_node_title": "Get WorldModeSystemRef",
 			"to_pin": "self"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_id": "K2Node_VariableGet_6",
+			"from_node_title": "Get WorldModeBindingRetryHandle",
+			"from_pin": "WorldModeBindingRetryHandle",
+			"to_node_id": "K2Node_CallFunction_18",
+			"to_node_title": "Clear and Invalidate Timer by Handle",
+			"to_pin": "Handle"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_19",
+			"from_node_title": "Set Timer by Function Name",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_VariableSet_3",
+			"to_node_title": "Set WorldModeBindingRetryHandle",
+			"to_pin": "WorldModeBindingRetryHandle"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_5",
 			"from_node_title": "Get WorldModeSystemRef",
 			"from_pin": "WorldModeSystemRef",
-			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_id": "K2Node_VariableSet_2",
 			"to_node_title": "Set CachedWorldModeSystem",
 			"to_pin": "CachedWorldModeSystem"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_id": "K2Node_VariableSet_2",
 			"from_node_title": "Set CachedWorldModeSystem",
 			"from_pin": "Output_Get",
-			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_id": "K2Node_CallFunction_17",
 			"to_node_title": "Is Valid",
 			"to_pin": "Object"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_0",
-			"from_node_title": "Set CachedWorldModeSystem",
-			"from_pin": "Output_Get",
-			"to_node_id": "K2Node_AddDelegate_0",
-			"to_node_title": "Bind Event to On World Mode Changed",
-			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_id": "K2Node_CallFunction_17",
 			"from_node_title": "Is Valid",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_id": "K2Node_IfThenElse_5",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_CreateDelegate_0",
+			"from_node_id": "K2Node_VariableGet_22",
+			"from_node_title": "Get WorldModeBindingRetryHandle",
+			"from_pin": "WorldModeBindingRetryHandle",
+			"to_node_id": "K2Node_CallFunction_15",
+			"to_node_title": "Clear and Invalidate Timer by Handle",
+			"to_pin": "Handle"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_16",
+			"from_node_title": "Set Timer by Function Name",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set WorldModeBindingRetryHandle",
+			"to_pin": "WorldModeBindingRetryHandle"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_7",
+			"from_node_title": "Get CachedWorldModeSystem",
+			"from_pin": "CachedWorldModeSystem",
+			"to_node_id": "K2Node_AddDelegate_2",
+			"to_node_title": "Bind Event to On World Mode Changed",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CreateDelegate_2",
 			"from_node_title": "Create Event",
 			"from_pin": "OutputDelegate",
-			"to_node_id": "K2Node_AddDelegate_0",
+			"to_node_id": "K2Node_AddDelegate_2",
 			"to_node_title": "Bind Event to On World Mode Changed",
 			"to_pin": "Delegate"
-		},
-		{
-			"from_node_id": "K2Node_Self_1",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug Info",
-			"to_pin": "WorldContextObject"
-		},
-		{
-			"from_node_id": "K2Node_Self_1",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Get Sender Name",
-			"to_pin": "Ref"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_6",
-			"from_node_title": "Get Sender Name",
-			"from_pin": "Name",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Debug Info",
-			"to_pin": "SenderName"
-		},
-		{
-			"from_node_id": "K2Node_Self_0",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Warning",
-			"to_pin": "WorldContextObject"
-		},
-		{
-			"from_node_id": "K2Node_Self_0",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Get Sender Name",
-			"to_pin": "Ref"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_5",
-			"from_node_title": "Get Sender Name",
-			"from_pin": "Name",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Warning",
-			"to_pin": "SenderName"
 		}
 	],
 	"problems": []

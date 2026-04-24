@@ -7,19 +7,23 @@ Function
 Initializes references, state, or startup flow.
 
 ## Reads
+- bShuttingDown
+- bWorldModeBindingInitialized
 - WorldModeSystemRef
+- WorldModeBindingRetryHandle
 
 ## Writes
-- CurrentWorldMode
+- WorldModeBindingRetryHandle
 - WorldModeSystemRef
+- CurrentWorldMode
+- bWorldModeBindingInitialized
 
 ## Calls
 - Is Valid
-- Get World Mode
 - Get Game Instance
-- Debug Critical
-- Get Sender Name
-- Debug Info
+- Clear and Invalidate Timer by Handle
+- Set Timer by Function Name
+- Get World Mode
 
 ## Called By
 - InitializeScareManager
@@ -29,5 +33,5 @@ Initializes references, state, or startup flow.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

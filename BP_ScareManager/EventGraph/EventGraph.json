@@ -10,13 +10,17 @@
 	"summary":
 	{
 		"purpose": "Main runtime entry graph for this Blueprint.",
-		"reads_variables": [],
+		"reads_variables": [
+			"WorldModeBindingRetryHandle"
+		],
 		"writes_variables": [
-			"CurrentScareActor"
+			"CurrentScareActor",
+			"bShuttingDown"
 		],
 		"calls": [
 			"Start Scare Cooldown",
-			"Initialize Scare Manager"
+			"Initialize Scare Manager",
+			"Clear and Invalidate Timer by Handle"
 		],
 		"called_by": [],
 		"branch_points": []
@@ -303,6 +307,209 @@
 				}
 			],
 			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_Event_1",
+			"node_name": "K2Node_Event_1",
+			"node_kind": "Event",
+			"ue_class": "K2Node_Event",
+			"title": "Event End Play",
+			"title_single_line": "Event End Play",
+			"comment": "",
+			"guid": "69ca0dc2-4598-5c1e-2f4e-569543b62858",
+			"x": -112,
+			"y": 544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "OutputDelegate",
+					"direction": "Output",
+					"category": "delegate",
+					"subcategory": "None",
+					"resolved_type": "delegate",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "EndPlayReason",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "Destroyed",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bShuttingDown",
+			"title_single_line": "Set bShuttingDown",
+			"comment": "",
+			"guid": "0ef1e0d3-444c-ab72-3652-c0b1b45a0c48",
+			"x": 112,
+			"y": 560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bShuttingDown",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Clear and Invalidate Timer by Handle",
+			"title_single_line": "Clear and Invalidate Timer by Handle",
+			"comment": "",
+			"guid": "5aea3f0b-4448-dc61-8ba5-969de316b40a",
+			"x": 464,
+			"y": 544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Handle",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_VariableGet_17",
+			"node_name": "K2Node_VariableGet_17",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get WorldModeBindingRetryHandle",
+			"title_single_line": "Get WorldModeBindingRetryHandle",
+			"comment": "",
+			"guid": "8e0b10c3-4bb8-8342-d8bd-b1b778790290",
+			"x": 160,
+			"y": 704,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "WorldModeBindingRetryHandle",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
 		}
 	],
 	"exec_flow": [
@@ -337,6 +544,22 @@
 			"to_node_id": "K2Node_VariableSet_1",
 			"to_node_title": "Set CurrentScareActor",
 			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Event_1",
+			"from_node_title": "Event End Play",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set bShuttingDown",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set bShuttingDown",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Clear and Invalidate Timer by Handle",
+			"to_pin": "execute"
 		}
 	],
 	"data_links": [
@@ -347,6 +570,14 @@
 			"to_node_id": "K2Node_Composite_1",
 			"to_node_title": "Debug7\nCollapsed Graph",
 			"to_pin": "ScareId"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_17",
+			"from_node_title": "Get WorldModeBindingRetryHandle",
+			"from_pin": "WorldModeBindingRetryHandle",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Clear and Invalidate Timer by Handle",
+			"to_pin": "Handle"
 		}
 	],
 	"problems": []

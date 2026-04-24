@@ -7,27 +7,37 @@
 	"has_warning_nodes": false,
 	"locals": [],
 	"returns": [
+		"bCanSelect (Boolean)",
+		"bCanSelect (Boolean)",
+		"bCanSelect (Boolean)",
 		"bCanSelect (Boolean)"
 	],
 	"summary":
 	{
 		"purpose": "Auto-generated function summary.",
 		"reads_variables": [
-			"TransitionManagerRef",
+			"CurrentGhostId",
+			"bShuttingDown",
 			"CachedWorldModeSystem",
-			"CurrentGhostId"
+			"WorldModeSystemRef"
 		],
-		"writes_variables": [],
+		"writes_variables": [
+			"CachedWorldModeSystem"
+		],
 		"calls": [
 			"Get World Mode",
 			"Is Puzzle Already Completed",
-			"NOT Boolean"
+			"NOT Boolean",
+			"Is Valid",
+			"Get Game Instance"
 		],
 		"called_by": [
 			"StartPuzzleByRowNameAndStep",
 			"GetNextValidPuzzleRowNameForCurrentContext"
 		],
-		"branch_points": []
+		"branch_points": [
+			"Branch"
+		]
 	},
 	"nodes": [
 		{
@@ -39,8 +49,8 @@
 			"title_single_line": "CanPuzzleBeSelectedForCurrentContext",
 			"comment": "",
 			"guid": "bbe577d2-4520-3e37-3081-d5be57772273",
-			"x": -1424,
-			"y": -16,
+			"x": -3856,
+			"y": -48,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -118,8 +128,8 @@
 			"title_single_line": "Break S Puzzle Definition",
 			"comment": "",
 			"guid": "ac8f5ec8-4ab2-e1db-ff10-0084373bcfeb",
-			"x": -1072,
-			"y": 128,
+			"x": -1024,
+			"y": 112,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -262,76 +272,6 @@
 			"target_class": "CanPuzzleBeSelectedForCurrentContext"
 		},
 		{
-			"node_id": "K2Node_VariableGet_0",
-			"node_name": "K2Node_VariableGet_0",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get TransitionManagerRef",
-			"title_single_line": "Get TransitionManagerRef",
-			"comment": "",
-			"guid": "aa368d6d-42c5-eb47-9ea9-43a6b98edcad",
-			"x": -928,
-			"y": 432,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "TransitionManagerRef",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_TransitionManager_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_PuzzleController_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "CanPuzzleBeSelectedForCurrentContext"
-		},
-		{
-			"node_id": "K2Node_VariableGet_1",
-			"node_name": "K2Node_VariableGet_1",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CachedWorldModeSystem",
-			"title_single_line": "Get CachedWorldModeSystem",
-			"comment": "",
-			"guid": "ae27ea0b-4b6e-28d6-12f3-20bb0c2888e1",
-			"x": -944,
-			"y": 480,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "CachedWorldModeSystem",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_WorldModeSystem_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_TransitionManager_C",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "CanPuzzleBeSelectedForCurrentContext"
-		},
-		{
 			"node_id": "K2Node_CallFunction_0",
 			"node_name": "K2Node_CallFunction_0",
 			"node_kind": "FunctionCall",
@@ -340,7 +280,7 @@
 			"title_single_line": "Get World Mode",
 			"comment": "",
 			"guid": "1a93df04-40e3-40cf-a13c-6fa5636ccb38",
-			"x": -704,
+			"x": -720,
 			"y": -32,
 			"has_error": false,
 			"has_warning": false,
@@ -352,7 +292,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				},
 				{
 					"pin_name": "then",
@@ -727,6 +667,675 @@
 				}
 			],
 			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bShuttingDown",
+			"title_single_line": "Get bShuttingDown",
+			"comment": "",
+			"guid": "dd92241f-4e88-f698-41a0-edba73b7deef",
+			"x": -3584,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bShuttingDown",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_0",
+			"node_name": "K2Node_IfThenElse_0",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "962334d7-4a6f-f30d-4d73-5ab28c57fafb",
+			"x": -3408,
+			"y": -48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "9cde7475-495a-2316-c9c0-06bdef729567",
+			"x": -3008,
+			"y": -288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bCanSelect",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_VariableGet_6",
+			"node_name": "K2Node_VariableGet_6",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CachedWorldModeSystem",
+			"title_single_line": "Get CachedWorldModeSystem",
+			"comment": "",
+			"guid": "bdf741b3-48c2-01e4-d663-2aac20fc7fdb",
+			"x": -3360,
+			"y": 320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CachedWorldModeSystem",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_WorldModeSystem_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "1747f3b6-4339-8b01-4fd8-ec8c9cbb1558",
+			"x": -3120,
+			"y": 112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "e4542b1d-4090-187a-3f0e-bea8ce3a3bf2",
+			"x": -2912,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Get Game Instance",
+			"title_single_line": "Get Game Instance",
+			"comment": "",
+			"guid": "6909e2d4-4427-3510-217c-0ebff95cc48c",
+			"x": -3024,
+			"y": 512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameplayStatics",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GameInstance",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_DynamicCast_0",
+			"node_name": "K2Node_DynamicCast_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_DynamicCast",
+			"title": "Cast To GI_Echoes",
+			"title_single_line": "Cast To GI_Echoes",
+			"comment": "",
+			"guid": "acc3bc2e-45aa-006f-f7ef-a4bcaf572f20",
+			"x": -2688,
+			"y": 320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CastFailed",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "AsGI Echoes",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bSuccess",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_3",
+			"node_name": "K2Node_FunctionResult_3",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "43736014-4285-9672-f3a4-39bc37384c58",
+			"x": -2368,
+			"y": 496,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bCanSelect",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_VariableGet_4",
+			"node_name": "K2Node_VariableGet_4",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get WorldModeSystemRef",
+			"title_single_line": "Get WorldModeSystemRef",
+			"comment": "",
+			"guid": "b1e1a37c-4e2c-6ef5-748b-7788c79d3fbf",
+			"x": -2432,
+			"y": 400,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "WorldModeSystemRef",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_WorldModeSystem_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set CachedWorldModeSystem",
+			"title_single_line": "Set CachedWorldModeSystem",
+			"comment": "",
+			"guid": "bdc8bc56-453d-04ba-064f-aea7e02475ad",
+			"x": -2144,
+			"y": 336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "CachedWorldModeSystem",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_WorldModeSystem_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_WorldModeSystem_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "fd4d979c-4341-3bfe-e988-9a8727a3fa97",
+			"x": -1792,
+			"y": 416,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_2",
+			"node_name": "K2Node_IfThenElse_2",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "74d28a52-4c12-adde-9c56-aab37bf15e8e",
+			"x": -1648,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "e0a635b4-420f-ebcb-b0aa-8b9b9bcf3c3a",
+			"x": -1376,
+			"y": 336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bCanSelect",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_VariableGet_5",
+			"node_name": "K2Node_VariableGet_5",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CachedWorldModeSystem",
+			"title_single_line": "Get CachedWorldModeSystem",
+			"comment": "",
+			"guid": "94a03a5c-408a-f17f-9a89-75898f375a13",
+			"x": -1072,
+			"y": 352,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CachedWorldModeSystem",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_WorldModeSystem_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "CanPuzzleBeSelectedForCurrentContext"
 		}
 	],
 	"exec_flow": [
@@ -734,8 +1343,8 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "CanPuzzleBeSelectedForCurrentContext",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Get World Mode\nTarget is BP World Mode System",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
@@ -751,6 +1360,78 @@
 			"from_node_title": "Is Puzzle Already Completed\nTarget is BP Puzzle Controller",
 			"from_pin": "then",
 			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Get World Mode\nTarget is BP World Mode System",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set CachedWorldModeSystem",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "CastFailed",
+			"to_node_id": "K2Node_FunctionResult_3",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set CachedWorldModeSystem",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Get World Mode\nTarget is BP World Mode System",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_FunctionResult_1",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
@@ -787,22 +1468,6 @@
 			"to_node_id": "K2Node_PromotableOperator_1",
 			"to_node_title": "Equal (Name)",
 			"to_pin": "A"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_0",
-			"from_node_title": "Get TransitionManagerRef",
-			"from_pin": "TransitionManagerRef",
-			"to_node_id": "K2Node_VariableGet_1",
-			"to_node_title": "Get CachedWorldModeSystem",
-			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_1",
-			"from_node_title": "Get CachedWorldModeSystem",
-			"from_pin": "CachedWorldModeSystem",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Get World Mode\nTarget is BP World Mode System",
-			"to_pin": "self"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_0",
@@ -867,6 +1532,78 @@
 			"to_node_id": "K2Node_FunctionResult_0",
 			"to_node_title": "Return Node",
 			"to_pin": "bCanSelect"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get bShuttingDown",
+			"from_pin": "bShuttingDown",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_6",
+			"from_node_title": "Get CachedWorldModeSystem",
+			"from_pin": "CachedWorldModeSystem",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Get Game Instance",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_DynamicCast_0",
+			"from_node_title": "Cast To GI_Echoes",
+			"from_pin": "AsGI Echoes",
+			"to_node_id": "K2Node_VariableGet_4",
+			"to_node_title": "Get WorldModeSystemRef",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get WorldModeSystemRef",
+			"from_pin": "WorldModeSystemRef",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set CachedWorldModeSystem",
+			"to_pin": "CachedWorldModeSystem"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set CachedWorldModeSystem",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_5",
+			"from_node_title": "Get CachedWorldModeSystem",
+			"from_pin": "CachedWorldModeSystem",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Get World Mode\nTarget is BP World Mode System",
+			"to_pin": "self"
 		}
 	],
 	"problems": []

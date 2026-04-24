@@ -38,6 +38,7 @@ Auto-generated function summary.
 
 ## Called By
 - WriteSaveToDisk
+- ExecuteAutoSave
 
 ## Branch Points
 - Branch

@@ -8,17 +8,20 @@ Main runtime entry graph for this Blueprint.
 
 ## Reads
 - DebugEnabled
+- WorldModeBindingRetryHandle
 
 ## Writes
 - CurrentWorldMode
 - CurrentGhostId
 - CurrentGhostState
+- bShuttingDown
 
 ## Calls
 - Initialize Audio Manager
 - Debug Message
 - To String (Text)
 - Apply Resolved Audio State from Context
+- Clear and Invalidate Timer by Handle
 
 ## Notes
 - Has latent nodes: No
