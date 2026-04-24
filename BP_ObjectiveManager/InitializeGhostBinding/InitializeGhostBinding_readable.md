@@ -8,6 +8,12 @@ Initializes references, state, or startup flow.
 
 ## Reads
 - GhostManagerRef
+- bShuttingDown
+- bGhostBindingInitialized
+
+## Writes
+- GhostBindingRetryHandle
+- GhostManagerRef
 
 ## Calls
 - Is Valid
@@ -15,6 +21,8 @@ Initializes references, state, or startup flow.
 - Get Sender Name
 - Handle Ghost Changed
 - Debug Info
+- Get Game Instance
+- Set Timer by Function Name
 
 ## Called By
 - InitializeObjectiveManager

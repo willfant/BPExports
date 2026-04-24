@@ -30,6 +30,9 @@ Restores runtime state from previously saved or cached data.
 - Restart Scare Loop for Current State
 - Handle Pending Arrival Transition
 
+## Called By
+- TryInitialRestoreAfterBootstrap
+
 ## Branch Points
 - Branch
 

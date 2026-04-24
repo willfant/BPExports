@@ -6,8 +6,15 @@ EventGraph
 ## Purpose
 Main runtime entry graph for this Blueprint.
 
+## Reads
+- GhostBindingRetryHandle
+
+## Writes
+- bShuttingDown
+
 ## Calls
 - Initialize Objective Manager
+- Clear and Invalidate Timer by Handle
 
 ## Notes
 - Has latent nodes: No

@@ -12,15 +12,20 @@
 		"purpose": "Main runtime entry graph for this Blueprint.",
 		"reads_variables": [
 			"bAutoInitializeSaveOnBeginPlay",
-			"CachedGI"
+			"CachedGI",
+			"InitialRestoreRetryHandle",
+			"bAutoLoadOnBeginPlay"
 		],
 		"writes_variables": [
-			"CachedGI"
+			"CachedGI",
+			"bShuttingDown"
 		],
 		"calls": [
 			"Initialize Save System",
 			"Get Game Instance",
-			"Register Save Manager"
+			"Register Save Manager",
+			"Clear and Invalidate Timer by Handle",
+			"Try Initial Restore After Bootstrap"
 		],
 		"called_by": [],
 		"branch_points": [
@@ -37,8 +42,8 @@
 			"title_single_line": "Event BeginPlay",
 			"comment": "",
 			"guid": "cc1f5c82-4f4e-c408-6737-089514c85687",
-			"x": -896,
-			"y": 0,
+			"x": -976,
+			"y": -16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -72,8 +77,8 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "c7f171c9-4ad3-5b49-d923-67b5af954263",
-			"x": 16,
-			"y": 208,
+			"x": 496,
+			"y": -16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -125,8 +130,8 @@
 			"title_single_line": "Get bAutoInitializeSaveOnBeginPlay",
 			"comment": "",
 			"guid": "4f4f3628-4673-fbee-687b-cca9f82a2398",
-			"x": 0,
-			"y": 320,
+			"x": 480,
+			"y": 96,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -160,8 +165,8 @@
 			"title_single_line": "Initialize Save System",
 			"comment": "",
 			"guid": "f19cd6ee-4351-1fb6-ddf1-1c98ba2579ce",
-			"x": 384,
-			"y": 192,
+			"x": 864,
+			"y": -32,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -181,7 +186,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -199,7 +204,7 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "false",
-					"linked_count": 0
+					"linked_count": 1
 				}
 			],
 			"target_class": "EventGraph"
@@ -213,8 +218,8 @@
 			"title_single_line": "Get Game Instance",
 			"comment": "",
 			"guid": "900de60c-4208-e8d5-e54d-e38ee3642495",
-			"x": 0,
-			"y": -416,
+			"x": -624,
+			"y": 112,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -257,8 +262,8 @@
 			"title_single_line": "Cast To GI_Echoes",
 			"comment": "",
 			"guid": "700d2a0a-4998-6b25-5c3d-1b83f6ef0719",
-			"x": 0,
-			"y": -544,
+			"x": -624,
+			"y": -16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -328,8 +333,8 @@
 			"title_single_line": "Register Save Manager",
 			"comment": "",
 			"guid": "d56064ea-4d56-369f-bd24-6ebf661c796a",
-			"x": 560,
-			"y": -560,
+			"x": -64,
+			"y": -32,
 			"has_error": true,
 			"has_warning": false,
 			"pins": [
@@ -349,7 +354,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -373,50 +378,6 @@
 			"target_class": "EventGraph"
 		},
 		{
-			"node_id": "K2Node_ExecutionSequence_0",
-			"node_name": "K2Node_ExecutionSequence_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_ExecutionSequence",
-			"title": "Sequence",
-			"title_single_line": "Sequence",
-			"comment": "",
-			"guid": "6ed27d85-42fa-9e7b-a410-fdbfa757e0d9",
-			"x": -544,
-			"y": 0,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then_0",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then_1",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "EventGraph"
-		},
-		{
 			"node_id": "K2Node_VariableSet_0",
 			"node_name": "K2Node_VariableSet_0",
 			"node_kind": "VariableSet",
@@ -425,8 +386,8 @@
 			"title_single_line": "Set CachedGI",
 			"comment": "",
 			"guid": "a21cb6db-4f45-c27e-73a2-23b31b4fd0b2",
-			"x": 304,
-			"y": -528,
+			"x": -320,
+			"y": 0,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -487,8 +448,8 @@
 			"title_single_line": "Get CachedGI",
 			"comment": "",
 			"guid": "1ac18aa9-44e6-7b89-283b-e89995972aed",
-			"x": 576,
-			"y": -352,
+			"x": -48,
+			"y": 176,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -522,8 +483,8 @@
 			"title_single_line": "Register GI Echoes",
 			"comment": "Register GI Echoes",
 			"guid": "4f507c6c-4011-af3b-85e7-a5a8f7893498",
-			"x": -64,
-			"y": -624,
+			"x": -704,
+			"y": -96,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [],
@@ -538,8 +499,8 @@
 			"title_single_line": "Auto Init",
 			"comment": "Auto Init",
 			"guid": "c71f38cf-4710-c558-95a9-318ff9049e84",
-			"x": -64,
-			"y": 128,
+			"x": 432,
+			"y": -416,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [],
@@ -554,8 +515,8 @@
 			"title_single_line": "Self-Reference",
 			"comment": "",
 			"guid": "7e299cb9-4626-db44-7142-7698f7b37b8f",
-			"x": 432,
-			"y": -416,
+			"x": -192,
+			"y": 112,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -580,8 +541,8 @@
 			"title_single_line": "DBG Warning",
 			"comment": "",
 			"guid": "ed4a508a-477c-fc5a-358a-c48220b72869",
-			"x": 384,
-			"y": -240,
+			"x": -240,
+			"y": 288,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -623,6 +584,500 @@
 				}
 			],
 			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_Event_1",
+			"node_name": "K2Node_Event_1",
+			"node_kind": "Event",
+			"ue_class": "K2Node_Event",
+			"title": "Event End Play",
+			"title_single_line": "Event End Play",
+			"comment": "",
+			"guid": "9dfbb475-4846-c45e-4637-d78a7697d642",
+			"x": -976,
+			"y": 768,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "OutputDelegate",
+					"direction": "Output",
+					"category": "delegate",
+					"subcategory": "None",
+					"resolved_type": "delegate",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "EndPlayReason",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "Destroyed",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_VariableSet_1",
+			"node_name": "K2Node_VariableSet_1",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set bShuttingDown",
+			"title_single_line": "Set bShuttingDown",
+			"comment": "",
+			"guid": "6174460d-44cf-871a-13f1-d796d1ebcf32",
+			"x": -720,
+			"y": 784,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bShuttingDown",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Clear and Invalidate Timer by Handle",
+			"title_single_line": "Clear and Invalidate Timer by Handle",
+			"comment": "",
+			"guid": "f09d5d7a-4de1-0173-cb5c-8880a589edba",
+			"x": -320,
+			"y": 768,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Handle",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_VariableGet_25",
+			"node_name": "K2Node_VariableGet_25",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get InitialRestoreRetryHandle",
+			"title_single_line": "Get InitialRestoreRetryHandle",
+			"comment": "",
+			"guid": "13a13438-486e-9313-4133-a486bf7376db",
+			"x": -688,
+			"y": 880,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InitialRestoreRetryHandle",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "4089c911-424a-c6d9-9225-919d42d35c49",
+			"x": 1152,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_1",
+			"node_name": "K2Node_MacroInstance_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Critical",
+			"title_single_line": "DBG Critical",
+			"comment": "",
+			"guid": "f4e3c2df-4fe6-548c-db0a-cda9c7689af3",
+			"x": 1440,
+			"y": 368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[Save] InitializeSaveSystem failed during BeginPlay bootstrap",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bAutoLoadOnBeginPlay",
+			"title_single_line": "Get bAutoLoadOnBeginPlay",
+			"comment": "",
+			"guid": "a370a22b-4fa8-be45-4e90-598636152fbc",
+			"x": 1248,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bAutoLoadOnBeginPlay",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_2",
+			"node_name": "K2Node_IfThenElse_2",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "3fcdcf3f-42d8-e51f-cfb4-5c9c059d8a65",
+			"x": 1552,
+			"y": -16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_2",
+			"node_name": "K2Node_MacroInstance_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Info",
+			"title_single_line": "DBG Info",
+			"comment": "",
+			"guid": "de04f418-43f1-0f2b-c43a-52a9c5bad645",
+			"x": 1936,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[Save] InitializeSaveSystem completed successfully. Auto load on BeginPlay is disabled",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Try Initial Restore After Bootstrap\nTarget is BP Save Manager",
+			"title_single_line": "Try Initial Restore After Bootstrap",
+			"comment": "",
+			"guid": "f65231a6-4168-ef04-4e80-3bbe9c6f49ef",
+			"x": 2032,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
 		}
 	],
 	"exec_flow": [
@@ -630,8 +1085,8 @@
 			"from_node_id": "K2Node_Event_0",
 			"from_node_title": "Event BeginPlay",
 			"from_pin": "then",
-			"to_node_id": "K2Node_ExecutionSequence_0",
-			"to_node_title": "Sequence",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
 			"to_pin": "execute"
 		},
 		{
@@ -640,6 +1095,14 @@
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_0",
 			"to_node_title": "Initialize Save System\nTarget is BP Save Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Initialize Save System\nTarget is BP Save Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
@@ -659,17 +1122,9 @@
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_ExecutionSequence_0",
-			"from_node_title": "Sequence",
-			"from_pin": "then_0",
-			"to_node_id": "K2Node_DynamicCast_0",
-			"to_node_title": "Cast To GI_Echoes",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_ExecutionSequence_0",
-			"from_node_title": "Sequence",
-			"from_pin": "then_1",
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Register Save Manager\nTarget is GI Echoes",
+			"from_pin": "then",
 			"to_node_id": "K2Node_IfThenElse_0",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
@@ -681,6 +1136,54 @@
 			"to_node_id": "K2Node_CallFunction_8",
 			"to_node_title": "Register Save Manager\nTarget is GI Echoes",
 			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Event_1",
+			"from_node_title": "Event End Play",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set bShuttingDown",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_1",
+			"from_node_title": "Set bShuttingDown",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Clear and Invalidate Timer by Handle",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_title": "DBG Critical",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Try Initial Restore After Bootstrap\nTarget is BP Save Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_MacroInstance_2",
+			"to_node_title": "DBG Info",
+			"to_pin": "execute"
 		}
 	],
 	"data_links": [
@@ -689,6 +1192,14 @@
 			"from_node_title": "Get bAutoInitializeSaveOnBeginPlay",
 			"from_pin": "bAutoInitializeSaveOnBeginPlay",
 			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Initialize Save System\nTarget is BP Save Manager",
+			"from_pin": "bSuccess",
+			"to_node_id": "K2Node_IfThenElse_1",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
@@ -723,6 +1234,22 @@
 			"to_node_id": "K2Node_CallFunction_8",
 			"to_node_title": "Register Save Manager\nTarget is GI Echoes",
 			"to_pin": "NewSaveManagerRef"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_25",
+			"from_node_title": "Get InitialRestoreRetryHandle",
+			"from_pin": "InitialRestoreRetryHandle",
+			"to_node_id": "K2Node_CallFunction_1",
+			"to_node_title": "Clear and Invalidate Timer by Handle",
+			"to_pin": "Handle"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get bAutoLoadOnBeginPlay",
+			"from_pin": "bAutoLoadOnBeginPlay",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
 		}
 	],
 	"problems": []

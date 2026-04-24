@@ -14,6 +14,8 @@ Auto-generated function summary.
 - bSuccess (Boolean)
 - bSuccess (Boolean)
 - bSuccess (Boolean)
+- bSuccess (Boolean)
+- bSuccess (Boolean)
 
 ## Reads
 - CurrentSaveObject
@@ -32,6 +34,8 @@ Auto-generated function summary.
 - Restore Objectives from Save
 - Restore Puzzle from Save
 - Debug Info
+- Is Valid
+- To String (Text)
 
 ## Called By
 - RestoreFullGameState

@@ -143,6 +143,18 @@
 			"why_it_matters": "Reference variables appear to be used without obvious branching validation in this graph.",
 			"likely_impact": "May cause null access or fallback bugs if the reference can be invalid.",
 			"suggested_fix": "Confirm whether the reference is guaranteed valid here; otherwise add IsValid/branch protection."
+		},
+		{
+			"graph": "AreCoreManagersRegistered",
+			"problem_type": "UsesRefWithoutBranchValidationHeuristic",
+			"details": "Reference variables are read but no branch/switch nodes were detected in this graph.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.59999999999999998,
+			"why_it_matters": "Reference variables appear to be used without obvious branching validation in this graph.",
+			"likely_impact": "May cause null access or fallback bugs if the reference can be invalid.",
+			"suggested_fix": "Confirm whether the reference is guaranteed valid here; otherwise add IsValid/branch protection."
 		}
 	]
 }

@@ -15,6 +15,7 @@ Auto-generated function summary.
 ## Writes
 - OldState
 - CurrentGhostState
+- SaveManagerRef
 
 ## Calls
 - Debug Info
@@ -24,6 +25,7 @@ Auto-generated function summary.
 - Is Valid
 - Request Auto Save
 - Debug Warning
+- Get Game Instance
 
 ## Called By
 - SetActiveGhost

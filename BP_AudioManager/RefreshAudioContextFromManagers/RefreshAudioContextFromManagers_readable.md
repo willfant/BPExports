@@ -16,6 +16,7 @@ Auto-generated function summary.
 - CurrentWorldMode
 - CurrentGhostId
 - CurrentGhostState
+- GhostManagerRef
 
 ## Calls
 - Is Valid
@@ -25,6 +26,8 @@ Auto-generated function summary.
 - Has Active Ghost
 - Apply Resolved Audio State from Context
 - Debug Info
+- Get Game Instance
+- Set Timer by Function Name
 
 ## Called By
 - HandleWorldModeAudioContextChanged

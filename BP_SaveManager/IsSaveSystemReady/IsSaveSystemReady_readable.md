@@ -14,6 +14,7 @@ Synchronizes or persists runtime state.
 
 ## Called By
 - RestoreFullGameState
+- TryInitialRestoreAfterBootstrap
 
 ## Notes
 - Has latent nodes: No

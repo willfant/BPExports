@@ -45,6 +45,7 @@ Resolves contextual state or external information.
 - BuildSnapshotFromManagers
 - ApplySnapshotToManagers
 - RestoreFullGameState
+- TryInitialRestoreAfterBootstrap
 
 ## Branch Points
 - Branch
