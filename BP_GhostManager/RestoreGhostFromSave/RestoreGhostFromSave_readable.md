@@ -7,25 +7,19 @@ Function
 Restores runtime state from previously saved or cached data.
 
 ## Returns
-- bSuccess (Boolean)
-- bSuccess (Boolean)
-- bSuccess (Boolean)
-
-## Reads
-- CurrentGhostId
+- bIsSuccess (Boolean)
+- bIsSuccess (Boolean)
+- bIsSuccess (Boolean)
 
 ## Writes
 - bIsRestoringFromSave
 - ClearedGhostIds
 
 ## Calls
-- Set Active Ghost
-- Debug Critical
-- Get Display Name
-- String To Name
+- To String (Text)
 - Clear Active Ghost
+- Set Active Ghost
 - Set Ghost State
-- Debug Info
 
 ## Branch Points
 - Branch

@@ -37,6 +37,8 @@ Auto-generated function summary.
 - Is Valid
 - Request Auto Save
 - Debug Warning
+- Print String
+- Get Object Name
 
 ## Called By
 - RestoreGhostFromSave
