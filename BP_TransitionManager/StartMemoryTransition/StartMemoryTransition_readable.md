@@ -10,19 +10,21 @@ Starts a flow, state transition, or activation sequence.
 - bTransitionInProgress
 - CachedGI
 - FadeWidgetRef
-- bDebugTransitions
+- TransictionDataL
 
 ## Writes
 - bTransitionInProgress
 - CurrentTransitionData
+- TransictionDataL
 
 ## Calls
 - Play Transition SFX
-- Is Valid
 - Set Startup Pending Transition
+- Is Valid
 - Play Fade Out
+- Ensure Fade Widget
+- Execute Level Travel
 - Set Timer by Event
-- Debug Message
 
 ## Branch Points
 - Branch

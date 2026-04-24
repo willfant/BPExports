@@ -14,19 +14,21 @@
 			"bTransitionInProgress",
 			"CachedGI",
 			"FadeWidgetRef",
-			"bDebugTransitions"
+			"TransictionDataL"
 		],
 		"writes_variables": [
 			"bTransitionInProgress",
-			"CurrentTransitionData"
+			"CurrentTransitionData",
+			"TransictionDataL"
 		],
 		"calls": [
 			"Play Transition SFX",
-			"Is Valid",
 			"Set Startup Pending Transition",
+			"Is Valid",
 			"Play Fade Out",
-			"Set Timer by Event",
-			"Debug Message"
+			"Ensure Fade Widget",
+			"Execute Level Travel",
+			"Set Timer by Event"
 		],
 		"called_by": [],
 		"branch_points": [
@@ -43,7 +45,7 @@
 			"title_single_line": "StartMemoryTransition",
 			"comment": "",
 			"guid": "2ae03750-4d11-7a9a-67b6-db88de214d2e",
-			"x": 0,
+			"x": -1040,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -64,7 +66,7 @@
 					"subcategory": "None",
 					"resolved_type": "S_MemoryTransition",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 1
 				}
 			],
 			"target_class": "StartMemoryTransition"
@@ -78,7 +80,7 @@
 			"title_single_line": "Get bTransitionInProgress",
 			"comment": "",
 			"guid": "a3ea1c9b-4e8c-915e-b3b1-60a20041ae59",
-			"x": 128,
+			"x": -592,
 			"y": 160,
 			"has_error": false,
 			"has_warning": false,
@@ -113,7 +115,7 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "b551e46a-45c9-59a5-89fb-a688b970ba07",
-			"x": 416,
+			"x": -304,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -166,8 +168,8 @@
 			"title_single_line": "Return Node",
 			"comment": "",
 			"guid": "b0301335-4394-689e-410e-8896eb84c134",
-			"x": 1712,
-			"y": -512,
+			"x": 1264,
+			"y": -240,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -192,8 +194,8 @@
 			"title_single_line": "Set bTransitionInProgress",
 			"comment": "",
 			"guid": "c0ba2386-4f3e-4b95-bfa1-f6968f1e0305",
-			"x": 656,
-			"y": 160,
+			"x": 864,
+			"y": 48,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -254,8 +256,8 @@
 			"title_single_line": "Set CurrentTransitionData",
 			"comment": "",
 			"guid": "d37a9233-4c1a-b368-9e63-8bb720c6d251",
-			"x": 1008,
-			"y": 160,
+			"x": 1280,
+			"y": 48,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -316,8 +318,8 @@
 			"title_single_line": "Call On Transition Started",
 			"comment": "",
 			"guid": "ce107419-4fa2-a199-0f05-bb8a76477e29",
-			"x": 1920,
-			"y": 144,
+			"x": 1808,
+			"y": 32,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -369,8 +371,8 @@
 			"title_single_line": "Break S Memory Transition",
 			"comment": "",
 			"guid": "e26addfc-4751-f6d8-dd49-c6b113808b07",
-			"x": 800,
-			"y": 336,
+			"x": 1760,
+			"y": 288,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -426,7 +428,7 @@
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "TargetLevelSoftRef_21_5E22859646F8DEC90A88E19AAFB84954",
@@ -467,8 +469,8 @@
 			"title_single_line": "Play Transition SFX",
 			"comment": "",
 			"guid": "b41abcee-4158-8473-44f1-4cb04bac0b59",
-			"x": 2320,
-			"y": 128,
+			"x": 2192,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -520,8 +522,8 @@
 			"title_single_line": "Get CachedGI",
 			"comment": "",
 			"guid": "fd0ed760-4602-eb7c-1e12-0099a3ec5306",
-			"x": 2336,
-			"y": 480,
+			"x": 2512,
+			"y": 96,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -532,7 +534,7 @@
 					"subcategory": "None",
 					"resolved_type": "GI_Echoes_C",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -540,103 +542,6 @@
 					"category": "object",
 					"subcategory": "None",
 					"resolved_type": "BP_TransitionManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "StartMemoryTransition"
-		},
-		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Is Valid",
-			"title_single_line": "Is Valid",
-			"comment": "",
-			"guid": "27472d03-4fe5-ab3d-9e8c-e3b611a07526",
-			"x": 2512,
-			"y": 288,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "KismetSystemLibrary",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Object",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "ReturnValue",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				}
-			],
-			"target_class": "StartMemoryTransition"
-		},
-		{
-			"node_id": "K2Node_IfThenElse_1",
-			"node_name": "K2Node_IfThenElse_1",
-			"node_kind": "Branch",
-			"ue_class": "K2Node_IfThenElse",
-			"title": "Branch",
-			"title_single_line": "Branch",
-			"comment": "",
-			"guid": "8f07efcd-429e-73ef-78f9-15894128e152",
-			"x": 2720,
-			"y": 144,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Condition",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "true",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "else",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 0
 				}
@@ -652,8 +557,8 @@
 			"title_single_line": "Set Startup Pending Transition",
 			"comment": "",
 			"guid": "a9b0451b-43f4-5848-9746-e79a072fa715",
-			"x": 3152,
-			"y": 128,
+			"x": 2704,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -705,8 +610,8 @@
 			"title_single_line": "Get FadeWidgetRef",
 			"comment": "",
 			"guid": "0e38b89e-4920-7ece-b56f-839f7418f1e6",
-			"x": 3312,
-			"y": 256,
+			"x": 3584,
+			"y": -144,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -740,8 +645,8 @@
 			"title_single_line": "Is Valid",
 			"comment": "",
 			"guid": "581bf6e6-49eb-a616-1f71-8b9358771fe2",
-			"x": 3456,
-			"y": 240,
+			"x": 3664,
+			"y": -64,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -784,8 +689,8 @@
 			"title_single_line": "Branch",
 			"comment": "",
 			"guid": "bfa17741-46f3-5b6e-a6a8-d8b4fdcd5978",
-			"x": 3712,
-			"y": 144,
+			"x": 3856,
+			"y": 32,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -823,7 +728,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				}
 			],
 			"target_class": "StartMemoryTransition"
@@ -837,8 +742,8 @@
 			"title_single_line": "Break S Memory Transition",
 			"comment": "",
 			"guid": "31fab821-4776-6f95-397a-dcbe34ad47e6",
-			"x": 3520,
-			"y": 608,
+			"x": 2736,
+			"y": 272,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -858,7 +763,7 @@
 					"subcategory": "double",
 					"resolved_type": "Double",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 3
 				},
 				{
 					"pin_name": "FadeInSec_4_C4EB60714F4A9DAAC42732965BC003F4",
@@ -935,8 +840,8 @@
 			"title_single_line": "Play Fade Out",
 			"comment": "",
 			"guid": "02a4219a-4f5c-a799-90ed-e5b77e5c140f",
-			"x": 4144,
-			"y": 128,
+			"x": 4384,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -980,16 +885,350 @@
 			"target_class": "StartMemoryTransition"
 		},
 		{
-			"node_id": "K2Node_CallFunction_5",
-			"node_name": "K2Node_CallFunction_5",
+			"node_id": "K2Node_CreateDelegate_0",
+			"node_name": "K2Node_CreateDelegate_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CreateDelegate",
+			"title": "Create Event",
+			"title_single_line": "Create Event",
+			"comment": "",
+			"guid": "c0b2ee7b-4070-4c5c-8224-51ab03300b1f",
+			"x": 4320,
+			"y": 432,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "OutputDelegate",
+					"direction": "Output",
+					"category": "delegate",
+					"subcategory": "None",
+					"resolved_type": "delegate",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_0",
+			"node_name": "K2Node_MacroInstance_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
+			"comment": "",
+			"guid": "947720cc-4258-4f9e-1c7a-1cbb217cf6e6",
+			"x": 720,
+			"y": -240,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator6",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[TransitionManager] StartMemoryTransition aborted because a transition is already in progress",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_VariableGet_3",
+			"node_name": "K2Node_VariableGet_3",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CachedGI",
+			"title_single_line": "Get CachedGI",
+			"comment": "",
+			"guid": "8b999682-4c3d-bd91-c5f7-1ea276b64b14",
+			"x": -256,
+			"y": 352,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CachedGI",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "GI_Echoes_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_TransitionManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_CallFunction_7",
+			"node_name": "K2Node_CallFunction_7",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Set Timer by Event",
-			"title_single_line": "Set Timer by Event",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
 			"comment": "",
-			"guid": "4e56a97c-417e-af35-bd2b-679520a706ca",
-			"x": 4640,
-			"y": 144,
+			"guid": "23044997-4e63-63a3-e356-c4a6b073367b",
+			"x": -112,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_3",
+			"node_name": "K2Node_IfThenElse_3",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "85e52913-4b90-f113-310f-c99b0a716689",
+			"x": 96,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_Knot_3",
+			"node_name": "K2Node_Knot_3",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "00ee2dcd-4049-6e75-9eb3-0eaf8ae3106d",
+			"x": 64,
+			"y": -208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_1",
+			"node_name": "K2Node_MacroInstance_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Critical",
+			"title_single_line": "DBG Critical",
+			"comment": "",
+			"guid": "d9276b90-48c4-e023-b7b6-e1b7386f613a",
+			"x": 288,
+			"y": 176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator6",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[TransitionManager] StartMemoryTransition failed because CachedGI is invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "6611496f-493a-311d-1275-928a6d3f09cf",
+			"x": 848,
+			"y": 176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_VariableSet_2",
+			"node_name": "K2Node_VariableSet_2",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set TransictionDataL",
+			"title_single_line": "Set TransictionDataL",
+			"comment": "",
+			"guid": "8eb64d24-4edb-0a9a-edc7-0e99cfb1d773",
+			"x": -784,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1009,7 +1248,498 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "TransictionDataL",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
 					"linked_count": 0
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_VariableGet_11",
+			"node_name": "K2Node_VariableGet_11",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get TransictionDataL",
+			"title_single_line": "Get TransictionDataL",
+			"comment": "",
+			"guid": "a48d84d2-4257-3152-6666-2b865e0850dc",
+			"x": 1568,
+			"y": 336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "TransictionDataL",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Ensure Fade Widget\nTarget is BP Transition Manager",
+			"title_single_line": "Ensure Fade Widget",
+			"comment": "",
+			"guid": "70c46336-4f68-a9db-ecdf-07aa6b6f442a",
+			"x": 400,
+			"y": 16,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_VariableGet_12",
+			"node_name": "K2Node_VariableGet_12",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get TransictionDataL",
+			"title_single_line": "Get TransictionDataL",
+			"comment": "",
+			"guid": "65cda271-4fb1-89aa-8b66-ee9e5ed55dd2",
+			"x": 1216,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "TransictionDataL",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_VariableGet_13",
+			"node_name": "K2Node_VariableGet_13",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get TransictionDataL",
+			"title_single_line": "Get TransictionDataL",
+			"comment": "",
+			"guid": "9f07ceea-4755-e8bb-1f69-20886de3f700",
+			"x": 1696,
+			"y": 192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "TransictionDataL",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_VariableGet_14",
+			"node_name": "K2Node_VariableGet_14",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get TransictionDataL",
+			"title_single_line": "Get TransictionDataL",
+			"comment": "",
+			"guid": "9d892efb-468b-3c89-4f39-a89c27f2d1db",
+			"x": 2496,
+			"y": 144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "TransictionDataL",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_VariableGet_15",
+			"node_name": "K2Node_VariableGet_15",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get TransictionDataL",
+			"title_single_line": "Get TransictionDataL",
+			"comment": "",
+			"guid": "2a3b9e34-453e-5b64-755e-0bacf85852e2",
+			"x": 2512,
+			"y": 336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "TransictionDataL",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_0",
+			"node_name": "K2Node_PromotableOperator_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "float > float",
+			"title_single_line": "float > float",
+			"comment": "",
+			"guid": "1fc8d42f-4adf-64cd-e97f-178bc2dabccb",
+			"x": 3184,
+			"y": 160,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "real",
+					"subcategory": "double",
+					"resolved_type": "Double",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_4",
+			"node_name": "K2Node_IfThenElse_4",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "c0575227-43d6-75e5-861f-0fa3f4ffffeb",
+			"x": 3392,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Execute Level Travel\nTarget is BP Transition Manager",
+			"title_single_line": "Execute Level Travel",
+			"comment": "",
+			"guid": "2423664b-486c-0690-3369-408b7c76b4dc",
+			"x": 3712,
+			"y": 400,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "e9950547-4d76-e328-bebb-04ac4f805f44",
+			"x": 4016,
+			"y": 416,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_Knot_4",
+			"node_name": "K2Node_Knot_4",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "88a8850d-413f-1c06-aeee-8b98f1145a61",
+			"x": 4064,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_Fade_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_Fade_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_2",
+			"node_name": "K2Node_MacroInstance_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
+			"comment": "",
+			"guid": "df96f30f-4ef7-351b-4ceb-a0ad1b3a8706",
+			"x": 4080,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator6",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[TransitionManager] FadeWidgetRef is invalid during fade-out start, executing level travel immediately",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "StartMemoryTransition"
+		},
+		{
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Set Timer by Event",
+			"title_single_line": "Set Timer by Event",
+			"comment": "",
+			"guid": "f353da28-429b-af27-51f4-208f89444fe8",
+			"x": 5072,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -1087,16 +1817,16 @@
 			"target_class": "StartMemoryTransition"
 		},
 		{
-			"node_id": "K2Node_CreateDelegate_0",
-			"node_name": "K2Node_CreateDelegate_0",
+			"node_id": "K2Node_CreateDelegate_1",
+			"node_name": "K2Node_CreateDelegate_1",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_CreateDelegate",
 			"title": "Create Event",
 			"title_single_line": "Create Event",
 			"comment": "",
-			"guid": "c0b2ee7b-4070-4c5c-8224-51ab03300b1f",
-			"x": 4320,
-			"y": 432,
+			"guid": "80a552d4-4238-2de1-d356-2982c668a69a",
+			"x": 4752,
+			"y": 224,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1122,16 +1852,16 @@
 			"target_class": "StartMemoryTransition"
 		},
 		{
-			"node_id": "K2Node_CallFunction_6",
-			"node_name": "K2Node_CallFunction_6",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Message",
-			"title_single_line": "Debug Message",
+			"node_id": "K2Node_FunctionResult_3",
+			"node_name": "K2Node_FunctionResult_3",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "22cfeed5-4d02-a1c6-ffee-5b86efc0d7af",
-			"x": 928,
-			"y": -496,
+			"guid": "4705ea59-4456-6d69-fc82-5cbf2b5b41fc",
+			"x": 5520,
+			"y": 32,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1141,315 +1871,6 @@
 					"category": "exec",
 					"subcategory": "None",
 					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BFL_Debug_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "WorldContextObject",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Category",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator6",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator1",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "SenderName",
-					"direction": "Input",
-					"category": "name",
-					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "BP_TransitionManager",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "StartMemoryTransition - Transition request ignored because another transition is already in progress",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "10.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "bPrintToScreen",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "bPrintToLog",
-					"direction": "Input",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "__WorldContext",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "StartMemoryTransition"
-		},
-		{
-			"node_id": "K2Node_Self_0",
-			"node_name": "K2Node_Self_0",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "0e969724-4c57-ae68-bdd5-21932d0f8f0b",
-			"x": 592,
-			"y": -400,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "StartMemoryTransition"
-		},
-		{
-			"node_id": "K2Node_VariableGet_4",
-			"node_name": "K2Node_VariableGet_4",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get bDebugTransitions",
-			"title_single_line": "Get bDebugTransitions",
-			"comment": "",
-			"guid": "0696386b-47af-4eb7-cb88-d593776392fa",
-			"x": 576,
-			"y": -192,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "bDebugTransitions",
-					"direction": "Output",
-					"category": "bool",
-					"subcategory": "None",
-					"resolved_type": "Boolean",
-					"default_value": "false",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_TransitionManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "StartMemoryTransition"
-		},
-		{
-			"node_id": "K2Node_Knot_0",
-			"node_name": "K2Node_Knot_0",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "27b42bb4-4306-138a-2141-cca70ac5a52a",
-			"x": 368,
-			"y": 208,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_MemoryTransition",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_MemoryTransition",
-					"default_value": "",
-					"linked_count": 4
-				}
-			],
-			"target_class": "StartMemoryTransition"
-		},
-		{
-			"node_id": "K2Node_Knot_1",
-			"node_name": "K2Node_Knot_1",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "fbd41ab5-4682-763e-3dd6-3aa7a33e13ad",
-			"x": 896,
-			"y": 704,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_MemoryTransition",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_MemoryTransition",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "StartMemoryTransition"
-		},
-		{
-			"node_id": "K2Node_Composite_0",
-			"node_name": "K2Node_Composite_0",
-			"node_kind": "Unknown",
-			"ue_class": "K2Node_Composite",
-			"title": "debugTransitionWorld\nCollapsed Graph",
-			"title_single_line": "debugTransitionWorld",
-			"comment": "",
-			"guid": "f7c82870-46ec-abba-9fd7-84bc81b727d1",
-			"x": 1392,
-			"y": 128,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "Enumerator",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				}
-			],
-			"target_class": "StartMemoryTransition"
-		},
-		{
-			"node_id": "K2Node_Knot_2",
-			"node_name": "K2Node_Knot_2",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "fe5131a6-438d-9ae4-4e3d-f5b0beeaf0ae",
-			"x": 864,
-			"y": 256,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_MemoryTransition",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "S_MemoryTransition",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -1462,24 +1883,24 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "StartMemoryTransition",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_0",
-			"to_node_title": "Branch",
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set TransictionDataL",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Debug Message",
-			"to_pin": "execute"
+			"to_node_id": "K2Node_Knot_3",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set bTransitionInProgress",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
@@ -1494,8 +1915,8 @@
 			"from_node_id": "K2Node_VariableSet_1",
 			"from_node_title": "Set CurrentTransitionData",
 			"from_pin": "then",
-			"to_node_id": "K2Node_Composite_0",
-			"to_node_title": "debugTransitionWorld\nCollapsed Graph",
+			"to_node_id": "K2Node_CallDelegate_0",
+			"to_node_title": "Call On Transition Started",
 			"to_pin": "execute"
 		},
 		{
@@ -1510,14 +1931,6 @@
 			"from_node_id": "K2Node_CallFunction_0",
 			"from_node_title": "Play Transition SFX\nTarget is BP Transition Manager",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_1",
-			"to_node_title": "Branch",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_IfThenElse_1",
-			"from_node_title": "Branch",
-			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_2",
 			"to_node_title": "Set Startup Pending Transition\nTarget is GI Echoes",
 			"to_pin": "execute"
@@ -1526,7 +1939,7 @@
 			"from_node_id": "K2Node_CallFunction_2",
 			"from_node_title": "Set Startup Pending Transition\nTarget is GI Echoes",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_id": "K2Node_IfThenElse_4",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
@@ -1539,27 +1952,107 @@
 			"to_pin": "execute"
 		},
 		{
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_MacroInstance_2",
+			"to_node_title": "DBG Warning",
+			"to_pin": "execute"
+		},
+		{
 			"from_node_id": "K2Node_CallFunction_4",
 			"from_node_title": "Play Fade Out\nTarget is WBP Fade",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_id": "K2Node_CallFunction_11",
 			"to_node_title": "Set Timer by Event",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_6",
-			"from_node_title": "Debug Message",
+			"from_node_id": "K2Node_MacroInstance_0",
+			"from_node_title": "DBG Warning",
 			"from_pin": "then",
 			"to_node_id": "K2Node_FunctionResult_0",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_Composite_0",
-			"from_node_title": "debugTransitionWorld\nCollapsed Graph",
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallDelegate_0",
-			"to_node_title": "Call On Transition Started",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Ensure Fade Widget\nTarget is BP Transition Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_title": "DBG Critical",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Knot_3",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "DBG Warning",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_1",
+			"from_node_title": "DBG Critical",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_2",
+			"from_node_title": "Set TransictionDataL",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Ensure Fade Widget\nTarget is BP Transition Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set bTransitionInProgress",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Execute Level Travel\nTarget is BP Transition Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "Execute Level Travel\nTarget is BP Transition Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Set Timer by Event",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_3",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
 	],
@@ -1568,17 +2061,9 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "StartMemoryTransition",
 			"from_pin": "TransitionData",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Set Startup Pending Transition\nTarget is GI Echoes",
-			"to_pin": "InTransitionData"
-		},
-		{
-			"from_node_id": "K2Node_FunctionEntry_0",
-			"from_node_title": "StartMemoryTransition",
-			"from_pin": "TransitionData",
-			"to_node_id": "K2Node_Knot_0",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
+			"to_node_id": "K2Node_VariableSet_2",
+			"to_node_title": "Set TransictionDataL",
+			"to_pin": "TransictionDataL"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_0",
@@ -1597,36 +2082,12 @@
 			"to_pin": "AudioCueData"
 		},
 		{
-			"from_node_id": "K2Node_BreakStruct_0",
-			"from_node_title": "Break S Memory Transition",
-			"from_pin": "TargetWorldMode_13_B3DDE03A410E5B5872C9B5970BB01009",
-			"to_node_id": "K2Node_Composite_0",
-			"to_node_title": "debugTransitionWorld\nCollapsed Graph",
-			"to_pin": "Enumerator"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_1",
-			"from_node_title": "Get CachedGI",
-			"from_pin": "CachedGI",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Is Valid",
-			"to_pin": "Object"
-		},
-		{
 			"from_node_id": "K2Node_VariableGet_1",
 			"from_node_title": "Get CachedGI",
 			"from_pin": "CachedGI",
 			"to_node_id": "K2Node_CallFunction_2",
 			"to_node_title": "Set Startup Pending Transition\nTarget is GI Echoes",
 			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_1",
-			"from_node_title": "Is Valid",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_1",
-			"to_node_title": "Branch",
-			"to_pin": "Condition"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_2",
@@ -1640,9 +2101,9 @@
 			"from_node_id": "K2Node_VariableGet_2",
 			"from_node_title": "Get FadeWidgetRef",
 			"from_pin": "FadeWidgetRef",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Play Fade Out\nTarget is WBP Fade",
-			"to_pin": "self"
+			"to_node_id": "K2Node_Knot_4",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_3",
@@ -1664,89 +2125,97 @@
 			"from_node_id": "K2Node_BreakStruct_1",
 			"from_node_title": "Break S Memory Transition",
 			"from_pin": "FadeOutSec_2_7B4B68B84221002501F396813307E5B6",
-			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_id": "K2Node_PromotableOperator_0",
+			"to_node_title": "float > float",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_1",
+			"from_node_title": "Break S Memory Transition",
+			"from_pin": "FadeOutSec_2_7B4B68B84221002501F396813307E5B6",
+			"to_node_id": "K2Node_CallFunction_11",
 			"to_node_title": "Set Timer by Event",
 			"to_pin": "Time"
 		},
 		{
-			"from_node_id": "K2Node_CreateDelegate_0",
-			"from_node_title": "Create Event",
-			"from_pin": "OutputDelegate",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Set Timer by Event",
-			"to_pin": "Delegate"
+			"from_node_id": "K2Node_VariableGet_3",
+			"from_node_title": "Get CachedGI",
+			"from_pin": "CachedGI",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
 		},
 		{
-			"from_node_id": "K2Node_Self_0",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Debug Message",
-			"to_pin": "WorldContextObject"
+			"from_node_id": "K2Node_CallFunction_7",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_4",
-			"from_node_title": "Get bDebugTransitions",
-			"from_pin": "bDebugTransitions",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToScreen"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_4",
-			"from_node_title": "Get bDebugTransitions",
-			"from_pin": "bDebugTransitions",
-			"to_node_id": "K2Node_CallFunction_6",
-			"to_node_title": "Debug Message",
-			"to_pin": "bPrintToLog"
-		},
-		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_VariableSet_1",
-			"to_node_title": "Set CurrentTransitionData",
-			"to_pin": "CurrentTransitionData"
-		},
-		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
+			"from_node_id": "K2Node_VariableGet_11",
+			"from_node_title": "Get TransictionDataL",
+			"from_pin": "TransictionDataL",
 			"to_node_id": "K2Node_BreakStruct_0",
 			"to_node_title": "Break S Memory Transition",
 			"to_pin": "S_MemoryTransition"
 		},
 		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_Knot_1",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
+			"from_node_id": "K2Node_VariableGet_12",
+			"from_node_title": "Get TransictionDataL",
+			"from_pin": "TransictionDataL",
+			"to_node_id": "K2Node_VariableSet_1",
+			"to_node_title": "Set CurrentTransitionData",
+			"to_pin": "CurrentTransitionData"
 		},
 		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_Knot_2",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
+			"from_node_id": "K2Node_VariableGet_13",
+			"from_node_title": "Get TransictionDataL",
+			"from_pin": "TransictionDataL",
+			"to_node_id": "K2Node_CallDelegate_0",
+			"to_node_title": "Call On Transition Started",
+			"to_pin": "TransitionData"
 		},
 		{
-			"from_node_id": "K2Node_Knot_1",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
+			"from_node_id": "K2Node_VariableGet_14",
+			"from_node_title": "Get TransictionDataL",
+			"from_pin": "TransictionDataL",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Set Startup Pending Transition\nTarget is GI Echoes",
+			"to_pin": "InTransitionData"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_15",
+			"from_node_title": "Get TransictionDataL",
+			"from_pin": "TransictionDataL",
 			"to_node_id": "K2Node_BreakStruct_1",
 			"to_node_title": "Break S Memory Transition",
 			"to_pin": "S_MemoryTransition"
 		},
 		{
-			"from_node_id": "K2Node_Knot_2",
+			"from_node_id": "K2Node_PromotableOperator_0",
+			"from_node_title": "float > float",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_4",
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallDelegate_0",
-			"to_node_title": "Call On Transition Started",
-			"to_pin": "TransitionData"
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Play Fade Out\nTarget is WBP Fade",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CreateDelegate_1",
+			"from_node_title": "Create Event",
+			"from_pin": "OutputDelegate",
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Set Timer by Event",
+			"to_pin": "Delegate"
 		}
 	],
 	"problems": []

@@ -3,7 +3,7 @@
 	"graph_type": "Function",
 	"entry_node_id": "K2Node_FunctionEntry_0",
 	"has_latent_nodes": false,
-	"has_error_nodes": true,
+	"has_error_nodes": false,
 	"has_warning_nodes": false,
 	"locals": [],
 	"returns": [],
@@ -16,10 +16,9 @@
 		"writes_variables": [],
 		"calls": [
 			"Is Valid Soft Object Reference",
-			"Set Current World Mode",
-			"Set Current Level Name",
 			"Open Level (by Object Reference)",
-			"Set Current Level",
+			"Finish Transition",
+			"Is Valid",
 			"Build Snapshot from Managers",
 			"Write Save to Disk"
 		],
@@ -61,7 +60,7 @@
 					"subcategory": "None",
 					"resolved_type": "SoftWorldReference",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 1
 				},
 				{
 					"pin_name": "TargetWorldMode",
@@ -70,7 +69,7 @@
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
 					"default_value": "NewEnumerator0",
-					"linked_count": 1
+					"linked_count": 0
 				},
 				{
 					"pin_name": "bUseFade",
@@ -88,7 +87,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 0
 				}
 			],
 			"target_class": "TravelToLevelRef"
@@ -141,7 +140,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				}
 			],
 			"target_class": "TravelToLevelRef"
@@ -226,252 +225,6 @@
 			"target_class": "TravelToLevelRef"
 		},
 		{
-			"node_id": "K2Node_VariableGet_1",
-			"node_name": "K2Node_VariableGet_1",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CachedSaveManager",
-			"title_single_line": "Get CachedSaveManager",
-			"comment": "",
-			"guid": "b04a0557-42c6-9c36-c00a-c78a24c6c733",
-			"x": 192,
-			"y": -288,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "CachedSaveManager",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 2
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_TransitionManager_C",
-					"default_value": "",
-					"linked_count": 0
-				}
-			],
-			"target_class": "TravelToLevelRef"
-		},
-		{
-			"node_id": "K2Node_CallFunction_2",
-			"node_name": "K2Node_CallFunction_2",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Set Current World Mode",
-			"title_single_line": "Set Current World Mode",
-			"comment": "",
-			"guid": "622646f9-4e47-f148-93c0-cb8c2c8df0b5",
-			"x": 544,
-			"y": -176,
-			"has_error": true,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "NewWorldMode",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 1
-				}
-			],
-			"target_class": "TravelToLevelRef"
-		},
-		{
-			"node_id": "K2Node_Knot_0",
-			"node_name": "K2Node_Knot_0",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "f85a9e9e-41e7-1884-09f8-abbda5153c5e",
-			"x": -304,
-			"y": -64,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "TravelToLevelRef"
-		},
-		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Set Current Level Name",
-			"title_single_line": "Set Current Level Name",
-			"comment": "",
-			"guid": "7c8fbfc1-4631-ccbf-1900-f5a90b5ed074",
-			"x": 912,
-			"y": -176,
-			"has_error": true,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "NewLevelName",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "SoftWorldReference",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "TravelToLevelRef"
-		},
-		{
-			"node_id": "K2Node_Knot_1",
-			"node_name": "K2Node_Knot_1",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "b7d014b3-44cf-2a28-3216-eeadf9027f17",
-			"x": 784,
-			"y": -272,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 2
-				}
-			],
-			"target_class": "TravelToLevelRef"
-		},
-		{
-			"node_id": "K2Node_Knot_2",
-			"node_name": "K2Node_Knot_2",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "f1701897-457e-387a-6053-a3aa8907b3de",
-			"x": -240,
-			"y": -64,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "SoftWorldReference",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "struct",
-					"subcategory": "None",
-					"resolved_type": "SoftWorldReference",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "TravelToLevelRef"
-		},
-		{
 			"node_id": "K2Node_CallFunction_4",
 			"node_name": "K2Node_CallFunction_4",
 			"node_kind": "FunctionCall",
@@ -480,8 +233,8 @@
 			"title_single_line": "Open Level (by Object Reference)",
 			"comment": "",
 			"guid": "662977cf-4b9f-836e-3c36-55bfe3bccffb",
-			"x": 2272,
-			"y": -160,
+			"x": 1856,
+			"y": -320,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -492,7 +245,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				},
 				{
 					"pin_name": "then",
@@ -501,7 +254,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -560,8 +313,8 @@
 			"title_single_line": "Reroute Node",
 			"comment": "",
 			"guid": "6ad873c2-4f2f-5b48-738e-bb8e7c8bdc66",
-			"x": 1152,
-			"y": 112,
+			"x": 1568,
+			"y": 80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -587,17 +340,70 @@
 			"target_class": "TravelToLevelRef"
 		},
 		{
-			"node_id": "K2Node_CallFunction_5",
-			"node_name": "K2Node_CallFunction_5",
+			"node_id": "K2Node_MacroInstance_0",
+			"node_name": "K2Node_MacroInstance_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
+			"comment": "",
+			"guid": "5fee77de-4b99-1dd1-ac21-b8957ccceabc",
+			"x": 544,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator6",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[TransitionManager] TravelToLevelRef aborted because TargetLevelRef is invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TravelToLevelRef"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Set Current Level",
-			"title_single_line": "Set Current Level",
+			"title": "Finish Transition\nTarget is BP Transition Manager",
+			"title_single_line": "Finish Transition",
 			"comment": "",
-			"guid": "26a84b43-4e8c-a011-f0e4-7b9fdd5c9ecf",
-			"x": 1248,
-			"y": -176,
-			"has_error": true,
+			"guid": "18b3efff-41ea-1879-95d9-7782cf3e855d",
+			"x": 1088,
+			"y": 192,
+			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
@@ -622,87 +428,166 @@
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
+					"subcategory": "self",
+					"resolved_type": "object",
 					"default_value": "",
-					"linked_count": 1
-				},
+					"linked_count": 0
+				}
+			],
+			"target_class": "TravelToLevelRef"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "0f151d04-4b8c-8fbe-d706-6a9e837f85ba",
+			"x": 1424,
+			"y": 208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
 				{
-					"pin_name": "NewLevelName",
+					"pin_name": "execute",
 					"direction": "Input",
-					"category": "name",
+					"category": "exec",
 					"subcategory": "None",
-					"resolved_type": "Name",
-					"default_value": "None",
+					"resolved_type": "exec",
+					"default_value": "",
 					"linked_count": 1
 				}
 			],
 			"target_class": "TravelToLevelRef"
 		},
 		{
-			"node_id": "K2Node_Knot_4",
-			"node_name": "K2Node_Knot_4",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CachedSaveManager",
+			"title_single_line": "Get CachedSaveManager",
 			"comment": "",
-			"guid": "1eeaa64a-44ed-4c0c-e4dd-3aaec21cc1c0",
-			"x": 1136,
+			"guid": "bd9ee17b-4b2a-c798-4330-45b307ea2a28",
+			"x": 416,
 			"y": -272,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
+					"pin_name": "CachedSaveManager",
 					"direction": "Output",
 					"category": "object",
 					"subcategory": "None",
 					"resolved_type": "BP_SaveManager_C",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 3
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_TransitionManager_C",
+					"default_value": "",
+					"linked_count": 0
 				}
 			],
 			"target_class": "TravelToLevelRef"
 		},
 		{
-			"node_id": "K2Node_Knot_5",
-			"node_name": "K2Node_Knot_5",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
+			"node_id": "K2Node_CallFunction_8",
+			"node_name": "K2Node_CallFunction_8",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
 			"comment": "",
-			"guid": "d10c700c-4fed-bbb1-a3aa-2cb3a2fce55d",
-			"x": -112,
-			"y": -64,
+			"guid": "0810285d-4c71-952f-1ed3-33a0ba0db9cf",
+			"x": 384,
+			"y": -224,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "InputPin",
+					"pin_name": "self",
 					"direction": "Input",
-					"category": "name",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "Name",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "OutputPin",
+					"pin_name": "ReturnValue",
 					"direction": "Output",
-					"category": "name",
+					"category": "bool",
 					"subcategory": "None",
-					"resolved_type": "Name",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TravelToLevelRef"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "5939ad89-4fe9-543a-30d3-0ebb9cfadef7",
+			"x": 672,
+			"y": -224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -710,16 +595,16 @@
 			"target_class": "TravelToLevelRef"
 		},
 		{
-			"node_id": "K2Node_CallFunction_6",
-			"node_name": "K2Node_CallFunction_6",
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"title_single_line": "Build Snapshot from Managers",
 			"comment": "",
-			"guid": "2cd76e81-4668-d94a-f8e2-d2b4ba2535a7",
-			"x": 1552,
-			"y": -176,
+			"guid": "36bcbabe-4b78-5bc0-3196-f68db1635d2c",
+			"x": 960,
+			"y": -336,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -763,51 +648,16 @@
 			"target_class": "TravelToLevelRef"
 		},
 		{
-			"node_id": "K2Node_Knot_6",
-			"node_name": "K2Node_Knot_6",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "b6d26b14-44ed-516c-5307-75b28ac68625",
-			"x": 1424,
-			"y": -272,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
-					"default_value": "",
-					"linked_count": 2
-				}
-			],
-			"target_class": "TravelToLevelRef"
-		},
-		{
-			"node_id": "K2Node_CallFunction_7",
-			"node_name": "K2Node_CallFunction_7",
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Write Save to Disk\nTarget is BP Save Manager",
 			"title_single_line": "Write Save to Disk",
 			"comment": "",
-			"guid": "19cb3db3-4516-2612-8ed5-f081d70cfacf",
-			"x": 1888,
-			"y": -176,
+			"guid": "2af50595-47db-5e88-c5ac-3cba6ac1c7d2",
+			"x": 1408,
+			"y": -336,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -851,34 +701,78 @@
 			"target_class": "TravelToLevelRef"
 		},
 		{
-			"node_id": "K2Node_Knot_7",
-			"node_name": "K2Node_Knot_7",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
 			"comment": "",
-			"guid": "994a09f6-4e4e-04c6-d27d-718d4235b1e4",
-			"x": 1808,
-			"y": -272,
+			"guid": "b7f0ea66-4b3f-5816-c913-9bb3e49feff6",
+			"x": 2208,
+			"y": -320,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "InputPin",
+					"pin_name": "execute",
 					"direction": "Input",
-					"category": "object",
+					"category": "exec",
 					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "TravelToLevelRef"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_1",
+			"node_name": "K2Node_MacroInstance_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
+			"comment": "",
+			"guid": "5c89eb57-4ed6-be23-0ed3-c89ef9c87527",
+			"x": 960,
+			"y": -80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "object",
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
 					"subcategory": "None",
-					"resolved_type": "BP_SaveManager_C",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[TransitionManager] CachedSaveManager is invalid before level travel, continuing without save write",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -899,45 +793,77 @@
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Set Current World Mode",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_2",
-			"from_node_title": "Set Current World Mode",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Set Current Level Name",
+			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "DBG Warning",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Set Current Level Name",
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Open Level (by Object Reference)",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Set Current Level",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_5",
-			"from_node_title": "Set Current Level",
+			"from_node_id": "K2Node_MacroInstance_0",
+			"from_node_title": "DBG Warning",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "Finish Transition\nTarget is BP Transition Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "Finish Transition\nTarget is BP Transition Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_9",
 			"to_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_6",
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_title": "DBG Warning",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_9",
 			"from_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_id": "K2Node_CallFunction_10",
 			"to_node_title": "Write Save to Disk\nTarget is BP Save Manager",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_7",
+			"from_node_id": "K2Node_CallFunction_10",
 			"from_node_title": "Write Save to Disk\nTarget is BP Save Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Open Level (by Object Reference)",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_1",
+			"from_node_title": "DBG Warning",
 			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_4",
 			"to_node_title": "Open Level (by Object Reference)",
@@ -952,30 +878,6 @@
 			"to_node_id": "K2Node_BreakStruct_0",
 			"to_node_title": "Break Soft World Reference",
 			"to_pin": "SoftWorldReference"
-		},
-		{
-			"from_node_id": "K2Node_FunctionEntry_0",
-			"from_node_title": "TravelToLevelRef",
-			"from_pin": "TargetLevelRef",
-			"to_node_id": "K2Node_Knot_2",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_FunctionEntry_0",
-			"from_node_title": "TravelToLevelRef",
-			"from_pin": "TargetWorldMode",
-			"to_node_id": "K2Node_Knot_0",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_FunctionEntry_0",
-			"from_node_title": "TravelToLevelRef",
-			"from_pin": "TargetLevelName",
-			"to_node_id": "K2Node_Knot_5",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_BreakStruct_0",
@@ -1002,54 +904,6 @@
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_1",
-			"from_node_title": "Get CachedSaveManager",
-			"from_pin": "CachedSaveManager",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Set Current World Mode",
-			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_1",
-			"from_node_title": "Get CachedSaveManager",
-			"from_pin": "CachedSaveManager",
-			"to_node_id": "K2Node_Knot_1",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Set Current World Mode",
-			"to_pin": "NewWorldMode"
-		},
-		{
-			"from_node_id": "K2Node_Knot_1",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Set Current Level Name",
-			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_Knot_1",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_Knot_4",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_Knot_2",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Set Current Level Name",
-			"to_pin": "NewLevelName"
-		},
-		{
 			"from_node_id": "K2Node_Knot_3",
 			"from_node_title": "Reroute Node",
 			"from_pin": "OutputPin",
@@ -1058,52 +912,36 @@
 			"to_pin": "Level"
 		},
 		{
-			"from_node_id": "K2Node_Knot_4",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Set Current Level",
-			"to_pin": "self"
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get CachedSaveManager",
+			"from_pin": "CachedSaveManager",
+			"to_node_id": "K2Node_CallFunction_8",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
 		},
 		{
-			"from_node_id": "K2Node_Knot_4",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_Knot_6",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_Knot_5",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_5",
-			"to_node_title": "Set Current Level",
-			"to_pin": "NewLevelName"
-		},
-		{
-			"from_node_id": "K2Node_Knot_6",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_6",
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get CachedSaveManager",
+			"from_pin": "CachedSaveManager",
+			"to_node_id": "K2Node_CallFunction_9",
 			"to_node_title": "Build Snapshot from Managers\nTarget is BP Save Manager",
 			"to_pin": "self"
 		},
 		{
-			"from_node_id": "K2Node_Knot_6",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_Knot_7",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
-		},
-		{
-			"from_node_id": "K2Node_Knot_7",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_CallFunction_7",
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get CachedSaveManager",
+			"from_pin": "CachedSaveManager",
+			"to_node_id": "K2Node_CallFunction_10",
 			"to_node_title": "Write Save to Disk\nTarget is BP Save Manager",
 			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_8",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
 		}
 	],
 	"problems": []

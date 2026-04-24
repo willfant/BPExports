@@ -21,7 +21,11 @@
 			"Clear Startup Pending Transition"
 		],
 		"called_by": [
-			"EventGraph"
+			"EventGraph",
+			"ExecuteLevelTravel",
+			"HandlePendingArrivalTransition",
+			"TravelToLevelRef",
+			"TravelToLevelName"
 		],
 		"branch_points": [
 			"Branch"
@@ -125,8 +129,8 @@
 			"title_single_line": "Get CachedGI",
 			"comment": "",
 			"guid": "ba2b2692-454f-d6e0-45ed-dea42739e39f",
-			"x": 384,
-			"y": 176,
+			"x": 496,
+			"y": -48,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -278,7 +282,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -293,16 +297,16 @@
 			"target_class": "FinishTransition"
 		},
 		{
-			"node_id": "K2Node_CallDelegate_0",
-			"node_name": "K2Node_CallDelegate_0",
+			"node_id": "K2Node_CallDelegate_1",
+			"node_name": "K2Node_CallDelegate_1",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_CallDelegate",
 			"title": "Call On Transition Finished",
 			"title_single_line": "Call On Transition Finished",
 			"comment": "",
 			"guid": "8d5ea13c-47f4-3ce0-8d94-419b4aea9c43",
-			"x": 1168,
-			"y": 96,
+			"x": 1696,
+			"y": 128,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -322,7 +326,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -332,6 +336,208 @@
 					"resolved_type": "BP_TransitionManager_C",
 					"default_value": "",
 					"linked_count": 0
+				}
+			],
+			"target_class": "FinishTransition"
+		},
+		{
+			"node_id": "K2Node_CallDelegate_0",
+			"node_name": "K2Node_CallDelegate_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CallDelegate",
+			"title": "Call On Transition Finished",
+			"title_single_line": "Call On Transition Finished",
+			"comment": "",
+			"guid": "e99c24a3-4d93-418e-a029-ea89f315faad",
+			"x": 1536,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_TransitionManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "FinishTransition"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_0",
+			"node_name": "K2Node_MacroInstance_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Info",
+			"title_single_line": "DBG Info",
+			"comment": "",
+			"guid": "a1429f9a-4820-aecd-c4c0-ea8377276627",
+			"x": 1904,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator6",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[TransitionManager] Transition finished successfully",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "FinishTransition"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "65eb721f-48ec-70d5-12d8-e2b7c39cb4ed",
+			"x": 2432,
+			"y": -112,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "FinishTransition"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_1",
+			"node_name": "K2Node_MacroInstance_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
+			"comment": "",
+			"guid": "c88844d5-4430-7ea9-86c5-0dbfe13db43b",
+			"x": 1104,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator6",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[TransitionManager] FinishTransition completed but CachedGI was invalid while clearing pending transition",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "FinishTransition"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "5fb66d51-4470-4c53-b23b-f49981c2c73e",
+			"x": 2000,
+			"y": 128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
 				}
 			],
 			"target_class": "FinishTransition"
@@ -366,7 +572,47 @@
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "else",
+			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_title": "DBG Warning",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Clear Startup Pending Transition\nTarget is GI Echoes",
+			"from_pin": "then",
 			"to_node_id": "K2Node_CallDelegate_0",
+			"to_node_title": "Call On Transition Finished",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallDelegate_1",
+			"from_node_title": "Call On Transition Finished",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallDelegate_0",
+			"from_node_title": "Call On Transition Finished",
+			"from_pin": "then",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "DBG Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_0",
+			"from_node_title": "DBG Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_1",
+			"from_node_title": "DBG Warning",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallDelegate_1",
 			"to_node_title": "Call On Transition Finished",
 			"to_pin": "execute"
 		}

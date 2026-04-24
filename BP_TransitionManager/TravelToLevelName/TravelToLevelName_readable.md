@@ -10,17 +10,16 @@ Auto-generated function summary.
 - CachedSaveManager
 
 ## Calls
-- Set Current World Mode
-- Set Current Level Name
-- Set Current Level
 - Open Level (by Name)
 - Build Snapshot from Managers
 - Write Save to Disk
+- Finish Transition
+- Is Valid
 
 ## Branch Points
 - Branch
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

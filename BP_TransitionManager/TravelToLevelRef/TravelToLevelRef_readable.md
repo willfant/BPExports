@@ -11,10 +11,9 @@ Auto-generated function summary.
 
 ## Calls
 - Is Valid Soft Object Reference
-- Set Current World Mode
-- Set Current Level Name
 - Open Level (by Object Reference)
-- Set Current Level
+- Finish Transition
+- Is Valid
 - Build Snapshot from Managers
 - Write Save to Disk
 
@@ -26,5 +25,5 @@ Auto-generated function summary.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

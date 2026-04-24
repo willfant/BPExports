@@ -8,18 +8,15 @@ Auto-generated function summary.
 
 ## Reads
 - CurrentTransitionData
-- bDebugTransitions
-
-## Writes
-- bTransitionInProgress
 
 ## Calls
 - Is Valid Soft Object Reference
-- Debug Message
 - Travel to Level Ref
+- Finish Transition
 
 ## Called By
 - EventGraph
+- StartMemoryTransition
 
 ## Branch Points
 - Branch

@@ -18,9 +18,11 @@ Auto-generated function summary.
 - Get Player Controller
 - Add to Viewport
 - Set Fade Instant
+- Is Valid Class
 
 ## Called By
 - InitializeTransitionManager
+- StartMemoryTransition
 
 ## Branch Points
 - Branch

@@ -21,10 +21,12 @@
 			"Is Valid",
 			"Get Player Controller",
 			"Add to Viewport",
-			"Set Fade Instant"
+			"Set Fade Instant",
+			"Is Valid Class"
 		],
 		"called_by": [
-			"InitializeTransitionManager"
+			"InitializeTransitionManager",
+			"StartMemoryTransition"
 		],
 		"branch_points": [
 			"Branch"
@@ -198,7 +200,7 @@
 			"title_single_line": "Return Node",
 			"comment": "",
 			"guid": "2af8b792-4f41-fd17-8f8f-acb85afbb5c3",
-			"x": 1408,
+			"x": 1056,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -224,8 +226,8 @@
 			"title_single_line": "Get Player Controller",
 			"comment": "",
 			"guid": "60c2329d-4da2-9537-7ea9-0c8e0402749c",
-			"x": 384,
-			"y": 288,
+			"x": 1296,
+			"y": 80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -263,7 +265,7 @@
 					"subcategory": "None",
 					"resolved_type": "PlayerController",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				}
 			],
 			"target_class": "EnsureFadeWidget"
@@ -277,8 +279,8 @@
 			"title_single_line": "Create WBP Fade Widget",
 			"comment": "",
 			"guid": "deab58f2-4a63-d5ce-494a-9f928d98b191",
-			"x": 864,
-			"y": 208,
+			"x": 2224,
+			"y": -368,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -316,7 +318,7 @@
 					"subcategory": "None",
 					"resolved_type": "WBP_Fade_C",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				},
 				{
 					"pin_name": "OwningPlayer",
@@ -339,8 +341,8 @@
 			"title_single_line": "Get FadeWidgetClass",
 			"comment": "",
 			"guid": "525a9321-418a-a79e-8c7c-339526012f47",
-			"x": 576,
-			"y": 224,
+			"x": 400,
+			"y": 320,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -374,8 +376,8 @@
 			"title_single_line": "Set FadeWidgetRef",
 			"comment": "",
 			"guid": "2fa35496-4ab8-888d-b190-749415879f86",
-			"x": 1248,
-			"y": 224,
+			"x": 3200,
+			"y": -528,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -413,7 +415,7 @@
 					"subcategory": "None",
 					"resolved_type": "WBP_Fade_C",
 					"default_value": "",
-					"linked_count": 3
+					"linked_count": 2
 				},
 				{
 					"pin_name": "self",
@@ -436,8 +438,8 @@
 			"title_single_line": "Add to Viewport",
 			"comment": "",
 			"guid": "a388eb9f-456c-8a24-7a2d-62b8a8542d12",
-			"x": 2192,
-			"y": 192,
+			"x": 3568,
+			"y": -560,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -489,8 +491,8 @@
 			"title_single_line": "Set Fade Instant",
 			"comment": "",
 			"guid": "893f7fc2-44d3-f882-4043-e28889bdc0bf",
-			"x": 2544,
-			"y": 192,
+			"x": 3888,
+			"y": -560,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -534,16 +536,122 @@
 			"target_class": "EnsureFadeWidget"
 		},
 		{
-			"node_id": "K2Node_CallFunction_4",
-			"node_name": "K2Node_CallFunction_4",
+			"node_id": "K2Node_MacroInstance_1",
+			"node_name": "K2Node_MacroInstance_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
+			"comment": "",
+			"guid": "53eabc21-4736-4cae-72b5-a6ac502b11d3",
+			"x": 3792,
+			"y": 480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator6",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "Fade widget not found, creating new widget",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_2",
+			"node_name": "K2Node_MacroInstance_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
+			"comment": "",
+			"guid": "195e971f-40ef-98b6-174d-7fa9a1454082",
+			"x": 4208,
+			"y": -544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator6",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[TransitionManager] Fade widget ensured successfully",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_CallFunction_9",
+			"node_name": "K2Node_CallFunction_9",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Is Valid",
-			"title_single_line": "Is Valid",
+			"title": "Is Valid Class",
+			"title_single_line": "Is Valid Class",
 			"comment": "",
-			"guid": "2b8633a2-4bfe-4314-15f7-55a2fbf2b50a",
-			"x": 1424,
-			"y": 416,
+			"guid": "c92f5fc9-4841-5c9f-14bb-4082d3d44793",
+			"x": 592,
+			"y": 160,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -557,9 +665,9 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "Object",
+					"pin_name": "Class",
 					"direction": "Input",
-					"category": "object",
+					"category": "class",
 					"subcategory": "None",
 					"resolved_type": "Object",
 					"default_value": "",
@@ -578,16 +686,16 @@
 			"target_class": "EnsureFadeWidget"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_1",
-			"node_name": "K2Node_IfThenElse_1",
+			"node_id": "K2Node_IfThenElse_2",
+			"node_name": "K2Node_IfThenElse_2",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "59390a7b-46cd-8202-6c26-bfa4d254b708",
-			"x": 1712,
-			"y": 208,
+			"guid": "4e29a5a5-4c99-98eb-b648-60ab7c04d778",
+			"x": 880,
+			"y": 128,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -631,20 +739,143 @@
 			"target_class": "EnsureFadeWidget"
 		},
 		{
-			"node_id": "K2Node_MacroInstance_0",
-			"node_name": "K2Node_MacroInstance_0",
+			"node_id": "K2Node_MacroInstance_3",
+			"node_name": "K2Node_MacroInstance_3",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_MacroInstance",
-			"title": "DBG Info",
-			"title_single_line": "DBG Info",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
 			"comment": "",
-			"guid": "c2f74322-4eba-4aae-9086-d795ab2a780a",
-			"x": 912,
+			"guid": "1d5e6059-4b8f-0ef5-c796-cb9e1b117c47",
+			"x": 1136,
+			"y": 288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator6",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[TransitionManager] EnsureFadeWidget failed because FadeWidgetClass is invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "daef9490-497b-37c8-b76f-788a4d0ce21b",
+			"x": 1648,
+			"y": 288,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "6492d22a-4b07-0c64-4d8c-a9a5c965bccc",
+			"x": 1600,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_3",
+			"node_name": "K2Node_IfThenElse_3",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "2d6cb933-42a4-3597-22b6-24a3b5376877",
+			"x": 1936,
+			"y": -80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
 					"pin_name": "execute",
 					"direction": "Input",
 					"category": "exec",
@@ -654,25 +885,25 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "Category",
+					"pin_name": "Condition",
 					"direction": "Input",
-					"category": "byte",
+					"category": "bool",
 					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator6",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "string",
-					"subcategory": "None",
-					"resolved_type": "String",
-					"default_value": "EnsureFadeWidget - Fade widget already exists",
-					"linked_count": 0
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
 				},
 				{
 					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
 					"direction": "Output",
 					"category": "exec",
 					"subcategory": "None",
@@ -684,16 +915,51 @@
 			"target_class": "EnsureFadeWidget"
 		},
 		{
-			"node_id": "K2Node_MacroInstance_1",
-			"node_name": "K2Node_MacroInstance_1",
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "2b8528ad-4575-c5fc-77fe-dea0d672caae",
+			"x": 1488,
+			"y": -48,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_4",
+			"node_name": "K2Node_MacroInstance_4",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_MacroInstance",
 			"title": "DBG Warning",
 			"title_single_line": "DBG Warning",
 			"comment": "",
-			"guid": "53eabc21-4736-4cae-72b5-a6ac502b11d3",
-			"x": 1952,
-			"y": 576,
+			"guid": "31d42daf-48fa-48a4-4354-d599fcf71c4a",
+			"x": 2192,
+			"y": 32,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -721,7 +987,7 @@
 					"category": "string",
 					"subcategory": "None",
 					"resolved_type": "String",
-					"default_value": "Fade widget not found, creating new widget",
+					"default_value": "[TransitionManager] EnsureFadeWidget failed because PlayerController is invalid",
 					"linked_count": 0
 				},
 				{
@@ -731,22 +997,215 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "c00d8a43-473c-5c50-9afd-3a8c7e9027c9",
+			"x": 2704,
+			"y": 32,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "6ed77e44-46d8-c1d4-fd13-efbf6532dd01",
+			"x": 1648,
+			"y": -256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "PlayerController",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "PlayerController",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_VariableGet_4",
+			"node_name": "K2Node_VariableGet_4",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get FadeWidgetClass",
+			"title_single_line": "Get FadeWidgetClass",
+			"comment": "",
+			"guid": "81d81d9e-43b8-b6e6-f75c-89b3b00e3315",
+			"x": 1984,
+			"y": -320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "FadeWidgetClass",
+					"direction": "Output",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "WBP_Fade_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_TransitionManager_C",
+					"default_value": "",
 					"linked_count": 0
 				}
 			],
 			"target_class": "EnsureFadeWidget"
 		},
 		{
-			"node_id": "K2Node_MacroInstance_2",
-			"node_name": "K2Node_MacroInstance_2",
+			"node_id": "K2Node_CallFunction_11",
+			"node_name": "K2Node_CallFunction_11",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "e8796fa2-4a4f-75bd-92dc-42bbf59e8eda",
+			"x": 2704,
+			"y": -320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_4",
+			"node_name": "K2Node_IfThenElse_4",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "e1b94d75-4dc9-f475-2075-699b8c54e953",
+			"x": 2976,
+			"y": -368,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_5",
+			"node_name": "K2Node_MacroInstance_5",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_MacroInstance",
-			"title": "DBG Warning",
-			"title_single_line": "DBG Warning",
+			"title": "DBG Critical",
+			"title_single_line": "DBG Critical",
 			"comment": "",
-			"guid": "195e971f-40ef-98b6-174d-7fa9a1454082",
-			"x": 2816,
-			"y": 208,
+			"guid": "58c42ec3-4a40-7eea-e3ff-06acf8588c9e",
+			"x": 3232,
+			"y": -192,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -774,7 +1233,7 @@
 					"category": "string",
 					"subcategory": "None",
 					"resolved_type": "String",
-					"default_value": "Fade widget initialized to transparent",
+					"default_value": "[TransitionManager] EnsureFadeWidget failed because widget creation returned invalid ref",
 					"linked_count": 0
 				},
 				{
@@ -784,7 +1243,94 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_3",
+			"node_name": "K2Node_FunctionResult_3",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "35652f9d-4081-a273-4b90-c1877a34e384",
+			"x": 3760,
+			"y": -192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_Knot_2",
+			"node_name": "K2Node_Knot_2",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "a8baf596-4384-080b-4354-548da13579f6",
+			"x": 2768,
+			"y": -480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_Fade_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "WBP_Fade_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EnsureFadeWidget"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_4",
+			"node_name": "K2Node_FunctionResult_4",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "d46441f1-419d-4bff-d3ca-a691cc0af14d",
+			"x": 4752,
+			"y": -544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
 				}
 			],
 			"target_class": "EnsureFadeWidget"
@@ -803,32 +1349,32 @@
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_MacroInstance_0",
-			"to_node_title": "DBG Info",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CreateWidget_0",
-			"to_node_title": "Create WBP Fade Widget",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_CreateWidget_0",
 			"from_node_title": "Create WBP Fade Widget",
 			"from_pin": "then",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set FadeWidgetRef",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
 			"from_node_id": "K2Node_VariableSet_0",
 			"from_node_title": "Set FadeWidgetRef",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_1",
-			"to_node_title": "Branch",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Add to Viewport\nTarget is User Widget",
 			"to_pin": "execute"
 		},
 		{
@@ -848,26 +1394,90 @@
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_1",
-			"from_node_title": "Branch",
+			"from_node_id": "K2Node_MacroInstance_2",
+			"from_node_title": "DBG Warning",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Add to Viewport\nTarget is User Widget",
+			"to_node_id": "K2Node_FunctionResult_4",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_id": "K2Node_IfThenElse_2",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_2",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_id": "K2Node_MacroInstance_3",
 			"to_node_title": "DBG Warning",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_MacroInstance_0",
-			"from_node_title": "DBG Info",
+			"from_node_id": "K2Node_MacroInstance_3",
+			"from_node_title": "DBG Warning",
 			"from_pin": "then",
-			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CreateWidget_0",
+			"to_node_title": "Create WBP Fade Widget",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_MacroInstance_4",
+			"to_node_title": "DBG Warning",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_4",
+			"from_node_title": "DBG Warning",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set FadeWidgetRef",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_MacroInstance_5",
+			"to_node_title": "DBG Critical",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_5",
+			"from_node_title": "DBG Critical",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_3",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
@@ -893,24 +1503,40 @@
 			"from_node_id": "K2Node_CallFunction_1",
 			"from_node_title": "Get Player Controller",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_CreateWidget_0",
-			"to_node_title": "Create WBP Fade Widget",
-			"to_pin": "OwningPlayer"
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Get Player Controller",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_CreateWidget_0",
 			"from_node_title": "Create WBP Fade Widget",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_VariableSet_0",
-			"to_node_title": "Set FadeWidgetRef",
-			"to_pin": "FadeWidgetRef"
+			"to_node_id": "K2Node_CallFunction_11",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CreateWidget_0",
+			"from_node_title": "Create WBP Fade Widget",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_Knot_2",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_100",
 			"from_node_title": "Get FadeWidgetClass",
 			"from_pin": "FadeWidgetClass",
-			"to_node_id": "K2Node_CreateWidget_0",
-			"to_node_title": "Create WBP Fade Widget",
+			"to_node_id": "K2Node_CallFunction_9",
+			"to_node_title": "Is Valid Class",
 			"to_pin": "Class"
 		},
 		{
@@ -930,20 +1556,52 @@
 			"to_pin": "self"
 		},
 		{
-			"from_node_id": "K2Node_VariableSet_0",
-			"from_node_title": "Set FadeWidgetRef",
-			"from_pin": "Output_Get",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Is Valid",
-			"to_pin": "Object"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_4",
-			"from_node_title": "Is Valid",
+			"from_node_id": "K2Node_CallFunction_9",
+			"from_node_title": "Is Valid Class",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_id": "K2Node_IfThenElse_2",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_CreateWidget_0",
+			"to_node_title": "Create WBP Fade Widget",
+			"to_pin": "OwningPlayer"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get FadeWidgetClass",
+			"from_pin": "FadeWidgetClass",
+			"to_node_id": "K2Node_CreateWidget_0",
+			"to_node_title": "Create WBP Fade Widget",
+			"to_pin": "Class"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_11",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_2",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set FadeWidgetRef",
+			"to_pin": "FadeWidgetRef"
 		}
 	],
 	"problems": []

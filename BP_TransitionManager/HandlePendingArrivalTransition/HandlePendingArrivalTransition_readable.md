@@ -10,11 +10,9 @@ Auto-generated function summary.
 - CachedGI
 - bHasPendingTransition
 - PendingTransitionData
-- CachedWorldModeSystem
 - CurrentTransitionData
-- CachedSaveManager
+- CachedWorldModeSystem
 - FadeWidgetRef
-- bDebugTransitions
 
 ## Writes
 - CurrentTransitionData
@@ -23,11 +21,10 @@ Auto-generated function summary.
 ## Calls
 - Is Valid
 - Set World Mode
-- Set Current World Mode
+- Finish Transition
 - Set Fade Instant
 - Play Fade In
 - Set Timer by Event
-- Debug Message
 
 ## Called By
 - InitializeTransitionManager
@@ -37,5 +34,5 @@ Auto-generated function summary.
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

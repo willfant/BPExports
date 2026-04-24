@@ -79,6 +79,20 @@
 		},
 		{
 			"from_graph": "EnsureFadeWidget",
+			"from_node_title": "Is Valid Class",
+			"to_graph": "IsValidClass",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "EnsureFadeWidget",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "EnsureFadeWidget",
 			"from_node_title": "Is Valid",
 			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
@@ -90,13 +104,6 @@
 			"to_graph": "PlayTransitionSFX",
 			"call_type": "SelfFunction",
 			"target_class": ""
-		},
-		{
-			"from_graph": "StartMemoryTransition",
-			"from_node_title": "Is Valid",
-			"to_graph": "IsValid",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
 		},
 		{
 			"from_graph": "StartMemoryTransition",
@@ -121,17 +128,31 @@
 		},
 		{
 			"from_graph": "StartMemoryTransition",
-			"from_node_title": "Set Timer by Event",
-			"to_graph": "K2_SetTimerDelegate",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetSystemLibrary"
 		},
 		{
 			"from_graph": "StartMemoryTransition",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
+			"from_node_title": "Ensure Fade Widget",
+			"to_graph": "EnsureFadeWidget",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "StartMemoryTransition",
+			"from_node_title": "Execute Level Travel",
+			"to_graph": "ExecuteLevelTravel",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "StartMemoryTransition",
+			"from_node_title": "Set Timer by Event",
+			"to_graph": "K2_SetTimerDelegate",
 			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
+			"target_class": "KismetSystemLibrary"
 		},
 		{
 			"from_graph": "PlayTransitionSFX",
@@ -148,13 +169,6 @@
 			"target_class": "GameplayStatics"
 		},
 		{
-			"from_graph": "PlayTransitionSFX",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
 			"from_graph": "ExecuteLevelTravel",
 			"from_node_title": "Is Valid Soft Object Reference",
 			"to_graph": "IsValidSoftObjectReference",
@@ -163,15 +177,15 @@
 		},
 		{
 			"from_graph": "ExecuteLevelTravel",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
+			"from_node_title": "Travel to Level Ref",
+			"to_graph": "TravelToLevelRef",
+			"call_type": "SelfFunction",
+			"target_class": ""
 		},
 		{
 			"from_graph": "ExecuteLevelTravel",
-			"from_node_title": "Travel to Level Ref",
-			"to_graph": "TravelToLevelRef",
+			"from_node_title": "Finish Transition",
+			"to_graph": "FinishTransition",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
@@ -205,17 +219,10 @@
 		},
 		{
 			"from_graph": "HandlePendingArrivalTransition",
-			"from_node_title": "Set Current World Mode",
-			"to_graph": "SetCurrentWorldMode",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
-		},
-		{
-			"from_graph": "HandlePendingArrivalTransition",
-			"from_node_title": "Is Valid",
-			"to_graph": "IsValid",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
+			"from_node_title": "Finish Transition",
+			"to_graph": "FinishTransition",
+			"call_type": "SelfFunction",
+			"target_class": ""
 		},
 		{
 			"from_graph": "HandlePendingArrivalTransition",
@@ -223,6 +230,13 @@
 			"to_graph": "SetFadeInstant",
 			"call_type": "ExternalFunction",
 			"target_class": "WBP_Fade_C"
+		},
+		{
+			"from_graph": "HandlePendingArrivalTransition",
+			"from_node_title": "Finish Transition",
+			"to_graph": "FinishTransition",
+			"call_type": "SelfFunction",
+			"target_class": ""
 		},
 		{
 			"from_graph": "HandlePendingArrivalTransition",
@@ -237,41 +251,6 @@
 			"to_graph": "K2_SetTimerDelegate",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetSystemLibrary"
-		},
-		{
-			"from_graph": "HandlePendingArrivalTransition",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "HandlePendingArrivalTransition",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "HandlePendingArrivalTransition",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "HandlePendingArrivalTransition",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "HandlePendingArrivalTransition",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
 		},
 		{
 			"from_graph": "FinishTransition",
@@ -303,20 +282,6 @@
 		},
 		{
 			"from_graph": "TravelToLevelRef",
-			"from_node_title": "Set Current World Mode",
-			"to_graph": "SetCurrentWorldMode",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
-		},
-		{
-			"from_graph": "TravelToLevelRef",
-			"from_node_title": "Set Current Level Name",
-			"to_graph": "SetCurrentLevelName",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
-		},
-		{
-			"from_graph": "TravelToLevelRef",
 			"from_node_title": "Open Level (by Object Reference)",
 			"to_graph": "OpenLevelBySoftObjectPtr",
 			"call_type": "ExternalFunction",
@@ -324,10 +289,17 @@
 		},
 		{
 			"from_graph": "TravelToLevelRef",
-			"from_node_title": "Set Current Level",
-			"to_graph": "SetCurrentLevel",
+			"from_node_title": "Finish Transition",
+			"to_graph": "FinishTransition",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "TravelToLevelRef",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
+			"target_class": "KismetSystemLibrary"
 		},
 		{
 			"from_graph": "TravelToLevelRef",
@@ -340,27 +312,6 @@
 			"from_graph": "TravelToLevelRef",
 			"from_node_title": "Write Save to Disk",
 			"to_graph": "WriteSaveToDisk",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
-		},
-		{
-			"from_graph": "TravelToLevelName",
-			"from_node_title": "Set Current World Mode",
-			"to_graph": "SetCurrentWorldMode",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
-		},
-		{
-			"from_graph": "TravelToLevelName",
-			"from_node_title": "Set Current Level Name",
-			"to_graph": "SetCurrentLevelName",
-			"call_type": "ExternalFunction",
-			"target_class": "BP_SaveManager_C"
-		},
-		{
-			"from_graph": "TravelToLevelName",
-			"from_node_title": "Set Current Level",
-			"to_graph": "SetCurrentLevel",
 			"call_type": "ExternalFunction",
 			"target_class": "BP_SaveManager_C"
 		},
@@ -384,6 +335,20 @@
 			"to_graph": "WriteSaveToDisk",
 			"call_type": "ExternalFunction",
 			"target_class": "BP_SaveManager_C"
+		},
+		{
+			"from_graph": "TravelToLevelName",
+			"from_node_title": "Finish Transition",
+			"to_graph": "FinishTransition",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "TravelToLevelName",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
 		}
 	]
 }

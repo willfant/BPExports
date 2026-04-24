@@ -285,6 +285,76 @@
 				}
 			],
 			"target_class": "SpawnPortalAt"
+		},
+		{
+			"node_id": "K2Node_Knot_0",
+			"node_name": "K2Node_Knot_0",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "68779f95-4988-2141-d045-d39992cea356",
+			"x": 416,
+			"y": -128,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "Actor",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "class",
+					"subcategory": "None",
+					"resolved_type": "Actor",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SpawnPortalAt"
+		},
+		{
+			"node_id": "K2Node_Knot_1",
+			"node_name": "K2Node_Knot_1",
+			"node_kind": "Reroute",
+			"ue_class": "K2Node_Knot",
+			"title": "Reroute Node",
+			"title_single_line": "Reroute Node",
+			"comment": "",
+			"guid": "3e254bc5-46f4-609b-2248-bfaf084dc84c",
+			"x": 448,
+			"y": -96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "InputPin",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Transform",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "OutputPin",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "Transform",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "SpawnPortalAt"
 		}
 	],
 	"exec_flow": [
@@ -326,17 +396,17 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "SpawnPortalAt",
 			"from_pin": "PortalClass",
-			"to_node_id": "K2Node_SpawnActorFromClass_0",
-			"to_node_title": "SpawnActor",
-			"to_pin": "Class"
+			"to_node_id": "K2Node_Knot_0",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "SpawnPortalAt",
 			"from_pin": "SpawnTransform",
-			"to_node_id": "K2Node_SpawnActorFromClass_0",
-			"to_node_title": "SpawnActor",
-			"to_pin": "SpawnTransform"
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_0",
@@ -345,6 +415,22 @@
 			"to_node_id": "K2Node_IfThenElse_0",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_SpawnActorFromClass_0",
+			"to_node_title": "SpawnActor",
+			"to_pin": "Class"
+		},
+		{
+			"from_node_id": "K2Node_Knot_1",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_SpawnActorFromClass_0",
+			"to_node_title": "SpawnActor",
+			"to_pin": "SpawnTransform"
 		}
 	],
 	"problems": []
