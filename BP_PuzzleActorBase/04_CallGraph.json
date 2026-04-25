@@ -2,22 +2,8 @@
 	"calls": [
 		{
 			"from_graph": "EventGraph",
-			"from_node_title": "Get Actor Of Class",
-			"to_graph": "GetActorOfClass",
-			"call_type": "ExternalFunction",
-			"target_class": "GameplayStatics"
-		},
-		{
-			"from_graph": "EventGraph",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "EventGraph",
-			"from_node_title": "On Puzzle Step Activated Local",
-			"to_graph": "OnPuzzleStepActivated_Local",
+			"from_node_title": "Resolve Puzzle Controller Ref",
+			"to_graph": "ResolvePuzzleControllerRef",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
@@ -29,58 +15,9 @@
 			"target_class": ""
 		},
 		{
-			"from_graph": "DebugPuzzleMessage",
-			"from_node_title": "Debug Message",
-			"to_graph": "DebugMessage",
-			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
-		},
-		{
-			"from_graph": "DebugPuzzleMessage",
-			"from_node_title": "To String (Text)",
-			"to_graph": "Conv_TextToString",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetTextLibrary"
-		},
-		{
-			"from_graph": "DebugPuzzleMessage",
-			"from_node_title": "String To Name",
-			"to_graph": "Conv_StringToName",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetStringLibrary"
-		},
-		{
-			"from_graph": "OnPuzzleStepActivated_Local",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "OnPuzzleStepReset_Local",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "ReportSuccessToController",
-			"from_node_title": "Is Valid",
-			"to_graph": "IsValid",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
-		},
-		{
-			"from_graph": "ReportSuccessToController",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "ReportSuccessToController",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
+			"from_graph": "EventGraph",
+			"from_node_title": "On Puzzle Step Activated Local",
+			"to_graph": "OnPuzzleStepActivated_Local",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
@@ -93,29 +30,15 @@
 		},
 		{
 			"from_graph": "ReportSuccessToController",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
+			"from_node_title": "Resolve Puzzle Controller Ref",
+			"to_graph": "ResolvePuzzleControllerRef",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
 		{
 			"from_graph": "ReportFailureToController",
-			"from_node_title": "Is Valid",
-			"to_graph": "IsValid",
-			"call_type": "ExternalFunction",
-			"target_class": "KismetSystemLibrary"
-		},
-		{
-			"from_graph": "ReportFailureToController",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
-		},
-		{
-			"from_graph": "ReportFailureToController",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
+			"from_node_title": "Resolve Puzzle Controller Ref",
+			"to_graph": "ResolvePuzzleControllerRef",
 			"call_type": "SelfFunction",
 			"target_class": ""
 		},
@@ -127,11 +50,39 @@
 			"target_class": "BP_PuzzleController_C"
 		},
 		{
-			"from_graph": "ReportFailureToController",
-			"from_node_title": "Debug Puzzle Message",
-			"to_graph": "DebugPuzzleMessage",
-			"call_type": "SelfFunction",
-			"target_class": ""
+			"from_graph": "ResolvePuzzleControllerRef",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "ResolvePuzzleControllerRef",
+			"from_node_title": "Get Game Instance",
+			"to_graph": "GetGameInstance",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "ResolvePuzzleControllerRef",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "ResolvePuzzleControllerRef",
+			"from_node_title": "Get Actor Of Class",
+			"to_graph": "GetActorOfClass",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "ResolvePuzzleControllerRef",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
 		}
 	]
 }

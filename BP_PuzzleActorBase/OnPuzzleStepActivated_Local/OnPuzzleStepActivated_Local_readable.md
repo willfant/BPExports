@@ -6,9 +6,6 @@ Function
 ## Purpose
 Auto-generated function summary.
 
-## Calls
-- Debug Puzzle Message
-
 ## Called By
 - EventGraph
 

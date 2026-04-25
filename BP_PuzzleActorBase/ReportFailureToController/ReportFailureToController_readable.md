@@ -10,10 +10,10 @@ Auto-generated function summary.
 - PuzzleControllerRef
 - bIsActiveForCurrentStep
 - ExpectedStepId
+- ExpectedPuzzleId
 
 ## Calls
-- Is Valid
-- Debug Puzzle Message
+- Resolve Puzzle Controller Ref
 - Report Step Failure
 
 ## Branch Points

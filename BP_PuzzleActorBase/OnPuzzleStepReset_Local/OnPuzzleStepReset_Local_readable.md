@@ -6,9 +6,6 @@ Function
 ## Purpose
 Resets runtime state or reinitializes a sub-flow.
 
-## Calls
-- Debug Puzzle Message
-
 ## Called By
 - EventGraph
 

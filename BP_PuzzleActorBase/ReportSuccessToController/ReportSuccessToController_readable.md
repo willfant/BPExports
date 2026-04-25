@@ -10,14 +10,15 @@ Auto-generated function summary.
 - PuzzleControllerRef
 - bIsActiveForCurrentStep
 - ExpectedStepId
+- bCompleted
 
 ## Writes
 - bCompleted
+- bIsActiveForCurrentStep
 
 ## Calls
-- Is Valid
-- Debug Puzzle Message
 - Report Step Success
+- Resolve Puzzle Controller Ref
 
 ## Branch Points
 - Branch

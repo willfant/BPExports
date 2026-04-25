@@ -25,6 +25,7 @@ Starts a flow, state transition, or activation sequence.
 - Ensure Fade Widget
 - Execute Level Travel
 - Set Timer by Event
+- Print String
 
 ## Branch Points
 - Branch

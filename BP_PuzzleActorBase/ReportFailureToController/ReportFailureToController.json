@@ -13,12 +13,12 @@
 		"reads_variables": [
 			"PuzzleControllerRef",
 			"bIsActiveForCurrentStep",
-			"ExpectedStepId"
+			"ExpectedStepId",
+			"ExpectedPuzzleId"
 		],
 		"writes_variables": [],
 		"calls": [
-			"Is Valid",
-			"Debug Puzzle Message",
+			"Resolve Puzzle Controller Ref",
 			"Report Step Failure"
 		],
 		"called_by": [],
@@ -62,8 +62,8 @@
 			"title_single_line": "Get PuzzleControllerRef",
 			"comment": "",
 			"guid": "3040abe7-4d72-2b31-e786-12b344c10f96",
-			"x": -48,
-			"y": 160,
+			"x": 1552,
+			"y": -176,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -74,7 +74,7 @@
 					"subcategory": "None",
 					"resolved_type": "BP_PuzzleController_C",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -89,39 +89,48 @@
 			"target_class": "ReportFailureToController"
 		},
 		{
-			"node_id": "K2Node_CallFunction_0",
-			"node_name": "K2Node_CallFunction_0",
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
-			"title": "Is Valid",
-			"title_single_line": "Is Valid",
+			"title": "Resolve Puzzle Controller Ref\nTarget is BP Puzzle Actor Base",
+			"title_single_line": "Resolve Puzzle Controller Ref",
 			"comment": "",
-			"guid": "713de28b-4ec6-2faa-3605-c3a5ce73820f",
-			"x": 160,
-			"y": 96,
+			"guid": "0161d63b-4892-9889-08e0-2385604798b1",
+			"x": 304,
+			"y": -16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "self",
+					"pin_name": "execute",
 					"direction": "Input",
-					"category": "object",
+					"category": "exec",
 					"subcategory": "None",
-					"resolved_type": "KismetSystemLibrary",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Object",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "Object",
+					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
 				},
 				{
-					"pin_name": "ReturnValue",
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bSuccess",
 					"direction": "Output",
 					"category": "bool",
 					"subcategory": "None",
@@ -133,15 +142,15 @@
 			"target_class": "ReportFailureToController"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_0",
-			"node_name": "K2Node_IfThenElse_0",
+			"node_id": "K2Node_IfThenElse_2",
+			"node_name": "K2Node_IfThenElse_2",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "00d25a02-44fe-d045-fe63-cb97d95a0d68",
-			"x": 480,
+			"guid": "a5428844-4849-c33e-dfd5-e8849e99507d",
+			"x": 704,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -186,16 +195,16 @@
 			"target_class": "ReportFailureToController"
 		},
 		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Puzzle Message\nTarget is BP Puzzle Actor Base",
-			"title_single_line": "Debug Puzzle Message",
+			"node_id": "K2Node_MacroInstance_1",
+			"node_name": "K2Node_MacroInstance_1",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
 			"comment": "",
-			"guid": "35fb8178-4f92-2657-1209-b5badc6bc870",
-			"x": 688,
-			"y": 240,
+			"guid": "162b3419-4862-bcca-1d45-f5b070d55d54",
+			"x": 1008,
+			"y": 352,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -209,64 +218,72 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "10.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
+					"pin_name": "Category",
 					"direction": "Input",
 					"category": "byte",
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
 					"default_value": "NewEnumerator2",
 					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[PuzzleActorBase][Warning] Cannot report failure: PuzzleControllerRef invalid",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
 				}
 			],
 			"target_class": "ReportFailureToController"
 		},
 		{
-			"node_id": "K2Node_VariableGet_1",
-			"node_name": "K2Node_VariableGet_1",
+			"node_id": "K2Node_FunctionResult_1",
+			"node_name": "K2Node_FunctionResult_1",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "251a63f2-424e-5e5f-4a69-a9aa07d73e4f",
+			"x": 1664,
+			"y": 352,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ReportFailureToController"
+		},
+		{
+			"node_id": "K2Node_VariableGet_3",
+			"node_name": "K2Node_VariableGet_3",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
 			"title": "Get bIsActiveForCurrentStep",
 			"title_single_line": "Get bIsActiveForCurrentStep",
 			"comment": "",
-			"guid": "5c6ad37f-4e0f-6845-657f-4b9998b78f89",
-			"x": 608,
-			"y": -64,
+			"guid": "908fdccc-4cca-ce5f-67be-5ab356a5b2de",
+			"x": 768,
+			"y": -144,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -292,16 +309,16 @@
 			"target_class": "ReportFailureToController"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_1",
-			"node_name": "K2Node_IfThenElse_1",
+			"node_id": "K2Node_IfThenElse_3",
+			"node_name": "K2Node_IfThenElse_3",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "87faf600-470e-cc16-8d4f-0586e2b54923",
-			"x": 960,
-			"y": 16,
+			"guid": "ced776da-4d0a-21fb-1f81-57a54968fbd8",
+			"x": 1024,
+			"y": -80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -345,16 +362,16 @@
 			"target_class": "ReportFailureToController"
 		},
 		{
-			"node_id": "K2Node_CallFunction_4",
-			"node_name": "K2Node_CallFunction_4",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Puzzle Message\nTarget is BP Puzzle Actor Base",
-			"title_single_line": "Debug Puzzle Message",
+			"node_id": "K2Node_MacroInstance_0",
+			"node_name": "K2Node_MacroInstance_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Warning",
+			"title_single_line": "DBG Warning",
 			"comment": "",
-			"guid": "f95cc910-4eb6-dca0-7369-fcbdc4f7d16e",
-			"x": 1376,
-			"y": 160,
+			"guid": "7aa97c19-4b51-9976-5621-5393c326880c",
+			"x": 1248,
+			"y": 96,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -368,64 +385,292 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "text",
-					"subcategory": "None",
-					"resolved_type": "Text",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "10.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
+					"pin_name": "Category",
 					"direction": "Input",
 					"category": "byte",
 					"subcategory": "None",
 					"resolved_type": "Byte/Enum",
 					"default_value": "NewEnumerator2",
 					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[PuzzleActorBase] Failure ignored: actor is not active for current step",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
 				}
 			],
 			"target_class": "ReportFailureToController"
 		},
 		{
-			"node_id": "K2Node_CallFunction_3",
-			"node_name": "K2Node_CallFunction_3",
+			"node_id": "K2Node_FunctionResult_0",
+			"node_name": "K2Node_FunctionResult_0",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "e3f13263-4e1e-480a-61bf-48ae4fbabe61",
+			"x": 1904,
+			"y": 96,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ReportFailureToController"
+		},
+		{
+			"node_id": "K2Node_VariableGet_4",
+			"node_name": "K2Node_VariableGet_4",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get ExpectedStepId",
+			"title_single_line": "Get ExpectedStepId",
+			"comment": "",
+			"guid": "0b126b22-4a36-964c-e0e8-ab9b035924a4",
+			"x": 960,
+			"y": -336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "ExpectedStepId",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleActorBase_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ReportFailureToController"
+		},
+		{
+			"node_id": "K2Node_PromotableOperator_0",
+			"node_name": "K2Node_PromotableOperator_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_PromotableOperator",
+			"title": "Equal (Name)",
+			"title_single_line": "Equal (Name)",
+			"comment": "",
+			"guid": "673fdd2b-44c1-4462-43ae-669062c1a2ac",
+			"x": 1152,
+			"y": -304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ErrorTolerance",
+					"direction": "Input",
+					"category": "None",
+					"subcategory": "None",
+					"resolved_type": "None",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "ReportFailureToController"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_4",
+			"node_name": "K2Node_IfThenElse_4",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "af8d128a-4f22-f4c0-b882-36967bfb5f86",
+			"x": 1456,
+			"y": -336,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ReportFailureToController"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_3",
+			"node_name": "K2Node_MacroInstance_3",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Info",
+			"title_single_line": "DBG Info",
+			"comment": "",
+			"guid": "1c3e2843-45d3-5a47-4b5c-1ba260f7127a",
+			"x": 1824,
+			"y": -576,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator2",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[PuzzleActorBase][Warning] Cannot report failure: ExpectedStepId is None",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ReportFailureToController"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_3",
+			"node_name": "K2Node_FunctionResult_3",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "4e0db895-4415-40b2-fbee-b5b556a76b78",
+			"x": 2352,
+			"y": -576,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ReportFailureToController"
+		},
+		{
+			"node_id": "K2Node_CallFunction_6",
+			"node_name": "K2Node_CallFunction_6",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Report Step Failure\nTarget is BP Puzzle Controller",
 			"title_single_line": "Report Step Failure",
 			"comment": "",
-			"guid": "4ca52366-4751-0255-c958-9d9b0adca6c0",
-			"x": 1344,
-			"y": -192,
+			"guid": "f6067c95-4584-c422-9f2b-8699bb5d36ce",
+			"x": 1824,
+			"y": -224,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -478,47 +723,21 @@
 			"target_class": "ReportFailureToController"
 		},
 		{
-			"node_id": "K2Node_Self_0",
-			"node_name": "K2Node_Self_0",
-			"node_kind": "SelfReference",
-			"ue_class": "K2Node_Self",
-			"title": "Self-Reference",
-			"title_single_line": "Self-Reference",
-			"comment": "",
-			"guid": "48a206c3-4cef-8dd1-086b-07a70c1b9926",
-			"x": 1232,
-			"y": -16,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "self",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 1
-				}
-			],
-			"target_class": "ReportFailureToController"
-		},
-		{
-			"node_id": "K2Node_VariableGet_2",
-			"node_name": "K2Node_VariableGet_2",
+			"node_id": "K2Node_VariableGet_28",
+			"node_name": "K2Node_VariableGet_28",
 			"node_kind": "VariableGet",
 			"ue_class": "K2Node_VariableGet",
-			"title": "Get ExpectedStepId",
-			"title_single_line": "Get ExpectedStepId",
+			"title": "Get ExpectedPuzzleId",
+			"title_single_line": "Get ExpectedPuzzleId",
 			"comment": "",
-			"guid": "af0f01e9-46ae-4867-052a-1bbabc240b23",
-			"x": 1152,
-			"y": -80,
+			"guid": "25f4350b-4322-571b-89cd-c08ff401d297",
+			"x": 1552,
+			"y": -128,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "ExpectedStepId",
+					"pin_name": "ExpectedPuzzleId",
 					"direction": "Output",
 					"category": "name",
 					"subcategory": "None",
@@ -539,16 +758,42 @@
 			"target_class": "ReportFailureToController"
 		},
 		{
-			"node_id": "K2Node_CallFunction_2",
-			"node_name": "K2Node_CallFunction_2",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Debug Puzzle Message\nTarget is BP Puzzle Actor Base",
-			"title_single_line": "Debug Puzzle Message",
+			"node_id": "K2Node_Self_1",
+			"node_name": "K2Node_Self_1",
+			"node_kind": "SelfReference",
+			"ue_class": "K2Node_Self",
+			"title": "Self-Reference",
+			"title_single_line": "Self-Reference",
 			"comment": "",
-			"guid": "3d8c5aed-4c20-74e1-c8cf-5c91a43e699b",
-			"x": 1696,
-			"y": -352,
+			"guid": "8320e504-4924-62b3-54a1-d6ae872855ff",
+			"x": 1584,
+			"y": -80,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ReportFailureToController"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_2",
+			"node_name": "K2Node_MacroInstance_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Info",
+			"title_single_line": "DBG Info",
+			"comment": "",
+			"guid": "6a2b46b9-45c9-21a5-e9a2-129086a68d87",
+			"x": 2128,
+			"y": -208,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -562,49 +807,57 @@
 					"linked_count": 1
 				},
 				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator2",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "[PuzzleActorBase] Reported failure to PuzzleController",
+					"linked_count": 0
+				},
+				{
 					"pin_name": "then",
 					"direction": "Output",
 					"category": "exec",
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
-				},
+					"linked_count": 1
+				}
+			],
+			"target_class": "ReportFailureToController"
+		},
+		{
+			"node_id": "K2Node_FunctionResult_2",
+			"node_name": "K2Node_FunctionResult_2",
+			"node_kind": "Return",
+			"ue_class": "K2Node_FunctionResult",
+			"title": "Return Node",
+			"title_single_line": "Return Node",
+			"comment": "",
+			"guid": "a0f6ed85-4588-3577-8077-bfacf26a1bdf",
+			"x": 2656,
+			"y": -208,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
 				{
-					"pin_name": "self",
+					"pin_name": "execute",
 					"direction": "Input",
-					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Message",
-					"direction": "Input",
-					"category": "text",
+					"category": "exec",
 					"subcategory": "None",
-					"resolved_type": "Text",
+					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Duration",
-					"direction": "Input",
-					"category": "real",
-					"subcategory": "double",
-					"resolved_type": "Double",
-					"default_value": "10.000000",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "Severity",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator1",
-					"linked_count": 0
+					"linked_count": 1
 				}
 			],
 			"target_class": "ReportFailureToController"
@@ -615,48 +868,104 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "ReportFailureToController",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Resolve Puzzle Controller Ref\nTarget is BP Puzzle Actor Base",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Resolve Puzzle Controller Ref\nTarget is BP Puzzle Actor Base",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_2",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_id": "K2Node_IfThenElse_2",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_id": "K2Node_IfThenElse_3",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_0",
+			"from_node_id": "K2Node_IfThenElse_2",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_1",
-			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Actor Base",
+			"to_node_id": "K2Node_MacroInstance_1",
+			"to_node_title": "DBG Warning",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_id": "K2Node_MacroInstance_1",
+			"from_node_title": "DBG Warning",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_1",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "DBG Warning",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_0",
+			"from_node_title": "DBG Warning",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_0",
+			"to_node_title": "Return Node",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_MacroInstance_3",
+			"to_node_title": "DBG Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_CallFunction_6",
 			"to_node_title": "Report Step Failure\nTarget is BP Puzzle Controller",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_1",
-			"from_node_title": "Branch",
-			"from_pin": "else",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Actor Base",
+			"from_node_id": "K2Node_MacroInstance_3",
+			"from_node_title": "DBG Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_3",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_id": "K2Node_CallFunction_6",
 			"from_node_title": "Report Step Failure\nTarget is BP Puzzle Controller",
 			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_2",
-			"to_node_title": "Debug Puzzle Message\nTarget is BP Puzzle Actor Base",
+			"to_node_id": "K2Node_MacroInstance_2",
+			"to_node_title": "DBG Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_2",
+			"from_node_title": "DBG Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_FunctionResult_2",
+			"to_node_title": "Return Node",
 			"to_pin": "execute"
 		}
 	],
@@ -665,49 +974,57 @@
 			"from_node_id": "K2Node_VariableGet_0",
 			"from_node_title": "Get PuzzleControllerRef",
 			"from_pin": "PuzzleControllerRef",
-			"to_node_id": "K2Node_CallFunction_0",
-			"to_node_title": "Is Valid",
-			"to_pin": "Object"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_0",
-			"from_node_title": "Get PuzzleControllerRef",
-			"from_pin": "PuzzleControllerRef",
-			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_id": "K2Node_CallFunction_6",
 			"to_node_title": "Report Step Failure\nTarget is BP Puzzle Controller",
 			"to_pin": "self"
 		},
 		{
-			"from_node_id": "K2Node_CallFunction_0",
-			"from_node_title": "Is Valid",
-			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_0",
+			"from_node_id": "K2Node_CallFunction_5",
+			"from_node_title": "Resolve Puzzle Controller Ref\nTarget is BP Puzzle Actor Base",
+			"from_pin": "bSuccess",
+			"to_node_id": "K2Node_IfThenElse_2",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_id": "K2Node_VariableGet_3",
 			"from_node_title": "Get bIsActiveForCurrentStep",
 			"from_pin": "bIsActiveForCurrentStep",
-			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_id": "K2Node_IfThenElse_3",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		},
 		{
-			"from_node_id": "K2Node_Self_0",
-			"from_node_title": "Self-Reference",
-			"from_pin": "self",
-			"to_node_id": "K2Node_CallFunction_3",
-			"to_node_title": "Report Step Failure\nTarget is BP Puzzle Controller",
-			"to_pin": "InstigatorActor"
-		},
-		{
-			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_id": "K2Node_VariableGet_4",
 			"from_node_title": "Get ExpectedStepId",
 			"from_pin": "ExpectedStepId",
-			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_id": "K2Node_PromotableOperator_0",
+			"to_node_title": "Equal (Name)",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_0",
+			"from_node_title": "Equal (Name)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_28",
+			"from_node_title": "Get ExpectedPuzzleId",
+			"from_pin": "ExpectedPuzzleId",
+			"to_node_id": "K2Node_CallFunction_6",
 			"to_node_title": "Report Step Failure\nTarget is BP Puzzle Controller",
 			"to_pin": "StepId"
+		},
+		{
+			"from_node_id": "K2Node_Self_1",
+			"from_node_title": "Self-Reference",
+			"from_pin": "self",
+			"to_node_id": "K2Node_CallFunction_6",
+			"to_node_title": "Report Step Failure\nTarget is BP Puzzle Controller",
+			"to_pin": "InstigatorActor"
 		}
 	],
 	"problems": []

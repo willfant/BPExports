@@ -6,6 +6,12 @@ Function
 ## Purpose
 Initializes references, state, or startup flow.
 
+## Reads
+- GhostManagerRef
+
+## Writes
+- GhostManagerRef
+
 ## Calls
 - Get Game Instance
 - Debug Critical

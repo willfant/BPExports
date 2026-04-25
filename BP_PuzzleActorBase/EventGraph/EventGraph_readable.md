@@ -11,22 +11,20 @@ Main runtime entry graph for this Blueprint.
 - ExpectedStepId
 
 ## Writes
-- PuzzleControllerRef
 - bIsActiveForCurrentStep
 - bCompleted
-- ReceivedStepData
 - ReceivedStepIndex
+- ReceivedStepData
 
 ## Calls
-- Get Actor Of Class
-- Debug Puzzle Message
-- On Puzzle Step Activated Local
+- Resolve Puzzle Controller Ref
 - On Puzzle Step Reset Local
+- On Puzzle Step Activated Local
 
 ## Branch Points
 - Branch
 
 ## Notes
 - Has latent nodes: No
-- Has error nodes: Yes
+- Has error nodes: No
 - Has warning nodes: No

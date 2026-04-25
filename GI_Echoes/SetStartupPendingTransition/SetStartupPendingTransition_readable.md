@@ -10,6 +10,9 @@ Starts a flow, state transition, or activation sequence.
 - PendingTransitionData
 - bHasPendingTransition
 
+## Calls
+- Print String
+
 ## Notes
 - Has latent nodes: No
 - Has error nodes: No

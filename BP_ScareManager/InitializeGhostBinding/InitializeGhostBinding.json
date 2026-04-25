@@ -10,8 +10,12 @@
 	"summary":
 	{
 		"purpose": "Initializes references, state, or startup flow.",
-		"reads_variables": [],
-		"writes_variables": [],
+		"reads_variables": [
+			"GhostManagerRef"
+		],
+		"writes_variables": [
+			"GhostManagerRef"
+		],
 		"calls": [
 			"Get Game Instance",
 			"Debug Critical",
@@ -39,8 +43,8 @@
 			"title_single_line": "InitializeGhostBinding",
 			"comment": "",
 			"guid": "643b4570-4230-983e-624c-2db58ec1beaf",
-			"x": 0,
-			"y": 0,
+			"x": -1296,
+			"y": -384,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -65,8 +69,8 @@
 			"title_single_line": "Get Game Instance",
 			"comment": "",
 			"guid": "a91ef5a2-4726-3c02-5ed4-0db203452a3e",
-			"x": 160,
-			"y": 160,
+			"x": -544,
+			"y": 144,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -109,8 +113,8 @@
 			"title_single_line": "Cast To GI_Echoes",
 			"comment": "",
 			"guid": "ee18c9fe-4bd5-2783-a5a5-598e57973c67",
-			"x": 416,
-			"y": 0,
+			"x": -288,
+			"y": -16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -180,8 +184,8 @@
 			"title_single_line": "Debug Critical",
 			"comment": "",
 			"guid": "5653b20e-41b1-3657-4cd6-5e828109fa8c",
-			"x": 704,
-			"y": 160,
+			"x": 0,
+			"y": 144,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -269,8 +273,8 @@
 			"title_single_line": "Self-Reference",
 			"comment": "",
 			"guid": "8045b6dc-4432-df42-5903-a8924699b33f",
-			"x": 384,
-			"y": 240,
+			"x": -320,
+			"y": 224,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -295,8 +299,8 @@
 			"title_single_line": "Get Sender Name",
 			"comment": "",
 			"guid": "1dfd023c-41a6-e152-5171-0f9795df45cc",
-			"x": 496,
-			"y": 304,
+			"x": -208,
+			"y": 288,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -348,8 +352,8 @@
 			"title_single_line": "Return Node",
 			"comment": "",
 			"guid": "d6acad2f-4a07-38d7-0fd5-65952b8f3b1e",
-			"x": 1280,
-			"y": 160,
+			"x": 800,
+			"y": 192,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -374,8 +378,8 @@
 			"title_single_line": "Get Ghost Manager Ref",
 			"comment": "",
 			"guid": "36776491-4d6e-768f-ba36-c4888c007d8c",
-			"x": 752,
-			"y": -176,
+			"x": 48,
+			"y": -192,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -413,7 +417,7 @@
 					"subcategory": "None",
 					"resolved_type": "BP_GhostManager_C",
 					"default_value": "",
-					"linked_count": 2
+					"linked_count": 1
 				}
 			],
 			"target_class": "InitializeGhostBinding"
@@ -753,46 +757,11 @@
 				{
 					"pin_name": "Delegate",
 					"direction": "Input",
-					"category": "delegate",
+					"category": "Delegate",
 					"subcategory": "None",
-					"resolved_type": "delegate",
+					"resolved_type": "Delegate",
 					"default_value": "",
 					"linked_count": 1
-				}
-			],
-			"target_class": "InitializeGhostBinding"
-		},
-		{
-			"node_id": "K2Node_Knot_0",
-			"node_name": "K2Node_Knot_0",
-			"node_kind": "Reroute",
-			"ue_class": "K2Node_Knot",
-			"title": "Reroute Node",
-			"title_single_line": "Reroute Node",
-			"comment": "",
-			"guid": "6b15b1c9-4b05-aa9c-335a-568d7e4f3dfb",
-			"x": 1120,
-			"y": -304,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "InputPin",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_GhostManager_C",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "OutputPin",
-					"direction": "Output",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_GhostManager_C",
-					"default_value": "",
-					"linked_count": 3
 				}
 			],
 			"target_class": "InitializeGhostBinding"
@@ -853,7 +822,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				},
 				{
 					"pin_name": "OutputPin",
@@ -911,9 +880,9 @@
 				{
 					"pin_name": "Delegate",
 					"direction": "Input",
-					"category": "delegate",
+					"category": "Delegate",
 					"subcategory": "None",
-					"resolved_type": "delegate",
+					"resolved_type": "Delegate",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -999,9 +968,9 @@
 				{
 					"pin_name": "Delegate",
 					"direction": "Input",
-					"category": "delegate",
+					"category": "Delegate",
 					"subcategory": "None",
-					"resolved_type": "delegate",
+					"resolved_type": "Delegate",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -1289,6 +1258,235 @@
 				}
 			],
 			"target_class": "InitializeGhostBinding"
+		},
+		{
+			"node_id": "K2Node_VariableSet_0",
+			"node_name": "K2Node_VariableSet_0",
+			"node_kind": "VariableSet",
+			"ue_class": "K2Node_VariableSet",
+			"title": "Set GhostManagerRef",
+			"title_single_line": "Set GhostManagerRef",
+			"comment": "",
+			"guid": "88438091-447d-32a4-e072-a2976d07d3b3",
+			"x": 704,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "GhostManagerRef",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Output_Get",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeGhostBinding"
+		},
+		{
+			"node_id": "K2Node_VariableGet_1",
+			"node_name": "K2Node_VariableGet_1",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get GhostManagerRef",
+			"title_single_line": "Get GhostManagerRef",
+			"comment": "",
+			"guid": "307d0a06-4deb-2cff-0a5f-10a611eb49ec",
+			"x": -1280,
+			"y": 224,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "GhostManagerRef",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeGhostBinding"
+		},
+		{
+			"node_id": "K2Node_CallFunction_10",
+			"node_name": "K2Node_CallFunction_10",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Is Valid",
+			"title_single_line": "Is Valid",
+			"comment": "",
+			"guid": "406a387c-449b-23ae-a77d-1db74f24250c",
+			"x": -1088,
+			"y": 272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Object",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeGhostBinding"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_1",
+			"node_name": "K2Node_IfThenElse_1",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "b3bea5b9-4df5-c4c6-abad-45b99460644e",
+			"x": -672,
+			"y": -384,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "InitializeGhostBinding"
+		},
+		{
+			"node_id": "K2Node_VariableGet_0",
+			"node_name": "K2Node_VariableGet_0",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get GhostManagerRef",
+			"title_single_line": "Get GhostManagerRef",
+			"comment": "",
+			"guid": "46b657bb-4008-b5c6-48d5-73b713f885e1",
+			"x": 1840,
+			"y": -560,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "GhostManagerRef",
+					"direction": "Output",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_GhostManager_C",
+					"default_value": "",
+					"linked_count": 3
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_ScareManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "InitializeGhostBinding"
 		}
 	],
 	"exec_flow": [
@@ -1296,8 +1494,8 @@
 			"from_node_id": "K2Node_FunctionEntry_0",
 			"from_node_title": "InitializeGhostBinding",
 			"from_pin": "then",
-			"to_node_id": "K2Node_DynamicCast_0",
-			"to_node_title": "Cast To GI_Echoes",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
@@ -1328,8 +1526,8 @@
 			"from_node_id": "K2Node_CallFunction_3",
 			"from_node_title": "Get Ghost Manager Ref\nTarget is GI Echoes",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_0",
-			"to_node_title": "Branch",
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set GhostManagerRef",
 			"to_pin": "execute"
 		},
 		{
@@ -1403,6 +1601,30 @@
 			"to_node_id": "K2Node_FunctionResult_2",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set GhostManagerRef",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_0",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_Knot_1",
+			"to_node_title": "Reroute Node",
+			"to_pin": "InputPin"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_1",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_DynamicCast_0",
+			"to_node_title": "Cast To GI_Echoes",
+			"to_pin": "execute"
 		}
 	],
 	"data_links": [
@@ -1450,17 +1672,9 @@
 			"from_node_id": "K2Node_CallFunction_3",
 			"from_node_title": "Get Ghost Manager Ref\nTarget is GI Echoes",
 			"from_pin": "GhostManager",
-			"to_node_id": "K2Node_CallFunction_4",
-			"to_node_title": "Is Valid",
-			"to_pin": "Object"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_3",
-			"from_node_title": "Get Ghost Manager Ref\nTarget is GI Echoes",
-			"from_pin": "GhostManager",
-			"to_node_id": "K2Node_Knot_0",
-			"to_node_title": "Reroute Node",
-			"to_pin": "InputPin"
+			"to_node_id": "K2Node_VariableSet_0",
+			"to_node_title": "Set GhostManagerRef",
+			"to_pin": "GhostManagerRef"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_4",
@@ -1493,30 +1707,6 @@
 			"to_node_id": "K2Node_CallFunction_5",
 			"to_node_title": "Debug Warning",
 			"to_pin": "SenderName"
-		},
-		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_AddDelegate_0",
-			"to_node_title": "Bind Event to On Ghost Changed",
-			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_AddDelegate_1",
-			"to_node_title": "Bind Event to On Ghost State Changed",
-			"to_pin": "self"
-		},
-		{
-			"from_node_id": "K2Node_Knot_0",
-			"from_node_title": "Reroute Node",
-			"from_pin": "OutputPin",
-			"to_node_id": "K2Node_AddDelegate_2",
-			"to_node_title": "Bind Event to On Ghost Cleared",
-			"to_pin": "self"
 		},
 		{
 			"from_node_id": "K2Node_CreateDelegate_0",
@@ -1565,6 +1755,54 @@
 			"to_node_id": "K2Node_CallFunction_8",
 			"to_node_title": "Debug Info",
 			"to_pin": "SenderName"
+		},
+		{
+			"from_node_id": "K2Node_VariableSet_0",
+			"from_node_title": "Set GhostManagerRef",
+			"from_pin": "Output_Get",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_1",
+			"from_node_title": "Get GhostManagerRef",
+			"from_pin": "GhostManagerRef",
+			"to_node_id": "K2Node_CallFunction_10",
+			"to_node_title": "Is Valid",
+			"to_pin": "Object"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_10",
+			"from_node_title": "Is Valid",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get GhostManagerRef",
+			"from_pin": "GhostManagerRef",
+			"to_node_id": "K2Node_AddDelegate_0",
+			"to_node_title": "Bind Event to On Ghost Changed",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get GhostManagerRef",
+			"from_pin": "GhostManagerRef",
+			"to_node_id": "K2Node_AddDelegate_1",
+			"to_node_title": "Bind Event to On Ghost State Changed",
+			"to_pin": "self"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_0",
+			"from_node_title": "Get GhostManagerRef",
+			"from_pin": "GhostManagerRef",
+			"to_node_id": "K2Node_AddDelegate_2",
+			"to_node_title": "Bind Event to On Ghost Cleared",
+			"to_pin": "self"
 		}
 	],
 	"problems": []

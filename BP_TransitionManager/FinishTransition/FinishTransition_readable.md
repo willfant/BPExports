@@ -18,7 +18,6 @@ Auto-generated function summary.
 
 ## Called By
 - ExecuteLevelTravel
-- HandlePendingArrivalTransition
 - TravelToLevelRef
 - TravelToLevelName
 

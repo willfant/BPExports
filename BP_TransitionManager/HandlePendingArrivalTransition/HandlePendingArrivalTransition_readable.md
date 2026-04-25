@@ -10,21 +10,27 @@ Auto-generated function summary.
 - CachedGI
 - bHasPendingTransition
 - PendingTransitionData
-- CurrentTransitionData
 - CachedWorldModeSystem
+- WorldModeSystemRef
+- CurrentTransitionData
 - FadeWidgetRef
 
 ## Writes
+- CachedGI
 - CurrentTransitionData
-- bTransitionInProgress
+- CachedWorldModeSystem
+- PendingArrivalRetryHandle
 
 ## Calls
 - Is Valid
+- Get Game Instance
+- Set Timer by Function Name
 - Set World Mode
-- Finish Transition
+- To String (Text)
 - Set Fade Instant
 - Play Fade In
 - Set Timer by Event
+- Print String
 
 ## Called By
 - InitializeTransitionManager
