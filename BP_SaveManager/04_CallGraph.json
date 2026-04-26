@@ -36,6 +36,20 @@
 			"target_class": ""
 		},
 		{
+			"from_graph": "EventGraph",
+			"from_node_title": "Try Resume Last Saved Level",
+			"to_graph": "TryResumeLastSavedLevel",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "EventGraph",
+			"from_node_title": "Try Initial Restore After Bootstrap",
+			"to_graph": "TryInitialRestoreAfterBootstrap",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
 			"from_graph": "InitializeSaveSystem",
 			"from_node_title": "Debug Info",
 			"to_graph": "DebugInfo",
@@ -954,6 +968,69 @@
 		},
 		{
 			"from_graph": "TryInitialRestoreAfterBootstrap",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "TryResumeLastSavedLevel",
+			"from_node_title": "Is Save System Ready",
+			"to_graph": "IsSaveSystemReady",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "TryResumeLastSavedLevel",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "TryResumeLastSavedLevel",
+			"from_node_title": "Get Game Instance",
+			"to_graph": "GetGameInstance",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "TryResumeLastSavedLevel",
+			"from_node_title": "Get Saved Current Level Name",
+			"to_graph": "GetSavedCurrentLevelName",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "TryResumeLastSavedLevel",
+			"from_node_title": "Get Current Level Name",
+			"to_graph": "GetCurrentLevelName",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "TryResumeLastSavedLevel",
+			"from_node_title": "String To Name",
+			"to_graph": "Conv_StringToName",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetStringLibrary"
+		},
+		{
+			"from_graph": "TryResumeLastSavedLevel",
+			"from_node_title": "To String (Text)",
+			"to_graph": "Conv_TextToString",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetTextLibrary"
+		},
+		{
+			"from_graph": "TryResumeLastSavedLevel",
+			"from_node_title": "Open Level (by Name)",
+			"to_graph": "OpenLevel",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
+		},
+		{
+			"from_graph": "GetSavedCurrentLevelName",
 			"from_node_title": "Is Valid",
 			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",

@@ -26,11 +26,10 @@ Auto-generated function summary.
 - Get Game Instance
 - Set Timer by Function Name
 - Set World Mode
-- To String (Text)
 - Set Fade Instant
 - Play Fade In
 - Set Timer by Event
-- Print String
+- To String (Text)
 
 ## Called By
 - InitializeTransitionManager

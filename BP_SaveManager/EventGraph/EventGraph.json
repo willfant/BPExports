@@ -14,7 +14,9 @@
 			"bAutoInitializeSaveOnBeginPlay",
 			"CachedGI",
 			"InitialRestoreRetryHandle",
-			"bAutoLoadOnBeginPlay"
+			"bAutoLoadOnBeginPlay",
+			"bResumeLastLevelOnStartup",
+			"DefaultResumeLevelName"
 		],
 		"writes_variables": [
 			"CachedGI",
@@ -25,7 +27,8 @@
 			"Get Game Instance",
 			"Register Save Manager",
 			"Clear and Invalidate Timer by Handle",
-			"Try Initial Restore After Bootstrap"
+			"Try Initial Restore After Bootstrap",
+			"Try Resume Last Saved Level"
 		],
 		"called_by": [],
 		"branch_points": [
@@ -500,7 +503,7 @@
 			"comment": "Auto Init",
 			"guid": "c71f38cf-4710-c558-95a9-318ff9049e84",
 			"x": 432,
-			"y": -416,
+			"y": -832,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [],
@@ -842,16 +845,104 @@
 			"target_class": "EventGraph"
 		},
 		{
-			"node_id": "K2Node_MacroInstance_1",
-			"node_name": "K2Node_MacroInstance_1",
+			"node_id": "K2Node_VariableGet_4",
+			"node_name": "K2Node_VariableGet_4",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bAutoLoadOnBeginPlay",
+			"title_single_line": "Get bAutoLoadOnBeginPlay",
+			"comment": "",
+			"guid": "a370a22b-4fa8-be45-4e90-598636152fbc",
+			"x": 2464,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bAutoLoadOnBeginPlay",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_5",
+			"node_name": "K2Node_IfThenElse_5",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "3fcdcf3f-42d8-e51f-cfb4-5c9c059d8a65",
+			"x": 2464,
+			"y": -144,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_4",
+			"node_name": "K2Node_MacroInstance_4",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_MacroInstance",
-			"title": "DBG Critical",
-			"title_single_line": "DBG Critical",
+			"title": "DBG Info",
+			"title_single_line": "DBG Info",
 			"comment": "",
-			"guid": "f4e3c2df-4fe6-548c-db0a-cda9c7689af3",
-			"x": 1440,
-			"y": 368,
+			"guid": "de04f418-43f1-0f2b-c43a-52a9c5bad645",
+			"x": 2848,
+			"y": 16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -879,7 +970,342 @@
 					"category": "string",
 					"subcategory": "None",
 					"resolved_type": "String",
-					"default_value": "[Save] InitializeSaveSystem failed during BeginPlay bootstrap",
+					"default_value": "[Save] InitializeSaveSystem completed successfully. Auto load on BeginPlay is disabled",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Try Initial Restore After Bootstrap\nTarget is BP Save Manager",
+			"title_single_line": "Try Initial Restore After Bootstrap",
+			"comment": "",
+			"guid": "f65231a6-4168-ef04-4e80-3bbe9c6f49ef",
+			"x": 2944,
+			"y": -304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_VariableGet_3",
+			"node_name": "K2Node_VariableGet_3",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get bResumeLastLevelOnStartup",
+			"title_single_line": "Get bResumeLastLevelOnStartup",
+			"comment": "",
+			"guid": "241f590b-4fb0-f87c-35e5-bf9f52895312",
+			"x": 1120,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "bResumeLastLevelOnStartup",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_3",
+			"node_name": "K2Node_IfThenElse_3",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "234e6a4a-44e7-7c73-280a-60ab3c0a8155",
+			"x": 1440,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Try Resume Last Saved Level\nTarget is BP Save Manager",
+			"title_single_line": "Try Resume Last Saved Level",
+			"comment": "",
+			"guid": "e7b21180-4b15-fde8-30b8-47b4091e3fd9",
+			"x": 1760,
+			"y": -192,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "DefaultLevelName",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bDidTravel",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_VariableGet_31",
+			"node_name": "K2Node_VariableGet_31",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get DefaultResumeLevelName",
+			"title_single_line": "Get DefaultResumeLevelName",
+			"comment": "",
+			"guid": "da3af60d-4901-11f2-ea0b-32b1b8e11acc",
+			"x": 1776,
+			"y": -256,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "DefaultResumeLevelName",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "None",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_SaveManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_4",
+			"node_name": "K2Node_IfThenElse_4",
+			"node_kind": "Branch",
+			"ue_class": "K2Node_IfThenElse",
+			"title": "Branch",
+			"title_single_line": "Branch",
+			"comment": "",
+			"guid": "9140e5e1-4587-d502-9dd9-cebbd2330666",
+			"x": 2160,
+			"y": -176,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Condition",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "else",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_3",
+			"node_name": "K2Node_MacroInstance_3",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Info",
+			"title_single_line": "DBG Info",
+			"comment": "",
+			"guid": "ee9b3cae-4938-211a-4c1f-f79ab40323f3",
+			"x": 2496,
+			"y": -544,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator3",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "Resume travel started. Skipping restore in this level.\"\r\n                                STOP",
 					"linked_count": 0
 				},
 				{
@@ -902,9 +1328,9 @@
 			"title": "Get bAutoLoadOnBeginPlay",
 			"title_single_line": "Get bAutoLoadOnBeginPlay",
 			"comment": "",
-			"guid": "a370a22b-4fa8-be45-4e90-598636152fbc",
-			"x": 1248,
-			"y": -176,
+			"guid": "ddbd7f09-4a84-d254-85aa-79a8718b58b0",
+			"x": 1456,
+			"y": 384,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -937,9 +1363,9 @@
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "3fcdcf3f-42d8-e51f-cfb4-5c9c059d8a65",
-			"x": 1552,
-			"y": -16,
+			"guid": "86635012-405e-e18f-ad28-f0a9dc219f9c",
+			"x": 1456,
+			"y": 240,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -990,9 +1416,9 @@
 			"title": "DBG Info",
 			"title_single_line": "DBG Info",
 			"comment": "",
-			"guid": "de04f418-43f1-0f2b-c43a-52a9c5bad645",
-			"x": 1936,
-			"y": 144,
+			"guid": "0c2c788d-4047-cbce-d50a-558347b97cb4",
+			"x": 1840,
+			"y": 400,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1043,9 +1469,9 @@
 			"title": "Try Initial Restore After Bootstrap\nTarget is BP Save Manager",
 			"title_single_line": "Try Initial Restore After Bootstrap",
 			"comment": "",
-			"guid": "f65231a6-4168-ef04-4e80-3bbe9c6f49ef",
-			"x": 2032,
-			"y": -176,
+			"guid": "e10b5d7b-4db5-690b-5213-7b98fa31bb86",
+			"x": 1936,
+			"y": 80,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -1157,7 +1583,7 @@
 			"from_node_id": "K2Node_IfThenElse_1",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_id": "K2Node_IfThenElse_3",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
@@ -1165,8 +1591,56 @@
 			"from_node_id": "K2Node_IfThenElse_1",
 			"from_node_title": "Branch",
 			"from_pin": "else",
-			"to_node_id": "K2Node_MacroInstance_1",
-			"to_node_title": "DBG Critical",
+			"to_node_id": "K2Node_IfThenElse_2",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_5",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Try Initial Restore After Bootstrap\nTarget is BP Save Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_5",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_MacroInstance_4",
+			"to_node_title": "DBG Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Try Resume Last Saved Level\nTarget is BP Save Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Try Resume Last Saved Level\nTarget is BP Save Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "then",
+			"to_node_id": "K2Node_MacroInstance_3",
+			"to_node_title": "DBG Info",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_IfThenElse_4",
+			"from_node_title": "Branch",
+			"from_pin": "else",
+			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
 		{
@@ -1242,6 +1716,38 @@
 			"to_node_id": "K2Node_CallFunction_1",
 			"to_node_title": "Clear and Invalidate Timer by Handle",
 			"to_pin": "Handle"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_4",
+			"from_node_title": "Get bAutoLoadOnBeginPlay",
+			"from_pin": "bAutoLoadOnBeginPlay",
+			"to_node_id": "K2Node_IfThenElse_5",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_3",
+			"from_node_title": "Get bResumeLastLevelOnStartup",
+			"from_pin": "bResumeLastLevelOnStartup",
+			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Try Resume Last Saved Level\nTarget is BP Save Manager",
+			"from_pin": "bDidTravel",
+			"to_node_id": "K2Node_IfThenElse_4",
+			"to_node_title": "Branch",
+			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_31",
+			"from_node_title": "Get DefaultResumeLevelName",
+			"from_pin": "DefaultResumeLevelName",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Try Resume Last Saved Level\nTarget is BP Save Manager",
+			"to_pin": "DefaultLevelName"
 		},
 		{
 			"from_node_id": "K2Node_VariableGet_2",

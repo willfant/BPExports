@@ -11,6 +11,18 @@
 			"why_it_matters": "Large graphs are harder to debug, reason about, and safely refactor.",
 			"likely_impact": "Higher chance of regression, duplicated logic, and unreadable flow.",
 			"suggested_fix": "Split the graph into smaller functions by responsibility."
+		},
+		{
+			"graph": "SaveArrivalStateAfterTransition",
+			"problem_type": "PotentialSaveSyncWithoutStateWrite",
+			"details": "Save/sync-related graph does not appear to write any obvious runtime state before syncing.",
+			"node_name": "",
+			"node_title": "",
+			"severity": "medium",
+			"confidence": 0.65000000000000002,
+			"why_it_matters": "A save/sync graph does not appear to write state before syncing.",
+			"likely_impact": "Persisted state may drift from runtime state.",
+			"suggested_fix": "Confirm whether state is already current; otherwise write state before sync."
 		}
 	]
 }

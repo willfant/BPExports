@@ -11,6 +11,8 @@ Main runtime entry graph for this Blueprint.
 - CachedGI
 - InitialRestoreRetryHandle
 - bAutoLoadOnBeginPlay
+- bResumeLastLevelOnStartup
+- DefaultResumeLevelName
 
 ## Writes
 - CachedGI
@@ -22,6 +24,7 @@ Main runtime entry graph for this Blueprint.
 - Register Save Manager
 - Clear and Invalidate Timer by Handle
 - Try Initial Restore After Bootstrap
+- Try Resume Last Saved Level
 
 ## Branch Points
 - Branch
