@@ -11,6 +11,7 @@ Auto-generated function summary.
 - GhostManagerRef
 - CurrentGhostId
 - CurrentGhostState
+- CurrentWorldMode
 
 ## Writes
 - CurrentWorldMode
@@ -28,6 +29,7 @@ Auto-generated function summary.
 - Debug Info
 - Get Game Instance
 - Set Timer by Function Name
+- To String (Text)
 
 ## Called By
 - HandleWorldModeAudioContextChanged

@@ -17,6 +17,7 @@ Auto-generated function summary.
 - Stop
 
 ## Called By
+- EventGraph
 - ApplyAudioStateById
 
 ## Branch Points

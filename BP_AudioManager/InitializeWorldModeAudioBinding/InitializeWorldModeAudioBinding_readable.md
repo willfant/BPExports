@@ -22,7 +22,6 @@ Initializes references, state, or startup flow.
 - Get Game Instance
 - Clear and Invalidate Timer by Handle
 - Set Timer by Function Name
-- Handle World Mode Audio Context Changed
 
 ## Called By
 - InitializeAudioManager

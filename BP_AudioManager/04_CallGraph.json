@@ -78,6 +78,34 @@
 			"target_class": "KismetSystemLibrary"
 		},
 		{
+			"from_graph": "EventGraph",
+			"from_node_title": "Clear and Invalidate Timer by Handle",
+			"to_graph": "K2_ClearAndInvalidateTimerHandle",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "EventGraph",
+			"from_node_title": "Stop All Looping Cues",
+			"to_graph": "StopAllLoopingCues",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "EventGraph",
+			"from_node_title": "Stop Ambience Sound",
+			"to_graph": "StopAmbienceSound",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
+			"from_graph": "EventGraph",
+			"from_node_title": "Stop Music Sound",
+			"to_graph": "StopMusicSound",
+			"call_type": "SelfFunction",
+			"target_class": ""
+		},
+		{
 			"from_graph": "InitializeAudioManager",
 			"from_node_title": "Debug Info",
 			"to_graph": "DebugInfo",
@@ -351,6 +379,13 @@
 			"target_class": ""
 		},
 		{
+			"from_graph": "ApplyAudioStateById",
+			"from_node_title": "To String (Text)",
+			"to_graph": "Conv_TextToString",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetTextLibrary"
+		},
+		{
 			"from_graph": "InitializeWorldModeAudioBinding",
 			"from_node_title": "Is Valid",
 			"to_graph": "IsValid",
@@ -400,11 +435,11 @@
 			"target_class": "KismetSystemLibrary"
 		},
 		{
-			"from_graph": "InitializeWorldModeAudioBinding",
-			"from_node_title": "Handle World Mode Audio Context Changed",
-			"to_graph": "HandleWorldModeAudioContextChanged",
-			"call_type": "SelfFunction",
-			"target_class": ""
+			"from_graph": "InitializeGhostAudioBinding",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
 		},
 		{
 			"from_graph": "InitializeGhostAudioBinding",
@@ -415,38 +450,38 @@
 		},
 		{
 			"from_graph": "InitializeGhostAudioBinding",
-			"from_node_title": "Debug Warning",
-			"to_graph": "DebugWarning",
+			"from_node_title": "Get Game Instance",
+			"to_graph": "GetGameInstance",
 			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
+			"target_class": "GameplayStatics"
 		},
 		{
 			"from_graph": "InitializeGhostAudioBinding",
-			"from_node_title": "Get Sender Name",
-			"to_graph": "GetSenderName",
+			"from_node_title": "Is Valid",
+			"to_graph": "IsValid",
 			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
+			"target_class": "KismetSystemLibrary"
 		},
 		{
 			"from_graph": "InitializeGhostAudioBinding",
-			"from_node_title": "Handle Ghost Audio Context Changed",
-			"to_graph": "HandleGhostAudioContextChanged",
-			"call_type": "SelfFunction",
-			"target_class": ""
+			"from_node_title": "Set Timer by Function Name",
+			"to_graph": "K2_SetTimer",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetSystemLibrary"
 		},
 		{
 			"from_graph": "InitializeGhostAudioBinding",
-			"from_node_title": "Debug Info",
-			"to_graph": "DebugInfo",
+			"from_node_title": "Set Timer by Function Name",
+			"to_graph": "K2_SetTimer",
 			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
+			"target_class": "KismetSystemLibrary"
 		},
 		{
 			"from_graph": "InitializeGhostAudioBinding",
-			"from_node_title": "Get Sender Name",
-			"to_graph": "GetSenderName",
+			"from_node_title": "Clear and Invalidate Timer by Handle",
+			"to_graph": "K2_ClearAndInvalidateTimerHandle",
 			"call_type": "ExternalFunction",
-			"target_class": "BFL_Debug_C"
+			"target_class": "KismetSystemLibrary"
 		},
 		{
 			"from_graph": "ResolveAudioStateFromContext",
@@ -517,6 +552,13 @@
 			"to_graph": "ApplyAudioStateById",
 			"call_type": "SelfFunction",
 			"target_class": ""
+		},
+		{
+			"from_graph": "ApplyResolvedAudioStateFromContext",
+			"from_node_title": "To String (Text)",
+			"to_graph": "Conv_TextToString",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetTextLibrary"
 		},
 		{
 			"from_graph": "PlayAudioCue2D",
@@ -1049,6 +1091,20 @@
 			"to_graph": "K2_SetTimer",
 			"call_type": "ExternalFunction",
 			"target_class": "KismetSystemLibrary"
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "To String (Text)",
+			"to_graph": "Conv_TextToString",
+			"call_type": "ExternalFunction",
+			"target_class": "KismetTextLibrary"
+		},
+		{
+			"from_graph": "RefreshAudioContextFromManagers",
+			"from_node_title": "Get Game Instance",
+			"to_graph": "GetGameInstance",
+			"call_type": "ExternalFunction",
+			"target_class": "GameplayStatics"
 		},
 		{
 			"from_graph": "HandleWorldModeAudioContextChanged",

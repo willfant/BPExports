@@ -11,6 +11,7 @@ Resolves contextual state or external information.
 - Debug Info
 - Get Sender Name
 - Apply Audio State by Id
+- To String (Text)
 
 ## Called By
 - EventGraph

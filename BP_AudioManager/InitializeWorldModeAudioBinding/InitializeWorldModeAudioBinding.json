@@ -25,8 +25,7 @@
 			"Is Valid",
 			"Get Game Instance",
 			"Clear and Invalidate Timer by Handle",
-			"Set Timer by Function Name",
-			"Handle World Mode Audio Context Changed"
+			"Set Timer by Function Name"
 		],
 		"called_by": [
 			"InitializeAudioManager"
@@ -676,7 +675,7 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "object",
+					"pin_name": "Object",
 					"direction": "Input",
 					"category": "object",
 					"subcategory": "None",
@@ -792,20 +791,20 @@
 					"linked_count": 1
 				},
 				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
 					"pin_name": "Output_Get",
 					"direction": "Output",
 					"category": "struct",
 					"subcategory": "None",
 					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_AudioManager_C",
 					"default_value": "",
 					"linked_count": 0
 				}
@@ -1674,15 +1673,6 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
 					"pin_name": "Output_Get",
 					"direction": "Output",
 					"category": "bool",
@@ -1690,67 +1680,14 @@
 					"resolved_type": "Boolean",
 					"default_value": "false",
 					"linked_count": 0
-				}
-			],
-			"target_class": "InitializeWorldModeAudioBinding"
-		},
-		{
-			"node_id": "K2Node_CallFunction_23",
-			"node_name": "K2Node_CallFunction_23",
-			"node_kind": "FunctionCall",
-			"ue_class": "K2Node_CallFunction",
-			"title": "Handle World Mode Audio Context Changed\nTarget is BP Audio Manager",
-			"title_single_line": "Handle World Mode Audio Context Changed",
-			"comment": "",
-			"guid": "7e01db80-4f66-506d-c903-c39a974de022",
-			"x": 4672,
-			"y": -240,
-			"has_error": false,
-			"has_warning": false,
-			"pins": [
-				{
-					"pin_name": "execute",
-					"direction": "Input",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
-				},
-				{
-					"pin_name": "then",
-					"direction": "Output",
-					"category": "exec",
-					"subcategory": "None",
-					"resolved_type": "exec",
-					"default_value": "",
-					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
 					"direction": "Input",
 					"category": "object",
-					"subcategory": "self",
-					"resolved_type": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_AudioManager_C",
 					"default_value": "",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "OldWorldMode",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
-					"linked_count": 0
-				},
-				{
-					"pin_name": "NewWorldMode",
-					"direction": "Input",
-					"category": "byte",
-					"subcategory": "None",
-					"resolved_type": "Byte/Enum",
-					"default_value": "NewEnumerator0",
 					"linked_count": 0
 				}
 			],
@@ -1765,7 +1702,7 @@
 			"title_single_line": "DBG Info",
 			"comment": "",
 			"guid": "bc48f2ea-4bda-4acb-dc52-0da330e25708",
-			"x": 5680,
+			"x": 4800,
 			"y": -224,
 			"has_error": false,
 			"has_warning": false,
@@ -1818,7 +1755,7 @@
 			"title_single_line": "Return Node",
 			"comment": "",
 			"guid": "5be371bc-4bb1-f53e-f5ab-6099f5ebeba8",
-			"x": 6224,
+			"x": 5344,
 			"y": -224,
 			"has_error": false,
 			"has_warning": false,
@@ -2024,14 +1961,6 @@
 		{
 			"from_node_id": "K2Node_VariableSet_6",
 			"from_node_title": "Set bWorldModeBindingInitialized",
-			"from_pin": "then",
-			"to_node_id": "K2Node_CallFunction_23",
-			"to_node_title": "Handle World Mode Audio Context Changed\nTarget is BP Audio Manager",
-			"to_pin": "execute"
-		},
-		{
-			"from_node_id": "K2Node_CallFunction_23",
-			"from_node_title": "Handle World Mode Audio Context Changed\nTarget is BP Audio Manager",
 			"from_pin": "then",
 			"to_node_id": "K2Node_MacroInstance_4",
 			"to_node_title": "DBG Info",

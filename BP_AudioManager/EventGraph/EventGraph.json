@@ -12,7 +12,8 @@
 		"purpose": "Main runtime entry graph for this Blueprint.",
 		"reads_variables": [
 			"DebugEnabled",
-			"WorldModeBindingRetryHandle"
+			"WorldModeBindingRetryHandle",
+			"GhostAudioBindingRetryHandle"
 		],
 		"writes_variables": [
 			"CurrentWorldMode",
@@ -25,7 +26,10 @@
 			"Debug Message",
 			"To String (Text)",
 			"Apply Resolved Audio State from Context",
-			"Clear and Invalidate Timer by Handle"
+			"Clear and Invalidate Timer by Handle",
+			"Stop All Looping Cues",
+			"Stop Ambience Sound",
+			"Stop Music Sound"
 		],
 		"called_by": [],
 		"branch_points": []
@@ -1662,15 +1666,6 @@
 					"linked_count": 0
 				},
 				{
-					"pin_name": "self",
-					"direction": "Input",
-					"category": "object",
-					"subcategory": "None",
-					"resolved_type": "BP_AudioManager_C",
-					"default_value": "",
-					"linked_count": 0
-				},
-				{
 					"pin_name": "Output_Get",
 					"direction": "Output",
 					"category": "bool",
@@ -1678,13 +1673,22 @@
 					"resolved_type": "Boolean",
 					"default_value": "false",
 					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_AudioManager_C",
+					"default_value": "",
+					"linked_count": 0
 				}
 			],
 			"target_class": "EventGraph"
 		},
 		{
-			"node_id": "K2Node_CallFunction_1",
-			"node_name": "K2Node_CallFunction_1",
+			"node_id": "K2Node_CallFunction_2",
+			"node_name": "K2Node_CallFunction_2",
 			"node_kind": "FunctionCall",
 			"ue_class": "K2Node_CallFunction",
 			"title": "Clear and Invalidate Timer by Handle",
@@ -1712,7 +1716,7 @@
 					"subcategory": "None",
 					"resolved_type": "exec",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "self",
@@ -1773,6 +1777,235 @@
 					"category": "object",
 					"subcategory": "None",
 					"resolved_type": "BP_AudioManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_1",
+			"node_name": "K2Node_CallFunction_1",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Clear and Invalidate Timer by Handle",
+			"title_single_line": "Clear and Invalidate Timer by Handle",
+			"comment": "",
+			"guid": "7bddc576-4516-661c-b045-3caff93e09d6",
+			"x": 912,
+			"y": 320,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetSystemLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldContextObject",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "Object",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Handle",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_VariableGet_33",
+			"node_name": "K2Node_VariableGet_33",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get GhostAudioBindingRetryHandle",
+			"title_single_line": "Get GhostAudioBindingRetryHandle",
+			"comment": "",
+			"guid": "a027bccd-404f-1654-e873-759525de8f0e",
+			"x": 640,
+			"y": 480,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "GhostAudioBindingRetryHandle",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "TimerHandle",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_AudioManager_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_3",
+			"node_name": "K2Node_CallFunction_3",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Stop All Looping Cues\nTarget is BP Audio Manager",
+			"title_single_line": "Stop All Looping Cues",
+			"comment": "",
+			"guid": "1164801c-4c4a-a3b6-9d28-d69832fafd3a",
+			"x": 1312,
+			"y": 304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Stop Ambience Sound\nTarget is BP Audio Manager",
+			"title_single_line": "Stop Ambience Sound",
+			"comment": "",
+			"guid": "77ea6ab1-4b00-ef22-693f-8489f8e3a61d",
+			"x": 1616,
+			"y": 304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "EventGraph"
+		},
+		{
+			"node_id": "K2Node_CallFunction_5",
+			"node_name": "K2Node_CallFunction_5",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "Stop Music Sound\nTarget is BP Audio Manager",
+			"title_single_line": "Stop Music Sound",
+			"comment": "",
+			"guid": "dfba01cf-4c04-0312-97f5-ee85ab2dd5fe",
+			"x": 1936,
+			"y": 304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "self",
+					"resolved_type": "object",
 					"default_value": "",
 					"linked_count": 0
 				}
@@ -1873,8 +2106,40 @@
 			"from_node_id": "K2Node_VariableSet_3",
 			"from_node_title": "Set bShuttingDown",
 			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Clear and Invalidate Timer by Handle",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_2",
+			"from_node_title": "Clear and Invalidate Timer by Handle",
+			"from_pin": "then",
 			"to_node_id": "K2Node_CallFunction_1",
 			"to_node_title": "Clear and Invalidate Timer by Handle",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_1",
+			"from_node_title": "Clear and Invalidate Timer by Handle",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_3",
+			"to_node_title": "Stop All Looping Cues\nTarget is BP Audio Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Stop All Looping Cues\nTarget is BP Audio Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "Stop Ambience Sound\nTarget is BP Audio Manager",
+			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "Stop Ambience Sound\nTarget is BP Audio Manager",
+			"from_pin": "then",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Stop Music Sound\nTarget is BP Audio Manager",
 			"to_pin": "execute"
 		}
 	],
@@ -2107,6 +2372,14 @@
 			"from_node_id": "K2Node_VariableGet_19",
 			"from_node_title": "Get WorldModeBindingRetryHandle",
 			"from_pin": "WorldModeBindingRetryHandle",
+			"to_node_id": "K2Node_CallFunction_2",
+			"to_node_title": "Clear and Invalidate Timer by Handle",
+			"to_pin": "Handle"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_33",
+			"from_node_title": "Get GhostAudioBindingRetryHandle",
+			"from_pin": "GhostAudioBindingRetryHandle",
 			"to_node_id": "K2Node_CallFunction_1",
 			"to_node_title": "Clear and Invalidate Timer by Handle",
 			"to_pin": "Handle"

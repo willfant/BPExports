@@ -8,13 +8,20 @@ Initializes references, state, or startup flow.
 
 ## Reads
 - GhostManagerRef
+- bShuttingDown
+- bGhostAudioBindingInitialized
+- GhostAudioBindingRetryHandle
+
+## Writes
+- GhostManagerRef
+- GhostAudioBindingRetryHandle
+- bGhostAudioBindingInitialized
 
 ## Calls
 - Is Valid
-- Debug Warning
-- Get Sender Name
-- Handle Ghost Audio Context Changed
-- Debug Info
+- Get Game Instance
+- Set Timer by Function Name
+- Clear and Invalidate Timer by Handle
 
 ## Called By
 - InitializeAudioManager

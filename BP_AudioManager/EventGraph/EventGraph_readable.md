@@ -9,6 +9,7 @@ Main runtime entry graph for this Blueprint.
 ## Reads
 - DebugEnabled
 - WorldModeBindingRetryHandle
+- GhostAudioBindingRetryHandle
 
 ## Writes
 - CurrentWorldMode
@@ -22,6 +23,9 @@ Main runtime entry graph for this Blueprint.
 - To String (Text)
 - Apply Resolved Audio State from Context
 - Clear and Invalidate Timer by Handle
+- Stop All Looping Cues
+- Stop Ambience Sound
+- Stop Music Sound
 
 ## Notes
 - Has latent nodes: No

@@ -16,7 +16,8 @@
 			"Resolve Audio State from Context",
 			"Debug Info",
 			"Get Sender Name",
-			"Apply Audio State by Id"
+			"Apply Audio State by Id",
+			"To String (Text)"
 		],
 		"called_by": [
 			"EventGraph",
@@ -36,8 +37,8 @@
 			"title_single_line": "ApplyResolvedAudioStateFromContext",
 			"comment": "",
 			"guid": "67765fd8-40f2-c6b3-8f12-d8b072bde39e",
-			"x": 0,
-			"y": 0,
+			"x": -1520,
+			"y": -16,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -62,8 +63,8 @@
 			"title_single_line": "Resolve Audio State from Context",
 			"comment": "",
 			"guid": "372f5d14-4d15-85eb-be74-7ba437c4f80f",
-			"x": 416,
-			"y": -16,
+			"x": -1104,
+			"y": -32,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -101,7 +102,7 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "false",
-					"linked_count": 1
+					"linked_count": 2
 				},
 				{
 					"pin_name": "ResolvedStateId",
@@ -424,8 +425,8 @@
 			"title_single_line": "Reroute Node",
 			"comment": "",
 			"guid": "b709367c-44f9-7641-1ffa-2998289ad239",
-			"x": 768,
-			"y": -80,
+			"x": -816,
+			"y": -192,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -445,7 +446,7 @@
 					"subcategory": "None",
 					"resolved_type": "Name",
 					"default_value": "",
-					"linked_count": 1
+					"linked_count": 2
 				}
 			],
 			"target_class": "ApplyResolvedAudioStateFromContext"
@@ -459,8 +460,8 @@
 			"title_single_line": "Return Node",
 			"comment": "",
 			"guid": "a59d27ec-4099-e379-3b3e-78a815ad35a8",
-			"x": 1504,
-			"y": -176,
+			"x": 2048,
+			"y": -160,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -470,6 +471,156 @@
 					"category": "exec",
 					"subcategory": "None",
 					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyResolvedAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_FormatText_0",
+			"node_name": "K2Node_FormatText_0",
+			"node_kind": "FormatText",
+			"ue_class": "K2Node_FormatText",
+			"title": "Format Text",
+			"title_single_line": "Format Text",
+			"comment": "",
+			"guid": "aac156a7-4ded-edbe-3f26-5195f3181d53",
+			"x": -672,
+			"y": -272,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "Format",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Result",
+					"direction": "Output",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Found",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "StateId",
+					"direction": "Input",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyResolvedAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_MacroInstance_0",
+			"node_name": "K2Node_MacroInstance_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_MacroInstance",
+			"title": "DBG Info",
+			"title_single_line": "DBG Info",
+			"comment": "",
+			"guid": "ee11e248-4040-ca53-2aee-beb51ed80ccc",
+			"x": 32,
+			"y": 0,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "execute",
+					"direction": "Input",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "Category",
+					"direction": "Input",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "NewEnumerator16",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Message",
+					"direction": "Input",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "then",
+					"direction": "Output",
+					"category": "exec",
+					"subcategory": "None",
+					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				}
+			],
+			"target_class": "ApplyResolvedAudioStateFromContext"
+		},
+		{
+			"node_id": "K2Node_CallFunction_0",
+			"node_name": "K2Node_CallFunction_0",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "To String (Text)",
+			"title_single_line": "To String (Text)",
+			"comment": "",
+			"guid": "5da9b131-43d6-a48b-4df1-f2b7dd71ea78",
+			"x": -336,
+			"y": -304,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetTextLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "InText",
+					"direction": "Input",
+					"category": "text",
+					"subcategory": "None",
+					"resolved_type": "Text",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "string",
+					"subcategory": "None",
+					"resolved_type": "String",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -490,8 +641,8 @@
 			"from_node_id": "K2Node_CallFunction_3",
 			"from_node_title": "Resolve Audio State from Context\nTarget is BP Audio Manager",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_1",
-			"to_node_title": "Branch",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "DBG Info",
 			"to_pin": "execute"
 		},
 		{
@@ -525,6 +676,14 @@
 			"to_node_id": "K2Node_FunctionResult_1",
 			"to_node_title": "Return Node",
 			"to_pin": "execute"
+		},
+		{
+			"from_node_id": "K2Node_MacroInstance_0",
+			"from_node_title": "DBG Info",
+			"from_pin": "then",
+			"to_node_id": "K2Node_IfThenElse_1",
+			"to_node_title": "Branch",
+			"to_pin": "execute"
 		}
 	],
 	"data_links": [
@@ -535,6 +694,14 @@
 			"to_node_id": "K2Node_IfThenElse_1",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_3",
+			"from_node_title": "Resolve Audio State from Context\nTarget is BP Audio Manager",
+			"from_pin": "Found",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "Found"
 		},
 		{
 			"from_node_id": "K2Node_CallFunction_3",
@@ -575,6 +742,30 @@
 			"to_node_id": "K2Node_CallFunction_6",
 			"to_node_title": "Apply Audio State by Id\nTarget is BP Audio Manager",
 			"to_pin": "AudioStateId"
+		},
+		{
+			"from_node_id": "K2Node_Knot_0",
+			"from_node_title": "Reroute Node",
+			"from_pin": "OutputPin",
+			"to_node_id": "K2Node_FormatText_0",
+			"to_node_title": "Format Text",
+			"to_pin": "StateId"
+		},
+		{
+			"from_node_id": "K2Node_FormatText_0",
+			"from_node_title": "Format Text",
+			"from_pin": "Result",
+			"to_node_id": "K2Node_CallFunction_0",
+			"to_node_title": "To String (Text)",
+			"to_pin": "InText"
+		},
+		{
+			"from_node_id": "K2Node_CallFunction_0",
+			"from_node_title": "To String (Text)",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_MacroInstance_0",
+			"to_node_title": "DBG Info",
+			"to_pin": "Message"
 		}
 	],
 	"problems": []
