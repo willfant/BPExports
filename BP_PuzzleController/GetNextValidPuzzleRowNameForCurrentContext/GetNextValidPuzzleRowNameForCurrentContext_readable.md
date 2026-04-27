@@ -17,15 +17,20 @@ Auto-generated function summary.
 - BestSequenceIndex
 - bFoundAny
 - BestPuzzleRowName
+- CurrentPuzzleData
+- CurrentSequenceIndexL
 
 ## Writes
 - BestSequenceIndex
 - BestPuzzleRowName
 - bFoundAny
+- CurrentSequenceIndexL
 
 ## Calls
 - Get Data Table Row Names
 - Can Puzzle be Selected for Current Context
+- Print String
+- To String (Text)
 
 ## Called By
 - StartNextValidPuzzleForCurrentContext
