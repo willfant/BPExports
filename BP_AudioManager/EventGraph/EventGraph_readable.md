@@ -10,6 +10,7 @@ Main runtime entry graph for this Blueprint.
 - DebugEnabled
 - WorldModeBindingRetryHandle
 - GhostAudioBindingRetryHandle
+- AudioContextRefreshRetryHandle
 
 ## Writes
 - CurrentWorldMode

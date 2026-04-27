@@ -12,19 +12,22 @@ Auto-generated function summary.
 - CurrentGhostId
 - CurrentGhostState
 - CurrentWorldMode
+- bShuttingDown
 
 ## Writes
 - CurrentWorldMode
 - CurrentGhostId
 - CurrentGhostState
 - GhostManagerRef
+- AudioContextRefreshRetryHandle
+- WorldModeSystemRef
 
 ## Calls
 - Is Valid
 - Get World Mode
+- Has Active Ghost
 - Debug Warning
 - Get Sender Name
-- Has Active Ghost
 - Apply Resolved Audio State from Context
 - Debug Info
 - Get Game Instance
