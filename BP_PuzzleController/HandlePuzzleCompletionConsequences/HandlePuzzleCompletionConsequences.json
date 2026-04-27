@@ -1973,6 +1973,24 @@
 					"linked_count": 0
 				},
 				{
+					"pin_name": "bRequireSequenceAfter",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "true",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "MinSequenceIndexExclusive",
+					"direction": "Input",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "0",
+					"linked_count": 1
+				},
+				{
 					"pin_name": "bStartedPuzzle ",
 					"direction": "Output",
 					"category": "bool",
@@ -2279,6 +2297,193 @@
 					"resolved_type": "exec",
 					"default_value": "",
 					"linked_count": 1
+				}
+			],
+			"target_class": "HandlePuzzleCompletionConsequences"
+		},
+		{
+			"node_id": "K2Node_VariableGet_2",
+			"node_name": "K2Node_VariableGet_2",
+			"node_kind": "VariableGet",
+			"ue_class": "K2Node_VariableGet",
+			"title": "Get CurrentPuzzleData",
+			"title_single_line": "Get CurrentPuzzleData",
+			"comment": "",
+			"guid": "f3893491-4b36-183b-ebe6-dd8884157cce",
+			"x": 5264,
+			"y": -512,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "CurrentPuzzleData",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_PuzzleDefinition",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "BP_PuzzleController_C",
+					"default_value": "",
+					"linked_count": 0
+				}
+			],
+			"target_class": "HandlePuzzleCompletionConsequences"
+		},
+		{
+			"node_id": "K2Node_BreakStruct_2",
+			"node_name": "K2Node_BreakStruct_2",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_BreakStruct",
+			"title": "Break S Puzzle Definition",
+			"title_single_line": "Break S Puzzle Definition",
+			"comment": "",
+			"guid": "46cf751f-469b-bc25-3670-d0b5737ae603",
+			"x": 5488,
+			"y": -432,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "S_PuzzleDefinition",
+					"direction": "Input",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_PuzzleDefinition",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "PuzzleId_2_89AF406641E9560E1E4274B4C9CA232C",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Type_5_7F37B50D4A7CDCB179E101B9A1194965",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "WorldMode_8_D3BDBF46473BC509B1D98B88763CC89A",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "Steps_12_F905532D417823D5E3CBB790FCB74FAC",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_PuzzleStep",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SuccessEventId_16_43DBB1CE40CF113341AF428248028BBB",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "FailEventId_18_2580C8E94DBEF8348D64BC8AC6304A7A",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "RewardObjectiveId_20_249C20A54A06FE3E190C32B96B4E19E6",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "GhostId_23_FF4C959040A90B611CD5099E00CBC377",
+					"direction": "Output",
+					"category": "name",
+					"subcategory": "None",
+					"resolved_type": "Name",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "SequenceIndex_26_A2B9FAB447A9ACDEA0A7CA8F34460178",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bAutoStartNextPuzzleOnComplete_28_C7F65C02414F3CC11AB7BEA11A7288E1",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bStartMemoryTransitionOnComplete_30_033C89C8430F55D3E796CE82C97E8A39",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "CompletionTransition_33_2C3048F443D29F254D230B95670D70EF",
+					"direction": "Output",
+					"category": "struct",
+					"subcategory": "None",
+					"resolved_type": "S_MemoryTransition",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "bSetGhostStateOnComplete_36_B3E9B388492B84EB947C029333CE2B60",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "GhostStateOnComplete_39_9CE1D86B4ECD9BE65A6FBE9E81E5C196",
+					"direction": "Output",
+					"category": "byte",
+					"subcategory": "None",
+					"resolved_type": "Byte/Enum",
+					"default_value": "",
+					"linked_count": 0
 				}
 			],
 			"target_class": "HandlePuzzleCompletionConsequences"
@@ -2790,6 +2995,22 @@
 			"to_node_id": "K2Node_IfThenElse_10",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
+		},
+		{
+			"from_node_id": "K2Node_VariableGet_2",
+			"from_node_title": "Get CurrentPuzzleData",
+			"from_pin": "CurrentPuzzleData",
+			"to_node_id": "K2Node_BreakStruct_2",
+			"to_node_title": "Break S Puzzle Definition",
+			"to_pin": "S_PuzzleDefinition"
+		},
+		{
+			"from_node_id": "K2Node_BreakStruct_2",
+			"from_node_title": "Break S Puzzle Definition",
+			"from_pin": "SequenceIndex_26_A2B9FAB447A9ACDEA0A7CA8F34460178",
+			"to_node_id": "K2Node_CallFunction_7",
+			"to_node_title": "Start Next Valid Puzzle for Current Context\nTarget is BP Puzzle Controller",
+			"to_pin": "MinSequenceIndexExclusive"
 		}
 	],
 	"problems": []

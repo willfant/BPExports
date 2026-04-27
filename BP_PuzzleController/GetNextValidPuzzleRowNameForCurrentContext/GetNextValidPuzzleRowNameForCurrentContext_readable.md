@@ -18,7 +18,6 @@ Auto-generated function summary.
 - bFoundAny
 - BestPuzzleRowName
 - CurrentPuzzleData
-- CurrentSequenceIndexL
 
 ## Writes
 - BestSequenceIndex
@@ -31,6 +30,7 @@ Auto-generated function summary.
 - Can Puzzle be Selected for Current Context
 - Print String
 - To String (Text)
+- NOT Boolean
 
 ## Called By
 - StartNextValidPuzzleForCurrentContext

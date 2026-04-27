@@ -20,8 +20,7 @@
 			"BestSequenceIndex",
 			"bFoundAny",
 			"BestPuzzleRowName",
-			"CurrentPuzzleData",
-			"CurrentSequenceIndexL"
+			"CurrentPuzzleData"
 		],
 		"writes_variables": [
 			"BestSequenceIndex",
@@ -33,7 +32,8 @@
 			"Get Data Table Row Names",
 			"Can Puzzle be Selected for Current Context",
 			"Print String",
-			"To String (Text)"
+			"To String (Text)",
+			"NOT Boolean"
 		],
 		"called_by": [
 			"StartNextValidPuzzleForCurrentContext"
@@ -52,7 +52,7 @@
 			"title_single_line": "GetNextValidPuzzleRowNameForCurrentContext",
 			"comment": "",
 			"guid": "f9e116e5-4133-2b44-494d-7198992c4255",
-			"x": -2256,
+			"x": -2400,
 			"y": 0,
 			"has_error": false,
 			"has_warning": false,
@@ -73,7 +73,7 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "MinSequenceIndexExclusive",
@@ -82,7 +82,7 @@
 					"subcategory": "None",
 					"resolved_type": "Integer",
 					"default_value": "",
-					"linked_count": 0
+					"linked_count": 1
 				}
 			],
 			"target_class": "GetNextValidPuzzleRowNameForCurrentContext"
@@ -1983,42 +1983,60 @@
 			"target_class": "GetNextValidPuzzleRowNameForCurrentContext"
 		},
 		{
-			"node_id": "K2Node_VariableGet_3",
-			"node_name": "K2Node_VariableGet_3",
-			"node_kind": "VariableGet",
-			"ue_class": "K2Node_VariableGet",
-			"title": "Get CurrentSequenceIndexL",
-			"title_single_line": "Get CurrentSequenceIndexL",
+			"node_id": "K2Node_CallFunction_4",
+			"node_name": "K2Node_CallFunction_4",
+			"node_kind": "FunctionCall",
+			"ue_class": "K2Node_CallFunction",
+			"title": "NOT Boolean",
+			"title_single_line": "NOT Boolean",
 			"comment": "",
-			"guid": "9b76a093-424c-9abd-343e-6c9bb672662f",
-			"x": 1440,
-			"y": 544,
+			"guid": "de4dbafc-4d35-f735-7f7f-2d9be4d42ca5",
+			"x": 1488,
+			"y": 384,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
 				{
-					"pin_name": "CurrentSequenceIndexL",
-					"direction": "Output",
-					"category": "int",
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
 					"subcategory": "None",
-					"resolved_type": "Integer",
-					"default_value": "0",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
 					"linked_count": 1
 				}
 			],
 			"target_class": "GetNextValidPuzzleRowNameForCurrentContext"
 		},
 		{
-			"node_id": "K2Node_PromotableOperator_1",
-			"node_name": "K2Node_PromotableOperator_1",
+			"node_id": "K2Node_PromotableOperator_2",
+			"node_name": "K2Node_PromotableOperator_2",
 			"node_kind": "Unknown",
 			"ue_class": "K2Node_PromotableOperator",
 			"title": "integer > integer",
 			"title_single_line": "integer > integer",
 			"comment": "",
-			"guid": "d78a28fa-4e5c-895f-3ba7-ac9b22f5374e",
-			"x": 1648,
-			"y": 480,
+			"guid": "1cb4e0d7-4627-c1a2-554f-31b68d52bc8c",
+			"x": 1504,
+			"y": 464,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -2062,15 +2080,68 @@
 			"target_class": "GetNextValidPuzzleRowNameForCurrentContext"
 		},
 		{
-			"node_id": "K2Node_IfThenElse_3",
-			"node_name": "K2Node_IfThenElse_3",
+			"node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"node_name": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"node_kind": "Unknown",
+			"ue_class": "K2Node_CommutativeAssociativeBinaryOperator",
+			"title": "OR Boolean",
+			"title_single_line": "OR Boolean",
+			"comment": "",
+			"guid": "e22c7b7d-48b8-3e0d-6f14-9ba08a44bc09",
+			"x": 1712,
+			"y": 416,
+			"has_error": false,
+			"has_warning": false,
+			"pins": [
+				{
+					"pin_name": "self",
+					"direction": "Input",
+					"category": "object",
+					"subcategory": "None",
+					"resolved_type": "KismetMathLibrary",
+					"default_value": "",
+					"linked_count": 0
+				},
+				{
+					"pin_name": "A",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "B",
+					"direction": "Input",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "ReturnValue",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "false",
+					"linked_count": 1
+				}
+			],
+			"target_class": "GetNextValidPuzzleRowNameForCurrentContext"
+		},
+		{
+			"node_id": "K2Node_IfThenElse_4",
+			"node_name": "K2Node_IfThenElse_4",
 			"node_kind": "Branch",
 			"ue_class": "K2Node_IfThenElse",
 			"title": "Branch",
 			"title_single_line": "Branch",
 			"comment": "",
-			"guid": "03b72fc8-413b-a38f-7166-68beaaf14fd9",
-			"x": 1728,
+			"guid": "64ebd006-4c0b-0872-694b-aebfb287ae06",
+			"x": 1792,
 			"y": 240,
 			"has_error": false,
 			"has_warning": false,
@@ -2168,7 +2239,7 @@
 			"from_node_id": "K2Node_IfThenElse_0",
 			"from_node_title": "Branch",
 			"from_pin": "then",
-			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_id": "K2Node_IfThenElse_4",
 			"to_node_title": "Branch",
 			"to_pin": "execute"
 		},
@@ -2253,7 +2324,7 @@
 			"to_pin": "execute"
 		},
 		{
-			"from_node_id": "K2Node_IfThenElse_3",
+			"from_node_id": "K2Node_IfThenElse_4",
 			"from_node_title": "Branch",
 			"from_pin": "then",
 			"to_node_id": "K2Node_IfThenElse_1",
@@ -2262,6 +2333,22 @@
 		}
 	],
 	"data_links": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "GetNextValidPuzzleRowNameForCurrentContext",
+			"from_pin": "bRequireSequenceAfter",
+			"to_node_id": "K2Node_CallFunction_4",
+			"to_node_title": "NOT Boolean",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "GetNextValidPuzzleRowNameForCurrentContext",
+			"from_pin": "MinSequenceIndexExclusive",
+			"to_node_id": "K2Node_PromotableOperator_2",
+			"to_node_title": "integer > integer",
+			"to_pin": "B"
+		},
 		{
 			"from_node_id": "K2Node_VariableGet_0",
 			"from_node_title": "Get DT_Puzzles",
@@ -2378,7 +2465,7 @@
 			"from_node_id": "K2Node_BreakStruct_1",
 			"from_node_title": "Break S Puzzle Definition",
 			"from_pin": "SequenceIndex_26_A2B9FAB447A9ACDEA0A7CA8F34460178",
-			"to_node_id": "K2Node_PromotableOperator_1",
+			"to_node_id": "K2Node_PromotableOperator_2",
 			"to_node_title": "integer > integer",
 			"to_pin": "A"
 		},
@@ -2503,18 +2590,26 @@
 			"to_pin": "BestPuzzleRowName"
 		},
 		{
-			"from_node_id": "K2Node_VariableGet_3",
-			"from_node_title": "Get CurrentSequenceIndexL",
-			"from_pin": "CurrentSequenceIndexL",
-			"to_node_id": "K2Node_PromotableOperator_1",
-			"to_node_title": "integer > integer",
+			"from_node_id": "K2Node_CallFunction_4",
+			"from_node_title": "NOT Boolean",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"to_node_title": "OR Boolean",
+			"to_pin": "A"
+		},
+		{
+			"from_node_id": "K2Node_PromotableOperator_2",
+			"from_node_title": "integer > integer",
+			"from_pin": "ReturnValue",
+			"to_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"to_node_title": "OR Boolean",
 			"to_pin": "B"
 		},
 		{
-			"from_node_id": "K2Node_PromotableOperator_1",
-			"from_node_title": "integer > integer",
+			"from_node_id": "K2Node_CommutativeAssociativeBinaryOperator_0",
+			"from_node_title": "OR Boolean",
 			"from_pin": "ReturnValue",
-			"to_node_id": "K2Node_IfThenElse_3",
+			"to_node_id": "K2Node_IfThenElse_4",
 			"to_node_title": "Branch",
 			"to_pin": "Condition"
 		}

@@ -40,7 +40,7 @@
 			"comment": "",
 			"guid": "d8da09ca-49d7-5c14-1978-50899e311ef0",
 			"x": -1616,
-			"y": -16,
+			"y": 0,
 			"has_error": false,
 			"has_warning": false,
 			"pins": [
@@ -50,6 +50,24 @@
 					"category": "exec",
 					"subcategory": "None",
 					"resolved_type": "exec",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "bRequireSequenceAfter",
+					"direction": "Output",
+					"category": "bool",
+					"subcategory": "None",
+					"resolved_type": "Boolean",
+					"default_value": "",
+					"linked_count": 1
+				},
+				{
+					"pin_name": "MinSequenceIndexExclusive",
+					"direction": "Output",
+					"category": "int",
+					"subcategory": "None",
+					"resolved_type": "Integer",
 					"default_value": "",
 					"linked_count": 1
 				}
@@ -104,7 +122,7 @@
 					"subcategory": "None",
 					"resolved_type": "Boolean",
 					"default_value": "false",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "MinSequenceIndexExclusive",
@@ -113,7 +131,7 @@
 					"subcategory": "None",
 					"resolved_type": "Integer",
 					"default_value": "0",
-					"linked_count": 0
+					"linked_count": 1
 				},
 				{
 					"pin_name": "bFoundPuzzle",
@@ -576,6 +594,22 @@
 		}
 	],
 	"data_links": [
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "StartNextValidPuzzleForCurrentContext",
+			"from_pin": "bRequireSequenceAfter",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Get Next Valid Puzzle Row Name for Current Context\nTarget is BP Puzzle Controller",
+			"to_pin": "bRequireSequenceAfter"
+		},
+		{
+			"from_node_id": "K2Node_FunctionEntry_0",
+			"from_node_title": "StartNextValidPuzzleForCurrentContext",
+			"from_pin": "MinSequenceIndexExclusive",
+			"to_node_id": "K2Node_CallFunction_5",
+			"to_node_title": "Get Next Valid Puzzle Row Name for Current Context\nTarget is BP Puzzle Controller",
+			"to_pin": "MinSequenceIndexExclusive"
+		},
 		{
 			"from_node_id": "K2Node_CallFunction_5",
 			"from_node_title": "Get Next Valid Puzzle Row Name for Current Context\nTarget is BP Puzzle Controller",
